@@ -1,3 +1,3 @@
-title: "Strona Macieja Buczaka"
-description: "Blog i portfolio"
+title: ""
+description: "Blog i portfolio Macieja Buczaka"
 theme: minima
