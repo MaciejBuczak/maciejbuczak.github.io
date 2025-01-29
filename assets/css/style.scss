@@ -3,15 +3,13 @@
 
 @import "{{ site.theme }}";
 
-.page-header {
-  padding-bottom: 20px;
-}
-
 .nav-container {
+  position: absolute;
+  top: 130px;  /* Dostosuj tę wartość, aby menu było pod "Risk Manager" */
+  left: 0;
   width: 100%;
-  padding: 15px 0;
-  margin-top: 20px;
   text-align: center;
+  background: transparent;
 }
 
 .nav-menu {
@@ -33,4 +31,10 @@
 .nav-menu a:hover {
   color: #0366d6;
   text-decoration: none;
+}
+
+/* Ukryj drugi nagłówek */
+.main-content h1:first-child,
+.main-content h2:first-child {
+  display: none;
 }
