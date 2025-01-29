@@ -1,9 +1,20 @@
 ---
 layout: default
-title: "O mnie"
-permalink: /about/
+title: O mnie
 ---
 
-## O mnie
+# O mnie
 
-Cześć! Jestem Maciej Buczak, zajmuję się zarządzaniem ryzykiem i statystyką.
+Jestem Risk Managerem z doświadczeniem w zarządzaniu ryzykiem finansowym.
+
+## Doświadczenie
+- Risk Manager w [nazwa firmy]
+- Poprzednie stanowiska...
+
+## Umiejętności
+- Analiza ryzyka finansowego
+- Modelowanie finansowe
+- Zarządzanie projektami
+
+## Edukacja
+[Twoje wykształcenie]
