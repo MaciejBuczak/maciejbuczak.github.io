@@ -58,28 +58,30 @@ html, body {
   background-color: #a85903 !important;
 }
 
-// Styles dla menu kontekstowego
-.context-menu {
-    background-color: white;
-    border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    padding: 8px 0;
-    min-width: 150px;
-    position: fixed;
-    display: none;
-    z-index: 1000;
+// Menu kontekstowe
+#contextMenu {
+    background-color: white !important;
+    border-radius: 4px !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2) !important;
+    padding: 8px 0 !important;
+    min-width: 150px !important;
+    position: fixed !important;
+    display: none !important;
+    z-index: 9999 !important;
 }
 
 .menu-item {
-    padding: 8px 16px;
-    cursor: pointer;
-    color: #737373;
-    text-decoration: none;
-    display: block;
-    transition: background-color 0.2s;
+    padding: 8px 16px !important;
+    cursor: pointer !important;
+    color: #737373 !important;
+    text-decoration: none !important;
+    display: block !important;
+    transition: background-color 0.2s !important;
+    font-family: Arial, sans-serif !important;
+    font-size: 14px !important;
     
     &:hover {
-        background-color: #f5f5f5;
-        color: #a85903;
+        background-color: #f5f5f5 !important;
+        color: #a85903 !important;
     }
 }
