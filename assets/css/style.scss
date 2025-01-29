@@ -69,7 +69,7 @@ html, body {
 .menu-option {
   color: rgb(115, 115, 115);
   text-decoration: none;
-  margin: 0 50px;
+  margin: 0 20px;  /* zmniejszone z 50px na 20px */
   padding: 5px 10px;
   font-size: 18px;
   transition: color 0.3s;
