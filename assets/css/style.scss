@@ -18,8 +18,8 @@
   &:before {
     content: "";
     position: absolute;
-    left: 400px;
-    top: 100px;
+    left: 40vw;  // Zamiast px, używamy szerokości ekranu
+    top: 10vh;   // Wysokość ekranu
     width: 50px;
     height: 20px;
     background-color: #d17a1b;
@@ -29,13 +29,19 @@
   &:after {
     content: "";
     position: absolute;
-    left: 500px;    // inna pozycja niż first before
-    top: 150px;     // inna pozycja niż first before
+    left: 50vw;   // Dostosowanie do szerokości ekranu
+    top: 15vh;    // Dostosowanie do wysokości ekranu
     width: 50px;
     height: 20px;
     background-color: #d17a1b;
     z-index: 0.2;
   }
+  
+}
+Co się zmienia?
+vw i vh sprawią, że belki będą zawsze w tych samych miejscach, niezależnie od szerokości ekranu.
+Możesz dopracować wartości left i top według własnych preferencji, tak by dobrze wyglądały na desktopie i telefonie.
+Jeśli nadal będą przemieszczać się w sposób niepożądany, mogę pomóc dostosować kod bardziej precyzyjnie. Daj znać! 😊
   
   .inner {
     background: transparent;
