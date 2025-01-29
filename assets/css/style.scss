@@ -2,26 +2,26 @@
 ---
 @import "{{ site.theme }}";
 
-// Profile image styles
-.profile-image {
+// Style dla zdjęcia profilowego
+.site-logo {
   position: absolute;
-  left: 20px;          // Adjust this value to move image left/right
-  top: 50%;           // Center vertically
+  left: 20px;
+  top: 50%;
   transform: translateY(-50%);
-  width: 150px;       // Adjust size as needed
+  width: 150px;
   height: 150px;
-  border-radius: 50%; // Makes the image circular
+  border-radius: 50%;
   object-fit: cover;
   border: 3px solid #d17a1b;
   z-index: 1;
 }
 
-// Adjust header padding to accommodate image
+// Kolory tła i jasny pasek w nagłówku
 .page-header {
   background-color: #a85903;
   background-image: linear-gradient(120deg, #a85903, #bf6604);
   position: relative;
-  padding-left: 190px; // Add space for the image
+  padding-left: 190px; // Miejsce na zdjęcie
 }
 
 #header_wrap {
@@ -61,7 +61,7 @@
   background: #a85903;
 }
 
-// Remove text shadow from headers
+// Usunięcie poświaty z nagłówków
 .project-name,
 .project-tagline,
 h1,
@@ -73,7 +73,7 @@ h6 {
   text-shadow: none !important;
 }
 
-// Text color on white background
+// Kolor tekstu na białym tle
 #main_content {
   color: #737373;
   
@@ -91,7 +91,7 @@ p {
   color: #737373;
 }
 
-// Styles for dark background
+// Style dla ciemnego tła
 #main_content_wrap {
   border-top: 1px solid #725003;
   border-bottom: 1px solid #725003;
