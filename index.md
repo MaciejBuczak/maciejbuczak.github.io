@@ -1,8 +1,3 @@
----
-layout: default
-title: "Moja Strona"
----
-
-# Witaj na mojej stronie!
-
-To moja pierwsza strona hostowana na GitHub Pages, teraz z Jekyll!
+title: "Strona Macieja Buczaka"
+description: "Blog i portfolio"
+theme: minima
