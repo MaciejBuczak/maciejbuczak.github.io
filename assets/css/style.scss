@@ -13,15 +13,17 @@
 #header_wrap {
   background: #a85903;
   position: relative;
+  overflow: visible;
   
   &:before {
     content: "";
     position: absolute;
-    left: 250;
-    top: 250;
-    width: 10%;
-    height: 30px;
+    left: 100px;        // możesz zmieniać tę wartość, aby przesuwać w lewo/prawo
+    top: 100px;         // możesz zmieniać tę wartość, aby przesuwać góra/dół
+    width: 50px;        // szerokość belki
+    height: 20px;       // wysokość belki
     background-color: rgba(255, 255, 255, 0.15);
+    z-index: 1;
   }
   
   .inner {
@@ -30,54 +32,4 @@
   }
 }
 
-#footer_wrap {
-  background: #a85903;
-}
-
-// Usunięcie poświaty z nagłówków
-.project-name,
-.project-tagline,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  text-shadow: none !important;
-}
-
-// Kolor tekstu na białym tle
-#main_content {
-  color: #737373;
-  
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    color: #737373 !important;
-  }
-}
-
-p {
-  color: #737373;
-}
-
-// Style dla ciemnego tła
-#main_content_wrap {
-  border-top: 1px solid #725003;
-  border-bottom: 1px solid #725003;
-}
-
-body {
-  background: #a85903;
-}
-
-#forkme_banner {
-  background: #bf6604;
-}
-
-html, body {
-  background-color: #a85903 !important;
-}
+[reszta kodu pozostaje bez zmian...]
