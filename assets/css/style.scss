@@ -5,6 +5,7 @@
   background-color: #a85903;
   background-image: linear-gradient(120deg, #a85903, #bf6604);
   position: relative;
+  margin-bottom: -60px !important; /* Zmniejszamy odstęp od dołu nagłówka */
 }
 #header_wrap {
   background: #a85903;
@@ -31,6 +32,7 @@ h6 {
 }
 #main_content {
   color: #737373;
+  margin-top: -20px !important; /* Zmniejszamy górny margines treści */
   
   h1,
   h2,
@@ -60,15 +62,16 @@ html, body {
 
 #myMenu {
   text-align: center;
-  margin: 20px 0;
-  padding: 10px 0;
+  padding: 20px 0;
+  margin-top: 0 !important; /* Usuwamy górny margines menu */
 }
 
 .menu-option {
-  color: #737373;
+  color: rgb(115, 115, 115);
   text-decoration: none;
-  margin: 0 15px;
+  margin: 0 50px;
   padding: 5px 10px;
+  font-size: 18px;
   transition: color 0.3s;
 }
 
