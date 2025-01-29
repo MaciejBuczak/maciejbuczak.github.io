@@ -1,13 +1,27 @@
 ---
 ---
-
 @import "{{ site.theme }}";
 
-// Kolory tła i jasny pasek w nagłówku
+// Profile image styles
+.profile-image {
+  position: absolute;
+  left: 20px;          // Adjust this value to move image left/right
+  top: 50%;           // Center vertically
+  transform: translateY(-50%);
+  width: 150px;       // Adjust size as needed
+  height: 150px;
+  border-radius: 50%; // Makes the image circular
+  object-fit: cover;
+  border: 3px solid #d17a1b;
+  z-index: 1;
+}
+
+// Adjust header padding to accommodate image
 .page-header {
   background-color: #a85903;
   background-image: linear-gradient(120deg, #a85903, #bf6604);
   position: relative;
+  padding-left: 190px; // Add space for the image
 }
 
 #header_wrap {
@@ -18,20 +32,19 @@
   &:before {
     content: "";
     position: absolute;
-    left: 600px;        // możesz zmieniać tę wartość, aby przesuwać w lewo/prawo
-    top: 80px;         // możesz zmieniać tę wartość, aby przesuwać góra/dół
-    width: 200px;        // szerokość belki
-    height: 40px;       // wysokość belki
+    left: 600px;
+    top: 80px;
+    width: 200px;
+    height: 40px;
     background-color: #d17a1b;
     z-index: 0.2;
   }
 
-
-    &:after {
+  &:after {
     content: "";
     position: absolute;
-    left: 200px;    // inna pozycja niż first before
-    top: 150px;     // inna pozycja niż first before
+    left: 200px;
+    top: 150px;
     width: 50px;
     height: 20px;
     background-color: #d17a1b;
@@ -48,7 +61,7 @@
   background: #a85903;
 }
 
-// Usunięcie poświaty z nagłówków
+// Remove text shadow from headers
 .project-name,
 .project-tagline,
 h1,
@@ -60,7 +73,7 @@ h6 {
   text-shadow: none !important;
 }
 
-// Kolor tekstu na białym tle
+// Text color on white background
 #main_content {
   color: #737373;
   
@@ -78,7 +91,7 @@ p {
   color: #737373;
 }
 
-// Style dla ciemnego tła
+// Styles for dark background
 #main_content_wrap {
   border-top: 1px solid #725003;
   border-bottom: 1px solid #725003;
