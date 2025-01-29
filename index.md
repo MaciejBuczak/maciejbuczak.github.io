@@ -1,9 +1,12 @@
 ---
 layout: default
+title: Home
 ---
 
-<div class="nav-container">
-  <nav>
+<header class="page-header">
+  <h1>Maciej Buczak</h1>
+  <h2>Risk Manager</h2>
+  <nav class="nav-container">
     <ul class="nav-menu">
       <li><a href="/">Home</a></li>
       <li><a href="/about">O mnie</a></li>
@@ -11,7 +14,7 @@ layout: default
       <li><a href="/contact">Kontakt</a></li>
     </ul>
   </nav>
-</div>
+</header>
 
 # Witaj na mojej stronie!
 
