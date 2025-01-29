@@ -1,27 +1,13 @@
 ---
 ---
+
 @import "{{ site.theme }}";
 
-// Style dla zdjęcia profilowego
-.site-logo {
-  position: absolute;
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #d17a1b;
-  z-index: 1;
-}
-
-// Kolory tła i jasny pasek w nagłówku
+// Kolory tła i jasne paski w nagłówku
 .page-header {
   background-color: #a85903;
   background-image: linear-gradient(120deg, #a85903, #bf6604);
   position: relative;
-  padding-left: 190px; // Miejsce na zdjęcie
 }
 
 #header_wrap {
@@ -32,23 +18,23 @@
   &:before {
     content: "";
     position: absolute;
-    left: 600px;
-    top: 80px;
-    width: 200px;
-    height: 40px;
+    left: 100px;
+    top: 100px;
+    width: 50px;
+    height: 20px;
     background-color: #d17a1b;
-    z-index: 0.2;
+    z-index: -1;
   }
 
   &:after {
     content: "";
     position: absolute;
-    left: 1100px;
-    top: 60px;
-    width: 55px;
-    height: 55px;
+    left: 200px;    // inna pozycja niż first before
+    top: 150px;     // inna pozycja niż first before
+    width: 50px;
+    height: 20px;
     background-color: #d17a1b;
-    z-index: 0.2;
+    z-index: -1;
   }
   
   .inner {
