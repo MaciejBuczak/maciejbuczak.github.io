@@ -11,5 +11,11 @@ title: Publikacje
 
 # Publikacje
 
-## Dokumenty
-- [Próbny plik](/assets/pdfs/Próbny plik.pdf)
+## Artykuły naukowe
+- [Link do Próbnego pliku - kliknij tutaj aby pobrać](/assets/pdfs/Probny_plik.pdf)
+
+## Raporty techniczne
+- Raport 1 (w przygotowaniu)
+
+## Prezentacje konferencyjne
+- Prezentacja 1 (w przygotowaniu)
