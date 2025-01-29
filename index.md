@@ -2,8 +2,9 @@
 layout: default
 ---
 <div id="myMenu">
+  <a href="/" class="menu-option">Strona główna</a>
   <a href="about" class="menu-option">O mnie</a>
-  <a href="#" class="menu-option">Publikacje</a>
+  <a href="publications" class="menu-option">Publikacje</a>
   <a href="#" class="menu-option">Kontakt</a>
 </div>
 
