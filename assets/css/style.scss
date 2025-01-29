@@ -59,25 +59,19 @@ html, body {
 }
 
 #myMenu {
-  display: none;
-  position: fixed;
-  background: white;
-  border: 1px solid #ddd;
-  padding: 5px 0;
-  width: 150px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  z-index: 9999;
+  text-align: center;
+  margin: 20px 0;
+  padding: 10px 0;
 }
 
 .menu-option {
-  display: block;
-  padding: 8px 15px;
   color: #737373;
   text-decoration: none;
-  cursor: pointer;
+  margin: 0 15px;
+  padding: 5px 10px;
+  transition: color 0.3s;
 }
 
 .menu-option:hover {
-  background: #f5f5f5;
   color: #a85903;
 }
