@@ -3,19 +3,25 @@
 
 @import "{{ site.theme }}";
 
-.nav-menu {
-  padding: 20px 0;
-  text-align: center;
-  background-color: #212121;
+// Nadpisanie kolorów tła dla nagłówka i stopki
+.page-header {
+  background-color: #a85903;
+  background-image: linear-gradient(120deg, #a85903, #bf6604);
 }
 
-.nav-menu a {
-  color: #fff;
-  text-decoration: none;
-  padding: 10px 20px;
-  margin: 0 10px;
+#header_wrap {
+  background: #a85903;
+  .inner {
+    background: #a85903;
+  }
 }
 
-.nav-menu a:hover {
-  color: #0366d6;
+#footer_wrap {
+  background: #a85903;
+}
+
+// Nadpisanie innych ciemnych sekcji jeśli są potrzebne
+#main_content_wrap {
+  border-top: 1px solid #725003;
+  border-bottom: 1px solid #725003;
 }
