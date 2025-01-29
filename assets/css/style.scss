@@ -20,8 +20,8 @@
     position: absolute;
     left: 35vw;  // Zamiast px, używamy szerokości ekranu
     top: 9vh;   // Wysokość ekranu
-    width: 50px;
-    height: 20px;
+    width: 150px;
+    height: 50px;
     background-color: #d17a1b;
     z-index: 0.2;
   }
@@ -30,7 +30,7 @@
     content: "";
     position: absolute;
     right: 5vw;   // Dostosowanie do szerokości ekranu
-    top: 15vh;    // Dostosowanie do wysokości ekranu
+    top: 10vh;    // Dostosowanie do wysokości ekranu
     width: 45px;
     height: 45px;
     background-color: #d17a1b;
