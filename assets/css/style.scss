@@ -35,6 +35,15 @@ h6 {
 // Kolor tekstu na białym tle
 #main_content {
   color: #737373;
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #737373 !important;
+  }
 }
 
 p {
