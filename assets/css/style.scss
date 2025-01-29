@@ -18,10 +18,10 @@
   &:before {
     content: "";
     position: absolute;
-    left: 32vw;  // Zamiast px, używamy szerokości ekranu
+    left: 29vw;  // Zamiast px, używamy szerokości ekranu
     top: 11vh;   // Wysokość ekranu
     width: 200px;
-    height: 45px;
+    height: 40px;
     background-color: #d17a1b;
     z-index: 0.2;
   }
