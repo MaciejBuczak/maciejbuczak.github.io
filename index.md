@@ -2,8 +2,6 @@
 layout: default
 ---
 
-### Risk Manager
-
 <div id="myMenu">
   <a href="#" class="menu-option">O mnie</a>
   <a href="#" class="menu-option">Publikacje</a>
