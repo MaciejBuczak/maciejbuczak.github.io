@@ -20,8 +20,22 @@
   background: #a85903;
 }
 
-// Nadpisanie innych ciemnych sekcji jeśli są potrzebne
+// Nadpisanie innych ciemnych sekcji
 #main_content_wrap {
   border-top: 1px solid #725003;
   border-bottom: 1px solid #725003;
+}
+
+// Dodanie stylów dla dolnego ciemnego obszaru
+body {
+  background: #a85903;
+}
+
+#forkme_banner {
+  background: #bf6604;
+}
+
+// Dla ciemnego tła na dole strony
+html, body {
+  background-color: #a85903 !important;
 }
