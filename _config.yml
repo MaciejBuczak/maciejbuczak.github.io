@@ -1,15 +1,14 @@
 title: "Strona Macieja Buczaka"
 description: "Blog i portfolio"
 remote_theme: "mmistakes/minimal-mistakes"
+
+# Wymagane wtyczki
 plugins:
   - jekyll-remote-theme
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-paginate
   - jekyll-include-cache
-
-paginate: 5
-paginate_path: "/page:num/"
 
 # Ustawienia autora
 author:
@@ -29,6 +28,10 @@ author:
 header_pages:
   - about.md
   - blog.md
+
+# Ustawienia bloga
+paginate: 5
+paginate_path: "/page:num/"
 
 # Wygląd strony
 layout: home
