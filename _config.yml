@@ -1,3 +1,5 @@
 title: "Maciej Buczak"
 description: "Risk Manager"
 theme: jekyll-theme-slate
+
+include: ["assets/css/custom.css"]
