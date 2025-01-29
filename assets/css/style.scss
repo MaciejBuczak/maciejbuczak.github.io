@@ -3,10 +3,17 @@
 
 @import "{{ site.theme }}";
 
+.header-nav {
+  position: absolute;
+  top: 130px;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
 .nav-menu {
-  padding: 20px 0;
   text-align: center;
-  background-color: #212121;
+  padding: 10px 0;
 }
 
 .nav-menu a {
@@ -14,8 +21,14 @@
   text-decoration: none;
   padding: 10px 20px;
   margin: 0 10px;
+  font-weight: 500;
 }
 
 .nav-menu a:hover {
   color: #0366d6;
+  text-decoration: none;
+}
+
+#header_wrap {
+  padding-bottom: 60px;
 }
