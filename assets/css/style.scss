@@ -3,7 +3,7 @@
 
 @import "{{ site.theme }}";
 
-// Nadpisanie kolorów tła dla nagłówka i stopki
+// Kolory tła
 .page-header {
   background-color: #a85903;
   background-image: linear-gradient(120deg, #a85903, #bf6604);
@@ -20,13 +20,33 @@
   background: #a85903;
 }
 
-// Nadpisanie innych ciemnych sekcji
+// Usunięcie poświaty z nagłówków
+.project-name,
+.project-tagline,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-shadow: none !important;
+}
+
+// Kolor tekstu na białym tle
+#main_content {
+  color: #737373;
+}
+
+p {
+  color: #737373;
+}
+
+// Style dla ciemnego tła
 #main_content_wrap {
   border-top: 1px solid #725003;
   border-bottom: 1px solid #725003;
 }
 
-// Dodanie stylów dla dolnego ciemnego obszaru
 body {
   background: #a85903;
 }
@@ -35,7 +55,6 @@ body {
   background: #bf6604;
 }
 
-// Dla ciemnego tła na dole strony
 html, body {
   background-color: #a85903 !important;
 }
