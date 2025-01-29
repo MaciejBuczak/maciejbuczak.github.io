@@ -3,17 +3,9 @@
 
 @import "{{ site.theme }}";
 
-.header-nav {
-  position: absolute;
-  top: 130px;
-  left: 0;
-  width: 100%;
-  z-index: 100;
-}
-
 .nav-menu {
+  margin-top: 20px;
   text-align: center;
-  padding: 10px 0;
 }
 
 .nav-menu a {
@@ -21,7 +13,7 @@
   text-decoration: none;
   padding: 10px 20px;
   margin: 0 10px;
-  font-weight: 500;
+  font-size: 16px;
 }
 
 .nav-menu a:hover {
@@ -30,5 +22,5 @@
 }
 
 #header_wrap {
-  padding-bottom: 60px;
+  padding-bottom: 20px;
 }
