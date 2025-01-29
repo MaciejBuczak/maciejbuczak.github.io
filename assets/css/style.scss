@@ -18,7 +18,7 @@
   &:before {
     content: "";
     position: absolute;
-    left: 100px;
+    left: 400px;
     top: 100px;
     width: 50px;
     height: 20px;
@@ -29,7 +29,7 @@
   &:after {
     content: "";
     position: absolute;
-    left: 200px;    // inna pozycja niż first before
+    left: 500px;    // inna pozycja niż first before
     top: 150px;     // inna pozycja niż first before
     width: 50px;
     height: 20px;
