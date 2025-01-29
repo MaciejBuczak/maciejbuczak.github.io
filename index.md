@@ -1,9 +1,8 @@
 ---
 layout: default
 ---
-
 <div id="myMenu">
-  <a href="/maciejbuczak.github.io/about.html" class="menu-option">O mnie</a>
+  <a href="about" class="menu-option">O mnie</a>
   <a href="#" class="menu-option">Publikacje</a>
   <a href="#" class="menu-option">Kontakt</a>
 </div>
