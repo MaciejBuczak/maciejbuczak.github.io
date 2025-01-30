@@ -47,7 +47,7 @@ W moich dotychczasowych pracach projektowych i badawczych szeroko wykorzystywał
 ##### Autorskie narzędzia analityczne
 Jestem autorem kilkudziesięciu (w samej metodyce modelu AMA jest ponad 50) badań/narzędzi analitycznych, niektóre z nich całkowicie nowatorskie. Umiejętność wymyślenia badania dla konkretnego zagadnienia pozwalała mi wykryć niewidoczne z innych perspektyw nieprawidłowości.
 
----
+<hr>
 
 ##### Poza liczbami
 Moje zainteresowania wykraczają daleko poza świat finansów:
