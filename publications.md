@@ -27,8 +27,8 @@ title: Publikacje
         Bieg wsteczny w rozwoju koncepcji modelowania wartości nieoczekiwanej w sektorze finansowym na przykładzie decyzji o wycofaniu frameworku AMA w ryzyku operacyjnym
       </a>
     </h2>
-    <p class="publication-description">W obecnym środowisku finansowym, tradycyjne metody zarządzania ryzykiem wymagają fundamentalnego przemyślenia. Artykuł przedstawia nowatorskie podejście do analizy i zarządzania ryzykiem w sektorze bankowym...</p>
-    <div class="publication-meta">📅 Styczeń 2024 &nbsp;&nbsp;|&nbsp;&nbsp; 👁️ 245 wyświetleń</div>
+    <p class="publication-description">W artykule prezentuje moje wysokopoziomowe stanowisko odnośnie decyzji o wycofaniu całego frameworku modelowania ze stosowania w sektorze bankowym. Tematyką tą zajmowałem się w zasadzie od kilkunastu lat. Framework, o którym tu mowa, poznałem zarówno od strony jego ogólnych celów biznesowych, aż po każdy szczegółowy aspekt przestrzeni jego modelowania. Rozumiem zatem przyczyny wycofania tej koncepcji z użycia. W artykule tym zamieściłem mój komentarz odnośnie takiego przebiegu wydarzeń.</p>
+    <div class="publication-meta">📅 Grudzień 2024 &nbsp;&nbsp;|&nbsp;&nbsp; 👁️ 245 wyświetleń</div>
   </div>
 
   <div class="publication-card">
