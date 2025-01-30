@@ -10,6 +10,10 @@ title: O mnie
   <a href="/contact" class="menu-option">Kontakt</a>
 </div>
 
+<div class="square"></div>
+<div class="square1"></div>
+<div class="square2"></div>
+<div class="square-big"></div>
 
 W toku mojej kariery zawodowej zgromadziłem bogate doświadczenie w projektowaniu i prowadzeniu badań z wykorzystaniem zaawansowanych metod ilościowych. Moje kompetencje obejmują:
 ##### Budowa kompleksowych metodyk
