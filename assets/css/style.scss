@@ -187,6 +187,27 @@ hr {
 
 
 
+.publication-link {
+    color: #333;
+    text-decoration: none;
+    
+    &:hover {
+        color: #a85903;
+        text-decoration: none;
+    }
+}
+
+.publication-meta {
+    margin: 20px 0;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+
+
+
+
+
 #myMenu {
   display: flex;
   justify-content: center;
