@@ -10,7 +10,7 @@ title: O mnie
   <a href="/contact" class="menu-option">Kontakt</a>
 </div>
 
-#### Kompetencje badawcze i metodologiczne ugruntowane na ścieżce zawodowej
+
 W toku mojej kariery zawodowej zgromadziłem bogate doświadczenie w projektowaniu i prowadzeniu badań z wykorzystaniem zaawansowanych metod ilościowych. Moje kompetencje obejmują:
 ##### Budowa kompleksowych metodyk
 W toku realizacji projektów opracowałem szereg metodyk opartych o szeroko rozumiane techniki statystyczne i ilościowe:
@@ -25,7 +25,7 @@ Obszary prowadzonych przeze mnie projektów:
 - ECL/Impairment (PD, LGD, EAD, SICR, FLI),
 - ryzyko operacyjne (AMA),
 - ICAAP (kapitał wewnętrzny: ryzyko kredytowe, proces odzyskiwania, ryzyko reputacji)
-W odniesieniu do w/w obszarów aktywnie uczestniczyłem w całym cyklu życia modeli, co dało mi szerokie podstawy do obserwacji skuteczności ich działania, w kontekście ich umiejętności opisu rzeczywistości.
+- W odniesieniu do w/w obszarów aktywnie uczestniczyłem w całym cyklu życia modeli, co dało mi szerokie podstawy do obserwacji skuteczności ich działania, w kontekście ich umiejętności opisu rzeczywistości.
 ##### Stosowane techniki statystyczne/ekonometryczne
 W moich dotychczasowych pracach projektowych i badawczych szeroko wykorzystywałem techniki mieszczące się w kategorii metod ilościowych:
 - klasyczne metody statystyczne, opis zjawisk za pomocą rozkładów prawdopodobieństwa, statystyka szeregów czasowych
