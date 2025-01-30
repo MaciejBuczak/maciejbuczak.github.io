@@ -20,7 +20,7 @@ title: Publikacje
   
   <div class="publication-card">
     <span class="publication-pin">📌 Przypięte</span>
-    <span class="publication-status status-review">PROCES RECENZJI</span>
+    <span class="publication-status status-published">OPUBLIKOWANE</span>
     <div class="publication-source">Opublikowano w Journal of Risk Management</div>
     <h2 class="publication-title">
       <a href="{{ site.baseurl }}/publications/2024-01-risk-management" class="publication-link">
