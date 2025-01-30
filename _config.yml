@@ -1,3 +1,8 @@
 title: "Maciej Buczak"
 description: "Risk Manager"
 theme: jekyll-theme-slate
+
+collections:
+  publications:
+    output: true
+    permalink: /publications/:title/
