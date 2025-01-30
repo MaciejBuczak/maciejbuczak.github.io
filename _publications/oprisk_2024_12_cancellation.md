@@ -36,7 +36,7 @@ pinned: true
     </div>
 
     <div class="publication-content">
-        <h2>Abstrakt</h2>
+        <h5>Abstrakt</h5>
         <p>
             W artykule prezentuję moje wysokopoziomowe stanowisko odnośnie decyzji o wycofaniu całego frameworku modelowania ze stosowania w sektorze bankowym. Tematyką tą zajmowalem się w zasadzie od kilkunastu lat. Framework, o którym tu mowa, poznałem zarówno od strony jego ogólnych celów biznesowych, aż po każdy szczegółowy aspekt przestrzeni jego modelowania. Rozumiem zatem przyczyny wycofania tej koncepcji z użycia. W artykule tym zamieściłem mój komentarz odnośnie takiego przebiegu wydarzeń.
         </p>
