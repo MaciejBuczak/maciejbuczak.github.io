@@ -14,11 +14,8 @@ layout: default
 <div class="square2"></div>
 <div class="square-big"></div>
 
-Specjalizuję się w przekształcaniu złożonych wyzwań zarządzania ryzykiem w innowacyjne rozwiązania. Z ponad 17-letnim doświadczeniem w zarządzaniu ryzykiem modeli, prowadzeniu zespołów i tworzeniu przełomowych metodologii, łączę głęboką wiedzę techniczną z umiejętnością rozwijania ludzi.
+Specjalizuję się w przekształcaniu złożonych wyzwań zarządzania ryzykiem w innowacyjne rozwiązania. Z ponad 17-letnim doświadczeniem w zarządzaniu ryzykiem modeli, prowadzeniu zespołów i tworzeniu przełomowych metodologii, łączę głęboką wiedzę ekspercką z umiejętnością ciągłego uzgadniania wypracowanych rozwiązań z rzeczywistością.
 
-### Moje kluczowe obszary
-W swojej pracy kieruję się zasadą docierania do sedna rzeczy. Unikam powierzchownych rozwiązań, preferując dogłębne zrozumienie problemu i tworzenie trwałych, innowacyjnych rozwiązań. Moje podejście opiera się na kilku filarach:
-Praca z ludźmi jest moją pasją. Najlepiej funkcjonuję w środowisku, gdzie energia zespołu napędza motywację do działania. Wierzę w siłę współpracy i wymianę różnych perspektyw.
-Innowacyjne podejście to mój znak rozpoznawczy. Stworzyłem ponad 50 oryginalnych narzędzi analitycznych i metodologii, które znalazły zastosowanie w wielu instytucjach finansowych.
-Rozwój innych jest dla mnie priorytetem. Jako lider projektuję i prowadzę szkolenia, które przekładają skomplikowane koncepcje na zrozumiały język.
-Kompetencje techniczne są fundamentem mojej pracy. Specjalizuję się w zarządzaniu ryzykiem modeli, ramach IFRS9/Basel II i holistycznej ocenie ryzyka.
+### Ewolucja podejścia badawczego
+Fundamentem mojego sposobu myślenia i działania jest szerokie zainteresowanie światem oraz sposobami, za pomocą których człowiek potrafi ten świat objaśniać i zrozumieć - niezależnie od tego, jak bardzo naukowe są to metody.
+Praktyka zawodowa pozwoliła mi na dostrzeżenie, coraz wyraźniej się rysujących, cech otaczającej nas rzeczywistości: (a) świat osiągnął stopień złożoności nieogarnialny dla pojedynczego umysłu, (b) metody opisu tego świata przy rosnącym udziale komponentu stochastycznego takich modeli nie wytrzymują zderzenia z rzeczywistością, a jednocześnie, jakby nie dostrzegając dwóch w/w cech (c) nierzadko budujemy modele, których stopień złożoności jest większy niż zjawiska, które mają opisać. To odkrycie skłoniło mnie do głębszej refleksji nad rolą metod ilościowych w biznesie, w ekonomii i szeroko rozumianych naukach społecznych oraz podjęcia drogi wypracowania własnego podejścia badawczego.
