@@ -29,6 +29,7 @@ Obszary prowadzonych przeze mnie projektów:
 - ryzyko operacyjne (AMA),
 - ICAAP (kapitał wewnętrzny: ryzyko kredytowe, proces odzyskiwania, ryzyko reputacji)
 W odniesieniu do w/w obszarów aktywnie uczestniczyłem w całym cyklu życia modeli, co dało mi szerokie podstawy do obserwacji skuteczności ich działania, w kontekście ich umiejętności opisu rzeczywistości.
+
 ##### Stosowane techniki statystyczne/ekonometryczne
 W moich dotychczasowych pracach projektowych i badawczych szeroko wykorzystywałem techniki mieszczące się w kategorii metod ilościowych:
 - klasyczne metody statystyczne, opis zjawisk za pomocą rozkładów prawdopodobieństwa, statystyka szeregów czasowych
@@ -38,13 +39,16 @@ W moich dotychczasowych pracach projektowych i badawczych szeroko wykorzystywał
 - modelowanie wartości ekstremalnych: I i II teoria EVT
 - modelowanie w podejściu aktuarialnym - sektor ubezpieczeniowy
 - metody numeryczne / bootstrapping, Testy Warunków Skrajnych
+
 ##### Autorskie narzędzia analityczne
 Jestem autorem kilkudziesięciu (w samej metodyce modelu AMA jest ponad 50) badań/narzędzi analitycznych, niektóre z nich całkowicie nowatorskie. Umiejętność wymyślenia badania dla konkretnego zagadnienia pozwalała mi wykryć niewidoczne z innych perspektyw nieprawidłowości.
-#### Poza liczbami
+
+---
+
+##### Poza liczbami
 Moje zainteresowania wykraczają daleko poza świat finansów:
 Historia i socjologia fascynują mnie szczególnie. Zgłębiam przyczyny wybuchu I wojny światowej i strukturę spraw w Polsce końca XVIII wieku, szukając wzorców, które można odnieść do współczesności.
 Sport to dla mnie nie tylko aktywność fizyczna. Analizuję strategie w kolarstwie, zgłębiam "uczciwe i nieuczciwe" aspekty sportu, badam kompleksowe procesy treningowe w bieganiu i narciarstwie biegowym.
 Muzyka towarzyszy mi od lat. Moje doświadczenie w świecie muzyki pozwala mi lepiej rozumieć harmonię i kompozycję, co przekłada się na sposób, w jaki podchodzę do rozwiązywania problemów.
 Metody ilościowe znajdują zastosowanie w codziennym życiu. Fascynuje mnie, jak często nieświadomie wykorzystujemy obliczenia do podejmowania decyzji i zarządzania wartością oczekiwaną naszych działań.
-### Filozofia szkoleniowa
-Wierzę w przekazywanie wiedzy w sposób przystępny i praktyczny. Moja zdolność do tłumaczenia skomplikowanych koncepcji technicznych na zrozumiałe ramy została potwierdzona przez liczne udane sesje szkoleniowe i warsztaty. To nie tylko przekazywanie informacji, ale prawdziwe budowanie zrozumienia i inspirowanie do rozwoju.
+
