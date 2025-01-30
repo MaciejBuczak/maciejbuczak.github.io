@@ -9,6 +9,8 @@ layout: default
   <a href="/contact" class="menu-option">Kontakt</a>
 </div>
 
+<div class="square"></div>
+
 Specjalizuję się w przekształcaniu złożonych wyzwań zarządzania ryzykiem w innowacyjne rozwiązania. Z ponad 17-letnim doświadczeniem w zarządzaniu ryzykiem modeli, prowadzeniu zespołów i tworzeniu przełomowych metodologii, łączę głęboką wiedzę techniczną z umiejętnością rozwijania ludzi.
 
 ### Moje kluczowe obszary
