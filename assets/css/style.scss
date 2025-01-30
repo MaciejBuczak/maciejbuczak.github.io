@@ -5,7 +5,7 @@
   background-color: #a85903;
   background-image: linear-gradient(120deg, #a85903, #bf6604);
   position: relative;
-  margin-bottom: -60px !important; /* Zmniejszamy odstęp od dołu nagłówka */
+  margin-bottom: -80px !important;
 }
 #header_wrap {
   background: #a85903;
@@ -32,7 +32,8 @@ h6 {
 }
 #main_content {
   color: #737373;
-  margin-top: -20px !important; /* Zmniejszamy górny margines treści */
+  margin-top: 0 !important;
+  padding-top: 20px;
   
   h1,
   h2,
@@ -61,18 +62,17 @@ html, body {
 }
 
 #myMenu {
-  text-align: center;
-  padding: 20px 0;
-  margin-top: 0 !important; /* Usuwamy górny margines menu */
+  text-align: left;
+  padding: 10px 0;
+  margin-top: 0 !important;
+  max-width: 64rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
 }
 
-.menu-option {
-  color: rgb(115, 115, 115);
-  text-decoration: none;
-  margin: 0 20px;  /* zmniejszone z 50px na 20px */
-  padding: 5px 10px;
-  font-size: 18px;
-  transition: color 0.3s;
+.menu-option:first-child {
+  margin-left: 0;
 }
 
 .menu-option:hover {
