@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Innovative Approaches to Risk Management in Modern Banking"
+title: "Bieg wsteczny w rozwoju koncepcji modelowania wartości nieoczekiwanej w sektorze finansowym na przykładzie decyzji o wycofaniu frameworku AMA w ryzyku operacyjnym"
 date: Grudzień 2024
 source: "Przesłano do: Metody ilościowe w badaniach ekonomicznych"
 views: 245
