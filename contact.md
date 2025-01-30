@@ -10,6 +10,11 @@ title: Kontakt
   <a href="/contact" class="menu-option">Kontakt</a>
 </div>
 
+<div class="square"></div>
+<div class="square1"></div>
+<div class="square2"></div>
+<div class="square-big"></div>
+
 # Kontakt
 
 ## Email
