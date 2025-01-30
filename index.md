@@ -10,6 +10,7 @@ layout: default
 </div>
 
 <div class="square"></div>
+<div class="square1"></div>
 
 Specjalizuję się w przekształcaniu złożonych wyzwań zarządzania ryzykiem w innowacyjne rozwiązania. Z ponad 17-letnim doświadczeniem w zarządzaniu ryzykiem modeli, prowadzeniu zespołów i tworzeniu przełomowych metodologii, łączę głęboką wiedzę techniczną z umiejętnością rozwijania ludzi.
 
