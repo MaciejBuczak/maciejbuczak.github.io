@@ -234,6 +234,45 @@ hr {
 
 
 
+
+
+.publication-full {
+    background: #fff;
+    border-radius: 8px;
+    padding: 40px;
+    margin: 20px auto;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    max-width: 900px;
+}
+
+.publication-header {
+    margin-bottom: 30px;
+}
+
+.publication-title-full {
+    font-size: 2em;
+    color: #333;
+    margin: 20px 0;
+}
+
+.publication-meta-full {
+    color: #888;
+    margin: 15px 0;
+}
+
+.publication-content {
+    color: #737373;
+    text-align: justify;
+}
+
+
+
+
+
+
+
+
+
 #myMenu {
   display: flex;
   justify-content: center;
