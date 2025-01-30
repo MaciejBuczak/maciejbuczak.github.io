@@ -21,6 +21,7 @@ W toku realizacji projektów opracowałem szereg metodyk opartych o szeroko rozu
 - opracowałem w większości autorską metodykę oceny modelu ECL,
 - opracowałem w większości autorską metodykę dla obszaru ICAAP,
 - opracowałem uniwersalną metodykę modelu zaawansowanego pomiaru AMA wraz z implementacją do systemu IT
+
 ##### Ocena jakości modeli statystycznych
 Przeprowadziłem kilkadziesiąt procesów holistycznej ewaluacji modelu. Proces oceny pojedynczego modelu, to złożony ciąg czynności, zmierzający do wszechstronnej oceny modelu ryzyka. Czynności te to: ocena jakości danych; adekwatność zbiorów danych; reprezentatywność (czasowa i przestrzenna); poprawność transferu danych ze środowisk ich gromadzenia do modelu; ocena koncepcji modelu, czyli wybranego (często złożony z wielu technik statystycznych) do opisu modelowanego zjawiska, schematu myślowy; ocena wzajemnych relacji technik statystycznych wewnątrz modelu; procesy estymacyjne i ich jakość; najważniejsze – holistyczne spojrzenie na model pod kątem jego ogólnej zgodności z rzeczywistością.
 Obszary prowadzonych przeze mnie projektów: 
