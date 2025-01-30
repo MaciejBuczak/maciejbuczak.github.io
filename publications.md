@@ -20,11 +20,11 @@ title: Publikacje
   
   <div class="publication-card">
     <span class="publication-pin">📌 Przypięte</span>
-    <span class="publication-status status-published">OPUBLIKOWANE</span>
-    <div class="publication-source">Opublikowano w Journal of Risk Management</div>
+    <span class="publication-status status-review">PROCES RECENZJI</span>
+    <div class="publication-source">Przesłane do: Metody ilościowe w badaniach ekonomicznych</div>
     <h2 class="publication-title">
       <a href="{{ site.baseurl }}/publications/2024-01-risk-management" class="publication-link">
-        Innovative Approaches to Risk Management in Modern Banking
+        Bieg wsteczny w rozwoju koncepcji modelowania wartości nieoczekiwanej w sektorze finansowym na przykładzie decyzji o wycofaniu frameworku AMA w ryzyku operacyjnym
       </a>
     </h2>
     <p class="publication-description">W obecnym środowisku finansowym, tradycyjne metody zarządzania ryzykiem wymagają fundamentalnego przemyślenia. Artykuł przedstawia nowatorskie podejście do analizy i zarządzania ryzykiem w sektorze bankowym...</p>
