@@ -13,6 +13,8 @@ title: O mnie
 
 W toku mojej kariery zawodowej zgromadziłem bogate doświadczenie w projektowaniu i prowadzeniu badań z wykorzystaniem zaawansowanych metod ilościowych. Moje kompetencje obejmują:
 ##### Budowa kompleksowych metodyk
+W toku mojej kariery zawodowej zgromadziłem bogate doświadczenie w projektowaniu i prowadzeniu badań z wykorzystaniem zaawansowanych metod ilościowych. Moje kompetencje obejmują:
+Budowa kompleksowych metodyk
 W toku realizacji projektów opracowałem szereg metodyk opartych o szeroko rozumiane techniki statystyczne i ilościowe:
 - opracowałem w pełni autorską metodykę holistycznej oceny modelu ryzyka operacyjnego AMA, ponad 50 autorskich badań analitycznych, bardzo dobra ocena krajowego nadzorcy,
 - opracowałem w pełni autorską metodykę holistycznej oceny modeli lifetime PD (IFRS9), również bardzo dobra ocena nadzorcy,
@@ -25,7 +27,7 @@ Obszary prowadzonych przeze mnie projektów:
 - ECL/Impairment (PD, LGD, EAD, SICR, FLI),
 - ryzyko operacyjne (AMA),
 - ICAAP (kapitał wewnętrzny: ryzyko kredytowe, proces odzyskiwania, ryzyko reputacji)
-- W odniesieniu do w/w obszarów aktywnie uczestniczyłem w całym cyklu życia modeli, co dało mi szerokie podstawy do obserwacji skuteczności ich działania, w kontekście ich umiejętności opisu rzeczywistości.
+W odniesieniu do w/w obszarów aktywnie uczestniczyłem w całym cyklu życia modeli, co dało mi szerokie podstawy do obserwacji skuteczności ich działania, w kontekście ich umiejętności opisu rzeczywistości.
 ##### Stosowane techniki statystyczne/ekonometryczne
 W moich dotychczasowych pracach projektowych i badawczych szeroko wykorzystywałem techniki mieszczące się w kategorii metod ilościowych:
 - klasyczne metody statystyczne, opis zjawisk za pomocą rozkładów prawdopodobieństwa, statystyka szeregów czasowych
@@ -37,7 +39,6 @@ W moich dotychczasowych pracach projektowych i badawczych szeroko wykorzystywał
 - metody numeryczne / bootstrapping, Testy Warunków Skrajnych
 ##### Autorskie narzędzia analityczne
 Jestem autorem kilkudziesięciu (w samej metodyce modelu AMA jest ponad 50) badań/narzędzi analitycznych, niektóre z nich całkowicie nowatorskie. Umiejętność wymyślenia badania dla konkretnego zagadnienia pozwalała mi wykryć niewidoczne z innych perspektyw nieprawidłowości.
-
 #### Poza liczbami
 Moje zainteresowania wykraczają daleko poza świat finansów:
 Historia i socjologia fascynują mnie szczególnie. Zgłębiam przyczyny wybuchu I wojny światowej i strukturę spraw w Polsce końca XVIII wieku, szukając wzorców, które można odnieść do współczesności.
