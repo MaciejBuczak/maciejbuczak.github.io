@@ -14,12 +14,10 @@ pinned: true
   <a href="/articles" class="menu-option">Artykuły</a>
   <a href="/contact" class="menu-option">Kontakt</a>
 </div>
-
 <div class="square"></div>
 <div class="square1"></div>
 <div class="square2"></div>
 <div class="square-big"></div>
-
 <div class="publication-full">
     <div class="publication-header">
         <span class="publication-pin">📌 Przypięte</span>
@@ -33,8 +31,16 @@ pinned: true
             📅 {{ page.date | date: "%d-%m-%Y" }} &nbsp;&nbsp;|&nbsp;&nbsp; 
             👁️ {{ page.views }} wyświetleń
         </div>
-    </div>
 
+        <div class="download-links">
+            <a href="/assets/pdfs/oprisk_2024_12_cancellation_pl.pdf" class="download-button">
+                📄 Pobierz artykuł (PL)
+            </a>
+            <a href="/assets/pdfs/oprisk_2024_12_cancellation_en.pdf" class="download-button">
+                📄 Download article (EN)
+            </a>
+        </div>
+    </div>
     <div class="publication-content">
         <h5>Abstrakt</h5>
         <p>
@@ -43,28 +49,21 @@ w 2004 r. (Basel II) koncepcji bezpieczeństwa kapitałowego. W niektórych obsz
 i ostatecznych. Taką decyzję podjęto w stosunku do stosowanej w przestrzeni ryzyka operacyjnego Metody Zaawansowanego Pomiaru AMA. 
 W niniejszym artykule staram się przedstawić szeroki kontekst, jaki tej decyzji towarzyszył, wraz z własnym, skromnym osądem sytuacji.
         </p>
-
-                <h5>Abstrakt - ENG</h5>
+        <h5>Abstrakt - ENG</h5>
         <p>
 On January 1, 2025, a new financial sector security architecture comes into force through the CRR III regulations. The actions related to developing new regulations were accompanied by deep reflection on the effectiveness of the previous capital security concept developed in 2004 (Basel II). In some areas, this reflection led the regulator to dichotomous and final decisions. Such a decision was made regarding the Advanced Measurement Approach (AMA) used in the operational risk space. In this article, I attempt to present the broad context that accompanied this decision, along with my own modest assessment of the situation.
         </p>
-
-                <h5>Słowa kluczowe</h5>
+        <h5>Słowa kluczowe</h5>
         <p>
 ryzyko operacyjne, Metoda Zaawansowanego Pomiaru, AMA, IRB, Basel II, Basel III, CRR III, adekwatność kapitałowa, model ryzyka operacyjnego, model wartości nieoczekiwanej, model wartości ekstremalnych, EVT, model wartości oczekiwanej
         </p>
-
-                <h5>Keywords</h5>
+        <h5>Keywords</h5>
         <p>
 operational risk, Advanced Measurement Approach, AMA, IRB, Basel II, Basel III, CRR III, capital adequacy, operational risk model, unexpected value model, extreme value model, EVT, expected value model
         </p>
-
-
-                <h5>JEL classification</h5>
+        <h5>JEL classification</h5>
         <p>
 G21, G32, C52
         </p>
-
-       
     </div>
 </div>
