@@ -106,9 +106,13 @@ html, body {
   // Możesz zmieniać te wartości, aby przemieszczać kwadrat
   top: -130px;  
   left: 70px;
-  z-index: -0.5;
+  z-index: 1;
 }
 
+.project-name, .project-tagline {
+  position: relative;
+  z-index: 2;  // tekst będzie nad kwadratem
+}
 
 
 #myMenu {
