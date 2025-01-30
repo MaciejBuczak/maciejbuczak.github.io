@@ -100,11 +100,11 @@ html, body {
 
 .square-big {
   width: 150px;  // rozmiar kwadratu
-  height: 45px;
+  height: 38px;
   background-color: #d17a1b;  // kolor pomarańczowy, taki jak w nagłówku
   position: absolute;  // pozycjonowanie absolutne
   // Możesz zmieniać te wartości, aby przemieszczać kwadrat
-  top: -80px;  
+  top: -100px;  
   left: 0px;
   z-index: 1;
 }
