@@ -50,8 +50,7 @@ Jestem autorem kilkudziesięciu (w samej metodyce modelu AMA jest ponad 50) bada
 <hr>
 
 ##### Poza liczbami
-Moje zainteresowania wykraczają daleko poza świat finansów:
-Historia i socjologia fascynują mnie szczególnie. Zgłębiam przyczyny wybuchu I wojny światowej i strukturę spraw w Polsce końca XVIII wieku, szukając wzorców, które można odnieść do współczesności.
+Moje zainteresowania wykraczają daleko poza świat finansów. Historia i socjologia fascynują mnie szczególnie. Zgłębiam przyczyny wybuchu I wojny światowej i strukturę spraw w Polsce końca XVIII wieku, szukając wzorców, które można odnieść do współczesności.
 Sport to dla mnie nie tylko aktywność fizyczna. Analizuję strategie w kolarstwie, zgłębiam "uczciwe i nieuczciwe" aspekty sportu, badam kompleksowe procesy treningowe w bieganiu i narciarstwie biegowym.
 Muzyka towarzyszy mi od lat. Moje doświadczenie w świecie muzyki pozwala mi lepiej rozumieć harmonię i kompozycję, co przekłada się na sposób, w jaki podchodzę do rozwiązywania problemów.
 Metody ilościowe znajdują zastosowanie w codziennym życiu. Fascynuje mnie, jak często nieświadomie wykorzystujemy obliczenia do podejmowania decyzji i zarządzania wartością oczekiwaną naszych działań.
