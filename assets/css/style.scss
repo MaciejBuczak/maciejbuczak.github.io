@@ -75,7 +75,7 @@ html, body {
   color: rgb(115, 115, 115);
   text-decoration: none;
   padding: 5px 10px;
-  margin: 0 15px;  // zmniejszamy margines między elementami
+  margin: 0 15px;
   font-size: 18px;
   transition: color 0.3s;
   white-space: nowrap;
@@ -83,6 +83,18 @@ html, body {
 
 .menu-option:hover {
   color: #a85903;
+}
+
+// Dodajemy responsywność dla telefonów
+@media screen and (max-width: 768px) {
+  #myMenu {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .menu-option {
+    margin: 5px 0;  // zmieniamy margines na góra-dół
+  }
 }
 
 
