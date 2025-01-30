@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Bieg wsteczny w rozwoju koncepcji modelowania wartości nieoczekiwanej w sektorze finansowym na przykładzie decyzji o wycofaniu frameworku AMA w ryzyku operacyjnym"
-date: Grudzień 2024
+date: 15-12-2024
 source: "Przesłano do: Metody ilościowe w badaniach ekonomicznych"
 views: 245
 ---
