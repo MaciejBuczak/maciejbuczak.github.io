@@ -250,10 +250,11 @@ hr {
 }
 
 .publication-title-full {
-    font-size: 2em;
-    color: #333;
+    font-size: 1.5em;
+    color: #737373;    // dokładnie ten sam kolor co na liście
     margin: 20px 0;
-}
+    line-height: 1.4;
+    }
 
 .publication-meta-full {
     color: #888;
