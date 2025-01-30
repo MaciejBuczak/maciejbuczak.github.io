@@ -64,18 +64,21 @@ html, body {
 }
 
 #myMenu {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
   padding: 20px 0;
-  margin-top: 0 !important; /* Usuwamy górny margines menu */
+  margin-top: 0 !important;
 }
 
 .menu-option {
   color: rgb(115, 115, 115);
   text-decoration: none;
-  margin: 0 20px;  /* zmniejszone z 50px na 20px */
   padding: 5px 10px;
+  margin: 0 15px;  // zmniejszamy margines między elementami
   font-size: 18px;
   transition: color 0.3s;
+  white-space: nowrap;
 }
 
 .menu-option:hover {
