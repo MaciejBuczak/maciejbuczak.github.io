@@ -15,13 +15,25 @@ title: Publikacje
 <div class="square2"></div>
 <div class="square-big"></div>
 
-# Publikacje
 
-## Artykuły naukowe
-- [Link do Próbnego pliku - kliknij tutaj aby pobrać](/assets/pdfs/Probny_plik.pdf)
+<div class="publications-container">
+  # Publikacje
 
-## Raporty techniczne
-- Raport 1 (w przygotowaniu)
+  <div class="publication-card">
+    <span class="publication-pin">📌 Przypięte</span>
+    <div class="publication-source">Opublikowano w Journal of Risk Management</div>
+    <h2 class="publication-title">Innovative Approaches to Risk Management in Modern Banking</h2>
+    <p class="publication-description">W obecnym środowisku finansowym, tradycyjne metody zarządzania ryzykiem wymagają fundamentalnego przemyślenia. Artykuł przedstawia nowatorskie podejście do analizy i zarządzania ryzykiem w sektorze bankowym...</p>
+    <div class="publication-meta">📅 Styczeń 2024 &nbsp;&nbsp;|&nbsp;&nbsp; 👁️ 245 wyświetleń</div>
+  </div>
 
-## Prezentacje konferencyjne
-- Prezentacja 1 (w przygotowaniu)
+  <div class="publication-card">
+    <div class="publication-source">Opublikowano w Risk Analysis Quarterly</div>
+    <h2 class="publication-title">Metodologia oceny ryzyka w projektach innowacyjnych</h2>
+    <p class="publication-description">Analiza skutecznych metod oceny ryzyka w projektach wykorzystujących najnowsze technologie. Praca prezentuje framework łączący klasyczne podejście z nowoczesnymi narzędziami analitycznymi...</p>
+    <div class="publication-meta">📅 Grudzień 2023 &nbsp;&nbsp;|&nbsp;&nbsp; 👁️ 189 wyświetleń</div>
+  </div>
+</div>
+
+
+
