@@ -23,7 +23,7 @@ title: Publikacje
     <span class="publication-status status-review">PROCES RECENZJI</span>
     <div class="publication-source">Przesłane do: Metody ilościowe w badaniach ekonomicznych</div>
     <h2 class="publication-title">
-      <a href="{{ site.baseurl }}/publications/2024-01-risk-management" class="publication-link">
+      <a href="{{ site.baseurl }}/publications/oprisk_2024_12_cancellation" class="publication-link">
         Bieg wsteczny w rozwoju koncepcji modelowania wartości nieoczekiwanej w sektorze finansowym na przykładzie decyzji o wycofaniu frameworku AMA w ryzyku operacyjnym
       </a>
     </h2>
