@@ -65,24 +65,6 @@ operational risk, Advanced Measurement Approach, AMA, IRB, Basel II, Basel III, 
 G21, G32, C52
         </p>
 
-        <h2>Wprowadzenie</h2>
-        <p>
-            [Treść wprowadzenia...]
-        </p>
-
-        <h2>Metodologia</h2>
-        <p>
-            [Opis metodologii...]
-        </p>
-        
-        <h2>Wyniki</h2>
-        <p>
-            [Opis wyników...]
-        </p>
-
-        <h2>Wnioski</h2>
-        <p>
-            [Wnioski...]
-        </p>
+       
     </div>
 </div>
