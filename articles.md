@@ -10,6 +10,11 @@ title: Artykuły
   <a href="/contact" class="menu-option">Kontakt</a>
 </div>
 
+<div class="square"></div>
+<div class="square1"></div>
+<div class="square2"></div>
+<div class="square-big"></div>
+
 ### O mnie
 Moja droga zawodowa to połączenie pasji do analizy danych z głębokim przekonaniem o wartości rozwoju ludzi. Przez ponad 17 lat w branży finansowej, wypracowałem unikalne podejście łączące rygorystyczne myślenie analityczne z praktycznym wdrażaniem rozwiązań.
 #### Moje podejście
