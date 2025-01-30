@@ -1,4 +1,5 @@
 title: "Maciej Buczak"
 description: "Risk Manager"
 theme: jekyll-theme-slate
-
+footer:
+  text: "© 2024 Maciej Buczak | Ostatnia aktualizacja: Styczeń 2024"
