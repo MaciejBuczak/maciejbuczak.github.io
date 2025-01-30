@@ -207,6 +207,32 @@ hr {
 
 
 
+.publication-status {
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    display: inline-block;
+    margin-bottom: 10px;
+    margin-right: 5px;
+}
+
+.status-published {
+    background: #2ecc71;  // zielony dla opublikowanych
+    color: white;
+}
+
+.status-review {
+    background: #f1c40f;  // żółty dla procesu recenzji
+    color: white;
+}
+
+.status-preprint {
+    background: #95a5a6;  // szary dla preprintów
+    color: white;
+}
+
+
+
 
 #myMenu {
   display: flex;
