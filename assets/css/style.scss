@@ -64,7 +64,12 @@ html, body {
 }
 
 
-
+hr {
+  margin: 20px 0;
+  border: none;
+  border-top: 1px solid #a85903; // lub jaki kolor preferujesz
+  width: 100%; // lub inna szerokość
+}
 
 
 .square {
