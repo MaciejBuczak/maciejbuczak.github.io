@@ -111,7 +111,12 @@ html, body {
 
 .project-name, .project-tagline {
   position: relative;
-  z-index: 2;  // tekst będzie nad kwadratem
+  z-index: 10;  // znacznie wyższa wartość dla tekstu
+}
+
+#header_wrap .inner {
+  position: relative;
+  z-index: 10;  // ten sam z-index co tekst
 }
 
 
