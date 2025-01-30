@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "Innovative Approaches to Risk Management in Modern Banking"
-date: 2024-01-15
-source: "Journal of Risk Management"
+date: Grudzień 2024
+source: "Przesłano do: Metody ilościowe w badaniach ekonomicznych"
 views: 245
 ---
 
