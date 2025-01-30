@@ -38,7 +38,31 @@ pinned: true
     <div class="publication-content">
         <h5>Abstrakt</h5>
         <p>
-            W artykule prezentuję moje wysokopoziomowe stanowisko odnośnie decyzji o wycofaniu całego frameworku modelowania ze stosowania w sektorze bankowym. Tematyką tą zajmowalem się w zasadzie od kilkunastu lat. Framework, o którym tu mowa, poznałem zarówno od strony jego ogólnych celów biznesowych, aż po każdy szczegółowy aspekt przestrzeni jego modelowania. Rozumiem zatem przyczyny wycofania tej koncepcji z użycia. W artykule tym zamieściłem mój komentarz odnośnie takiego przebiegu wydarzeń.
+            1 stycznia 2025 r. za pośrednictwem przepisów CRR III wchodzi w życie nowa architektura bezpieczeństwa sektora finansowego. Działaniom związanym z wypracowaniem nowych regulacji towarzyszyła pogłębiona refleksja na temat skuteczności dotychczasowej, opracowanej 
+w 2004 r. (Basel II) koncepcji bezpieczeństwa kapitałowego. W niektórych obszarach refleksja ta zaprowadziła regulatora do decyzji dychotomicznych 
+i ostatecznych. Taką decyzję podjęto w stosunku do stosowanej w przestrzeni ryzyka operacyjnego Metody Zaawansowanego Pomiaru AMA. 
+W niniejszym artykule staram się przedstawić szeroki kontekst, jaki tej decyzji towarzyszył, wraz z własnym, skromnym osądem sytuacji.
+        </p>
+
+                <h5>Abstrakt - ENG</h5>
+        <p>
+On January 1, 2025, a new financial sector security architecture comes into force through the CRR III regulations. The actions related to developing new regulations were accompanied by deep reflection on the effectiveness of the previous capital security concept developed in 2004 (Basel II). In some areas, this reflection led the regulator to dichotomous and final decisions. Such a decision was made regarding the Advanced Measurement Approach (AMA) used in the operational risk space. In this article, I attempt to present the broad context that accompanied this decision, along with my own modest assessment of the situation.
+        </p>
+
+                <h5>Słowa kluczowe</h5>
+        <p>
+ryzyko operacyjne, Metoda Zaawansowanego Pomiaru, AMA, IRB, Basel II, Basel III, CRR III, adekwatność kapitałowa, model ryzyka operacyjnego, model wartości nieoczekiwanej, model wartości ekstremalnych, EVT, model wartości oczekiwanej
+        </p>
+
+                <h5>Keywords</h5>
+        <p>
+operational risk, Advanced Measurement Approach, AMA, IRB, Basel II, Basel III, CRR III, capital adequacy, operational risk model, unexpected value model, extreme value model, EVT, expected value model
+        </p>
+
+
+                <h5>JEL classification</h5>
+        <p>
+G21, G32, C52
         </p>
 
         <h2>Wprowadzenie</h2>
