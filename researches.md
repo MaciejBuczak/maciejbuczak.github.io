@@ -19,7 +19,7 @@ title: Badania
 
 
 <div class="publications-container">
-  Badania
+  # Badania
 
 
   <div class="publication-card">
