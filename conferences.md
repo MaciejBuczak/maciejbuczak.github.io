@@ -22,23 +22,26 @@ Uczestniczyłem w roli prelegenta/szkoleniowca w następujących konferencjach/w
 <br>
 <br>
 
+
 <div class="conferences-container">
-  <div class="conference-card">
-    <div class="conference-badge">Konferencja</div>
-    <div class="conference-organizer">Organizator: Nazwa organizatora</div>
-    <h2 class="conference-title">Nazwa konferencji</h2>
-    <div class="conference-topic">Temat: Temat konferencji</div>
-    <p class="conference-description">Szczegółowy opis konferencji...</p>
-    <div class="conference-meta">📅 2023</div>
-        <div class="conference-buttons">
-        <a href="#" class="conference-button">
-            📄 Brochure
-        </a>
-        <a href="#" class="conference-button">
-            📊 Presentation
-        </a>
-    </div>
-  </div>
+
+
+ <div class="conference-card">
+   <div class="conference-badge">Konferencja</div>
+   <div class="conference-organizer">Organizator: Nazwa organizatora</div>
+   <h2 class="conference-title">Nazwa konferencji</h2>
+   <div class="conference-topic">Temat: Temat konferencji</div>
+   <p class="conference-description">Szczegółowy opis konferencji...</p>
+   <div class="conference-meta">📅 2023</div>
+   <div class="conference-buttons">
+     <a href="/downloads/conferences/conference1_brochure.pdf" class="conference-button">
+       📄 Brochure
+     </a>
+     <a href="/downloads/conferences/conference1_presentation.pptx" class="conference-button">
+       📊 Presentation
+     </a>
+   </div>
+ </div>
 
 
   <div class="conference-card">
