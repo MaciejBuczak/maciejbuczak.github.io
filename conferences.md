@@ -73,7 +73,41 @@ Uczestniczyłem w roli prelegenta/szkoleniowca w następujących konferencjach/w
   </div>
 
 
+    <div class="conference-card">
+    <div class="conference-badge">Warsztaty</div>
+    <div class="conference-organizer">Organizator: Uniwersytet Warszawski, Wydział Ekonomii</div>
+    <h2 class="conference-title">Zarządzanie ryzykiem operacyjnym z wykorzystaniem rozwiązania informatycznego (Warszawa)</h2>
+    <p class="conference-description">Warsztaty dla studentów Wydziału Ekonomii UW</p>
+    <div class="conference-meta">📅 2011</div>
+  </div>
 
-  
+
+    <div class="conference-card">
+    <div class="conference-badge">Warsztaty</div>
+    <div class="conference-organizer">Organizator: Narodowy Bank Polski</div>
+    <h2 class="conference-title">Advanced Measurement Approach (Warszawa)</h2>
+    <p class="conference-description">Cykl szkoleń dla analityków Narodowego Banku Polskiego</p>
+    <div class="conference-meta">📅 2009</div>
+  </div>
+
+
+    <div class="conference-card">
+    <div class="conference-badge">Warsztaty</div>
+    <div class="conference-organizer">Organizator: Banki komercyjne</div>
+    <h2 class="conference-title">Zarządzanie ryzykiem operacyjnym z wykorzystaniem rozwiązania informatycznego (Warszawa, Katowice)</h2>
+    <p class="conference-description">Cykl szkoleń dla analityków polskich banków komercyjnych</p>
+    <div class="conference-meta">📅 2008-2012</div>
+  </div>
+
+
+    <div class="conference-card">
+    <div class="conference-badge">Warsztaty</div>
+    <div class="conference-organizer">Organizator: Banki komercyjne</div>
+    <h2 class="conference-title">Wykorzystanie systemu informatycznego w AML (Warszawa)</h2>
+    <p class="conference-description">Cykl szkoleń dla analityków polskich banków komercyjnych</p>
+    <div class="conference-meta">📅 2013</div>
+  </div>
+
+
   
 </div>
