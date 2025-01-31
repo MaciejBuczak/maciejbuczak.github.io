@@ -29,9 +29,7 @@ title: Badania
         <span class="domain-secondary">Impairment/ECL</span>
     </div>
     <h2 class="publication-title">
-      <a href="{{ site.baseurl }}/publications/2023-12-risk-assessment" class="publication-link">
       Badanie nakładających się efektów/prawdopodobieństw przy próbie składania parametrów w koncepcję ECL
-      </a>
     </h2>
     <p class="publication-description">Zagadnienia: prawd. odzysku lifetime, prawd. sprzedaży majątku rzeczowego, reprezentatywność próby w kontekście sposobu stosowania modelu, zbędne złożoności modeli - powtarzające się parametry</p>
     <div class="publication-meta">📅 2023</div>
