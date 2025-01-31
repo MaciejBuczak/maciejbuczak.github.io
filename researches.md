@@ -16,7 +16,7 @@ title: Badania
 <div class="square2"></div>
 <div class="square-big"></div>
 
-##### Badania - sektor bankowy
+##### Badania/analizy - ryzyko w sektorze bankowy
 Przeprowadziłem lub współuczestniczyłem w przeprowadzeniu badań/analiz:
 
 
@@ -177,3 +177,62 @@ Przeprowadziłem lub współuczestniczyłem w przeprowadzeniu badań/analiz:
     <div class="publication-meta">📅 2017</div>
   </div>
 
+
+##### Opracowane metodyki - ryzyko w sektorze bankowy
+Przeprowadziłem lub współuczestniczyłem w opracowaniu metodyk:
+
+    <div class="publication-card">
+    <div class="publication-domain">
+        <span class="domain-primary">Ryzyko w bankowości</span>
+        <span class="domain-separator">|</span>
+        <span class="domain-secondary">Ryzyko operacyjne</span>
+    </div>
+    <h2 class="publication-title">
+        Metodyka: Holistycznej ocena modelu ryzyka operacyjnego AMA
+    </h2>
+    <p class="publication-description">Ponad 50 autorskich badań analitycznych, bardzo dobra ocena krajowego nadzorcy</p>
+    <div class="publication-meta">📅 2018</div>
+  </div>
+
+
+    <div class="publication-card">
+    <div class="publication-domain">
+        <span class="domain-primary">Ryzyko w bankowości</span>
+        <span class="domain-separator">|</span>
+        <span class="domain-secondary">Impairment/ECL/lifetime PD</span>
+    </div>
+    <h2 class="publication-title">
+        Metodyka: Holistycznej ocena modeli lifetime PD (IFRS9)
+    </h2>
+    <p class="publication-description">Autorskie podejście do bactestowania, rozbudowane podejście do oceny logiki biznesowej, bardzo dobra ocena krajowego nadzorcy</p>
+    <div class="publication-meta">📅 2018</div>
+  </div>
+
+
+    <div class="publication-card">
+    <div class="publication-domain">
+        <span class="domain-primary">Ryzyko w bankowości</span>
+        <span class="domain-separator">|</span>
+        <span class="domain-secondary">Impairment/ECL</span>
+    </div>
+    <h2 class="publication-title">
+        Metodyka: Holistycznej ocena modelu ECL
+    </h2>
+    <p class="publication-description">Kompleksowe podejście do oceny modelu ECL</p>
+    <div class="publication-meta">📅 2021</div>
+  </div>
+
+
+
+    <div class="publication-card">
+    <div class="publication-domain">
+        <span class="domain-primary">Ryzyko w bankowości</span>
+        <span class="domain-separator">|</span>
+        <span class="domain-secondary">ICAAP/modele wewnętrzne</span>
+    </div>
+    <h2 class="publication-title">
+        Metodyka: Holistycznej ocena modeli kapiatłu wewnętrznego
+    </h2>
+    <p class="publication-description">Metodyka dla modeli kapitału ekenomicznego</p>
+    <div class="publication-meta">📅 2019</div>
+  </div>
