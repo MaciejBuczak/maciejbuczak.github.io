@@ -16,7 +16,7 @@ title: Badania
 <div class="square2"></div>
 <div class="square-big"></div>
 
-##### Badania/analizy - ryzyko w sektorze bankowy
+##### Badania/analizy - ryzyko w sektorze bankowym
 Przeprowadziłem lub współuczestniczyłem w przeprowadzeniu badań/analiz:
 
 
@@ -176,10 +176,15 @@ Przeprowadziłem lub współuczestniczyłem w przeprowadzeniu badań/analiz:
     <p class="publication-description">Zagadnienia: analiza przeżycia, rozkład Weibulla, różne ujęcia czasowe</p>
     <div class="publication-meta">📅 2017</div>
   </div>
+  </div>
 
 
 ##### Opracowane metodyki - ryzyko w sektorze bankowy
 Przeprowadziłem lub współuczestniczyłem w opracowaniu metodyk:
+
+
+<div class="publications-container">
+
 
     <div class="publication-card">
     <div class="publication-domain">
@@ -235,4 +240,5 @@ Przeprowadziłem lub współuczestniczyłem w opracowaniu metodyk:
     </h2>
     <p class="publication-description">Metodyka dla modeli kapitału ekenomicznego</p>
     <div class="publication-meta">📅 2019</div>
+  </div>
   </div>
