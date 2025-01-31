@@ -179,10 +179,13 @@ Przeprowadziłem lub współuczestniczyłem w przeprowadzeniu badań/analiz:
   </div>
   </div>
 
+<br>
+<br>
 
-##### Opracowane metodyki - ryzyko w sektorze bankowy
+##### Opracowane metodyki - ryzyko w sektorze bankowym
 Przeprowadziłem lub współuczestniczyłem w opracowaniu metodyk:
-
+<br>
+<br>
 
 <div class="publications-container">
 
@@ -241,5 +244,31 @@ Przeprowadziłem lub współuczestniczyłem w opracowaniu metodyk:
     </h2>
     <p class="publication-description">Metodyka dla modeli kapitału ekenomicznego</p>
     <div class="publication-meta">📅 2019</div>
+  </div>
+  </div>
+
+
+<br>
+<br>
+
+##### Projety IT - ryzyko w sektorze bankowym
+Przeprowadziłem lub współuczestniczyłem w opracowaniu metodyk:
+<br>
+<br>
+
+<div class="publications-container">
+
+
+    <div class="publication-card">
+    <div class="publication-domain">
+        <span class="domain-primary">Ryzyko w bankowości</span>
+        <span class="domain-separator">|</span>
+        <span class="domain-secondary">Ryzyko operacyjne</span>
+    </div>
+    <h2 class="publication-title">
+        System riskOPERON: Opracowanie metodyki i modułu AMA w systemie IT
+    </h2>
+    <p class="publication-description">Kompleksowa metodyka metody AMA oraz funkcje obliczeniowe</p>
+    <div class="publication-meta">📅 2008</div>
   </div>
   </div>
