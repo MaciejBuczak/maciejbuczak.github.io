@@ -42,11 +42,10 @@ title: Publikacje
         <span class="resource-icon">📄</span> Preprint
       </a>
       <a href="URL_DO_MEDIUM" class="resource-link" target="_blank">
-        <span class="resource-icon">📱</span> Artykuł popularnonaukowy
+        <span class="resource-icon">💡</span> Artykuł popularnonaukowy
       </a>
     </div>
 </div>
-
 
 
 
