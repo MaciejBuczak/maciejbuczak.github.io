@@ -176,6 +176,23 @@ hr {
   margin-bottom: 10px;
 }
 
+
+.publication-domain {
+  margin: 10px 0;
+  color: #737373;
+  font-size: 0.9em;
+}
+
+.domain-separator {
+  margin: 0 8px;
+  color: #a85903;
+}
+
+.domain-primary, .domain-secondary {
+  display: inline-block;
+}
+
+
 .publications-container {
   max-width: 800px;
   margin: 0 auto;
