@@ -24,6 +24,13 @@ pinned: true
         <span class="publication-status status-review">PROCES RECENZJI</span>
         
         <div class="publication-source">{{ page.source }}</div>
+
+        <div class="publication-domain">
+        <span class="domain-primary">Zarządzanie ryzykiem</span>
+        <span class="domain-separator">|</span>
+        <span class="domain-secondary">Ryzyko operacyjne</span>
+    </div>
+    
         
         <h1 class="publication-title-full">{{ page.title }}</h1>
         
