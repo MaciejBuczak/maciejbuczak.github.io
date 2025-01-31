@@ -18,7 +18,8 @@ title: Badania
 
 ##### Badania/analizy - ryzyko w sektorze bankowym
 Przeprowadziłem lub współuczestniczyłem w przeprowadzeniu badań/analiz:
-
+<br>
+<br>
 
 
 <div class="publications-container">
