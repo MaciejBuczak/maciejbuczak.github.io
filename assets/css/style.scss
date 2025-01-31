@@ -163,7 +163,8 @@ hr {
 .publication-meta {
   color: #888;
   font-size: 0.9em;
-  margin-top: 15px;
+  margin: 15px 0 10px 0;
+  padding: 0;
 }
 
 .publication-pin {
@@ -175,7 +176,6 @@ hr {
   display: inline-block;
   margin-bottom: 10px;
 }
-
 
 .publication-domain {
   margin: 10px 0;
@@ -192,7 +192,6 @@ hr {
   display: inline-block;
 }
 
-
 .publications-container {
   max-width: 800px;
   margin: 0 auto;
@@ -206,12 +205,6 @@ hr {
     color: #a85903;
     text-decoration: none;
   }
-}
-
-.publication-meta {
-  margin: 20px 0;
-  padding: 10px 0;
-  border-bottom: 1px solid #eee;
 }
 
 .publication-status {
@@ -269,14 +262,16 @@ hr {
 }
 
 .download-links {
-  margin: 20px 0;
+  margin: 10px 0;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .download-button {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   padding: 8px 16px;
-  margin-right: 15px;
-  margin-bottom: 10px;
   background-color: #a85903;
   color: white;
   text-decoration: none;
@@ -312,7 +307,6 @@ hr {
   color: #a85903;
 }
 
-// Responsywność dla menu
 @media screen and (max-width: 768px) {
   #myMenu {
     flex-direction: column;
@@ -324,10 +318,9 @@ hr {
   }
 }
 
-// Nowe style dla linków do zasobów
 .publication-resources {
-  margin-top: 1rem;
-  padding-top: 1rem;
+  margin-top: 15px;
+  padding-top: 15px;
   border-top: 1px solid #eee;
   display: flex;
   flex-wrap: wrap;
@@ -357,7 +350,6 @@ hr {
   margin-right: 0.5rem;
 }
 
-// Responsywność dla linków zasobów
 @media screen and (max-width: 768px) {
   .publication-resources {
     flex-direction: column;
