@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Publikacje
+title: Badania
 ---
 <div id="myMenu">
   <a href="/" class="menu-option">Strona główna</a>
