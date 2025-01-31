@@ -29,6 +29,7 @@ Uczestniczyłem w roli prelegenta/szkoleniowca w następujących konferencjach/w
  <div class="conference-card">
    <div class="conference-badge">Konferencja</div>
    <div class="conference-organizer">Organizator: Marxo Smith Events</div>
+   <div class="conference-location">Miejsce: Prague</div>
    <h2 class="conference-title">4th Annual Banking Operational Risk Summit (Prague)</h2>
    <div class="conference-topic">Temat: Built-in mechanisms of the AMA framework that led to its cancellation</div>
    <p class="conference-description">I would like to present arguments that point to the "built-in" defects in the AMA concept defined by the supervisor, which led to such loss of credibility of the method. Thus, the imperfection of the framework, and above all, its unjustified overcomplexity, materialized in the form of such a dispersion of results that exceeded the supervisory boundary of acceptability.</p>
