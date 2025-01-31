@@ -17,7 +17,7 @@ title: Konferencje
 <div class="square2"></div>
 <div class="square-big"></div>
 
-##### Konferencje/Warsztaty/Szkolenia
+#### Konferencje/Warsztaty/Szkolenia
 Uczestniczyłem w roli prelegenta/szkoleniowca w następujących konferencjach/warsztatach/szkoleniach:
 <br>
 <br>
@@ -60,10 +60,20 @@ Uczestniczyłem w roli prelegenta/szkoleniowca w następujących konferencjach/w
     <h2 class="conference-title">Zarządzanie efektywnością oddziałów instytucji finansowych (Warszawa)</h2>
     <div class="conference-topic">Temat: Zarządzanie ryzykiem operacyjnym i jego wpływ na satysfakcję klientów i pozycję konkurencyjną instytucji finansowych</div>
     <p class="conference-description">Konferencja zorganizowana przez Gazetę Bankową, a skierowana do polskiego sektora bankowego</p>
-    <div class="conference-meta">📅 2010</div>
+    <div class="conference-meta">📅 2008</div>
+  </div>
+
+
+  <div class="conference-card">
+    <div class="conference-badge">Warsztaty</div>
+    <div class="conference-organizer">Organizator: Alior Bank</div>
+    <h2 class="conference-title">Metoda zaawansowanego pomiaru AMA (Warszawa)</h2>
+    <p class="conference-description">Warsztaty dla pracowników Alior Banku: jednostki modelarskie, audyt</p>
+    <div class="conference-meta">📅 2018</div>
   </div>
 
 
 
+  
   
 </div>
