@@ -16,6 +16,10 @@ title: O mnie
 <div class="square-big"></div>
 
 W toku mojej kariery zawodowej zgromadziłem bogate doświadczenie w projektowaniu i prowadzeniu badań z wykorzystaniem zaawansowanych metod ilościowych. Moje kompetencje obejmują:
+
+##### Badania/analizy ryzyk finansowych
+W trakcie kariery zawodowej przeprowadziłem szereg badań odnoszacych się do ogólnie pojmowanego ryzyka finansowego. Wszystkie wykonane badania miały charakter czysto praktyczny - odnosiły się do realnego problemu biznesowego, miały swój wymiar finansowy i inne praktyczne oblicza (jak np. koszt wdrożenia usprawnień wynikających z wykonanego badania). W zdecydowanej większości przypadków rozwiązanie problemów było związane z potrzebą wyjścia poza obowiązujący paradygmat lub przyzwyczajenia - co też uczyniłem.
+
 ##### Budowa kompleksowych metodyk
 W toku mojej kariery zawodowej zgromadziłem bogate doświadczenie w projektowaniu i prowadzeniu badań z wykorzystaniem zaawansowanych metod ilościowych. Moje kompetencje obejmują:
 Budowa kompleksowych metodyk
