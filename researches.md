@@ -86,6 +86,4 @@ title: Publikacje
     <div class="publication-meta">📅 Grudzień 2023</div>
   </div>
 
-  </div>
-
 
