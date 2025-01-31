@@ -16,10 +16,10 @@ title: Badania
 <div class="square2"></div>
 <div class="square-big"></div>
 
-# Badania1
+##### Badania - sektor bankowy
+Przeprowadziłem lub współuczestniczyłem w przeprowadzeniu badań/analiz:
 
 <div class="publications-container">
-  # Badania
 
 
   <div class="publication-card">
