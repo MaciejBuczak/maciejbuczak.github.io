@@ -34,10 +34,10 @@ Uczestniczyłem w roli prelegenta/szkoleniowca w następujących konferencjach/w
    <p class="conference-description">Szczegółowy opis konferencji...</p>
    <div class="conference-meta">📅 2023</div>
    <div class="conference-buttons">
-     <a href="/_conferences/4th_OpRisk_Summit_BROCHURE.pdf" class="conference-button">
+     <a href="/conferences/4th_OpRisk_Summit_BROCHURE.pdf" class="conference-button">
        📄 Brochure
      </a>
-     <a href="/_conferences/proba.md" class="conference-button">
+     <a href="/conferences/proba.md" class="conference-button">
        📊 Presentation
      </a>
    </div>
