@@ -7,6 +7,7 @@ title: Publikacje
   <a href="/about" class="menu-option">O mnie</a>
   <a href="/publications" class="menu-option">Publikacje</a>
   <a href="/articles" class="menu-option">Artykuły</a>
+  <a href="/researches" class="menu-option">Badania</a>
   <a href="/contact" class="menu-option">Kontakt</a>
 </div>
 
@@ -29,11 +30,11 @@ title: Publikacje
     </div>
     <h2 class="publication-title">
       <a href="{{ site.baseurl }}/publications/2023-12-risk-assessment" class="publication-link">
-        Metodologia oceny ryzyka w projektach innowacyjnych
+      Badanie nakładających się efektów/prawdopodobieństw przy próbie składania parametrów w koncepcję ECL
       </a>
     </h2>
-    <p class="publication-description">Analiza skutecznych metod oceny ryzyka w projektach wykorzystujących najnowsze technologie. Praca prezentuje framework łączący klasyczne podejście z nowoczesnymi narzędziami analitycznymi...</p>
-    <div class="publication-meta">📅 Grudzień 2023</div>
+    <p class="publication-description">Zagadnienia: prawd. odzysku lifetime, prawd. sprzedaży majątku rzeczowego, reprezentatywność próby w kontekście sposobu stosowania modelu, zbędne złożoności modeli - powtarzające się parametry</p>
+    <div class="publication-meta">📅 2023</div>
   </div>
 </div>
 
