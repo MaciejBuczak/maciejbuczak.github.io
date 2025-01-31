@@ -36,7 +36,6 @@ title: Publikacje
     <p class="publication-description">Zagadnienia: prawd. odzysku lifetime, prawd. sprzedaży majątku rzeczowego, reprezentatywność próby w kontekście sposobu stosowania modelu, zbędne złożoności modeli - powtarzające się parametry</p>
     <div class="publication-meta">📅 2023</div>
   </div>
-</div>
 
 
 
