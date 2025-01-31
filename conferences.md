@@ -37,7 +37,7 @@ Uczestniczyłem w roli prelegenta/szkoleniowca w następujących konferencjach/w
      <a href="/_conferences/4th_OpRisk_Summit_BROCHURE.pdf" class="conference-button">
        📄 Brochure
      </a>
-     <a href="/downloads/conferences/4th_OpRisk_Summit_PRESENTATION.pdf" class="conference-button">
+     <a href="/_conferences/4th_OpRisk_Summit_PRESENTATION.pdf" class="conference-button">
        📊 Presentation
      </a>
    </div>
