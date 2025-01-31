@@ -17,7 +17,7 @@ title: Konferencje
 <div class="square2"></div>
 <div class="square-big"></div>
 
-##### Konferencje
+##### Konferencje/Warsztaty/Szkolenia
 Uczestniczyłem w roli prelegenta/szkoleniowca w następujących konferencjach/warsztatach/szkoleniach:
 <br>
 <br>
@@ -32,7 +32,7 @@ Uczestniczyłem w roli prelegenta/szkoleniowca w następujących konferencjach/w
    <h2 class="conference-title">4th Annual Banking Operational Risk Summit (Prague)</h2>
    <div class="conference-topic">Temat: Built-in mechanisms of the AMA framework that led to its cancellation</div>
    <p class="conference-description">I would like to present arguments that point to the "built-in" defects in the AMA concept defined by the supervisor, which led to such loss of credibility of the method. Thus, the imperfection of the framework, and above all, its unjustified overcomplexity, materialized in the form of such a dispersion of results that exceeded the supervisory boundary of acceptability.</p>
-   <div class="conference-meta">📅 20-21.02.2023</div>
+   <div class="conference-meta">📅 20-21.02.2025</div>
    <div class="conference-buttons">
      <a href="/conferences/4th_OpRisk_Summit_BROCHURE.pdf" class="conference-button">
        📄 Brochure
@@ -46,14 +46,22 @@ Uczestniczyłem w roli prelegenta/szkoleniowca w następujących konferencjach/w
 
   <div class="conference-card">
     <div class="conference-badge">Konferencja</div>
-    <div class="conference-organizer">Organizator: Nazwa organizatora</div>
-    <h2 class="conference-title">Nazwa konferencji</h2>
-    <div class="conference-topic">Temat: Temat konferencji</div>
-    <p class="conference-description">Szczegółowy opis konferencji...</p>
-    <div class="conference-meta">📅 2023</div>
+    <div class="conference-organizer">Organizator: Narodowy Bank Polski</div>
+    <h2 class="conference-title">IT w sektorze bankowym (Warszawa)</h2>
+    <div class="conference-topic">Temat: Ryzyko operacyjne – inspirująca podróż do Twojej organizacji</div>
+    <p class="conference-description">Konferencja organizowana przez Centralny Bank Polski dla przedstawicieli banków centralnych z Europy Wschodniej, Azji i Afryki</p>
+    <div class="conference-meta">📅 2009</div>
   </div>
 
 
+  <div class="conference-card">
+    <div class="conference-badge">Konferencja</div>
+    <div class="conference-organizer">Organizator: Gazeta Bankowa</div>
+    <h2 class="conference-title">Zarządzanie efektywnością oddziałów instytucji finansowych (Warszawa)</h2>
+    <div class="conference-topic">Temat: Zarządzanie ryzykiem operacyjnym i jego wpływ na satysfakcję klientów i pozycję konkurencyjną instytucji finansowych</div>
+    <p class="conference-description">Konferencja zorganizowana przez Gazetę Bankową, a skierowana do polskiego sektora bankowego</p>
+    <div class="conference-meta">📅 2010</div>
+  </div>
 
 
 
