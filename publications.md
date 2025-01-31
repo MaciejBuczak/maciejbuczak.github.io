@@ -15,10 +15,14 @@ title: Publikacje
 <div class="square2"></div>
 <div class="square-big"></div>
 
+
+
 <div class="publications-container">
   # Publikacje
+
+
   
-  <div class="publication-card">
+<div class="publication-card">
     <span class="publication-pin">📌 Przypięte</span>
     <span class="publication-status status-review">PROCES RECENZJI</span>
     <div class="publication-source">Przesłane do: Metody ilościowe w badaniach ekonomicznych</div>
@@ -29,7 +33,22 @@ title: Publikacje
     </h2>
     <p class="publication-description">W artykule prezentuje moje wysokopoziomowe stanowisko odnośnie decyzji o wycofaniu całego frameworku modelowania ze stosowania w sektorze bankowym. Tematyką tą zajmowałem się w zasadzie od kilkunastu lat. Framework, o którym tu mowa, poznałem zarówno od strony jego ogólnych celów biznesowych, aż po każdy szczegółowy aspekt przestrzeni jego modelowania. Rozumiem zatem przyczyny wycofania tej koncepcji z użycia. W artykule tym zamieściłem mój komentarz odnośnie takiego przebiegu wydarzeń.</p>
     <div class="publication-meta">📅 Grudzień 2024 &nbsp;&nbsp;|&nbsp;&nbsp; 👁️ 245 wyświetleń</div>
-  </div>
+    <!-- Dodane linki do zasobów -->
+    <div class="publication-resources">
+      <a href="URL_DO_CZASOPISMA" class="resource-link" target="_blank">
+        <span class="resource-icon">📰</span> Czasopismo
+      </a>
+      <a href="URL_DO_PREPRINTU" class="resource-link" target="_blank">
+        <span class="resource-icon">📄</span> Preprint
+      </a>
+      <a href="URL_DO_MEDIUM" class="resource-link" target="_blank">
+        <span class="resource-icon">📱</span> Medium
+      </a>
+    </div>
+</div>
+
+
+
 
   <div class="publication-card">
     <div class="publication-source">Opublikowano w Risk Analysis Quarterly</div>
