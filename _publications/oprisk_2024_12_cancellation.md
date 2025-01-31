@@ -47,6 +47,17 @@ pinned: true
                 📄 Download article (EN)
             </a>
         </div>
+        <div class="publication-resources">
+      <a href="URL_DO_CZASOPISMA" class="resource-link" target="_blank">
+        <span class="resource-icon">📰</span> Czasopismo
+      </a>
+      <a href="URL_DO_PREPRINTU" class="resource-link" target="_blank">
+        <span class="resource-icon">📄</span> Preprint
+      </a>
+      <a href="URL_DO_MEDIUM" class="resource-link" target="_blank">
+        <span class="resource-icon">💡</span> Artykuł popularnonaukowy
+      </a>
+    </div>
     </div>
     <div class="publication-content">
         <h5>Abstrakt</h5>
