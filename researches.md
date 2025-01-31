@@ -19,7 +19,7 @@ title: Badania
 ##### Badania - sektor bankowy
 Przeprowadziłem lub współuczestniczyłem w przeprowadzeniu badań/analiz:
 
-<hr>
+
 
 <div class="publications-container">
 
