@@ -26,6 +26,11 @@ title: Publikacje
     <span class="publication-pin">📌 Przypięte</span>
     <span class="publication-status status-review">PROCES RECENZJI</span>
     <div class="publication-source">Przesłane do: Metody ilościowe w badaniach ekonomicznych</div>
+    <div class="publication-domain">
+        <span class="domain-primary">Zarządzanie ryzykiem</span>
+        <span class="domain-separator">|</span>
+        <span class="domain-secondary">Ryzyko operacyjne</span>
+    </div>
     <h2 class="publication-title">
       <a href="{{ site.baseurl }}/publications/oprisk_2024_12_cancellation" class="publication-link">
         Bieg wsteczny w rozwoju koncepcji modelowania wartości nieoczekiwanej w sektorze finansowym na przykładzie decyzji o wycofaniu frameworku AMA w ryzyku operacyjnym
