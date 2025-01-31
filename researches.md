@@ -66,7 +66,7 @@ title: Publikacje
       </a>
     </h2>
     <p class="publication-description">Analiza skutecznych metod oceny ryzyka w projektach wykorzystujących najnowsze technologie. Praca prezentuje framework łączący klasyczne podejście z nowoczesnymi narzędziami analitycznymi...</p>
-    <div class="publication-meta">📅 Grudzień 2023 &nbsp;&nbsp;|&nbsp;&nbsp;</div>
+    <div class="publication-meta">📅 Grudzień 2023</div>
   </div>
 </div>
 
