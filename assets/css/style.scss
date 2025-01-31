@@ -147,11 +147,13 @@ hr {
   margin-bottom: 10px;
 }
 
-.publication-title {
-  font-size: 1.5em;
-  color: #000000;
-  margin: 10px 0;
-  text-indent: 0;
+.publications-container {
+ .publication-title {
+   font-size: 1.5em;
+   color: #000000;
+   margin: 10px 0; 
+   text-indent: 0;
+ }
 }
 
 .publication-description {
