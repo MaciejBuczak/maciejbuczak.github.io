@@ -56,6 +56,11 @@ title: Publikacje
 
   <div class="publication-card">
     <div class="publication-source">Opublikowano w Risk Analysis Quarterly</div>
+    <div class="publication-domain">
+        <span class="domain-primary">Zarządzanie ryzykiem</span>
+        <span class="domain-separator">|</span>
+        <span class="domain-secondary">Ryzyko operacyjne</span>
+    </div>
     <h2 class="publication-title">
       <a href="{{ site.baseurl }}/publications/2023-12-risk-assessment" class="publication-link">
         Metodologia oceny ryzyka w projektach innowacyjnych
