@@ -287,6 +287,17 @@ hr {
   }
 }
 
+#main_content {
+  h1, h2, h3, h4, h5, h6 {
+    color: #a85903;
+  }
+}
+
+.publications-container .publication-title {
+  color: #000000 !important;
+}
+
+
 #myMenu {
   display: flex;
   justify-content: center;
