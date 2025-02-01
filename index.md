@@ -36,7 +36,7 @@ layout: default
     </div>
     <h4>Ryzyko Modeli</h4>
     <p>Kompleksowa analiza i zarządzanie ryzykiem modeli, ze szczególnym uwzględnieniem aspektów walidacji, monitoringu i audytu modeli w sektorze finansowym.</p>
-    <a href="/research/model-risk" class="research-area-link">Dowiedz się więcej →</a>
+    <a href="/topic_sites/model_risk" class="research-area-link">Dowiedz się więcej →</a>
   </div>
   
   <div class="research-area-card">
