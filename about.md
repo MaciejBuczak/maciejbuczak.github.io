@@ -17,6 +17,16 @@ title: O mnie
 <div class="square2"></div>
 <div class="square-big"></div>
 
+
+
+##### Ewolucja podejścia badawczego
+Fundamentem mojego sposobu myślenia i działania jest szerokie zainteresowanie światem oraz sposobami, za pomocą których człowiek potrafi ten świat objaśniać i zrozumieć - niezależnie od tego, jak bardzo naukowe są to metody.
+Praktyka zawodowa pozwoliła mi na dostrzeżenie, coraz wyraźniej się rysujących, cech otaczającej nas rzeczywistości: (a) świat osiągnął stopień złożoności nieogarnialny dla pojedynczego umysłu, (b) metody opisu tego świata przy rosnącym udziale komponentu stochastycznego takich modeli nie wytrzymują zderzenia z rzeczywistością, a jednocześnie, jakby nie dostrzegając dwóch w/w cech (c) nierzadko budujemy modele, których stopień złożoności jest większy niż zjawiska, które mają opisać. To odkrycie skłoniło mnie do głębszej refleksji nad rolą metod ilościowych w biznesie, w ekonomii i szeroko rozumianych naukach społecznych oraz podjęcia drogi wypracowania własnego podejścia badawczego.
+
+##### Zainteresowania badawcze
+Przestrzenie moich zainteresowań badawczych ogniskują się wokół takich dziedzin, jak ekonomia, socjologia, historia. Interesuje mnie w całości otaczająca nas rzeczywistość, manifestująca się poprzez szerokie spektrum wydarzeń. Lubię zatem czerpać moje obserwację również z takich obszarów rzeczywistości, jak otoczenie kulturowe, czy sport. Przede wszystkim jednak, moje spojrzenie ukierunkowane jest na przestrzeń metod, które mogą posłużyć do tak szeroko pojmowanej rzeczywistości. Mam tu oczywiście na myśli całe spektrum metod wypracowanych w dziedzinach takich jak statystyka, czy ekonometria. Nie ograniczam się jednak do nich, poszukując też metod w innych obszarach, które często można z powodzeniem transferować pomiędzy dziedzinami. Lubię więc poruszać się po pewnym uniwersum metod, zastanawiając się nad generycznymi cechami, które umożliwiają ich aplikację, w różnych przestrzeniach otaczającego nas świata. Jest to część mojego sposobu myślenia „do istoty rzeczy”.
+
+
 W toku mojej kariery zawodowej zgromadziłem bogate doświadczenie w projektowaniu i prowadzeniu badań z wykorzystaniem zaawansowanych metod ilościowych. Moje kompetencje obejmują:
 
 ##### Badania/analizy ryzyk finansowych
