@@ -13,7 +13,7 @@ layout: default
 
 <!-- Dodajemy pozycjonowany obraz -->
 <div class="positioned-image">
-  <img src="/assets/images/twoj-obraz.jpg" alt="Opis obrazu">
+  <img src="/assets/images/Maciej Buczak - zdjęcie CV.jpg" alt="Opis obrazu">
 </div>
 
 <!-- Istniejące kwadraty -->
