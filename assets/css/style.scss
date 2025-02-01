@@ -642,7 +642,7 @@ font-weight: bold;
     text-indent: 0;
   }
 
-.model-risk-image {
+  .model-risk-image {  // dodane wcięcie
     margin: 2rem auto;
     max-width: 800px;
     
@@ -652,9 +652,7 @@ font-weight: bold;
       border-radius: 8px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-  }
-
-  
+  }  
 }
 
 .info-cards {
