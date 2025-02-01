@@ -1,6 +1,7 @@
 title: "Maciej Buczak"
 description: "Risk Management & Research"
 theme: jekyll-theme-slate
+permalink: /:title/
 
 collections:
   publications:
