@@ -27,10 +27,10 @@ permalink: /topic_sites/model_risk/
 
 
   <!-- Dodajemy sekcję z obrazkiem -->
-    <div class="model-risk-image">
-      <img src="/assets/images/model-risk.jpg" alt="Ryzyko Modeli">
+    <div class="header-image">
+        <img src="/assets/images/model-risk.jpg" alt="Model Risk" class="responsive-image">
     </div>
-  </div>
+</div>
 
 
   <!-- Sekcja z kartami -->
