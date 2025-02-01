@@ -10,6 +10,13 @@ layout: default
   <a href="/conferences" class="menu-option">Konferencje</a>
   <a href="/contact" class="menu-option">Kontakt</a>
 </div>
+
+<!-- Dodajemy pozycjonowany obraz -->
+<div class="positioned-image">
+  <img src="/assets/images/twoj-obraz.jpg" alt="Opis obrazu">
+</div>
+
+<!-- Istniejące kwadraty -->
 <div class="square"></div>
 <div class="square1"></div>
 <div class="square2"></div>
@@ -20,7 +27,6 @@ layout: default
 </div>
 
 <h3 class="section-title">Obszary badawcze</h3>
-
 <div class="research-areas-grid">
   <div class="research-area-card">
     <div class="research-area-icon">
@@ -32,7 +38,7 @@ layout: default
     <p>Kompleksowa analiza i zarządzanie ryzykiem modeli, ze szczególnym uwzględnieniem aspektów walidacji, monitoringu i audytu modeli w sektorze finansowym.</p>
     <a href="/research/model-risk" class="research-area-link">Dowiedz się więcej →</a>
   </div>
-
+  
   <div class="research-area-card">
     <div class="research-area-icon">
       <svg viewBox="0 0 24 24" width="48" height="48">
@@ -43,7 +49,7 @@ layout: default
     <p>Innowacyjne metody identyfikacji, pomiaru i zarządzania ryzykiem operacyjnym w instytucjach finansowych, z uwzględnieniem najnowszych regulacji.</p>
     <a href="/research/operational-risk" class="research-area-link">Dowiedz się więcej →</a>
   </div>
-
+  
   <div class="research-area-card">
     <div class="research-area-icon">
       <svg viewBox="0 0 24 24" width="48" height="48">
@@ -54,7 +60,7 @@ layout: default
     <p>Zastosowanie zaawansowanych metod statystycznych i ekonometrycznych w analizie ryzyka finansowego, ze szczególnym uwzględnieniem modelowania szeregów czasowych.</p>
     <a href="/research/quantitative-analysis" class="research-area-link">Dowiedz się więcej →</a>
   </div>
-
+  
   <div class="research-area-card">
     <div class="research-area-icon">
       <svg viewBox="0 0 24 24" width="48" height="48">
