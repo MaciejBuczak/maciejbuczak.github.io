@@ -9,7 +9,7 @@ pinned: true
 ---
 <div class="back-link">
   <a href="/publications" class="back-button">
-    ← Powrót do publikacji
+    ← Powrót do listy publikacji
   </a>
 </div>
 <div class="square"></div>
