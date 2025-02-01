@@ -552,6 +552,36 @@ font-weight: bold;
   }
 }
 
+
+
+
+
+// Style dla nawigacji powrotu
+.back-link {
+  display: flex;
+  justify-content: flex-start;
+  padding: 20px;
+  margin-top: 0 !important;
+}
+
+.back-button {
+  color: #737373;
+  text-decoration: none;
+  font-size: 1.1em;
+  transition: color 0.3s;
+  display: inline-flex;
+  align-items: center;
+  
+  &:hover {
+    color: #a85903;
+    text-decoration: none;
+  }
+}
+
+
+
+
+
 // Media queries
 @media screen and (max-width: 768px) {
   #myMenu {
