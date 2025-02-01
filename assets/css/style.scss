@@ -398,14 +398,31 @@ hr {
   margin: 0 auto;
 }
 
+.conference-buttons {
+ display: flex;
+ gap: 12px;
+ margin-top: 15px;
+ padding-top: 15px;
+ border-top: 1px solid #eee;
+}
+
 .conference-button {
-  border: 1px solid #a85903;
-  color: #a85903;
-  
-  &:hover {
-    background: #a85903;
-    color: #fff;
-  }
+ display: inline-flex;
+ align-items: center;
+ gap: 8px;
+ padding: 8px 16px;
+ border: 1px solid #546e7a;
+ border-radius: 6px;
+ color: #546e7a;
+ background: #fff;
+ font-size: 0.9em;
+ text-decoration: none;
+ transition: all 0.2s;
+ 
+ &:hover {
+   background: #546e7a;
+   color: #fff;
+ }
 }
 
 
