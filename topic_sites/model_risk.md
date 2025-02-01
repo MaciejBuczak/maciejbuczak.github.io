@@ -25,6 +25,14 @@ permalink: /topic_sites/model_risk/
     <p>Kompleksowa analiza i zarządzanie ryzykiem modeli, ze szczególnym uwzględnieniem aspektów walidacji, monitoringu i audytu modeli w sektorze finansowym.</p>
   </div>
 
+
+  <!-- Dodajemy sekcję z obrazkiem -->
+    <div class="model-risk-image">
+      <img src="/assets/images/model-risk.jpg" alt="Ryzyko Modeli">
+    </div>
+  </div>
+
+
   <!-- Sekcja z kartami -->
   <div class="info-cards">
     <div class="info-card">
