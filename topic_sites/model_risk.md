@@ -1,5 +1,6 @@
 ---
 layout: default
+permalink: /topic_sites/model_risk/
 ---
 <div id="myMenu">
   <a href="/" class="menu-option">Strona główna</a>
