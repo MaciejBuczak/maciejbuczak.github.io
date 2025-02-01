@@ -1,6 +1,8 @@
 ---
 ---
 @import "{{ site.theme }}";
+
+// Podstawowe style
 .page-header {
   background-color: #a85903;
   background-image: linear-gradient(120deg, #a85903, #bf6604);
@@ -80,6 +82,7 @@ hr {
   width: 100%;
 }
 
+// Elementy dekoracyjne
 .square {
   width: 45px;
   height: 45px;
@@ -127,6 +130,7 @@ hr {
   z-index: 10;
 }
 
+// Style menu
 #myMenu {
   display: flex;
   justify-content: center;
@@ -149,7 +153,247 @@ hr {
   }
 }
 
-// Nowe style dla strony głównej
+// Style publikacji
+.publication-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.publication-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.publication-source {
+  color: #a85903;
+  font-size: 0.9em;
+  margin-bottom: 10px;
+}
+
+.publications-container {
+  max-width: 800px;
+  margin: 0 auto;
+
+  .publication-title {
+    font-size: 1.5em;
+    color: #333;
+    margin: 10px 0;
+    text-indent: 0;
+  }
+}
+
+.publication-title-full {
+  font-size: 1.5em;
+  color: #333 !important;
+  margin: 20px 0;
+  line-height: 1.4;
+}
+
+.publication-description {
+  color: #737373;
+  margin: 10px 0;
+  text-indent: 0;
+}
+
+.publication-meta {
+  color: #888;
+  font-size: 0.9em;
+  margin: 15px 0 10px 0;
+  padding: 0;
+}
+
+.publication-pin {
+  background: #a85903;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.8em;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.publication-domain {
+  margin: 10px 0;
+  color: #737373;
+  font-size: 0.9em;
+}
+
+.domain-separator {
+  margin: 0 8px;
+  color: #a85903;
+}
+
+.domain-primary, .domain-secondary {
+  display: inline-block;
+}
+
+.publication-link {
+  color: #333;
+  text-decoration: none;
+  
+  &:hover {
+    color: #a85903;
+    text-decoration: none;
+  }
+}
+
+.publication-status {
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.8em;
+  display: inline-block;
+  margin-bottom: 10px;
+  margin-right: 5px;
+}
+
+.status-published {
+  background: #8D8F3D;
+  color: white;
+}
+
+.status-review {
+  background: #f1c40f;
+  color: white;
+}
+
+.status-preprint {
+  background: #95a5a6;
+  color: white;
+}
+
+.publication-full {
+  background: #fff;
+  border-radius: 8px;
+  padding: 40px;
+  margin: 20px auto;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  max-width: 900px;
+}
+
+.publication-header {
+  margin-bottom: 30px;
+}
+
+.publication-meta-full {
+  color: #888;
+  margin: 15px 0;
+}
+
+.publication-content {
+  color: #737373;
+  text-align: justify;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #737373 !important;
+  }
+}
+
+// Style dla zasobów
+.publication-resources {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.resource-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  border: 1px solid #a85903;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #a85903;
+  transition: all 0.2s ease;
+  font-size: 0.9em;
+  
+  &:hover {
+    background-color: #a85903;
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+.resource-icon {
+  margin-right: 0.5rem;
+}
+
+// Style dla konferencji
+.conference-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 25px;
+  margin: 25px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-left: 4px solid #546e7a;
+  transition: transform 0.2s;
+}
+
+.conference-card:hover {
+  transform: translateY(-3px);
+  border-left: 4px solid #455a64;
+  box-shadow: 0 4px 12px rgba(84,110,122,0.15);
+}
+
+.conference-badge {
+  display: inline-block;
+  background: #fff;
+  color: #546e7a;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.85em;
+  margin-bottom: 15px;
+  border: 1px solid #546e7a;
+}
+
+.conference-organizer {
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.conference-location {
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.conference-title {
+  font-size: 1.2em;
+  color: #737373 !important;
+  margin: 10px 0;
+  padding-bottom: 10px;
+}
+
+.conference-description {
+  color: #737373;
+  margin: 15px 0;
+  line-height: 1.6;
+  text-indent: 0;
+  font-style: italic;
+}
+
+.conference-meta {
+  color: #888;
+  font-size: 0.9em;
+  margin-top: 15px;
+}
+
+.conferences-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+// Style dla strony głównej
 .intro-text {
   color: #737373;
   text-align: justify;
@@ -202,6 +446,21 @@ hr {
       color: #a85903;
     }
   }
+
+  h4 {
+    color: #333;
+    font-size: 1.5em;
+    margin: 15px 0;
+    font-weight: 500;
+  }
+
+  p {
+    color: #737373;
+    line-height: 1.6;
+    margin: 15px 0;
+    flex-grow: 1;
+    text-indent: 0;
+  }
 }
 
 .research-area-icon {
@@ -215,21 +474,6 @@ hr {
   justify-content: center;
   margin-bottom: 20px;
   transition: all 0.3s ease;
-}
-
-.research-area-card h4 {
-  color: #333;
-  font-size: 1.5em;
-  margin: 15px 0;
-  font-weight: 500;
-}
-
-.research-area-card p {
-  color: #737373;
-  line-height: 1.6;
-  margin: 15px 0;
-  flex-grow: 1;
-  text-indent: 0;
 }
 
 .research-area-link {
@@ -246,92 +490,6 @@ hr {
   }
 }
 
-// Style dla publikacji
-.publication-card {
-  background: #fff;
-  border-radius: 8px;
-  padding: 20px;
-  margin: 20px 0;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  transition: transform 0.2s;
-}
-
-.publication-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-}
-
-.publication-source {
-  color: #a85903;
-  font-size: 0.9em;
-  margin-bottom: 10px;
-}
-
-.publications-container {
-  .publication-title {
-    font-size: 1.5em;
-    color: #333;
-    margin: 10px 0;
-    text-indent: 0;
-  }
-}
-
-.publication-description {
-  color: #737373;
-  margin: 10px 0;
-  text-indent: 0;
-}
-
-.publication-meta {
-  color: #888;
-  font-size: 0.9em;
-  margin: 15px 0 10px 0;
-  padding: 0;
-}
-
-// Style dla konferencji
-.conference-card {
-  background: #fff;
-  border-radius: 10px;
-  padding: 25px;
-  margin: 25px 0;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  border-left: 4px solid #546e7a;
-  transition: transform 0.2s;
-}
-
-.conference-card:hover {
-  transform: translateY(-3px);
-  border-left: 4px solid #455a64;
-  box-shadow: 0 4px 12px rgba(84,110,122,0.15);
-}
-
-.conference-badge {
-  display: inline-block;
-  background: #fff;
-  color: #546e7a;
-  padding: 5px 12px;
-  border-radius: 15px;
-  font-size: 0.85em;
-  margin-bottom: 15px;
-  border: 1px solid #546e7a;
-}
-
-.conference-title {
-  font-size: 1.2em;
-  color: #737373 !important;
-  margin: 10px 0;
-  padding-bottom: 10px;
-}
-
-.conference-description {
-  color: #737373;
-  margin: 15px 0;
-  line-height: 1.6;
-  text-indent: 0;
-  font-style: italic;
-}
-
 // Media queries
 @media screen and (max-width: 768px) {
   #myMenu {
@@ -342,13 +500,26 @@ hr {
   .menu-option {
     margin: 5px 0;
   }
+
+  .publication-resources {
+    flex-direction: column;
+    width: 100%;
+    
+    .resource-link {
+      width: 100%;
+      justify-content: center;
+      margin: 5px 0;
+      box-sizing: border-box;
+    }
+  }
   
   .research-areas-grid {
     grid-template-columns: 1fr;
+    padding: 0 15px;
   }
   
   .research-area-card {
-    margin: 0 15px;
+    margin: 0;
   }
   
   .intro-text {
