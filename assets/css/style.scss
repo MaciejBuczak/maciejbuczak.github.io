@@ -261,6 +261,10 @@ hr {
 .publication-content {
   color: #737373;
   text-align: justify;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #737373;
+  }
 }
 
 .download-links {
