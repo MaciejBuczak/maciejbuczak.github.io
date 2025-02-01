@@ -616,6 +616,79 @@ font-weight: bold;
 
 
 
+
+.research-area-container {
+    width: 100%;
+    padding: 2rem;
+    margin: 2rem 0;
+    background-color: #ffffff;
+    border: 1px solid #C25E00;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.research-area-content {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.research-area-icon {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.research-area-icon svg {
+    width: 64px;
+    height: 64px;
+}
+
+.research-area-title {
+    color: #C25E00;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.research-area-description {
+    color: #333;
+    line-height: 1.6;
+}
+
+.research-area-description h3 {
+    color: #C25E00;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.research-area-description ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.research-area-description li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.research-area-description li:before {
+    content: "→";
+    color: #C25E00;
+    position: absolute;
+    left: 0;
+}
+
+.research-area-description p {
+    margin-bottom: 1.5rem;
+}
+
+
+
+
+
+
+
 // Media queries
 @media screen and (max-width: 768px) {
   #myMenu {
