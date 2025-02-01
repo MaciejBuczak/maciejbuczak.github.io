@@ -67,6 +67,40 @@ body {
   background: #a85903;
 }
 
+
+
+
+
+
+
+// Style dla pozycjonowanego obrazu
+.positioned-image {
+  position: absolute;
+  width: 200px;
+  height: auto;
+  top: -162px;  // Ta sama wysokość co .square
+  right: 160px; // Dostosuj według potrzeb
+  z-index: 10;
+}
+
+.positioned-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+// Upewniamy się, że elementy dekoracyjne współpracują z obrazem
+#header_wrap .inner {
+  position: relative;
+  overflow: visible;
+}
+
+
+
+
+
+
 #forkme_banner {
   background: #bf6604;
 }
