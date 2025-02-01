@@ -641,6 +641,20 @@ font-weight: bold;
     line-height: 1.6;
     text-indent: 0;
   }
+
+.model-risk-image {
+    margin: 2rem auto;
+    max-width: 800px;
+    
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+  }
+
+  
 }
 
 .info-cards {
