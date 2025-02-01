@@ -398,6 +398,17 @@ hr {
   margin: 0 auto;
 }
 
+.conference-button {
+  border: 1px solid #a85903;
+  color: #a85903;
+  
+  &:hover {
+    background: #a85903;
+    color: #fff;
+  }
+}
+
+
 // Style dla strony głównej
 .intro-text {
   color: #737373;
