@@ -78,6 +78,7 @@ body {
   float: left;
   width: 140px;
   margin: 0 20px 0 0;
+  line-height: 0;  // usuwa przestrzeń pod obrazem
 }
 
 .positioned-image img {
@@ -85,6 +86,7 @@ body {
   height: auto;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: block;  // usuwa domyślne marginesy obrazu
 }
 
 // Upewniamy się, że elementy dekoracyjne współpracują z obrazem
