@@ -75,12 +75,9 @@ body {
 
 // Style dla pozycjonowanego obrazu
 .positioned-image {
-  position: absolute;
-  width: 130px;
-  height: auto;
-  top: 180px;  // Ta sama wysokość co .square
-  left: 10px; // Dostosuj według potrzeb
-  z-index: 10;
+  float: left;
+  width: 200px;
+  margin: 0 20px 20px 0;
 }
 
 .positioned-image img {
