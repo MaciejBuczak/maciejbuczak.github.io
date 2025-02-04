@@ -11,10 +11,6 @@ layout: default
   <a href="/contact" class="menu-option">Kontakt</a>
 </div>
 
-<!-- Dodajemy pozycjonowany obraz -->
-<div class="positioned-image">
-  <img src="/assets/images/Maciej Buczak - zdjęcie CV.jpg" alt="Opis obrazu">
-</div>
 
 <!-- Istniejące kwadraty -->
 <div class="square"></div>
