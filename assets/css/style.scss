@@ -78,8 +78,8 @@ body {
   position: absolute;
   width: 130px;
   height: auto;
-  top: -180px;  // Ta sama wysokość co .square
-  right: 215px; // Dostosuj według potrzeb
+  top: 180px;  // Ta sama wysokość co .square
+  left: 215px; // Dostosuj według potrzeb
   z-index: 10;
 }
 
