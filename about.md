@@ -18,6 +18,13 @@ title: O mnie
 <div class="square-big"></div>
 
 
+<!-- Dodajemy pozycjonowany obraz -->
+<div class="positioned-image">
+  <img src="/assets/images/Maciej Buczak - zdjęcie CV.jpg" alt="Opis obrazu">
+</div>
+
+
+
 
 ##### Ewolucja podejścia badawczego
 Fundamentem mojego sposobu myślenia i działania jest szerokie zainteresowanie światem oraz sposobami, za pomocą których człowiek potrafi ten świat objaśniać i zrozumieć - niezależnie od tego, jak bardzo naukowe są to metody.
