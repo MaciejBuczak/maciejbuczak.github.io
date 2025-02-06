@@ -19,7 +19,6 @@ layout: default
 <div class="square-big"></div>
 
 
-<h3 class="section-title">Obszary badawcze</h3>
 <div class="research-areas-grid">
   <div class="research-area-card">
     <div class="research-area-icon">
@@ -29,7 +28,6 @@ layout: default
     </div>
     <h4>Ryzyko Modeli</h4>
     <p>Kompleksowa analiza i zarządzanie ryzykiem modeli, ze szczególnym uwzględnieniem aspektów walidacji, monitoringu i audytu modeli w sektorze finansowym.</p>
-    <a href="/topic_sites/model_risk" class="research-area-link">Dowiedz się więcej →</a>
   </div>
   
   <div class="research-area-card">
