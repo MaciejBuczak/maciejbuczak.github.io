@@ -18,9 +18,6 @@ layout: default
 <div class="square2"></div>
 <div class="square-big"></div>
 
-<div class="intro-text">
-  Specjalizuję się w przekształcaniu złożonych wyzwań zarządzania ryzykiem w innowacyjne rozwiązania. Z ponad 17-letnim doświadczeniem w zarządzaniu ryzykiem modeli, prowadzeniu zespołów i tworzeniu przełomowych metodologii, łączę głęboką wiedzę ekspercką z umiejętnością ciągłego uzgadniania wypracowanych rozwiązań z rzeczywistością.
-</div>
 
 <h3 class="section-title">Obszary badawcze</h3>
 <div class="research-areas-grid">
