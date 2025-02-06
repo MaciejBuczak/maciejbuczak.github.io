@@ -27,7 +27,7 @@ layout: default
       </svg>
     </div>
     <h4>Ryzyko Modeli</h4>
-    <p>Kompleksowa analiza i zarządzanie ryzykiem modeli, ze szczególnym uwzględnieniem aspektów walidacji, monitoringu i audytu modeli w sektorze finansowym.</p>
+    <p>Kompleksowa analiza niepewności i błędów w modelach finansowych, wraz z metodami ich identyfikacji, pomiaru i zarządzania ryzykiem.</p>
   </div>
   
   <div class="research-area-card">
@@ -37,8 +37,7 @@ layout: default
       </svg>
     </div>
     <h4>Holistyczna Ocena Modeli</h4>
-    <p>Innowacyjne metody identyfikacji, pomiaru i zarządzania ryzykiem operacyjnym w instytucjach finansowych, z uwzględnieniem najnowszych regulacji.</p>
-    <a href="/research/operational-risk" class="research-area-link">Dowiedz się więcej →</a>
+    <p>Wszechstronna weryfikacja modeli łącząca analizę ilościową (testy statystyczne) i jakościową (ekspertyza biznesowa) dla pełnej oceny skuteczności.</p>
   </div>
   
   <div class="research-area-card">
@@ -48,8 +47,7 @@ layout: default
       </svg>
     </div>
     <h4>Ryzyko kredytowe</h4>
-    <p>Zastosowanie zaawansowanych metod statystycznych i ekonometrycznych w analizie ryzyka finansowego, ze szczególnym uwzględnieniem modelowania szeregów czasowych.</p>
-    <a href="/research/quantitative-analysis" class="research-area-link">Dowiedz się więcej →</a>
+    <p>Zaawansowane metody szacowania strat oczekiwanych (ECL) i nieoczekiwanych, uwzględniające czynniki makroekonomiczne i charakterystykę portfela kredytowego.</p>
   </div>
   
   <div class="research-area-card">
@@ -59,7 +57,6 @@ layout: default
       </svg>
     </div>
     <h4>Ryzyko operacyjne</h4>
-    <p>Analiza wpływu regulacji bankowych na zarządzanie ryzykiem oraz badanie efektywności implementacji wymogów nadzorczych w kontekście Basel III i CRR.</p>
-    <a href="/research/regulations" class="research-area-link">Dowiedz się więcej →</a>
+    <p>Statystyczne podejście do kwantyfikacji ryzyka operacyjnego, wykorzystujące rozkłady prawdopodobieństwa strat i zaawansowane techniki modelowania.</p>
   </div>
 </div>
