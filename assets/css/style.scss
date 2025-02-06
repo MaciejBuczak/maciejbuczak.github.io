@@ -624,6 +624,87 @@ font-weight: bold;
 
 
 
+
+// Style dla strony kontaktowej
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.contact-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border: 1px solid #eee;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(168, 89, 3, 0.1);
+    border-color: #a85903;
+    
+    .contact-icon {
+      background-color: #a85903;
+      color: white;
+    }
+    
+    .contact-info h3 {
+      color: #a85903;
+    }
+  }
+}
+
+.contact-icon {
+  background-color: #f8f8f8;
+  color: #a85903;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1.5rem;
+  transition: all 0.3s ease;
+  
+  i {
+    font-size: 1.5rem;
+  }
+}
+
+.contact-info {
+  flex: 1;
+  
+  h3 {
+    color: #333;
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+  }
+  
+  p {
+    color: #737373;
+    margin: 0;
+    font-size: 1rem;
+    text-indent: 0;
+  }
+}
+
+
+
+
+
+
 // Style dla strony model-risk
 .model-risk-container {
   max-width: 1200px;
@@ -760,8 +841,6 @@ font-weight: bold;
 
 
 
-
-
 // Media queries
 @media screen and (max-width: 768px) {
   #myMenu {
@@ -798,13 +877,46 @@ font-weight: bold;
     padding: 0 15px;
   }
 
-
-.info-cards {
+  .info-cards {
     grid-template-columns: 1fr;
   }
   
   .area-grid {
     grid-template-columns: 1fr;
   }
+
+  // New contact page responsive styles
+  .contact-container {
+    padding: 1rem;
+  }
   
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .contact-card {
+    margin: 0;
+    padding: 1.5rem;
+  }
+  
+  .contact-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 1rem;
+    
+    i {
+      font-size: 1.2rem;
+    }
+  }
+  
+  .contact-info {
+    h3 {
+      font-size: 1.1rem;
+    }
+    
+    p {
+      font-size: 0.9rem;
+    }
+  }
 }
