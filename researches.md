@@ -32,7 +32,7 @@ Przeprowadziłem lub współuczestniczyłem w przeprowadzeniu badań/analiz:
         <span class="domain-separator">|</span>
         <span class="domain-secondary">Impairment/ECL</span>
     </div>
-    <h2 class="publication-title">
+    <h2 class="research-title">
       Badanie nakładających się efektów/prawdopodobieństw przy próbie składania parametrów w koncepcję ECL
     </h2>
     <p class="publication-description">Zagadnienia: prawd. odzysku lifetime, prawd. sprzedaży majątku rzeczowego, reprezentatywność próby w kontekście sposobu stosowania modelu, zbędne złożoności modeli - powtarzające się parametry</p>
