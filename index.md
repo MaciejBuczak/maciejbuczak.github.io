@@ -41,7 +41,7 @@ layout: default
         <path fill="currentColor" d="M21 8V7l-3 2-3-2v1l3 2 3-2zm1-5H2C.9 3 0 3.9 0 5v14c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM8 17H5v-2h3v2zm0-4H5v-2h3v2zm0-4H5V7h3v2zm6 8h-4V7h4v10zm6 0h-3v-2h3v2zm0-4h-3v-2h3v2zm0-4h-3V7h3v2z"/>
       </svg>
     </div>
-    <h4>Ryzyko Operacyjne</h4>
+    <h4>Holistyczna Ocena Modeli</h4>
     <p>Innowacyjne metody identyfikacji, pomiaru i zarządzania ryzykiem operacyjnym w instytucjach finansowych, z uwzględnieniem najnowszych regulacji.</p>
     <a href="/research/operational-risk" class="research-area-link">Dowiedz się więcej →</a>
   </div>
@@ -52,7 +52,7 @@ layout: default
         <path fill="currentColor" d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6h-6z"/>
       </svg>
     </div>
-    <h4>Analiza Ilościowa</h4>
+    <h4>Ryzyko kredytowe</h4>
     <p>Zastosowanie zaawansowanych metod statystycznych i ekonometrycznych w analizie ryzyka finansowego, ze szczególnym uwzględnieniem modelowania szeregów czasowych.</p>
     <a href="/research/quantitative-analysis" class="research-area-link">Dowiedz się więcej →</a>
   </div>
@@ -63,7 +63,7 @@ layout: default
         <path fill="currentColor" d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12zM10 9h8v2h-8zm0-3h8v2h-8zm0 6h4v2h-4z"/>
       </svg>
     </div>
-    <h4>Regulacje i Compliance</h4>
+    <h4>Ryzyko operacyjne</h4>
     <p>Analiza wpływu regulacji bankowych na zarządzanie ryzykiem oraz badanie efektywności implementacji wymogów nadzorczych w kontekście Basel III i CRR.</p>
     <a href="/research/regulations" class="research-area-link">Dowiedz się więcej →</a>
   </div>
