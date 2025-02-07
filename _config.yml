@@ -3,10 +3,10 @@ description: "Risk Management & Research"
 theme: jekyll-theme-slate
 permalink: /:title/
 collections:
-publications:
-  output: true
-  permalink: /publications/:title/
+ publications:
+   output: true
+   permalink: /publications/:title/
 head_scripts:
- - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css
-styles:
- - https://use.fontawesome.com/releases/v5.15.4/css/all.css
+  - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css
+head:
+  - https://use.fontawesome.com/releases/v5.15.4/css/all.css
