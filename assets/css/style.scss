@@ -640,30 +640,34 @@ font-weight: bold;
 }
 
 .contact-card {
-  background: white;
-  border-radius: 12px;
-  padding: 2rem;
-  display: flex;
-  align-items: center;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  border: 1px solid #eee;
-  
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(168, 89, 3, 0.1);
-    border-color: #a85903;
-    
-    .contact-icon {
-      background-color: #a85903;
-      color: white;
-    }
-    
-    .contact-info h3 {
-      color: #a85903;
-    }
-  }
+ background: white;
+ border-radius: 12px;
+ padding: 2rem;
+ display: flex;
+ align-items: center;
+ transition: all 0.3s ease;
+ text-decoration: none;
+ border: 1px solid #eee;
+ 
+ &:hover {
+   transform: translateY(-5px);
+   box-shadow: 0 10px 20px rgba(168, 89, 3, 0.1);
+   border-color: #a85903;
+   
+   .contact-icon {
+     background-color: #a85903;
+     
+     i {
+       color: white;
+     }
+   }
+   
+   .contact-info h3 {
+     color: #a85903;
+   }
+ }
 }
+
 
 .contact-icon {
   background-color: #f8f8f8;
