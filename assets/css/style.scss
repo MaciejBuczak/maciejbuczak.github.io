@@ -654,6 +654,7 @@ font-weight: bold;
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(168, 89, 3, 0.1);
     border-color: #a85903;
+    text-decoration: none !important;
     
     .contact-icon {
       background-color: #a85903;
@@ -668,8 +669,7 @@ font-weight: bold;
     }
 
     p {
-      text-decoration: underline;
-      text-decoration-color: #a85903;
+      text-decoration: none !important;
     }
   }
 }
