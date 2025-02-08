@@ -4,6 +4,7 @@ description: "Risk Management & Research"
 theme: jekyll-theme-slate
 permalink: /:title/
 collections:
-publications:
-  output: true
-  permalink: /publications/:title/
+  publications:
+    output: true
+    permalink: /publications/:title/
+include: [_includes]
