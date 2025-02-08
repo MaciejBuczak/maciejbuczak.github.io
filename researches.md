@@ -270,3 +270,5 @@ Opracowałem lub współuczestniczyłem w opracowaniu metodyk:
     <div class="publication-meta">📅 2008</div>
   </div>
   </div>
+
+{% include analytics.html %}
