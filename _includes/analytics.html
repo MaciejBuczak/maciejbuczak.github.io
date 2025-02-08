@@ -1,1 +1,35 @@
 <script data-goatcounter="https://maciejbuczak.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+<script>
+function countDownload(lang) {
+    window.goatcounter.count({
+        path: 'download/oprisk_2024_12_cancellation_' + lang,
+        title: 'Download Article ' + lang.toUpperCase(),
+        event: true
+    });
+}
+
+async function updateViewStats() {
+    try {
+        const plResponse = await fetch('https://maciejbuczak.goatcounter.com/api/v0/count?path=download/oprisk_2024_12_cancellation_pl');
+        const plData = await plResponse.json();
+        const enResponse = await fetch('https://maciejbuczak.goatcounter.com/api/v0/count?path=download/oprisk_2024_12_cancellation_en');
+        const enData = await enResponse.json();
+        
+        // Aktualizacja liczników
+        const plDownloads = document.getElementById('pl-downloads');
+        const enDownloads = document.getElementById('en-downloads');
+        if (plDownloads) plDownloads.textContent = plData.count || 0;
+        if (enDownloads) enDownloads.textContent = enData.count || 0;
+    } catch (error) {
+        console.error('Błąd podczas pobierania statystyk:', error);
+    }
+}
+
+// Uruchom aktualizację statystyk po załadowaniu strony
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateViewStats);
+} else {
+    updateViewStats();
+}
+</script>
