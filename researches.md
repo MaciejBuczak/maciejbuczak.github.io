@@ -35,7 +35,7 @@ Przeprowadziłem lub współuczestniczyłem w przeprowadzeniu badań/analiz:
     <h2 class="research-title">
       Badanie nakładających się efektów/prawdopodobieństw przy próbie składania parametrów w koncepcję ECL
     </h2>
-    <p class="publication-description">Zagadnienia: prawd. odzysku lifetime, prawd. sprzedaży majątku rzeczowego, reprezentatywność próby w kontekście sposobu stosowania modelu, zbędne złożoności modeli - powtarzające się parametry</p>
+    <p class="publication-description">Zagadnienia: prawd. odzysku lifetime, prawd. sprzedaży majątku rzeczowego, reprezentatywność próby w kontekście sposobu stosowania modelu, zbędne złożoności modeli</p>
     <div class="publication-meta">📅 2023</div>
   </div>
 
@@ -67,7 +67,7 @@ Przeprowadziłem lub współuczestniczyłem w przeprowadzeniu badań/analiz:
     <h2 class="research-title">
         Analiza mechaniki modelu wartości nieoczekiwanej dla strat kredytowych
     </h2>
-    <p class="publication-description">Zagadnienia: biznesowe wizualizacja scenariusza sytuacji nieoczekiwanej, Transformata Fouriera i jej przełożenie na prostsze rozwiązania: symulacja Monte Carlo, umiejętność zredukowania złożonego modelu do jednej linijki kodu, zagadnienie: jakie parametry zmieniają się i w jaki sposób w sytuacji nieoczekiwanej, benchmarking z podejściem IRB do tego samego zagadnienia</p>
+    <p class="publication-description">Zagadnienia: biznesowe wizualizacja scenariusza sytuacji nieoczekiwanej, symplifikacja rozwiązania, modelowy opis sytuacji nieoczekiwanej, benchmarking z podejściem IRB</p>
     <div class="publication-meta">📅 2023</div>
   </div>
 
@@ -81,7 +81,7 @@ Przeprowadziłem lub współuczestniczyłem w przeprowadzeniu badań/analiz:
     <h2 class="research-title">
         Podejście do opisu rozkładu prawdopodobieństwa wartości ekstremalnych w odniesieniu do zagadnienia ryzyka operacyjnego
     </h2>
-    <p class="publication-description">Zagadnienia: I i II teoria wartości ekstremalnych, rozkład globalny vs. rozkład w ogonie, problemy z definicją progu ogona rozkładu, dystrybuanta warunkowa i rozkł. graniczny, Mean Excess Function, problemy ze stabilnością estymacji rozkł. GPD, zastosowanie rozkł. truncated, stosowanie rozkł. lognormal i problemy z tym związane, VaR, skalowanie VaR</p>
+    <p class="publication-description">Zagadnienia: I i II teoria wartości ekstremalnych, rozkład globalny vs. rozkład w ogonie, problematyczna definicja progu ogona rozkładu, dystrybuanta warunkowa i rozkł. graniczny, Mean Excess Function, problemy ze stabilnością estymacji rozkł. GPD, zastosowanie rozkładów truncated, problematyczne zastosowania rozkładu lognormal, VaR, skalowanie VaR</p>
     <div class="publication-meta">📅 2021</div>
   </div>
 
@@ -97,7 +97,7 @@ Przeprowadziłem lub współuczestniczyłem w przeprowadzeniu badań/analiz:
     <h2 class="research-title">
         Analiza możliwych podejść do budowy modeli regresji służących do opisu zależności liczby lub wartości strat operacyjnych od zmiennych niezależnych
     </h2>
-    <p class="publication-description">Zagadnienia: normalizacja danych, dobór charakteru zmiennych (zmienne typu stan zjawiska, zm. typu agregat, zm. typu średnia), dobór biznesowy zmiennych, współliniowość zmiennych, odpowiednia definicja czasowa obserwacji do modelu (miesiąc, rok), pułapki związane z kwantyfikatorami jakości modelu (p-value, R2), zwodnicze prezentacje graficzne</p>
+    <p class="publication-description">Zagadnienia: normalizacja danych, dobór charakteru zmiennych, dobór biznesowy zmiennych, współliniowość zmiennych, odpowiednia definicja czasowa obserwacji do modelu, pułapki związane z kwantyfikatorami jakości modelu (p-value, R2), zwodnicze prezentacje graficzne</p>
     <div class="publication-meta">📅 2020</div>
   </div>
 
@@ -114,7 +114,7 @@ Przeprowadziłem lub współuczestniczyłem w przeprowadzeniu badań/analiz:
     <h2 class="research-title">
         Model porównawczy zmian ryzyka szkodowości (PD) w czasie w kontekście zagadnienia ścieżki lifetime oraz warunkowości prawdopodobieństwa (zagadnienie SICR)
     </h2>
-    <p class="publication-description">Zagadnienia: prawdopodobieństwo warunkowe, różne ujęcia prawdopodobieństwa dla rozkładu Weibulla, niezamierzone nieprawidłowości (dwie mody rozkładu), zmiana wykreślania prawd. (Weibull) w czasie</p>
+    <p class="publication-description">Zagadnienia: prawdopodobieństwo warunkowe, różne ujęcia prawdopodobieństwa dla rozkładu Weibulla, niezamierzone efekty probabilistyczne wynikające z nadmiernej złożoności, wykreślanie prawdopodobieństwa (Weibull) w czasie</p>
     <div class="publication-meta">📅 2020</div>
   </div>
 
@@ -184,7 +184,7 @@ Przeprowadziłem lub współuczestniczyłem w przeprowadzeniu badań/analiz:
 <br>
 
 ##### Opracowane metodyki - ryzyko w sektorze bankowym
-Przeprowadziłem lub współuczestniczyłem w opracowaniu metodyk:
+Opracowałem lub współuczestniczyłem w opracowaniu metodyk:
 <br>
 <br>
 
@@ -214,7 +214,7 @@ Przeprowadziłem lub współuczestniczyłem w opracowaniu metodyk:
     <h2 class="research-title">
         Metodyka: Holistycznej ocena modeli lifetime PD (IFRS9)
     </h2>
-    <p class="publication-description">Autorskie podejście do bactestowania, rozbudowane podejście do oceny logiki biznesowej, bardzo dobra ocena krajowego nadzorcy</p>
+    <p class="publication-description">Autorskie podejście do bactestowania, rozbudowane podejście do oceny logiki biznesowej</p>
     <div class="publication-meta">📅 2018</div>
   </div>
 
@@ -252,8 +252,7 @@ Przeprowadziłem lub współuczestniczyłem w opracowaniu metodyk:
 <br>
 <br>
 
-##### Projety IT - ryzyko w sektorze bankowym
-Przeprowadziłem lub współuczestniczyłem w opracowaniu metodyk:
+##### Projekty IT - ryzyko w sektorze bankowym
 <br>
 <br>
 
