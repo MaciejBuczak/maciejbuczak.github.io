@@ -1,4 +1,3 @@
-# contact.md
 ---
 layout: default
 title: Kontakt
