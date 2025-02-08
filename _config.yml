@@ -1,10 +1,9 @@
+# _config.yml
 title: "Maciej Buczak"
 description: "Risk Management & Research"
 theme: jekyll-theme-slate
 permalink: /:title/
 collections:
- publications:
-   output: true
-   permalink: /publications/:title/
-head_scripts:
-  - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css
+publications:
+  output: true
+  permalink: /publications/:title/
