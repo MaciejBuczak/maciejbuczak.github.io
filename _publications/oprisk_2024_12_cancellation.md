@@ -3,7 +3,6 @@ layout: default
 title: "Bieg wsteczny w rozwoju koncepcji modelowania wartości nieoczekiwanej w sektorze finansowym na przykładzie decyzji o wycofaniu frameworku AMA w ryzyku operacyjnym"
 date: 15-12-2024
 source: "Przesłano do: Metody ilościowe w badaniach ekonomicznych"
-views: 245
 status: "review"
 pinned: true
 ---
@@ -27,21 +26,7 @@ function countDownload(lang) {
     });
 }
 
-async function updateViewStats() {
-    try {
-        const plResponse = await fetch('https://maciejbuczak.goatcounter.com/api/v0/count?path=download/oprisk_2024_12_cancellation_pl');
-        const plData = await plResponse.json();
-        const enResponse = await fetch('https://maciejbuczak.goatcounter.com/api/v0/count?path=download/oprisk_2024_12_cancellation_en');
-        const enData = await enResponse.json();
-        
-        document.getElementById('pl-downloads').textContent = plData.count || 0;
-        document.getElementById('en-downloads').textContent = enData.count || 0;
-    } catch (error) {
-        console.error('Błąd podczas pobierania statystyk:', error);
-    }
-}
 
-document.addEventListener('DOMContentLoaded', updateViewStats);
 </script>
 
 <div class="publication-full">
@@ -60,20 +45,19 @@ document.addEventListener('DOMContentLoaded', updateViewStats);
         <h1 class="publication-title-full">{{ page.title }}</h1>
         
         <div class="publication-meta-full">
-            📅 {{ page.date | date: "%d-%m-%Y" }} &nbsp;&nbsp;|&nbsp;&nbsp; 
-            👁️ {{ page.views }} wyświetleń
+            📅 {{ page.date | date: "%d-%m-%Y" }} &nbsp;&nbsp;|&nbsp;&nbsp;
         </div>
 
         <div class="download-links">
             <a href="/assets/pdfs/oprisk_2024_12_cancellation_pl.pdf" 
                class="download-button" 
                onclick="countDownload('pl')">
-                📄 Pobierz artykuł (PL) (<span id="pl-downloads">0</span>)
+                📄 Pobierz artykuł (PL)
             </a>
             <a href="/assets/pdfs/oprisk_2024_12_cancellation_en.pdf" 
                class="download-button" 
                onclick="countDownload('en')">
-                📄 Download article (EN) (<span id="en-downloads">0</span>)
+                📄 Download article (EN)
             </a>
         </div>
         <div class="publication-resources">
