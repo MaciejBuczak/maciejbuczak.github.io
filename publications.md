@@ -65,3 +65,5 @@ title: Publikacje
     <div class="publication-meta">📅 Grudzień 2023 &nbsp;&nbsp;|&nbsp;&nbsp; 👁️ 189 wyświetleń</div>
   </div>
 </div>
+
+{% include analytics.html %}
