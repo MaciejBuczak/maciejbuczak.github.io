@@ -59,3 +59,5 @@ layout: default
     <p>Statystyczne podejście do kwantyfikacji ryzyka operacyjnego, wykorzystujące rozkłady prawdopodobieństwa strat i zaawansowane techniki modelowania.</p>
   </div>
 </div>
+
+{% include analytics.html %}
