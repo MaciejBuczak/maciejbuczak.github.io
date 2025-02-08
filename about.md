@@ -47,8 +47,8 @@ Budowa kompleksowych metodyk
 W toku realizacji projektów opracowałem szereg metodyk opartych o szeroko rozumiane techniki statystyczne i ilościowe:
 - opracowałem w pełni autorską metodykę holistycznej oceny modelu ryzyka operacyjnego AMA, ponad 50 autorskich badań analitycznych, bardzo dobra ocena krajowego nadzorcy,
 - opracowałem w pełni autorską metodykę holistycznej oceny modeli lifetime PD (IFRS9), również bardzo dobra ocena nadzorcy,
-- opracowałem w większości autorską metodykę oceny modelu ECL,
-- opracowałem w większości autorską metodykę dla obszaru ICAAP,
+- współtworzyłem w istotnej części metodykę oceny modelu ECL,
+- współtworzyłem w istotnej części metodykę dla oceny modeli w obszarze ICAAP,
 - opracowałem uniwersalną metodykę modelu zaawansowanego pomiaru AMA wraz z implementacją do systemu IT
 
 ###### Ocena jakości modeli statystycznych
