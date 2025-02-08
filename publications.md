@@ -19,7 +19,6 @@ title: Publikacje
 
 
 <div class="publications-container">
-  # Publikacje
 
 
   
