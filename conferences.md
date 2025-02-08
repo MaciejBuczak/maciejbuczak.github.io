@@ -118,3 +118,5 @@ Uczestniczyłem w roli prelegenta/szkoleniowca w następujących konferencjach/w
 
   
 </div>
+
+{% include analytics.html %}
