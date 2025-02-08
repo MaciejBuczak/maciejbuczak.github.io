@@ -80,3 +80,4 @@ Sport to dla mnie nie tylko aktywność fizyczna. Analizuję strategie w kolarst
 Muzyka towarzyszy mi od lat. Moje doświadczenie w świecie muzyki pozwala mi lepiej rozumieć harmonię i kompozycję, co przekłada się na sposób, w jaki podchodzę do rozwiązywania problemów.
 Metody ilościowe znajdują zastosowanie w codziennym życiu. Fascynuje mnie, jak często nieświadomie wykorzystujemy obliczenia do podejmowania decyzji i zarządzania wartością oczekiwaną naszych działań.
 
+{% include analytics.html %}
