@@ -26,7 +26,7 @@ title: Kontakt
       </div>
     </a>
 
-    <a href="https://www.linkedin.com/in/maciejbuczak" class="contact-card">
+    <a href="https://www.linkedin.com/in/maciej-buczak-561b95120" class="contact-card">
       <div class="contact-info">
         <h3>LinkedIn</h3>
         <p>/maciejbuczak</p>
