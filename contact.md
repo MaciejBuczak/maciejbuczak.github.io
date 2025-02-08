@@ -67,7 +67,7 @@ title: Kontakt
       </div>
     </a>
 
-    <a href="https://medium.com/@YOUR_USERNAME" class="contact-card">
+    <a href="https://medium.com/@maciej.buczak" class="contact-card">
       <div class="contact-info">
         <h3>Medium</h3>
         <p>Blog na Medium</p>
