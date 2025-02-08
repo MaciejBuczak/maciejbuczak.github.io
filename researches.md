@@ -254,7 +254,6 @@ Opracowałem lub współuczestniczyłem w opracowaniu metodyk:
 
 ##### Projekty IT - ryzyko w sektorze bankowym
 <br>
-<br>
 
 <div class="publications-container">
 
