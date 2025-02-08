@@ -75,3 +75,5 @@ title: Kontakt
     </a>
   </div>
 </div>
+
+{% include analytics.html %}
