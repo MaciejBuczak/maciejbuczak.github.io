@@ -1,6 +1,6 @@
 ---
 layout: default
-title: O mnie
+title: About me
 ---
 <div id="myMenu">
   <a href="/" class="menu-option">Start</a>
@@ -17,7 +17,7 @@ title: O mnie
 <div class="square-big"></div>
 
 
-##### O mnie
+##### About me
 
 <!-- Dodajemy pozycjonowany obraz -->
 <div class="positioned-image">
