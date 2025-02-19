@@ -4,11 +4,11 @@ title: O mnie
 ---
 <div id="myMenu">
   <a href="/" class="menu-option">Start</a>
-  <a href="/about" class="menu-option">O mnie</a>
-  <a href="/publications" class="menu-option">Publikacje</a>
-  <a href="/researches" class="menu-option">Badania</a>
-  <a href="/conferences" class="menu-option">Prelekcje</a>
-  <a href="/contact" class="menu-option">Kontakt</a>
+  <a href="/about" class="menu-option">About me</a>
+  <a href="/publications" class="menu-option">Publications</a>
+  <a href="/researches" class="menu-option">Researches</a>
+  <a href="/conferences" class="menu-option">Lectures</a>
+  <a href="/contact" class="menu-option">Contact</a>
 </div>
 
 <div class="square"></div>
@@ -23,61 +23,85 @@ title: O mnie
 <div class="positioned-image">
   <img src="/assets/images/Maciej Buczak - zdjęcie CV.jpg" alt="Opis obrazu">
 </div>
-Miło mi, że tu jesteś. Lubię dzielić się wiedzą i doświadczeniem w zastosowaniach metod ilościowych w badaniu ryzyka i nie tylko... Jestem badaczem i managerem z wieloletnim stażem w tej dziedzinie. Dużo ciekawych obserwacji udało mi się wychwycić. Współtworzyłem system IT do zarządzania ryzykiem operacyjnym, tworzyłem system do zarządzania ryzykiem modeli, a najwięcej czasu spędziłem na różnorodnych analizach statystycznych. Przez 8 lat zajmowałem się holistyczną oceną modeli pod kątem ich ekspozycji na ryzyko modeli. Moje główne obszary to ryzyko kredytowe (ECL/IFRS9), ryzyko operacyjne i statystyczne techniki jego pomiaru, pomiar wartości oczekiwanych i nieoczekiwanych (kapitał wewnętrzny). Aktywnie szukam tez innych przestrzeni do refleksi jakościowo-ilościowej...
+Nice to have you here. I enjoy sharing my knowledge and experience in the application of quantitative methods in risk research and beyond. I am a researcher and manager with many years of experience in this field. I have managed to capture many interesting observations. I co-created an IT system for operational risk management, developed a system for model risk management, and spent most of my time on various statistical analyses. For eight years, I have been involved in the holistic assessment of models in terms of their exposure to model risk.  
+My main areas of expertise include credit risk (ECL/IFRS9), operational risk, and statistical measurement techniques, including expected and unexpected value measurement (internal capital). I am also actively searching for new spaces for qualitative-quantitative reflection...
 
 <hr>
 
-##### Ewolucja podejścia badawczego
-Fundamentem mojego sposobu myślenia i działania jest szerokie zainteresowanie światem oraz sposobami, za pomocą których człowiek potrafi ten świat objaśniać i zrozumieć - niezależnie od tego, jak bardzo naukowe są to metody.
-Praktyka zawodowa pozwoliła mi na dostrzeżenie, coraz wyraźniej się rysujących, cech otaczającej nas rzeczywistości: (a) świat osiągnął stopień złożoności nieogarnialny dla pojedynczego umysłu, (b) metody opisu tego świata przy rosnącym udziale komponentu stochastycznego takich modeli nie wytrzymują zderzenia z rzeczywistością, a jednocześnie, jakby nie dostrzegając dwóch w/w cech (c) nierzadko budujemy modele, których stopień złożoności jest większy niż zjawiska, które mają opisać. To odkrycie skłoniło mnie do głębszej refleksji nad rolą metod ilościowych w biznesie, w ekonomii i szeroko rozumianych naukach społecznych oraz podjęcia drogi wypracowania własnego podejścia badawczego.
+##### Evolution of Research Approach
+The foundation of my way of thinking and acting is a broad interest in the world and the ways in which humans can explain and understand it—regardless of how scientifically grounded these methods are. My professional practice has allowed me to increasingly recognize the emerging characteristics of the surrounding reality:  
+(a) The world has reached a level of complexity that is non-linear to the individual mind,  
+(b) The methods used to describe this world often fail when stochastic components play a significant role, and they do not withstand real-world collisions,  
+(c) We often build models that are less complex than the phenomena they aim to describe.  
 
-##### Zainteresowania badawcze
-Przestrzenie moich zainteresowań badawczych ogniskują się wokół takich dziedzin, jak ekonomia, socjologia, historia. Interesuje mnie w całości otaczająca nas rzeczywistość, manifestująca się poprzez szerokie spektrum wydarzeń. Lubię zatem czerpać moje obserwację również z takich obszarów rzeczywistości, jak otoczenie kulturowe, czy sport. Przede wszystkim jednak, moje spojrzenie ukierunkowane jest na przestrzeń metod, które mogą posłużyć do opisu tak szeroko pojmowanej rzeczywistości. Mam tu oczywiście na myśli całe spektrum metod wypracowanych w dziedzinach takich jak statystyka, czy ekonometria. Nie ograniczam się jednak do nich, poszukując też rozwiązań w innych obszarach, które często można z powodzeniem transferować pomiędzy dziedzinami. Lubię więc poruszać się po pewnym uniwersum metod, zastanawiając się nad generycznymi cechami, które umożliwiają ich aplikację, w różnych przestrzeniach otaczającego nas świata. Jest to część mojego sposobu myślenia „do istoty rzeczy”.
+This discovery led me to deeper reflections on the role of quantitative methods in business, economics, and broadly understood social sciences, as well as to the pursuit of developing my own research approach.
 
-##### Doświadczenie zawodowe
-W toku mojej kariery zawodowej zgromadziłem bogate doświadczenie w projektowaniu i prowadzeniu badań z wykorzystaniem zaawansowanych metod ilościowych. Moje kompetencje obejmują:
+##### Research Interests
+My research interests revolve around fields such as economics, sociology, and history. I am fascinated by the surrounding reality, manifesting itself in a wide spectrum of events. I prefer to draw observations from these areas of reality, whether cultural or social environments.  
 
-###### Badania/analizy ryzyk finansowych
-W trakcie kariery zawodowej przeprowadziłem szereg badań odnoszacych się do ogólnie pojmowanego ryzyka finansowego. Wszystkie wykonane badania miały charakter czysto praktyczny - odnosiły się do realnego problemu biznesowego, miały swój wymiar finansowy i inne praktyczne oblicza (jak np. koszt wdrożenia usprawnień wynikających z wykonanego badania). W zdecydowanej większości przypadków rozwiązanie problemów było związane z potrzebą wyjścia poza obowiązujący paradygmat lub przyzwyczajenia - co też uczyniłem.
+However, my focus is mainly on methods that can be used to describe this vast and complex reality. Of course, this involves a spectrum of established fields such as statistics, econometrics, and mathematics. But I do not limit myself to these; I seek solutions in other areas, which I can often successfully transfer to my research domain. I enjoy exploring a certain universality of methods, their adaptability in different contexts, and the various perspectives they can offer in describing the world.  
 
-###### Budowa kompleksowych metodyk
-W toku mojej kariery zawodowej zgromadziłem bogate doświadczenie w projektowaniu i prowadzeniu badań z wykorzystaniem zaawansowanych metod ilościowych. Moje kompetencje obejmują:
-Budowa kompleksowych metodyk
-W toku realizacji projektów opracowałem szereg metodyk opartych o szeroko rozumiane techniki statystyczne i ilościowe:
-- opracowałem w pełni autorską metodykę holistycznej oceny modelu ryzyka operacyjnego AMA, ponad 50 autorskich badań analitycznych, bardzo dobra ocena krajowego nadzorcy,
-- opracowałem w pełni autorską metodykę holistycznej oceny modeli lifetime PD (IFRS9), również bardzo dobra ocena nadzorcy,
-- współtworzyłem w istotnej części metodykę oceny modelu ECL,
-- współtworzyłem w istotnej części metodykę dla oceny modeli w obszarze ICAAP,
-- opracowałem uniwersalną metodykę modelu zaawansowanego pomiaru AMA wraz z implementacją do systemu IT.
+I like to consider how methods influence our way of thinking and whether it is sometimes better to "adjust methods to the world" rather than "adjust the world to methods."
 
-###### Ocena jakości modeli statystycznych
-Przeprowadziłem kilkadziesiąt procesów holistycznej ewaluacji modelu. Proces oceny pojedynczego modelu, to złożony ciąg czynności, zmierzający do wszechstronnej oceny modelu ryzyka. Czynności te to: ocena jakości danych; adekwatność zbiorów danych; reprezentatywność (czasowa i przestrzenna); poprawność transferu danych ze środowisk ich gromadzenia do modelu; ocena koncepcji modelu, czyli wybranego (często złożony z wielu technik statystycznych) do opisu modelowanego zjawiska, schematu myślowy; ocena wzajemnych relacji technik statystycznych wewnątrz modelu; procesy estymacyjne i ich jakość; najważniejsze – holistyczne spojrzenie na model pod kątem jego ogólnej zgodności z rzeczywistością.
-Obszary prowadzonych przeze mnie projektów: 
-- ECL/Impairment (PD, LGD, EAD, SICR, FLI),
-- ryzyko operacyjne (AMA),
-- ICAAP (kapitał wewnętrzny: ryzyko kredytowe, proces odzyskiwania, ryzyko reputacji).
+##### Professional Experience
+Throughout my professional career, I have accumulated extensive experience in designing and conducting research using advanced quantitative methods. My competencies include:
 
-W odniesieniu do w/w obszarów aktywnie uczestniczyłem w całym cyklu życia modeli, co dało mi szerokie podstawy do obserwacji skuteczności ich działania, w kontekście ich umiejętności opisu rzeczywistości.
+###### Financial Risk Research/Analysis
+During my career, I have conducted numerous studies related to broadly understood financial risk. All the research I carried out had a practical aspect—they addressed real business problems, had financial implications, and other practical dimensions (e.g., the cost of implementing improvements resulting from the research).
+In most cases, problem-solving was linked to the need to break away from the existing paradigm or habit—which is exactly what I did.
 
-###### Stosowane techniki statystyczne/ekonometryczne
-W moich dotychczasowych pracach projektowych i badawczych szeroko wykorzystywałem techniki mieszczące się w kategorii metod ilościowych:
-- klasyczne metody statystyczne, opis zjawisk za pomocą rozkładów prawdopodobieństwa, statystyka szeregów czasowych,
-- metody ilościowe w biznesie: metody oceny jakości ekspozycji kredytowej, metody modelowania zjawisk lifetime (PD lifetime, LGD lifetime, EAD),
-- metody składania wartości oczekiwanej kosztu ryzyka ECL, zgodnie z IFRS9,
-- metody modelowania wartości nieoczekiwanej: modele kapitału regulacyjnego i wewnętrznego, modelowanie ryzyka operacyjnego, modelowanie wartości nieoczekiwanej ryzyka kredytowego oraz odzysków,
-- modelowanie wartości ekstremalnych: I i II teoria EVT,
-- modelowanie w podejściu aktuarialnym - sektor ubezpieczeniowy,
-- metody numeryczne / bootstrapping, Testy Warunków Skrajnych.
+###### Development of Complex Methodologies
+Throughout my professional career, I have gained extensive experience in designing and conducting research using advanced quantitative methods. My competencies include:  
 
-###### Autorskie narzędzia analityczne
-Jestem autorem kilkudziesięciu (w samej metodyce modelu AMA jest ponad 50) badań/narzędzi analitycznych, niektóre z nich całkowicie nowatorskie. Umiejętność opracowania badania ukierunkowanego dla konkretnego zagadnienia, pozwalała mi wykryć niewidoczne z innych perspektyw nieprawidłowości.
+The development of complex methodologies—during project implementation, I have developed a range of methodologies based on broadly understood statistical and quantitative techniques, including:  
+
+- Developing a fully original holistic methodology for assessing AMA operational risk models, conducting over 50 analytical studies, highly rated by national regulators.  
+- Developing a fully original holistic methodology for assessing lifetime PD models (IFRS9), also highly rated by national regulators.  
+- Co-developing a significant portion of the ECL model assessment methodology.  
+- Co-developing a significant portion of the ICAAP model assessment methodology.  
+- Developing a universal methodology for advanced AMA risk measurement models, along with their implementation into IT systems. 
+
+###### Assessment of Statistical Model Quality
+I have conducted several dozen holistic model evaluation processes. A single model evaluation is a complex set of activities aimed at a comprehensive risk assessment. These activities include:  
+
+- Assessing data quality.  
+- Evaluating the adequacy of data sets.  
+- Assessing representativeness (both temporal and spatial).  
+- Ensuring the correctness of data transfer from collection environments to the model.  
+- Evaluating the adequacy of the chosen model concept (often composed of many statistical techniques) in describing the modeled phenomenon or mental schema.  
+- Assessing the interrelationships of statistical techniques within the model.  
+- Estimating model processes and their quality.  
+
+Most importantly, taking a **holistic perspective on the model** in terms of its overall consistency with reality. These areas define the scope of my projects:
+- **ECL/Impairment** (PD, LGD, EAD, SICR, FLI)  
+- **Operational risk** (AMA)  
+- **ICAAP** (internal capital: credit risk, recovery process, reputation risk)  
+
+In relation to the areas mentioned above, I have actively participated in the entire model lifecycle, which has given me a broad foundation for observing their effectiveness in action, particularly in the context of their ability to describe reality.
+
+###### Applied Statistical/Econometric Techniques
+In my past project and research work, I have extensively utilized techniques that fall within the category of quantitative methods, including:
+
+- **Classical statistical methods** – describing phenomena using probability distributions, time series statistics.  
+- **Quantitative methods in business** – methods for assessing the quality of credit exposure, modeling financial phenomena (PD lifetime, LGD lifetime, EAD).  
+- **Expected value aggregation methods** – risk cost estimation methods (ECL) in accordance with IFRS9.  
+- **Modeling unexpected value** – regulatory capital models, internal capital models, operational risk modeling, modeling unexpected value in credit risk and recovery risk.  
+- **Extreme value modeling** – EVT (Extreme Value Theory) – types I and II.  
+- **Actuarial modeling** – applications in the insurance sector.  
+- **Numerical methods** – bootstrapping, stress testing (Stress Testing Frameworks).  
+
+###### Proprietary Analytical Tools
+I am the author of several dozen analytical tools (in the AMA model methodology alone, there are over 50). Some of them are entirely innovative. My ability to develop research tools tailored to specific problems has allowed me to uncover irregularities that might not be visible from other perspectives
 
 <hr>
 
-##### Poza liczbami
-Moje zainteresowania wykraczają daleko poza świat finansów. Historia i socjologia fascynują mnie szczególnie. Zgłębiam przyczyny wybuchu I wojny światowej i strukturę spraw w Polsce końca XVIII wieku, szukając wzorców, które można odnieść do współczesności.
-Sport to dla mnie nie tylko aktywność fizyczna. Analizuję strategie w kolarstwie, zgłębiam "uczciwe i nieuczciwe" aspekty sportu, badam kompleksowe procesy treningowe w bieganiu i narciarstwie biegowym.
-Muzyka towarzyszy mi od lat. Moje doświadczenie w świecie muzyki pozwala mi lepiej rozumieć harmonię i kompozycję, co przekłada się na sposób, w jaki podchodzę do rozwiązywania problemów.
-Metody ilościowe znajdują zastosowanie w codziennym życiu. Fascynuje mnie, jak często nieświadomie wykorzystujemy obliczenia do podejmowania decyzji i zarządzania wartością oczekiwaną naszych działań.
+##### Beyond Numbers
+My interests go far beyond the world of finance. I am particularly fascinated by history and sociology. I explore the causes of World War I and the structure of affairs in late 18th-century Poland, searching for patterns that can be applied to the present day.  
+
+Sports, for me, are not just about physical activity. I analyze strategies in cycling, delve into the "fair and unfair" aspects of sports, and study complex training processes in running and cross-country skiing.  
+
+Music has accompanied me for many years. My experience in the world of music allows me to better understand harmony and composition, which translates into the way I approach problem-solving.  
+
+Quantitative methods find applications in everyday life. I am fascinated by how often we unconsciously use calculations to make decisions and manage the expected value of our actions.
 
 {% include analytics.html %}
