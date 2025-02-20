@@ -60,7 +60,7 @@ case study of the decision to withdraw the ama framework in operational Risk
     <span class="publication-status status-review">PREPRINT</span>
     <h2 class="publication-title">
       <a href="{{ site.baseurl }}/publications/2023-12-risk-assessment" class="publication-link">
-        Unexpected effects inherent in the AMA concept, determining its quality and ultimate withdrawal.
+        Unexpected effects inherent in the AMA concept, determining its quality and ultimate withdrawal
       </a>
     </h2>
     <p class="publication-description">The article presents a very detailed analysis of the AMA method, set within the framework of statistical and
