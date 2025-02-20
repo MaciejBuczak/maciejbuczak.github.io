@@ -1,14 +1,14 @@
 ---
 layout: default
-title: "Bieg wsteczny w rozwoju koncepcji modelowania wartości nieoczekiwanej w sektorze finansowym na przykładzie decyzji o wycofaniu frameworku AMA w ryzyku operacyjnym"
+title: "Backward Step in the Development of the Unexpected Value Modeling Concept in the Financial Sector: The Case of AMA Framework Withdrawal in Operational Risk"
 date: 15-12-2024
-source: "Przesłano do: Metody ilościowe w badaniach ekonomicznych"
+source: "Submitted to: Quantitative Methods in Economics"
 status: "review"
 pinned: true
 ---
 <div class="back-link">
   <a href="/publications" class="back-button">
-    ← Powrót do listy publikacji
+    ← Back
   </a>
 </div>
 <div class="square"></div>
@@ -31,15 +31,15 @@ function countDownload(lang) {
 
 <div class="publication-full">
     <div class="publication-header">
-        <span class="publication-pin">📌 Przypięte</span>
-        <span class="publication-status status-review">PROCES RECENZJI</span>
+        <span class="publication-pin">📌 Pinned</span>
+        <span class="publication-status status-review">PEER REVIEW PROCESS</span>
         
         <div class="publication-source">{{ page.source }}</div>
 
         <div class="publication-domain">
-            <span class="domain-primary">Zarządzanie ryzykiem</span>
+            <span class="domain-primary">Risk management</span>
             <span class="domain-separator">|</span>
-            <span class="domain-secondary">Ryzyko operacyjne</span>
+            <span class="domain-secondary">Operational risk</span>
         </div>
     
         <h1 class="publication-title-full">{{ page.title }}</h1>
@@ -62,32 +62,20 @@ function countDownload(lang) {
         </div>
         <div class="publication-resources">
             <a href="URL_DO_CZASOPISMA" class="resource-link" target="_blank">
-                <span class="resource-icon">📰</span> Czasopismo
+                <span class="resource-icon">📰</span> Journal
             </a>
             <a href="URL_DO_PREPRINTU" class="resource-link" target="_blank">
                 <span class="resource-icon">📄</span> Preprint
             </a>
             <a href="URL_DO_MEDIUM" class="resource-link" target="_blank">
-                <span class="resource-icon">💡</span> Artykuł popularnonaukowy
+                <span class="resource-icon">💡</span> Popular science article
             </a>
         </div>
     </div>
     <div class="publication-content">
-        <h5>Abstrakt</h5>
-        <p>
-            1 stycznia 2025 r. za pośrednictwem przepisów CRR III wchodzi w życie nowa architektura bezpieczeństwa sektora finansowego. Działaniom związanym z wypracowaniem nowych regulacji towarzyszyła pogłębiona refleksja na temat skuteczności dotychczasowej, opracowanej 
-w 2004 r. (Basel II) koncepcji bezpieczeństwa kapitałowego. W niektórych obszarach refleksja ta zaprowadziła regulatora do decyzji dychotomicznych 
-i ostatecznych. Taką decyzję podjęto w stosunku do stosowanej w przestrzeni ryzyka operacyjnego Metody Zaawansowanego Pomiaru AMA. 
-W niniejszym artykule staram się przedstawić szeroki kontekst, jaki tej decyzji towarzyszył, wraz z własnym, skromnym osądem sytuacji.
-        </p>
-        <h5>Abstrakt - ENG</h5>
+        <h5>Abstract</h5>
         <p>
 On January 1, 2025, a new financial sector security architecture comes into force through the CRR III regulations. The actions related to developing new regulations were accompanied by deep reflection on the effectiveness of the previous capital security concept developed in 2004 (Basel II). In some areas, this reflection led the regulator to dichotomous and final decisions. Such a decision was made regarding the Advanced Measurement Approach (AMA) used in the operational risk space. In this article, I attempt to present the broad context that accompanied this decision, along with my own modest assessment of the situation.
-        </p>
-        <h5>Słowa kluczowe</h5>
-        <p>
-ryzyko operacyjne, Metoda Zaawansowanego Pomiaru, AMA, IRB, Basel II, Basel III, CRR III, adekwatność kapitałowa, model ryzyka operacyjnego, model wartości nieoczekiwanej, model wartości ekstremalnych, EVT, model wartości oczekiwanej
-        </p>
         <h5>Keywords</h5>
         <p>
 operational risk, Advanced Measurement Approach, AMA, IRB, Basel II, Basel III, CRR III, capital adequacy, operational risk model, unexpected value model, extreme value model, EVT, expected value model
