@@ -5,7 +5,7 @@ title: Publikacje
 <div id="myMenu">
   <a href="/" class="menu-option">Start</a>
   <a href="/about" class="menu-option">About me</a>
-  <a href="/publications" class="menu-option">Publication</a>
+  <a href="/publications" class="menu-option">Publications</a>
   <a href="/researches" class="menu-option">Researches</a>
   <a href="/conferences" class="menu-option">Lectures</a>
   <a href="/contact" class="menu-option">Contact</a>
@@ -23,9 +23,9 @@ title: Publikacje
 
   
 <div class="publication-card">
-    <span class="publication-pin">📌 Przypięte</span>
-    <span class="publication-status status-review">PROCES RECENZJI</span>
-    <div class="publication-source">Sent to: Quantitative Methods in Economics</div>
+    <span class="publication-pin">📌 Pinned</span>
+    <span class="publication-status status-review">PEER REVIEW PROCESS</span>
+    <div class="publication-source">Submitted to: Quantitative Methods in Economics</div>
     <div class="publication-domain">
         <span class="domain-primary">Risk management</span>
         <span class="domain-separator">|</span>
@@ -56,14 +56,18 @@ case study of the decision to withdraw the ama framework in operational Risk
 
 
   <div class="publication-card">
-    <div class="publication-source">Opublikowano w Risk Analysis Quarterly</div>
+    <span class="publication-pin">📌 Pinned</span>
+    <span class="publication-status status-review">PREPRINT</span>
     <h2 class="publication-title">
       <a href="{{ site.baseurl }}/publications/2023-12-risk-assessment" class="publication-link">
-        Metodologia oceny ryzyka w projektach innowacyjnych
+        Unexpected effects inherent in the AMA concept, determining its quality and ultimate withdrawal.
       </a>
     </h2>
-    <p class="publication-description">Analiza skutecznych metod oceny ryzyka w projektach wykorzystujących najnowsze technologie. Praca prezentuje framework łączący klasyczne podejście z nowoczesnymi narzędziami analitycznymi...</p>
-    <div class="publication-meta">📅 Grudzień 2023 &nbsp;&nbsp;|&nbsp;&nbsp; 👁️ 189 wyświetleń</div>
+    <p class="publication-description">The article presents a very detailed analysis of the AMA method, set within the framework of statistical and
+mathematical concepts. In this publication, I derive three properties that, in my opinion, went unnoticed during the
+method's 20 years of operation, which were built into this method, probably unintentionally. They were the result of
+themethod's overcomplexity and ultimately, as I argue, themain reason for the loss of confidence in thismethod.</p>
+    <div class="publication-meta">📅 January 2025 &nbsp;&nbsp;|&nbsp;&nbsp; 👁️ ... views</div>
   </div>
 </div>
 
