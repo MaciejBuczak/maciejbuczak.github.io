@@ -17,7 +17,7 @@ title: About me
 <div class="square-big"></div>
 
 
-##### NIE WIEM
+##### About me
 
 <!-- Dodajemy pozycjonowany obraz -->
 <div class="positioned-image">
