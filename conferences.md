@@ -16,8 +16,8 @@ title: Konferencje
 <div class="square2"></div>
 <div class="square-big"></div>
 
-#### Konferencje/Warsztaty/Szkolenia
-Uczestniczyłem w roli prelegenta/szkoleniowca w następujących konferencjach/warsztatach/szkoleniach:
+#### Conferences/Workshops/Training
+I have participated as a speaker/trainer in the following conferences, workshops, and training sessions:
 <br>
 <br>
 
@@ -26,9 +26,9 @@ Uczestniczyłem w roli prelegenta/szkoleniowca w następujących konferencjach/w
 
 
  <div class="conference-card">
-   <div class="conference-badge">Konferencja</div>
-   <div class="conference-organizer">Organizator: Marxo Smith Events</div>
-   <div class="conference-location">Miejsce: Prague</div>
+   <div class="conference-badge">Conference</div>
+   <div class="conference-organizer">Organizer: Marxo Smith Events</div>
+   <div class="conference-location">Location: Prague</div>
    <h2 class="conference-title">4th Annual Banking Operational Risk Summit</h2>
    <div class="conference-topic">Temat: Built-in mechanisms of the AMA framework that led to its cancellation</div>
    <p class="conference-description">I would like to present arguments that point to the "built-in" defects in the AMA concept defined by the supervisor, which led to such loss of credibility of the method. Thus, the imperfection of the framework, and above all, its unjustified overcomplexity, materialized in the form of such a dispersion of results that exceeded the supervisory boundary of acceptability.</p>
