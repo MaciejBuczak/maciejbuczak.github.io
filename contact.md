@@ -6,7 +6,7 @@ title: Kontakt
   <a href="/" class="menu-option">Start</a>
   <a href="/about" class="menu-option">About me</a>
   <a href="/publications" class="menu-option">Publications</a>
-  <a href="/researches" class="menu-option">Researches/a>
+  <a href="/researches" class="menu-option">Researches</a>
   <a href="/conferences" class="menu-option">Lectures</a>
   <a href="/contact" class="menu-option">Contact</a>
 </div>
