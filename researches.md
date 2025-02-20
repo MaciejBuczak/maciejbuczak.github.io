@@ -16,7 +16,7 @@ title: Badania
 <div class="square2"></div>
 <div class="square-big"></div>
 
-##### Research/Analysis – Risk in the Banking Sector
+##### Researches/Analyses – Risk in the Banking Sector
 I have conducted or collaborated on the following research and analyses:
 <br>
 <br>
