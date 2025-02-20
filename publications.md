@@ -4,7 +4,7 @@ title: Publikacje
 ---
 <div id="myMenu">
   <a href="/" class="menu-option">Start</a>
-  <a href="/about" class="menu-option">Abot me</a>
+  <a href="/about" class="menu-option">About me</a>
   <a href="/publications" class="menu-option">Publication</a>
   <a href="/researches" class="menu-option">Researches</a>
   <a href="/conferences" class="menu-option">Lectures</a>
@@ -25,29 +25,30 @@ title: Publikacje
 <div class="publication-card">
     <span class="publication-pin">📌 Przypięte</span>
     <span class="publication-status status-review">PROCES RECENZJI</span>
-    <div class="publication-source">Przesłane do: Metody ilościowe w badaniach ekonomicznych</div>
+    <div class="publication-source">Sent to: Quantitative Methods in Economics</div>
     <div class="publication-domain">
-        <span class="domain-primary">Zarządzanie ryzykiem</span>
+        <span class="domain-primary">Risk management</span>
         <span class="domain-separator">|</span>
-        <span class="domain-secondary">Ryzyko operacyjne</span>
+        <span class="domain-secondary">Operational risk</span>
     </div>
     <h2 class="publication-title">
       <a href="{{ site.baseurl }}/publications/oprisk_2024_12_cancellation" class="publication-link">
-        Bieg wsteczny w rozwoju koncepcji modelowania wartości nieoczekiwanej w sektorze finansowym na przykładzie decyzji o wycofaniu frameworku AMA w ryzyku operacyjnym
+        Backward step in the development of unexpected value modeling concepts in the financial sector: a
+case study of the decision to withdraw the ama framework in operational Risk
       </a>
     </h2>
-    <p class="publication-description">W artykule prezentuje moje wysokopoziomowe stanowisko odnośnie decyzji o wycofaniu całego frameworku modelowania ze stosowania w sektorze bankowym. Tematyką tą zajmowałem się w zasadzie od kilkunastu lat. Framework, o którym tu mowa, poznałem zarówno od strony jego ogólnych celów biznesowych, aż po każdy szczegółowy aspekt przestrzeni jego modelowania. Rozumiem zatem przyczyny wycofania tej koncepcji z użycia. W artykule tym zamieściłem mój komentarz odnośnie takiego przebiegu wydarzeń.</p>
-    <div class="publication-meta">📅 Grudzień 2024 &nbsp;&nbsp;|&nbsp;&nbsp; 👁️ 245 wyświetleń</div>
+    <p class="publication-description">In this article, I present my high-level perspective on the decision to withdraw the entire modeling framework from banking sector applications. I have been dealing with this topic for several years. The framework in question is something I have thoroughly explored, both from the perspective of general business objectives and every detailed aspect of its modeling space. I therefore understand the reasons behind the decision to discontinue this concept.</p>
+    <div class="publication-meta">📅 December 2024 &nbsp;&nbsp;|&nbsp;&nbsp; 👁️ ... views</div>
     <!-- Dodane linki do zasobów -->
     <div class="publication-resources">
       <a href="URL_DO_CZASOPISMA" class="resource-link" target="_blank">
-        <span class="resource-icon">📰</span> Czasopismo
+        <span class="resource-icon">📰</span> Journal
       </a>
       <a href="URL_DO_PREPRINTU" class="resource-link" target="_blank">
         <span class="resource-icon">📄</span> Preprint
       </a>
       <a href="URL_DO_MEDIUM" class="resource-link" target="_blank">
-        <span class="resource-icon">💡</span> Artykuł popularnonaukowy
+        <span class="resource-icon">💡</span> Popular science article
       </a>
     </div>
 </div>
