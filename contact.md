@@ -15,7 +15,7 @@ title: Kontakt
 <div class="square2"></div>
 <div class="square-big"></div>
 <div class="contact-container">
-  <h1 class="section-title">Kontakt</h1>
+  <h1 class="section-title">Contact</h1>
   
   <div class="contact-grid">
     <a href="mailto:maciej.buczak@gmail.com" class="contact-card">
