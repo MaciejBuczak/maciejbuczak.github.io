@@ -16,8 +16,8 @@ title: Badania
 <div class="square2"></div>
 <div class="square-big"></div>
 
-##### Badania/analizy - ryzyko w sektorze bankowym
-Przeprowadziłem lub współuczestniczyłem w przeprowadzeniu badań/analiz:
+##### Research/Analysis – Risk in the Banking Sector
+I have conducted or collaborated on the following research and analyses:
 <br>
 <br>
 
@@ -27,12 +27,12 @@ Przeprowadziłem lub współuczestniczyłem w przeprowadzeniu badań/analiz:
 
   <div class="publication-card">
     <div class="publication-domain">
-        <span class="domain-primary">Ryzyko w bankowości</span>
+        <span class="domain-primary">Banking risk</span>
         <span class="domain-separator">|</span>
         <span class="domain-secondary">Impairment/ECL</span>
     </div>
     <h2 class="research-title">
-      Badanie nakładających się efektów/prawdopodobieństw przy próbie składania parametrów w koncepcję ECL
+      Study of Overlapping Effects/Probabilities in Parameter Aggregation for the ECL Concept
     </h2>
     <p class="publication-description">Zagadnienia: prawd. odzysku lifetime, prawd. sprzedaży majątku rzeczowego, reprezentatywność próby w kontekście sposobu stosowania modelu, zbędne złożoności modeli</p>
     <div class="publication-meta">📅 2023</div>
