@@ -30,7 +30,7 @@ I have participated as a speaker/trainer in the following conferences, workshops
    <div class="conference-organizer">Organizer: Marxo Smith Events</div>
    <div class="conference-location">Location: Prague</div>
    <h2 class="conference-title">4th Annual Banking Operational Risk Summit</h2>
-   <div class="conference-topic">Temat: Built-in mechanisms of the AMA framework that led to its cancellation</div>
+   <div class="conference-topic">Topic: Built-in mechanisms of the AMA framework that led to its cancellation</div>
    <p class="conference-description">I would like to present arguments that point to the "built-in" defects in the AMA concept defined by the supervisor, which led to such loss of credibility of the method. Thus, the imperfection of the framework, and above all, its unjustified overcomplexity, materialized in the form of such a dispersion of results that exceeded the supervisory boundary of acceptability.</p>
    <div class="conference-meta">📅 20-21.02.2025</div>
    <div class="conference-buttons">
@@ -45,73 +45,73 @@ I have participated as a speaker/trainer in the following conferences, workshops
 
 
   <div class="conference-card">
-    <div class="conference-badge">Konferencja</div>
-    <div class="conference-organizer">Organizator: Narodowy Bank Polski</div>
-    <div class="conference-location">Miejsce: Warszawa</div>
-    <h2 class="conference-title">IT w sektorze bankowym</h2>
-    <div class="conference-topic">Temat: Ryzyko operacyjne – inspirująca podróż do Twojej organizacji</div>
-    <p class="conference-description">Konferencja organizowana przez Centralny Bank Polski dla przedstawicieli banków centralnych z Europy Wschodniej, Azji i Afryki</p>
+    <div class="conference-badge">Conference</div>
+    <div class="conference-organizer">Organizer: National Bank of Poland </div>
+    <div class="conference-location">Location: Warsaw</div>
+    <h2 class="conference-title">IT in the Banking Sector</h2>
+    <div class="conference-topic">Topic: Operational Risk – An Inspiring Journey for Your Organization</div>
+    <p class="conference-description">Conference organized by the National Bank of Poland for representatives of central banks from Eastern Europe, Asia, and Africa.</p>
     <div class="conference-meta">📅 2009</div>
   </div>
 
 
   <div class="conference-card">
-    <div class="conference-badge">Konferencja</div>
-    <div class="conference-organizer">Organizator: Gazeta Bankowa</div>
-    <div class="conference-location">Miejsce: Warszawa</div>
-    <h2 class="conference-title">Zarządzanie efektywnością oddziałów instytucji finansowych</h2>
-    <div class="conference-topic">Temat: Zarządzanie ryzykiem operacyjnym i jego wpływ na satysfakcję klientów i pozycję konkurencyjną instytucji finansowych</div>
-    <p class="conference-description">Konferencja zorganizowana przez Gazetę Bankową, a skierowana do polskiego sektora bankowego</p>
+    <div class="conference-badge">Conference</div>
+    <div class="conference-organizer">Organizer: Gazeta Bankowa</div>
+    <div class="conference-location">Location: Warsaw</div>
+    <h2 class="conference-title">Managing the Efficiency of Financial Institution Branches</h2>
+    <div class="conference-topic">Topic: Operational risk management and its impact on customer satisfaction and the competitive position of financial institutions.</div>
+    <p class="conference-description">Conference organized by *Gazeta Bankowa* and aimed at the Polish banking sector.</p>
     <div class="conference-meta">📅 2008</div>
   </div>
 
 
   <div class="conference-card">
-    <div class="conference-badge">Warsztaty</div>
-    <div class="conference-organizer">Organizator: Alior Bank</div>
-    <div class="conference-location">Miejsce: Warszawa</div>
-    <h2 class="conference-title">Metoda zaawansowanego pomiaru AMA</h2>
-    <p class="conference-description">Warsztaty dla pracowników Alior Banku: jednostki modelarskie, audyt</p>
+    <div class="conference-badge">Workshop</div>
+    <div class="conference-organizer">Organizer: Alior Bank</div>
+    <div class="conference-location">Location: Warsaw</div>
+    <h2 class="conference-title">Advanced Measurement Approach (AMA) in Operational Risk</h2>
+    <p class="conference-description">Workshop for Alior Bank employees: modeling units, audit.</p>
     <div class="conference-meta">📅 2018</div>
   </div>
 
 
     <div class="conference-card">
-    <div class="conference-badge">Warsztaty</div>
-    <div class="conference-organizer">Organizator: Uniwersytet Warszawski, Wydział Ekonomii</div>
-    <div class="conference-location">Miejsce: Warszawa</div>
-    <h2 class="conference-title">Zarządzanie ryzykiem operacyjnym z wykorzystaniem rozwiązania informatycznego</h2>
-    <p class="conference-description">Warsztaty dla studentów Wydziału Ekonomii UW</p>
+    <div class="conference-badge">Workshop</div>
+    <div class="conference-organizer">Organizer: University of Warsaw, Faculty of Economics</div>
+    <div class="conference-location">Location: Warsaw</div>
+    <h2 class="conference-title">Operational Risk Management Using IT Solution</h2>
+    <p class="conference-description">Workshop for students of the Faculty of Economics, University of Warsaw.</p>
     <div class="conference-meta">📅 2011</div>
   </div>
 
 
     <div class="conference-card">
-    <div class="conference-badge">Warsztaty</div>
-    <div class="conference-organizer">Organizator: Narodowy Bank Polski</div>
-    <div class="conference-location">Miejsce: Warszawa</div>
+    <div class="conference-badge">Workshop</div>
+    <div class="conference-organizer">Organizer: National Bank of Poland</div>
+    <div class="conference-location">Location: Warsaw</div>
     <h2 class="conference-title">Advanced Measurement Approach</h2>
-    <p class="conference-description">Cykl szkoleń dla analityków Narodowego Banku Polskiego</p>
+    <p class="conference-description">Training series for analysts of the National Bank of Poland.</p>
     <div class="conference-meta">📅 2009</div>
   </div>
 
 
     <div class="conference-card">
-    <div class="conference-badge">Warsztaty</div>
-    <div class="conference-organizer">Organizator: Banki komercyjne</div>
-    <div class="conference-location">Miejsce: Warszawa, Katowice, Poznań</div>
-    <h2 class="conference-title">Zarządzanie ryzykiem operacyjnym z wykorzystaniem rozwiązania informatycznego</h2>
-    <p class="conference-description">Cykl szkoleń dla analityków polskich banków komercyjnych</p>
+    <div class="conference-badge">Workshop</div>
+    <div class="conference-organizer">Organizer: Commercial Banks</div>
+    <div class="conference-location">Location: Warsaw, Katowice, Poznań</div>
+    <h2 class="conference-title">Operational Risk Management Using IT Solution</h2>
+    <p class="conference-description">Training series for analysts of Polish commercial banks.</p>
     <div class="conference-meta">📅 2008-2012</div>
   </div>
 
 
     <div class="conference-card">
-    <div class="conference-badge">Warsztaty</div>
-    <div class="conference-organizer">Organizator: Banki komercyjne</div>
-    <div class="conference-location">Miejsce: Warszawa</div>
-    <h2 class="conference-title">Wykorzystanie systemu informatycznego w AML</h2>
-    <p class="conference-description">Cykl szkoleń dla analityków polskich banków komercyjnych</p>
+    <div class="conference-badge">Workshop</div>
+    <div class="conference-organizer">Organizer: Commercial Banks</div>
+    <div class="conference-location">Location: Warsaw</div>
+    <h2 class="conference-title">Using IT Systems in AML (Anti-Money Laundering)</h2>
+    <p class="conference-description">Training series for analysts of Polish commercial banks.</p>
     <div class="conference-meta">📅 2013</div>
   </div>
 
