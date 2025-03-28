@@ -21,7 +21,7 @@ title: About me
 
 <!-- Dodajemy pozycjonowany obraz -->
 <div class="positioned-image">
-  <img src="/assets/images/Maciej Buczak-zdjęcie3.jpg" alt="Opis obrazu">
+  <img src="/assets/images/Maciej Buczak-zdjęcie4.jpg" alt="Opis obrazu">
 </div>
 Nice to have you here. I enjoy sharing my knowledge and experience in the application of quantitative methods in risk research and beyond. I am a researcher and manager with many years of experience in this field. I have managed to capture many interesting observations. I co-created an IT system for operational risk management, developed a system for model risk management, and spent most of my time on various statistical analyses. For eight years, I have been involved in the holistic assessment of models in terms of their exposure to model risk.  
 My main areas of expertise include credit risk (ECL/IFRS9), operational risk, and statistical measurement techniques, including expected and unexpected value measurement (internal capital). I am also actively searching for new spaces for qualitative-quantitative reflection...
