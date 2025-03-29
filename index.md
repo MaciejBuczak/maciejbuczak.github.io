@@ -20,7 +20,7 @@ layout: default
 
 _"Potrzeba ogromu wiedzy i doświadczenia, żeby na podstawie ograniczonych obserwacji wyciągać uogólnione wnioski"_
 
-
+<br>
 
 ##### O mnie
 
@@ -51,8 +51,11 @@ Miło mi, że tu jesteś. Lubię dzielić się wiedzą i doświadczeniem w zasto
   </div>
 </div>
 
+<br>
+
 <hr>
 
+<br>
 
 ##### Aktualności
 
