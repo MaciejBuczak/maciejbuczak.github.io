@@ -3,8 +3,8 @@ layout: default
 title: About me
 ---
 <div id="myMenu">
-  <a href="/" class="menu-option">Start</a>
-  <a href="/about" class="menu-option">About me</a>
+  <a href="/" class="menu-option">Cześć</a>
+  <a href="/about" class="menu-option">Co robię</a>
   <a href="/publications" class="menu-option">Publications</a>
   <a href="/researches" class="menu-option">Researches</a>
   <a href="/conferences" class="menu-option">Lectures</a>
@@ -16,23 +16,6 @@ title: About me
 <div class="square2"></div>
 <div class="square-big"></div>
 
-
-##### About me
-
-<!-- Dodajemy pozycjonowany obraz -->
-<div class="positioned-image">
-  <img src="/assets/images/Maciej Buczak-zdjęcie4.jpg" alt="Opis obrazu">
-</div>
-Nice to have you here. I enjoy sharing my knowledge and experience in the application of quantitative methods in risk research and beyond. I am a researcher and manager with many years of experience in this field. I have managed to capture many interesting observations. I co-created an IT system for operational risk management, developed a system for model risk management, and spent most of my time on various statistical analyses. For eight years, I have been involved in the holistic assessment of models in terms of their exposure to model risk.  
-My main areas of expertise include credit risk (ECL/IFRS9), operational risk, and statistical measurement techniques, including expected and unexpected value measurement (internal capital). I am also actively searching for new spaces for qualitative-quantitative reflection...
-
-<div class="positioned-image">
-  <img src="/assets/images/Maciej Buczak-podpis.jpg" alt="Opis obrazu">
-</div>
-
-
-
-<hr>
 
 ##### Evolution of Research Approach
 The foundation of my way of thinking and acting is a broad interest in the world and the ways in which humans can explain and understand it—regardless of how scientifically grounded these methods are. My professional practice has allowed me to increasingly recognize the emerging characteristics of the surrounding reality:  
