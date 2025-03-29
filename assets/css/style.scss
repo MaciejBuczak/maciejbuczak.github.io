@@ -191,6 +191,76 @@ hr {
 
 
 
+// Style dla sekcji uczelni
+.uczelnie-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 900px;
+  margin: 30px auto;
+}
+
+.uczelnia {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.uczelnia:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(168,89,3,0.12);
+}
+
+.uczelnia-logo {
+  width: 100px;
+  margin-right: 30px;
+  flex-shrink: 0;
+}
+
+.uczelnia-logo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.uczelnia-nazwa {
+  flex-grow: 1;
+}
+
+.uczelnia-nazwa h4 {
+  color: #737373;
+  margin: 0;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+/* Responsywność */
+@media screen and (max-width: 600px) {
+  .uczelnia {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .uczelnia-logo {
+    margin-right: 0;
+    margin-bottom: 15px;
+    width: 80px;
+  }
+}
+
+
+
+
+
+
+
+
+
 
 // Style dla sekcji Aktualności
 .aktualnosci-container {
