@@ -23,6 +23,12 @@ The foundation of my way of thinking and acting is a broad interest in the world
 (a) The world has reached a level of complexity that is non-linear to the individual mind,  
 (b) The methods used to describe this world often fail when stochastic components play a significant role, and they do not withstand real-world collisions,  
 (c) We often build models that are less complex than the phenomena they aim to describe.  
+
+<!-- Dodajemy nowe większe zdjęcie przed sekcją Professional Experience -->
+<div class="large-image" style="width: 66%; margin: 20px auto;">
+  <img src="/assets/images/Maciej Buczak-praca.jpg" alt="Maciej Buczak working" style="width: 100%; height: auto;">
+</div>
+
 This discovery led me to deeper reflections on the role of quantitative methods in business, economics, and broadly understood social sciences, as well as to the pursuit of developing my own research approach.
 
 ##### Research Interests
@@ -30,10 +36,6 @@ My research interests revolve around fields such as economics, sociology, and hi
 However, my focus is mainly on methods that can be used to describe this vast and complex reality. Of course, this involves a spectrum of established fields such as statistics, econometrics, and mathematics. But I do not limit myself to these; I seek solutions in other areas, which I can often successfully transfer to my research domain. I enjoy exploring a certain universality of methods, their adaptability in different contexts, and the various perspectives they can offer in describing the world.  
 I like to consider how methods influence our way of thinking and whether it is sometimes better to "adjust methods to the world" rather than "adjust the world to methods."
 
-<!-- Dodajemy nowe większe zdjęcie przed sekcją Professional Experience -->
-<div class="large-image" style="width: 66%; margin: 20px auto;">
-  <img src="/assets/images/Maciej Buczak-praca.jpg" alt="Maciej Buczak working" style="width: 100%; height: auto;">
-</div>
 
 ##### Professional Experience
 Throughout my professional career, I have accumulated extensive experience in designing and conducting research using advanced quantitative methods. My competencies include:
