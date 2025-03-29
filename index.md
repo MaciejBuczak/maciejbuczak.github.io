@@ -30,6 +30,26 @@ _"Potrzeba ogromu wiedzy i doświadczenia, żeby na podstawie ograniczonych obse
 </div>
 Miło mi, że tu jesteś. Lubię dzielić się wiedzą i doświadczeniem w zastosowaniach metod ilościowych w badaniu ryzyka i nie tylko... Jestem badaczem i managerem z wieloletnim stażem w tej dziedzinie. Dużo ciekawych obserwacji udało mi się wychwycić. Współtworzyłem system IT do zarządzania ryzykiem operacyjnym, tworzyłem system do zarządzania ryzykiem modeli, a najwięcej czasu spędziłem na różnorodnych analizach statystycznych. Przez 8 lat zajmowałem się holistyczną oceną modeli pod kątem ich ekspozycji na ryzyko modeli. Moje główne obszary to ryzyko kredytowe (ECL/IFRS9), ryzyko operacyjne i statystyczne techniki jego pomiaru, pomiar wartości oczekiwanych i nieoczekiwanych (kapitał wewnętrzny). Aktywnie szukam tez innych przestrzeni do refleksji jakościowo-ilościowej...
 
+<!-- Dodajemy sekcję z uczelniami -->
+<div class="uczelnie-container">
+  <div class="uczelnia">
+    <div class="uczelnia-logo">
+      <img src="/assets/images/sggw-logo.png" alt="Logo SGGW">
+    </div>
+    <div class="uczelnia-nazwa">
+      <h4>Uczelnia 1</h4>
+    </div>
+  </div>
+  
+  <div class="uczelnia">
+    <div class="uczelnia-logo">
+      <img src="/assets/images/wsb-merito-logo.png" alt="Logo WSB Merito">
+    </div>
+    <div class="uczelnia-nazwa">
+      <h4>Uczelnia 2</h4>
+    </div>
+  </div>
+</div>
 
 <hr>
 
