@@ -20,6 +20,8 @@ layout: default
 
 _"Potrzeba ogromu wiedzy i doświadczenia, żeby na podstawie ograniczonych obserwacji wyciągać uogólnione wnioski"_
 
+
+
 ##### O mnie
 
 <!-- Dodajemy pozycjonowany obraz -->
