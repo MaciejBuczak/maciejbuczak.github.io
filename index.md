@@ -16,12 +16,13 @@ layout: default
 <div class="square2"></div>
 <div class="square-big"></div>
 
+<br>
+
 **Victor Hugo "Nędzinicy"**
 
 _"Potrzeba ogromu wiedzy i doświadczenia, żeby na podstawie ograniczonych obserwacji wyciągać uogólnione wnioski"_
 
 <br>
-
 ##### O mnie
 
 <!-- Dodajemy pozycjonowany obraz -->
