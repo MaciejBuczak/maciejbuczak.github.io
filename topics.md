@@ -1,5 +1,6 @@
 ---
 layout: default
+title: topics
 ---
 <div id="myMenu">
   <a href="/" class="menu-option">Start</a>
