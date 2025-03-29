@@ -33,14 +33,14 @@ My main areas of expertise include credit risk (ECL/IFRS9), operational risk, an
   <!-- Aktualne wydarzenie -->
   <div class="aktualnosc-card">
     <div class="aktualnosc-date">
-      <span class="day">15</span>
+      <span class="day">31</span>
       <span class="month">MAR</span>
       <span class="year">2025</span>
     </div>
     <div class="aktualnosc-content">
-      <h3 class="aktualnosc-title">Nowa publikacja w Journal of Risk Research</h3>
+      <h3 class="aktualnosc-title">Moja publikacja w "Metody ilościowe w badaniach ekonomicznych"</h3>
       <p class="aktualnosc-description">
-        Z przyjemnością informuję o opublikowaniu mojego najnowszego artykułu "Modelowanie ryzyka operacyjnego w czasach zwiększonej niepewności" w Journal of Risk Research. Artykuł przedstawia nowatorskie podejście do modelowania ryzyka w warunkach wysokiej zmienności rynkowej.
+        Z przyjemnością informuję o opublikowaniu mojego artykułu "Bieg wsteczny w rozwoju koncepcji modelowania wartości nieoczekiwanej w sektorze finansowym na przykładzie decyzji o wycofaniu frameworku AMA w ryzyku operacyjnym" w czasopiśmie Metody ilościowe w badanich ekonomicznych (SGGW). Artykuł odnosi się do dwóch dekad funkcjonowania metody w sektorze bankowym. Formuuję w nim krytyczną ocenę frameworku opracowanego przez nadzorcę i właśnie ten framework stawiam jako głównego sprawcę niepowodzenia metody i cofnięcia się procesy wysycenia sektora bankowego metodami ilościowymi.
       </p>
       <div class="aktualnosc-footer">
         <a href="/publications" class="aktualnosc-link">Przejdź do publikacji</a>
@@ -52,13 +52,13 @@ My main areas of expertise include credit risk (ECL/IFRS9), operational risk, an
   <div class="aktualnosc-card">
     <div class="aktualnosc-date">
       <span class="day">20</span>
-      <span class="month">APR</span>
+      <span class="month">LUT</span>
       <span class="year">2025</span>
     </div>
     <div class="aktualnosc-content">
-      <h3 class="aktualnosc-title">Wykład na Uniwersytecie Ekonomicznym w Warszawie</h3>
+      <h3 class="aktualnosc-title">Prelekcja na OpRisk Summit 2025, Praga</h3>
       <p class="aktualnosc-description">
-        Zostałem zaproszony do wygłoszenia wykładu na temat "Holistyczne podejście do oceny jakości modeli statystycznych" na Uniwersytecie Ekonomicznym w Warszawie. Wykład odbędzie się 20 kwietnia 2025 o godzinie 10:00 w Auli Głównej.
+        Wygłosiłem prelekcje dotyczącą oceny metody AMA i skuteczności jej funkcjonowania w sektorze bankowym na OpRisk Summit 2025. Konferencja była zorganizowana przez Marxo Smith
       </p>
       <div class="aktualnosc-footer">
         <a href="/conferences" class="aktualnosc-link">Sprawdź szczegóły</a>
@@ -66,18 +66,88 @@ My main areas of expertise include credit risk (ECL/IFRS9), operational risk, an
     </div>
   </div>
 
-  <!-- Współpraca badawcza -->
   <div class="aktualnosc-card">
     <div class="aktualnosc-date">
-      <span class="day">05</span>
-      <span class="month">FEB</span>
+      <span class="day">17</span>
+      <span class="month">LUT</span>
       <span class="year">2025</span>
     </div>
     <div class="aktualnosc-content">
-      <h3 class="aktualnosc-title">Rozpoczęcie współpracy badawczej z SGH</h3>
+      <h3 class="aktualnosc-title">Rozpocząłem współpracę ze Szkołą Główną Gospodarstwa Wiejskiego, Instytut Socjologii</h3>
       <p class="aktualnosc-description">
-        W lutym rozpocząłem współpracę badawczą z zespołem naukowców z Katedry Zarządzania Ryzykiem Szkoły Głównej Handlowej. Projekt dotyczy rozwoju metodologii oceny modeli ECL w kontekście nowych regulacji i będzie trwał przez najbliższe 12 miesięcy.
+        Od II semestru roku akademickiego 2024/2025 rozpocząłem współpracę z Instytutem Socjologii SGGW. Bardzo się z tego cieszę :).
       </p>
+      <div class="aktualnosc-footer">
+        <a href="/researches" class="aktualnosc-link">Więcej o badaniach</a>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="aktualnosc-card">
+    <div class="aktualnosc-date">
+      <span class="day">17</span>
+      <span class="month">LUT</span>
+      <span class="year">2025</span>
+    </div>
+    <div class="aktualnosc-content">
+      <h3 class="aktualnosc-title">Rozpocząłem współpracę z Wyższą Szkołą Bankową Merito w Warszawie</h3>
+      <p class="aktualnosc-description">
+        Od II semestru roku akademickiego 2024/2025 rozpocząłem współpracę z WSB Merito w Warszawie. Bardzo się z tego cieszę :).
+      </p>
+      <div class="aktualnosc-footer">
+        <a href="/researches" class="aktualnosc-link">Więcej o badaniach</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="aktualnosc-card">
+    <div class="aktualnosc-date">
+      <span class="day">10</span>
+      <span class="month">STY</span>
+      <span class="year">2025</span>
+    </div>
+    <div class="aktualnosc-content">
+      <h3 class="aktualnosc-title">Napisałem artykuł eksperymentalny :) "Próba konstrukcji, zbudowanych na gruncie pojęć statystycznych, ram pojęciowych dla opisu stanu rzeczywistości i jej dynamiki" - PREPRINT</h3>
+      <p class="aktualnosc-description">
+        Bezpośrednią motywacją dla napisania tego artykułu była moja aplikacja na stanowisko asystenta w Instytucie Socjologii SGGW. Dużo głębszą motywacją było moje zainteresowanie opisem rzeczywistości, jako próby wychwycenia jej kształtów, takich które stanowią o wydarzeniach o dużej skali. W szczególności interesują mnie głębsze przyczyny, ukryte pod maską znanych wydarzeń historycznych, które stoją za dwoma wydarzeniami: upadkiem I Rzeczypospolitej oraz wybuchem I wojny światowej. Niniejszy artykuł to próba zbudowania ram koncepcyjnych, odważna - przyznaję, bazujących na pojęciach i koncepcjach statystycznych, które dalej mogłyby posłużyć do opisów rzeczywistości w kontekście przyczyn w/w wydarzeń (co jest jeszcze odważniejszym przedsięwzięciem). Na razie pracę zakończyłem właśnie na tym wyżej opisanym frameworku pojęciowym, bez odniesień i backtestów historycznych.
+      </p>
+      <div class="aktualnosc-footer">
+        <a href="/researches" class="aktualnosc-link">Więcej o badaniach</a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Współpraca badawcza -->
+  <div class="aktualnosc-card">
+    <div class="aktualnosc-date">
+      <span class="day">30</span>
+      <span class="month">GRU</span>
+      <span class="year">2024</span>
+    </div>
+    <div class="aktualnosc-content">
+      <h3 class="aktualnosc-title">Napisałem artykuł "Nieoczekiwane, wbudowane w koncepcję AMA, efekty decydujące o jej jakości i jej ostatecznym wycofaniu" - PREPRINT</h3>
+      <p class="aktualnosc-description">
+        Niniejszy artykuł to precyzyjne wskazanie głównych, zidentyfikowanych przeze mnie, efektów które miały decydujący wpływ na niską skuteczność i wiarygodność metody statystycznej wykorzystywanej do modelowania ryzyka operacyjnego (metoda AMA). W przeciwieństwie do poprzedniego artykułu "Bieg wsteczny...", który skupiał się na wysokopoziomowej, jakoścowej ocenie, ten, jest mocno osadzony w metodach statystycznych.
+      </p>
+      <div class="aktualnosc-footer">
+        <a href="/researches" class="aktualnosc-link">Więcej o badaniach</a>
+      </div>
+    </div>
+  </div>
+
+
+    <div class="aktualnosc-card">
+    <div class="aktualnosc-date">
+      <span class="day">15</span>
+      <span class="month">GRU</span>
+      <span class="year">2024</span>
+    </div>
+    <div class="aktualnosc-content">
+      <h3 class="aktualnosc-title">Napisałem artykuł "Bieg wsteczny w rozwoju koncepcji modelowania wartości nieoczekiwanej w sektorze finansowym na przykładzie decyzji o wycofaniu frameworku AMA w ryzyku operacyjnym" - PREPRINT</h3>
+      <p class="aktualnosc-description">
+        Artykuł odnosi się do dwóch dekad funkcjonowania metody w sektorze bankowym. Formuuję w nim krytyczną ocenę frameworku opracowanego przez nadzorcę i właśnie ten framework stawiam jako głównego sprawcę niepowodzenia metody i cofnięcia się procesy wysycenia sektora bankowego metodami ilościowymi.
       <div class="aktualnosc-footer">
         <a href="/researches" class="aktualnosc-link">Więcej o badaniach</a>
       </div>
