@@ -36,7 +36,7 @@ Miło mi, że tu jesteś. Lubię dzielić się wiedzą i doświadczeniem w zasto
     <div class="uczelnia-logo">
       <img src="/assets/images/sggw-logo.png" alt="Logo SGGW">
     </div>
-    <div class="uczelnia-nazwa">
+    <div class="Instytut Socjologii, Szkoła Główna Gospodarstwa Wiejskiego w Warszawie">
       <h4>Uczelnia 1</h4>
     </div>
   </div>
@@ -45,7 +45,7 @@ Miło mi, że tu jesteś. Lubię dzielić się wiedzą i doświadczeniem w zasto
     <div class="uczelnia-logo">
       <img src="/assets/images/merito-logo.png" alt="Logo WSB Merito">
     </div>
-    <div class="uczelnia-nazwa">
+    <div class="Wyższa Szkoła Bankowa Merito w Warszawie">
       <h4>Uczelnia 2</h4>
     </div>
   </div>
