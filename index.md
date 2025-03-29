@@ -39,8 +39,8 @@ Wciąż pracuje w binzesie, w sektorze bankowym. Poza tym, w zakresie dydaktyczn
     <div class="uczelnia-logo">
       <img src="/assets/images/sggw-logo.png" alt="Logo SGGW">
     </div>
-    <div class="Instytut Socjologii, Szkoła Główna Gospodarstwa Wiejskiego w Warszawie">
-      <h4>Uczelnia 1</h4>
+    <div class="uczelnia-nazwa">
+      <h4>Instytut Socjologii, Szkoła Główna Gospodarstwa Wiejskiego w Warszawie</h4>
     </div>
   </div>
   
@@ -48,8 +48,8 @@ Wciąż pracuje w binzesie, w sektorze bankowym. Poza tym, w zakresie dydaktyczn
     <div class="uczelnia-logo">
       <img src="/assets/images/merito-logo.png" alt="Logo WSB Merito">
     </div>
-    <div class="Wyższa Szkoła Bankowa Merito w Warszawie">
-      <h4>Uczelnia 2</h4>
+    <div class="uczelnia-nazwa">
+      <h4>Wyższa Szkoła Bankowa Merito w Warszawie</h4>
     </div>
   </div>
 </div>
