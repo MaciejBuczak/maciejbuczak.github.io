@@ -43,7 +43,7 @@ Miło mi, że tu jesteś. Lubię dzielić się wiedzą i doświadczeniem w zasto
   
   <div class="uczelnia">
     <div class="uczelnia-logo">
-      <img src="/assets/images/wsb-merito-logo.png" alt="Logo WSB Merito">
+      <img src="/assets/images/merito-logo.png" alt="Logo WSB Merito">
     </div>
     <div class="uczelnia-nazwa">
       <h4>Uczelnia 2</h4>
