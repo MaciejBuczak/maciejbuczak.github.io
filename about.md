@@ -5,6 +5,7 @@ title: About me
 <div id="myMenu">
   <a href="/" class="menu-option">Cześć</a>
   <a href="/about" class="menu-option">Co robię</a>
+  <a href="/topics" class="menu-option">Tematy badań</a>
   <a href="/publications" class="menu-option">Publications</a>
   <a href="/researches" class="menu-option">Researches</a>
   <a href="/conferences" class="menu-option">Lectures</a>
