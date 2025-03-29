@@ -1,5 +1,6 @@
 ---
 layout: default
+title: About me
 ---
 <div id="myMenu">
   <a href="/" class="menu-option">Start</a>
@@ -10,53 +11,82 @@ layout: default
   <a href="/contact" class="menu-option">Contact</a>
 </div>
 
-
-<!-- Istniejące kwadraty -->
 <div class="square"></div>
 <div class="square1"></div>
 <div class="square2"></div>
 <div class="square-big"></div>
 
 
-<div class="research-areas-grid">
-  <div class="research-area-card">
-    <div class="research-area-icon">
-      <svg viewBox="0 0 24 24" width="48" height="48">
-        <path fill="currentColor" d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 10h2v7H7zm4-3h2v10h-2zm4 6h2v4h-2z"/>
-      </svg>
+##### About me
+
+<!-- Dodajemy pozycjonowany obraz -->
+<div class="positioned-image">
+  <img src="/assets/images/Maciej Buczak-zdjęcie4.jpg" alt="Opis obrazu">
+</div>
+Nice to have you here. I enjoy sharing my knowledge and experience in the application of quantitative methods in risk research and beyond. I am a researcher and manager with many years of experience in this field. I have managed to capture many interesting observations. I co-created an IT system for operational risk management, developed a system for model risk management, and spent most of my time on various statistical analyses. For eight years, I have been involved in the holistic assessment of models in terms of their exposure to model risk.  
+My main areas of expertise include credit risk (ECL/IFRS9), operational risk, and statistical measurement techniques, including expected and unexpected value measurement (internal capital). I am also actively searching for new spaces for qualitative-quantitative reflection...
+
+<div class="positioned-image">
+  <img src="/assets/images/Maciej Buczak-podpis.jpg" alt="Opis obrazu">
+</div>
+
+<hr>
+
+##### Aktualności
+
+<div class="aktualnosci-container">
+  <!-- Aktualne wydarzenie -->
+  <div class="aktualnosc-card">
+    <div class="aktualnosc-date">
+      <span class="day">15</span>
+      <span class="month">MAR</span>
+      <span class="year">2025</span>
     </div>
-    <h4>Model Risk</h4>
-    <p>Comprehensive analysis of uncertainty and errors in financial models, along with methods for their identification, measurement, and risk management.</p>
+    <div class="aktualnosc-content">
+      <h3 class="aktualnosc-title">Nowa publikacja w Journal of Risk Research</h3>
+      <p class="aktualnosc-description">
+        Z przyjemnością informuję o opublikowaniu mojego najnowszego artykułu "Modelowanie ryzyka operacyjnego w czasach zwiększonej niepewności" w Journal of Risk Research. Artykuł przedstawia nowatorskie podejście do modelowania ryzyka w warunkach wysokiej zmienności rynkowej.
+      </p>
+      <div class="aktualnosc-footer">
+        <a href="/publications" class="aktualnosc-link">Przejdź do publikacji</a>
+      </div>
+    </div>
   </div>
-  
-  <div class="research-area-card">
-    <div class="research-area-icon">
-      <svg viewBox="0 0 24 24" width="48" height="48">
-        <path fill="currentColor" d="M21 8V7l-3 2-3-2v1l3 2 3-2zm1-5H2C.9 3 0 3.9 0 5v14c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM8 17H5v-2h3v2zm0-4H5v-2h3v2zm0-4H5V7h3v2zm6 8h-4V7h4v10zm6 0h-3v-2h3v2zm0-4h-3v-2h3v2zm0-4h-3V7h3v2z"/>
-      </svg>
+
+  <!-- Nadchodzące wydarzenie -->
+  <div class="aktualnosc-card">
+    <div class="aktualnosc-date">
+      <span class="day">20</span>
+      <span class="month">APR</span>
+      <span class="year">2025</span>
     </div>
-    <h4>Holistic Model Assessment</h4>
-    <p>Comprehensive verification of models combining quantitative analysis (statistical tests) and qualitative analysis (business expertise) for a complete effectiveness evaluation.</p>
+    <div class="aktualnosc-content">
+      <h3 class="aktualnosc-title">Wykład na Uniwersytecie Ekonomicznym w Warszawie</h3>
+      <p class="aktualnosc-description">
+        Zostałem zaproszony do wygłoszenia wykładu na temat "Holistyczne podejście do oceny jakości modeli statystycznych" na Uniwersytecie Ekonomicznym w Warszawie. Wykład odbędzie się 20 kwietnia 2025 o godzinie 10:00 w Auli Głównej.
+      </p>
+      <div class="aktualnosc-footer">
+        <a href="/conferences" class="aktualnosc-link">Sprawdź szczegóły</a>
+      </div>
+    </div>
   </div>
-  
-  <div class="research-area-card">
-    <div class="research-area-icon">
-      <svg viewBox="0 0 24 24" width="48" height="48">
-        <path fill="currentColor" d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6h-6z"/>
-      </svg>
+
+  <!-- Współpraca badawcza -->
+  <div class="aktualnosc-card">
+    <div class="aktualnosc-date">
+      <span class="day">05</span>
+      <span class="month">FEB</span>
+      <span class="year">2025</span>
     </div>
-    <h4>Credit Risk</h4>
-    <p>Advanced methods for estimating expected (ECL) and unexpected losses, considering macroeconomic factors and the characteristics of the credit portfolio.</p>
-  </div>
-  
-  <div class="research-area-card">
-    <div class="research-area-icon">
-      <svg viewBox="0 0 24 24" width="48" height="48">
-        <path fill="currentColor" d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12zM10 9h8v2h-8zm0-3h8v2h-8zm0 6h4v2h-4z"/>
-      </svg>
+    <div class="aktualnosc-content">
+      <h3 class="aktualnosc-title">Rozpoczęcie współpracy badawczej z SGH</h3>
+      <p class="aktualnosc-description">
+        W lutym rozpocząłem współpracę badawczą z zespołem naukowców z Katedry Zarządzania Ryzykiem Szkoły Głównej Handlowej. Projekt dotyczy rozwoju metodologii oceny modeli ECL w kontekście nowych regulacji i będzie trwał przez najbliższe 12 miesięcy.
+      </p>
+      <div class="aktualnosc-footer">
+        <a href="/researches" class="aktualnosc-link">Więcej o badaniach</a>
+      </div>
     </div>
-    <h4>Operational Risk</h4>
-    <p>A statistical approach to quantifying operational risk, utilizing probability distributions of losses and advanced modeling techniques.</p>
   </div>
 </div>
 
