@@ -17,6 +17,7 @@ layout: default
 <div class="square-big"></div>
 
 **Victor Hugo "Nędzinicy"**
+
 _"Potrzeba ogromu wiedzy i doświadczenia, żeby na podstawie ograniczonych obserwacji wyciągać uogólnione wnioski"_
 
 ##### O mnie
