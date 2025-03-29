@@ -16,14 +16,13 @@ layout: default
 <div class="square-big"></div>
 
 
-##### About me
+##### O mnie
 
 <!-- Dodajemy pozycjonowany obraz -->
 <div class="positioned-image">
   <img src="/assets/images/Maciej Buczak-zdjęcie4.jpg" alt="Opis obrazu">
 </div>
-Nice to have you here. I enjoy sharing my knowledge and experience in the application of quantitative methods in risk research and beyond. I am a researcher and manager with many years of experience in this field. I have managed to capture many interesting observations. I co-created an IT system for operational risk management, developed a system for model risk management, and spent most of my time on various statistical analyses. For eight years, I have been involved in the holistic assessment of models in terms of their exposure to model risk.  
-My main areas of expertise include credit risk (ECL/IFRS9), operational risk, and statistical measurement techniques, including expected and unexpected value measurement (internal capital). I am also actively searching for new spaces for qualitative-quantitative reflection...
+Miło mi, że tu jesteś. Lubię dzielić się wiedzą i doświadczeniem w zastosowaniach metod ilościowych w badaniu ryzyka i nie tylko... Jestem badaczem i managerem z wieloletnim stażem w tej dziedzinie. Dużo ciekawych obserwacji udało mi się wychwycić. Współtworzyłem system IT do zarządzania ryzykiem operacyjnym, tworzyłem system do zarządzania ryzykiem modeli, a najwięcej czasu spędziłem na różnorodnych analizach statystycznych. Przez 8 lat zajmowałem się holistyczną oceną modeli pod kątem ich ekspozycji na ryzyko modeli. Moje główne obszary to ryzyko kredytowe (ECL/IFRS9), ryzyko operacyjne i statystyczne techniki jego pomiaru, pomiar wartości oczekiwanych i nieoczekiwanych (kapitał wewnętrzny). Aktywnie szukam tez innych przestrzeni do refleksji jakościowo-ilościowej...
 
 <hr>
 
