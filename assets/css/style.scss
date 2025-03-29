@@ -191,6 +191,8 @@ hr {
 
 
 
+
+
 // Style dla sekcji uczelni
 .uczelnie-container {
   display: flex;
@@ -216,7 +218,7 @@ hr {
 }
 
 .uczelnia-logo {
-  width: 100px;
+  width: 150px; /* Zwiększono z 100px na 150px */
   margin-right: 30px;
   flex-shrink: 0;
 }
@@ -232,10 +234,10 @@ hr {
 }
 
 .uczelnia-nazwa h4 {
-  color: #737373;
+  color: #737373; /* Szary kolor, taki jak inne teksty na stronie */
   margin: 0;
   font-size: 1.2em;
-  font-weight: 500;
+  font-weight: 700; /* Pogrubiona czcionka */
 }
 
 /* Responsywność */
@@ -249,10 +251,9 @@ hr {
   .uczelnia-logo {
     margin-right: 0;
     margin-bottom: 15px;
-    width: 80px;
+    width: 120px; /* Zwiększono z 80px na 120px dla widoku mobilnego */
   }
 }
-
 
 
 
