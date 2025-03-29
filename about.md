@@ -30,6 +30,8 @@ My main areas of expertise include credit risk (ECL/IFRS9), operational risk, an
   <img src="/assets/images/Maciej Buczak-podpis.jpg" alt="Opis obrazu">
 </div>
 
+
+
 <hr>
 
 ##### Evolution of Research Approach
@@ -43,6 +45,11 @@ This discovery led me to deeper reflections on the role of quantitative methods 
 My research interests revolve around fields such as economics, sociology, and history. I am fascinated by the surrounding reality, manifesting itself in a wide spectrum of events. I prefer to draw observations from these areas of reality, whether cultural or social environments.  
 However, my focus is mainly on methods that can be used to describe this vast and complex reality. Of course, this involves a spectrum of established fields such as statistics, econometrics, and mathematics. But I do not limit myself to these; I seek solutions in other areas, which I can often successfully transfer to my research domain. I enjoy exploring a certain universality of methods, their adaptability in different contexts, and the various perspectives they can offer in describing the world.  
 I like to consider how methods influence our way of thinking and whether it is sometimes better to "adjust methods to the world" rather than "adjust the world to methods."
+
+<!-- Dodajemy nowe większe zdjęcie przed sekcją Professional Experience -->
+<div class="large-image" style="width: 66%; margin: 20px auto;">
+  <img src="/assets/images/Maciej Buczak-praca.jpg" alt="Maciej Buczak working" style="width: 100%; height: auto;">
+</div>
 
 ##### Professional Experience
 Throughout my professional career, I have accumulated extensive experience in designing and conducting research using advanced quantitative methods. My competencies include:
