@@ -186,6 +186,150 @@ hr {
   }
 }
 
+
+
+
+
+
+
+// Style dla sekcji Aktualności
+.aktualnosci-container {
+  max-width: 900px;
+  margin: 30px auto;
+}
+
+.aktualnosc-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 25px;
+  margin: 25px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: flex;
+  transition: transform 0.2s;
+  border-left: 4px solid #a85903;
+}
+
+.aktualnosc-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(168,89,3,0.15);
+}
+
+.aktualnosc-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+  margin-right: 25px;
+  text-align: center;
+  border-right: 1px solid #eee;
+  padding-right: 20px;
+}
+
+.aktualnosc-date .day {
+  font-size: 2em;
+  font-weight: bold;
+  color: #a85903;
+  line-height: 1;
+}
+
+.aktualnosc-date .month {
+  font-size: 1em;
+  color: #737373;
+  margin: 5px 0;
+}
+
+.aktualnosc-date .year {
+  font-size: 0.9em;
+  color: #999;
+}
+
+.aktualnosc-content {
+  flex: 1;
+}
+
+.aktualnosc-title {
+  font-size: 1.3em;
+  color: #737373 !important;
+  margin: 0 0 15px 0;
+}
+
+.aktualnosc-description {
+  color: #737373;
+  margin: 10px 0;
+  line-height: 1.6;
+  text-indent: 0;
+}
+
+.aktualnosc-footer {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+.aktualnosc-link {
+  display: inline-flex;
+  align-items: center;
+  color: #a85903;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.aktualnosc-link:hover {
+  color: #d17a1b;
+  text-decoration: none;
+}
+
+.aktualnosc-link:after {
+  content: "→";
+  margin-left: 5px;
+  transition: margin-left 0.2s;
+}
+
+.aktualnosc-link:hover:after {
+  margin-left: 10px;
+}
+
+// Responsywność dla sekcji Aktualności
+@media screen and (max-width: 768px) {
+  .aktualnosc-card {
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .aktualnosc-date {
+    flex-direction: row;
+    margin-right: 0;
+    margin-bottom: 15px;
+    padding-right: 0;
+    border-right: none;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .aktualnosc-date .day {
+    margin-right: 5px;
+  }
+  
+  .aktualnosc-date .month {
+    margin: 0 5px;
+  }
+  
+  .aktualnosc-date .year {
+    margin-left: 5px;
+  }
+}
+
+
+
+
+
+
+
+
 // Style publikacji
 .publication-card {
   background: #fff;
