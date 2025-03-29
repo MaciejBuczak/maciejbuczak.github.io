@@ -231,13 +231,9 @@ hr {
 
 .uczelnia-nazwa {
   flex-grow: 1;
-}
-
-.uczelnia-nazwa h5 {
-  color: #737373 !important; /* Szary kolor, taki jak inne teksty na stronie */
-  margin: 0;
+  color: #737373 !important;
   font-size: 1.2em;
-  font-weight: 700; /* Pogrubiona czcionka */
+  font-weight: 700;
 }
 
 /* Responsywność */
