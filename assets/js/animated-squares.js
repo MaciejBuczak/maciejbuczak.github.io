@@ -206,7 +206,6 @@ document.addEventListener('DOMContentLoaded', function() {
       squaresGroup.appendChild(group);
     });
   }
-  }
   
   // Funkcja do renderowania połączeń między kwadratami
   function renderConnections() {
