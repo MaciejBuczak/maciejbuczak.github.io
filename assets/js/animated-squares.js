@@ -73,8 +73,8 @@ document.addEventListener('DOMContentLoaded', function() {
       y: yPos,
       size: squareSize,
       isActive: isActive,
-      dx: (Math.random() - 0.5) * 0.15, // Zwiększona prędkość z 0.08 do 0.15
-      dy: (Math.random() - 0.5) * 0.15, // Zwiększona prędkość z 0.08 do 0.15
+      dx: (Math.random() - 0.5) * 0.25, // Zwiększona prędkość z 0.08 do 0.15
+      dy: (Math.random() - 0.5) * 0.25, // Zwiększona prędkość z 0.08 do 0.15
       icon: icons[iconKey],
       label: squareLabels[i % squareLabels.length],
       connections: []
@@ -123,8 +123,8 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // Bardzo rzadkie, subtelne zmiany kierunku
       if (Math.random() < 0.001) {
-        square.dx = (Math.random() - 0.5) * 0.15;
-        square.dy = (Math.random() - 0.5) * 0.15;
+        square.dx = (Math.random() - 0.5) * 0.25;
+        square.dy = (Math.random() - 0.5) * 0.25;
       }
     });
     
