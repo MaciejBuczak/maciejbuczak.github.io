@@ -12,34 +12,33 @@ document.addEventListener('DOMContentLoaded', function() {
   svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
   
   // Właściwości kwadratów
-  const squareCount = 16;
+  const squareCount = 12;
   const squares = [];
-  const activeSquares = Math.floor(squareCount / 4); // Około 1/4 kwadratów będzie aktywnych dla połączeń
+  const activeSquares = Math.floor(squareCount / 3);
   
   // Stały rozmiar kwadratu
-  const squareSize = 60;
+  const squareSize = 70;
   
-  // Lepiej zdefiniowane ikony statystyczne
+  // Ikony w stylu podobnym do tych na stronie
   const icons = {
     chart: "M5,5 v14 h14 M7,14 l4,-4 l4,2 l4,-4",
-    pie: "M12,12 v-7 a7,7 0 0,1 7,7 h-7 z M12,12 v7 a7,7 0 1,1 0,-14 v7 z",
     bar: "M7,19 v-8 h3 v8 z M12,19 v-12 h3 v12 z M17,19 v-5 h3 v5 z",
-    scatter: "M7,7 l1,1 M10,10 l1,1 M16,8 l1,1 M8,16 l1,1 M14,14 l1,1 M18,17 l1,1",
-    line: "M5,17 C8,12 12,15 16,10 C18,7 20,13 22,8",
-    stats: "M7,19 v-9 h4 v9 z M13,19 v-14 h4 v14 z M19,19 v-6 h4 v6 z",
-    distribution: "M7,9 h10 a4,4 0 0,1 0,8 h-10 a4,4 0 0,1 0,-8 z",
-    regression: "M5,18 l14,-12 M7,10 l2,-2 M11,12 l2,-2 M15,8 l2,-2"
+    test: "M5,5 h14 v3 h-14 z M5,11 h10 v3 h-10 z M5,17 h7 v3 h-7 z",
+    matrix: "M6,6 h4 v4 h-4 z M14,6 h4 v4 h-4 z M6,14 h4 v4 h-4 z M14,14 h4 v4 h-4 z",
+    risk: "M12,4 l0,8 l4,-4 M4,20 h16 M4,15 l4,-8 l4,4 l8,-8",
+    model: "M6,4 v16 M6,12 h12 M10,6 v12 M14,8 v8 M18,10 v4",
+    check: "M6,12 l4,4 l8,-8",
+    stats: "M8,4 h8 v5 h-8 z M8,10 h8 v10 l-4,-4 l-4,4 z"
   };
   
-  // Teksty dla kwadratów
+  // Teksty dla kwadratów - krótkie i związane z tematyką strony
   const squareLabels = [
-    'Analiza', 'Modele', 'Statystyka', 'Ryzyko', 'Predykcja', 'Regresja', 
-    'Korelacja', 'Rozkład', 'Test t', 'Wariancja', 'Estymacja', 'Dane', 
-    'Serie', 'Szeregi', 'Bayes', 'Monte Carlo'
+    'Ryzyko', 'Model', 'Analiza', 'Statystyka', 'Estymacja', 
+    'Test t', 'Seria', 'Przegląd', 'Bayes', 'Korelacja', 'Regresja', 'Dane'
   ];
   
   // Obliczenie ile kwadratów można umieścić w rzędzie i kolumnie
-  const spacing = 40; // Odstęp między kwadratami
+  const spacing = 50;
   const rowCount = Math.floor(Math.sqrt(squareCount));
   const colCount = Math.ceil(squareCount / rowCount);
   
@@ -54,9 +53,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const row = Math.floor(i / colCount);
     const col = i % colCount;
     
-    // Dodanie niewielkiego losowego przesunięcia dla bardziej organicznego wyglądu
-    const randomOffsetX = (Math.random() - 0.5) * 30;
-    const randomOffsetY = (Math.random() - 0.5) * 30;
+    // Dodanie losowego przesunięcia dla bardziej organicznego wyglądu
+    const randomOffsetX = (Math.random() - 0.5) * 40;
+    const randomOffsetY = (Math.random() - 0.5) * 40;
     
     // Obliczenie pozycji
     const xPos = startX + col * (squareSize + spacing) + randomOffsetX;
@@ -74,21 +73,19 @@ document.addEventListener('DOMContentLoaded', function() {
       y: yPos,
       size: squareSize,
       isActive: isActive,
-      // Mniejsza prędkość dla bardziej delikatnego ruchu
-      dx: (Math.random() - 0.5) * 0.15, 
-      dy: (Math.random() - 0.5) * 0.15,
+      dx: (Math.random() - 0.5) * 0.1, 
+      dy: (Math.random() - 0.5) * 0.1,
       icon: icons[iconKey],
-      label: squareLabels[Math.floor(Math.random() * squareLabels.length)],
+      label: squareLabels[i % squareLabels.length],
       connections: []
     };
     
     squares.push(square);
   }
   
-  // Tworzenie połączeń między aktywnymi kwadratami a innymi kwadratami
+  // Tworzenie połączeń między kwadratami
   squares.filter(s => s.isActive).forEach(activeSquare => {
-    // Połączenie z 2-3 losowymi kwadratami
-    const connectionCount = Math.floor(Math.random() * 2) + 2;
+    const connectionCount = 2;
     
     for (let i = 0; i < connectionCount; i++) {
       const otherSquares = squares.filter(s => s.id !== activeSquare.id && !activeSquare.connections.includes(s.id));
@@ -113,23 +110,21 @@ document.addEventListener('DOMContentLoaded', function() {
       square.x += square.dx;
       square.y += square.dy;
       
-      // Ograniczenia, aby kwadraty nie wyszły poza kontener (z marginesem bezpieczeństwa)
-      const margin = 20;
+      // Ograniczenia, aby kwadraty nie wyszły poza kontener
+      const margin = 30;
       if (square.x <= margin || square.x + square.size >= width - margin) {
         square.dx *= -1;
-        // Korekta pozycji, aby uniknąć "przyklejania" do krawędzi
         square.x = Math.max(margin, Math.min(width - square.size - margin, square.x));
       }
       if (square.y <= margin || square.y + square.size >= height - margin) {
         square.dy *= -1;
-        // Korekta pozycji, aby uniknąć "przyklejania" do krawędzi
         square.y = Math.max(margin, Math.min(height - square.size - margin, square.y));
       }
       
-      // Bardzo rzadkie, subtelne zmiany kierunku dla naturalniejszego ruchu
+      // Bardzo rzadkie, subtelne zmiany kierunku
       if (Math.random() < 0.001) {
-        square.dx = (Math.random() - 0.5) * 0.15;
-        square.dy = (Math.random() - 0.5) * 0.15;
+        square.dx = (Math.random() - 0.5) * 0.1;
+        square.dy = (Math.random() - 0.5) * 0.1;
       }
     });
     
@@ -150,7 +145,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     svg.setAttribute('viewBox', `0 0 ${newWidth} ${newHeight}`);
     
-    // Aktualizacja pozycji kwadratów, aby pasowały do nowych wymiarów
     squares.forEach(square => {
       if (square.x + square.size > newWidth) {
         square.x = newWidth - square.size;
@@ -173,43 +167,40 @@ document.addEventListener('DOMContentLoaded', function() {
       group.setAttribute('id', square.id);
       group.setAttribute('transform', `translate(${square.x}, ${square.y})`);
       
-      // Tworzenie kwadratu
+      // Tworzenie zewnętrznego kwadratu (obramowanie)
       const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
       rect.setAttribute('width', square.size);
       rect.setAttribute('height', square.size);
-      rect.setAttribute('rx', '4'); // Zaokrąglone rogi
+      rect.setAttribute('rx', '4');
       rect.classList.add('square-element');
-      
-      if (square.isActive) {
-        rect.classList.add('active-square');
-      }
       
       group.appendChild(rect);
       
-      // Dodanie ikony - umieszczenie jej w odpowiednim miejscu
-      const iconGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-      // Umieszczenie ikony w centrum górnej części kwadratu
-      iconGroup.setAttribute('transform', `translate(${square.size/2}, ${square.size/2 - 10})`);
+      // Tworzenie kółka dla ikony
+      const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+      circle.setAttribute('cx', square.size / 2);
+      circle.setAttribute('cy', square.size / 3);
+      circle.setAttribute('r', 16);
+      circle.classList.add('icon-circle');
       
+      group.appendChild(circle);
+      
+      // Dodanie ikony
       const icon = document.createElementNS('http://www.w3.org/2000/svg', 'path');
       icon.setAttribute('d', square.icon);
-      // Centrowanie ikony
-      icon.setAttribute('transform', 'translate(-12, -12)');
+      icon.setAttribute('transform', `translate(${square.size/2 - 10}, ${square.size/3 - 10})`);
       icon.classList.add('square-icon');
       
-      iconGroup.appendChild(icon);
-      group.appendChild(iconGroup);
+      group.appendChild(icon);
       
       // Dodanie etykiety
-      if (square.label) {
-        const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-        text.setAttribute('x', square.size / 2);
-        text.setAttribute('y', square.size - 15); // Pozycja tekstu na dole kwadratu
-        text.classList.add('square-text');
-        text.textContent = square.label;
-        
-        group.appendChild(text);
-      }
+      const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+      text.setAttribute('x', square.size / 2);
+      text.setAttribute('y', square.size * 0.7);
+      text.classList.add('square-text');
+      text.textContent = square.label;
+      
+      group.appendChild(text);
       
       squaresGroup.appendChild(group);
     });
