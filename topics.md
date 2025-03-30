@@ -25,6 +25,10 @@ title: topics
 
 <br>
 
+{% include weibull-distribution.html %}
+
+<br>
+
 <div class="research-areas-grid">
   <div class="research-area-card">
     <div class="research-area-icon">
