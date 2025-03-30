@@ -23,7 +23,7 @@ layout: default
 _"Potrzeba ogromu wiedzy i doświadczenia, żeby na podstawie ograniczonych obserwacji wyciągać uogólnione wnioski"_
 
 <br>
-##### O mnie
+#### O mnie
 
 <!-- Dodajemy pozycjonowany obraz -->
 <div class="positioned-image">
@@ -60,7 +60,7 @@ Wciąż pracuje w binzesie, w sektorze bankowym. Poza tym, w zakresie dydaktyczn
 
 <br>
 
-##### Aktualności
+#### Aktualności
 
 <div class="aktualnosci-container">
   <!-- Aktualne wydarzenie -->
