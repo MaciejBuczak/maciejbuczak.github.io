@@ -10,6 +10,19 @@
         <stop offset="0%" stop-color="#bf6604" />
         <stop offset="100%" stop-color="#b87942" />
       </linearGradient>
+      
+      <!-- Dodajemy filtr dla efektu cienia -->
+      <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur in="SourceAlpha" stdDeviation="2" />
+        <feOffset dx="1" dy="1" result="offsetblur" />
+        <feComponentTransfer>
+          <feFuncA type="linear" slope="0.3" />
+        </feComponentTransfer>
+        <feMerge>
+          <feMergeNode />
+          <feMergeNode in="SourceGraphic" />
+        </feMerge>
+      </filter>
     </defs>
     
     <!-- Linie i kwadraty będą generowane przez JavaScript -->
@@ -17,5 +30,4 @@
     <g class="squares"></g>
   </svg>
 </div>
-
 <script src="/assets/js/animated-squares.js"></script>
