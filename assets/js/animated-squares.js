@@ -14,32 +14,31 @@ document.addEventListener('DOMContentLoaded', function() {
   // Właściwości kwadratów
   const squareCount = 16;
   const squares = [];
-  // Wszystkie kwadraty będą białe
   const activeSquares = Math.floor(squareCount / 4); // Około 1/4 kwadratów będzie aktywnych dla połączeń
   
-  // Stały rozmiar kwadratu - 60px dla większej elegancji i spójności
+  // Stały rozmiar kwadratu
   const squareSize = 60;
   
-  // Definicje ikon statystycznych (SVG paths)
+  // Lepiej zdefiniowane ikony statystyczne
   const icons = {
-    chart: "M4,4 L4,20 L20,20 M6,14 L10,10 L14,12 L18,8",
-    pie: "M12,12 L12,4 A8,8 0 0,1 19,12 Z M12,12 L12,20 A8,8 0 1,1 12,4 A8,8 0 0,1 12,20",
-    bar: "M6,20 L6,12 L9,12 L9,20 Z M11,20 L11,8 L14,8 L14,20 Z M16,20 L16,15 L19,15 L19,20 Z",
-    scatter: "M6,6 L6,6 M10,8 L10,8 M12,12 L12,12 M8,14 L8,14 M15,10 L15,10 M16,16 L16,16 M18,11 L18,11 M9,18 L9,18 M18,6 L18,6",
-    line: "M4,14 C6,9 10,17 12,12 C14,7 16,14 20,9",
-    stats: "M5,20 L5,10 L9,10 L9,20 Z M11,20 L11,6 L15,6 L15,20 Z M17,20 L17,14 L21,14 L21,20 Z",
-    distribution: "M7,8 L17,8 A4,4 0 0,1 21,12 A4,4 0 0,1 17,16 L7,16 A4,4 0 0,1 3,12 A4,4 0 0,1 7,8 Z",
-    regression: "M4,18 L20,6 M6,7 L6,7 M10,9 L10,9 M14,11 L14,11 M17,13 L17,13 M19,15 L19,15"
+    chart: "M5,5 v14 h14 M7,14 l4,-4 l4,2 l4,-4",
+    pie: "M12,12 v-7 a7,7 0 0,1 7,7 h-7 z M12,12 v7 a7,7 0 1,1 0,-14 v7 z",
+    bar: "M7,19 v-8 h3 v8 z M12,19 v-12 h3 v12 z M17,19 v-5 h3 v5 z",
+    scatter: "M7,7 l1,1 M10,10 l1,1 M16,8 l1,1 M8,16 l1,1 M14,14 l1,1 M18,17 l1,1",
+    line: "M5,17 C8,12 12,15 16,10 C18,7 20,13 22,8",
+    stats: "M7,19 v-9 h4 v9 z M13,19 v-14 h4 v14 z M19,19 v-6 h4 v6 z",
+    distribution: "M7,9 h10 a4,4 0 0,1 0,8 h-10 a4,4 0 0,1 0,-8 z",
+    regression: "M5,18 l14,-12 M7,10 l2,-2 M11,12 l2,-2 M15,8 l2,-2"
   };
   
-  // Teksty dla kwadratów (krótsze etykiety, max 2 słowa)
+  // Teksty dla kwadratów
   const squareLabels = [
     'Analiza', 'Modele', 'Statystyka', 'Ryzyko', 'Predykcja', 'Regresja', 
     'Korelacja', 'Rozkład', 'Test t', 'Wariancja', 'Estymacja', 'Dane', 
-    'Serie', 'Szeregi', 'Bayes', 'Przegląd', 'Monte Carlo', 'Kwantyle'
+    'Serie', 'Szeregi', 'Bayes', 'Monte Carlo'
   ];
   
-  // Obliczenie ile kwadratów można umieścić w rzędzie i kolumnie z odpowiednimi odstępami
+  // Obliczenie ile kwadratów można umieścić w rzędzie i kolumnie
   const spacing = 40; // Odstęp między kwadratami
   const rowCount = Math.floor(Math.sqrt(squareCount));
   const colCount = Math.ceil(squareCount / rowCount);
@@ -178,8 +177,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
       rect.setAttribute('width', square.size);
       rect.setAttribute('height', square.size);
-      rect.setAttribute('rx', '3');
-      rect.setAttribute('fill', square.color);
+      rect.setAttribute('rx', '4'); // Zaokrąglone rogi
       rect.classList.add('square-element');
       
       if (square.isActive) {
@@ -188,27 +186,27 @@ document.addEventListener('DOMContentLoaded', function() {
       
       group.appendChild(rect);
       
-      // Dodanie ikony
+      // Dodanie ikony - umieszczenie jej w odpowiednim miejscu
+      const iconGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+      // Umieszczenie ikony w centrum górnej części kwadratu
+      iconGroup.setAttribute('transform', `translate(${square.size/2}, ${square.size/2 - 10})`);
+      
       const icon = document.createElementNS('http://www.w3.org/2000/svg', 'path');
       icon.setAttribute('d', square.icon);
-      icon.setAttribute('transform', `translate(${square.size/2 - 12}, ${square.size/2 - 12}) scale(${square.size/30})`);
+      // Centrowanie ikony
+      icon.setAttribute('transform', 'translate(-12, -12)');
       icon.classList.add('square-icon');
       
-      group.appendChild(icon);
+      iconGroup.appendChild(icon);
+      group.appendChild(iconGroup);
       
-      // Dodanie etykiety dla wszystkich kwadratów
+      // Dodanie etykiety
       if (square.label) {
         const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
         text.setAttribute('x', square.size / 2);
-        text.setAttribute('y', square.size - 8);
+        text.setAttribute('y', square.size - 15); // Pozycja tekstu na dole kwadratu
         text.classList.add('square-text');
         text.textContent = square.label;
-        
-        // Dla nieaktywnych kwadratów możemy dostosować styl tekstu
-        if (!square.isActive) {
-          text.setAttribute('fill', 'white'); // Biały tekst dla lepszej widoczności na kolorowym tle
-          text.setAttribute('font-size', '9px'); // Nieco mniejsza czcionka
-        }
         
         group.appendChild(text);
       }
