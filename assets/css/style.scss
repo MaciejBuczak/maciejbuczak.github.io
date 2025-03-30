@@ -295,12 +295,13 @@ hr {
 .square-text {
   font-family: sans-serif;
   font-size: 10px;
-  fill: white;
+  font-weight: 600;
+  fill: #603302; /* Ciemniejszy kolor dla lepszej czytelności na białym tle aktywnych kwadratów */
   text-anchor: middle;
   dominant-baseline: middle;
   pointer-events: none;
+  filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0.5));
 }
-
 
 
 
