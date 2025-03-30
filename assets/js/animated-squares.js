@@ -11,13 +11,13 @@ document.addEventListener('DOMContentLoaded', function() {
   const height = container.clientHeight;
   svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
   
-  // Właściwości kwadratów
-  const squareCount = 12;
+  // Zmniejszona liczba kwadratów do 7
+  const squareCount = 7;
   const squares = [];
-  const activeSquares = Math.floor(squareCount / 3);
+  const activeSquares = Math.floor(squareCount / 2);
   
-  // Stały rozmiar kwadratu
-  const squareSize = 70;
+  // Zwiększony rozmiar kwadratu (dwa razy większe)
+  const squareSize = 140;
   
   // Ikony w stylu podobnym do tych na stronie
   const icons = {
@@ -34,12 +34,12 @@ document.addEventListener('DOMContentLoaded', function() {
   // Teksty dla kwadratów - krótkie i związane z tematyką strony
   const squareLabels = [
     'Ryzyko', 'Model', 'Analiza', 'Statystyka', 'Estymacja', 
-    'Test t', 'Seria', 'Przegląd', 'Bayes', 'Korelacja', 'Regresja', 'Dane'
+    'Szeregi', 'Dane'
   ];
   
   // Obliczenie ile kwadratów można umieścić w rzędzie i kolumnie
-  const spacing = 50;
-  const rowCount = Math.floor(Math.sqrt(squareCount));
+  const spacing = 80;
+  const rowCount = Math.ceil(Math.sqrt(squareCount));
   const colCount = Math.ceil(squareCount / rowCount);
   
   // Obliczenie środkowego punktu, aby wyśrodkować siatkę kwadratów
@@ -54,8 +54,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const col = i % colCount;
     
     // Dodanie losowego przesunięcia dla bardziej organicznego wyglądu
-    const randomOffsetX = (Math.random() - 0.5) * 40;
-    const randomOffsetY = (Math.random() - 0.5) * 40;
+    const randomOffsetX = (Math.random() - 0.5) * 60;
+    const randomOffsetY = (Math.random() - 0.5) * 60;
     
     // Obliczenie pozycji
     const xPos = startX + col * (squareSize + spacing) + randomOffsetX;
@@ -73,8 +73,8 @@ document.addEventListener('DOMContentLoaded', function() {
       y: yPos,
       size: squareSize,
       isActive: isActive,
-      dx: (Math.random() - 0.5) * 0.1, 
-      dy: (Math.random() - 0.5) * 0.1,
+      dx: (Math.random() - 0.5) * 0.08, 
+      dy: (Math.random() - 0.5) * 0.08,
       icon: icons[iconKey],
       label: squareLabels[i % squareLabels.length],
       connections: []
@@ -123,8 +123,8 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // Bardzo rzadkie, subtelne zmiany kierunku
       if (Math.random() < 0.001) {
-        square.dx = (Math.random() - 0.5) * 0.1;
-        square.dy = (Math.random() - 0.5) * 0.1;
+        square.dx = (Math.random() - 0.5) * 0.08;
+        square.dy = (Math.random() - 0.5) * 0.08;
       }
     });
     
@@ -180,15 +180,16 @@ document.addEventListener('DOMContentLoaded', function() {
       const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
       circle.setAttribute('cx', square.size / 2);
       circle.setAttribute('cy', square.size / 3);
-      circle.setAttribute('r', 16);
+      circle.setAttribute('r', 25);
       circle.classList.add('icon-circle');
       
       group.appendChild(circle);
       
-      // Dodanie ikony
+      // Dodanie ikony - idealnie wycentrowanej w kółku
       const icon = document.createElementNS('http://www.w3.org/2000/svg', 'path');
       icon.setAttribute('d', square.icon);
-      icon.setAttribute('transform', `translate(${square.size/2 - 10}, ${square.size/3 - 10})`);
+      // Centraowanie ikony w kółku
+      icon.setAttribute('transform', `translate(${square.size/2 - 12}, ${square.size/3 - 12})`);
       icon.classList.add('square-icon');
       
       group.appendChild(icon);
@@ -204,6 +205,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
       squaresGroup.appendChild(group);
     });
+  }
   }
   
   // Funkcja do renderowania połączeń między kwadratami
