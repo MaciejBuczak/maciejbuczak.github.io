@@ -3,25 +3,17 @@
     <!-- Definicje gradientów dla linii -->
     <defs>
       <linearGradient id="lineGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stop-color="#a85903" />
-        <stop offset="100%" stop-color="#d17a1b" />
+        <stop offset="0%" stop-color="#a85903" stop-opacity="0.6" />
+        <stop offset="100%" stop-color="#d17a1b" stop-opacity="0.6" />
       </linearGradient>
       <linearGradient id="lineGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stop-color="#bf6604" />
-        <stop offset="100%" stop-color="#b87942" />
+        <stop offset="0%" stop-color="#bf6604" stop-opacity="0.5" />
+        <stop offset="100%" stop-color="#b87942" stop-opacity="0.5" />
       </linearGradient>
       
-      <!-- Dodajemy filtr dla efektu cienia -->
+      <!-- Filtr dla eleganckiego cienia -->
       <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-        <feGaussianBlur in="SourceAlpha" stdDeviation="2" />
-        <feOffset dx="1" dy="1" result="offsetblur" />
-        <feComponentTransfer>
-          <feFuncA type="linear" slope="0.3" />
-        </feComponentTransfer>
-        <feMerge>
-          <feMergeNode />
-          <feMergeNode in="SourceGraphic" />
-        </feMerge>
+        <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#000000" flood-opacity="0.1" />
       </filter>
     </defs>
     
@@ -30,4 +22,5 @@
     <g class="squares"></g>
   </svg>
 </div>
+
 <script src="/assets/js/animated-squares.js"></script>
