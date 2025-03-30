@@ -275,7 +275,6 @@ hr {
   opacity: 1;
   transition: transform 0.3s ease, filter 0.3s ease;
   filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
-  rx: 4;
 }
 
 .square-element:hover {
@@ -290,31 +289,29 @@ hr {
   transition: opacity 0.3s ease;
 }
 
-.active-square {
-  filter: drop-shadow(0 5px 10px rgba(168, 89, 3, 0.15));
+.icon-circle {
+  fill: #f8f1eb;
+  stroke: none;
 }
 
 .square-text {
   font-family: sans-serif;
-  font-size: 11px;
-  font-weight: 400;
-  fill: #737373; /* Szary kolor tekstu, zgodny z resztą strony */
+  font-size: 12px;
+  font-weight: 500;
+  fill: #a85903;
   text-anchor: middle;
   dominant-baseline: middle;
   pointer-events: none;
 }
 
 .square-icon {
-  fill: #a85903; /* Pomarańczowy kolor ikon, zgodny z motywem strony */
-  opacity: 0.9;
+  fill: none;
   stroke: #a85903;
-  stroke-width: 1;
+  stroke-width: 1.5;
   stroke-linecap: round;
   stroke-linejoin: round;
   pointer-events: none;
 }
-
-
 
 
 
