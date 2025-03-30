@@ -12,55 +12,72 @@ document.addEventListener('DOMContentLoaded', function() {
   svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
   
   // Właściwości kwadratów
-  const squareCount = 16; // Zwiększona liczba kwadratów
+  const squareCount = 16;
   const squares = [];
-  const colors = ['#a85903', '#bf6604', '#d17a1b', '#b87942'];
-  const activeSquares = Math.floor(squareCount / 4); // Około 1/4 kwadratów będzie aktywna
+  // Wszystkie kwadraty będą białe
+  const activeSquares = Math.floor(squareCount / 4); // Około 1/4 kwadratów będzie aktywnych dla połączeń
+  
+  // Stały rozmiar kwadratu - 60px dla większej elegancji i spójności
+  const squareSize = 60;
   
   // Definicje ikon statystycznych (SVG paths)
   const icons = {
-    chart: "M3,3 L3,17 L21,17 M5,12 L9,8 L13,10 L19,5",
-    pie: "M12,12 L12,5 A7,7 0 0,1 18,12 Z M12,12 L12,19 A7,7 0 1,1 12,5 A7,7 0 0,1 12,19",
-    bar: "M5,17 L5,10 L8,10 L8,17 Z M11,17 L11,6 L14,6 L14,17 Z M17,17 L17,13 L20,13 L20,17 Z",
-    scatter: "M5,5 L5,5 M9,7 L9,7 M12,12 L12,12 M7,14 L7,14 M15,9 L15,9 M16,15 L16,15 M19,10 L19,10 M8,18 L8,18 M18,5 L18,5",
-    line: "M3,12 C5,7 9,15 12,10 C15,5 18,12 21,7",
-    stats: "M4,19 L4,9 L8,9 L8,19 Z M10,19 L10,5 L14,5 L14,19 Z M16,19 L16,12 L20,12 L20,19 Z",
-    distribution: "M8,6 L16,6 A4,4 0 0,1 20,10 A4,4 0 0,1 16,14 L8,14 A4,4 0 0,1 4,10 A4,4 0 0,1 8,6 Z",
-    regression: "M3,18 L21,6 M5,6 L5,6 M9,8 L9,8 M12,10 L12,10 M16,12 L16,12 M19,14 L19,14"
+    chart: "M4,4 L4,20 L20,20 M6,14 L10,10 L14,12 L18,8",
+    pie: "M12,12 L12,4 A8,8 0 0,1 19,12 Z M12,12 L12,20 A8,8 0 1,1 12,4 A8,8 0 0,1 12,20",
+    bar: "M6,20 L6,12 L9,12 L9,20 Z M11,20 L11,8 L14,8 L14,20 Z M16,20 L16,15 L19,15 L19,20 Z",
+    scatter: "M6,6 L6,6 M10,8 L10,8 M12,12 L12,12 M8,14 L8,14 M15,10 L15,10 M16,16 L16,16 M18,11 L18,11 M9,18 L9,18 M18,6 L18,6",
+    line: "M4,14 C6,9 10,17 12,12 C14,7 16,14 20,9",
+    stats: "M5,20 L5,10 L9,10 L9,20 Z M11,20 L11,6 L15,6 L15,20 Z M17,20 L17,14 L21,14 L21,20 Z",
+    distribution: "M7,8 L17,8 A4,4 0 0,1 21,12 A4,4 0 0,1 17,16 L7,16 A4,4 0 0,1 3,12 A4,4 0 0,1 7,8 Z",
+    regression: "M4,18 L20,6 M6,7 L6,7 M10,9 L10,9 M14,11 L14,11 M17,13 L17,13 M19,15 L19,15"
   };
   
-  // Teksty dla kwadratów (max 2 słowa)
+  // Teksty dla kwadratów (krótsze etykiety, max 2 słowa)
   const squareLabels = [
-    'Analiza Danych', 'Modele', 'Statystyka', 'Ryzyko', 'Predykcja', 'Regresja', 
-    'Korelacja', 'Rozkład', 'Test t', 'Wariancja', 'Przedział ufności', 'Dane', 
-    'Machine Learning', 'Szeregi', 'Bayes', 'Estymacja', 'Monte Carlo', 'Kwantyle',
-    'Pomiar', 'Trend', 'Szum', 'Obliczenia', 'Optymalizacja', 'Klasyfikacja',
-    'Wykresy', 'Seria danych'
+    'Analiza', 'Modele', 'Statystyka', 'Ryzyko', 'Predykcja', 'Regresja', 
+    'Korelacja', 'Rozkład', 'Test t', 'Wariancja', 'Estymacja', 'Dane', 
+    'Serie', 'Szeregi', 'Bayes', 'Przegląd', 'Monte Carlo', 'Kwantyle'
   ];
   
-  // Tworzenie kwadratów
+  // Obliczenie ile kwadratów można umieścić w rzędzie i kolumnie z odpowiednimi odstępami
+  const spacing = 40; // Odstęp między kwadratami
+  const rowCount = Math.floor(Math.sqrt(squareCount));
+  const colCount = Math.ceil(squareCount / rowCount);
+  
+  // Obliczenie środkowego punktu, aby wyśrodkować siatkę kwadratów
+  const gridWidth = colCount * squareSize + (colCount - 1) * spacing;
+  const gridHeight = rowCount * squareSize + (rowCount - 1) * spacing;
+  const startX = (width - gridWidth) / 2;
+  const startY = (height - gridHeight) / 2;
+  
+  // Tworzenie kwadratów w uporządkowanej siatce
   for (let i = 0; i < squareCount; i++) {
-    const size = Math.floor(Math.random() * 30) + 25; // Bardziej jednolite rozmiary
-    const isActive = i < activeSquares;
+    const row = Math.floor(i / colCount);
+    const col = i % colCount;
     
-    // Losowe rozmieszczenie, ale z unikaniem skrajnych pozycji
-    const margin = size * 0.6;
-    const xPos = margin + Math.random() * (width - size - margin * 2);
-    const yPos = margin + Math.random() * (height - size - margin * 2);
+    // Dodanie niewielkiego losowego przesunięcia dla bardziej organicznego wyglądu
+    const randomOffsetX = (Math.random() - 0.5) * 30;
+    const randomOffsetY = (Math.random() - 0.5) * 30;
+    
+    // Obliczenie pozycji
+    const xPos = startX + col * (squareSize + spacing) + randomOffsetX;
+    const yPos = startY + row * (squareSize + spacing) + randomOffsetY;
     
     // Losowa ikona
     const iconKeys = Object.keys(icons);
     const iconKey = iconKeys[Math.floor(Math.random() * iconKeys.length)];
     
+    const isActive = i < activeSquares;
+    
     const square = {
       id: `square-${i}`,
       x: xPos,
       y: yPos,
-      size: size,
-      color: isActive ? 'white' : colors[Math.floor(Math.random() * colors.length)],
+      size: squareSize,
       isActive: isActive,
-      dx: (Math.random() - 0.5) * 0.3, // Wolniejsza prędkość dla większej elegancji
-      dy: (Math.random() - 0.5) * 0.3,
+      // Mniejsza prędkość dla bardziej delikatnego ruchu
+      dx: (Math.random() - 0.5) * 0.15, 
+      dy: (Math.random() - 0.5) * 0.15,
       icon: icons[iconKey],
       label: squareLabels[Math.floor(Math.random() * squareLabels.length)],
       connections: []
@@ -69,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
     squares.push(square);
   }
   
-  // Tworzenie połączeń między aktywnymi kwadratami a losowymi innymi kwadratami
+  // Tworzenie połączeń między aktywnymi kwadratami a innymi kwadratami
   squares.filter(s => s.isActive).forEach(activeSquare => {
     // Połączenie z 2-3 losowymi kwadratami
     const connectionCount = Math.floor(Math.random() * 2) + 2;
@@ -97,22 +114,23 @@ document.addEventListener('DOMContentLoaded', function() {
       square.x += square.dx;
       square.y += square.dy;
       
-      // Sprawdzanie granic z odbiciem
-      if (square.x <= 0 || square.x + square.size >= width) {
+      // Ograniczenia, aby kwadraty nie wyszły poza kontener (z marginesem bezpieczeństwa)
+      const margin = 20;
+      if (square.x <= margin || square.x + square.size >= width - margin) {
         square.dx *= -1;
-        // Mała korekta, aby kwadrat nie utknął na granicy
-        square.x = Math.max(0, Math.min(width - square.size, square.x));
+        // Korekta pozycji, aby uniknąć "przyklejania" do krawędzi
+        square.x = Math.max(margin, Math.min(width - square.size - margin, square.x));
       }
-      if (square.y <= 0 || square.y + square.size >= height) {
+      if (square.y <= margin || square.y + square.size >= height - margin) {
         square.dy *= -1;
-        // Mała korekta, aby kwadrat nie utknął na granicy
-        square.y = Math.max(0, Math.min(height - square.size, square.y));
+        // Korekta pozycji, aby uniknąć "przyklejania" do krawędzi
+        square.y = Math.max(margin, Math.min(height - square.size - margin, square.y));
       }
       
-      // Losowe zmiany kierunku co jakiś czas (dodaje organiczności)
-      if (Math.random() < 0.002) {
-        square.dx = (Math.random() - 0.5) * 0.3;
-        square.dy = (Math.random() - 0.5) * 0.3;
+      // Bardzo rzadkie, subtelne zmiany kierunku dla naturalniejszego ruchu
+      if (Math.random() < 0.001) {
+        square.dx = (Math.random() - 0.5) * 0.15;
+        square.dy = (Math.random() - 0.5) * 0.15;
       }
     });
     
