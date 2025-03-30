@@ -19,6 +19,11 @@ title: topics
 <div class="square2"></div>
 <div class="square-big"></div>
 
+<br>
+
+{% include animated-squares.html %}
+
+<br>
 
 <div class="research-areas-grid">
   <div class="research-area-card">
