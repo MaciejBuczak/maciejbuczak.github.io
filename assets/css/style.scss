@@ -254,8 +254,6 @@ hr {
 
 
 
-
-
 // Style dla sekcji animated squares
 .advanced-squares-container {
   position: relative;
@@ -309,9 +307,12 @@ hr {
 .square-icon {
   fill: #a85903; /* Pomarańczowy kolor ikon, zgodny z motywem strony */
   opacity: 0.9;
+  stroke: #a85903;
+  stroke-width: 1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
   pointer-events: none;
 }
-
 
 
 
