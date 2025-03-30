@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
   ];
   
   // Obliczenie ile kwadratów można umieścić w rzędzie i kolumnie
-  const spacing = 80;
+  const spacing = 120; // Zwiększone odstępy między kwadratami (z 80 do 120)
   const rowCount = Math.ceil(Math.sqrt(squareCount));
   const colCount = Math.ceil(squareCount / rowCount);
   
@@ -54,8 +54,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const col = i % colCount;
     
     // Dodanie losowego przesunięcia dla bardziej organicznego wyglądu
-    const randomOffsetX = (Math.random() - 0.5) * 60;
-    const randomOffsetY = (Math.random() - 0.5) * 60;
+    const randomOffsetX = (Math.random() - 0.5) * 40; // Zmniejszone przesunięcie losowe (z 60 do 40)
+    const randomOffsetY = (Math.random() - 0.5) * 40; // Zmniejszone przesunięcie losowe (z 60 do 40)
     
     // Obliczenie pozycji
     const xPos = startX + col * (squareSize + spacing) + randomOffsetX;
@@ -73,8 +73,8 @@ document.addEventListener('DOMContentLoaded', function() {
       y: yPos,
       size: squareSize,
       isActive: isActive,
-      dx: (Math.random() - 0.5) * 0.08, 
-      dy: (Math.random() - 0.5) * 0.08,
+      dx: (Math.random() - 0.5) * 0.15, // Zwiększona prędkość z 0.08 do 0.15
+      dy: (Math.random() - 0.5) * 0.15, // Zwiększona prędkość z 0.08 do 0.15
       icon: icons[iconKey],
       label: squareLabels[i % squareLabels.length],
       connections: []
@@ -123,8 +123,8 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // Bardzo rzadkie, subtelne zmiany kierunku
       if (Math.random() < 0.001) {
-        square.dx = (Math.random() - 0.5) * 0.08;
-        square.dy = (Math.random() - 0.5) * 0.08;
+        square.dx = (Math.random() - 0.5) * 0.15;
+        square.dy = (Math.random() - 0.5) * 0.15;
       }
     });
     
