@@ -336,3 +336,7 @@ document.addEventListener('DOMContentLoaded', function() {
   list.append("li").html("Gdy <strong>k ≈ 3.5</strong>, rozkład Weibulla przypomina rozkład normalny.");
   list.append("li").html("Dla <strong>k &lt; 1</strong>, funkcja gęstości ma przebieg malejący (wysoka awaryjność początkowa).");
   list.append("li").html("Dla <strong>k &gt; 1</strong>, funkcja gęstości
+
+  // Inicjalizacja wykresu
+  updateChart();
+});
