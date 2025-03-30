@@ -16,16 +16,18 @@ document.addEventListener('DOMContentLoaded', function() {
     return term1 * term2 * term3;
   };
 
-  // Ustawienia wykresu
+  // Ustawienia wykresu - zmniejszona szerokość
   const margin = { top: 40, right: 40, bottom: 60, left: 60 };
-  const width = 700 - margin.left - margin.right;
+  const width = 600 - margin.left - margin.right; // Zmniejszona z 700 na 600
   const height = 400 - margin.top - margin.bottom;
 
-  // Stworzenie SVG
+  // Stworzenie SVG z określoną szerokością aby zmieścić się w kontenerze
   const svg = d3.select(container)
     .append("svg")
-    .attr("width", width + margin.left + margin.right)
+    .attr("width", "100%") // Ustawienie szerokości na 100% kontenera
     .attr("height", height + margin.top + margin.bottom)
+    .attr("viewBox", `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`)
+    .attr("preserveAspectRatio", "xMidYMid meet")
     .append("g")
     .attr("transform", `translate(${margin.left},${margin.top})`);
 
