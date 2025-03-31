@@ -1,0 +1,122 @@
+/* Kontener dla symulacji Monte Carlo */
+.monte-carlo-container {
+  margin: 40px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+}
+
+/* Kontrolki symulacji */
+.monte-carlo-controls {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.control-header {
+  font-size: 16px;
+  color: #737373;
+  margin-bottom: 15px;
+}
+
+.control-group {
+  margin-bottom: 15px;
+}
+
+.control-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #737373;
+}
+
+.control-group input[type="range"] {
+  width: 100%;
+  height: 8px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.control-group input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #a85903;
+  cursor: pointer;
+}
+
+.button-section {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.animate-button {
+  padding: 8px 16px;
+  background-color: #a85903;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.animate-button:hover {
+  background-color: #bf6604;
+}
+
+/* Informacje o metodzie */
+.monte-carlo-info {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #fff8f0;
+  border-radius: 8px;
+}
+
+.monte-carlo-info h3 {
+  color: #a85903;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.monte-carlo-info p {
+  color: #737373;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.monte-carlo-info ul {
+  color: #737373;
+  font-size: 14px;
+  line-height: 1.5;
+  padding-left: 20px;
+}
+
+.monte-carlo-info li {
+  margin-bottom: 5px;
+}
+
+/* Style dla histogramu */
+.bar {
+  transition: fill 0.3s;
+}
+
+.bar:hover {
+  fill: #bf6604;
+}
+
+/* Responsywność */
+@media screen and (max-width: 768px) {
+  .monte-carlo-container {
+    padding: 10px;
+    margin: 20px 10px;
+  }
+}
