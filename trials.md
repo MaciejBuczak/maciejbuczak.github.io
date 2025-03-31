@@ -27,3 +27,7 @@ title: trials
 ### Heatmap
 
 {% include risk-correlation-heatmap.html %}
+
+<br>
+### Monte Carlo
+{% include monte-carlo-var.html %}
