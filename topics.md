@@ -25,11 +25,6 @@ title: topics
 
 <br>
 
-{% include weibull-distribution.html %}
-
-<br>
-
-{% include risk-correlation-heatmap.html %}
 
 <div class="research-areas-grid">
   <div class="research-area-card">
