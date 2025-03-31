@@ -1229,10 +1229,55 @@ font-weight: bold;
 
 
 
-/* Style specyficzne tylko dla podstrony oprisk.md */
+/* Naprawienie pozycji elementów dekoracyjnych na stronie oprisk */
 
-/* Używamy selektora, który będzie pasować tylko do podstrony oprisk */
-body.page-oprisk #main_content,
+/* Ustawienie pozycji prostokąta (square-big) */
+.page-oprisk .square-big {
+  position: absolute;
+  width: 175px;
+  height: 30px;
+  background-color: #d17a1b;
+  top: -102px;  
+  left: 0px;
+  z-index: 1;
+}
+
+/* Ustawienie pozycji kwadratów */
+.page-oprisk .square {
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  background-color: #d17a1b;
+  top: -162px;  
+  right: 10px;
+}
+
+.page-oprisk .square1 {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-color: #d17a1b;
+  top: -110.5px;  
+  right: 73px;
+}
+
+.page-oprisk .square2 {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-color: #d17a1b;
+  top: -131px;  
+  right: 117px;
+}
+
+/* Upewnienie się, że nagłówek ma właściwą pozycję */
+.page-oprisk #header_wrap .inner {
+  position: relative;
+  z-index: 10;
+  overflow: visible;
+}
+
+/* Style dla szerokości treści i marginesów */
 .page-oprisk #main_content {
   max-width: none !important;
   padding-left: 15% !important;
@@ -1252,14 +1297,4 @@ body.page-oprisk #main_content,
   max-width: 100% !important;
   padding-left: 15% !important;
   padding-right: 15% !important;
-}
-
-/* Responsywne dostosowania */
-@media screen and (min-width: 1800px) {
-  /* Dla bardzo dużych ekranów, ograniczamy szerokość dla zachowania czytelności */
-  .page-oprisk #main_content {
-    max-width: 1600px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
 }
