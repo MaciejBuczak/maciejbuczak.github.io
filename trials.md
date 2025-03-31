@@ -31,3 +31,7 @@ title: trials
 <br>
 ### Monte Carlo
 {% include monte-carlo-var.html %}
+
+<br>
+### Drzewo decyzyjne
+{% include decision-tree.html %}
