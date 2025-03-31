@@ -1229,160 +1229,66 @@ font-weight: bold;
 
 
 
-/* Rozwiązanie problemu z elementami dekoracyjnymi na stronie oprisk */
+/* Lepsze podejście do elementów dekoracyjnych na stronie oprisk */
 
-/* Najpierw ukryjmy oryginalne elementy dekoracyjne na stronie oprisk */
-.page-oprisk .square,
-.page-oprisk .square1,
-.page-oprisk .square2,
-.page-oprisk .square-big {
-  display: none !important;
+/* Najpierw usuńmy pozycjonowanie fixed */
+.oprisk-square-big,
+.oprisk-square,
+.oprisk-square1,
+.oprisk-square2 {
+  position: absolute !important; /* Zamiast fixed */
 }
 
-/* Definicja nowych elementów dekoracyjnych z pozycjonowaniem fixed */
-.oprisk-decorative-elements {
-  position: relative;
-  width: 100%;
-  height: 0;
-}
-
-/* Styl dla nowego prostokąta */
+/* Podstawowe pozycje - takie same jak na głównej stronie */
 .oprisk-square-big {
   width: 175px;
   height: 30px;
   background-color: #d17a1b;
-  position: fixed;
-  top: 88px;  /* Dostosuj tę wartość */
-  left: 426px; /* Dostosuj tę wartość */
+  position: absolute;
+  top: -102px;  
+  left: 0px;
   z-index: 1;
 }
 
-/* Style dla nowych kwadratów */
 .oprisk-square {
   width: 45px;
   height: 45px;
   background-color: #d17a1b;
-  position: fixed;
-  top: 28px;   /* Dostosuj tę wartość */
-  right: 437px; /* Ta sama wartość jak oryginał */
-  z-index: 1;
+  position: absolute;
+  top: -162px;  
+  right: 10px;
 }
 
 .oprisk-square1 {
   width: 24px;
   height: 24px;
   background-color: #d17a1b;
-  position: fixed;
-  top: 79.5px;  /* Dostosuj tę wartość */
-  right: 500px; /* Ta sama wartość jak oryginał */
-  z-index: 1;
+  position: absolute;
+  top: -110.5px;  
+  right: 73px;
 }
 
 .oprisk-square2 {
   width: 24px;
   height: 24px;
   background-color: #d17a1b;
-  position: fixed;
-  top: 59px;   /* Dostosuj tę wartość */
-  right: 544px; /* Ta sama wartość jak oryginał */
-  z-index: 1;
+  position: absolute;
+  top: -131px;  
+  right: 117px;
 }
 
-/* Style dla szerokości treści i marginesów */
-.page-oprisk #main_content {
-  max-width: none !important;
-  padding-left: 15% !important;
-  padding-right: 15% !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
+/* Upewniamy się, że kontener oprisk-decorative-elements ma odpowiednie właściwości */
+.oprisk-decorative-elements {
+  position: relative;
+  width: 100%;
+  z-index: 10;
+  overflow: visible;
 }
 
-/* Dostosowanie paragrafów na stronie oprisk */
-.page-oprisk p {
-  max-width: none !important;
-  text-align: justify;
-}
-
-/* Zapewnienie, że kontener treści jest pełnej szerokości */
-.page-oprisk .main-content {
-  max-width: 100% !important;
-  padding-left: 15% !important;
-  padding-right: 15% !important;
-}
-
-
-
-
-/* Media queries dla strony oprisk na urządzenia mobilne */
-
-/* Dla tabletów */
-@media screen and (max-width: 1024px) {
-  /* Dostosowanie pozycji elementów dekoracyjnych */
-  .oprisk-square-big {
-    top: 88px;
-    left: 120px;
-    width: 120px;
-  }
-  
-  .oprisk-square {
-    top: 28px;
-    right: 120px;
-    width: 35px;
-    height: 35px;
-  }
-  
-  .oprisk-square1 {
-    top: 79.5px;
-    right: 160px;
-    width: 20px;
-    height: 20px;
-  }
-  
-  .oprisk-square2 {
-    top: 59px;
-    right: 190px;
-    width: 20px;
-    height: 20px;
-  }
-  
-  /* Dostosowanie marginesów treści */
-  .page-oprisk #main_content,
-  .page-oprisk .main-content {
-    padding-left: 10% !important;
-    padding-right: 10% !important;
-  }
-}
-
-/* Dla smartfonów */
+/* Media queries dla różnych szerokości ekranu */
 @media screen and (max-width: 768px) {
-  /* Dostosowanie pozycji elementów dekoracyjnych */
-  .oprisk-square-big {
-    top: 88px;
-    left: 50px;
-    width: 100px;
-    height: 25px;
-  }
-  
-  .oprisk-square {
-    top: 28px;
-    right: 60px;
-    width: 30px;
-    height: 30px;
-  }
-  
-  .oprisk-square1 {
-    top: 79.5px;
-    right: 90px;
-    width: 16px;
-    height: 16px;
-  }
-  
-  .oprisk-square2 {
-    top: 59px;
-    right: 120px;
-    width: 16px;
-    height: 16px;
-  }
+  /* Te same style zastosowane w media queries dla głównej strony */
+  /* Nie zmieniamy pozycji elementów dekoracyjnych - zachowujemy to samo pozycjonowanie */
   
   /* Dostosowanie marginesów treści */
   .page-oprisk #main_content,
@@ -1392,38 +1298,8 @@ font-weight: bold;
   }
 }
 
-/* Dla małych smartfonów */
 @media screen and (max-width: 480px) {
-  /* Zachowujemy proporcje ułożenia elementów dekoracyjnych */
-  .oprisk-square-big {
-    top: 88px;
-    left: 20px;
-    width: 80px;
-    height: 20px;
-  }
-  
-  .oprisk-square {
-    top: 28px;
-    right: 30px;
-    width: 25px;
-    height: 25px;
-  }
-  
-  .oprisk-square1 {
-    top: 79.5px;
-    right: 60px;
-    width: 14px;
-    height: 14px;
-  }
-  
-  .oprisk-square2 {
-    top: 59px;
-    right: 85px;
-    width: 14px;
-    height: 14px;
-  }
-  
-  /* Dostosowanie marginesów treści */
+  /* Dostosowanie marginesów treści dla mniejszych ekranów */
   .page-oprisk #main_content,
   .page-oprisk .main-content {
     padding-left: 5% !important;
