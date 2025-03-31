@@ -1309,3 +1309,125 @@ font-weight: bold;
   padding-left: 15% !important;
   padding-right: 15% !important;
 }
+
+
+
+
+/* Media queries dla strony oprisk na urządzenia mobilne */
+
+/* Dla tabletów */
+@media screen and (max-width: 1024px) {
+  /* Dostosowanie pozycji elementów dekoracyjnych */
+  .oprisk-square-big {
+    top: 88px;
+    left: 120px;
+    width: 120px;
+  }
+  
+  .oprisk-square {
+    top: 28px;
+    right: 120px;
+    width: 35px;
+    height: 35px;
+  }
+  
+  .oprisk-square1 {
+    top: 79.5px;
+    right: 160px;
+    width: 20px;
+    height: 20px;
+  }
+  
+  .oprisk-square2 {
+    top: 59px;
+    right: 190px;
+    width: 20px;
+    height: 20px;
+  }
+  
+  /* Dostosowanie marginesów treści */
+  .page-oprisk #main_content,
+  .page-oprisk .main-content {
+    padding-left: 10% !important;
+    padding-right: 10% !important;
+  }
+}
+
+/* Dla smartfonów */
+@media screen and (max-width: 768px) {
+  /* Dostosowanie pozycji elementów dekoracyjnych */
+  .oprisk-square-big {
+    top: 88px;
+    left: 50px;
+    width: 100px;
+    height: 25px;
+  }
+  
+  .oprisk-square {
+    top: 28px;
+    right: 60px;
+    width: 30px;
+    height: 30px;
+  }
+  
+  .oprisk-square1 {
+    top: 79.5px;
+    right: 90px;
+    width: 16px;
+    height: 16px;
+  }
+  
+  .oprisk-square2 {
+    top: 59px;
+    right: 120px;
+    width: 16px;
+    height: 16px;
+  }
+  
+  /* Dostosowanie marginesów treści */
+  .page-oprisk #main_content,
+  .page-oprisk .main-content {
+    padding-left: 8% !important;
+    padding-right: 8% !important;
+  }
+}
+
+/* Dla małych smartfonów */
+@media screen and (max-width: 480px) {
+  /* Zachowujemy proporcje ułożenia elementów dekoracyjnych */
+  .oprisk-square-big {
+    top: 88px;
+    left: 20px;
+    width: 80px;
+    height: 20px;
+  }
+  
+  .oprisk-square {
+    top: 28px;
+    right: 30px;
+    width: 25px;
+    height: 25px;
+  }
+  
+  .oprisk-square1 {
+    top: 79.5px;
+    right: 60px;
+    width: 14px;
+    height: 14px;
+  }
+  
+  .oprisk-square2 {
+    top: 59px;
+    right: 85px;
+    width: 14px;
+    height: 14px;
+  }
+  
+  /* Dostosowanie marginesów treści */
+  .page-oprisk #main_content,
+  .page-oprisk .main-content {
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+  }
+}
+
