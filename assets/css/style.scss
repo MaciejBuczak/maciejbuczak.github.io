@@ -1226,9 +1226,6 @@ font-weight: bold;
 
 
 
-
-
-
 /* Rozwiązanie problemu z elementami dekoracyjnymi na stronie oprisk */
 
 /* Najpierw ukryjmy oryginalne elementy dekoracyjne na stronie oprisk */
@@ -1239,53 +1236,51 @@ font-weight: bold;
   display: none !important;
 }
 
-/* Definicja nowych elementów dekoracyjnych z pozycjonowaniem fixed */
+/* Definicja nowych elementów dekoracyjnych z poprawnym pozycjonowaniem absolutnym */
 .oprisk-decorative-elements {
   position: relative;
   width: 100%;
   height: 0;
+  overflow: visible;
 }
 
-/* Styl dla nowego prostokąta */
+/* Styl dla nowego prostokąta - używamy absolutnego pozycjonowania, nie fixed */
 .oprisk-square-big {
   width: 175px;
   height: 30px;
   background-color: #d17a1b;
-  position: fixed;
-  top: 88px;  /* Dostosuj tę wartość */
-  left: 426px; /* Dostosuj tę wartość */
+  position: absolute;
+  top: -102px;  
+  left: 0px;
   z-index: 1;
 }
 
-/* Style dla nowych kwadratów */
+/* Style dla nowych kwadratów - używamy absolutnego pozycjonowania, nie fixed */
 .oprisk-square {
   width: 45px;
   height: 45px;
   background-color: #d17a1b;
-  position: fixed;
-  top: 28px;   /* Dostosuj tę wartość */
-  right: 437px; /* Ta sama wartość jak oryginał */
-  z-index: 1;
+  position: absolute;
+  top: -162px;  
+  right: 10px;
 }
 
 .oprisk-square1 {
   width: 24px;
   height: 24px;
   background-color: #d17a1b;
-  position: fixed;
-  top: 79.5px;  /* Dostosuj tę wartość */
-  right: 500px; /* Ta sama wartość jak oryginał */
-  z-index: 1;
+  position: absolute;
+  top: -110.5px;  
+  right: 73px;
 }
 
 .oprisk-square2 {
   width: 24px;
   height: 24px;
   background-color: #d17a1b;
-  position: fixed;
-  top: 59px;   /* Dostosuj tę wartość */
-  right: 544px; /* Ta sama wartość jak oryginał */
-  z-index: 1;
+  position: absolute;
+  top: -131px;  
+  right: 117px;
 }
 
 /* Style dla szerokości treści i marginesów */
@@ -1310,8 +1305,6 @@ font-weight: bold;
   padding-right: 15% !important;
 }
 
-
-
 /* Media queries dla strony oprisk */
 @media screen and (max-width: 1024px) {
   /* Dostosowanie marginesów treści */
@@ -1321,29 +1314,7 @@ font-weight: bold;
     padding-right: 10% !important;
   }
   
-  /* Nie ukrywamy oryginalnych elementów dekoracyjnych */
-  /* Nie dodajemy nowych elementów */
-  /* Zamiast tego skalujemy i dostosowujemy pozycje istniejących */
-  
-  .oprisk-square-big {
-    transform: scale(0.9);
-    left: 0;
-  }
-  
-  .oprisk-square {
-    transform: scale(0.9);
-    right: 10px;
-  }
-  
-  .oprisk-square1 {
-    transform: scale(0.9);
-    right: 73px;
-  }
-  
-  .oprisk-square2 {
-    transform: scale(0.9);
-    right: 117px;
-  }
+  /* Nie zmieniamy pozycji elementów dekoracyjnych - zachowują się tak samo jak oryginalne */
 }
 
 @media screen and (max-width: 768px) {
@@ -1354,25 +1325,7 @@ font-weight: bold;
     padding-right: 8% !important;
   }
   
-  .oprisk-square-big {
-    transform: scale(0.8);
-    left: 0;
-  }
-  
-  .oprisk-square {
-    transform: scale(0.8);
-    right: 10px;
-  }
-  
-  .oprisk-square1 {
-    transform: scale(0.8);
-    right: 73px;
-  }
-  
-  .oprisk-square2 {
-    transform: scale(0.8);
-    right: 117px;
-  }
+  /* Nie zmieniamy pozycji elementów dekoracyjnych - zachowują się tak samo jak oryginalne */
 }
 
 @media screen and (max-width: 480px) {
@@ -1383,23 +1336,5 @@ font-weight: bold;
     padding-right: 5% !important;
   }
   
-  .oprisk-square-big {
-    transform: scale(0.7);
-    left: 0;
-  }
-  
-  .oprisk-square {
-    transform: scale(0.7);
-    right: 10px;
-  }
-  
-  .oprisk-square1 {
-    transform: scale(0.7);
-    right: 73px;
-  }
-  
-  .oprisk-square2 {
-    transform: scale(0.7);
-    right: 117px;
-  }
+  /* Nie zmieniamy pozycji elementów dekoracyjnych - zachowują się tak samo jak oryginalne */
 }
