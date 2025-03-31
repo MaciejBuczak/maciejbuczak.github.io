@@ -3,6 +3,9 @@ layout: default
 title: oprisk
 ---
 <div id="myMenu">
+  <script>
+  document.body.classList.add('page-oprisk');
+</script>
   <a href="/" class="menu-option">Cześć</a>
   <a href="/about" class="menu-option">Co robię</a>
   <a href="/topics" class="menu-option">Tematy badań</a>
