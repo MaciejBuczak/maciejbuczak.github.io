@@ -1,0 +1,104 @@
+/* Kontener dla drzewa decyzyjnego */
+.decision-tree-container {
+  margin: 40px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+}
+
+/* Style dla węzłów i linków */
+.node path {
+  transition: fill 0.3s;
+}
+
+.node:hover path {
+  filter: brightness(1.1);
+}
+
+.link {
+  transition: stroke 0.3s, stroke-width 0.3s;
+}
+
+/* Kontrolki drzewa decyzyjnego */
+.decision-tree-controls {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.reset-button {
+  padding: 8px 16px;
+  background-color: #a85903;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.reset-button:hover {
+  background-color: #bf6604;
+}
+
+/* Informacje o drzewie decyzyjnym */
+.decision-tree-info {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #fff8f0;
+  border-radius: 8px;
+}
+
+.decision-tree-info h3 {
+  color: #a85903;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.decision-tree-info p {
+  color: #737373;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.decision-tree-info ul {
+  color: #737373;
+  font-size: 14px;
+  line-height: 1.5;
+  padding-left: 20px;
+}
+
+.decision-tree-info li {
+  margin-bottom: 5px;
+}
+
+/* Tooltip dla dodatkowych informacji */
+.tooltip {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #a85903;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 12px;
+  max-width: 200px;
+}
+
+/* Responsywność */
+@media screen and (max-width: 768px) {
+  .decision-tree-container {
+    padding: 10px;
+    margin: 20px 10px;
+  }
+  
+  .decision-tree-info,
+  .decision-tree-controls {
+    margin-top: 15px;
+    padding: 10px;
+  }
+}
