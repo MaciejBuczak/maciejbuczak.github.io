@@ -29,6 +29,8 @@ title: topics
 
 <br>
 
+{% include risk-correlation-heatmap.html %}
+
 <div class="research-areas-grid">
   <div class="research-area-card">
     <div class="research-area-icon">
