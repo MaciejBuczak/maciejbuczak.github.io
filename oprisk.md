@@ -3,9 +3,19 @@ layout: default
 title: oprisk
 ---
 <div id="myMenu">
-  <script>
+
+<script>
   document.body.classList.add('page-oprisk');
 </script>
+
+<!-- Nowe elementy dekoracyjne specyficzne dla strony oprisk -->
+<div class="oprisk-decorative-elements">
+  <div class="oprisk-square-big"></div>
+  <div class="oprisk-square"></div>
+  <div class="oprisk-square1"></div>
+  <div class="oprisk-square2"></div>
+</div>
+
   <a href="/" class="menu-option">Cześć</a>
   <a href="/about" class="menu-option">Co robię</a>
   <a href="/topics" class="menu-option">Tematy badań</a>
@@ -17,10 +27,7 @@ title: oprisk
   <a href="/oprisk" class="menu-option">Oprisk</a>
 </div>
 
-<div class="square"></div>
-<div class="square1"></div>
-<div class="square2"></div>
-<div class="square-big"></div>
+
 
 
 ### Tekst
