@@ -1229,52 +1229,63 @@ font-weight: bold;
 
 
 
-/* Naprawienie pozycji elementów dekoracyjnych na stronie oprisk */
+/* Rozwiązanie problemu z elementami dekoracyjnymi na stronie oprisk */
 
-/* Ustawienie pozycji prostokąta (square-big) */
+/* Najpierw ukryjmy oryginalne elementy dekoracyjne na stronie oprisk */
+.page-oprisk .square,
+.page-oprisk .square1,
+.page-oprisk .square2,
 .page-oprisk .square-big {
-  position: absolute;
+  display: none !important;
+}
+
+/* Definicja nowych elementów dekoracyjnych z pozycjonowaniem fixed */
+.oprisk-decorative-elements {
+  position: relative;
+  width: 100%;
+  height: 0;
+}
+
+/* Styl dla nowego prostokąta */
+.oprisk-square-big {
   width: 175px;
   height: 30px;
   background-color: #d17a1b;
-  top: -102px;  
-  left: 0px;
+  position: fixed;
+  top: 118px;  /* Dostosuj tę wartość */
+  left: 190px; /* Dostosuj tę wartość */
   z-index: 1;
 }
 
-/* Ustawienie pozycji kwadratów */
-.page-oprisk .square {
-  position: absolute;
+/* Style dla nowych kwadratów */
+.oprisk-square {
   width: 45px;
   height: 45px;
   background-color: #d17a1b;
-  top: -162px;  
-  right: 10px;
+  position: fixed;
+  top: 58px;   /* Dostosuj tę wartość */
+  right: 10px; /* Ta sama wartość jak oryginał */
+  z-index: 1;
 }
 
-.page-oprisk .square1 {
-  position: absolute;
+.oprisk-square1 {
   width: 24px;
   height: 24px;
   background-color: #d17a1b;
-  top: -110.5px;  
-  right: 73px;
+  position: fixed;
+  top: 110px;  /* Dostosuj tę wartość */
+  right: 73px; /* Ta sama wartość jak oryginał */
+  z-index: 1;
 }
 
-.page-oprisk .square2 {
-  position: absolute;
+.oprisk-square2 {
   width: 24px;
   height: 24px;
   background-color: #d17a1b;
-  top: -131px;  
-  right: 117px;
-}
-
-/* Upewnienie się, że nagłówek ma właściwą pozycję */
-.page-oprisk #header_wrap .inner {
-  position: relative;
-  z-index: 10;
-  overflow: visible;
+  position: fixed;
+  top: 89px;   /* Dostosuj tę wartość */
+  right: 117px; /* Ta sama wartość jak oryginał */
+  z-index: 1;
 }
 
 /* Style dla szerokości treści i marginesów */
