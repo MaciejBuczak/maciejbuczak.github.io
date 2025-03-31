@@ -7,8 +7,7 @@ title: oprisk
 <script>
   document.body.classList.add('page-oprisk');
 </script>
-
-<!-- Nowe elementy dekoracyjne specyficzne dla strony oprisk -->
+<!-- Nowe elementy dekoracyjne muszą być w tym samym kontenerze co oryginały -->
 <div class="oprisk-decorative-elements">
   <div class="oprisk-square-big"></div>
   <div class="oprisk-square"></div>
