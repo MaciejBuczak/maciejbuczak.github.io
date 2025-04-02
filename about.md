@@ -37,6 +37,9 @@ My research interests revolve around fields such as economics, sociology, and hi
 However, my focus is mainly on methods that can be used to describe this vast and complex reality. Of course, this involves a spectrum of established fields such as statistics, econometrics, and mathematics. But I do not limit myself to these; I seek solutions in other areas, which I can often successfully transfer to my research domain. I enjoy exploring a certain universality of methods, their adaptability in different contexts, and the various perspectives they can offer in describing the world.  
 I like to consider how methods influence our way of thinking and whether it is sometimes better to "adjust methods to the world" rather than "adjust the world to methods."
 
+<div class="large-image" style="width: 66%; margin: 20px auto;">
+  <img src="/assets/images/ECL-rys.jpg" alt="Maciej Buczak working" style="width: 100%; height: auto;">
+</div>
 
 ##### Professional Experience
 Throughout my professional career, I have accumulated extensive experience in designing and conducting research using advanced quantitative methods. My competencies include:
