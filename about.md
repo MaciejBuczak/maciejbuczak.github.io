@@ -38,7 +38,7 @@ However, my focus is mainly on methods that can be used to describe this vast an
 I like to consider how methods influence our way of thinking and whether it is sometimes better to "adjust methods to the world" rather than "adjust the world to methods."
 
 <div class="large-image" style="width: 66%; margin: 20px auto;">
-  <img src="/assets/images/ECL-rys.jpg" alt="Maciej Buczak working" style="width: 100%; height: auto;">
+  <img src="/assets/images/ECL-rys1.jpg" alt="ECL rys 1" style="width: 100%; height: auto;">
 </div>
 
 ##### Professional Experience
