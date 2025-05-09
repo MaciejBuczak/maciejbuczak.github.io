@@ -10,7 +10,6 @@ title: Badania
   <a href="/researches" class="menu-option">Researches</a>
   <a href="/conferences" class="menu-option">Lectures</a>
   <a href="/contact" class="menu-option">Contact</a>
-  <a href="/trials" class="menu-option">trials</a>
 </div>
 
 <div class="square"></div>
@@ -93,7 +92,7 @@ I have conducted or collaborated on the following research and analyses:
     <div class="publication-domain">
         <span class="domain-primary">Banking risk</span>
         <span class="domain-separator">|</span>
-        <span class="domain-secondary">Operational/AMA</span>
+        <span class="domain-secondary">Operational risk/AMA</span>
     </div>
     <h2 class="research-title">
         Analysis of Possible Approaches to Building Regression Models for Describing the Dependence of the Number or Value of Operational Losses on Independent Variable
@@ -196,7 +195,7 @@ I have developed or collaborated in the development of the following methodologi
     <div class="publication-domain">
         <span class="domain-primary">Banking risk</span>
         <span class="domain-separator">|</span>
-        <span class="domain-secondary">Operational risk</span>
+        <span class="domain-secondary">Operational risk/AMA</span>
     </div>
     <h2 class="research-title">
         Methodology: Holistic Assessment of the AMA Operational Risk Model
@@ -263,7 +262,7 @@ I have developed or collaborated in the development of the following methodologi
     <div class="publication-domain">
         <span class="domain-primary">Banking risk</span>
         <span class="domain-separator">|</span>
-        <span class="domain-secondary">Operational risk</span>
+        <span class="domain-secondary">Operational risk/AMA</span>
     </div>
     <h2 class="research-title">
         RiskOPERON System: Development of the AMA Methodology and Module in an IT System
