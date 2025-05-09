@@ -33,8 +33,8 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Teksty dla kwadratów - krótkie i związane z tematyką strony
   const squareLabels = [
-    'Ryzyko', 'Model', 'Analiza', 'Statystyka', 'Estymacja', 
-    'Szeregi', 'Dane'
+    'Risk', 'Model', 'Analysis', 'Statistics', 'Estimation', 
+    'Time series ', 'Data'
   ];
   
   // Obliczenie ile kwadratów można umieścić w rzędzie i kolumnie
