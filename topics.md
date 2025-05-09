@@ -10,7 +10,6 @@ title: topics
   <a href="/researches" class="menu-option">Researches</a>
   <a href="/conferences" class="menu-option">Lectures</a>
   <a href="/contact" class="menu-option">Contact</a>
-  <a href="/trials" class="menu-option">trials</a>
 </div>
 
 
