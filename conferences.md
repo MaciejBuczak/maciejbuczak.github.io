@@ -3,9 +3,9 @@ layout: default
 title: Konferencje
 ---
 <div id="myMenu">
-  <a href="/" class="menu-option">Cześć</a>
-  <a href="/about" class="menu-option">Co robię</a>
-  <a href="/topics" class="menu-option">Tematy badań</a>
+  <a href="/" class="menu-option">Hi There</a>
+  <a href="/about" class="menu-option">About me</a>
+  <a href="/topics" class="menu-option">Topics</a>
   <a href="/publications" class="menu-option">Publications</a>
   <a href="/researches" class="menu-option">Researches</a>
   <a href="/conferences" class="menu-option">Lectures</a>
