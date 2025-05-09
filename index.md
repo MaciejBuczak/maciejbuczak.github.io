@@ -83,7 +83,7 @@ I am pleased to announce the publication of my article "Backward Step in the Dev
   <div class="aktualnosc-card">
     <div class="aktualnosc-date">
       <span class="day">20</span>
-      <span class="month">LUT</span>
+      <span class="month">FEB</span>
       <span class="year">2025</span>
     </div>
     <div class="aktualnosc-content">
@@ -100,7 +100,7 @@ I am pleased to announce the publication of my article "Backward Step in the Dev
   <div class="aktualnosc-card">
     <div class="aktualnosc-date">
       <span class="day">17</span>
-      <span class="month">LUT</span>
+      <span class="month">FEB</span>
       <span class="year">2025</span>
     </div>
     <div class="aktualnosc-content">
@@ -116,7 +116,7 @@ I am pleased to announce the publication of my article "Backward Step in the Dev
   <div class="aktualnosc-card">
     <div class="aktualnosc-date">
       <span class="day">17</span>
-      <span class="month">LUT</span>
+      <span class="month">FEB</span>
       <span class="year">2025</span>
     </div>
     <div class="aktualnosc-content">
@@ -133,7 +133,7 @@ I am pleased to announce the publication of my article "Backward Step in the Dev
   <div class="aktualnosc-card">
     <div class="aktualnosc-date">
       <span class="day">10</span>
-      <span class="month">STY</span>
+      <span class="month">JAN</span>
       <span class="year">2025</span>
     </div>
     <div class="aktualnosc-content">
@@ -152,7 +152,7 @@ I am pleased to announce the publication of my article "Backward Step in the Dev
   <div class="aktualnosc-card">
     <div class="aktualnosc-date">
       <span class="day">30</span>
-      <span class="month">GRU</span>
+      <span class="month">DEC</span>
       <span class="year">2024</span>
     </div>
     <div class="aktualnosc-content">
@@ -167,19 +167,19 @@ I am pleased to announce the publication of my article "Backward Step in the Dev
   </div>
 
 
-    <div class="aktualnosc-card">
-    <div class="aktualnosc-date">
-      <span class="day">15</span>
-      <span class="month">GRU</span>
-      <span class="year">2024</span>
-    </div>
-    <div class="aktualnosc-content">
-      <h3 class="aktualnosc-title">I have written an article "Backward Step in the Development of Unexpected Value Modeling Concepts in the Financial Sector: A Case Study of the Decision to Withdraw the AMA Framework in Operational Risk" - PREPRINT</h3>
-      <p class="aktualnosc-description">
-        The article addresses two decades of this method's implementation in the banking sector. In it, I formulate a critical assessment of the framework developed by the regulator, and I identify this framework as the main cause of the method's failure and the regression in the process of quantitative methods saturation in the banking sector.
-      <div class="aktualnosc-footer">
-        <a href="/researches" class="aktualnosc-link">Więcej o badaniach</a>
-      </div>
+<div class="aktualnosc-card">
+  <div class="aktualnosc-date">
+    <span class="day">15</span>
+    <span class="month">DEC</span>
+    <span class="year">2024</span>
+  </div>
+  <div class="aktualnosc-content">
+    <h3 class="aktualnosc-title">I have written an article "Backward Step in the Development of Unexpected Value Modeling Concepts in the Financial Sector: A Case Study of the Decision to Withdraw the AMA Framework in Operational Risk" - PREPRINT</h3>
+    <p class="aktualnosc-description">
+      The article addresses two decades of this method's implementation in the banking sector. In it, I formulate a critical assessment of the framework developed by the regulator, and I identify this framework as the main cause of the method's failure and the regression in the process of quantitative methods saturation in the banking sector.
+    </p>
+    <div class="aktualnosc-footer">
+      <a href="/researches" class="aktualnosc-link">Więcej o badaniach</a>
     </div>
   </div>
 </div>
