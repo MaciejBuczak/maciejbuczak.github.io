@@ -26,7 +26,7 @@ title: Publikacje
 <div class="publication-card">
     <span class="publication-pin">📌 Pinned</span>
     <span class="publication-status status-review">PEER REVIEW PROCESS</span>
-    <div class="publication-source">Submitted to: Quantitative Methods in Economics</div>
+    <div class="publication-source">Journal: Quantitative Methods in Economics | SGGW Warsaw</div>
     <div class="publication-domain">
         <span class="domain-primary">Risk management</span>
         <span class="domain-separator">|</span>
