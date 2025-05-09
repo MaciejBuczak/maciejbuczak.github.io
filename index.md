@@ -18,20 +18,20 @@ layout: default
 
 <br>
 
-**Victor Hugo "Nędzinicy"**
+**Victor Hugo "Les Miserables"**
 
-_"Potrzeba ogromu wiedzy i doświadczenia, żeby na podstawie ograniczonych obserwacji wyciągać uogólnione wnioski"_
+_"It takes a vast amount of knowledge and experience to draw generalized conclusions based on limited observations."_
 
 <br>
-#### O mnie
+#### Hi There
 
 <!-- Dodajemy pozycjonowany obraz -->
 <div class="positioned-image">
   <img src="/assets/images/Maciej Buczak-zdjęcie4.jpg" alt="Opis obrazu">
 </div>
-Miło mi, że tu jesteś. Lubię dzielić się wiedzą i doświadczeniem w zastosowaniach metod ilościowych w badaniu ryzyka i nie tylko... Jestem badaczem i managerem z wieloletnim stażem w tej dziedzinie. Dużo ciekawych obserwacji udało mi się wychwycić. Współtworzyłem system IT do zarządzania ryzykiem operacyjnym, tworzyłem system do zarządzania ryzykiem modeli, a najwięcej czasu spędziłem na różnorodnych analizach statystycznych. Przez 8 lat zajmowałem się holistyczną oceną modeli pod kątem ich ekspozycji na ryzyko modeli. Moje główne obszary to ryzyko kredytowe (ECL/IFRS9), ryzyko operacyjne i statystyczne techniki jego pomiaru, pomiar wartości oczekiwanych i nieoczekiwanych (kapitał wewnętrzny). Aktywnie szukam tez innych przestrzeni do refleksji jakościowo-ilościowej...
+I'm glad you're here. I enjoy sharing knowledge and experience in applications of quantitative methods in risk analysis and beyond... I am a researcher and manager with many years of experience in this field. I've managed to capture many interesting observations. I co-created an IT system for operational risk management, developed a model risk management system, and spent most of my time on various statistical analyses. For 8 years, I was involved in holistic model evaluation in terms of their exposure to model risk. My main areas are credit risk (ECL/IFRS9), operational risk and statistical techniques for its measurement, measurement of expected and unexpected values (internal capital). I'm also actively looking for other spaces for qualitative-quantitative reflection...
 
-Wciąż pracuje w binzesie, w sektorze bankowym. Poza tym, w zakresie dydaktycznym, współpracuję z warszawskimi uczelniami:
+I still work in business, in the banking sector. Additionally, in terms of teaching, I collaborate with Warsaw universities:
 
 <!-- Dodajemy sekcję z uczelniami -->
 <div class="uczelnie-container">
@@ -54,17 +54,11 @@ Wciąż pracuje w binzesie, w sektorze bankowym. Poza tym, w zakresie dydaktyczn
   </div>
 </div>
 
-<br>
-
-{% include animated-squares.html %}
-
-<br>
-
 <hr>
 
 <br>
 
-#### Aktualności
+#### Latest News
 
 <div class="aktualnosci-container">
   <!-- Aktualne wydarzenie -->
@@ -75,12 +69,12 @@ Wciąż pracuje w binzesie, w sektorze bankowym. Poza tym, w zakresie dydaktyczn
       <span class="year">2025</span>
     </div>
     <div class="aktualnosc-content">
-      <h3 class="aktualnosc-title">Moja publikacja w "Metody ilościowe w badaniach ekonomicznych"</h3>
+      <h3 class="aktualnosc-title">My publication in "Quantitative Methods in Economics"</h3>
       <p class="aktualnosc-description">
-        Z przyjemnością informuję o opublikowaniu mojego artykułu "Bieg wsteczny w rozwoju koncepcji modelowania wartości nieoczekiwanej w sektorze finansowym na przykładzie decyzji o wycofaniu frameworku AMA w ryzyku operacyjnym" w czasopiśmie Metody ilościowe w badanich ekonomicznych (SGGW). Artykuł odnosi się do dwóch dekad funkcjonowania metody w sektorze bankowym. Formuuję w nim krytyczną ocenę frameworku opracowanego przez nadzorcę i właśnie ten framework stawiam jako głównego sprawcę niepowodzenia metody i cofnięcia się procesy wysycenia sektora bankowego metodami ilościowymi.
+I am pleased to announce the publication of my article "Backward Step in the Development of Unexpected Value Modeling Concepts in the Financial Sector: A Case Study of the Decision to Withdraw the AMA Framework in Operational Risk" in the journal Quantitative Methods in Economics (Warsaw University of Life Sciences - SGGW). The article addresses two decades of this method's implementation in the banking sector. In it, I formulate a critical assessment of the framework developed by the regulator, and I identify this framework as the main cause of the method's failure and the regression in the process of quantitative methods saturation in the banking sector.
       </p>
       <div class="aktualnosc-footer">
-        <a href="/publications" class="aktualnosc-link">Przejdź do publikacji</a>
+        <a href="/publications" class="aktualnosc-link">Read the article</a>
       </div>
     </div>
   </div>
@@ -93,12 +87,12 @@ Wciąż pracuje w binzesie, w sektorze bankowym. Poza tym, w zakresie dydaktyczn
       <span class="year">2025</span>
     </div>
     <div class="aktualnosc-content">
-      <h3 class="aktualnosc-title">Prelekcja na OpRisk Summit 2025, Praga</h3>
+      <h3 class="aktualnosc-title">Keynote Speech at OpRisk Summit 2025, Prague</h3>
       <p class="aktualnosc-description">
-        Wygłosiłem prelekcje dotyczącą oceny metody AMA i skuteczności jej funkcjonowania w sektorze bankowym na OpRisk Summit 2025. Konferencja była zorganizowana przez Marxo Smith
+        I delivered a keynote speech on the evaluation of the AMA method and its effectiveness in the banking sector at OpRisk Summit 2025. The conference was organized by Marxo Smith.
       </p>
       <div class="aktualnosc-footer">
-        <a href="/conferences" class="aktualnosc-link">Sprawdź szczegóły</a>
+        <a href="/conferences" class="aktualnosc-link">View details</a>
       </div>
     </div>
   </div>
@@ -110,13 +104,11 @@ Wciąż pracuje w binzesie, w sektorze bankowym. Poza tym, w zakresie dydaktyczn
       <span class="year">2025</span>
     </div>
     <div class="aktualnosc-content">
-      <h3 class="aktualnosc-title">Rozpocząłem współpracę ze Szkołą Główną Gospodarstwa Wiejskiego, Instytut Socjologii</h3>
+      <h3 class="aktualnosc-title">I have begun collaboration with the Warsaw University of Life Sciences (SGGW), Institute of Sociology.</h3>
       <p class="aktualnosc-description">
-        Od II semestru roku akademickiego 2024/2025 rozpocząłem współpracę z Instytutem Socjologii SGGW. Bardzo się z tego cieszę :).
+       Starting from the second semester of the 2024/2025 academic year, I have begun collaboration with the Institute of Sociology at the Warsaw University of Life Sciences (SGGW). I am very happy about this :).
       </p>
-      <div class="aktualnosc-footer">
-        <a href="/researches" class="aktualnosc-link">Więcej o badaniach</a>
-      </div>
+
     </div>
   </div>
 
@@ -128,9 +120,9 @@ Wciąż pracuje w binzesie, w sektorze bankowym. Poza tym, w zakresie dydaktyczn
       <span class="year">2025</span>
     </div>
     <div class="aktualnosc-content">
-      <h3 class="aktualnosc-title">Rozpocząłem współpracę z Wyższą Szkołą Bankową Merito w Warszawie</h3>
+      <h3 class="aktualnosc-title">I have begun collaboration with Merito Banking University in Warsaw.</h3>
       <p class="aktualnosc-description">
-        Od II semestru roku akademickiego 2024/2025 rozpocząłem współpracę z WSB Merito w Warszawie. Bardzo się z tego cieszę :).
+        Starting from the second semester of the 2024/2025 academic year, I have begun collaboration with WSB Merito in Warsaw. I am very happy about this :).
       </p>
       <div class="aktualnosc-footer">
         <a href="/researches" class="aktualnosc-link">Więcej o badaniach</a>
@@ -145,9 +137,9 @@ Wciąż pracuje w binzesie, w sektorze bankowym. Poza tym, w zakresie dydaktyczn
       <span class="year">2025</span>
     </div>
     <div class="aktualnosc-content">
-      <h3 class="aktualnosc-title">Napisałem artykuł eksperymentalny :) "Próba konstrukcji, zbudowanych na gruncie pojęć statystycznych, ram pojęciowych dla opisu stanu rzeczywistości i jej dynamiki" - PREPRINT</h3>
+      <h3 class="aktualnosc-title">I have written an experimental article :) "An Attempt at Constructing Conceptual Frameworks Based on Statistical Concepts for Describing the State of Reality and its Dynamics" - PREPRINT</h3>
       <p class="aktualnosc-description">
-        Bezpośrednią motywacją dla napisania tego artykułu była moja aplikacja na stanowisko asystenta w Instytucie Socjologii SGGW. Dużo głębszą motywacją było moje zainteresowanie opisem rzeczywistości, jako próby wychwycenia jej kształtów, takich które stanowią o wydarzeniach o dużej skali. W szczególności interesują mnie głębsze przyczyny, ukryte pod maską znanych wydarzeń historycznych, które stoją za dwoma wydarzeniami: upadkiem I Rzeczypospolitej oraz wybuchem I wojny światowej. Niniejszy artykuł to próba zbudowania ram koncepcyjnych, odważna - przyznaję, bazujących na pojęciach i koncepcjach statystycznych, które dalej mogłyby posłużyć do opisów rzeczywistości w kontekście przyczyn w/w wydarzeń (co jest jeszcze odważniejszym przedsięwzięciem). Na razie pracę zakończyłem właśnie na tym wyżej opisanym frameworku pojęciowym, bez odniesień i backtestów historycznych.
+        The direct motivation for writing this article was my application for an assistant position at the Institute of Sociology at Warsaw University of Life Sciences (SGGW). A much deeper motivation was my interest in describing reality as an attempt to capture its shapes, those that constitute large-scale events. I am particularly interested in the deeper causes hidden beneath the mask of well-known historical events that are behind two events: the fall of the First Polish Republic and the outbreak of World War I. This article is an attempt to build a conceptual framework, a bold one - I admit, based on statistical concepts and ideas, which could further serve to describe reality in the context of the causes of the aforementioned events (which is an even bolder undertaking). For now, I have finished my work on the conceptual framework described above, without historical references and backtests.
       </p>
       <div class="aktualnosc-footer">
         <a href="/researches" class="aktualnosc-link">Więcej o badaniach</a>
@@ -164,9 +156,9 @@ Wciąż pracuje w binzesie, w sektorze bankowym. Poza tym, w zakresie dydaktyczn
       <span class="year">2024</span>
     </div>
     <div class="aktualnosc-content">
-      <h3 class="aktualnosc-title">Napisałem artykuł "Nieoczekiwane, wbudowane w koncepcję AMA, efekty decydujące o jej jakości i jej ostatecznym wycofaniu" - PREPRINT</h3>
+      <h3 class="aktualnosc-title">I have written an article "Unexpected Effects Built into the AMA Concept that Determined its Quality and Ultimate Withdrawal" - PREPRINT</h3>
       <p class="aktualnosc-description">
-        Niniejszy artykuł to precyzyjne wskazanie głównych, zidentyfikowanych przeze mnie, efektów które miały decydujący wpływ na niską skuteczność i wiarygodność metody statystycznej wykorzystywanej do modelowania ryzyka operacyjnego (metoda AMA). W przeciwieństwie do poprzedniego artykułu "Bieg wsteczny...", który skupiał się na wysokopoziomowej, jakoścowej ocenie, ten, jest mocno osadzony w metodach statystycznych.
+        This article is a precise indication of the main effects I have identified that had a decisive influence on the low effectiveness and credibility of the statistical method used to model operational risk (AMA method). Unlike the previous article "Backward Step...", which focused on a high-level, qualitative assessment, this one is firmly grounded in statistical methods.
       </p>
       <div class="aktualnosc-footer">
         <a href="/researches" class="aktualnosc-link">Więcej o badaniach</a>
@@ -182,9 +174,9 @@ Wciąż pracuje w binzesie, w sektorze bankowym. Poza tym, w zakresie dydaktyczn
       <span class="year">2024</span>
     </div>
     <div class="aktualnosc-content">
-      <h3 class="aktualnosc-title">Napisałem artykuł "Bieg wsteczny w rozwoju koncepcji modelowania wartości nieoczekiwanej w sektorze finansowym na przykładzie decyzji o wycofaniu frameworku AMA w ryzyku operacyjnym" - PREPRINT</h3>
+      <h3 class="aktualnosc-title">I have written an article "Backward Step in the Development of Unexpected Value Modeling Concepts in the Financial Sector: A Case Study of the Decision to Withdraw the AMA Framework in Operational Risk" - PREPRINT</h3>
       <p class="aktualnosc-description">
-        Artykuł odnosi się do dwóch dekad funkcjonowania metody w sektorze bankowym. Formuuję w nim krytyczną ocenę frameworku opracowanego przez nadzorcę i właśnie ten framework stawiam jako głównego sprawcę niepowodzenia metody i cofnięcia się procesy wysycenia sektora bankowego metodami ilościowymi.
+        The article addresses two decades of this method's implementation in the banking sector. In it, I formulate a critical assessment of the framework developed by the regulator, and I identify this framework as the main cause of the method's failure and the regression in the process of quantitative methods saturation in the banking sector.
       <div class="aktualnosc-footer">
         <a href="/researches" class="aktualnosc-link">Więcej o badaniach</a>
       </div>
