@@ -10,7 +10,6 @@ title: Publikacje
   <a href="/researches" class="menu-option">Researches</a>
   <a href="/conferences" class="menu-option">Lectures</a>
   <a href="/contact" class="menu-option">Contact</a>
-  <a href="/trials" class="menu-option">trials</a>
 </div>
 
 <div class="square"></div>
@@ -43,10 +42,10 @@ case study of the decision to withdraw the ama framework in operational Risk
     <div class="publication-meta">📅 December 2024 &nbsp;&nbsp;|&nbsp;&nbsp; 👁️ ... views</div>
     <!-- Dodane linki do zasobów -->
     <div class="publication-resources">
-      <a href="URL_DO_CZASOPISMA" class="resource-link" target="_blank">
+      <a href="https://qme.sggw.edu.pl/article/view/10238" class="resource-link" target="_blank">
         <span class="resource-icon">📰</span> Journal
       </a>
-      <a href="URL_DO_PREPRINTU" class="resource-link" target="_blank">
+      <a href="https://qme.sggw.edu.pl/article/view/10238/9029" class="resource-link" target="_blank">
         <span class="resource-icon">📄</span> Preprint
       </a>
       <a href="URL_DO_MEDIUM" class="resource-link" target="_blank">
