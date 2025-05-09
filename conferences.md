@@ -38,7 +38,7 @@ I have participated as a speaker/trainer in the following conferences, workshops
      <a href="/conferences/4th_OpRisk_Summit_BROCHURE.pdf" class="conference-button">
        📄 Brochure
      </a>
-     <a href="/conferences/4th_OpRisk_Summit_PRESENTATION.pdf" class="conference-button">
+     <a href="/conferences/Maciej Buczak_OpRisk Summit 2025_FIN.pdf" class="conference-button">
        📊 Presentation
      </a>
    </div>
