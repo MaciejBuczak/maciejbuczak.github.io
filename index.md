@@ -124,9 +124,7 @@ I am pleased to announce the publication of my article "Backward Step in the Dev
       <p class="aktualnosc-description">
         Starting from the second semester of the 2024/2025 academic year, I have begun collaboration with WSB Merito in Warsaw. I am very happy about this :).
       </p>
-      <div class="aktualnosc-footer">
-        <a href="/researches" class="aktualnosc-link">Więcej o badaniach</a>
-      </div>
+
     </div>
   </div>
 
@@ -141,9 +139,7 @@ I am pleased to announce the publication of my article "Backward Step in the Dev
       <p class="aktualnosc-description">
         The direct motivation for writing this article was my application for an assistant position at the Institute of Sociology at Warsaw University of Life Sciences (SGGW). A much deeper motivation was my interest in describing reality as an attempt to capture its shapes, those that constitute large-scale events. I am particularly interested in the deeper causes hidden beneath the mask of well-known historical events that are behind two events: the fall of the First Polish Republic and the outbreak of World War I. This article is an attempt to build a conceptual framework, a bold one - I admit, based on statistical concepts and ideas, which could further serve to describe reality in the context of the causes of the aforementioned events (which is an even bolder undertaking). For now, I have finished my work on the conceptual framework described above, without historical references and backtests.
       </p>
-      <div class="aktualnosc-footer">
-        <a href="/researches" class="aktualnosc-link">Więcej o badaniach</a>
-      </div>
+
     </div>
   </div>
 
@@ -160,9 +156,7 @@ I am pleased to announce the publication of my article "Backward Step in the Dev
       <p class="aktualnosc-description">
         This article is a precise indication of the main effects I have identified that had a decisive influence on the low effectiveness and credibility of the statistical method used to model operational risk (AMA method). Unlike the previous article "Backward Step...", which focused on a high-level, qualitative assessment, this one is firmly grounded in statistical methods.
       </p>
-      <div class="aktualnosc-footer">
-        <a href="/researches" class="aktualnosc-link">Więcej o badaniach</a>
-      </div>
+
     </div>
   </div>
 
@@ -178,10 +172,7 @@ I am pleased to announce the publication of my article "Backward Step in the Dev
     <p class="aktualnosc-description">
       The article addresses two decades of this method's implementation in the banking sector. In it, I formulate a critical assessment of the framework developed by the regulator, and I identify this framework as the main cause of the method's failure and the regression in the process of quantitative methods saturation in the banking sector.
     </p>
-    <div class="aktualnosc-footer">
-      <a href="/researches" class="aktualnosc-link">Więcej o badaniach</a>
-    </div>
+
   </div>
 </div>
 
-{% include analytics.html %}
