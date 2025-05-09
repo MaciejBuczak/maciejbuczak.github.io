@@ -27,7 +27,7 @@ _"It takes a vast amount of knowledge and experience to draw generalized conclus
 
 <!-- Dodajemy pozycjonowany obraz -->
 <div class="positioned-image">
-  <img src="/assets/images/Maciej Buczak-zdjęcie4.jpg" alt="Opis obrazu">
+  <img src="/assets/images/Maciej Buczak-zdjęcie.jpg" alt="Opis obrazu">
 </div>
 I'm glad you're here. I enjoy sharing knowledge and experience in applications of quantitative methods in risk analysis and beyond... I am a researcher and manager with many years of experience in this field. I've managed to capture many interesting observations. I co-created an IT system for operational risk management, developed a model risk management system, and spent most of my time on various statistical analyses. For 8 years, I was involved in holistic model evaluation in terms of their exposure to model risk. My main areas are credit risk (ECL/IFRS9), operational risk and statistical techniques for its measurement, measurement of expected and unexpected values (internal capital). I'm also actively looking for other spaces for qualitative-quantitative reflection...
 
