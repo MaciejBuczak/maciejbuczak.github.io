@@ -21,7 +21,7 @@ layout: default
 **Victor Hugo "Les Miserables"**
 
 _"It takes a vast amount of knowledge and experience to draw generalized conclusions based on limited observations."_
-
+PO POLSKU
 <br>
 #### Hi There
 
