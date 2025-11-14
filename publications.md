@@ -77,9 +77,9 @@ themethod's overcomplexity and ultimately, as I argue, themain reason for the lo
       <a href="https://qme.sggw.edu.pl/article/view/10238/9029" class="resource-link" target="_blank">
         <span class="resource-icon">📄</span> Preprint
       </a>
-      <a href="URL_DO_MEDIUM" class="resource-link" target="_blank">
-        <span class="resource-icon">💡</span> Popular science article
-      </a>
+<a href="/assets/pdfs/backward-step-ama.pdf" target="_blank" rel="noopener">
+  <button class="journal-btn">📄 Read PDF</button>
+</a>
     </div>
   </div>
 
