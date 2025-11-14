@@ -1,0 +1,37 @@
+---
+layout: default
+title: Kontakt
+---
+<div id="myMenu">
+  <a href="/" class="menu-option">Cześć</a>
+  <a href="/about" class="menu-option">O mnie</a>
+  <a href="/publications" class="menu-option">Publikacje</a>
+  <a href="/contact" class="menu-option">Kontakt</a>
+</div>
+<div class="square"></div>
+<div class="square1"></div>
+<div class="square2"></div>
+<div class="square-big"></div>
+<div class="contact-container">
+  <h1 class="section-title">Kontakt</h1>
+  
+  <div class="contact-grid">
+    <a href="mailto:maciej.buczak@gmail.com" class="contact-card">
+      <div class="contact-info">
+        <h3>Email</h3>
+        <p>maciej.buczak@gmail.com</p>
+      </div>
+    </a>
+
+    <a href="https://www.linkedin.com/in/maciej-buczak-561b95120" class="contact-card">
+      <div class="contact-info">
+        <h3>LinkedIn</h3>
+        <p>/maciejbuczak</p>
+      </div>
+    </a>
+
+
+  </div>
+</div>
+
+{% include analytics.html %}
