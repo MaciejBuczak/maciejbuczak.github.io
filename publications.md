@@ -42,14 +42,11 @@ case study of the decision to withdraw the ama framework in operational Risk
     <div class="publication-meta">📅 December 2024 &nbsp;&nbsp;|&nbsp;&nbsp; 👁️ ... views</div>
     <!-- Dodane linki do zasobów -->
     <div class="publication-resources">
-      <a href="https://qme.sggw.edu.pl/article/view/10238" class="resource-link" target="_blank">
-        <span class="resource-icon">📰</span> Journal
-      </a>
       <a href="https://qme.sggw.edu.pl/article/view/10238/9029" class="resource-link" target="_blank">
-        <span class="resource-icon">📄</span> Preprint
+        <span class="resource-icon">📄</span>  Szybkie podsumowanie (5 min)
       </a>
-      <a href="URL_DO_MEDIUM" class="resource-link" target="_blank">
-        <span class="resource-icon">💡</span> Popular science article
+      <a href="https://qme.sggw.edu.pl/article/view/10238" class="resource-link" target="_blank">
+        <span class="resource-icon">📰</span> Artykuł
       </a>
     </div>
 </div>
@@ -72,10 +69,10 @@ themethod's overcomplexity and ultimately, as I argue, themain reason for the lo
         <!-- Dodane linki do zasobów -->
     <div class="publication-resources">
        <a href="/assets/pdfs/oprisk_2024_12_cancellation_pl.pdf" class="resource-link" target="_blank">
-        <span class="resource-icon">📰</span> Artykuł
+        <span class="resource-icon">📰</span> Szybkie podsumowanie (5 min)
       </a>
       <a href="/assets/pdfs/oprisk_2024_12_cancellation_pl.pdf" class="resource-link" target="_blank">
-        <span class="resource-icon">📄</span> Preprint
+        <span class="resource-icon">📄</span> Artykuł
       </a>
     </div>
   </div>
