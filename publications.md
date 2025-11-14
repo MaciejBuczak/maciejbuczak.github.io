@@ -55,7 +55,7 @@ case study of the decision to withdraw the ama framework in operational Risk
 
   <div class="publication-card">
 
-    <span class="publication-status status-review">PREPRINT</span>
+    <span class="publication-status status-review" style="background-color: #9a9185;">WORKING PAPER</span>
     <h2 class="publication-title">
       <a href="{{ site.baseurl }}/publications/2023-12-risk-assessment" class="publication-link">
         Unexpected effects inherent in the AMA concept, determining its quality and ultimate withdrawal
