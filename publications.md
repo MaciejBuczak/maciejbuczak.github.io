@@ -69,7 +69,21 @@ mathematical concepts. In this publication, I derive three properties that, in m
 method's 20 years of operation, which were built into this method, probably unintentionally. They were the result of
 themethod's overcomplexity and ultimately, as I argue, themain reason for the loss of confidence in thismethod.</p>
     <div class="publication-meta">📅 January 2025 &nbsp;&nbsp;|&nbsp;&nbsp; 👁️ ... views</div>
+        <!-- Dodane linki do zasobów -->
+    <div class="publication-resources">
+      <a href="https://qme.sggw.edu.pl/article/view/10238" class="resource-link" target="_blank">
+        <span class="resource-icon">📰</span> Journal
+      </a>
+      <a href="https://qme.sggw.edu.pl/article/view/10238/9029" class="resource-link" target="_blank">
+        <span class="resource-icon">📄</span> Preprint
+      </a>
+      <a href="URL_DO_MEDIUM" class="resource-link" target="_blank">
+        <span class="resource-icon">💡</span> Popular science article
+      </a>
+    </div>
   </div>
+
+  
 </div>
 
 {% include analytics.html %}
