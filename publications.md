@@ -74,7 +74,7 @@ themethod's overcomplexity and ultimately, as I argue, themain reason for the lo
        <a href="https://qme.sggw.edu.pl/article/view/10238" class="resource-link" target="_blank">
         <span class="resource-icon">📰</span> Journal
       </a>
-      <a href="https://qme.sggw.edu.pl/article/view/10238/9029" class="resource-link" target="_blank">
+      <a href="/assets/pdfs/oprisk_2024_12_cancellation_pl.pdf" class="resource-link" target="_blank">
         <span class="resource-icon">📄</span> Preprint
       </a>
     </div>
