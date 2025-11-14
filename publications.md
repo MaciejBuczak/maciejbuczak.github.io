@@ -76,7 +76,7 @@ title: Publikacje
     </div>
   </div>
 
-  
+  </div>
 
 
 {% include analytics.html %}
