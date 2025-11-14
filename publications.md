@@ -24,8 +24,8 @@ title: Publikacje
 
   
 <div class="publication-card">
-    <span class="publication-pin">📌 Pinned</span>
-    <span class="publication-status status-review">PEER REVIEW PROCESS</span>
+   
+    <span class="publication-status status-review" style="background-color: #7a9b76;">PUBLISHED</span>
     <div class="publication-source">Journal: Quantitative Methods in Economics | SGGW Warsaw</div>
     <div class="publication-domain">
         <span class="domain-primary">Risk management</span>
@@ -54,7 +54,7 @@ case study of the decision to withdraw the ama framework in operational Risk
 
 
   <div class="publication-card">
-    <span class="publication-pin">📌 Pinned</span>
+
     <span class="publication-status status-review">PREPRINT</span>
     <h2 class="publication-title">
       <a href="{{ site.baseurl }}/publications/2023-12-risk-assessment" class="publication-link">
