@@ -3,13 +3,10 @@ layout: default
 title: Publikacje
 ---
 <div id="myMenu">
-  <a href="/" class="menu-option">Hi There</a>
-  <a href="/about" class="menu-option">About me</a>
-  <a href="/topics" class="menu-option">Topics</a>
-  <a href="/publications" class="menu-option">Publications</a>
-  <a href="/researches" class="menu-option">Researches</a>
-  <a href="/conferences" class="menu-option">Lectures</a>
-  <a href="/contact" class="menu-option">Contact</a>
+  <a href="/" class="menu-option">Cześć</a>
+  <a href="/about" class="menu-option">O mnie</a>
+  <a href="/publications" class="menu-option">Publikacje</a>
+  <a href="/contact" class="menu-option">Kontakt</a>
 </div>
 
 <div class="square"></div>
@@ -62,8 +59,8 @@ title: Publikacje
   Dlaczego AMA musiała upaść:
   Analiza strukturalnych wad frameworku
 </h2>
-    <p class="publication-description">Z dniem 1 stycznia 2025 r., po dwudziestu latach funkcjonowania, Metoda Zaawansowanego Pomiaru (AMA) dla ryzyka operacyjnego została wycofana. Głównym powodem była „utrata zaufania" do metody, wynikająca z dużej niestabilności wyników i znaczących różnic w kapitałach raportowanych przez banki o podobnym profilu ryzyka. Niniejsza praca wykazuje, że przyczyny niepowodzenia AMA tkwiły nie w implementacjach bankowych, ale w samej konstrukcji frameworku. Analiza mechaniki aktuarialnej (złożenie rozkładów częstości i dotkliwości) w połączeniu z wymogami stosowania rozkładów ciężko-ogonowych prowadziły do trzech nieuniknionych efektów:
-(1) Na dalekich kwantylach agregat rocznych strat jest zdominowany przez pojedynczą ekstremalną stratę (dominacja >85%, a często dużo powyżej 90% dla typowych parametrów rozkładów).
+    <p class="publication-description">Z dniem 1 stycznia 2025 r., po dwudziestu latach funkcjonowania, Metoda Zaawansowanego Pomiaru (AMA) dla ryzyka operacyjnego została wycofana. Głównym powodem była „utrata zaufania" do metody, wynikająca z dużej niestabilności wyników i znaczących różnic w kapitałach raportowanych przez banki o podobnym profilu ryzyka. Niniejsza praca wykazuje, że przyczyny niepowodzenia AMA tkwiły nie w implementacjach bankowych, ale w samej konstrukcji frameworku. Analiza mechaniki aktuarialnej (złożenie rozkładów częstości i dotkliwości) w połączeniu z wymogami stosowania rozkładów ciężko-ogonowych prowadziły do trzech nieuniknionych efektów:</p>
+<p class="publication-description">(1) Na dalekich kwantylach agregat rocznych strat jest zdominowany przez pojedynczą ekstremalną stratę (dominacja >85%, a często dużo powyżej 90% dla typowych parametrów rozkładów).
 (2) Strata ta zajmuje na rozkładzie pojedynczych strat kwantyl znacznie wyższy (0.9999, 0.99999 i więcej) niż wymagany przez regulatora kwantyl agregatu (0.999) - czyli poza możliwościami współczesnych metod modelowania.
 (3) Wartość tej ekstremalnej straty może zależeć, w sposób nonsensowny, od liczby drobnych zdarzeń operacyjnych - więcej małych strat generuje wyższy poziom kwantyli dotkliwości straty, co jest sprzeczne z logiką biznesową.
 Te własności, których istnienie - dla szerokiego zakresu rozkładów i parametrów - potwierdzono symulacyjnie w ramach niniejszego opracowania, są wbudowane w strukturę frameworku. Wynikają z nadmiernej złożoności konstrukcji, połączonej z nieadekwatną definicją kluczowych pojęć (rzadkość, sytuacja nieoczekiwana, interpretacja kwantyla 99.9%). Wnioski mają znaczenie uniwersalne: stanowią ostrzeżenie przed analogicznymi błędami w projektowaniu przyszłych standardów regulacyjnych dla innych typów ryzyka: nadzłożoność oraz błędne definicje modelowanych problemów prowadzą do systemowego niepowodzenia.</p>
