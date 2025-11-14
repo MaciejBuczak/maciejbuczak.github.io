@@ -53,11 +53,9 @@ title: Publikacje
   <div class="publication-card">
 
     <span class="publication-status status-review" style="background-color: #9a9185;">WORKING PAPER</span>
-    <h2 class="publication-title">
-      <a href="{{ site.baseurl }}/publications/2023-12-risk-assessment" class="publication-link">
-        Unexpected effects inherent in the AMA concept, determining its quality and ultimate withdrawal
-      </a>
-    </h2>
+<h2 class="publication-title">
+  Unexpected effects inherent in the AMA concept, determining its quality and ultimate withdrawal
+</h2>
     <p class="publication-description">The article presents a very detailed analysis of the AMA method, set within the framework of statistical and
 mathematical concepts. In this publication, I derive three properties that, in my opinion, went unnoticed during the
 method's 20 years of operation, which were built into this method, probably unintentionally. They were the result of
