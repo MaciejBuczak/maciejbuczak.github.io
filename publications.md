@@ -33,10 +33,10 @@ title: Publikacje
         <span class="domain-secondary">Operational risk</span>
     </div>
 <h2 class="publication-title">
-  Unexpected effects inherent in the AMA concept, determining its quality and ultimate withdrawal
+  Bieg wsteczny w koncepcji modelowania wartości nieoczekiwanej w sektorze finansowym na przykładzie decyzji o wycofaniu frameworku AMA w ryzyku operacyjnym
 </h2>
-    <p class="publication-description">In this article, I present my high-level perspective on the decision to withdraw the entire modeling framework from banking sector applications. I have been dealing with this topic for several years. The framework in question is something I have thoroughly explored, both from the perspective of general business objectives and every detailed aspect of its modeling space. I therefore understand the reasons behind the decision to discontinue this concept.</p>
-    <div class="publication-meta">📅 December 2024 &nbsp;&nbsp;|&nbsp;&nbsp; 👁️ ... views</div>
+    <p class="publication-description">1 stycznia 2025 r. za pośrednictwem przepisów CRR III wchodzi w życie nowa architektura bezpieczeństwa sektora finansowego. Działaniom związanym z wypracowaniem nowych regulacji towarzyszyła pogłębiona refleksja na temat skuteczności dotychczasowej, opracowanej w 2004 r. (Basel II) koncepcji bezpieczeństwa kapitałowego. W niektórych obszarach refleksja ta zaprowadziła regulatora do decyzji dychotomicznych i ostatecznych. Taką decyzję podjęto w stosunku do stosowanej w przestrzeni ryzyka operacyjnego Metody Zaawansowanego Pomiaru AMA. W niniejszym artykule staram się przedstawić szeroki kontekst, jaki tej decyzji towarzyszył, wraz z własnym, skromnym osądem sytuacji.</p>
+    <div class="publication-meta">📅 Grudzień 2024</div>
     <!-- Dodane linki do zasobów -->
     <div class="publication-resources">
       <a href="https://qme.sggw.edu.pl/article/view/10238/9029" class="resource-link" target="_blank">
