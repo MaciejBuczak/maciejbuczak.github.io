@@ -71,7 +71,7 @@ themethod's overcomplexity and ultimately, as I argue, themain reason for the lo
     <div class="publication-meta">📅 January 2025 &nbsp;&nbsp;|&nbsp;&nbsp; 👁️ ... views</div>
         <!-- Dodane linki do zasobów -->
     <div class="publication-resources">
-      <a href="/assets/pdfs/oprisk_2024_12_cancellation_pl.pdf" class="journal-button" target="_blank">
+       <a href="https://qme.sggw.edu.pl/article/view/10238" class="resource-link" target="_blank">
         <span class="resource-icon">📰</span> Journal
       </a>
       <a href="https://qme.sggw.edu.pl/article/view/10238/9029" class="resource-link" target="_blank">
