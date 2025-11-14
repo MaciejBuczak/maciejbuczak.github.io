@@ -77,6 +77,6 @@ title: Publikacje
   </div>
 
   
-</div>
+
 
 {% include analytics.html %}
