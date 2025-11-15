@@ -36,7 +36,7 @@ title: Publikacje
     <div class="publication-meta">📅 Grudzień 2024</div>
     <!-- Dodane linki do zasobów -->
     <div class="publication-resources">
-      <a href="https://qme.sggw.edu.pl/article/view/10238/9029" class="resource-link" target="_blank">
+      <a href="/assets/pdfs/POLICY_BRIEF_Bieg wsteczny AMA_v2025_11.pdf" class="resource-link" target="_blank">
         <span class="resource-icon">📰</span> Szybkie podsumowanie (5 min)
       </a>
       <a href="https://qme.sggw.edu.pl/article/view/10238" class="resource-link" target="_blank">
