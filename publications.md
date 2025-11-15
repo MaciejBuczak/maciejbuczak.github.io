@@ -37,10 +37,10 @@ title: Publikacje
     <!-- Dodane linki do zasobów -->
     <div class="publication-resources">
       <a href="https://qme.sggw.edu.pl/article/view/10238/9029" class="resource-link" target="_blank">
-        <span class="resource-icon">📄</span>  Szybkie podsumowanie (5 min)
+        <span class="resource-icon">📰</span> Szybkie podsumowanie (5 min)
       </a>
       <a href="https://qme.sggw.edu.pl/article/view/10238" class="resource-link" target="_blank">
-        <span class="resource-icon">📰</span> Artykuł
+        <span class="resource-icon">📄</span> Artykuł
       </a>
     </div>
 </div>
