@@ -67,7 +67,7 @@ title: Publikacje
     <div class="publication-meta">📅 Listopad 2025</div>
         <!-- Dodane linki do zasobów -->
     <div class="publication-resources">
-       <a href="/assets/pdfs/oprisk_2024_12_cancellation_pl.pdf" class="resource-link" target="_blank">
+       <a href="/assets/pdfs/POLICY_BRIEF_Dlaczego AMA musiała upaść_v2025_11.pdf" class="resource-link" target="_blank">
         <span class="resource-icon">📰</span> Szybkie podsumowanie (5 min)
       </a>
       <a href="/assets/pdfs/Dlaczego AMA musiała upaść_v2025_11.pdf" class="resource-link" target="_blank">
