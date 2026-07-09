@@ -71,14 +71,14 @@ title: Risk trainings
 
 .training-card-content {
   flex: 1;
-  padding: 25px;
+  padding: 25px 25px 25px 45px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 .training-card-title {
-  font-size: 1.4em;
+  font-size: 1.6em;
   font-weight: bold;
   color: #333 !important;
   margin: 0 0 15px 0;
@@ -87,7 +87,7 @@ title: Risk trainings
 
 .training-card-description {
   color: #737373;
-  font-size: 1em;
+  font-size: 1.15em;
   line-height: 1.5;
   margin: 0;
   text-indent: 0;
