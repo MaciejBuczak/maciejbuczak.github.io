@@ -20,7 +20,7 @@ permalink: /train_cr/
 
 
 
-# RYZYKO KREDYTOWE ECL / IFRS 9 - praktyczne problemy modelarskie
+# RYZYKO KREDYTOWE ECL/IFRS 9 - praktyczne problemy modelarskie
 
 ### CEL WARSZTATÓW
 Zapraszam do udziału w warsztatach, w ramach których przedstawię Państwu z perspektywy holisty i uważnego praktyka - wyzwania związane z modelowaniem ryzyka kredytowego.
