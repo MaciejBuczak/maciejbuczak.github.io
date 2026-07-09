@@ -40,11 +40,15 @@ title: Risk trainings
   width: 100%;
   box-sizing: border-box;
   min-height: 260px;
+  text-decoration: none !important;
+  color: inherit;
+  cursor: pointer;
 }
 
 .training-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 4px 12px rgba(168,89,3,0.15);
+  text-decoration: none !important;
 }
 
 .training-card-image {
@@ -128,7 +132,19 @@ Prowadzę szkolenia z zakresu zarządzania ryzykiem, łącząc wieloletnie dośw
 </div>
 
 
+<div class="trainings-container">
 
+  <a href="/train_cr" class="training-card">
+    <div class="training-card-image">
+      <img src="/assets/images/trainings/ryzyko-modeli-main2.jpg" alt="Ryzyko kredytowe">
+    </div>
+    <div class="training-card-content">
+      <div class="training-card-title">RYZYKO KREDYTOWE ECL / IFRS 9</div>
+      <div class="training-card-description">PRAKTYCZNE PROBLEMY MODELARSKIE</div>
+    </div>
+  </a>
+
+</div>
 
 
 
