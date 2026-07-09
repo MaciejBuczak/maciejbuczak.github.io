@@ -136,10 +136,10 @@ Prowadzę szkolenia z zakresu zarządzania ryzykiem, łącząc wieloletnie dośw
 
   <a href="/train_cr" class="training-card">
     <div class="training-card-image">
-      <img src="/assets/images/trainings/ryzyko-modeli-main2.jpg" alt="Ryzyko kredytowe">
+      <img src="/assets/images/ryzyko-modeli-main2.jpg" alt="Ryzyko kredytowe">
     </div>
     <div class="training-card-content">
-      <div class="training-card-title">RYZYKO KREDYTOWE ECL / IFRS 9</div>
+      <div class="training-card-title">RYZYKO KREDYTOWE ECL/IFRS9</div>
       <div class="training-card-description">PRAKTYCZNE PROBLEMY MODELARSKIE</div>
     </div>
   </a>
