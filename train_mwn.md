@@ -20,7 +20,7 @@ permalink: /train_mwn/
 
 
 
-# MODELOWANIE WARTOŚCI NIEOCZEKIWANEJ
+# MODELE WARTOŚCI NIEOCZEKIWANEJ
 
 ### CEL WARSZTATÓW
 Warsztaty skierowane są do osób zajmujących się modelowaniem ryzyka, a także oceną modeli ryzyka, szukających odpowiedzi na praktyczne problemy, stale napotykane w zmaganiu się z tak trudną (na poziomie koncepcyjnym, jak również z punktu widzenia stosowanych technik statystycznych) materią.
@@ -53,43 +53,43 @@ W szczególności warsztatami zainteresować powinny się osoby, które poszukuj
 ### PROGRAM
 
 ##### KONCEPCJA BEZPIECZEŃSTWA SEKTORA FINANSOWEGO
-•	Przed czym się zabezpieczamy?
-•	Odpisy vs. kapitały
-•	Kolejne etapy kalibracji bezpieczeństwa sektora (Basel/CRD/CRR)
-•	Test bezpieczeństwa: kryzys 2008
-•	Odpowiedź regulatora: IFRS9 (odpisy), CRR III/CRD VI
+- Przed czym się zabezpieczamy?
+- Odpisy vs. kapitały
+- Kolejne etapy kalibracji bezpieczeństwa sektora (Basel/CRD/CRR)
+- Test bezpieczeństwa: kryzys 2008
+- Odpowiedź regulatora: IFRS9 (odpisy), CRR III/CRD VI
 
 ##### KALIBRACJA SKRAJNOŚCI W MODELACH
-•	Koncepcja zdarzenia/kryzysu 100-letniego
-•	Różne interpretacje odczytu prawdopodobieństwa 100-letniego
-•	Wymóg regulacyjny: poziom zabezpieczeń – zdarzenie/kryzys 1000-letni
-•	Dlaczego kryzysy 1000-letnie zdarzają się co kilkadziesiąt lat
-•	Trudne do spełnienia założenia: stacjonarność, niezależność
-•	Pomocne pojęcia w mierzeniu skrajności: Reliability, Failure Risk
+- Koncepcja zdarzenia/kryzysu 100-letniego
+- Różne interpretacje odczytu prawdopodobieństwa 100-letniego
+- Wymóg regulacyjny: poziom zabezpieczeń – zdarzenie/kryzys 1000-letni
+- Dlaczego kryzysy 1000-letnie zdarzają się co kilkadziesiąt lat
+- Trudne do spełnienia założenia: stacjonarność, niezależność
+- Pomocne pojęcia w mierzeniu skrajności: Reliability, Failure Risk
 
 ##### MODELOWANIE WARTOŚCI EKSTREMALNYCH
-•	Dalekie kwantyle rozkładów prawdopodobieństwa
-•	Metoda Value at Risk
-•	Szerokie zastosowanie rozkładu logarytmiczno-normalnego
-•	Koncepcja rozkładów gruboogonowych
-•	Teoria Wartości Ekstremalnej – EVT I, EVT II
-•	Estymacja parametrów rozkładów wartości ekstremalnej
+- Dalekie kwantyle rozkładów prawdopodobieństwa
+- Metoda Value at Risk
+- Szerokie zastosowanie rozkładu logarytmiczno-normalnego
+- Koncepcja rozkładów gruboogonowych
+- Teoria Wartości Ekstremalnej – EVT I, EVT II
+- Estymacja parametrów rozkładów wartości ekstremalnej
 
 ##### MODELE KAPITAŁU REGULACYJNEGO
-•	Basel II (2004) – definicja modeli wewnętrznych
-•	Model Mertona-Vasicka
-•	Model IRB
-•	Kryzys 2008 – test modeli
-•	CRR III – istotna korekta podejścia
-•	Jaką naukę przyniosły nam dwie dekady funkcjonowania metody AMA (ryzyko operacyjne)?
+- Basel II (2004) – definicja modeli wewnętrznych
+- Model Mertona-Vasicka
+- Model IRB
+- Kryzys 2008 – test modeli
+- CRR III – istotna korekta podejścia
+- Jaką naukę przyniosły nam dwie dekady funkcjonowania metody AMA (ryzyko operacyjne)?
 
 ##### MODELE KAPITAŁU WEWNĘTRZNEGO
-•	Jaką rolę pełni kapitał wewnętrzny?
-•	Dekompozycja modelu: częstość, dotkliwość
-•	Metody analityczne vs. metody symulacyjne
-•	Model kapitału wewnętrznego dla ryzyka kredytowego
-•	Modele kapitału wewnętrznego dla innych ryzyk
-•	Podejście do backtestowania modeli wartości nieoczekiwanej
+- Jaką rolę pełni kapitał wewnętrzny?
+- Dekompozycja modelu: częstość, dotkliwość
+- Metody analityczne vs. metody symulacyjne
+- Model kapitału wewnętrznego dla ryzyka kredytowego
+- Modele kapitału wewnętrznego dla innych ryzyk
+- Podejście do backtestowania modeli wartości nieoczekiwanej
 
 
 
