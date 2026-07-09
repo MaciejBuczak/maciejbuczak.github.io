@@ -17,6 +17,10 @@ title: Risk trainings
 <div class="square2"></div>
 <div class="square-big"></div>
 
+
+
+
+
 <style>
 .trainings-container {
   max-width: 900px;
@@ -119,6 +123,13 @@ title: Risk trainings
 }
 </style>
 
+
+
+
+
+
+
+
 ##### Szkolenia
 
 <div class="trainings-container">
@@ -138,4 +149,27 @@ title: Risk trainings
 
 </div>
 
+
+
+
+
+
+
 {% include analytics.html %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
