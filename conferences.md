@@ -15,8 +15,8 @@ title: Konferencje
 <div class="square2"></div>
 <div class="square-big"></div>
 
-#### Conferences/Workshops/Training
-I have participated as a speaker/trainer in the following conferences, workshops, and training sessions:
+#### Konferencje / szkolenia
+Uczestniczyłem w roli prelegenta / szkoleniowca w następujących wydarzeniach:
 <br>
 <br>
 
