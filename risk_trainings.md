@@ -114,22 +114,9 @@ title: Risk trainings
 
 ### RISK MANAGEMENT - TRAININGS
 Prowadzę szkolenia z zakresu zarządzania ryzykiem, łącząc wieloletnie doświadczenie praktyczne z solidnym warsztatem metodologicznym. Poniżej znajdziesz listę tematów, w ramach których dzielę się wiedzą.
+###
 
 ### SZKOLENIA
-
-<div class="trainings-container">
-
-  <div class="training-card">
-    <div class="training-card-image">
-      <img src="/assets/images/ryzyko-modeli-main2.jpg" alt="Budowa modeli ryzyka">
-    </div>
-    <div class="training-card-content">
-      <div class="training-card-title">Budowa modeli ryzyka</div>
-      <div class="training-card-description">Metody statystyczne i techniki estymacyjne</div>
-    </div>
-  </div>
-
-</div>
 
 
 <div class="trainings-container">
@@ -141,6 +128,58 @@ Prowadzę szkolenia z zakresu zarządzania ryzykiem, łącząc wieloletnie dośw
     <div class="training-card-content">
       <div class="training-card-title">RYZYKO KREDYTOWE ECL/IFRS9</div>
       <div class="training-card-description">PRAKTYCZNE PROBLEMY MODELARSKIE</div>
+    </div>
+  </a>
+
+</div>
+
+
+
+
+
+<div class="trainings-container">
+
+  <a href="/train_bmr" class="training-card">
+    <div class="training-card-image">
+      <img src="/assets/images/pexels-goumbik-669622.jpg" alt="Budowa modeli ryzyka">
+    </div>
+    <div class="training-card-content">
+      <div class="training-card-title">BUDOWA MODELI RYZYKA</div>
+      <div class="training-card-description">METODY STATYSTYCZNE ORAZ TECHNIKI ESTYMACYJNE</div>
+    </div>
+  </a>
+
+</div>
+
+
+
+
+<div class="trainings-container">
+
+  <a href="/train_mr" class="training-card">
+    <div class="training-card-image">
+      <img src="/assets/images/ryzyko-modeli-main3.jpg" alt="Ryzyko modeli">
+    </div>
+    <div class="training-card-content">
+      <div class="training-card-title">RYZYKO MODELI</div>
+      <div class="training-card-description">TECHNIKI KWANTYFIKACJI ORAZ WYZWANIA</div>
+    </div>
+  </a>
+
+</div>
+
+
+
+
+<div class="trainings-container">
+
+  <a href="/train_mwn" class="training-card">
+    <div class="training-card-image">
+      <img src="/assets/images/ryzyko-operacyjne-main.jpg" alt="Modelowanie wart nieoczek">
+    </div>
+    <div class="training-card-content">
+      <div class="training-card-title">MODELOWANIE WARTOŚCI NIEOCZEKIWANEJ</div>
+      <div class="training-card-description">KAPITAŁ REGULACYJNY I KAPITAŁ WEWNĘTRZNY</div>
     </div>
   </a>
 
