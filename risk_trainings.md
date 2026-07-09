@@ -28,15 +28,15 @@ title: Risk trainings
 }
 
 .training-card {
-  display: flex;
-  align-items: stretch;
+  display: flex !important;
+  align-items: stretch !important;
   background: #fff;
   border: 2px solid #e5c9a8;
   border-radius: 12px;
   margin: 25px 0;
+  padding: 0 !important;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  transition: transform 0.2s, box-shadow 0.2s;
   width: 100%;
   box-sizing: border-box;
   min-height: 260px;
@@ -50,14 +50,23 @@ title: Risk trainings
 .training-card-image {
   flex-shrink: 0;
   width: 260px;
-  align-self: stretch;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 0;
 }
 
 .training-card-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 260px;
+  object-fit: cover !important;
+  display: block !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  max-width: none !important;
 }
 
 .training-card-content {
