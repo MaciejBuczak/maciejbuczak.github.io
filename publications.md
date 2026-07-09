@@ -63,8 +63,7 @@ title: Publikacje
         <span class="domain-secondary">Operational risk</span>
     </div>
 <h2 class="publication-title">
-  Dlaczego AMA musiała upaść:
-  Analiza strukturalnych wad frameworku
+  Metoda AMA - analityczne podstawy jej niepowodzenia
 </h2>
     <p class="publication-description">Z dniem 1 stycznia 2025 r., po dwudziestu latach funkcjonowania, Metoda Zaawansowanego Pomiaru (AMA) dla ryzyka operacyjnego została wycofana. Głównym powodem była „utrata zaufania" do metody, wynikająca z dużej niestabilności wyników i znaczących różnic w kapitałach raportowanych przez banki o podobnym profilu ryzyka. Niniejsza praca wykazuje, że przyczyny niepowodzenia AMA tkwiły nie w implementacjach bankowych, ale w samej konstrukcji frameworku. Analiza mechaniki aktuarialnej (złożenie rozkładów częstości i dotkliwości) w połączeniu z wymogami stosowania rozkładów ciężko-ogonowych prowadziły do trzech nieuniknionych efektów:</p>
 <p class="publication-description">(1) Na dalekich kwantylach agregat rocznych strat jest zdominowany przez pojedynczą ekstremalną stratę (dominacja >85%, a często dużo powyżej 90% dla typowych parametrów rozkładów).</p>
