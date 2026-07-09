@@ -31,7 +31,7 @@ title: Risk trainings
   display: flex !important;
   align-items: stretch !important;
   background: #fff;
-  border: 2px solid #e5c9a8;
+  border: 4px solid #e5c9a8;
   border-radius: 12px;
   margin: 25px 0;
   padding: 0 !important;
@@ -83,6 +83,7 @@ title: Risk trainings
   color: #333 !important;
   margin: 0 0 15px 0;
   text-indent: 0;
+  text-align: left !important;
 }
 
 .training-card-description {
@@ -91,6 +92,7 @@ title: Risk trainings
   line-height: 1.5;
   margin: 0;
   text-indent: 0;
+  text-align: left !important;
 }
 
 @media screen and (max-width: 600px) {
