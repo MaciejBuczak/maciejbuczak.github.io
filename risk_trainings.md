@@ -114,7 +114,7 @@ title: Risk trainings
 
 ### RISK MANAGEMENT - TRAININGS
 Prowadzę szkolenia z zakresu zarządzania ryzykiem, łącząc wieloletnie doświadczenie praktyczne z solidnym warsztatem metodologicznym. Poniżej znajdziesz listę tematów, w ramach których dzielę się wiedzą.
-###
+
 
 ### SZKOLENIA
 
@@ -141,7 +141,7 @@ Prowadzę szkolenia z zakresu zarządzania ryzykiem, łącząc wieloletnie dośw
 
   <a href="/train_bmr" class="training-card">
     <div class="training-card-image">
-      <img src="/assets/images/pexels-goumbik-669622.jpg" alt="Budowa modeli ryzyka">
+      <img src="/assets/images/ryzyko-modeli-main.jpg" alt="Budowa modeli ryzyka">
     </div>
     <div class="training-card-content">
       <div class="training-card-title">BUDOWA MODELI RYZYKA</div>
