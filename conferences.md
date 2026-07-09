@@ -26,6 +26,26 @@ I have participated as a speaker/trainer in the following conferences, workshops
 <div class="conferences-container">
 
 
+
+ <div class="conference-card">
+   <div class="conference-badge">Conference</div>
+   <div class="conference-organizer">Organizer: Prestige Conferences</div>
+   <div class="conference-location">Location: Warsaw</div>
+   <h2 class="conference-title">CRR III / CRD VI – wyzwania dla sektora bankowego 2025</h2>
+   <div class="conference-topic">Topic: Nieoczywiste drogi rozwoju metod kalkulacji kapitałów. Na przykładzie metod IRB i AMA</div>
+   <div class="conference-meta">📅 11.2025</div>
+   <div class="conference-buttons">
+     <a href="/conferences/4th_OpRisk_Summit_BROCHURE.pdf" class="conference-button">
+       📄 Brochure
+     </a>
+     <a href="/conferences/Maciej Buczak_OpRisk Summit 2025_FIN.pdf" class="conference-button">
+       📊 Presentation
+     </a>
+   </div>
+ </div>
+
+
+
  <div class="conference-card">
    <div class="conference-badge">Conference</div>
    <div class="conference-organizer">Organizer: Marxo Smith Events</div>
