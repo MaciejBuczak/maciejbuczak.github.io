@@ -77,10 +77,10 @@ title: Publikacje
         <span class="resource-icon">📰</span> Szybkie podsumowanie (5 min)
       </a>
       <a href="https://ssrn.com/abstract=6949518" class="resource-link" target="_blank" onclick="trackPdfClick('article_ama_upadek', 'https://ssrn.com/abstract=6949518')">
-        <span class="resource-icon">📄</span> Artykuł
+        <span class="resource-icon">📄</span> Artykuł ENG
       </a>
       <a href="https://www.researchgate.net/doi/10.13140/RG.2.2.19243.60966" class="resource-link" target="_blank" onclick="trackPdfClick('article_ama_upadek', 'https://www.researchgate.net/doi/10.13140/RG.2.2.19243.60966')">
-        <span class="resource-icon">📄</span> Artykuł
+        <span class="resource-icon">📄</span> Artykuł POL
       </a>
     </div>
   </div>
