@@ -31,7 +31,7 @@ Reakcją regulatorów na wydarzenia lat 2007-2008 była refleksja odnosząca si�
    <div class="conference-badge">Brochure</div>
    <h2 class="conference-title">Broszura szkolenia</h2>
    <div class="conference-buttons">
-     <a href="/trainings/xxxxxxxxxxxxxxxxxxxxx.pdf" class="conference-button">
+     <a href="/trainings/Szkolenie - ryzyko kredytowe.pdf" class="conference-button">
        📄 Pobierz
      </a>
    </div>
@@ -46,7 +46,7 @@ Reakcją regulatorów na wydarzenia lat 2007-2008 była refleksja odnosząca si�
    <div class="conference-topic">Moduł: XXXXXXXXXXXXXXX</div>
    <div class="conference-topic">Moduł: XXXXXXXXXXXXX</div>
    <div class="conference-buttons">
-     <a href="/trainings/xxxxxxxxxxxxxxxxxxxxx.pdf" class="conference-button">
+     <a href="/trainings/xxxxxxxxxxxxxxxxx.pdf" class="conference-button">
        📄 Pobierz Moduł 1
      </a>
     <a href="/trainings/xxxxxxxxxxxxxxxxxxxxx.pdf" class="conference-button">
