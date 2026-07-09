@@ -77,7 +77,10 @@ title: Publikacje
        <a href="/assets/pdfs/POLICY_BRIEF_Dlaczego AMA musiała upaść_v2025_11.pdf" class="resource-link" target="_blank" onclick="trackPdfClick('policy_brief_ama_upadek', '/assets/pdfs/POLICY_BRIEF_Dlaczego AMA musiała upaść_v2025_11.pdf')">
         <span class="resource-icon">📰</span> Szybkie podsumowanie (5 min)
       </a>
-      <a href="/assets/pdfs/Dlaczego AMA musiała upaść_v2025_11.pdf" class="resource-link" target="_blank" onclick="trackPdfClick('article_ama_upadek', '/assets/pdfs/Dlaczego AMA musiała upaść_v2025_11.pdf')">
+      <a href="https://ssrn.com/abstract=6949518" class="resource-link" target="_blank" onclick="trackPdfClick('article_ama_upadek', 'https://ssrn.com/abstract=6949518')">
+        <span class="resource-icon">📄</span> Artykuł
+      </a>
+      <a href="https://www.researchgate.net/doi/10.13140/RG.2.2.19243.60966" class="resource-link" target="_blank" onclick="trackPdfClick('article_ama_upadek', 'https://www.researchgate.net/doi/10.13140/RG.2.2.19243.60966')">
         <span class="resource-icon">📄</span> Artykuł
       </a>
     </div>
