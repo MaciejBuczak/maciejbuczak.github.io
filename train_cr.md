@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Ryzyko kredytowe
+permalink: /train_cr/
 ---
 <div id="myMenu">
   <a href="/" class="menu-option">Cześć</a>
