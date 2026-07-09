@@ -18,6 +18,28 @@ title: Ryzyko kredytowe
 <div class="square-big"></div>
 
 
+
+ <div class="conference-card">
+   <div class="conference-badge">Brochure</div>
+   <h2 class="conference-title">Broszura szkolenia</h2>
+   <div class="conference-buttons">
+     <a href="/trainings/xxxxxxxxxxxxxxxxxxxxx.pdf" class="conference-button">
+       📄 Pobierz
+     </a>
+   </div>
+ </div>
+
+ <div class="conference-card">
+   <div class="conference-badge">Prezentacja</div>
+   <h2 class="conference-title">Przykładowe moduły szkolenia</h2>
+   <div class="conference-buttons">
+     <a href="/trainings/xxxxxxxxxxxxxxxxxxxxx.pdf" class="conference-button">
+       📄 Pobierz
+     </a>
+   </div>
+ </div>
+
+
 # RYZYKO KREDYTOWE ECL / IFRS 9 - praktyczne problemy modelarskie
 
 ### CEL WARSZTATÓW
