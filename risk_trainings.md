@@ -136,14 +136,14 @@ title: Risk trainings
 
   <div class="training-card">
     <div class="training-card-image">
-      <img src="/assets/images/trainings/budowa-modeli-ryzyka.jpg" alt="Budowa modeli ryzyka">
+      <img src="/assets/images/ryzyko-modeli-main2.jpg" alt="Budowa modeli ryzyka">
     </div>
     <div class="training-card-content">
       <div class="training-card-title">Budowa modeli ryzyka</div>
       <div class="training-card-description">Metody statystyczne i techniki estymacyjne</div>
     </div>
     <div class="training-card-corner-image">
-      <img src="/assets/images/trainings/budowa-modeli-ryzyka-corner.jpg" alt="">
+      <img src="/assets/images/grafika-kreski.png" alt="">
     </div>
   </div>
 
