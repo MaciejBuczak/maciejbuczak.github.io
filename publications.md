@@ -70,7 +70,7 @@ title: Publikacje
 <p class="publication-description">(2) Strata ta zajmuje na rozkładzie pojedynczych strat kwantyl znacznie wyższy (0.9999, 0.99999 i więcej) niż wymagany przez regulatora kwantyl agregatu (0.999) - czyli poza możliwościami współczesnych metod modelowania.</p>
 <p class="publication-description">(3) Wartość tej ekstremalnej straty może zależeć, w sposób nonsensowny, od liczby drobnych zdarzeń operacyjnych - więcej małych strat generuje wyższy poziom kwantyli dotkliwości straty, co jest sprzeczne z logiką biznesową.</p>
 <p class="publication-description">Te własności, których istnienie - dla szerokiego zakresu rozkładów i parametrów - potwierdzono symulacyjnie w ramach niniejszego opracowania, są wbudowane w strukturę frameworku. Wynikają z nadmiernej złożoności konstrukcji, połączonej z nieadekwatną definicją kluczowych pojęć (rzadkość, sytuacja nieoczekiwana, interpretacja kwantyla 99.9%). Wnioski mają znaczenie uniwersalne: stanowią ostrzeżenie przed analogicznymi błędami w projektowaniu przyszłych standardów regulacyjnych dla innych typów ryzyka: nadzłożoność oraz błędne definicje modelowanych problemów prowadzą do systemowego niepowodzenia.</p>
-    <div class="publication-meta">📅 Listopad 2025</div>
+    <div class="publication-meta">📅 Czerwiec 2026</div>
         <!-- Dodane linki do zasobów -->
     <div class="publication-resources">
        <a href="/assets/pdfs/POLICY_BRIEF_Dlaczego AMA musiała upaść_v2025_11.pdf" class="resource-link" target="_blank" onclick="trackPdfClick('policy_brief_ama_upadek', '/assets/pdfs/POLICY_BRIEF_Dlaczego AMA musiała upaść_v2025_11.pdf')">
