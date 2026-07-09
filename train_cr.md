@@ -19,6 +19,14 @@ title: Ryzyko kredytowe
 
 
 
+# RYZYKO KREDYTOWE ECL / IFRS 9 - praktyczne problemy modelarskie
+
+### CEL WARSZTATÓW
+Zapraszam do udziału w warsztatach, w ramach których przedstawię Państwu z perspektywy holisty i uważnego praktyka - wyzwania związane z modelowaniem ryzyka kredytowego.
+Wydarzenia lat 2007-2008 przemodelowały percepcję wartości aktywów finansowych. Światowy kryzys ujawnił skalę złożoności procesów finansowych, funkcjonujących w otaczającym nas świecie. Nie ma bodajże już ani jednej takiej osoby na świecie, która rozumiałaby w pełni te mechanizmy. Jednocześnie, kryzys 2008 wykazał realność niewidocznych składowych wyceny wartości aktywów: ukryte w nich ryzyka. To właśnie one, a właściwie nieumiejętne podejście do ich wyceny, spowodowały te, niosące groźne skutki, turbulencje.
+Reakcją regulatorów na wydarzenia lat 2007-2008 była refleksja odnosząca się właśnie do wyżej wspomnianej wyceny aktywów. Koncepcja IFRS9, której inauguracja w sektorze finansowym nastąpiła 1 stycznia 2018 roku, miała stanowić nową linię obrony nadzorczej przed naturalnymi procesami rosnącej dyspersji stochastyki składników ryzyka, nierozerwalnie związanych z ekspozycjami kredytowymi. Nowy framework stanowił jednak duże wyzwanie dla sektora bankowego, zarówno finansowe, jak i metodyczne. Dziś jesteśmy w punkcie, w którym możliwe jest spojrzenie z pewnego dystansu na konstrukt IFRS9 i wyzwania jakie ze sobą przyniósł. Będąc przez lata w centrum wydarzeń związanych z implementacją frameworku, jego nieustannej walidacji i korekt, uważnie obserwując jego działanie i stale konfrontując go z logiką rzeczywistości, do modelowania której został powołany, wypracowałem sobie syntetyczny pogląd na działanie koncepcji IFRS9 w rzeczywistości. To właśnie wszechstronne doświadczenie, związane z praktycznym stosowaniem frameworku IFRS9, ubrane w ciekawą i inspirującą opowieść, chciałbym Państwu przekazać.
+
+
  <div class="conference-card">
    <div class="conference-badge">Brochure</div>
    <h2 class="conference-title">Broszura szkolenia</h2>
@@ -29,23 +37,28 @@ title: Ryzyko kredytowe
    </div>
  </div>
 
+
+
+
  <div class="conference-card">
    <div class="conference-badge">Prezentacja</div>
    <h2 class="conference-title">Przykładowe moduły szkolenia</h2>
+   <div class="conference-topic">Moduł: XXXXXXXXXXXXXXX</div>
+   <div class="conference-topic">Moduł: XXXXXXXXXXXXX</div>
    <div class="conference-buttons">
      <a href="/trainings/xxxxxxxxxxxxxxxxxxxxx.pdf" class="conference-button">
-       📄 Pobierz
+       📄 Pobierz Moduł 1
+     </a>
+    <a href="/trainings/xxxxxxxxxxxxxxxxxxxxx.pdf" class="conference-button">
+       📄 Pobierz Moduł 2
      </a>
    </div>
  </div>
 
 
-# RYZYKO KREDYTOWE ECL / IFRS 9 - praktyczne problemy modelarskie
 
-### CEL WARSZTATÓW
-Zapraszam do udziału w warsztatach, w ramach których przedstawię Państwu z perspektywy holisty i uważnego praktyka - wyzwania związane z modelowaniem ryzyka kredytowego.
-Wydarzenia lat 2007-2008 przemodelowały percepcję wartości aktywów finansowych. Światowy kryzys ujawnił skalę złożoności procesów finansowych, funkcjonujących w otaczającym nas świecie. Nie ma bodajże już ani jednej takiej osoby na świecie, która rozumiałaby w pełni te mechanizmy. Jednocześnie, kryzys 2008 wykazał realność niewidocznych składowych wyceny wartości aktywów: ukryte w nich ryzyka. To właśnie one, a właściwie nieumiejętne podejście do ich wyceny, spowodowały te, niosące groźne skutki, turbulencje.
-Reakcją regulatorów na wydarzenia lat 2007-2008 była refleksja odnosząca się właśnie do wyżej wspomnianej wyceny aktywów. Koncepcja IFRS9, której inauguracja w sektorze finansowym nastąpiła 1 stycznia 2018 roku, miała stanowić nową linię obrony nadzorczej przed naturalnymi procesami rosnącej dyspersji stochastyki składników ryzyka, nierozerwalnie związanych z ekspozycjami kredytowymi. Nowy framework stanowił jednak duże wyzwanie dla sektora bankowego, zarówno finansowe, jak i metodyczne. Dziś jesteśmy w punkcie, w którym możliwe jest spojrzenie z pewnego dystansu na konstrukt IFRS9 i wyzwania jakie ze sobą przyniósł. Będąc przez lata w centrum wydarzeń związanych z implementacją frameworku, jego nieustannej walidacji i korekt, uważnie obserwując jego działanie i stale konfrontując go z logiką rzeczywistości, do modelowania której został powołany, wypracowałem sobie syntetyczny pogląd na działanie koncepcji IFRS9 w rzeczywistości. To właśnie wszechstronne doświadczenie, związane z praktycznym stosowaniem frameworku IFRS9, ubrane w ciekawą i inspirującą opowieść, chciałbym Państwu przekazać.
+
+
 
 ### PROGRAM
 
