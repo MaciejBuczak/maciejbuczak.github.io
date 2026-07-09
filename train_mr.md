@@ -45,13 +45,13 @@ W szczególności warsztatami zainteresować powinny się osoby, które poszukuj
  <div class="conference-card">
    <div class="conference-badge">Prezentacja</div>
    <h2 class="conference-title">Przykładowe moduły szkolenia</h2>
-   <div class="conference-topic">Moduł: XXXXXXXXXXXXXXX</div>
-   <div class="conference-topic">Moduł: XXXXXXXXXXXXX</div>
+   <div class="conference-topic">Moduł 1: System bezpieczeństwa finansowego przed 2008</div>
+   <div class="conference-topic">Moduł 2: Proces Zarządzania Ryzykiem Modeli</div>
    <div class="conference-buttons">
-     <a href="/trainings/xxxxxxxxxxxxxxxxx.pdf" class="conference-button">
+     <a href="/trainings/System bezpieczeństwa finansowego przed 2008.pdf" class="conference-button">
        📄 Pobierz Moduł 1
      </a>
-    <a href="/trainings/xxxxxxxxxxxxxxxxxxxxx.pdf" class="conference-button">
+    <a href="/trainings/PZRM.pdf" class="conference-button">
        📄 Pobierz Moduł 2
      </a>
    </div>
