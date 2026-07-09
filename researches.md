@@ -3,12 +3,12 @@ layout: default
 title: Badania
 ---
 <div id="myMenu">
-  <a href="/" class="menu-option">Hi There</a>
-  <a href="/about" class="menu-option">About me</a>
-  <a href="/topics" class="menu-option">Topics</a>
-  <a href="/publications" class="menu-option">Publicatons</a>
-  <a href="/researches" class="menu-option">Researches</a>
-  <a href="/conferences" class="menu-option">Lectures</a>
+  <a href="/" class="menu-option">Cześć</a>
+  <a href="/about" class="menu-option">O mnie</a>
+  <a href="/risk_trainings" class="menu-option">Risk trainings</a>
+  <a href="/publications" class="menu-option">Publikacje</a>
+  <a href="/conferences" class="menu-option">Konferencje</a>
+  <a href="/researches" class="menu-option">Projekty</a>
   <a href="/contact" class="menu-option">Contact</a>
 </div>
 
