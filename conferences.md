@@ -38,11 +38,8 @@ Wykład wygłosiłem na:
 •	Maj 2026 - Wydział Zarządzania Uniwersytetu Ekonomicznego w Katowicach
 </p>
    <div class="conference-buttons">
-     <a href="/conferences/4th_OpRisk_Summit_BROCHURE.pdf" class="conference-button">
+     <a href="/conferences/Kryzysy 100-letnie co 10 lat - konspekt.pdf" class="conference-button">
        📄 Brochure
-     </a>
-     <a href="/conferences/Maciej Buczak_OpRisk Summit 2025_FIN.pdf" class="conference-button">
-       📊 Presentation
      </a>
    </div>
  </div>
@@ -56,10 +53,10 @@ Wykład wygłosiłem na:
    <div class="conference-topic">Topic: Modelowanie ryzyka operacyjnego</div>
    <div class="conference-meta">📅 06.2026</div>
    <div class="conference-buttons">
-     <a href="/conferences/4th_OpRisk_Summit_BROCHURE.pdf" class="conference-button">
+     <a href="/conferences/Zarządzanie Ryzykiem Operacyjnym 23-24.06.2026 Warsaw Regent Hotel.pdf" class="conference-button">
        📄 Brochure
      </a>
-     <a href="/conferences/Maciej Buczak_OpRisk Summit 2025_FIN.pdf" class="conference-button">
+     <a href="/conferences/Konferencja OpRisk - 2026_06.pdf" class="conference-button">
        📊 Presentation
      </a>
    </div>
@@ -74,10 +71,10 @@ Wykład wygłosiłem na:
    <div class="conference-topic">Topic: Dlaczego kryzysy „stuletnie” zdarzają się co dekadę? Granice statystycznych modeli odporności na rynkach finansowych.</div>
    <div class="conference-meta">📅 05.2026</div>
    <div class="conference-buttons">
-     <a href="/conferences/4th_OpRisk_Summit_BROCHURE.pdf" class="conference-button">
+     <a href="/conferences/10th PAS CONFERENCE Schedule v5.pdf" class="conference-button">
        📄 Brochure
      </a>
-     <a href="/conferences/Maciej Buczak_OpRisk Summit 2025_FIN.pdf" class="conference-button">
+     <a href="/conferences/Buczak - Dlaczego kryzysy stuletnie zdarzają się co dekadę.pdf" class="conference-button">
        📊 Presentation
      </a>
    </div>
@@ -92,10 +89,10 @@ Wykład wygłosiłem na:
    <div class="conference-topic">Topic: Nieoczywiste drogi rozwoju metod kalkulacji kapitałów. Na przykładzie metod IRB i AMA</div>
    <div class="conference-meta">📅 11.2025</div>
    <div class="conference-buttons">
-     <a href="/conferences/4th_OpRisk_Summit_BROCHURE.pdf" class="conference-button">
+     <a href="/conferences/p646.pdf" class="conference-button">
        📄 Brochure
      </a>
-     <a href="/conferences/Maciej Buczak_OpRisk Summit 2025_FIN.pdf" class="conference-button">
+     <a href="/conferences/MaciejBuczak_Nieoczywiste drogi rozwoju.pdf" class="conference-button">
        📊 Presentation
      </a>
    </div>
