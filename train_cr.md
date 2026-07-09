@@ -44,8 +44,8 @@ Reakcją regulatorów na wydarzenia lat 2007-2008 była refleksja odnosząca si�
  <div class="conference-card">
    <div class="conference-badge">Prezentacja</div>
    <h2 class="conference-title">Przykładowe moduły szkolenia</h2>
-   <div class="conference-topic">Moduł: XXXXXXXXXXXXXXX</div>
-   <div class="conference-topic">Moduł: XXXXXXXXXXXXX</div>
+   <div class="conference-topic">Moduł 1: Założenia IFRS9</div>
+   <div class="conference-topic">Moduł 2: Modelowanie parametrów IFRS 9</div>
    <div class="conference-buttons">
      <a href="/trainings/Założenia IFRS9.pdf" class="conference-button">
        📄 Pobierz Moduł 1
