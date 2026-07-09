@@ -28,6 +28,65 @@ I have participated as a speaker/trainer in the following conferences, workshops
 
 
  <div class="conference-card">
+   <div class="conference-badge">Lecture</div>
+   <div class="conference-location">Location: Warsaw, Toruń, Katowice</div>
+   <div class="conference-topic">Topic: Dlaczego kryzysy 100-letnie zdarzają się co 10 lat?</div>
+   <div class="conference-meta">📅 03-05.2026</div>
+<p class="conference-description">Wiosną 2026 miałem okazję wygłosić na kilku uczelniach autorski wykład „Dlaczego kryzysy 100-letnie zdarzają się co 10 lat?”. W trakcie wykładu przeprowadzam słuchaczy przez historię rozwoju metod modelowania ryzyk finansowych, konfrontuję te metody z tymi, stosowanymi w obszarze hydrologii oraz wskazuję problemy paradygmatyczne leżące na fundamencie przyjętego w nich rozumowania.
+Wykład wygłosiłem na:
+•	Marzec 2026 – Wydział Nauk Ekonomicznych Uniwersytetu Warszawskiego
+•	Kwiecień 2026 – Wydział Nauk Ekonomicznych i Zarządzania Uniwersytetu Mikołaja Kopernika
+•	Kwiecień 2026 – Wydział Ekonomii Uniwersytetu Ekonomicznego w Katowicach (wykład on-line)
+•	Maj 2026 - Wydział Zarządzania Uniwersytetu Ekonomicznego w Katowicach
+</p>
+   <div class="conference-buttons">
+     <a href="/conferences/4th_OpRisk_Summit_BROCHURE.pdf" class="conference-button">
+       📄 Brochure
+     </a>
+     <a href="/conferences/Maciej Buczak_OpRisk Summit 2025_FIN.pdf" class="conference-button">
+       📊 Presentation
+     </a>
+   </div>
+ </div>
+
+
+ <div class="conference-card">
+   <div class="conference-badge">Conference</div>
+   <div class="conference-organizer">Organizer: Prestige Conferences</div>
+   <div class="conference-location">Location: Warsaw</div>
+   <h2 class="conference-title">Zarządzanie ryzykiem operacyjnym. Aktualne trendy i wyzwania</h2>
+   <div class="conference-topic">Topic: Modelowanie ryzyka operacyjnego</div>
+   <div class="conference-meta">📅 06.2026</div>
+   <div class="conference-buttons">
+     <a href="/conferences/4th_OpRisk_Summit_BROCHURE.pdf" class="conference-button">
+       📄 Brochure
+     </a>
+     <a href="/conferences/Maciej Buczak_OpRisk Summit 2025_FIN.pdf" class="conference-button">
+       📊 Presentation
+     </a>
+   </div>
+ </div>
+
+
+ <div class="conference-card">
+   <div class="conference-badge">Conference</div>
+   <div class="conference-organizer">Organizer: Uniwersytet Łódzki</div>
+   <div class="conference-location">Location: Łódź</div>
+   <h2 class="conference-title">Protection and Security in Financial Market</h2>
+   <div class="conference-topic">Topic: Dlaczego kryzysy „stuletnie” zdarzają się co dekadę? Granice statystycznych modeli odporności na rynkach finansowych.</div>
+   <div class="conference-meta">📅 05.2026</div>
+   <div class="conference-buttons">
+     <a href="/conferences/4th_OpRisk_Summit_BROCHURE.pdf" class="conference-button">
+       📄 Brochure
+     </a>
+     <a href="/conferences/Maciej Buczak_OpRisk Summit 2025_FIN.pdf" class="conference-button">
+       📊 Presentation
+     </a>
+   </div>
+ </div>
+
+
+ <div class="conference-card">
    <div class="conference-badge">Conference</div>
    <div class="conference-organizer">Organizer: Prestige Conferences</div>
    <div class="conference-location">Location: Warsaw</div>
