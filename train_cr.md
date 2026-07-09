@@ -47,10 +47,10 @@ Reakcją regulatorów na wydarzenia lat 2007-2008 była refleksja odnosząca si�
    <div class="conference-topic">Moduł: XXXXXXXXXXXXXXX</div>
    <div class="conference-topic">Moduł: XXXXXXXXXXXXX</div>
    <div class="conference-buttons">
-     <a href="/trainings/xxxxxxxxxxxxxxxxx.pdf" class="conference-button">
+     <a href="/trainings/Założenia IFRS9.pdf" class="conference-button">
        📄 Pobierz Moduł 1
      </a>
-    <a href="/trainings/xxxxxxxxxxxxxxxxxxxxx.pdf" class="conference-button">
+    <a href="/trainings/Modelowanie parametrów IFRS9.pdf" class="conference-button">
        📄 Pobierz Moduł 2
      </a>
    </div>
