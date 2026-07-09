@@ -10,6 +10,7 @@ title: Publikacje
   <a href="/" class="menu-option">Cześć</a>
   <a href="/about" class="menu-option">O mnie</a>
   <a href="/publications" class="menu-option">Publikacje</a>
+  <a href="/conferences" class="menu-option">Konferencje</a>
   <a href="/contact" class="menu-option">Kontakt</a>
 </div>
 
