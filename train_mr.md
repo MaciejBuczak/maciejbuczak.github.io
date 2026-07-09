@@ -65,78 +65,78 @@ W szczególności warsztatami zainteresować powinny się osoby, które poszukuj
 ### PROGRAM
 
 ##### O RYZYKU - WPROWADZENIE
-● Ryzyko - zjawisko niewidoczne, a jednak istniejące i mające poważne skutki
-● Pomiarowanie ryzyka – koncepcje
-● Ryzyko a prawdopodobieństwo
-● Dwa, wyraźnie różne komponenty: ryzyko oczekiwane, ryzyko nieoczekiwane
-● O empiryzmie w nauce - czy oparcie badań nad ryzykiem na naukach empirycznych ma sens? A co na to racjonaliści?
-● Czy „Bóg gra w kości z wszechświatem”, a może świat to „deterministyczna maszyna”?
+- Ryzyko - zjawisko niewidoczne, a jednak istniejące i mające poważne skutki
+- Pomiarowanie ryzyka – koncepcje
+- Ryzyko a prawdopodobieństwo
+- Dwa, wyraźnie różne komponenty: ryzyko oczekiwane, ryzyko nieoczekiwane
+- O empiryzmie w nauce - czy oparcie badań nad ryzykiem na naukach empirycznych ma sens? A co na to racjonaliści?
+- Czy „Bóg gra w kości z wszechświatem”, a może świat to „deterministyczna maszyna”?
 
 ##### CZYM JEST MODEL RYZYKA?
-● Czym jest modelowanie rzeczywistości?
-● Dlaczego tworzymy modele?
-● Niepewności związane z modelem?
-● Czym są parametry modelu?
-● Jakie są punkty ciężkości modelu?
-● Jakie metody statystyczne wykorzystujemy w modelowaniu?
-● Dwa obszary modelowania w banku: modele wartości oczekiwanej vs. modele wartości nieoczekiwanej
+- Czym jest modelowanie rzeczywistości?
+- Dlaczego tworzymy modele?
+- Niepewności związane z modelem?
+- Czym są parametry modelu?
+- Jakie są punkty ciężkości modelu?
+- Jakie metody statystyczne wykorzystujemy w modelowaniu?
+- Dwa obszary modelowania w banku: modele wartości oczekiwanej vs. modele wartości nieoczekiwanej
 
 ##### ZARZĄDZANIE RYZYKIEM MODELI
-● Rekomendacja W i jej cele
-● System Zarządzania Ryzykiem Modeli w Banku
-● Identyfikacja modeli w Banku
-● Wdrożenie modelu w Banku
-● Model w procesie ZRM - wyzwania
-● Monitoring, DQM, Walidacja – komplementarna diagnostyka
-● Proces walidacji i jego organizacja
+- Rekomendacja W i jej cele
+- System Zarządzania Ryzykiem Modeli w Banku
+- Identyfikacja modeli w Banku
+- Wdrożenie modelu w Banku
+- Model w procesie ZRM - wyzwania
+- Monitoring, DQM, Walidacja – komplementarna diagnostyka
+- Proces walidacji i jego organizacja
 
 ##### MODEL RYZYKA JAKO ZŁOŻONY OBIEKT
-● Jakie są komponenty modelu?
-● Jakie typy ryzyk towarzyszą modelowi?
-● Model to złożony obiekt: problem, koncepcja, metoda, kod, dokumentacja, administrowanie
-● Agregaty strukturalne - ECL jako złożenie PD x LGD x EAD
-● Problemy z agregatami strukturalnymi - czy struktury stochastyczne podlegają takim samym kalkulacjom arytmetycznym jak struktury deterministyczne?
-● Dekomponowanie struktur - dekomponowanie złożonej rzeczywistości na poszczególne pojęcia, bazując na stosowanych w sektorze ubezpieczeniowym podejściach aktuarialnych
+- Jakie są komponenty modelu?
+- Jakie typy ryzyk towarzyszą modelowi?
+- Model to złożony obiekt: problem, koncepcja, metoda, kod, dokumentacja, administrowanie
+- Agregaty strukturalne - ECL jako złożenie PD x LGD x EAD
+- Problemy z agregatami strukturalnymi - czy struktury stochastyczne podlegają takim samym kalkulacjom arytmetycznym jak struktury deterministyczne?
+- Dekomponowanie struktur - dekomponowanie złożonej rzeczywistości na poszczególne pojęcia, bazując na stosowanych w sektorze ubezpieczeniowym podejściach aktuarialnych
 
 ##### JAKOŚCIOWA OCENA MODELU - WYZWANIA
-● Ocena koncepcji modelu – wczesna diagnostyka
-● Jakość danych do modelowania vs. jakość danych zasilających model produkcyjnie
-● Czym jest próba modelu?
-● Ocena segmentacji modelu – konflikt pomiędzy dokładnością a efektem uportfelowienia
-● Ocena doboru metody statystycznej do badanego problemu
-● Ocena procesu estymacji
-● Ocena wyników modelu
-● Ocena kodu modelu
-● Czy administrowanie modelem wpływa na ryzyko modelu?
-● Jak wyłapać nadzłożoność modelu?
+- Ocena koncepcji modelu – wczesna diagnostyka
+- Jakość danych do modelowania vs. jakość danych zasilających model produkcyjnie
+- Czym jest próba modelu?
+- Ocena segmentacji modelu – konflikt pomiędzy dokładnością a efektem uportfelowienia
+- Ocena doboru metody statystycznej do badanego problemu
+- Ocena procesu estymacji
+- Ocena wyników modelu
+- Ocena kodu modelu
+- Czy administrowanie modelem wpływa na ryzyko modelu?
+- Jak wyłapać nadzłożoność modelu?
 
 ##### ILOŚCIOWA OCENA MODELU - WYZWANIA
-● Czy diagnostyka dotyczy modelu, parametrów modelu, czy jego wyników?
-● Backtest – najlepsze narzędzie diagnostyczne?
-● Jak konstruować backtest? Co ma nam powiedzieć?
-● Co nam mówi analiza wrażliwości?
-● Jakie testy stosujemy do oceny procesów estymacyjnych?
-● Błędy szacunku i przedziały ufności jako narzędzia oceny niepewności parametrów modelu
-● W czym może pomóc benchmarking?
+- Czy diagnostyka dotyczy modelu, parametrów modelu, czy jego wyników?
+- Backtest – najlepsze narzędzie diagnostyczne?
+- Jak konstruować backtest? Co ma nam powiedzieć?
+- Co nam mówi analiza wrażliwości?
+- Jakie testy stosujemy do oceny procesów estymacyjnych?
+- Błędy szacunku i przedziały ufności jako narzędzia oceny niepewności parametrów modelu
+- W czym może pomóc benchmarking?
 
 ##### OCENA RYZYKA MODELI WARTOŚCI OCZEKIWANEJ
-● Techniki stosowane w ocenie modeli wartości oczekiwanej
-● Punkty ciężkości dla modeli wartości oczekiwanej
-● Lifetime PD - przykład oceny jakości modelu
-● Lifetime LGD - przykład oceny jakości modelu
+- Techniki stosowane w ocenie modeli wartości oczekiwanej
+- Punkty ciężkości dla modeli wartości oczekiwanej
+- Lifetime PD - przykład oceny jakości modelu
+- Lifetime LGD - przykład oceny jakości modelu
 
 ##### OCENA RYZYKA MODELI WARTOŚCI NIEOCZEKIWANEJ
-● Techniki stosowane w ocenie modeli wartości nieoczekiwanej
-● Punkty ciężkości dla modeli wartości nieoczekiwanej
-● Ryzyko operacyjne AMA - przykład oceny jakości modelu
-● Kapitał wewnętrzny na ryzyko kredytowe - przykład oceny jakości modelu
+- Techniki stosowane w ocenie modeli wartości nieoczekiwanej
+- Punkty ciężkości dla modeli wartości nieoczekiwanej
+- Ryzyko operacyjne AMA - przykład oceny jakości modelu
+- Kapitał wewnętrzny na ryzyko kredytowe - przykład oceny jakości modelu
 
 ##### OCENA LOGIKI BIZNESOWEJ MODELU
-● Zgodność modelu z logiką biznesową - czy to ważne?
-● Dobrze działające modele, ale niezgodne z logiką rzeczywistości - czy to możliwe?
-● Trudności w poszukiwaniu prawdziwego osadzenia modelu w rzeczywistości
-● Backtesty wskazują na poprawność działania modelu - czy to w pełni uspokajająca informacja?
-● A jak potwierdzić logikę biznesową dla modeli wartości nieoczekiwanej - tych modeli nie da się zbacktestować?
+- Zgodność modelu z logiką biznesową - czy to ważne?
+- Dobrze działające modele, ale niezgodne z logiką rzeczywistości - czy to możliwe?
+- Trudności w poszukiwaniu prawdziwego osadzenia modelu w rzeczywistości
+- Backtesty wskazują na poprawność działania modelu - czy to w pełni uspokajająca informacja?
+- A jak potwierdzić logikę biznesową dla modeli wartości nieoczekiwanej - tych modeli nie da się zbacktestować?
 
 
 
