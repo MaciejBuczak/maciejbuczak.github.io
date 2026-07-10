@@ -53,7 +53,7 @@ title: Repository
 
 
 
-##### Repozytorium
+##### Potwierdzenia wykładu: Kryzys 100-letni co 10 lat
 
 
 <div class="repo-container">
