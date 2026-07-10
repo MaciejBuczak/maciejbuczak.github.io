@@ -59,21 +59,40 @@ title: Repository
 <div class="repo-container">
 
   <div class="repo-item">
-    <p class="repo-item-name">Nazwa dokumentu 1</p>
-    <a href="/assets/files/dokument1.pdf" class="download-button" download>Pobierz</a>
+    <p class="repo-item-name">Potwierdzenie WNE UW</p>
+    <a href="/repository/ConfirmationOfGuestLectureIE.pdf" class="download-button" download>Pobierz</a>
   </div>
 
   <div class="repo-item">
-    <p class="repo-item-name">Nazwa dokumentu 2</p>
-    <a href="/assets/files/dokument2.pdf" class="download-button" download>Pobierz</a>
+    <p class="repo-item-name">Potwierdzenie WNEiZ UMK</p>
+    <a href="/repository/UMK_poświadczenie odbycia wykładu.pdf" class="download-button" download>Pobierz</a>
   </div>
 
   <div class="repo-item">
-    <p class="repo-item-name">Nazwa dokumentu 3</p>
-    <a href="/assets/files/dokument3.pdf" class="download-button" download>Pobierz</a>
+    <p class="repo-item-name">Potwierdzenie WE UE Katowice</p>
+    <a href="/repository/Zaswiadczenie_wystąpienie.Maciej.Buczak.podpis.pdf" class="download-button" download>Pobierz</a>
+  </div>
+
+    <div class="repo-item">
+    <p class="repo-item-name">Potwierdzenie WZ UE Katowice</p>
+    <a href="/repository/Podziekowanie za prelekcje.pdf" class="download-button" download>Pobierz</a>
   </div>
 
 </div>
+
+
+##### Potwierdzenie przyjęcia publikacji: Epizod kryzysowy 2023
+
+
+<div class="repo-container">
+
+  <div class="repo-item">
+    <p class="repo-item-name">Potwierdzenie - Epizod kryzysowy 2023</p>
+    <a href="/repository/Potwierdzenie - Epizod kryzysowy 2023.pdf" class="download-button" download>Pobierz</a>
+  </div>
+
+</div>
+
 
 
 {% include analytics.html %}
