@@ -79,7 +79,7 @@ title: Publikacje
       <a href="https://ssrn.com/abstract=6949518" class="resource-link" target="_blank" onclick="trackPdfClick('article_ama_upadek', 'https://ssrn.com/abstract=6949518')">
         <span class="resource-icon">📄</span> Artykuł ENG
       </a>
-      <a href="https://www.researchgate.net/doi/10.13140/RG.2.2.19243.60966" class="resource-link" target="_blank" onclick="trackPdfClick('article_ama_upadek', 'https://www.researchgate.net/doi/10.13140/RG.2.2.19243.60966')">
+      <a href="/assets/pdfs/Buczak_2026_AMA_AnalitycznePrzyczynyUpadku.pdf" class="resource-link" target="_blank" onclick="trackPdfClick('article_ama_upadek', '/assets/pdfs/Buczak_2026_AMA_AnalitycznePrzyczynyUpadku.pdf')">
         <span class="resource-icon">📄</span> Artykuł POL
       </a>
     </div>
