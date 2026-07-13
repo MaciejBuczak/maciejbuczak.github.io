@@ -99,6 +99,7 @@ title: Risk trainings
   text-align: left !important;
 }
 
+
 @media screen and (max-width: 600px) {
   .training-card {
     flex-direction: column;
@@ -108,8 +109,25 @@ title: Risk trainings
     width: 100%;
     height: 200px;
   }
+
+  .training-card-image img {
+    min-height: 0 !important;
+    height: 200px !important;
+  }
 }
+
+
+  
 </style>
+
+
+
+
+
+
+
+
+
 
 
 ### RISK MANAGEMENT - TRAININGS
