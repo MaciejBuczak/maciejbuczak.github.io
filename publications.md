@@ -103,7 +103,7 @@ I Can't Predict a 1,000-Year Catastrophe
 
   <div class="publication-card">
 
-    <span class="publication-status status-review" style="background-color: #9a9185;">WORKING PAPER</span>
+    <span class="publication-status status-review" style="background-color: #9A8B6E;">LECTURE</span>
         <div class="publication-domain">
         <span class="domain-primary">Risk management</span>
         <span class="domain-separator">|</span>
