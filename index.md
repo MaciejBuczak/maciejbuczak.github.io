@@ -33,7 +33,6 @@ I'm glad you're here. I enjoy sharing knowledge and experience in applications o
 
 I still work in business, in the banking sector. Additionally, in terms of teaching, I collaborate with Warsaw universities:
 
-<br>
 
 <!-- Dodajemy sekcję z uczelniami -->
 <div class="uczelnie-container">
