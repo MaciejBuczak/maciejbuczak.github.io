@@ -216,6 +216,74 @@ I conduct training courses in risk management, combining years of practical expe
 
 
 
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Course",
+      "name": "Credit Risk ECL/IFRS9",
+      "alternateName": "Ryzyko kredytowe ECL/IFRS9",
+      "description": "Practical modeling problems in credit risk under ECL/IFRS9 framework.",
+      "url": "https://maciejbuczak.github.io/train_cr",
+      "provider": {
+        "@type": "Person",
+        "name": "Maciej Buczak",
+        "url": "https://maciejbuczak.github.io/"
+      }
+    },
+    {
+      "@type": "Course",
+      "name": "Risk Model Development",
+      "alternateName": "Budowa modeli ryzyka",
+      "description": "Statistical methods and estimation techniques for risk model development.",
+      "url": "https://maciejbuczak.github.io/train_bmr",
+      "provider": {
+        "@type": "Person",
+        "name": "Maciej Buczak",
+        "url": "https://maciejbuczak.github.io/"
+      }
+    },
+    {
+      "@type": "Course",
+      "name": "Model Risk",
+      "alternateName": "Ryzyko modeli",
+      "description": "Quantification techniques and challenges in model risk.",
+      "url": "https://maciejbuczak.github.io/train_mr",
+      "provider": {
+        "@type": "Person",
+        "name": "Maciej Buczak",
+        "url": "https://maciejbuczak.github.io/"
+      }
+    },
+    {
+      "@type": "Course",
+      "name": "Unexpected Value Modeling",
+      "alternateName": "Modelowanie wartości nieoczekiwanej",
+      "description": "Regulatory capital and economic capital modeling for unexpected value.",
+      "url": "https://maciejbuczak.github.io/train_mwn",
+      "provider": {
+        "@type": "Person",
+        "name": "Maciej Buczak",
+        "url": "https://maciejbuczak.github.io/"
+      }
+    }
+  ]
+}
+</script>
+
+
+
+
+
+
+
+
+
 {% include analytics.html %}
 
 
