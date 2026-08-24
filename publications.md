@@ -91,7 +91,7 @@ I Can't Predict a 1,000-Year Catastrophe
       <a href="/assets/pdfs/Buczak_2026_Nie_umiem_przew_1000_letniej.pdf" class="resource-link" target="_blank" onclick="trackPdfClick('article_1000_years', '/assets/pdfs/Buczak_2026_Nie_umiem_przew_1000_letniej')">
         <span class="resource-icon">📄</span> Article POL
       </a>
-      </a>
+      
 
     </div>
   </div>
@@ -101,6 +101,40 @@ I Can't Predict a 1,000-Year Catastrophe
 
 
 
+  <div class="publication-card">
+
+    <span class="publication-status status-review" style="background-color: #9a9185;">WORKING PAPER</span>
+        <div class="publication-domain">
+        <span class="domain-primary">Risk management</span>
+        <span class="domain-separator">|</span>
+        <span class="domain-secondary">Systemic risk</span>
+    </div>
+<h2 class="publication-title">
+Why Do "100-Years Crisis" Happen Every 10 Years  
+</h2>
+    <p class="publication-description">A lecture delivered at several Polish universities, combining hydrology, statistics, philosophy of science, and financial history to explain why the concept of a "once in 100/1000 years" event — the very foundation of banking regulation (Basel I/II, VaR, AAA ratings) — failed in practice during the 2008 financial crisis.
+The starting point is the concept of the return period, rooted in hydrology (Fuller, Hazen, extreme value theory), and the question of whether it can safely be transferred to socio-economic phenomena. The lecture traces the history of thinking about randomness — from the deterministic world of Newton and Laplace, through the Maxwell-Boltzmann breakthrough, Bachelier's random walk theory of prices, to Markowitz, Fama, Black-Scholes, and David Li's Gaussian copula, which became the foundation for pricing CDOs and CDS.
+The second part examines the mechanics of the 2008 crisis (securitization, regulatory arbitrage, the role of AIG and rating agencies) and the six model assumptions that turned out to be false. The lecture closes with a philosophical reflection — drawing on Knight, Minsky, Hayek, and Taleb — on the distinction between risk and uncertainty, and on why statistical models themselves become a source of the systemic risk they claim to measure.</p>
+
+    <div class="publication-meta">📅 March - May 2026</div>
+        <!-- Dodane linki do zasobów -->
+    <div class="publication-resources">
+
+
+      <a href="/assets/pdfs/WYKŁAD - 1 raz na 100 lat_1_53.pdf" class="resource-link" target="_blank" onclick="trackPdfClick('presentation_crisis', '/assets/pdfs/WYKŁAD - 1 raz na 100 lat_1_53')">
+        <span class="resource-icon">📄</span> Presentation Pt.1 ENG
+      </a>
+
+            <a href="/assets/pdfs/WYKŁAD - 1 raz na 100 lat_54_79.pdf" class="resource-link" target="_blank" onclick="trackPdfClick('presentation_crisis', '/assets/pdfs/WYKŁAD - 1 raz na 100 lat_54_79')">
+        <span class="resource-icon">📄</span> Presentation Pt.2 ENG
+      </a>
+
+            <a href="/assets/pdfs/WYKŁAD - 1 raz na 100 lat_80_111.pdf" class="resource-link" target="_blank" onclick="trackPdfClick('presentation_crisis', '/assets/pdfs/WYKŁAD - 1 raz na 100 lat_80_111')">
+        <span class="resource-icon">📄</span> Presentation Pt.3 ENG
+      </a>
+
+    </div>
+  </div>
 
 
 
