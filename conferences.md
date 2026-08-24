@@ -35,9 +35,9 @@ I participated as a speaker / trainer in the following events:
    <div class="conference-meta">📅 03-05.2026</div>
 <p class="conference-description">In spring 2026, I had the opportunity to deliver an original lecture titled "Why do '100-year' crises happen every 10 years?" at several universities. During the lecture, I guide the audience through the history of financial risk modeling methods, compare these methods with those used in hydrology, and point out the paradigmatic problems underlying their assumptions. I delivered the lecture at:</p>
 <p>• March 2026 – Faculty of Economic Sciences, University of Warsaw</p>
-• April 2026 – Faculty of Economic Sciences and Management, Nicolaus Copernicus University
-• April 2026 – Faculty of Economics, University of Economics in Katowice (online lecture)
-• May 2026 – Faculty of Management, University of Economics in Katowice
+<p>• April 2026 – Faculty of Economic Sciences and Management, Nicolaus Copernicus University</p>
+<p>• April 2026 – Faculty of Economics, University of Economics in Katowice (online lecture)</p>
+<p>• May 2026 – Faculty of Management, University of Economics in Katowice</p>
 
    <div class="conference-buttons">
      <a href="/conferences/Kryzysy 100-letnie co 10 lat - konspekt.pdf" class="conference-button">
