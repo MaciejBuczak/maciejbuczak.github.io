@@ -17,8 +17,8 @@ title: Konferencje
 <div class="square2"></div>
 <div class="square-big"></div>
 
-#### Konferencje / szkolenia
-Uczestniczyłem w roli prelegenta / szkoleniowca w następujących wydarzeniach:
+#### Conferences / Trainings
+I participated as a speaker / trainer in the following events:
 <br>
 <br>
 
@@ -30,15 +30,14 @@ Uczestniczyłem w roli prelegenta / szkoleniowca w następujących wydarzeniach:
  <div class="conference-card">
    <div class="conference-badge">Lecture</div>
    <div class="conference-location">Location: Warsaw, Toruń, Katowice</div>
-   <div class="conference-topic">Topic: Dlaczego kryzysy 100-letnie zdarzają się co 10 lat?</div>
+   <div class="conference-topic">Topic: Why do "100-year" crises happen every 10 years?</div>
    <div class="conference-meta">📅 03-05.2026</div>
-<p class="conference-description">Wiosną 2026 miałem okazję wygłosić na kilku uczelniach autorski wykład „Dlaczego kryzysy 100-letnie zdarzają się co 10 lat?”. W trakcie wykładu przeprowadzam słuchaczy przez historię rozwoju metod modelowania ryzyk finansowych, konfrontuję te metody z tymi, stosowanymi w obszarze hydrologii oraz wskazuję problemy paradygmatyczne leżące na fundamencie przyjętego w nich rozumowania.
-Wykład wygłosiłem na:
-•	Marzec 2026 – Wydział Nauk Ekonomicznych Uniwersytetu Warszawskiego
-•	Kwiecień 2026 – Wydział Nauk Ekonomicznych i Zarządzania Uniwersytetu Mikołaja Kopernika
-•	Kwiecień 2026 – Wydział Ekonomii Uniwersytetu Ekonomicznego w Katowicach (wykład on-line)
-•	Maj 2026 - Wydział Zarządzania Uniwersytetu Ekonomicznego w Katowicach
-</p>
+<p class="conference-description">In spring 2026, I had the opportunity to deliver an original lecture titled "Why do '100-year' crises happen every 10 years?" at several universities. During the lecture, I guide the audience through the history of financial risk modeling methods, compare these methods with those used in hydrology, and point out the paradigmatic problems underlying their assumptions. I delivered the lecture at:</p>
+<p>• March 2026 – Faculty of Economic Sciences, University of Warsaw</p>
+• April 2026 – Faculty of Economic Sciences and Management, Nicolaus Copernicus University
+• April 2026 – Faculty of Economics, University of Economics in Katowice (online lecture)
+• May 2026 – Faculty of Management, University of Economics in Katowice
+
    <div class="conference-buttons">
      <a href="/conferences/Kryzysy 100-letnie co 10 lat - konspekt.pdf" class="conference-button">
        📄 Brochure
@@ -51,8 +50,8 @@ Wykład wygłosiłem na:
    <div class="conference-badge">Conference</div>
    <div class="conference-organizer">Organizer: Prestige Conferences</div>
    <div class="conference-location">Location: Warsaw</div>
-   <h2 class="conference-title">Zarządzanie ryzykiem operacyjnym. Aktualne trendy i wyzwania</h2>
-   <div class="conference-topic">Topic: Modelowanie ryzyka operacyjnego</div>
+   <h2 class="conference-title">Operational Risk Management. Current Trends and Challenges</h2>
+   <div class="conference-topic">Topic: Operational Risk Modeling</div>
    <div class="conference-meta">📅 06.2026</div>
    <div class="conference-buttons">
      <a href="/conferences/Zarządzanie Ryzykiem Operacyjnym 23-24.06.2026 Warsaw Regent Hotel.pdf" class="conference-button">
@@ -67,10 +66,10 @@ Wykład wygłosiłem na:
 
  <div class="conference-card">
    <div class="conference-badge">Conference</div>
-   <div class="conference-organizer">Organizer: Uniwersytet Łódzki</div>
+   <div class="conference-organizer">Organizer: University of Łódź</div>
    <div class="conference-location">Location: Łódź</div>
    <h2 class="conference-title">Protection and Security in Financial Market</h2>
-   <div class="conference-topic">Topic: Dlaczego kryzysy „stuletnie” zdarzają się co dekadę? Granice statystycznych modeli odporności na rynkach finansowych.</div>
+   <div class="conference-topic">Topic: Why do "hundred-year" crises happen every decade? The limits of statistical resilience models in financial markets</div>
    <div class="conference-meta">📅 05.2026</div>
    <div class="conference-buttons">
      <a href="/conferences/10th PAS CONFERENCE Schedule v5.pdf" class="conference-button">
@@ -87,8 +86,8 @@ Wykład wygłosiłem na:
    <div class="conference-badge">Conference</div>
    <div class="conference-organizer">Organizer: Prestige Conferences</div>
    <div class="conference-location">Location: Warsaw</div>
-   <h2 class="conference-title">CRR III / CRD VI – wyzwania dla sektora bankowego 2025</h2>
-   <div class="conference-topic">Topic: Nieoczywiste drogi rozwoju metod kalkulacji kapitałów. Na przykładzie metod IRB i AMA</div>
+   <h2 class="conference-title">CRR III / CRD VI – Challenges for the Banking Sector 2025</h2>
+   <div class="conference-topic">Topic: Unobvious paths in capital calculation method development. The case of IRB and AMA methods</div>
    <div class="conference-meta">📅 11.2025</div>
    <div class="conference-buttons">
      <a href="/conferences/p646.pdf" class="conference-button">
