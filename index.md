@@ -21,7 +21,6 @@ layout: default
 **Victor Hugo "Les Miserables"**
 
 _"It takes a vast amount of knowledge and experience to draw generalized conclusions based on limited observations."_
-PO POLSKU
 <br>
 #### Hi There
 
@@ -40,7 +39,7 @@ I still work in business, in the banking sector. Additionally, in terms of teach
       <img src="/assets/images/sggw-logo.png" alt="Logo SGGW">
     </div>
     <div class="uczelnia-nazwa">
-      Instytut Socjologii, Szkoła Główna Gospodarstwa Wiejskiego w Warszawie
+      Institute of Sociology, Warsaw University of Life Sciences
     </div>
   </div>
   
@@ -49,7 +48,7 @@ I still work in business, in the banking sector. Additionally, in terms of teach
       <img src="/assets/images/merito-logo.png" alt="Logo WSB Merito">
     </div>
     <div class="uczelnia-nazwa">
-      Wyższa Szkoła Bankowa Merito w Warszawie
+      WSB Merito University in Warsaw
     </div>
   </div>
 </div>
