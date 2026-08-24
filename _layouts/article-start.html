@@ -784,6 +784,9 @@
 
 
 
+
+
+
 <div class="essays-container">
 
   <a href="/essays/conceptual-frameworks-reality" class="essay-card">
@@ -793,27 +796,27 @@
     </div>
     <div class="essay-title">Conceptual Frameworks for Reality</div>
     <p class="essay-excerpt">A bold, experimental attempt to build a statistical conceptual framework for describing reality — applied to two historical turning points: the fall of the First Polish Republic and the outbreak of World War I.</p>
-    <div class="essay-meta">📅 January 2025 · Preprint</div>
+    <div class="essay-meta"><span class="essay-meta-icon"></span>January 2025 · Preprint</div>
   </a>
 
   <a href="/essays/statistical-illusions-1914" class="essay-card">
     <div class="essay-tag">History · Risk</div>
     <div class="essay-image">
-      <img src="/assets/images/holistyczna-ocena-main2.jpg" alt="World War I statistics">
+      <img src="/assets/images/ryzyko-modeli-main2.jpg" alt="World War I statistics">
     </div>
     <div class="essay-title">False Signals of History: 1914 Through a Statistical Lens</div>
     <p class="essay-excerpt">Long before "tail risk" entered financial vocabulary, the outbreak of World War I offered a textbook case of underestimated extreme events. What can risk modeling learn from the diplomatic miscalculations of the summer of 1914?</p>
-    <div class="essay-meta">📅 [Data]</div>
+    <div class="essay-meta"><span class="essay-meta-icon"></span>[Data]</div>
   </a>
 
   <a href="/essays/fairness-as-a-variable-cycling" class="essay-card">
     <div class="essay-tag">Sport · Statistics</div>
     <div class="essay-image">
-      <img src="/assets/images/ryzyko-nieoczekiwane-main.jpg" alt="Cycling strategy">
+      <img src="/assets/images/ryzyko-modeli-main.jpg" alt="Cycling strategy">
     </div>
     <div class="essay-title">Fairness as a Variable: Statistics at the Edge of the Rulebook</div>
     <p class="essay-excerpt">Professional cycling lives in the gray zone between strategy and rule-bending. A quantitative look at how teams optimize within — and just outside — the boundaries of what's considered fair play.</p>
-    <div class="essay-meta">📅 [Data]</div>
+    <div class="essay-meta"><span class="essay-meta-icon"></span>[Data]</div>
   </a>
 
 </div>
@@ -825,10 +828,12 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 30px;
+  align-items: stretch;
 }
 
 .essay-card {
-  display: block;
+  display: flex;
+  flex-direction: column;
   background: #fff;
   border: 4px solid #e5c9a8;
   border-radius: 12px;
@@ -838,6 +843,7 @@
   color: inherit;
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
+  height: 100%;
 }
 
 .essay-card:hover {
@@ -886,12 +892,28 @@
   line-height: 1.5;
   margin: 0 0 15px 0;
   text-indent: 0;
+  flex-grow: 1;
 }
 
 .essay-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   font-size: 0.85em;
   color: #9a9185;
   text-indent: 0;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid #f0e6d6;
+}
+
+.essay-meta-icon {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: #a85903;
+  border-radius: 2px;
+  flex-shrink: 0;
 }
 
 @media screen and (max-width: 700px) {
@@ -900,10 +922,6 @@
   }
 }
 </style>
-
-
-
-
         
         
 
