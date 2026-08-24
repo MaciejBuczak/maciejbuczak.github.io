@@ -43,23 +43,22 @@ title: Publikacje
 <h2 class="publication-title">
 The AMA Method - Analytical Foundations of Its Failure  
 </h2>
-    <p class="publication-description">As of January 1, 2025, after twenty years in operation, the Advanced Measurement Approach (AMA) for operational risk was withdrawn. The principal reason was a "loss of confidence" in the method, stemming from high volatility in results and significant discrepancies in the capital reported by banks with similar risk profiles. This paper demonstrates that the causes of AMA's failure lay not in bank-level implementations, but in the very construction of the framework itself. An analysis of the actuarial mechanics (the compounding of frequency and severity distributions), combined with the requirement to use heavy-tailed distributions, is shown to lead to three unavoidable effects:</p>
-<p class="publication-description">(1) At distant quantiles, the aggregate of annual losses is dominated by a single extreme loss (dominance exceeding 85%, and often well above 90%, for typical distribution parameters).</p>
-<p class="publication-description">(2) This loss occupies, on the single-loss distribution, a quantile substantially higher (0.9999, 0.99999, or more) than the aggregate quantile required by the regulator (0.999) — that is, one lying beyond the reach of contemporary modeling methods.</p>
-<p class="publication-description">(3) The value of this extreme loss may depend, in a nonsensical manner, on the number of minor operational events — more small losses generate a higher severity-quantile level, which contradicts business logic.</p>
-<p class="publication-description">These properties — whose existence, across a wide range of distributions and parameters, is confirmed through simulation in the present study — are shown to be built into the very structure of the framework. They arise from excessive constructional complexity, combined with an inadequate definition of the key concepts involved (rarity, the unexpected situation, the interpretation of the 99.9% quantile). The conclusions carry universal significance: they stand as a warning against analogous errors in the design of future regulatory standards for other types of risk — overcomplexity and flawed definitions of the modeled problem lead to systemic failure.</p>
+    <p class="publication-description">As of January 1, 2025, after twenty years in operation, the Advanced Measurement Approach (AMA) for operational risk was withdrawn, largely due to a "loss of confidence" stemming from high result volatility and significant capital discrepancies among banks with similar risk profiles. This paper shows that AMA's failure stemmed not from bank-level implementation, but from the framework's own construction: combining the actuarial frequency-severity approach with mandatory heavy-tailed distributions produces three unavoidable effects — (1) at distant quantiles, the annual loss aggregate is dominated by a single extreme loss (often exceeding 90%); (2) this loss sits at a single-loss quantile (0.9999+) far beyond what modeling methods can reliably estimate, given the required aggregate quantile of 0.999; and (3) the extreme loss's value can depend nonsensically on the number of minor events, contradicting business logic. Confirmed through simulation across a wide range of distributions, these findings warn against similar errors in future regulatory standards: overcomplexity and poorly defined core concepts lead to systemic failure.</p>
+
     <div class="publication-meta">📅 June 2026</div>
         <!-- Dodane linki do zasobów -->
     <div class="publication-resources">
-       <a href="/assets/pdfs/POLICY_BRIEF_Dlaczego AMA musiała upaść_v2025_11.pdf" class="resource-link" target="_blank" onclick="trackPdfClick('policy_brief_ama_upadek', '/assets/pdfs/POLICY_BRIEF_Dlaczego AMA musiała upaść_v2025_11.pdf')">
-        <span class="resource-icon">📰</span> Szybkie podsumowanie (5 min)
-      </a>
+
       <a href="https://ssrn.com/abstract=6949518" class="resource-link" target="_blank" onclick="trackPdfClick('article_ama_upadek', 'https://ssrn.com/abstract=6949518')">
-        <span class="resource-icon">📄</span> Artykuł ENG
+        <span class="resource-icon">📄</span> Article ENG
       </a>
       <a href="/assets/pdfs/Buczak_2026_AMA_AnalitycznePrzyczynyUpadku.pdf" class="resource-link" target="_blank" onclick="trackPdfClick('article_ama_upadek', '/assets/pdfs/Buczak_2026_AMA_AnalitycznePrzyczynyUpadku.pdf')">
-        <span class="resource-icon">📄</span> Artykuł POL
+        <span class="resource-icon">📄</span> Article POL
       </a>
+       <a href="/assets/pdfs/POLICY_BRIEF_Dlaczego AMA musiała upaść_v2025_11.pdf" class="resource-link" target="_blank" onclick="trackPdfClick('policy_brief_ama_upadek', '/assets/pdfs/POLICY_BRIEF_Dlaczego AMA musiała upaść_v2025_11.pdf')">
+        <span class="resource-icon">📰</span> Quick summary POL (5 min)
+      </a>
+      
     </div>
   </div>
 
@@ -84,17 +83,41 @@ The AMA Method - Analytical Foundations of Its Failure
     <div class="publication-meta">📅 Grudzień 2024</div>
     <!-- Dodane linki do zasobów -->
     <div class="publication-resources">
-      <a href="/assets/pdfs/POLICY_BRIEF_Bieg wsteczny AMA_v2025_11.pdf" class="resource-link" target="_blank" onclick="trackPdfClick('policy_brief_ama_bieg_wsteczny', '/assets/pdfs/POLICY_BRIEF_Bieg wsteczny AMA_v2025_11.pdf')">
-        <span class="resource-icon">📰</span> Szybkie podsumowanie (5 min)
-      </a>
+
       <a href="https://qme.sggw.edu.pl/article/view/10238" class="resource-link" target="_blank" onclick="trackPdfClick('article_qme_ama', 'https://qme.sggw.edu.pl/article/view/10238')">
-        <span class="resource-icon">📄</span> Artykuł
+        <span class="resource-icon">📄</span> Article POL
+      </a>
+      <a href="/assets/pdfs/POLICY_BRIEF_Bieg wsteczny AMA_v2025_11.pdf" class="resource-link" target="_blank" onclick="trackPdfClick('policy_brief_ama_bieg_wsteczny', '/assets/pdfs/POLICY_BRIEF_Bieg wsteczny AMA_v2025_11.pdf')">
+        <span class="resource-icon">📰</span> Quick summary POL (5 min)
       </a>
     </div>
 </div>
 
 
 
+
+
+<div class="publication-card">
+   
+    <span class="publication-status status-review" style="background-color: #7a9b76;">PUBLISHED</span>
+    <div class="publication-source">Journal: Analiza systemowa w finansach i zarządzaniu, Tom 11 | Instytut Badań Systemowych PAN</div>
+    <div class="publication-domain">
+        <span class="domain-primary">Risk management</span>
+        <span class="domain-separator">|</span>
+        <span class="domain-secondary">Operational risk</span>
+    </div>
+<h2 class="publication-title">
+  Badanie autoregresyjnego charakteru procesu liczby strat operacyjnych
+</h2>
+    <p class="publication-description">Artykuł przedstawia sposób wykorzystania modeli autoregresyjnych w odniesieniu do liczby strat operacyjnych w ramach modelowania ryzyka operacyjnego. Przedstawiono liczbę strat operacyjnych jako proces stochastyczny. Następnie przeprowadzono badanie wewnętrznej struktury zdefiniowanego procesu. W szczególności przedmiot badania stanowiła identyfikacja autoregresyjnego charakteru procesu liczby strat operacyjnych.</p>
+    <div class="publication-meta">📅 2009</div>
+    <!-- Dodane linki do zasobów -->
+    <div class="publication-resources">
+      <a href="/assets/pdfs/KS-2009-04-T11P03.pdf" class="resource-link" target="_blank" onclick="trackPdfClick('article_oprisk', '/assets/pdfs/KS-2009-04-T11P03.pdf')">
+        <span class="resource-icon">📄</span> Article POL
+      </a>
+    </div>
+</div>
 
 
   
