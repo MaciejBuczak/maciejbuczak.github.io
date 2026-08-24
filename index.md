@@ -21,7 +21,7 @@ layout: default
 <p style="text-indent: 0;"><strong>Victor Hugo "Les Miserables"</strong></p>
 
 <p style="text-indent: 0;"><em>"It takes a vast amount of knowledge and experience to draw generalized conclusions based on limited observations."</em></p>
-<br>
+
 #### Hi There
 
 <!-- Dodajemy pozycjonowany obraz -->
@@ -32,7 +32,6 @@ I'm glad you're here. I enjoy sharing knowledge and experience in applications o
 
 I still work in business, in the banking sector. Additionally, in terms of teaching, I collaborate with Warsaw universities:
 
-<br>
 <br>
 
 <!-- Dodajemy sekcję z uczelniami -->
