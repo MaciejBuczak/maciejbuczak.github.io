@@ -18,9 +18,10 @@ layout: default
 
 <br>
 
-**Victor Hugo "Les Miserables"**
+<p style="text-indent: 0;"><strong>Victor Hugo "Les Miserables"</strong></p>
 
-_"It takes a vast amount of knowledge and experience to draw generalized conclusions based on limited observations."_
+<p style="text-indent: 0;"><em>"It takes a vast amount of knowledge and experience to draw generalized conclusions based on limited observations."</em></p>
+<br>
 <br>
 #### Hi There
 
