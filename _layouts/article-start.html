@@ -779,7 +779,164 @@
 
 
 
+<div class="elegant-cards-container">
 
+  <a href="/essays/conceptual-frameworks-reality" class="elegant-card">
+    <div class="card-image">
+      <img src="/assets/images/ryzyko-modeli-main.jpg" alt="Conceptual frameworks">
+      <div class="card-overlay"></div>
+    </div>
+    <div class="card-content">
+      <h3>Conceptual Frameworks for Reality</h3>
+      <p>A bold, experimental attempt to build a statistical conceptual framework for describing reality — applied to two historical turning points: the fall of the First Polish Republic and the outbreak of World War I.</p>
+      <span class="elegant-button">Read the essay</span>
+    </div>
+  </a>
+
+  <a href="/essays/statistical-illusions-1914" class="elegant-card">
+    <div class="card-image">
+      <img src="/assets/images/holistyczna-ocena-main2.jpg" alt="World War I statistics">
+      <div class="card-overlay"></div>
+    </div>
+    <div class="card-content">
+      <h3>False Signals of History: 1914 Through a Statistical Lens</h3>
+      <p>Long before "tail risk" entered financial vocabulary, the outbreak of World War I offered a textbook case of underestimated extreme events. What can risk modeling learn from the diplomatic miscalculations of the summer of 1914?</p>
+      <span class="elegant-button">Read the essay</span>
+    </div>
+  </a>
+
+  <a href="/essays/fairness-as-a-variable-cycling" class="elegant-card">
+    <div class="card-image">
+      <img src="/assets/images/ryzyko-nieoczekiwane-main.jpg" alt="Cycling strategy">
+      <div class="card-overlay"></div>
+    </div>
+    <div class="card-content">
+      <h3>Fairness as a Variable: Statistics at the Edge of the Rulebook</h3>
+      <p>Professional cycling lives in the gray zone between strategy and rule-bending. A quantitative look at how teams optimize within — and just outside — the boundaries of what's considered fair play.</p>
+      <span class="elegant-button">Read the essay</span>
+    </div>
+  </a>
+
+</div>
+
+<style>
+  .elegant-cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  .elegant-card {
+    background: #faf3e3;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    height: 100%;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .elegant-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  }
+
+  .card-image {
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+  }
+
+  .elegant-card:hover .card-image img {
+    transform: scale(1.05);
+  }
+
+  .card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.5) 100%);
+  }
+
+  .card-content {
+    padding: 30px;
+  }
+
+  .card-content h3 {
+    color: #333;
+    font-size: 22px;
+    margin-bottom: 15px;
+    position: relative;
+    padding-bottom: 12px;
+  }
+
+  .card-content h3:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 3px;
+    background: #a85903;
+  }
+
+  .card-content p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    font-size: 16px;
+    text-indent: 0;
+  }
+
+  .elegant-button {
+    display: inline-block;
+    color: #a85903;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 16px;
+    position: relative;
+    padding-bottom: 2px;
+    transition: all 0.3s ease;
+  }
+
+  .elegant-button:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #a85903;
+    transition: width 0.3s ease;
+  }
+
+  .elegant-card:hover .elegant-button:after {
+    width: 100%;
+  }
+
+  @media screen and (max-width: 992px) {
+    .elegant-cards-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    .elegant-cards-container {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
 
 
 
