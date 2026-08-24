@@ -27,7 +27,47 @@ title: Publikacje
 <div class="publications-container">
 
 
-  
+
+
+
+
+
+  <div class="publication-card">
+
+    <span class="publication-status status-review" style="background-color: #9a9185;">WORKING PAPER</span>
+        <div class="publication-domain">
+        <span class="domain-primary">Risk management</span>
+        <span class="domain-separator">|</span>
+        <span class="domain-secondary">Systemic risk</span>
+    </div>
+<h2 class="publication-title">
+I Can't Predict a 1,000-Year Catastrophe  
+</h2>
+    <p class="publication-description">Under the Basel regulations, the 0.999 quantile — the central parameter of the financial safety architecture, on which capital requirements for credit, operational, and numerous Pillar II risks have long been based — is interpreted in supervisory documents as an event occurring "once in a thousand years." Rather than revisiting the well-established critique of estimation difficulties at distant quantiles, this paper asks whether the temporal interpretation itself has any statistical, regulatory, or practical justification. It traces how this interpretation was embedded across successive Basel accords and disseminated in academic work, and demonstrates that it derives from a borrowed, never explicitly acknowledged, hydrological concept — the return period, used to describe phenomena such as the hundred-year flood. Transferring this convention to socio-economic phenomena, the paper shows, requires a tacit assumption about indexing risk realizations along a time axis — one lacking the natural justification it has in physical phenomena. The 1,000-year event, moreover, is neither embedded in risk model construction nor verifiable through backtesting, and is rendered redundant by regular model recalibration. Drawing on hydrology's own revision of its analogous "hundred-year flood" concept, the paper argues for a similar debate in finance, and concludes that the temporal interpretation of the 0.999 quantile is an empty artifact — one that should be replaced with definitions grounded in the actual mechanics of extreme events.</p>
+
+    <div class="publication-meta">📅 August 2026</div>
+        <!-- Dodane linki do zasobów -->
+    <div class="publication-resources">
+
+      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7259718" class="resource-link" target="_blank" onclick="trackPdfClick('article_1000_years', 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7259718')">
+        <span class="resource-icon">📄</span> Article ENG
+      </a>
+
+            <a href="/assets/pdfs/POLICY_BRIEF_Bieg wsteczny AMA_v2025_11.pdf" class="resource-link" target="_blank" onclick="trackPdfClick('policy_brief_ama_bieg_wsteczny', '/assets/pdfs/POLICY_BRIEF_Bieg wsteczny AMA_v2025_11.pdf')">
+        <span class="resource-icon">📰</span> Quick summary POL (5 min)
+      </a>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -52,13 +92,45 @@ The AMA Method - Analytical Foundations of Its Failure
       <a href="https://ssrn.com/abstract=6949518" class="resource-link" target="_blank" onclick="trackPdfClick('article_ama_upadek', 'https://ssrn.com/abstract=6949518')">
         <span class="resource-icon">📄</span> Article ENG
       </a>
-      <a href="/assets/pdfs/Buczak_2026_AMA_AnalitycznePrzyczynyUpadku.pdf" class="resource-link" target="_blank" onclick="trackPdfClick('article_ama_upadek', '/assets/pdfs/Buczak_2026_AMA_AnalitycznePrzyczynyUpadku.pdf')">
+
+            <a href="https://www.researchgate.net/publication/408534623_Metoda_AMA_-_analityczne_podstawy_jej_niepowodzenia" class="resource-link" target="_blank" onclick="trackPdfClick('article_ama_upadek', 'https://www.researchgate.net/publication/408534623_Metoda_AMA_-_analityczne_podstawy_jej_niepowodzenia')">
         <span class="resource-icon">📄</span> Article POL
       </a>
+
        <a href="/assets/pdfs/POLICY_BRIEF_Dlaczego AMA musiała upaść_v2025_11.pdf" class="resource-link" target="_blank" onclick="trackPdfClick('policy_brief_ama_upadek', '/assets/pdfs/POLICY_BRIEF_Dlaczego AMA musiała upaść_v2025_11.pdf')">
         <span class="resource-icon">📰</span> Quick summary POL (5 min)
       </a>
       
+    </div>
+  </div>
+
+
+  
+
+
+
+
+  <div class="publication-card">
+
+    <span class="publication-status status-review" style="background-color: #9a9185;">WORKING PAPER</span>
+        <div class="publication-domain">
+        <span class="domain-primary">Risk management</span>
+        <span class="domain-separator">|</span>
+        <span class="domain-secondary">Systemic risk</span>
+    </div>
+<h2 class="publication-title">
+Post -Crisis Financial Security Architecture in the Face of the 2023 Crisis Episode  
+</h2>
+    <p class="publication-description">This article examines the 2023 US regional bank failures to assess the post-2008 financial safety architecture's effectiveness. Reconstructing events through a review of the literature and regulatory documents, it finds that the banks involved met their capital—and often liquidity—requirements; the real causes were qualitative: poor risk management, unsustainable business models, and inadequate supervision. The episode also revealed a new crisis mechanics, as social media and digital banking compressed deposit runs from days to hours, fundamentally altering tail-risk dynamics. The article concludes that the existing regulatory framework, built on the paradigm of normally distributed phenomena and quantitative risk measures, is ill-suited to this new reality—distribution tails are fatter, and future crises may prove more violent and harder to contain. Though limited in scale, the 2023 episode should be treated as a warning sign for the financial safety system as a whole.</p>
+
+    <div class="publication-meta">📅 May 2026</div>
+        <!-- Dodane linki do zasobów -->
+    <div class="publication-resources">
+
+      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7080238" class="resource-link" target="_blank" onclick="trackPdfClick('article_crisis_2023', 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7080238')">
+        <span class="resource-icon">📄</span> Article ENG
+      </a>
+
     </div>
   </div>
 
