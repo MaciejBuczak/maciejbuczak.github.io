@@ -177,3 +177,4 @@ I am pleased to announce the publication of my article "Backward Step in the Dev
   </div>
 </div>
 
+</div>
