@@ -41,6 +41,41 @@ title: Publikacje
         <span class="domain-secondary">Systemic risk</span>
     </div>
 <h2 class="publication-title">
+Are Financial Phenomena Random? On the Limits of the Probabilistic Description of Risk
+</h2>
+    <p class="publication-description">This paper asks whether the fundamental assumption underlying financial risk management — the random character of financial phenomena — is justified. Its point of reference is hydrology, a discipline in which the same conceptual apparatus (the return period, the T-year event, the assumptions of stationarity and independence) was developed over a hundred years ago, and which has since declared a crisis in these very foundations. The paper traces how the probabilistic view of the world — from the random walk, through the normal distribution, to Value at Risk and Basel II's internal models — made its way into finance, alongside the philosophical lineage of instrumentalism that shielded these models' assumptions from scrutiny. It also examines the financial safety architecture in light of successive crises — including 2008 and the 2023 episode — which have struck more often than its own conservative parameters would suggest. The paper then formulates a catalog of considerations that call into question the validity of applying classical statistical description to socio-economic phenomena: their endogenous, speculative, and cumulative character; the intersubjective rather than objective nature of the modeled value; the questionable stationarity of socio-economic processes; and the absence of any real distinction between the expected world and the world of extreme events. Rather than calling for the abandonment of statistical methods in finance, the paper argues that they ought to play a complementary, rather than central, role, relative to a deeper understanding of the mechanics actually governing the financial sector.</p>
+
+    <div class="publication-meta">📅 August 2026</div>
+        <!-- Dodane linki do zasobów -->
+    <div class="publication-resources">
+
+      <a href="https://www.researchgate.net/publication/413555789_Are_Financial_Phenomena_Random_On_the_Limits_of_the_Probabilistic_Description_of_Risk" class="resource-link" target="_blank" onclick="trackPdfClick('article_phenomena_random', 'https://www.researchgate.net/publication/413555789_Are_Financial_Phenomena_Random_On_the_Limits_of_the_Probabilistic_Description_of_Risk')">
+        <span class="resource-icon">📄</span> Article ENG
+      </a>
+
+      <a href="https://www.researchgate.net/publication/413556234_Czy_zjawiska_finansowe_sa_losowe_O_granicach_probabilistycznego_opisu_ryzyka" class="resource-link" target="_blank" onclick="trackPdfClick('article_phenomena_random', 'https://www.researchgate.net/publication/413556234_Czy_zjawiska_finansowe_sa_losowe_O_granicach_probabilistycznego_opisu_ryzyka')">
+        <span class="resource-icon">📄</span> Article POL
+      </a>
+
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <div class="publication-card">
+
+    <span class="publication-status status-review" style="background-color: #9a9185;">WORKING PAPER</span>
+        <div class="publication-domain">
+        <span class="domain-primary">Risk management</span>
+        <span class="domain-separator">|</span>
+        <span class="domain-secondary">Systemic risk</span>
+    </div>
+<h2 class="publication-title">
 I Can't Predict a 1,000-Year Catastrophe  
 </h2>
     <p class="publication-description">Under the Basel regulations, the 0.999 quantile — the central parameter of the financial safety architecture, on which capital requirements for credit, operational, and numerous Pillar II risks have long been based — is interpreted in supervisory documents as an event occurring "once in a thousand years." Rather than revisiting the well-established critique of estimation difficulties at distant quantiles, this paper asks whether the temporal interpretation itself has any statistical, regulatory, or practical justification. It traces how this interpretation was embedded across successive Basel accords and disseminated in academic work, and demonstrates that it derives from a borrowed, never explicitly acknowledged, hydrological concept — the return period, used to describe phenomena such as the hundred-year flood. Transferring this convention to socio-economic phenomena, the paper shows, requires a tacit assumption about indexing risk realizations along a time axis — one lacking the natural justification it has in physical phenomena. The 1,000-year event, moreover, is neither embedded in risk model construction nor verifiable through backtesting, and is rendered redundant by regular model recalibration. Drawing on hydrology's own revision of its analogous "hundred-year flood" concept, the paper argues for a similar debate in finance, and concludes that the temporal interpretation of the 0.999 quantile is an empty artifact — one that should be replaced with definitions grounded in the actual mechanics of extreme events.</p>
@@ -53,8 +88,9 @@ I Can't Predict a 1,000-Year Catastrophe
         <span class="resource-icon">📄</span> Article ENG
       </a>
 
-            <a href="/assets/pdfs/POLICY_BRIEF_Bieg wsteczny AMA_v2025_11.pdf" class="resource-link" target="_blank" onclick="trackPdfClick('policy_brief_ama_bieg_wsteczny', '/assets/pdfs/POLICY_BRIEF_Bieg wsteczny AMA_v2025_11.pdf')">
-        <span class="resource-icon">📰</span> Quick summary POL (5 min)
+      <a href="/assets/pdfs/Buczak_2026_Nie_umiem_przew_1000_letniej.pdf" class="resource-link" target="_blank" onclick="trackPdfClick('article_1000_years', '/assets/pdfs/Buczak_2026_Nie_umiem_przew_1000_letniej')">
+        <span class="resource-icon">📄</span> Article POL
+      </a>
       </a>
 
     </div>
