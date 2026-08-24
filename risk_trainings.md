@@ -1,15 +1,20 @@
 ---
 layout: default
-title: Risk trainings
+title: "Risk Management Trainings | Szkolenia z zarządzania ryzykiem"
+description: "Practical trainings in credit risk (ECL/IFRS9), operational, market, model and systemic risk. Szkolenia z ryzyka kredytowego, operacyjnego, rynkowego i modeli — teoria i praktyka."
+keywords: "risk management training, credit risk training, operational risk training, market risk training, model risk training, systemic risk training, szkolenia ryzyko, szkolenia ryzyko kredytowe, szkolenia ryzyko operacyjne, szkolenia ryzyko modeli"
+lang: en
 ---
+
 <div id="myMenu">
-  <a href="/" class="menu-option">Cześć</a>
-  <a href="/about" class="menu-option">O mnie</a>
+  <a href="/" class="menu-option">Hi There</a>
+  <a href="/about" class="menu-option">About me</a>
+  <a href="/articlestart" class="menu-option">Essays</a>
   <a href="/risk_trainings" class="menu-option">RISK TRAININGS</a>
-  <a href="/publications" class="menu-option">Publikacje</a>
-  <a href="/conferences" class="menu-option">Konferencje</a>
-  <a href="/researches" class="menu-option">Projekty</a>
-  <a href="/contact" class="menu-option">Kontakt</a>
+  <a href="/publications" class="menu-option">Publications</a>
+  <a href="/conferences" class="menu-option">Talks</a>
+  <a href="/researches" class="menu-option">Researches</a>
+  <a href="/contact" class="menu-option">Contact</a>
 </div>
 
 <div class="square"></div>
@@ -131,7 +136,9 @@ title: Risk trainings
 
 
 ### RISK MANAGEMENT - TRAININGS
-I conduct training courses in risk management, combining years of practical experience with a solid methodological foundation. Below you'll find a list of topics I cover.
+I conduct training courses in risk management, combining years of practical experience with a solid methodological foundation. Below you'll find a list of topics I cover — credit risk, operational risk, market risk, model risk, and systemic risk.
+
+**Szkolenia z zarządzania ryzykiem finansowym** — prowadzę szkolenia z ryzyka kredytowego (ECL/IFRS9), ryzyka operacyjnego, ryzyka rynkowego, ryzyka modeli oraz ryzyka systemowego, łącząc wieloletnie doświadczenie praktyczne z solidnymi podstawami metodologicznymi.
 
 
 ### TRAINING COURSES
@@ -144,8 +151,9 @@ I conduct training courses in risk management, combining years of practical expe
       <img src="/assets/images/ryzyko-modeli-main2.jpg" alt="Ryzyko kredytowe">
     </div>
     <div class="training-card-content">
-      <div class="training-card-title">CREDIT RISK ECL/IFRS9</div>
-      <div class="training-card-description">PRACTICAL MODELING PROBLEMS</div>
+<div class="training-card-title">CREDIT RISK ECL/IFRS9</div>
+<div class="training-card-description">PRACTICAL MODELING PROBLEMS</div>
+<div class="training-card-description" style="font-size: 0.85em; margin-top: 8px; font-style: italic;">Ryzyko kredytowe ECL/IFRS9 — problemy praktyczne w modelowaniu</div>
     </div>
   </a>
 
