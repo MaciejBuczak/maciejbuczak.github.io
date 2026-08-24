@@ -170,8 +170,9 @@ I conduct training courses in risk management, combining years of practical expe
       <img src="/assets/images/ryzyko-modeli-main.jpg" alt="Budowa modeli ryzyka">
     </div>
     <div class="training-card-content">
-      <div class="training-card-title">RISK MODEL DEVELOPMENT</div>
-      <div class="training-card-description">STATISTICAL METHODS AND ESTIMATION TECHNIQUES</div>
+<div class="training-card-title">RISK MODEL DEVELOPMENT</div>
+<div class="training-card-description">STATISTICAL METHODS AND ESTIMATION TECHNIQUES</div>
+<div class="training-card-description" style="font-size: 0.85em; margin-top: 8px; font-style: italic;">Budowa modeli ryzyka — metody statystyczne i techniki estymacji</div>
     </div>
   </a>
 
@@ -187,8 +188,9 @@ I conduct training courses in risk management, combining years of practical expe
       <img src="/assets/images/ryzyko-modeli-main3.jpg" alt="Ryzyko modeli">
     </div>
     <div class="training-card-content">
-      <div class="training-card-title">MODEL RISK</div>
-      <div class="training-card-description">QUANTIFICATION TECHNIQUES AND CHALLENGES</div>
+<div class="training-card-title">MODEL RISK</div>
+<div class="training-card-description">QUANTIFICATION TECHNIQUES AND CHALLENGES</div>
+<div class="training-card-description" style="font-size: 0.85em; margin-top: 8px; font-style: italic;">Ryzyko modeli — techniki kwantyfikacji i wyzwania</div>
     </div>
   </a>
 
@@ -204,8 +206,9 @@ I conduct training courses in risk management, combining years of practical expe
       <img src="/assets/images/ryzyko-operacyjne-main.jpg" alt="Modelowanie wart nieoczek">
     </div>
     <div class="training-card-content">
-      <div class="training-card-title">UNEXPECTED VALUE MODELING</div>
-      <div class="training-card-description">REGULATORY CAPITAL AND ECONOMIC CAPITAL</div>
+<div class="training-card-title">UNEXPECTED VALUE MODELING</div>
+<div class="training-card-description">REGULATORY CAPITAL AND ECONOMIC CAPITAL</div>
+<div class="training-card-description" style="font-size: 0.85em; margin-top: 8px; font-style: italic;">Modelowanie wartości nieoczekiwanej — kapitał regulacyjny i ekonomiczny</div>
     </div>
   </a>
 
