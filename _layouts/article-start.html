@@ -781,25 +781,23 @@
 
         
 
-
-
-
-
-
-
 <div class="essays-container">
 
-  <a href="/essays/conceptual-frameworks-reality" class="essay-card">
+  <div class="essay-card">
     <div class="essay-tag">Sociology · History</div>
     <div class="essay-image">
-      <img src="/assets/images/ryzyko-modeli-main.jpg" alt="Conceptual frameworks">
+      <img src="/assets/images/crisis2.jpg" alt="Conceptual frameworks">
     </div>
     <div class="essay-title">Conceptual Frameworks for Reality</div>
     <p class="essay-excerpt">A bold, experimental attempt to build a statistical conceptual framework for describing reality — applied to two historical turning points: the fall of the First Polish Republic and the outbreak of World War I.</p>
     <div class="essay-meta"><span class="essay-meta-icon"></span>January 2025 · Preprint</div>
-  </a>
+    <div class="essay-resources">
+      <a href="/essays/conceptual-frameworks-reality-en" class="essay-resource-link">Article ENG</a>
+      <a href="/essays/conceptual-frameworks-reality-pl" class="essay-resource-link">Article POL</a>
+    </div>
+  </div>
 
-  <a href="/essays/statistical-illusions-1914" class="essay-card">
+  <div class="essay-card">
     <div class="essay-tag">History · Risk</div>
     <div class="essay-image">
       <img src="/assets/images/ryzyko-modeli-main2.jpg" alt="World War I statistics">
@@ -807,9 +805,13 @@
     <div class="essay-title">False Signals of History: 1914 Through a Statistical Lens</div>
     <p class="essay-excerpt">Long before "tail risk" entered financial vocabulary, the outbreak of World War I offered a textbook case of underestimated extreme events. What can risk modeling learn from the diplomatic miscalculations of the summer of 1914?</p>
     <div class="essay-meta"><span class="essay-meta-icon"></span>[Data]</div>
-  </a>
+    <div class="essay-resources">
+      <a href="/essays/statistical-illusions-1914-en" class="essay-resource-link">Article ENG</a>
+      <a href="/essays/statistical-illusions-1914-pl" class="essay-resource-link">Article POL</a>
+    </div>
+  </div>
 
-  <a href="/essays/fairness-as-a-variable-cycling" class="essay-card">
+  <div class="essay-card">
     <div class="essay-tag">Sport · Statistics</div>
     <div class="essay-image">
       <img src="/assets/images/ryzyko-modeli-main.jpg" alt="Cycling strategy">
@@ -817,7 +819,11 @@
     <div class="essay-title">Fairness as a Variable: Statistics at the Edge of the Rulebook</div>
     <p class="essay-excerpt">Professional cycling lives in the gray zone between strategy and rule-bending. A quantitative look at how teams optimize within — and just outside — the boundaries of what's considered fair play.</p>
     <div class="essay-meta"><span class="essay-meta-icon"></span>[Data]</div>
-  </a>
+    <div class="essay-resources">
+      <a href="/essays/fairness-as-a-variable-cycling-en" class="essay-resource-link">Article ENG</a>
+      <a href="/essays/fairness-as-a-variable-cycling-pl" class="essay-resource-link">Article POL</a>
+    </div>
+  </div>
 
 </div>
 
@@ -839,17 +845,7 @@
   border-radius: 12px;
   padding: 25px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  text-decoration: none !important;
-  color: inherit;
-  cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
   height: 100%;
-}
-
-.essay-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(168,89,3,0.15);
-  text-decoration: none !important;
 }
 
 .essay-tag {
@@ -905,6 +901,7 @@
   margin-top: auto;
   padding-top: 12px;
   border-top: 1px solid #f0e6d6;
+  margin-bottom: 12px;
 }
 
 .essay-meta-icon {
@@ -916,13 +913,42 @@
   flex-shrink: 0;
 }
 
+.essay-resources {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.essay-resource-link {
+  display: inline-block;
+  font-size: 0.85em;
+  font-weight: bold;
+  color: #a85903;
+  text-decoration: none;
+  padding: 6px 14px;
+  border: 1px solid #a85903;
+  border-radius: 6px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.essay-resource-link:hover {
+  background-color: #a85903;
+  color: #fff;
+  text-decoration: none;
+}
+
 @media screen and (max-width: 700px) {
   .essays-container {
     grid-template-columns: 1fr;
   }
 }
 </style>
-        
+
+
+
+
+
+
         
 
 
