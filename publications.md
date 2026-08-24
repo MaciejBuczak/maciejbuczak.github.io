@@ -7,13 +7,14 @@ title: Publikacje
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <div id="myMenu">
-  <a href="/" class="menu-option">Cześć</a>
-  <a href="/about" class="menu-option">O mnie</a>
+  <a href="/" class="menu-option">Hi There</a>
+  <a href="/about" class="menu-option">About me</a>
+  <a href="/articlestart" class="menu-option">Essays</a>
   <a href="/risk_trainings" class="menu-option">RISK TRAININGS</a>
-  <a href="/publications" class="menu-option">Publikacje</a>
-  <a href="/conferences" class="menu-option">Konferencje</a>
-  <a href="/researches" class="menu-option">Projekty</a>
-  <a href="/contact" class="menu-option">Kontakt</a>
+  <a href="/publications" class="menu-option">Publications</a>
+  <a href="/conferences" class="menu-option">Talks</a>
+  <a href="/researches" class="menu-option">Researches</a>
+  <a href="/contact" class="menu-option">Contact</a>
 </div>
 
 <div class="square"></div>
@@ -63,7 +64,7 @@ title: Publikacje
         <span class="domain-secondary">Operational risk</span>
     </div>
 <h2 class="publication-title">
-  Metoda AMA - analityczne podstawy jej niepowodzenia
+The AMA Method - Analytical Foundations of Its Failure  
 </h2>
     <p class="publication-description">Z dniem 1 stycznia 2025 r., po dwudziestu latach funkcjonowania, Metoda Zaawansowanego Pomiaru (AMA) dla ryzyka operacyjnego została wycofana. Głównym powodem była „utrata zaufania" do metody, wynikająca z dużej niestabilności wyników i znaczących różnic w kapitałach raportowanych przez banki o podobnym profilu ryzyka. Niniejsza praca wykazuje, że przyczyny niepowodzenia AMA tkwiły nie w implementacjach bankowych, ale w samej konstrukcji frameworku. Analiza mechaniki aktuarialnej (złożenie rozkładów częstości i dotkliwości) w połączeniu z wymogami stosowania rozkładów ciężko-ogonowych prowadziły do trzech nieuniknionych efektów:</p>
 <p class="publication-description">(1) Na dalekich kwantylach agregat rocznych strat jest zdominowany przez pojedynczą ekstremalną stratę (dominacja >85%, a często dużo powyżej 90% dla typowych parametrów rozkładów).</p>
