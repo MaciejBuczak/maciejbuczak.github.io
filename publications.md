@@ -188,7 +188,7 @@ The AMA Method - Analytical Foundations of Its Failure
         <span class="domain-secondary">Systemic risk</span>
     </div>
 <h2 class="publication-title">
-Post -Crisis Financial Security Architecture in the Face of the 2023 Crisis Episode  
+Post-Crisis Financial Security Architecture in the Face of the 2023 Crisis Episode  
 </h2>
     <p class="publication-description">This article examines the 2023 US regional bank failures to assess the post-2008 financial safety architecture's effectiveness. Reconstructing events through a review of the literature and regulatory documents, it finds that the banks involved met their capital—and often liquidity—requirements; the real causes were qualitative: poor risk management, unsustainable business models, and inadequate supervision. The episode also revealed a new crisis mechanics, as social media and digital banking compressed deposit runs from days to hours, fundamentally altering tail-risk dynamics. The article concludes that the existing regulatory framework, built on the paradigm of normally distributed phenomena and quantitative risk measures, is ill-suited to this new reality—distribution tails are fatter, and future crises may prove more violent and harder to contain. Though limited in scale, the 2023 episode should be treated as a warning sign for the financial safety system as a whole.</p>
 
