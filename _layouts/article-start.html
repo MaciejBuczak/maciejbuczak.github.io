@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,maximum-scale=2">
+  <link rel="stylesheet" type="text/css" media="screen" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+{% seo %}
+  {% include head-custom.html %}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      background-color: white !important;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+    .outer {
+      width: 100%;
+      max-width: 100%;
+      padding: 0;
+      margin: 0;
+      background-color: transparent !important;
+    }
+    #header_wrap {
+      background-color: #a85903 !important;
+      width: 100%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      padding-top: 30px;
+      padding-bottom: 30.5px;
+      overflow: hidden; /* Zapobiega wystawaniu kwadratów */
+    }
+    #header_wrap .inner {
+      width: 100%;
+      max-width: 1200px;
+      padding: 0 20px;
+      position: relative;
+      left: 260px;
+      text-align: left;
+      /* Ukrywamy oryginalny nagłówek */
+      visibility: hidden;
+    }
+    #project_title {
+      font-size: 42px;
+      margin-top: 20px;
+      text-align: left;
+      margin-left: 0;
+      position: relative;
+      left: 0px;
+      color: white;
+    }
+    #project_tagline {
+      font-size: 24px;
+      margin-top: 10px;
+      text-align: left;
+      margin-left: 0;
+      position: relative;
+      left: 0px;
+      color: white;
+    }
+    
+    /* Nowy kontener title-square-container */
+.title-square-container {
+  position: absolute;
+  top: 28px; /* Kontrolowanie położenia w pionie */
+  left: 49.68%; /* Wycentrowanie w poziomie */
+  transform: translateX(-50%);
+  width: 100%; /* Pełna szerokość w ramach max-width */
+  max-width: 650px; /* Maksymalna szerokość */
+  height: 150px; /* Wysokość kontenera - możesz zmienić */
+  z-index: 10;
+}
+
+/* Nowy styl dla nagłówka w kontenerze title-square-container */
+.title-square-container .header-content {
+  position: absolute;
+  top: 2.5px; /* Kontrolowanie położenia w pionie */
+  left: 10px; /* Kontrolowanie położenia w poziomie */
+  z-index: 10;
+}
+
+/* Style dla nagłówka w nowym kontenerze, zachowujące oryginalne style */
+.title-square-container #title {
+  font-size: 42px;
+  margin-top: 20px;
+  text-align: left;
+  margin-left: 0;
+  position: relative;
+  left: 0px;
+  color: white;
+}
+
+.title-square-container #tagline {
+  font-size: 24px;
+  margin-top: 10px;
+  text-align: left;
+  margin-left: 0;
+  position: relative;
+  left: 0px;
+  color: white;
+  font-weight: normal !important;
+}
+
+/* Usunięcie pseudoelementów, które mogłyby tworzyć podkreślenie */
+.title-square-container #tagline::after,
+.title-square-container #tagline::before {
+  content: none !important;
+  display: none !important;
+}
+    
+    /* Nowy niebieski kwadrat w prawym górnym rogu */
+    .title-square-container .blue-square {
+      width: 45px;
+      height: 45px;
+      background-color: #d17a1b;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    
+    /* Nowe niebieskie kwadraty w kontenerze title-square-container */
+    .title-square-container .blue-square1 {
+      width: 24px;
+      height: 24px;
+      background-color: #d17a1b;
+      position: absolute;
+      top: 51.5px; /* Możesz kontrolować położenie w pionie */
+      right: 63px; /* Możesz kontrolować położenie w poziomie */
+    }
+    
+    .title-square-container .blue-square2 {
+      width: 24px;
+      height: 24px;
+      background-color: #d17a1b;
+      position: absolute;
+      top: 31px; /* Możesz kontrolować położenie w pionie */
+      right: 107px; /* Możesz kontrolować położenie w poziomie */
+    }
+    
+    .title-square-container .blue-square-big {
+      width: 175px;
+      height: 30px;
+      background-color: #d17a1b;
+      position: absolute;
+      top: 60px; /* Możesz kontrolować położenie w pionie */
+      left: 0px; /* Możesz kontrolować położenie w poziomie */
+    }
+    
+    /* Media queries dla różnych szerokości ekranu */
+    @media screen and (max-width: 1200px) {
+      /* Dostosowujemy pozycję kontenera z tytułem */
+      #header_wrap .inner {
+        left: 150px; /* Dostosuj tę wartość do swoich potrzeb */
+      }
+    }
+    
+    /* Media queries dla telefonów z proporcjonalnym położeniem kwadratów */
+    @media screen and (max-width: 768px) {
+      /* Style dla kontenera z tytułem - zachowujemy te same proporcje jak dla komputera */
+      #header_wrap .inner {
+        left: 0px; /* Dostosowany do urządzeń mobilnych */
+        width: calc(100% - 60px); /* Zapewnienie, że tekst się zmieści */
+      }
+      
+      /* Zachowujemy taki sam rozmiar czcionki jak na komputerze */
+      #project_title, #title {
+        font-size: 42px;
+      }
+      
+      #project_tagline, #tagline {
+        font-size: 24px;
+      }
+    }
+    
+    /* Dodatkowe style dla małych telefonów */
+    @media screen and (max-width: 480px) {
+      /* Radykalne resetowanie pozycji kontenera z tytułem */
+      #header_wrap {
+        padding-left: 0;
+        padding-right: 0;
+        justify-content: flex-start; /* Wyrównanie do lewej */
+      }
+      
+      #header_wrap .inner {
+        left: 0;
+        right: auto;
+        margin-left: 0;
+        padding-left: 10px; /* Minimalny padding, aby tekst nie przylegał do krawędzi */
+        width: 100%;
+        max-width: 100%;
+        transform: none;
+        justify-content: flex-start;
+      }
+      
+      #project_title, #title {
+        font-size: 32px;
+        margin-left: 0;
+        padding-left: 0;
+        left: 0;
+        width: 100%;
+        text-align: left;
+      }
+      
+      #project_tagline, #tagline {
+        font-size: 24px;
+        margin-left: 0;
+        padding-left: 0;
+        left: 0;
+        width: 100%;
+        text-align: left;
+      }
+      
+      .outer {
+        padding: 0;
+        margin: 0;
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+    
+    /* Dodatkowe media query dla orientacji poziomej na telefonach */
+    @media screen and (max-width: 900px) and (orientation: landscape) {
+      /* Dostosowanie położenia kontenera z tytułem dla orientacji poziomej */
+      #header_wrap .inner {
+        left: 80px;
+        width: calc(100% - 100px);
+      }
+    }
+    
+    /* Zaktualizowane style dla menu - zgodne z poprzednią stroną */
+    #myMenu {
+      display: flex;
+      justify-content: center;
+      flex-wrap: nowrap;
+      padding: 20px 0;
+      margin-top: 0 !important;
+      margin-bottom: 60px;
+      width: 100%;
+      position: relative;
+      top: 21px; /* Kontrola położenia w pionie */
+      z-index: 100;
+    }
+    
+    #myMenu a.menu-option {
+      color: rgb(115, 115, 115);
+      text-decoration: none;
+      padding: 5px 10px;
+      margin: 0 15px;
+      font-size: 18px;
+      transition: color 0.3s;
+      white-space: nowrap;
+    }
+    
+    #myMenu a.menu-option:hover {
+      color: #a85903;
+    }
+    
+    /* Style responsywne dla menu */
+    @media screen and (max-width: 768px) {
+      #myMenu {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      #myMenu a.menu-option {
+        margin: 5px 0;
+      }
+    }
+    
+    #main_content_wrap {
+      background-color: white !important;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 20px 0;
+      border: none;
+    }
+    #main_content {
+      width: 100%;
+      max-width: 1200px;
+      padding: 0 20px;
+    }
+    
+    /* Zaktualizowane style dla dolnej belki (footer) */
+    #footer_wrap {
+      background-color: #a85903 !important;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      height: auto;
+      padding-top: 27.75px;
+      padding-bottom: 27.75px;
+      position: relative;
+    }
+    #footer_wrap .inner {
+      width: 100%;
+      max-width: 1200px;
+      padding: 0 20px;
+      position: relative;
+      left: 260px;
+      text-align: center;
+    }
+    #footer_wrap p {
+      margin: 5px 0;
+      position: relative;
+      left: 0px;
+      top: 0px;
+    }
+    #footer_wrap .copyright {
+      position: relative;
+      top: 0px;
+      left: 0px;
+    }
+    
+    /* NOWE STYLE DLA PROJEKTU RYZYKO MODELI - POPRAWIONE */
+    
+    /* Główny kontener */
+    .ryzmod-container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Tytuł główny sekcji */
+    .ryzmod-title {
+      margin-bottom: 40px;
+      display: flex;
+    }
+    
+    .ryzmod-title-modeli {
+      color: #555;
+      font-size: 32px;
+      font-weight: bold;
+    }
+    
+    .ryzmod-title-ryzyko {
+      color: #a85903;
+      font-size: 32px;
+      font-weight: bold;
+      margin-right: 15px;
+    }
+    
+    /* Główny nagłówek sekcji */
+    .ryzmod-header {
+      display: flex;
+      margin-bottom: 20px;
+    }
+    
+    .ryzmod-header-text {
+      color: #a85903;
+      font-size: 32px;
+      font-weight: bold;
+      margin-right: 15px;
+    }
+    
+    .ryzmod-header-modeli {
+      color: #555;
+      font-size: 32px;
+      font-weight: bold;
+    }
+    
+    /* Kontener głównego zdjęcia Z 1.1 - POPRAWIONY OSTATECZNIE */
+    .ryzmod-main-image {
+      position: relative;
+      width: 100%;
+      height: 220px; /* Zwiększona wysokość */
+      margin-bottom: 30px;
+      border: 1px solid #a85903;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .ryzmod-main-image img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      object-position: center !important;
+      display: block !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      bottom: 0 !important;
+      max-width: none !important;
+      max-height: none !important;
+    }
+    
+    /* Napis O 1.2 na głównym zdjęciu */
+    .ryzmod-overlay-text {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      background-color: #ffebd3;
+      padding: 15px 20px;
+      max-width: 40%;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .ryzmod-overlay-id {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-size: 12px;
+      color: #777;
+    }
+    
+    /* Drugi wiersz z diagramem sieciowym i tekstami */
+    .ryzmod-network-row {
+      display: flex;
+      margin-bottom: 0;
+      gap: 30px;
+    }
+    
+    /* Kontener diagramu sieciowego - POPRAWIONY */
+    .ryzmod-network-container {
+      width: 35%;
+      border: 1px solid #a85903;
+      position: relative;
+      overflow: hidden;
+      height: 100%;
+    }
+
+    .ryzmod-network-container img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      display: block !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      bottom: 0 !important;
+      max-width: none !important;
+      max-height: none !important;
+    }
+    
+    /* Kontener tekstów po prawej stronie diagramu */
+    .ryzmod-text-block {
+      width: 65%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    /* Tekst wstępny - POPRAWIONY (usunięte tło) */
+    .ryzmod-intro-text {
+      padding: 15px 20px;
+      background-color: transparent; /* Usunięte szare tło */
+      margin-bottom: 15px;
+      position: relative;
+      font-weight: bold;
+    }
+    
+    /* Zwykły tekst - POPRAWIONY (usunięte tło) */
+    .ryzmod-regular-text {
+      padding: 15px 20px;
+      background-color: transparent; /* Usunięte szare tło */
+      position: relative;
+      margin-bottom: 30px;
+    }
+    
+    /* NOWE STYLE DLA DODATKOWYCH ELEMENTÓW */
+    
+    /* Style dla T.3.1 - kontener na tekst */
+    .ryzmod-text-t31 {
+      padding: 15px 20px;
+      background-color: transparent;
+      position: relative;
+      margin-bottom: 30px;
+      width: 100%;
+    }
+    
+    /* Style dla O.3.2 - kolorowy prostokąt */
+    .ryzmod-orange-box {
+      background-color: #fdf3e9;
+      padding: 20px;
+      border-left: 5px solid #a85903;
+      position: relative;
+      margin-bottom: 40px;
+    }
+    
+    /* Style dla KDG4 - kontener na dynamiczną grafikę */
+    .ryzmod-kdg-container {
+      width: 100%;
+      height: 300px;
+      border: 1px solid #a85903;
+      position: relative;
+      margin-bottom: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    
+    .ryzmod-kdg-title {
+      position: absolute;
+      bottom: 15px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: #555;
+    }
+    
+    /* Style dla O5.1 - kolorowy prostokąt z tekstem */
+    .ryzmod-o51-container {
+      display: flex;
+      margin-bottom: 30px;
+      gap: 30px;
+    }
+    
+    .ryzmod-o51-box {
+      width: 35%;
+      background-color: #fdf3e9;
+      padding: 20px;
+      border-left: 5px solid #a85903;
+      position: relative;
+    }
+    
+    .ryzmod-o51-title {
+      color: #a85903;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+    
+    /* Style dla T 5.2 - tekst po prawej stronie */
+    .ryzmod-t52-text {
+      width: 65%;
+      padding: 15px 20px;
+      background-color: transparent;
+      position: relative;
+    }
+    
+    /* Style dla sekcji pełnej szerokości */
+    .full-width-section {
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+    }
+    
+    /* Styl dla artykułów w sekcji O6 */
+    .ryzmod-articles-section {
+      background-color: #656461;
+      padding: 30px 0;
+      color: white;
+      margin: 40px 0;
+    }
+    
+    .ryzmod-articles-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .ryzmod-articles-title {
+      color: white;
+      margin-bottom: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    
+    .ryzmod-articles-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 20px;
+    }
+    
+    .ryzmod-article-item {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .ryzmod-article-image {
+      border: 1px solid #a85903;
+      height: 120px;
+      overflow: hidden;
+      margin-bottom: 10px;
+      position: relative;
+    }
+    
+    .ryzmod-article-image img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      display: block !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      bottom: 0 !important;
+      max-width: none !important;
+      max-height: none !important;
+    }
+    
+    .ryzmod-article-text {
+      background-color: #fdf3e9;
+      color: #333;
+      padding: 15px;
+      flex: 1;
+      position: relative;
+    }
+    
+    .ryzmod-article-title {
+      font-weight: bold;
+      color: #a85903;
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+    
+    .ryzmod-article-desc {
+      font-size: 12px;
+      line-height: 1.4;
+    }
+    
+    /* ID obiektów */
+    .ryzmod-object-id {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-size: 12px;
+      color: #777;
+      z-index: 5;
+    }
+    
+    /* Media queries dla responsywności */
+    @media screen and (max-width: 992px) {
+      .ryzmod-network-row,
+      .ryzmod-o51-container {
+        flex-direction: column;
+      }
+      
+      .ryzmod-network-container,
+      .ryzmod-text-block,
+      .ryzmod-o51-box,
+      .ryzmod-t52-text {
+        width: 100%;
+      }
+      
+      .ryzmod-network-container {
+        height: 300px;
+        margin-bottom: 20px;
+      }
+      
+      .ryzmod-articles-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .ryzmod-o51-box {
+        margin-bottom: 20px;
+      }
+    }
+    
+    @media screen and (max-width: 576px) {
+      .ryzmod-articles-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .ryzmod-overlay-text {
+        max-width: 80%;
+      }
+    }
+    
+    .title-square-container h2#tagline,
+    .title-square-container h2[id="tagline"],
+    .title-square-container .header-content h2,
+    h2#tagline {
+      border-bottom: none !important;
+      text-decoration: none !important;
+      box-shadow: none !important;
+      background-image: none !important;
+      font-weight: normal !important;
+      color: white !important;
+      position: relative !important;
+      padding-bottom: 0 !important;
+      margin-bottom: 0 !important;
+    }
+
+    /* Ukrycie wszystkich możliwych pseudoelementów */
+    .title-square-container h2#tagline::after,
+    .title-square-container h2#tagline::before,
+    .title-square-container h2[id="tagline"]::after,
+    .title-square-container h2[id="tagline"]::before,
+    .title-square-container .header-content h2::after,
+    .title-square-container .header-content h2::before,
+    h2#tagline::after,
+    h2#tagline::before {
+      content: none !important;
+      display: none !important;
+      visibility: hidden !important;
+      border: none !important;
+      background: none !important;
+      position: static !important;
+      width: 0 !important;
+      height: 0 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      text-decoration: none !important;
+      box-shadow: none !important;
+    }
+    
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <div id="header_wrap" class="outer">
+    <!-- Nowy kontener title-square-container -->
+    <div class="title-square-container">
+      <!-- Przeniesiony nagłówek -->
+      <div class="header-content">
+        <h1 id="title">{{ site.title | default: site.github.repository_name }}</h1>
+        <h2 id="tagline">{{ site.description | default: site.github.project_tagline }}</h2>
+      </div>
+      
+      <div class="blue-square"></div>
+      <div class="blue-square1"></div>
+      <div class="blue-square2"></div>
+      <div class="blue-square-big"></div>
+    </div>
+    
+    <!-- Oryginalny header pozostawiony, ale ukryty przez CSS -->
+    <header class="inner">
+      <h1 id="project_title">{{ site.title | default: site.github.repository_name }}</h1>
+      <h2 id="project_tagline">{{ site.description | default: site.github.project_tagline }}</h2>
+    </header>
+  </div>
+  
+  <!-- Menu będzie wstawiane z pliku .md przez Jekyll -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <!-- MAIN CONTENT -->
+  <div id="main_content_wrap" class="outer">
+    <section id="main_content" class="inner">
+      {{ content }}
+      
+      <!-- Główny kontener dla layoutu strony Ryzyko Modeli -->
+      <div class="ryzmod-container">
+        <!-- Główny nagłówek -->
+        <div class="ryzmod-header">
+          <div class="ryzmod-header-text">Artykuły</div>
+        </div>
+        
+        <!-- Główne zdjęcie Z 1.1 - POPRAWIONE -->
+        <div class="ryzmod-main-image">
+          <img src="/risk-research/assets/images/ryzyko-modeli-main.jpg" alt="Zdjęcie">
+        </div>
+
+
+
+
+
+
+
+
+        
+        <!-- ZMIENIONE: T.3.1 i O 3.2 w jednym wierszu -->
+        <div class="ryzmod-t31-o32-container" style="display: flex; gap: 30px; margin-bottom: 40px;">
+          <!-- Element T.3.1 -->
+          <div class="ryzmod-text-t31" style="width: 65%; padding: 15px 20px; background-color: transparent; position: relative;">
+            <p>Zaawansowane techniki analityczne pozwalają na precyzyjne modelowanie zjawisk ekonomicznych i biznesowych, dostarczając kluczowych informacji do podejmowania strategicznych decyzji. Modele matematyczne odgrywają kluczową rolę w analizie ryzyka i symulacji różnych scenariuszy biznesowych.</p>
+            <p>Zaawansowane techniki analityczne pozwalają na precyzyjne modelowanie zjawisk ekonomicznych i biznesowych, dostarczając kluczowych informacji do podejmowania strategicznych decyzji. Modele matematyczne odgrywają kluczową rolę w analizie ryzyka i symulacji różnych scenariuszy biznesowych.
+            Socjologia jako nauka o społeczeństwie korzysta z szerokiego spektrum metod badawczych, zarówno ilościowych, jak i jakościowych. Metody ilościowe są szczególnie używane do analizy zjawisk społecznych w sposób mierzalny i statystyczny. Poniżej przedstawiam najczęściej stosowane metody ilościowe w socjologii oraz ich zastosowania.</p>
+          </div>
+          
+          <!-- Element O 3.2 -->
+          <div class="ryzmod-orange-box" style="width: 35%; background-color: #fdf3e9; padding: 20px; border-left: 5px solid #a85903; position: relative;">
+            <h3>Zaawansowane techniki analityczne</h3>
+            <p>Zaawansowane techniki analityczne pozwalają na precyzyjne modelowanie zjawisk ekonomicznych i biznesowych, dostarczając kluczowych informacji do podejmowania strategicznych decyzji.</p>
+          </div>
+        </div>
+
+
+
+        
+        
+<!-- Sekcja O 1 - na pełną szerokość z zawartością w kontenerze -->
+<div class="elegant-section-full-width">
+  <div class="ryzmod-container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+    <div class="elegant-cards-container">
+
+      <a href="/risk-research/art-ama_failure" class="elegant-card">
+        <div class="card-image">
+          <img src="/risk-research/assets/images/holistyczna-ocena-main.jpg" alt="Analiza danych">
+          <div class="card-overlay"></div>
+        </div>
+        <div class="card-content">
+          <h3>Zaawansowana analityka</h3>
+          <p>Kompleksowe rozwiązania analityczne wykorzystujące najnowsze narzędzia statystyczne i modele predykcyjne dla precyzyjnej oceny ryzyka biznesowego.</p>
+          <span class="elegant-button">Dowiedz się więcej</span>
+        </div>
+      </a>
+
+      <a href="/risk-research/art-episode2023" class="elegant-card">
+        <div class="card-image">
+          <img src="/risk-research/assets/images/holistyczna-ocena-main2.jpg" alt="Strategia biznesowa">
+          <div class="card-overlay"></div>
+        </div>
+        <div class="card-content">
+          <h3>Strategia biznesowa</h3>
+          <p>Spersonalizowane podejście do rozwoju i implementacji modeli strategicznych, uwzględniających specyfikę branży i indywidualne potrzeby organizacji.</p>
+          <span class="elegant-button">Dowiedz się więcej</span>
+        </div>
+      </a>
+
+      <a href="/risk-research/art-1_in_1000years" class="elegant-card">
+        <div class="card-image">
+          <img src="/risk-research/assets/images/ryzyko-nieoczekiwane-main.jpg" alt="Walidacja modeli">
+          <div class="card-overlay"></div>
+        </div>
+        <div class="card-content">
+          <h3>Walidacja modeli</h3>
+          <p>Niezależna weryfikacja skuteczności modeli biznesowych i finansowych zgodnie z najwyższymi standardami branżowymi i wymogami regulacyjnymi.</p>
+          <span class="elegant-button">Dowiedz się więcej</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</div>
+
+<style>
+  .elegant-section-full-width {
+    background-color: #656461;
+    padding: 60px 0;
+    margin: 60px 0;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+  }
+
+  .elegant-cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  .elegant-card {
+    background: #faf3e3;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    height: 100%;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .elegant-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  }
+
+  .card-image {
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+  }
+
+  .elegant-card:hover .card-image img {
+    transform: scale(1.05);
+  }
+
+  .card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.5) 100%);
+  }
+
+  .card-content {
+    padding: 30px;
+  }
+
+  .card-content h3 {
+    color: #333;
+    font-size: 22px;
+    margin-bottom: 15px;
+    position: relative;
+    padding-bottom: 12px;
+  }
+
+  .card-content h3:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 3px;
+    background: #a85903;
+  }
+
+  .card-content p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    font-size: 16px;
+    text-indent: 0;
+  }
+
+  .elegant-button {
+    display: inline-block;
+    color: #a85903;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 16px;
+    position: relative;
+    padding-bottom: 2px;
+    transition: all 0.3s ease;
+  }
+
+  .elegant-button:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #a85903;
+    transition: width 0.3s ease;
+  }
+
+  .elegant-card:hover .elegant-button:after {
+    width: 100%;
+  }
+
+  @media screen and (max-width: 992px) {
+    .elegant-cards-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    .elegant-cards-container {
+      grid-template-columns: 1fr;
+    }
+
+    .elegant-section-full-width {
+      padding: 40px 0;
+    }
+  }
+</style>
+
+        
+
+
+
+
+
+
+      
+      <!-- Ostatni kontener dla cytatu -->
+      <div class="ryzmod-container">
+        <!-- Cytat -->
+        <div style="margin: 60px 0; position: relative;">
+          <div class="ryzmod-object-id" style="margin-bottom: 10px; font-size: 12px; color: #777;">T 10</div>
+          <h3 style="color: #a85903; margin-bottom: 20px;">Ciekawa myśl</h3>
+          <blockquote style="font-style: italic; color: #a85903; font-size: 24px; border-left: none; padding-left: 0;">
+            "Ryzyko modeli to bardzo złożony problem. Nie zawsze da się ten problem rozwiązać"
+          </blockquote>
+          <p style="color: #a85903; margin-top: 10px;">Victor Hugo</p>
+        </div>
+      </div> <!-- zamknięcie ostatniego kontenera -->
+    </section>
+  </div>
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  <!-- Sekcja O 16_1 - poza kontenerem, aby zajmowała pełną szerokość -->
+<div class="full-width-section" style="display: flex; margin-bottom: 40px;">
+  <!-- Boks prawy (teraz po lewej) - szary -->
+  <div style="width: 50%; background-color: #faf3e3; color: white; padding: 40px 80px; position: relative; box-sizing: border-box;">
+    <div class="ryzmod-object-id" style="position: absolute; top: 10px; left: 10px; font-size: 12px; color: #ccc;">O 16.2</div>
+    <h3 style="margin-bottom: 25px; font-size: 26px; color: #656461;">Czy warto to analizować?</h3>
+    <p style="font-size: 22px; color: #656461; margin-bottom: 30px; line-height: 1.5;">Zaawansowane techniki analityczne pozwalają na precyzyjne modelowanie zjawisk ekonomicznych i biznesowych, dostarczając kluczowych informacji do podejmowania strategicznych decyzji. Zaawansowane techniki analityczne pozwalają na precyzyjne modelowanie zjawisk ekonomicznych i biznesowych, dostarczając kluczowych informacji do podejmowania strategicznych decyzji.</p>
+    <p style="font-size: 22px; color: #656461; margin-top: 30px;">Zaawansowane techniki analityczne pozwalają na precyzyjne modelowanie zjawisk ekonomicznych i biznesowych.</p>
+  </div>
+  
+  <!-- Boks lewy (teraz po prawej) -->
+  <div style="width: 50%; background-color: #ece0d0; position: relative; padding: 20px; overflow: hidden; box-sizing: border-box;">
+    <div class="ryzmod-object-id" style="position: absolute; top: 10px; left: 10px; font-size: 12px; color: #777; z-index: 5;">O 16.1</div>
+    
+    <!-- Dodane zdjęcie z ciemnym nakładaniem -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('/risk-research/assets/images/ryzyko-modeli-main-in.jpg'); background-size: cover; background-position: center; filter: brightness(0.7) contrast(1.1);"></div>
+    
+    <!-- Dodatkowa ciemna nakładka -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.4);"></div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+  
+  
+  
+  <!-- FOOTER  -->
+  <div id="footer_wrap" class="outer">
+    <footer class="inner">
+      {% if site.github.is_project_page %}
+      <p class="copyright">Maintained by <a href="{{ site.github.owner_url }}">Maciej Buczak</a></p>
+      {% endif %}
+    </footer>
+  </div>
+  
+  <!-- Skrypt do wykrywania przeglądarki -->
+  <script>
+    // Funkcja do wykrywania przeglądarki
+    function detectBrowser() {
+      const userAgent = navigator.userAgent;
+      const html = document.documentElement;
+      
+      if (userAgent.indexOf("Firefox") > -1) {
+        html.classList.add("browser-firefox");
+      } else if (userAgent.indexOf("Edg") > -1) {
+        html.classList.add("browser-edge");
+      } else if (userAgent.indexOf("Chrome") > -1) {
+        html.classList.add("browser-chrome");
+      } else if (userAgent.indexOf("Safari") > -1) {
+        html.classList.add("browser-safari");
+      } else if (userAgent.indexOf("MSIE") > -1 || userAgent.indexOf("Trident") > -1) {
+        html.classList.add("browser-ie");
+      } else {
+        html.classList.add("browser-other");
+      }
+      
+      // Debug - pokaż w konsoli wykrytą przeglądarkę
+      console.log("Wykryta przeglądarka:", html.className);
+    }
+    
+    // Uruchom natychmiast po załadowaniu skryptu
+    detectBrowser();
+    
+    // I ponownie po pełnym załadowaniu strony (na wszelki wypadek)
+    window.addEventListener('load', detectBrowser);
+  </script>
+</body>
+</html>
+
+            
