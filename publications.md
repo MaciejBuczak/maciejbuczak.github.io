@@ -28,6 +28,46 @@ title: Publikacje
 
 
   
+
+
+
+
+  <div class="publication-card">
+
+    <span class="publication-status status-review" style="background-color: #9a9185;">WORKING PAPER</span>
+        <div class="publication-domain">
+        <span class="domain-primary">Risk management</span>
+        <span class="domain-separator">|</span>
+        <span class="domain-secondary">Operational risk</span>
+    </div>
+<h2 class="publication-title">
+The AMA Method - Analytical Foundations of Its Failure  
+</h2>
+    <p class="publication-description">As of January 1, 2025, after twenty years in operation, the Advanced Measurement Approach (AMA) for operational risk was withdrawn. The principal reason was a "loss of confidence" in the method, stemming from high volatility in results and significant discrepancies in the capital reported by banks with similar risk profiles. This paper demonstrates that the causes of AMA's failure lay not in bank-level implementations, but in the very construction of the framework itself. An analysis of the actuarial mechanics (the compounding of frequency and severity distributions), combined with the requirement to use heavy-tailed distributions, is shown to lead to three unavoidable effects:</p>
+<p class="publication-description">(1) At distant quantiles, the aggregate of annual losses is dominated by a single extreme loss (dominance exceeding 85%, and often well above 90%, for typical distribution parameters).</p>
+<p class="publication-description">(2) This loss occupies, on the single-loss distribution, a quantile substantially higher (0.9999, 0.99999, or more) than the aggregate quantile required by the regulator (0.999) — that is, one lying beyond the reach of contemporary modeling methods.</p>
+<p class="publication-description">(3) The value of this extreme loss may depend, in a nonsensical manner, on the number of minor operational events — more small losses generate a higher severity-quantile level, which contradicts business logic.</p>
+<p class="publication-description">These properties — whose existence, across a wide range of distributions and parameters, is confirmed through simulation in the present study — are shown to be built into the very structure of the framework. They arise from excessive constructional complexity, combined with an inadequate definition of the key concepts involved (rarity, the unexpected situation, the interpretation of the 99.9% quantile). The conclusions carry universal significance: they stand as a warning against analogous errors in the design of future regulatory standards for other types of risk — overcomplexity and flawed definitions of the modeled problem lead to systemic failure.</p>
+    <div class="publication-meta">📅 June 2026</div>
+        <!-- Dodane linki do zasobów -->
+    <div class="publication-resources">
+       <a href="/assets/pdfs/POLICY_BRIEF_Dlaczego AMA musiała upaść_v2025_11.pdf" class="resource-link" target="_blank" onclick="trackPdfClick('policy_brief_ama_upadek', '/assets/pdfs/POLICY_BRIEF_Dlaczego AMA musiała upaść_v2025_11.pdf')">
+        <span class="resource-icon">📰</span> Szybkie podsumowanie (5 min)
+      </a>
+      <a href="https://ssrn.com/abstract=6949518" class="resource-link" target="_blank" onclick="trackPdfClick('article_ama_upadek', 'https://ssrn.com/abstract=6949518')">
+        <span class="resource-icon">📄</span> Artykuł ENG
+      </a>
+      <a href="/assets/pdfs/Buczak_2026_AMA_AnalitycznePrzyczynyUpadku.pdf" class="resource-link" target="_blank" onclick="trackPdfClick('article_ama_upadek', '/assets/pdfs/Buczak_2026_AMA_AnalitycznePrzyczynyUpadku.pdf')">
+        <span class="resource-icon">📄</span> Artykuł POL
+      </a>
+    </div>
+  </div>
+
+
+
+
+
+
 <div class="publication-card">
    
     <span class="publication-status status-review" style="background-color: #7a9b76;">PUBLISHED</span>
@@ -55,36 +95,9 @@ title: Publikacje
 
 
 
-  <div class="publication-card">
 
-    <span class="publication-status status-review" style="background-color: #9a9185;">WORKING PAPER</span>
-        <div class="publication-domain">
-        <span class="domain-primary">Risk management</span>
-        <span class="domain-separator">|</span>
-        <span class="domain-secondary">Operational risk</span>
-    </div>
-<h2 class="publication-title">
-The AMA Method - Analytical Foundations of Its Failure  
-</h2>
-    <p class="publication-description">Z dniem 1 stycznia 2025 r., po dwudziestu latach funkcjonowania, Metoda Zaawansowanego Pomiaru (AMA) dla ryzyka operacyjnego została wycofana. Głównym powodem była „utrata zaufania" do metody, wynikająca z dużej niestabilności wyników i znaczących różnic w kapitałach raportowanych przez banki o podobnym profilu ryzyka. Niniejsza praca wykazuje, że przyczyny niepowodzenia AMA tkwiły nie w implementacjach bankowych, ale w samej konstrukcji frameworku. Analiza mechaniki aktuarialnej (złożenie rozkładów częstości i dotkliwości) w połączeniu z wymogami stosowania rozkładów ciężko-ogonowych prowadziły do trzech nieuniknionych efektów:</p>
-<p class="publication-description">(1) Na dalekich kwantylach agregat rocznych strat jest zdominowany przez pojedynczą ekstremalną stratę (dominacja >85%, a często dużo powyżej 90% dla typowych parametrów rozkładów).</p>
-<p class="publication-description">(2) Strata ta zajmuje na rozkładzie pojedynczych strat kwantyl znacznie wyższy (0.9999, 0.99999 i więcej) niż wymagany przez regulatora kwantyl agregatu (0.999) - czyli poza możliwościami współczesnych metod modelowania.</p>
-<p class="publication-description">(3) Wartość tej ekstremalnej straty może zależeć, w sposób nonsensowny, od liczby drobnych zdarzeń operacyjnych - więcej małych strat generuje wyższy poziom kwantyli dotkliwości straty, co jest sprzeczne z logiką biznesową.</p>
-<p class="publication-description">Te własności, których istnienie - dla szerokiego zakresu rozkładów i parametrów - potwierdzono symulacyjnie w ramach niniejszego opracowania, są wbudowane w strukturę frameworku. Wynikają z nadmiernej złożoności konstrukcji, połączonej z nieadekwatną definicją kluczowych pojęć (rzadkość, sytuacja nieoczekiwana, interpretacja kwantyla 99.9%). Wnioski mają znaczenie uniwersalne: stanowią ostrzeżenie przed analogicznymi błędami w projektowaniu przyszłych standardów regulacyjnych dla innych typów ryzyka: nadzłożoność oraz błędne definicje modelowanych problemów prowadzą do systemowego niepowodzenia.</p>
-    <div class="publication-meta">📅 Czerwiec 2026</div>
-        <!-- Dodane linki do zasobów -->
-    <div class="publication-resources">
-       <a href="/assets/pdfs/POLICY_BRIEF_Dlaczego AMA musiała upaść_v2025_11.pdf" class="resource-link" target="_blank" onclick="trackPdfClick('policy_brief_ama_upadek', '/assets/pdfs/POLICY_BRIEF_Dlaczego AMA musiała upaść_v2025_11.pdf')">
-        <span class="resource-icon">📰</span> Szybkie podsumowanie (5 min)
-      </a>
-      <a href="https://ssrn.com/abstract=6949518" class="resource-link" target="_blank" onclick="trackPdfClick('article_ama_upadek', 'https://ssrn.com/abstract=6949518')">
-        <span class="resource-icon">📄</span> Artykuł ENG
-      </a>
-      <a href="/assets/pdfs/Buczak_2026_AMA_AnalitycznePrzyczynyUpadku.pdf" class="resource-link" target="_blank" onclick="trackPdfClick('article_ama_upadek', '/assets/pdfs/Buczak_2026_AMA_AnalitycznePrzyczynyUpadku.pdf')">
-        <span class="resource-icon">📄</span> Artykuł POL
-      </a>
-    </div>
-  </div>
+
+  
 
   </div>
 
