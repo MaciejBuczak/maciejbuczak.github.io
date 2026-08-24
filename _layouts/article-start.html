@@ -783,10 +783,14 @@
 
 
 
+
 <div class="essays-container">
 
   <a href="/essays/conceptual-frameworks-reality" class="essay-card">
     <div class="essay-tag">Sociology · History</div>
+    <div class="essay-image">
+      <img src="/assets/images/ryzyko-modeli-main.jpg" alt="Conceptual frameworks">
+    </div>
     <div class="essay-title">Conceptual Frameworks for Reality</div>
     <p class="essay-excerpt">A bold, experimental attempt to build a statistical conceptual framework for describing reality — applied to two historical turning points: the fall of the First Polish Republic and the outbreak of World War I.</p>
     <div class="essay-meta">📅 January 2025 · Preprint</div>
@@ -794,6 +798,9 @@
 
   <a href="/essays/statistical-illusions-1914" class="essay-card">
     <div class="essay-tag">History · Risk</div>
+    <div class="essay-image">
+      <img src="/assets/images/holistyczna-ocena-main2.jpg" alt="World War I statistics">
+    </div>
     <div class="essay-title">False Signals of History: 1914 Through a Statistical Lens</div>
     <p class="essay-excerpt">Long before "tail risk" entered financial vocabulary, the outbreak of World War I offered a textbook case of underestimated extreme events. What can risk modeling learn from the diplomatic miscalculations of the summer of 1914?</p>
     <div class="essay-meta">📅 [Data]</div>
@@ -801,6 +808,9 @@
 
   <a href="/essays/fairness-as-a-variable-cycling" class="essay-card">
     <div class="essay-tag">Sport · Statistics</div>
+    <div class="essay-image">
+      <img src="/assets/images/ryzyko-nieoczekiwane-main.jpg" alt="Cycling strategy">
+    </div>
     <div class="essay-title">Fairness as a Variable: Statistics at the Edge of the Rulebook</div>
     <p class="essay-excerpt">Professional cycling lives in the gray zone between strategy and rule-bending. A quantitative look at how teams optimize within — and just outside — the boundaries of what's considered fair play.</p>
     <div class="essay-meta">📅 [Data]</div>
@@ -810,11 +820,11 @@
 
 <style>
 .essays-container {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 30px auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
 }
 
 .essay-card {
@@ -843,7 +853,22 @@
   text-transform: uppercase;
   color: #a85903;
   letter-spacing: 0.5px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+}
+
+.essay-image {
+  width: 100%;
+  height: 160px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.essay-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .essay-title {
@@ -869,14 +894,12 @@
   text-indent: 0;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   .essays-container {
     grid-template-columns: 1fr;
   }
 }
 </style>
-
-
 
 
 
