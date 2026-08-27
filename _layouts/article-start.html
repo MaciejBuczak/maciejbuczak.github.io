@@ -742,193 +742,144 @@
   
   <!-- Menu będzie wstawiane z pliku .md przez Jekyll -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-  
   <!-- MAIN CONTENT -->
   <div id="main_content_wrap" class="outer">
     <section id="main_content" class="inner">
       {{ content }}
-      
+
       <!-- Główny kontener dla layoutu strony Ryzyko Modeli -->
       <div class="ryzmod-container">
-   
 
-        
+<div class="essays-mobile-stack">
 
+  <!-- SEKCJA 1: ama_failure (duża) + ESSAYS -->
+  <div class="essays-container essays-container-row2">
 
+    <a href="/risk-research/art-ama_failure/" class="essay-card essay-card-large">
+      <div class="essay-tag">Systemic risk · Frameworks</div>
+      <div class="essay-image">
+        <img src="/assets/images/crisis2.jpg" alt="Conceptual frameworks">
+      </div>
+      <div class="essay-title" style="text-align: left;">I Can't Predict a 1,000-Year Catastrophe</div>
+      <p class="essay-excerpt">How many years must one wait to experience the financial catastrophe against which today's regulatory system protects us? The answer, which can be found in supervisory documents, is: a thousand years. The 0.999 quantile — the central parameter of the Basel safety system — is there explicitly interpreted as an event occurring once every thousand years. This formulation, reproduced without further comment in academic textbooks and in sectoral practice, is the point of departure for the present paper.</p>
+      <div class="essay-meta"><span class="essay-meta-icon"></span>August 2026</div>
+    </a>
 
-
-
-
-
-<div class="essays-container essays-container-row2">
-
-  <a href="/risk-research/art-ama_failure/" class="essay-card essay-card-large">
-    <div class="essay-tag">Systemic risk · Frameworks</div>
-    <div class="essay-image">
-      <img src="/assets/images/crisis2.jpg" alt="Conceptual frameworks">
+    <div class="essay-card-title-block">
+      <span>ESSAYS</span>
     </div>
-    <div class="essay-title" style="text-align: left;">I Can't Predict a 1,000-Year Catastrophe</div>
-    <p class="essay-excerpt">How many years must one wait to experience the financial catastrophe against which today's regulatory system protects us? The answer, which can be found in supervisory documents, is: a thousand years. The 0.999 quantile — the central parameter of the Basel safety system — is there explicitly interpreted as an event occurring once every thousand years. This formulation, reproduced without further comment in academic textbooks and in sectoral practice, is the point of departure for the present paper.</p>
-    <div class="essay-meta"><span class="essay-meta-icon"></span>August 2026</div>
-  </a>
 
-  <div class="essay-card-title-block">
-    <span>ESSAYS</span>
   </div>
 
-</div>
+  <!-- SEKCJA 2: taming_chance + hydrology_flood (duża) -->
+  <div class="essays-container essays-container-row3">
 
-<style>
-.essays-container-row2 {
-  grid-template-columns: repeat(3, 1fr);
-  margin-top: 0;
-}
+    <a href="/risk-research/art-taming_chance/" class="essay-card">
+      <div class="essay-tag">RANDOM WORLD · INSTRUMENTALISM</div>
+      <div class="essay-image">
+        <img src="/assets/images/normal_distr2.jpg" alt="Placeholder">
+      </div>
+      <div class="essay-title" style="text-align: left;">The Taming of Chance – How the World Became Random</div>
+      <p class="essay-excerpt">Until the nineteenth century, science assumed the world was governed by hidden, deterministic causes. Then something shifted: chance stopped being a symptom of ignorance and became the very nature of things — first in physics, then, more consequentially, in the description of human beings and markets.</p>
+      <div class="essay-meta"><span class="essay-meta-icon"></span>August 2026</div>
+    </a>
 
-.essay-card-large {
-  grid-column: span 2;
-}
+    <a href="/risk-research/art-hydrology_flood" class="essay-card essay-card-large">
+      <div class="essay-tag">HUNDRED-YEAR FLOOD · EXTREME RISK</div>
+      <div class="essay-image">
+        <img src="/assets/images/flood_barrier1.jpg" alt="Placeholder">
+      </div>
+      <div class="essay-title" style="text-align: left;">A Hundred Years of the Return Period and the Hundred-Year Flood</div>
+      <p class="essay-excerpt">A century ago, engineers faced a deceptively simple question: how high should a dike be built to survive a flood that strikes once every hundred years? Out of that question grew an entire statistical apparatus — the return period, the assumption of stationarity, extreme value theory — tools that finance later borrowed, often without acknowledging their origin. Before turning to how this machinery was transplanted into banking, it is worth seeing where it originated, and how hydrologists themselves began questioning its foundations.</p>
+      <div class="essay-meta"><span class="essay-meta-icon"></span>August 2026</div>
+    </a>
 
-.essay-card-large .essay-image {
-  height: 220px;
-}
+  </div>
 
-.essay-card-title-block {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  border: 4px solid #e5c9a8;
-  border-radius: 12px;
-  padding: 25px;
-}
+  <!-- SEKCJA 3: trzy zwykłe karty -->
+  <div class="essays-container">
 
-.essay-card-title-block span {
-  font-size: 2em;
-  font-weight: bold;
-  color: #e5c9a8;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
+    <a href="/risk-research/art-world_what_is/" class="essay-card">
+      <div class="essay-tag">NORMAL WORLD · FAT TAIL</div>
+      <div class="essay-image">
+        <img src="/assets/images/world3.jpg" alt="Conceptual frameworks">
+      </div>
+      <div class="essay-title" style="text-align: left;">Not Normal, Not Heavy-Tailed, the World Is What It Is</div>
+      <p class="essay-excerpt">The normal distribution was meant to describe the possible manifestations of financial reality — until it turned out not to work. The response was heavy-tailed distributions, meant to better capture extreme values. The problem is that these new concepts grew out of the very same assumptions as the ones before them — the randomness of financial phenomena.</p>
+      <div class="essay-meta"><span class="essay-meta-icon"></span>August 2026</div>
+    </a>
 
-@media screen and (max-width: 700px) {
-  .essay-card-large {
-    grid-column: span 1;
-  }
-}
-</style>
+    <a href="/risk-research/art-stationarity_time/" class="essay-card">
+      <div class="essay-tag">STATIONARITY · NORMAL WORLD</div>
+      <div class="essay-image">
+        <img src="/assets/images/accelerate1.jpg" alt="World War I statistics">
+      </div>
+      <div class="essay-title" style="text-align: left;">Does the Normal Distribution Even Emerge?</div>
+      <p class="essay-excerpt">Behind the "1,000-year event" used in financial regulation lies a hidden step nobody questions: arranging risk realizations along a time axis, exactly as hydrologists do with floods. But hydrology's version rests on a physical clock — the Earth's yearly orbit. Finance has none, which raises the question: does normal distribution even emerge from this process at all?</p>
+      <div class="essay-meta"><span class="essay-meta-icon"></span>August 2026</div>
+    </a>
 
+    <a href="/risk-research/art-expected_extreme/" class="essay-card">
+      <div class="essay-tag">EXPECTED WORLD · EXTREME WORLD</div>
+      <div class="essay-image">
+        <img src="/assets/images/storm1.jpg" alt="Cycling strategy">
+      </div>
+      <div class="essay-title" style="text-align: left;">Worlds: the Expected → the Extreme</div>
+      <p class="essay-excerpt">Value at Risk models describe everyday life and extreme situations using one shared probability distribution. This article argues that's flawed: extreme events belong to an entirely different category of phenomena — one Extreme Value Theory, despite coming closest, still fails to truly separate out.</p>
+      <div class="essay-meta"><span class="essay-meta-icon"></span>August 2026</div>
+    </a>
 
+  </div>
 
+  <!-- SEKCJA 4: finance_random (duża) + time_different -->
+  <div class="essays-container essays-container-row2">
 
+    <a href="/risk-research/art-finance_random/" class="essay-card essay-card-large">
+      <div class="essay-tag">RANDOM WALK · CREDIT RISK</div>
+      <div class="essay-image">
+        <img src="/assets/images/finance_random1.jpg" alt="Conceptual frameworks">
+      </div>
+      <div class="essay-title" style="text-align: left;">How Finance Borrowed Its Randomness</div>
+      <p class="essay-excerpt">Every model used to price risk today — Value at Risk, credit-default formulas, Basel's capital requirements — rests on a single inherited assumption: that market movements are random. This article traces how that idea, borrowed from physics and formalized by Bachelier and Wiener, was built up through Black-Scholes, Merton, and Vasicek into the regulatory architecture used today, and how even the 2008 crisis left its foundations untouched.</p>
+      <div class="essay-meta"><span class="essay-meta-icon"></span>August 2026</div>
+    </a>
 
+    <a href="/risk-research/art-time_different/" class="essay-card">
+      <div class="essay-tag">CRISIS · FALSE STABILITY</div>
+      <div class="essay-image">
+        <img src="/assets/images/old_crisis1.jpg" alt="World War I statistics">
+      </div>
+      <div class="essay-title" style="text-align: left;">This Time Is Different Syndrome and Destabilizing Stability</div>
+      <p class="essay-excerpt">Eight centuries of financial crises reveal the same pattern: right before every crash, someone insists this time is different. Reinhart and Rogoff called this the "this-time-is-different syndrome." Minsky's related thesis goes further: it's calm markets themselves that are dangerous, since they encourage risk to build up unseen.</p>
+      <div class="essay-meta"><span class="essay-meta-icon"></span>August 2026</div>
+    </a>
 
+  </div>
 
-<div class="essays-container essays-container-row3">
+  <!-- SEKCJA 5: quantile_rarity + crisis_2023 (duża) -->
+  <div class="essays-container essays-container-row3">
 
-  <a href="/risk-research/art-taming_chance/" class="essay-card">
-    <div class="essay-tag">RANDOM WORLD · INSTRUMENTALISM</div>
-    <div class="essay-image">
-      <img src="/assets/images/normal_distr2.jpg" alt="Placeholder">
-    </div>
-    <div class="essay-title" style="text-align: left;">The Taming of Chance – How the World Became Random</div>
-    <p class="essay-excerpt">Until the nineteenth century, science assumed the world was governed by hidden, deterministic causes. Then something shifted: chance stopped being a symptom of ignorance and became the very nature of things — first in physics, then, more consequentially, in the description of human beings and markets.</p>
-    <div class="essay-meta"><span class="essay-meta-icon"></span>August 2026</div>
-  </a>
+    <a href="/risk-research/art-quantile_rarity/" class="essay-card">
+      <div class="essay-tag">QUANTILE 99.9% · OPERATIONAL RISK</div>
+      <div class="essay-image">
+        <img src="/assets/images/risk_measure.jpg" alt="Placeholder">
+      </div>
+      <div class="essay-title" style="text-align: left;">99.9% Quantile, Rarity, Unexpected Situation</div>
+      <p class="essay-excerpt">Why was AMA — long regarded as Basel's most precise tool for pricing operational risk — withdrawn from regulation? The answer lies in three concepts the regulator left undefined: rarity, the 99.9% quantile, and the "unexpected situation." Filled for years with intuition rather than precision, these gaps led institutions applying the same formula to widely divergent results.</p>
+      <div class="essay-meta"><span class="essay-meta-icon"></span>June 2026</div>
+    </a>
 
-  <a href="/risk-research/art-hydrology_flood" class="essay-card essay-card-large">
-    <div class="essay-tag">HUNDRED-YEAR FLOOD · EXTREME RISK</div>
-    <div class="essay-image">
-      <img src="/assets/images/flood_barrier1.jpg" alt="Placeholder">
-    </div>
-    <div class="essay-title" style="text-align: left;">A Hundred Years of the Return Period and the Hundred-Year Flood</div>
-    <p class="essay-excerpt">A century ago, engineers faced a deceptively simple question: how high should a dike be built to survive a flood that strikes once every hundred years? Out of that question grew an entire statistical apparatus — the return period, the assumption of stationarity, extreme value theory — tools that finance later borrowed, often without acknowledging their origin. Before turning to how this machinery was transplanted into banking, it is worth seeing where it originated, and how hydrologists themselves began questioning its foundations.</p>
-    <div class="essay-meta"><span class="essay-meta-icon"></span>August 2026</div>
-  </a>
+    <a href="/risk-research/art-crisis_2023" class="essay-card essay-card-large">
+      <div class="essay-tag">CRISIS 2023 · SYSTEMIC RISK</div>
+      <div class="essay-image">
+        <img src="/assets/images/crisis2023.jpg" alt="Placeholder">
+      </div>
+      <div class="essay-title" style="text-align: left;">Financial Security in the Face of the 2023 Crisis Episode</div>
+      <p class="essay-excerpt">The 2023 crisis episode, although limited in scale, continues to attract the attention of regula-tors. In May 2026, the General Manager of the Bank for International Settlements (BIS) devoted a separate speech to it, formulating a conclusion that might sound surprising: the bank failures occurred despite the banks having met capital and liquidity requirements. The source of the problems lay in qualitative factors — weak management, insufficient risk culture, un-sustainable business models.</p>
+      <div class="essay-meta"><span class="essay-meta-icon"></span>May 2026</div>
+    </a>
 
-</div>
-
-<style>
-.essays-container-row3 {
-  grid-template-columns: repeat(3, 1fr);
-  margin-top: 0;
-}
-
-.essay-card-large {
-  grid-column: span 2;
-}
-
-.essay-card-large .essay-image {
-  height: 220px;
-}
-
-@media screen and (max-width: 700px) {
-  .essay-card-large {
-    grid-column: span 1;
-  }
-}
-</style>
-
-
-
-        
-
-
-
-
-
-        
-
-
-        
-
-<div class="essays-container">
-
-  <a href="/risk-research/art-world_what_is/" class="essay-card">
-    <div class="essay-tag">NORMAL WORLD · FAT TAIL</div>
-    <div class="essay-image">
-      <img src="/assets/images/world3.jpg" alt="Conceptual frameworks">
-    </div>
-    <div class="essay-title" style="text-align: left;">Not Normal, Not Heavy-Tailed, the World Is What It Is</div>
-    <p class="essay-excerpt">The normal distribution was meant to describe the possible manifestations of financial reality — until it turned out not to work. The response was heavy-tailed distributions, meant to better capture extreme values. The problem is that these new concepts grew out of the very same assumptions as the ones before them — the randomness of financial phenomena.</p>
-    <div class="essay-meta"><span class="essay-meta-icon"></span>August 2026</div>
-  </a>
-
-  <a href="/risk-research/art-stationarity_time/" class="essay-card">
-    <div class="essay-tag">STATIONARITY · NORMAL WORLD</div>
-    <div class="essay-image">
-      <img src="/assets/images/accelerate1.jpg" alt="World War I statistics">
-    </div>
-    <div class="essay-title" style="text-align: left;">Does the Normal Distribution Even Emerge?</div>
-    <p class="essay-excerpt">Behind the "1,000-year event" used in financial regulation lies a hidden step nobody questions: arranging risk realizations along a time axis, exactly as hydrologists do with floods. But hydrology's version rests on a physical clock — the Earth's yearly orbit. Finance has none, which raises the question: does normal distribution even emerge from this process at all?</p>
-    <div class="essay-meta"><span class="essay-meta-icon"></span>August 2026</div>
-  </a>
-
-  <a href="/risk-research/art-expected_extreme/" class="essay-card">
-    <div class="essay-tag">EXPECTED WORLD · EXTREME WORLD</div>
-    <div class="essay-image">
-      <img src="/assets/images/storm1.jpg" alt="Cycling strategy">
-    </div>
-    <div class="essay-title" style="text-align: left;">Worlds: the Expected → the Extreme</div>
-    <p class="essay-excerpt">Value at Risk models describe everyday life and extreme situations using one shared probability distribution. This article argues that's flawed: extreme events belong to an entirely different category of phenomena — one Extreme Value Theory, despite coming closest, still fails to truly separate out.</p>
-    <div class="essay-meta"><span class="essay-meta-icon"></span>August 2026</div>
-  </a>
+  </div>
 
 </div>
 
@@ -1028,97 +979,7 @@
   flex-shrink: 0;
 }
 
-@media screen and (max-width: 700px) {
-  .essays-container {
-    grid-template-columns: 1fr;
-  }
-}
-</style>
-
-
-
-
-
-        
-<div class="essays-container essays-container-row2">
-
-  <a href="/risk-research/art-finace_random/" class="essay-card essay-card-large">
-    <div class="essay-tag">RANDOM WALK · CREDIT RISK</div>
-    <div class="essay-image">
-      <img src="/assets/images/finance_random1.jpg" alt="Conceptual frameworks">
-    </div>
-    <div class="essay-title" style="text-align: left;">How Finance Borrowed Its Randomness</div>
-    <p class="essay-excerpt">Every model used to price risk today — Value at Risk, credit-default formulas, Basel's capital requirements — rests on a single inherited assumption: that market movements are random. This article traces how that idea, borrowed from physics and formalized by Bachelier and Wiener, was built up through Black-Scholes, Merton, and Vasicek into the regulatory architecture used today, and how even the 2008 crisis left its foundations untouched.</p>
-    <div class="essay-meta"><span class="essay-meta-icon"></span>August 2026</div>
-  </a>
-
-  <a href="/risk-research/art-time_different/" class="essay-card">
-    <div class="essay-tag">CRISIS · FALSE STABILITY</div>
-    <div class="essay-image">
-      <img src="/assets/images/old_crisis1.jpg" alt="World War I statistics">
-    </div>
-    <div class="essay-title" style="text-align: left;">This Time Is Different Syndrome and Destabilizing Stability</div>
-    <p class="essay-excerpt">Eight centuries of financial crises reveal the same pattern: right before every crash, someone insists this time is different. Reinhart and Rogoff called this the "this-time-is-different syndrome." Minsky's related thesis goes further: it's calm markets themselves that are dangerous, since they encourage risk to build up unseen.</p>
-    <div class="essay-meta"><span class="essay-meta-icon"></span>August 2026</div>
-  </a>
-
-</div>
-
-<style>
-.essays-container-row2 {
-  grid-template-columns: repeat(3, 1fr);
-  margin-top: 0;
-}
-
-.essay-card-large {
-  grid-column: span 2;
-}
-
-.essay-card-large .essay-image {
-  height: 220px;
-}
-
-@media screen and (max-width: 700px) {
-  .essay-card-large {
-    grid-column: span 1;
-  }
-}
-</style>
-
-
-        
-
-
-
-
-
-
-
-<div class="essays-container essays-container-row3">
-
-  <a href="/risk-research/art-quantile_rarity/" class="essay-card">
-    <div class="essay-tag">QUANTILE 99.9% · OPERATIONAL RISK</div>
-    <div class="essay-image">
-      <img src="/assets/images/risk_measure.jpg" alt="Placeholder">
-    </div>
-    <div class="essay-title" style="text-align: left;">99.9% Quantile, Rarity, Unexpected Situation</div>
-    <p class="essay-excerpt">Why was AMA — long regarded as Basel's most precise tool for pricing operational risk — withdrawn from regulation? The answer lies in three concepts the regulator left undefined: rarity, the 99.9% quantile, and the "unexpected situation." Filled for years with intuition rather than precision, these gaps led institutions applying the same formula to widely divergent results.</p>
-    <div class="essay-meta"><span class="essay-meta-icon"></span>June 2026</div>
-  </a>
-
-  <a href="/risk-research/art-crisis_2023" class="essay-card essay-card-large">
-    <div class="essay-tag">CRISIS 2023 · SYSTEMIC RISK</div>
-    <div class="essay-image">
-      <img src="/assets/images/crisis2023.jpg" alt="Placeholder">
-    </div>
-    <div class="essay-title" style="text-align: left;">Financial Security in the Face of the 2023 Crisis Episode</div>
-    <p class="essay-excerpt">The 2023 crisis episode, although limited in scale, continues to attract the attention of regula-tors. In May 2026, the General Manager of the Bank for International Settlements (BIS) devoted a separate speech to it, formulating a conclusion that might sound surprising: the bank failures occurred despite the banks having met capital and liquidity requirements. The source of the problems lay in qualitative factors — weak management, insufficient risk culture, un-sustainable business models.</p>
-    <div class="essay-meta"><span class="essay-meta-icon"></span>May 2026</div>
-  </a>
-
-</div>
-
-<style>
+.essays-container-row2,
 .essays-container-row3 {
   grid-template-columns: repeat(3, 1fr);
   margin-top: 0;
@@ -1132,69 +993,67 @@
   height: 220px;
 }
 
-@media screen and (max-width: 700px) {
-  .essay-card-large {
+.essay-card-title-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  border: 4px solid #e5c9a8;
+  border-radius: 12px;
+  padding: 25px;
+}
+
+.essay-card-title-block span {
+  font-size: 2em;
+  font-weight: bold;
+  color: #e5c9a8;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* ===== MOBILE (pion i poziom) ===== */
+@media screen and (max-width: 900px) {
+
+  .essays-mobile-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .essays-container,
+  .essays-container-row2,
+  .essays-container-row3 {
+    display: contents;
+  }
+
+  .essay-card,
+  .essay-card-large,
+  .essay-card-title-block {
     grid-column: span 1;
+    width: 100%;
+  }
+
+  .essay-card-large .essay-image {
+    height: 160px;
+  }
+
+  .essay-card-title-block {
+    order: -1;
+    min-height: 120px;
+    padding: 15px;
+  }
+
+  .essay-card-title-block span {
+    font-size: 1.5em;
   }
 }
 </style>
 
-
-
-        
-
-
-        
-
-
-
-
-      
+      </div>
 
     </section>
   </div>
 
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-  
-  
-  
   <!-- FOOTER  -->
   <div id="footer_wrap" class="outer">
     <footer class="inner">
@@ -1237,5 +1096,3 @@
   </script>
 </body>
 </html>
-
-            
