@@ -783,7 +783,7 @@
 
 <div class="essays-container">
 
-  <div class="essay-card">
+  <a href="/risk-research/art-ama_failure/" class="essay-card">
     <div class="essay-tag">Systemic risk · Frameworks</div>
     <div class="essay-image">
       <img src="/assets/images/crisis2.jpg" alt="Conceptual frameworks">
@@ -791,13 +791,9 @@
     <div class="essay-title" style="text-align: left;">I Can't Predict a 1,000-Year Catastrophe</div>
     <p class="essay-excerpt">How many years must you wait to experience the financial catastrophe your bank is supposedly protected against? Supervisory documents give a startlingly precise answer: a thousand years — a claim reproduced, unquestioned, in academic textbooks and regulatory practice for two decades.</p>
     <div class="essay-meta"><span class="essay-meta-icon"></span>August 2026</div>
-    <div class="essay-resources">
-      <a href="/essays/conceptual-frameworks-reality-en" class="essay-resource-link">Read Article ENG</a>
-      <a href="/essays/conceptual-frameworks-reality-pl" class="essay-resource-link">Read Article POL</a>
-    </div>
-  </div>
+  </a>
 
-  <div class="essay-card">
+  <a href="/risk-research/art-quantile_rarity/" class="essay-card">
     <div class="essay-tag">Operational Risk · Frameworks</div>
     <div class="essay-image">
       <img src="/assets/images/risk_measure.jpg" alt="World War I statistics">
@@ -805,13 +801,9 @@
     <div class="essay-title" style="text-align: left;">99.9% Quantile, Rarity, Unexpected Situation </div>
     <p class="essay-excerpt">For a decade, AMA was Basel's most sophisticated tool for pricing operational risk — until it was quietly withdrawn. This paper traces the failure back to three concepts the regulator never defined: rarity, the 99.9% quantile, and the "unexpected situation."</p>
     <div class="essay-meta"><span class="essay-meta-icon"></span>June 2026</div>
-    <div class="essay-resources">
-      <a href="/essays/statistical-illusions-1914-en" class="essay-resource-link">Read Article ENG</a>
-      <a href="/essays/statistical-illusions-1914-pl" class="essay-resource-link">Read Article POL</a>
-    </div>
-  </div>
+  </a>
 
-  <div class="essay-card">
+  <a href="/risk-research/art-crisis_2023/" class="essay-card">
     <div class="essay-tag">Crisis 2023 · Systemic Risk</div>
     <div class="essay-image">
       <img src="/assets/images/crisis2023.jpg" alt="Cycling strategy">
@@ -819,11 +811,7 @@
     <div class="essay-title" style="text-align: left;">Financial Security in the Face of the 2023 Crisis Episode</div>
     <p class="essay-excerpt">Two banks collapsed within two days in March 2023 — despite meeting their capital and liquidity requirements, according to the BIS. This paper shows how social media and 24/7 banking compressed a deposit run from days to hours, and why post-2008 regulation isn't built to catch it.</p>
     <div class="essay-meta"><span class="essay-meta-icon"></span>May 2026</div>
-    <div class="essay-resources">
-      <a href="/essays/fairness-as-a-variable-cycling-en" class="essay-resource-link">Read Article ENG</a>
-      <a href="/essays/fairness-as-a-variable-cycling-pl" class="essay-resource-link">Read Article POL</a>
-    </div>
-  </div>
+  </a>
 
 </div>
 
@@ -846,6 +834,17 @@
   padding: 25px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   height: 100%;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+}
+
+.essay-card:hover {
+  box-shadow: 0 6px 20px rgba(168, 89, 3, 0.18);
+  transform: translateY(-3px);
+  border-color: #a85903;
+  text-decoration: none;
 }
 
 .essay-tag {
@@ -901,7 +900,6 @@
   margin-top: auto;
   padding-top: 12px;
   border-top: 1px solid #f0e6d6;
-  margin-bottom: 12px;
 }
 
 .essay-meta-icon {
@@ -913,37 +911,12 @@
   flex-shrink: 0;
 }
 
-.essay-resources {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.essay-resource-link {
-  display: inline-block;
-  font-size: 0.85em;
-  font-weight: bold;
-  color: #a85903;
-  text-decoration: none;
-  padding: 6px 14px;
-  border: 1px solid #a85903;
-  border-radius: 6px;
-  transition: background-color 0.2s, color 0.2s;
-}
-
-.essay-resource-link:hover {
-  background-color: #a85903;
-  color: #fff;
-  text-decoration: none;
-}
-
 @media screen and (max-width: 700px) {
   .essays-container {
     grid-template-columns: 1fr;
   }
 }
 </style>
-
 
 
 
