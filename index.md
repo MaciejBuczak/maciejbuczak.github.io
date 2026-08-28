@@ -61,8 +61,3 @@ I still work in business, in the banking sector. Additionally, in terms of teach
 
 
 
-
-
-
-
-</div>
