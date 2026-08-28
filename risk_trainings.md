@@ -167,7 +167,7 @@ I conduct training courses in risk management, combining years of practical expe
 
   <a href="/train_bmr" class="training-card">
     <div class="training-card-image">
-      <img src="/assets/images/ryzyko-modeli-main.jpg" alt="Budowa modeli ryzyka">
+      <img src="/assets/images/risk_model1.jpg" alt="Budowa modeli ryzyka">
     </div>
     <div class="training-card-content">
 <div class="training-card-title">RISK MODEL DEVELOPMENT</div>
@@ -203,7 +203,7 @@ I conduct training courses in risk management, combining years of practical expe
 
   <a href="/train_mwn" class="training-card">
     <div class="training-card-image">
-      <img src="/assets/images/ryzyko-operacyjne-main.jpg" alt="Modelowanie wart nieoczek">
+      <img src="/assets/images/normal_distr1.jpg" alt="Modelowanie wart nieoczek">
     </div>
     <div class="training-card-content">
 <div class="training-card-title">UNEXPECTED VALUE MODELING</div>
