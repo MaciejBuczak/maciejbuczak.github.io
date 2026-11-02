@@ -12,7 +12,7 @@
 <style>
 /* nagłówek z symulacją */
 .sh{padding:clamp(40px,6vw,80px) 0 clamp(40px,5vw,64px)}
-.sh .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(32px,5vw,72px);align-items:center}
+.sh .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:center;min-height:clamp(440px,52vw,560px)}
 .sh h1{font-size:clamp(38px,4.8vw,64px);margin:20px 0 20px;letter-spacing:-.02em}
 .sh h1 em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--terra-d);letter-spacing:0}
 .sh .lead{font-size:clamp(16.5px,1.5vw,18.5px);font-weight:300;color:var(--ink2);margin:0;max-width:520px}
@@ -21,22 +21,15 @@
 .facts div:last-child{border-right:0;margin-right:0}
 .facts b{display:block;font-family:var(--display);font-weight:400;font-size:26px;line-height:1}
 .facts span{display:block;font-size:12.5px;color:var(--muted);margin-top:6px}
-.sim{position:relative;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:18px 18px 14px;box-shadow:0 30px 60px -40px rgba(40,30,15,.35)}
-.sim::after{content:"";position:absolute;width:40px;height:40px;background:var(--terra);border-radius:6px;right:-14px;top:-14px}
-.sim canvas{display:block;width:100%;height:auto;aspect-ratio:16/11}
-.sim-ft{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:12px;color:var(--muted);padding:10px 4px 0;border-top:1px solid var(--greige);margin-top:6px}
-.sim-ft b{font-weight:600;color:var(--ink2);font-variant-numeric:tabular-nums}
-.sim-ft i{font-style:normal;display:inline-flex;align-items:center;gap:6px}
-.sim-ft i::before{content:"";width:9px;height:9px;border-radius:2px;background:var(--terra)}
-@media(max-width:900px){.sh .wrap{grid-template-columns:1fr}}
+.sh{position:relative;overflow:hidden}
+.sh .wrap{position:relative;z-index:1}
+.bgsim{position:absolute;top:0;right:0;height:100%;width:62%;pointer-events:none;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 22%);mask-image:linear-gradient(90deg,transparent 0,#000 22%)}
+.sh-lg{position:absolute;right:clamp(18px,4vw,40px);bottom:22px;z-index:1;display:flex;gap:18px;font-size:12px;color:var(--muted)}
+.sh-lg span{display:inline-flex;align-items:center;gap:7px}.sh-lg span::before{content:"";width:16px;height:0;border-top:1.5px solid var(--ink);opacity:.5}
+.sh-lg .q::before{border-top:1.5px dashed var(--terra);opacity:1}.sh-lg .t::before{border-top:2px solid var(--terra);opacity:1}
+.sh-lg b{font-weight:600;color:var(--ink2);font-variant-numeric:tabular-nums}
+@media(max-width:900px){.sh{display:flex;flex-direction:column}.bgsim{order:2}.sh-lg{order:3}.sh .wrap{grid-template-columns:1fr;min-height:0}.bgsim{position:relative;display:block;width:100%;height:240px;-webkit-mask-image:none;mask-image:none;margin-top:8px}.sh-lg{position:static;padding:0 clamp(18px,4vw,40px);flex-wrap:wrap;gap:6px 14px}}
 @media(max-width:480px){.facts div{padding-right:14px;margin-right:14px}.facts b{font-size:22px}}
-
-/* filtry */
-.fl{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:26px}
-.chip{font:inherit;font-size:13.5px;font-weight:500;padding:7px 15px;border-radius:999px;border:1px solid var(--line);background:transparent;cursor:pointer;color:var(--ink2);transition:background .2s,border-color .2s,color .2s}
-.chip:hover{border-color:var(--ink)}
-.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
-.fl .cnt{margin-left:auto;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
 
 /* kafelki szkoleń */
 .tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;padding-bottom:clamp(56px,7vw,90px)}
@@ -54,6 +47,51 @@
 .tile .go{flex:none;display:grid;place-items:center;width:46px;height:46px;border-radius:50%;border:1.5px solid var(--ink);font-size:18px;transition:background .25s,color .25s,transform .25s}
 .tile:hover .go{background:var(--ink);color:var(--paper);transform:rotate(-45deg)}
 @media(max-width:820px){.tiles{grid-template-columns:1fr}}
+
+/* nagłówek listy */
+.lay-h{display:flex;align-items:end;justify-content:space-between;border-top:1px solid var(--ink);padding-top:16px;margin-bottom:24px}
+.lay-t{font-size:13px;font-family:var(--body);font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink2)}
+.tile .sb{display:none;margin:10px 0 0;font-size:14.5px;color:var(--muted);line-height:1.5}
+
+/* B – mozaika (nieregularne kształty) */
+.lay-b{grid-template-columns:repeat(6,minmax(0,1fr));grid-auto-rows:minmax(150px,auto);gap:18px}
+.lay-b .tile:nth-child(4n+1){grid-column:span 4;grid-row:span 2}
+.lay-b .tile:nth-child(4n+2){grid-column:span 2;grid-row:span 2}
+.lay-b .tile:nth-child(4n+3){grid-column:span 2;grid-row:span 1}
+.lay-b .tile:nth-child(4n+4){grid-column:span 4;grid-row:span 1}
+.lay-b .tile .art{aspect-ratio:auto;flex:1;min-height:150px}
+.lay-b .tile:nth-child(4n+1) .art{min-height:300px}
+.lay-b .tile:nth-child(4n+2) h2,.lay-b .tile:nth-child(4n+3) h2{font-size:clamp(19px,1.7vw,22px)}
+.lay-b .tile:nth-child(4n+2) .go,.lay-b .tile:nth-child(4n+3) .go{width:40px;height:40px}
+.lay-b .tile:nth-child(4n+4){flex-direction:row}
+.lay-b .tile:nth-child(4n+4) .art{flex:1.15}.lay-b .tile:nth-child(4n+4) .body{flex:1;align-items:flex-end}
+.lay-b .tile:nth-child(4n+1) .sb{display:block;max-width:520px}
+@media(max-width:820px){.lay-b{grid-template-columns:1fr}.lay-b .tile:nth-child(n){grid-column:auto;grid-row:auto;flex-direction:column}.lay-b .tile .art{min-height:200px}}
+
+/* C – lista redakcyjna */
+.lay-c{grid-template-columns:1fr;gap:0;border-top:0}
+.lay-c .tile{flex-direction:row;align-items:stretch;border-radius:0;border:0;border-bottom:1px solid var(--line);background:transparent;padding:22px 0;gap:clamp(20px,3vw,40px)}
+.lay-c .tile:hover{transform:none;box-shadow:none;border-color:var(--line)}
+.lay-c .tile .art{flex:none;width:clamp(200px,26vw,320px);border-radius:16px;order:2}
+
+.lay-c .tile .body{flex:1;order:1;padding:8px 0;align-items:center}
+.lay-c .tile h2{font-size:clamp(24px,2.8vw,36px)}
+.lay-c .tile .sb{display:block}
+.lay-c .tile .go{order:3;align-self:center}
+@media(max-width:700px){.lay-c .tile{flex-direction:column}.lay-c .tile .art{width:100%;order:0}}
+
+/* D – plakaty */
+.lay-d{grid-template-columns:repeat(2,minmax(0,1fr))}
+.lay-d .tile{min-height:clamp(400px,36vw,480px);border:0}
+.lay-d .tile .art{position:absolute;inset:0;aspect-ratio:auto}
+.lay-d .tile .art svg{inset:auto 0 auto 0;top:8%;height:54%}
+.lay-d .tile .body{position:relative;margin-top:auto;z-index:2;background:linear-gradient(180deg,rgba(252,249,245,0),rgba(252,249,245,.92) 38%);padding-top:60px}
+.lay-d .tile.v2 .body{background:linear-gradient(180deg,rgba(13,13,13,0),rgba(13,13,13,.92) 38%);color:var(--paper)}
+.lay-d .tile.v2 .go{border-color:var(--paper)}.lay-d .tile.v2:hover .go{background:var(--paper);color:var(--ink)}
+.lay-d .tile.v1 .body{background:linear-gradient(180deg,rgba(239,229,214,0),#efe5d6 38%)}
+.lay-d .tile.v3 .body{background:linear-gradient(180deg,rgba(230,216,195,0),#e6d8c3 38%)}
+.lay-d .tile.v4 .body{background:linear-gradient(180deg,rgba(227,221,209,0),#e3ddd1 38%)}
+@media(max-width:820px){.lay-d{grid-template-columns:1fr}}
 
 /* animacje grafik */
 .tile .dr{stroke-dasharray:var(--l,600);stroke-dashoffset:var(--l,600)}
@@ -83,6 +121,7 @@
 
 <main>
 <section class="sh">
+  <canvas class="bgsim" id="mc" aria-label="Symulacja Monte Carlo: ścieżki losowe rozchodzą się w czasie, linie przerywane wyznaczają kwantyle 1% i 99%." role="img"></canvas>
   <div class="wrap">
     <div>
       <span class="kick">Programy szkoleń</span>
@@ -90,15 +129,13 @@
       <p class="lead">Warsztaty z modeli ryzyka, walidacji, kapitału i decyzji w warunkach niepewności. Każdy program ma pełny plan dzień po dniu i dopasowuję go do zespołu.</p>
       <div class="facts"><div><b id="fN">4</b><span>programy</span></div><div><b>1–2</b><span>dni warsztatów</span></div><div><b>2</b><span>formy: na sali lub zdalnie</span></div></div>
     </div>
-    <figure class="sim" style="margin:0">
-      <canvas id="gal" width="880" height="605" aria-label="Symulacja: kulki spadają przez rząd kołków i układają się w rozkład zbliżony do normalnego; zaznaczony kwantyl 99,9%." role="img"></canvas>
-      <figcaption class="sim-ft"><span>Symulacja · <b id="gN">0</b> realizacji</span><i>ogon poza kwantylem 99,9%</i></figcaption>
-    </figure>
+    <div aria-hidden="true"></div>
   </div>
+  <div class="sh-lg"><span>ścieżki Monte Carlo · <b id="gN">0</b></span><span class="q">kwantyle 1% i 99%</span><span class="t">poza przedziałem</span></div>
 </section>
 
 <div class="wrap">
-  <div class="fl" id="fl"></div>
+  <div class="lay-h"><h2 class="lay-t">Programy</h2></div>
   <div class="tiles" id="tiles"></div>
   <div class="cu rv">
     <div><span class="kick">Na zamówienie</span><h2>Program dla Twojego zespołu.</h2><p>Każdy z tematów z zakładki „Obszary” może stać się osobnym warsztatem – z przypadkami z Twojego banku i w wybranej formie.</p></div>
@@ -156,48 +193,47 @@ function art(t){if(ART[t.id])return ART[t.id]();return""}
 /* ---------- lista ---------- */
 const T=window.RT_SZKOLENIA||[],esc=s=>String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
 document.getElementById("fN").textContent=T.length;
-const areas=[...new Set(T.flatMap(t=>t.area))];let F="";
 function draw(){
-  document.getElementById("fl").innerHTML=`<button class="chip" data-a="" aria-pressed="${!F}">Wszystkie</button>`+areas.map(a=>`<button class="chip" data-a="${esc(a)}" aria-pressed="${F===a}">${esc(a)}</button>`).join("")+`<span class="cnt">${T.filter(t=>!F||t.area.includes(F)).length} z ${T.length}</span>`;
-  const L=T.filter(t=>!F||t.area.includes(F));
-  document.getElementById("tiles").innerHTML=L.map((t,i)=>{const d=t.days===1?"1 dzień":t.days+" dni";
-    return`<a class="tile ${VAR[t.id]||["v1","v2","v3","v4"][i%4]}" href="#${t.id}" id="${t.id}"><div class="art"><span class="no">${String(T.indexOf(t)+1).padStart(2,"0")}</span><svg viewBox="0 0 400 225" preserveAspectRatio="xMidYMid meet" aria-hidden="true">${art(t)}</svg></div>
-      <div class="body"><div><span class="eb">${d} · ${t.area.map(esc).join(" · ")}</span><h2>${esc(t.title)}</h2></div><span class="go" aria-hidden="true">→</span></div></a>`}).join("")||`<p class="empty">Brak szkoleń w tym obszarze.</p>`;
-  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.25});
+  document.getElementById("tiles").innerHTML=T.map((t,i)=>{const d=t.days===1?"1 dzień":t.days+" dni";
+    return`<a class="tile ${VAR[t.id]||["v1","v2","v3","v4"][i%4]}" href="#${t.id}" id="${t.id}"><div class="art"><span class="no">${String(i+1).padStart(2,"0")}</span><svg viewBox="0 0 400 225" preserveAspectRatio="xMidYMid meet" aria-hidden="true">${art(t)}</svg></div>
+      <div class="body"><div><span class="eb">${d} · ${t.area.map(esc).join(" · ")}</span><h2>${esc(t.title)}</h2><p class="sb">${esc(t.subtitle)}</p></div><span class="go" aria-hidden="true">→</span></div></a>`}).join("");
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.2});
   document.querySelectorAll(".tile").forEach(el=>io.observe(el));
 }
-document.addEventListener("click",e=>{const b=e.target.closest("[data-a]");if(b){F=F===b.dataset.a?"":b.dataset.a;draw();return}
-  const t=e.target.closest(".tile");if(t)e.preventDefault()});
+document.addEventListener("click",e=>{const t=e.target.closest(".tile");if(t)e.preventDefault()});
 draw();
+/* warianty układu (wersja próbna) */
+const LAY=[["a","Siatka"],["b","Mozaika"],["c","Lista"],["d","Plakaty"]];
+function setLay(v){document.getElementById("tiles").className="tiles lay-"+v;document.querySelectorAll(".variants a").forEach(a=>a.classList.toggle("on",a.dataset.v===v));try{history.replaceState(null,"","?v="+v)}catch(e){}}
+document.body.insertAdjacentHTML("beforeend",'<div class="variants">Układ:'+LAY.map(l=>`<a href="?v=${l[0]}" data-v="${l[0]}">${l[1]}</a>`).join("")+'</div>');
+document.querySelector(".variants").addEventListener("click",e=>{const a=e.target.closest("a");if(!a)return;e.preventDefault();setLay(a.dataset.v)});
+setLay((new URLSearchParams(location.search).get("v"))||"a");
 
-/* ---------- deska Galtona ---------- */
-(function(){const cv=document.getElementById("gal"),cx=cv.getContext("2d"),W=cv.width,H=cv.height,L=20,NB=L+1,TOT=2000,
-  red=matchMedia("(prefers-reduced-motion: reduce)").matches,top=46,pegH=250,bx0=24,bx1=W-24,bw=(bx1-bx0)/NB,base=H-34,
-  mu=L/2,sd=Math.sqrt(L)/2,q=mu+3.09*sd,cnt=new Array(NB).fill(0),out=document.getElementById("gN");let balls=[],n=0,fade=0,hold=0;
-  const pegX=(r,k)=>W/2+(k-r/2)*bw,pegY=r=>top+r*(pegH/L);
-  function bin(){let k=0;for(let r=0;r<L;r++)if(Math.random()<.5)k++;return k}
-  function spawn(){const path=[];let k=0;for(let r=0;r<L;r++){path.push(k);if(Math.random()<.5)k++}balls.push({path,k,t:0})}
-  function pdf(x){return Math.exp(-.5*((x-mu)/sd)**2)/(sd*Math.sqrt(2*Math.PI))}
-  function frame(){cx.clearRect(0,0,W,H);
-    cx.fillStyle="#b29e84";for(let r=0;r<L;r++)for(let k=0;k<=r;k++){cx.beginPath();cx.arc(pegX(r,k),pegY(r),2,0,7);cx.fill()}
-    const mx=Math.max(1,TOT*pdf(mu)*1.12),hs=base-(top+pegH+26);
-    for(let i=0;i<NB;i++){const h=cnt[i]/mx*hs,x=bx0+i*bw;cx.fillStyle=i>=Math.ceil(q)?"#bf8165":"rgba(13,13,13,.78)";cx.beginPath();cx.roundRect?cx.roundRect(x+2,base-h,bw-4,h,[3,3,0,0]):cx.rect(x+2,base-h,bw-4,h);cx.fill()}
-    cx.strokeStyle="#a8694c";cx.lineWidth=2.2;cx.beginPath();for(let s=0;s<=200;s++){const xv=-.5+s*(NB/200),y=base-TOT*pdf(xv)/mx*hs*Math.min(1,n/TOT*1.4);const X=bx0+(xv+.5)*bw;s?cx.lineTo(X,y):cx.moveTo(X,y)}cx.globalAlpha=Math.min(1,n/400);cx.stroke();cx.globalAlpha=1;
-    const qx=bx0+(Math.ceil(q))*bw;cx.setLineDash([5,5]);cx.strokeStyle="#bf8165";cx.lineWidth=1.5;cx.beginPath();cx.moveTo(qx,top+pegH+18);cx.lineTo(qx,base);cx.stroke();cx.setLineDash([]);
-    cx.fillStyle="#a8694c";cx.font="600 19px Poppins, sans-serif";cx.fillText("q 99,9%",qx+8,top+pegH+40);
-    cx.strokeStyle="rgba(13,13,13,.25)";cx.lineWidth=1;cx.beginPath();cx.moveTo(bx0,base+.5);cx.lineTo(bx1,base+.5);cx.stroke();
-    cx.fillStyle="#bf8165";balls.forEach(b=>{const r=Math.min(L,Math.floor(b.t)),fr=b.t-r;let x,y;
-      if(r<L){const k0=b.path[r],k1=r+1<L?b.path[r+1]:b.k;x=pegX(r,k0)+(pegX(r+1,k1)-pegX(r,k0))*fr;y=pegY(r)-8+(pegY(r+1)-pegY(r))*fr}
-      else{x=bx0+(b.k+.5)*bw;y=pegY(L)}cx.beginPath();cx.arc(x,y,4.5,0,7);cx.fill()});
-    if(fade>0){cx.fillStyle="rgba(252,249,245,"+fade+")";cx.fillRect(0,0,W,H)}}
-  if(red){for(let i=0;i<TOT;i++)cnt[bin()]++;n=TOT;out.textContent=TOT.toLocaleString("pl-PL");frame();return}
-  let last=0,vis=true;new IntersectionObserver(e=>{vis=e[0].isIntersecting}).observe(cv);
-  function loop(ts){requestAnimationFrame(loop);if(!vis||ts-last<16)return;last=ts;
-    if(n<TOT){const k=n<120?1:n<500?3:6;for(let i=0;i<k;i++)spawn()}
-    balls.forEach(b=>b.t+=.55);balls=balls.filter(b=>{if(b.t>=L+1){cnt[b.k]++;n++;return false}return true});
-    out.textContent=Math.min(n,TOT).toLocaleString("pl-PL");
-    if(n>=TOT&&!balls.length){hold++;if(hold>240){fade+=.015;if(fade>=1){cnt.fill(0);n=0;fade=0;hold=0}}}
-    frame()}
+/* ---------- ścieżki Monte Carlo w tle nagłówka ---------- */
+(function(){const cv=document.getElementById("mc"),cx=cv.getContext("2d"),out=document.getElementById("gN"),
+  red=matchMedia("(prefers-reduced-motion: reduce)").matches,STEPS=120,Z=2.326;let W,H,dpr,P=[],tot=0,vis=true;
+  function size(){dpr=Math.min(2,devicePixelRatio||1);const r=cv.getBoundingClientRect();W=r.width;H=r.height;cv.width=W*dpr;cv.height=H*dpr;cx.setTransform(dpr,0,0,dpr,0,0)}
+  const g=()=>{let u=0,v=0;while(!u)u=Math.random();v=Math.random();return Math.sqrt(-2*Math.log(u))*Math.cos(6.2832*v)};
+  const geo=()=>{const mob=W<600,x0=mob?20:W*.18,x1=W-(mob?20:36),y0=H*(mob?.5:.52),sc=(H*(mob?.36:.34))/(Z*Math.sqrt(STEPS));return{x0,x1,y0,sc,dx:(x1-x0)/STEPS}};
+  function path(){const y=[0];for(let k=1;k<=STEPS;k++)y.push(y[k-1]+g());const end=y[STEPS]/Math.sqrt(STEPS);return{y,t:0,a:1,out:Math.abs(end)>Z}}
+  function draw(){const G=geo();cx.clearRect(0,0,W,H);
+    // kwantyle
+    cx.setLineDash([5,6]);cx.strokeStyle="#bf8165";cx.lineWidth=1.4;[1,-1].forEach(sg=>{cx.beginPath();for(let k=0;k<=STEPS;k++){const X=G.x0+k*G.dx,Y=G.y0-sg*Z*Math.sqrt(k)*G.sc;k?cx.lineTo(X,Y):cx.moveTo(X,Y)}cx.stroke()});
+    cx.setLineDash([2,5]);cx.strokeStyle="rgba(13,13,13,.35)";cx.lineWidth=1;cx.beginPath();cx.moveTo(G.x0,G.y0);cx.lineTo(G.x1,G.y0);cx.stroke();cx.setLineDash([]);
+    cx.fillStyle="#a8694c";cx.font="600 12px Poppins, sans-serif";cx.textAlign="right";
+    cx.fillText("99%",G.x1,G.y0-Z*Math.sqrt(STEPS)*G.sc-8);cx.fillText("1%",G.x1,G.y0+Z*Math.sqrt(STEPS)*G.sc+18);
+    // ścieżki
+    P.forEach(p=>{const n=Math.min(STEPS,Math.floor(p.t));if(n<1)return;cx.beginPath();for(let k=0;k<=n;k++){const X=G.x0+k*G.dx,Y=G.y0-p.y[k]*G.sc;k?cx.lineTo(X,Y):cx.moveTo(X,Y)}
+      cx.strokeStyle=p.out&&p.t>=STEPS?"rgba(191,129,101,"+(.95*p.a)+")":"rgba(13,13,13,"+(.16*p.a)+")";cx.lineWidth=p.out&&p.t>=STEPS?1.8:1.1;cx.stroke();
+      if(p.t<STEPS){const X=G.x0+n*G.dx,Y=G.y0-p.y[n]*G.sc;cx.fillStyle="#0d0d0d";cx.beginPath();cx.arc(X,Y,2.4,0,7);cx.fill()}});
+    // punkt startu
+    cx.fillStyle="#0d0d0d";cx.beginPath();cx.arc(G.x0,G.y0,4,0,7);cx.fill()}
+  size();addEventListener("resize",()=>{size();draw()});
+  if(red){for(let i=0;i<70;i++){const p=path();p.t=STEPS;p.a=.8;P.push(p)}tot=70;out.textContent=tot;draw();return}
+  new IntersectionObserver(e=>{vis=e[0].isIntersecting}).observe(cv);
+  let last=0,spawn=0;function loop(ts){requestAnimationFrame(loop);if(!vis||ts-last<16)return;last=ts;
+    if(++spawn%9===0){P.push(path());tot++;out.textContent=tot.toLocaleString("pl-PL")}
+    P.forEach(p=>{if(p.t<STEPS)p.t+=1.6;else p.a-=p.out?.0025:.004});P=P.filter(p=>p.a>0);if(P.length>90)P.shift();draw()}
   requestAnimationFrame(loop)})();
 </script>
 <script src="../rt.js"></script>
