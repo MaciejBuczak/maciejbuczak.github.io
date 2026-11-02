@@ -11,28 +11,31 @@
 <link rel="stylesheet" href="rt.css">
 <style>
 /* hero */
-.hero{padding:clamp(40px,6vw,80px) 0 clamp(64px,8vw,110px);position:relative;overflow:hidden}
-.hero .wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(32px,6vw,80px);align-items:center}
-.hero h1{font-size:clamp(40px,6.4vw,82px);margin:22px 0 26px}
+.hero{position:relative;overflow:hidden;padding:clamp(48px,7vw,96px) 0 clamp(64px,8vw,110px)}
+.hero>.wrap{position:relative;z-index:1}
+.hero h1{font-size:clamp(36px,4.5vw,60px);margin:22px 0 24px}
 .hero h1 em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--terra-d);letter-spacing:0}
-.hero .lead{font-size:clamp(17px,1.6vw,20px);color:var(--ink2);max-width:560px;margin:0 0 34px;font-weight:300}
+.hero .lead{font-size:clamp(17px,1.5vw,19.5px);color:var(--ink2);max-width:600px;margin:0 0 26px;font-weight:300}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 30px;padding:0;list-style:none}
+.chips li{font-size:13.5px;font-weight:500;padding:6px 14px;border-radius:999px;border:1px solid var(--line);background:rgba(252,249,245,.8)}
+.chips li b{color:var(--terra-d);font-weight:600}
 .hero .cta{display:flex;flex-wrap:wrap;gap:12px}
-.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:clamp(40px,6vw,64px);border-top:1px solid var(--line)}
-.facts div{padding:18px 18px 0 0}
-.facts{gap:24px}.facts div{padding-right:0}.facts b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(20px,1.9vw,25px);line-height:1.15;letter-spacing:-.01em}
-.facts span{font-size:13px;color:var(--muted);line-height:1.4;display:block;margin-top:6px}
-.photo{position:relative;justify-self:end;width:100%;max-width:460px}
-.photo .frame{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:4/5;background:var(--panel)}
-.photo .frame img{width:100%;height:100%;object-fit:cover;object-position:50% 18%}
-.photo .sq{position:absolute;background:var(--ink);border-radius:6px}
-.photo .s1{width:86px;height:86px;right:-26px;top:-26px}@media(max-width:560px){.photo .s1{right:-8px;width:64px;height:64px}.photo .s3{left:-8px}}
-.photo .s2{width:40px;height:40px;right:72px;top:-48px;background:var(--terra)}
-.photo .s3{width:40px;height:40px;left:-20px;bottom:64px;background:var(--terra)}
-.photo .badge{position:absolute;left:-28px;bottom:-24px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;box-shadow:0 20px 40px -24px rgba(40,30,15,.5);font-size:13px;line-height:1.35}
-.photo .badge b{display:block;font-size:15px}
-@media(max-width:900px){.hero .wrap{grid-template-columns:1fr}.photo{justify-self:center;max-width:380px;margin-top:20px}.photo .badge{left:10px}}
-@media(max-width:560px){.facts{grid-template-columns:1fr}.facts div{padding:14px 0;border-bottom:1px solid var(--greige)}}
+.trainer{display:flex;align-items:center;gap:14px;margin-top:34px;font-size:14px;color:var(--muted)}
+.trainer img{width:54px;height:54px;border-radius:50%;object-fit:cover;object-position:50% 15%;border:2px solid var(--card);box-shadow:0 0 0 1px var(--line)}
+.trainer b{display:block;color:var(--ink);font-size:15px}
 
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(32px,6vw,72px);align-items:center}
+.hero .bg{left:38%;opacity:.28;-webkit-mask-image:linear-gradient(90deg,transparent,#000 30%);mask-image:linear-gradient(90deg,transparent,#000 30%)}
+.cat{background:rgba(252,249,245,.92);backdrop-filter:blur(4px);border:1px solid var(--line);border-radius:22px;padding:26px 26px 14px;box-shadow:0 30px 60px -36px rgba(40,30,15,.5)}
+.cat h2{font-family:var(--body);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.cat-i{display:grid;grid-template-columns:38px 1fr 20px;gap:8px;align-items:center;padding:16px 0;border-top:1px solid var(--greige);text-decoration:none}
+.cat-i:first-of-type{border-top:0}
+.cat-i .no{font-family:var(--display);font-size:13px;color:var(--terra-d)}
+.cat-i b{display:block;font-size:15.5px;font-weight:600;line-height:1.3}
+.cat-i small{display:block;font-size:12px;color:var(--muted);margin-top:3px}
+.cat-i .ar{transition:transform .15s}.cat-i:hover .ar{transform:translateX(4px)}.cat-i:hover b{color:var(--terra-d)}
+.cat .all{display:block;text-align:center;font-size:13.5px;font-weight:600;padding:12px 0 4px;border-top:1px solid var(--greige);text-decoration:none}
+@media(max-width:900px){.hero .wrap{grid-template-columns:1fr}.hero .bg{left:0;opacity:.35}}
 /* dla kogo */
 .aud{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
 .aud article{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:28px}
@@ -68,14 +71,14 @@
 .allbtn{margin-top:36px;display:flex;justify-content:center}
 
 /* o mnie */
-.about .wrap{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(32px,6vw,80px);align-items:start}
-.about .pic{border-radius:22px;overflow:hidden;background:#fff;border:1px solid var(--line);position:sticky;top:100px;aspect-ratio:4/5}.about .pic img{width:100%;height:100%;object-fit:cover;object-position:50% 8%}
+.about .wrap{display:grid;grid-template-columns:300px minmax(0,1fr);gap:clamp(32px,6vw,80px);align-items:start}
+.about .pic{border-radius:18px;overflow:hidden;background:#fff;border:1px solid var(--line);position:sticky;top:100px;aspect-ratio:4/5;width:300px}.about .pic img{width:100%;height:100%;object-fit:cover;object-position:50% 8%}
 .about h2{font-size:clamp(30px,4vw,46px);margin:18px 0 22px}
 .about p{font-size:16.5px;color:var(--ink2);margin:0 0 16px}
 .creds{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:12px}
 .creds li{display:grid;grid-template-columns:26px 1fr;gap:10px;font-size:15px;color:var(--ink2)}
 .creds li::before{content:"";width:12px;height:12px;background:var(--terra);border-radius:2px;margin-top:6px}
-@media(max-width:860px){.about .wrap{grid-template-columns:1fr}.about .pic{position:static;max-width:360px}}
+@media(max-width:860px){.about .wrap{grid-template-columns:1fr}.about .pic{position:static;width:220px}}
 
 /* kontakt */
 .contact{padding:0 0 clamp(64px,9vw,120px)}
@@ -92,31 +95,25 @@
 <body>
 <header class="top" id="top">
   <div class="wrap">
-    <a class="brand" href="./"><span class="logo" aria-hidden="true"><i></i><i></i><i></i></span><span><b>Risk Trainings</b><small>Maciej Buczak · Risk Research</small></span></a>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
     <nav class="nav" id="nav"><a class="on" href="./">Start</a><a href="szkolenia/">Szkolenia</a><a href="#o-mnie">O mnie</a><a href="#kontakt">Kontakt</a><a class="sci" href="/">Strona naukowa ↗</a></nav>
+    <a class="brand" href="./"><span><b>Risk Trainings</b><small>Maciej Buczak · Risk Research</small></span><span class="logo" aria-hidden="true"><i></i><i></i><i></i></span></a>
   </div>
 </header>
 
 <main>
 <section class="hero">
+  <div class="bg" data-gfx="kontury,4,160,110"></div>
   <div class="wrap">
     <div>
-      <span class="kick">Szkolenia z zarządzania ryzykiem</span>
-      <h1>Warsztaty z ryzyka, które kończą się <em>decyzją</em>.</h1>
-      <p class="lead">Modele ryzyka, walidacja, kapitał i niepewność – omawiane na przypadkach z banków, raportach walidacyjnych i posiedzeniach komitetów. Prowadzi praktyk, który modele buduje, ocenia i broni przed nadzorcą.</p>
-      <div class="cta"><a class="btn" href="szkolenia/">Zobacz szkolenia <span class="ar">→</span></a><a class="btn ghost" href="#kontakt">Szkolenie dla Twojego zespołu</a></div>
-      <div class="facts">
-        <div><b>50+</b><span>autorskich badań analitycznych w ocenie modelu AMA</span></div>
-        <div><b>kilkadziesiąt</b><span>przeprowadzonych ocen modeli ryzyka</span></div>
-        <div><b>ECL · AMA · ICAAP</b><span>cały cykl życia modeli – od budowy po walidację</span></div>
-      </div>
+      <span class="kick">Risk Trainings · szkolenia z zarządzania ryzykiem</span>
+      <h1>Szkolenia z&nbsp;<em>ryzyka</em><br>dla banków i&nbsp;instytucji finansowych</h1>
+      <p class="lead">Warsztaty z modeli ryzyka, walidacji, kapitału i decyzji w warunkach niepewności – z pełnym programem dzień po dniu, case’ami z praktyki i ćwiczeniami w zespołach.</p>
+      <ul class="chips"><li><b>1–2 dni</b> warsztatów</li><li>stacjonarnie lub zdalnie</li><li>program dopasowany do zespołu</li></ul>
+      <div class="cta"><a class="btn" href="szkolenia/">Zobacz programy szkoleń <span class="ar">→</span></a><a class="btn ghost" href="#kontakt">Zapytaj o szkolenie</a></div>
+      <div class="trainer"><img src="img/maciej-buczak.jpg" alt=""><span><b>Prowadzi Maciej Buczak</b>Risk Research · budowa i walidacja modeli ryzyka</span></div>
     </div>
-    <div class="photo rv">
-      <div class="frame"><img src="img/maciej-buczak.jpg" alt="Maciej Buczak" width="1078" height="1100"></div>
-      <i class="sq s1"></i><i class="sq s2"></i><i class="sq s3"></i>
-      <div class="badge"><b>Maciej Buczak</b>Risk Research · modele ryzyka i ich walidacja</div>
-    </div>
+    <div class="cat rv"><h2>Programy szkoleń</h2><div data-tlist="cat"></div><a class="all" href="szkolenia/">Wszystkie szkolenia →</a></div>
   </div>
 </section>
 
@@ -198,18 +195,31 @@
 
 <footer class="foot">
   <div class="wrap">
-    <div><a class="brand" href="./"><span class="logo" aria-hidden="true"><i></i><i></i><i></i></span><span><b>Risk Trainings</b></span></a><p style="margin:14px 0 0;max-width:340px">Szkolenia z zarządzania ryzykiem dla banków i instytucji finansowych.</p></div>
+    <div><a class="brand" href="./"><span><b>Risk Trainings</b></span><span class="logo" aria-hidden="true"><i></i><i></i><i></i></span></a><p style="margin:14px 0 0;max-width:340px">Szkolenia z zarządzania ryzykiem dla banków i instytucji finansowych.</p></div>
     <div><h4>Strony</h4><a href="./">Start</a><a href="szkolenia/">Szkolenia</a><a href="#o-mnie">O mnie</a><a href="/">Strona naukowa</a></div>
     <div><h4>Kontakt</h4><a href="mailto:maciej.buczak@gmail.com">maciej.buczak@gmail.com</a><a href="https://www.linkedin.com/in/maciej-buczak-561b95120" target="_blank" rel="noopener">LinkedIn</a></div>
     <div class="bottom"><span>© 2026 Maciej Buczak | Risk Research</span><span>Wersja próbna strony</span></div>
   </div>
 </footer>
 <script src="szkolenia.js"></script>
+<script src="rt-gfx.js"></script>
+<script>
+(function(){var T=window.RT_SZKOLENIA||[],e=function(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")};
+document.querySelectorAll("[data-tlist]").forEach(function(el){var k=el.dataset.tlist;el.innerHTML=T.map(function(t,i){var d=t.days===1?"1 dzień":t.days+" dni";
+ if(k==="row")return'<a class="mini rv" href="szkolenia/#'+t.id+'"><span class="d">'+d+'</span><b>'+e(t.title)+'</b><span class="go">Program →</span></a>';
+ return'<a class="cat-i" href="szkolenia/#'+t.id+'"><span class="no">'+String(i+1).padStart(2,"0")+'</span><span><b>'+e(t.title)+'</b><small>'+e(t.eyebrow)+'</small></span><span class="ar">→</span></a>'}).join("")});
+document.querySelectorAll("[data-agenda]").forEach(function(el){var t=T.find(function(x){return x.id===el.dataset.agenda})||T[0];if(!t)return;var d=t.program[0];
+ el.innerHTML='<div class="ag-hd"><span>Przykładowy dzień szkolenia</span><b>'+e(t.title)+'</b><small>'+e(d.title)+'</small></div>'+d.blocks.map(function(b){return'<div class="ag-r"><span class="tm">'+e(b.time.split(/[–-]/)[0])+'</span><span class="tt">'+e(b.title)+'</span></div>'}).join("")+'<a class="ag-ft" href="szkolenia/#'+t.id+'">Pełny program dwóch dni →</a>'});
+document.querySelectorAll("[data-gfx]").forEach(function(el){var p=el.dataset.gfx.split(",");var g=gfx(p[0],+p[1],+p[2],+p[3],"#bf8165");if(p[4])g=g.replace(/<rect[^>]*>/g,"");el.innerHTML=g});
+document.querySelectorAll("[data-sqs]").forEach(function(el){var r=rng(+el.dataset.sqs),h="";for(var i=0;i<34;i++){var s=[6,8,10,14,18,26,40][Math.floor(r()*7)],e0=r(),x=e0<.5?(r()<.5?r()*9:91+r()*9):r()*100,y=e0<.5?r()*100:(r()<.5?r()*10:90+r()*10),c=r()<.3?"#bf8165":"#0d0d0d",o=(s>20?.05:.09)+r()*.08;h+='<i style="left:'+x.toFixed(1)+'%;top:'+y.toFixed(1)+'%;width:'+s+'px;height:'+s+'px;background:'+c+';opacity:'+o.toFixed(2)+'"></i>'}el.innerHTML=h});
+})();
+</script>
 <script>
 const esc=s=>String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
 document.getElementById("featured").innerHTML=(window.RT_SZKOLENIA||[]).map(t=>{const n=t.program.reduce((s,d)=>s+d.blocks.length,0);
   return`<a class="tcard rv" href="szkolenia/#${t.id}" style="text-decoration:none"><div class="eb"><span>${esc(t.eyebrow)}</span><span>${n} modułów</span></div><h3>${esc(t.title)}</h3><p class="sub">${esc(t.subtitle)}</p><div class="tags">${t.area.map(a=>`<span class="tag">${esc(a)}</span>`).join("")}</div><span class="more">Program szkolenia <span class="ar">→</span></span></a>`}).join("");
 </script>
 <script src="rt.js"></script>
+<nav class="variants" aria-label="Warianty strony">Wariant: <a href="index.html" class=on title="Katalog · kontury">A</a><a href="wariant-b.html" title="Centrum · okręgi">B</a><a href="wariant-c.html" title="Agenda · kwadraty">C</a></nav>
 </body>
 </html>
