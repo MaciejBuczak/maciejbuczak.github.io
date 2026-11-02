@@ -11,12 +11,12 @@
 <link rel="stylesheet" href="rt.css">
 <style>
 /* hero */
-.hero{position:relative;overflow:hidden;padding:clamp(48px,7vw,96px) 0 clamp(64px,8vw,110px)}
+.hero{position:relative;overflow:hidden;padding:clamp(20px,3vw,40px) 0 clamp(48px,6vw,80px)}
 .hero>.wrap{position:relative;z-index:1}
-.hero h1{font-size:clamp(34px,4vw,54px);margin:22px 0 24px}
+.hero h1{font-size:clamp(32px,3.6vw,50px);margin:16px 0 18px}
 .hero h1 em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--terra-d);letter-spacing:0}
-.hero .lead{font-size:clamp(17px,1.5vw,19.5px);color:var(--ink2);max-width:600px;margin:0 0 26px;font-weight:300}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 30px;padding:0;list-style:none}
+.hero .lead{font-size:clamp(16px,1.35vw,18.5px);color:var(--ink2);max-width:600px;margin:0 0 20px;font-weight:300}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 24px;padding:0;list-style:none}
 .chips li{font-size:13.5px;font-weight:500;padding:6px 14px;border-radius:999px;border:1px solid var(--line);background:rgba(252,249,245,.8)}
 .chips li b{color:var(--terra-d);font-weight:600}
 .hero .cta{display:flex;flex-wrap:wrap;gap:12px}
@@ -27,11 +27,14 @@
 .hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(32px,5vw,64px);align-items:center}
 .sqs{position:absolute;inset:0;z-index:0;pointer-events:none}
 .hero .wrap{align-items:stretch}
-.person{position:relative;display:flex;flex-direction:column;background:rgba(252,249,245,.94);border:1px solid var(--line);border-radius:22px;padding:22px 24px 24px;box-shadow:0 30px 60px -40px rgba(40,30,15,.45);max-width:420px;justify-self:end;width:100%}
-.person .ph{width:120px;height:140px;border-radius:14px;overflow:hidden;margin-bottom:18px}
+.person{position:relative;display:flex;flex-direction:column;background:rgba(252,249,245,.94);border:1px solid var(--line);border-radius:22px;padding:20px 22px 22px;box-shadow:0 30px 60px -40px rgba(40,30,15,.45);max-width:420px;justify-self:end;width:100%}
+.person::before{content:"";position:absolute;width:40px;height:40px;background:var(--terra);border-radius:6px;right:-14px;top:-14px}
+.person .phd{display:grid;grid-template-columns:112px minmax(0,1fr);gap:18px;align-items:center}
+.person .ph{width:112px;height:132px;border-radius:14px;overflow:hidden}
+.person .org{display:block}
 .person .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 14%}
 .person .role{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--terra-d)}
-.person .nm{display:block;font-family:var(--display);font-weight:400;font-size:26px;line-height:1.15;margin:6px 0 4px}
+.person .nm{display:block;font-family:var(--display);font-weight:400;font-size:24px;line-height:1.15;margin:6px 0 4px}
 .person .org{font-size:14px;color:var(--muted)}
 .person .aff{list-style:none;margin:18px 0 0;padding:16px 0 0;border-top:1px solid var(--greige);display:grid;gap:8px}
 .person .aff li{position:relative;padding-left:18px;font-size:14px;line-height:1.45}
@@ -130,10 +133,10 @@
       <div class="cta"><a class="btn" href="szkolenia/">Zobacz programy szkoleń <span class="ar">→</span></a><a class="btn ghost" href="#kontakt">Zapytaj o szkolenie</a></div>
     </div>
     <aside class="person rv" aria-label="Prowadzący">
-      <div class="ph"><img src="img/maciej-buczak.jpg" alt="Maciej Buczak" width="1078" height="1100"></div>
-      <span class="role">Prowadzący</span>
+      <div class="phd"><div class="ph"><img src="img/maciej-buczak.jpg" alt="Maciej Buczak" width="1078" height="1100"></div>
+      <div><span class="role">Prowadzący</span>
       <b class="nm">Maciej Buczak</b>
-      <span class="org">Risk Research · szkolenia z zarządzania ryzykiem</span>
+      <span class="org">Risk Research · szkolenia z zarządzania ryzykiem</span></div></div>
       <ul class="aff">
         <li>Budowa i walidacja modeli ryzyka: ECL, AMA, ICAAP</li>
         <li>Wykładowca – SGGW i Uniwersytet WSB Merito Warszawa</li>
@@ -243,17 +246,31 @@ document.querySelectorAll("[data-tlist]").forEach(function(el){var k=el.dataset.
 document.querySelectorAll("[data-agenda]").forEach(function(el){var t=T.find(function(x){return x.id===el.dataset.agenda})||T[0];if(!t)return;var d=t.program[0];
  el.innerHTML='<div class="ag-hd"><span>Przykładowy dzień szkolenia</span><b>'+e(t.title)+'</b><small>'+e(d.title)+'</small></div>'+d.blocks.map(function(b){return'<div class="ag-r"><span class="tm">'+e(b.time.split(/[–-]/)[0])+'</span><span class="tt">'+e(b.title)+'</span></div>'}).join("")+'<a class="ag-ft" href="szkolenia/#'+t.id+'">Pełny program dwóch dni →</a>'});
 document.querySelectorAll("[data-gfx]").forEach(function(el){var p=el.dataset.gfx.split(",");var g=gfx(p[0],+p[1],+p[2],+p[3],"#bf8165");if(p[4])g=g.replace(/<rect[^>]*>/g,"");el.innerHTML=g});
-/* kwadraty w tle – trzy sposoby rozłożenia tych samych kwadratów */
-window.rtSquares=function(mode){var el=document.querySelector("[data-sqs]");if(!el)return;var r=rng(+el.dataset.sqs+(+mode)*101),W=el.clientWidth||1440,H=el.clientHeight||800,pts=[],h="";
- var put=function(x,y,s){var c=r()<.28?"#bf8165":"#0d0d0d",o=(s>20?.05:.08)+r()*.08;h+='<i style="left:'+x.toFixed(1)+'px;top:'+y.toFixed(1)+'px;width:'+s+'px;height:'+s+'px;background:'+c+';opacity:'+o.toFixed(2)+'"></i>'};
- var size=function(){return[6,8,10,14,18,26,40][Math.floor(r()*7)]};
- var far=function(x,y,d){for(var i=0;i<pts.length;i++){var p=pts[i];if((p[0]-x)*(p[0]-x)+(p[1]-y)*(p[1]-y)<d*d)return false}return true};
- if(mode==="1"){var t=0;while(pts.length<46&&t++<4000){var x=r()*W,y=r()*H;if(far(x,y,Math.min(W,H)*.11)){pts.push([x,y]);put(x,y,size())}}}
- else if(mode==="2"){var t=0;while(pts.length<40&&t++<6000){var x=r()*W,y=r()*H,a=Math.abs((x/W)+(1-y/H)-1);if(r()<Math.pow(a,1.4)&&far(x,y,46)){pts.push([x,y]);put(x,y,size())}}}
- else{for(var i=0;i<34;i++){var e0=r(),px=e0<.5?(r()<.5?r()*9:91+r()*9):r()*100,py=e0<.5?r()*100:(r()<.5?r()*10:90+r()*10);put(px/100*W,py/100*H,size())}}
- el.innerHTML=h;document.querySelectorAll(".variants a[data-sq]").forEach(function(a){a.classList.toggle("on",a.dataset.sq===mode)});try{localStorage.setItem("rt.sq2",mode)}catch(e){}};
-var sq0="1";try{sq0=localStorage.getItem("rt.sq2")||"1"}catch(e){}window.rtSquares(sq0);
-document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a[data-sq]");if(a){e.preventDefault();window.rtSquares(a.dataset.sq)}});
+/* kwadraty w tle – generator z ustawieniami; kod ustawień (np. „KW-1-40-6-40-28-100-11-12345”) odtwarza dokładnie ten sam układ */
+var SQ={m:1,n:40,a:6,b:40,t:28,o:100,d:11,z:12345};
+var SQM={1:"Równomiernie",2:"Ukos",3:"Przy krawędziach",4:"Swobodnie"};
+function sqCode(){return["KW",SQ.m,SQ.n,SQ.a,SQ.b,SQ.t,SQ.o,SQ.d,SQ.z].join("-")}
+function sqRead(c){var p=String(c||"").trim().toUpperCase().split("-");if(p[0]!=="KW"||p.length<9)return false;var k=["m","n","a","b","t","o","d","z"];for(var i=0;i<8;i++){var v=parseInt(p[i+1],10);if(!isFinite(v))return false;SQ[k[i]]=v}return true}
+function sqDraw(){var el=document.querySelector("[data-sqs]");if(!el)return;var r=rng(SQ.z),W=el.clientWidth||1440,H=el.clientHeight||800,pts=[],h="",sizes=[6,8,10,14,18,26,40,56].filter(function(v){return v>=SQ.a&&v<=SQ.b});if(!sizes.length)sizes=[SQ.a];
+ var put=function(x,y){var s=sizes[Math.floor(r()*sizes.length)],c=r()*100<SQ.t?"#bf8165":"#0d0d0d",o=((s>20?.05:.08)+r()*.08)*SQ.o/100;h+='<i style="left:'+x.toFixed(1)+'px;top:'+y.toFixed(1)+'px;width:'+s+'px;height:'+s+'px;background:'+c+';opacity:'+Math.min(.6,o).toFixed(3)+'"></i>'};
+ var md=Math.min(W,H)*SQ.d/100,far=function(x,y){for(var i=0;i<pts.length;i++){var p=pts[i];if((p[0]-x)*(p[0]-x)+(p[1]-y)*(p[1]-y)<md*md)return false}return true};
+ var ok=function(x,y){if(SQ.m===2)return r()<Math.pow(Math.abs((x/W)+(1-y/H)-1),1.4);if(SQ.m===3){var e=Math.min(x/W,1-x/W,y/H*.9,1-y/H);return e<.09}return true};
+ for(var t=0;pts.length<SQ.n&&t<20000;t++){var x=r()*W,y=r()*H;if(ok(x,y)&&(SQ.m===4||far(x,y))){pts.push([x,y]);put(x,y)}}
+ el.innerHTML=h;var c=document.getElementById("sqCode");if(c)c.value=sqCode();try{localStorage.setItem("rt.sq3",sqCode())}catch(e){}}
+try{sqRead(localStorage.getItem("rt.sq3"))}catch(e){}
+function sqPanel(){var p=document.getElementById("sqPanel");p.innerHTML='<div class="sqrow"><b>Kwadraty w tle</b><button type="button" data-sqx="close" aria-label="Zamknij">✕</button></div>'+
+ '<label>Układ<select data-sqk="m">'+Object.keys(SQM).map(function(k){return'<option value="'+k+'"'+(+k===SQ.m?" selected":"")+'>'+SQM[k]+'</option>'}).join("")+'</select></label>'+
+ [["n","Liczba kwadratów",5,120,1],["a","Najmniejszy (px)",6,56,1],["b","Największy (px)",6,56,1],["t","Terakota (%)",0,100,1],["o","Intensywność (%)",30,250,5],["d","Odstęp (%)",0,25,1]].map(function(f){return'<label>'+f[1]+' <span id="sqv'+f[0]+'">'+SQ[f[0]]+'</span><input type="range" data-sqk="'+f[0]+'" min="'+f[2]+'" max="'+f[3]+'" step="'+f[4]+'" value="'+SQ[f[0]]+'"></label>'}).join("")+
+ '<div class="sqrow"><button type="button" class="b1" data-sqx="roll">🎲 Losuj układ</button><button type="button" data-sqx="rollall">🎲 Losuj wszystko</button></div>'+
+ '<label>Kod tego układu <input id="sqCode" value="'+sqCode()+'" spellcheck="false"></label><div class="sqrow"><button type="button" data-sqx="copy">Kopiuj kod</button><button type="button" data-sqx="apply">Wczytaj kod</button></div><small>Kod odtwarza dokładnie ten układ. Skopiuj go i wklej mi w rozmowie.</small>'}
+document.addEventListener("input",function(e){var k=e.target.dataset&&e.target.dataset.sqk;if(!k)return;SQ[k]=+e.target.value;if(k==="a"&&SQ.b<SQ.a){SQ.b=SQ.a;sqPanel()}if(k==="b"&&SQ.a>SQ.b){SQ.a=SQ.b;sqPanel()}var v=document.getElementById("sqv"+k);if(v)v.textContent=SQ[k];sqDraw()});
+document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("[data-sqx]");if(!b)return;var x=b.dataset.sqx,p=document.getElementById("sqPanel");
+ if(x==="open"){p.hidden=!p.hidden;if(!p.hidden)sqPanel();return}if(x==="close"){p.hidden=true;return}
+ if(x==="roll"){SQ.z=Math.floor(Math.random()*99999)+1;sqDraw();return}
+ if(x==="rollall"){var R=Math.random;SQ.z=Math.floor(R()*99999)+1;SQ.m=1+Math.floor(R()*4);SQ.n=12+Math.floor(R()*70);SQ.a=[6,8,10][Math.floor(R()*3)];SQ.b=[18,26,40,56][Math.floor(R()*4)];SQ.t=10+Math.floor(R()*40);SQ.o=60+Math.floor(R()*12)*10;SQ.d=Math.floor(R()*16);sqPanel();sqDraw();return}
+ if(x==="copy"){var c=document.getElementById("sqCode");c.select();try{navigator.clipboard.writeText(c.value)}catch(err){document.execCommand("copy")}b.textContent="Skopiowano ✓";return}
+ if(x==="apply"){if(sqRead(document.getElementById("sqCode").value)){sqPanel();sqDraw()}else{b.textContent="Zły kod"}}});
+sqDraw();
 })();
 </script>
 <script>
@@ -262,6 +279,7 @@ document.getElementById("featured").innerHTML=(window.RT_SZKOLENIA||[]).map(t=>{
   return`<a class="tcard rv" href="szkolenia/#${t.id}" style="text-decoration:none"><div class="eb"><span>${esc(t.eyebrow)}</span><span>${n} modułów</span></div><h3>${esc(t.title)}</h3><p class="sub">${esc(t.subtitle)}</p><div class="tags">${t.area.map(a=>`<span class="tag">${esc(a)}</span>`).join("")}</div><span class="more">Program szkolenia <span class="ar">→</span></span></a>`}).join("");
 </script>
 <script src="rt.js"></script>
-<nav class="variants" aria-label="Rozłożenie kwadratów">Kwadraty: <a href="#" data-sq="1" title="Równomiernie po całym tle">1</a><a href="#" data-sq="2" title="Ukos">2</a><a href="#" data-sq="3" title="Przy krawędziach (poprzednio)">3</a></nav>
+<div class="variants"><button type="button" data-sqx="open">◼ Kwadraty w tle – ustawienia</button></div>
+<div class="sqpanel" id="sqPanel" hidden></div>
 </body>
 </html>
