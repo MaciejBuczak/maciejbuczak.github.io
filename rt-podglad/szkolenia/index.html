@@ -315,12 +315,12 @@ const T=window.RT_SZKOLENIA||[],esc=s=>String(s==null?"":s).replace(/&/g,"&amp;"
 document.getElementById("fN").textContent=T.length;
 function draw(){
   document.getElementById("tiles").innerHTML=T.map((t,i)=>{const d=t.days===1?"1 dzień":t.days+" dni";
-    return`<a class="tile ${VAR[t.id]||["v1","v2","v3","v4"][i%4]}" href="#${t.id}" id="${t.id}"><div class="art"><span class="no">${String(i+1).padStart(2,"0")}</span><svg viewBox="0 0 400 225" preserveAspectRatio="xMidYMid meet" aria-hidden="true">${art(t)}</svg></div>
+    return`<a class="tile ${VAR[t.id]||["v1","v2","v3","v4"][i%4]}" href="${t.id==="budowa"?"budowa/":"#"+t.id}" id="${t.id}"><div class="art"><span class="no">${String(i+1).padStart(2,"0")}</span><svg viewBox="0 0 400 225" preserveAspectRatio="xMidYMid meet" aria-hidden="true">${art(t)}</svg></div>
       <div class="body"><div><span class="eb">${t.area.map(esc).join(" · ")}</span><h2>${esc(t.title)}</h2>${t.subtitle?`<p class="sb">${esc(t.subtitle)}</p>`:""}</div><span class="go" aria-hidden="true">→</span></div></a>`}).join("");
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.2});
   document.querySelectorAll(".tile").forEach(el=>io.observe(el));
 }
-document.addEventListener("click",e=>{const t=e.target.closest(".tile");if(t)e.preventDefault()});
+document.addEventListener("click",e=>{const t=e.target.closest(".tile");if(t&&t.id!=="budowa")e.preventDefault()});
 draw();
 
 /* ---------- grafika dynamiczna nagłówka ---------- */
