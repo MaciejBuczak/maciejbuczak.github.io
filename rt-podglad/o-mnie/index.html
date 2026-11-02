@@ -92,7 +92,7 @@
 .un-g{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .un-g article{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:clamp(24px,3vw,34px);display:flex;flex-direction:column}
 .un-logo{height:46px;width:auto;max-width:100%;margin-bottom:22px;object-fit:contain;object-position:left center}
-.un-logo.wsb{height:34px;margin:3px 0 31px}
+.un-logo.wsb{height:34px;margin:2px 0 32px}
 .un-g h3{font-family:var(--body);font-weight:600;font-size:18px;line-height:1.35;margin:0 0 8px}
 .un-g p{margin:0 0 18px;color:var(--muted);font-size:15px}
 .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:auto}.chips span{font-size:13px;padding:5px 12px;border:1px solid var(--line);border-radius:999px;background:var(--paper);color:var(--ink2)}
@@ -106,13 +106,14 @@
 .rs-h span{font-family:var(--serif);font-style:italic;font-weight:400;font-size:26px;letter-spacing:0;text-transform:none;color:var(--terra)}
 .res .lk{display:flex;flex-wrap:wrap;gap:4px 18px;margin:12px 0 0}.res .lk a{font-size:13.5px;font-weight:600;color:var(--terra);text-decoration:none}.res .lk a:hover{color:#e2a88c}
 .pf-g{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.pf{background:#171512;border:1px solid #2c2925;border-radius:var(--r);padding:clamp(22px,3vw,32px);position:relative}
+.pf{background:var(--paper);border:1px solid var(--paper);border-radius:var(--r);padding:clamp(22px,3vw,32px);position:relative}
 .pf-n{display:flex;align-items:baseline;gap:12px;margin-bottom:16px}
-.pf-n b{font-family:var(--display);font-weight:400;font-size:clamp(34px,3.8vw,48px);line-height:1;color:var(--terra)}
-.pf-n span{font-size:13px;color:#a9a194}
-.pf h4{font-family:var(--body);font-weight:600;font-size:19px;line-height:1.35;color:var(--paper);margin:0 0 6px}
-.pf .m{font-size:13px;color:var(--sand);margin:0 0 12px}
-.pf p{margin:0;font-size:15px;color:#cfc6b8}
+.pf-n b{font-family:var(--display);font-weight:400;font-size:clamp(34px,3.8vw,48px);line-height:1;color:var(--terra-d)}
+.pf-n span{font-size:13px;color:var(--muted)}
+.pf h4{font-family:var(--body);font-weight:600;font-size:19px;line-height:1.35;color:var(--ink);margin:0 0 6px}
+.pf .m{font-size:13px;color:var(--tan);margin:0 0 12px}
+.pf p{margin:0;font-size:15px;color:var(--ink2)}
+.res .pf .lk a{color:var(--terra-d)}.res .pf .lk a:hover{color:var(--ink)}
 .po{list-style:none;margin:20px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;column-gap:40px}
 .po a{display:grid;gap:3px;padding:16px 0;border-bottom:1px solid #2c2925;text-decoration:none;color:inherit}
 .po .t{font-weight:600;font-size:15.5px;line-height:1.4;color:var(--paper)}
@@ -120,8 +121,18 @@
 .po .d{font-size:14px;color:#a9a194}
 .po a:hover .t{color:#e2a88c}
 .es-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.es{display:flex;flex-direction:column;background:var(--paper);color:var(--ink);border-radius:var(--r);padding:24px 24px 20px;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.es{display:flex;flex-direction:column;background:var(--paper);color:var(--ink);border-radius:var(--r);overflow:hidden;text-decoration:none;transition:transform .2s,box-shadow .2s}
 .es:hover{transform:translateY(-3px);box-shadow:0 18px 40px -20px rgba(0,0,0,.7)}
+.es-i{display:block;aspect-ratio:16/9;background:var(--greige);overflow:hidden}.es-i img{width:100%;height:100%;object-fit:cover;transition:transform .5s}.es:hover .es-i img{transform:scale(1.04)}
+.es-b{display:flex;flex-direction:column;flex:1;padding:20px 24px 20px}
+.prof{display:flex;flex-wrap:wrap;align-items:center;gap:12px 14px;margin:22px 0 4px}
+.prof>span{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--sand);margin-right:6px}
+.pr{display:inline-flex;align-items:center;gap:12px;padding:8px 16px 8px 8px;border:1px solid #3a352f;border-radius:999px;text-decoration:none;color:#e8e1d6;font-size:14px;font-weight:500;transition:border-color .2s,background .2s}
+.pr:hover{border-color:var(--terra);background:#171512}
+.pr .lg{display:inline-grid;place-items:center;height:34px;min-width:34px;padding:0 9px;border-radius:999px;font-weight:700;letter-spacing:.04em;font-size:13px}
+.pr.ssrn .lg{background:#fff;color:#1f3864;font-family:Georgia,serif;letter-spacing:.08em}
+.pr.rg .lg{display:inline-flex;align-items:center;justify-content:center;width:34px;background:#00d0af;color:#fff;font-family:var(--body);font-size:15px;padding:0 0 0 2px}
+.pr.rg sup{font-size:9px;line-height:1;margin-left:1px;position:relative;top:-4px;vertical-align:baseline}
 .es .tg{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--terra-d)}
 .es h4{font-family:var(--serif);font-style:italic;font-weight:400;font-size:21px;line-height:1.3;margin:12px 0 10px}
 .es p{margin:0 0 16px;font-size:14px;color:var(--muted)}
@@ -233,15 +244,20 @@
 
 <section class="dark res">
   <div class="wrap">
-    <div class="sec-hd rv"><div><span class="kick">Badania nad ryzykiem</span><h2 style="margin-top:16px">Granice modeli ryzyka.</h2></div><p>Badam, czy zjawiska finansowe da się zasadnie opisywać jako losowe – i jak instytucje komunikują niepewność, której nie potrafią zmierzyć.</p></div>
+    <div class="sec-hd rv"><div><span class="kick">Badania nad ryzykiem</span><h2 style="margin-top:16px">Granice modeli ryzyka.</h2></div><p>Badam, czy zjawiska finansowe da się zasadnie opisywać jako losowe – i jak instytucje komunikują niepewność zdarzeń skrajnych.</p></div>
 
     <div class="rs rv"><h3 class="rs-h"><span>01</span>Publikacje naukowe</h3>
-      <div class="pf-g"><article class="pf"><div class="pf-n"><b>4500+</b><span>pobrań w 8 tygodni</span></div><h4>The AMA Method – Analytical Foundations of Its Failure</h4><p class="m">2026 · zgłoszony do Journal of Banking and Finance</p><p>Matematyczne własności metody AMA, które mogły doprowadzić do jej nieskuteczności – i pytanie, czy zjawiska skrajne da się w ogóle modelować statystycznie.</p><p class="lk"><a href="https://ssrn.com/abstract=6949518" target="_blank" rel="noopener">SSRN ↗</a><a href="https://doi.org/10.13140/RG.2.2.19243.60966" target="_blank" rel="noopener">Wersja polska ↗</a></p></article><article class="pf"><div class="pf-n"><b>1800+</b><span>pobrań w 3 tygodnie</span></div><h4>I Can’t Predict 1-in-1000-year Catastrophe</h4><p class="m">2026 · zgłoszony do Journal of Financial Regulation</p><p>Kwantyl 0,999 jako „zdarzenie raz na 1000 lat” – etykieta bez oparcia w modelu ani w rzeczywistości. Analogia z „powodzią stuletnią” w hydrologii.</p><p class="lk"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7259718" target="_blank" rel="noopener">SSRN ↗</a><a href="https://doi.org/10.13140/RG.2.2.17029.92646" target="_blank" rel="noopener">Wersja polska ↗</a></p></article></div>
+      <div class="pf-g"><article class="pf"><div class="pf-n"><b>4500+</b><span>pobrań na SSRN</span></div><h4>The AMA Method – Analytical Foundations of Its Failure</h4><p class="m">2026 · preprint</p><p>Matematyczne własności metody AMA, które mogły doprowadzić do jej nieskuteczności – i pytanie, czy zjawiska skrajne da się w ogóle modelować statystycznie.</p><p class="lk"><a href="https://ssrn.com/abstract=6949518" target="_blank" rel="noopener">SSRN ↗</a><a href="https://doi.org/10.13140/RG.2.2.19243.60966" target="_blank" rel="noopener">Wersja polska ↗</a></p></article><article class="pf"><div class="pf-n"><b>2900+</b><span>pobrań na SSRN</span></div><h4>I Can’t Predict 1-in-1000-year Catastrophe</h4><p class="m">2026 · preprint</p><p>Kwantyl 0,999 jako „zdarzenie raz na 1000 lat” – etykieta bez oparcia w modelu ani w rzeczywistości. Analogia z „powodzią stuletnią” w hydrologii.</p><p class="lk"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7259718" target="_blank" rel="noopener">SSRN ↗</a><a href="https://doi.org/10.13140/RG.2.2.17029.92646" target="_blank" rel="noopener">Wersja polska ↗</a></p></article></div>
+      <div class="prof">
+        <span>Moje profile badawcze</span>
+        <a class="pr ssrn" href="https://papers.ssrn.com/Sol3/Cf_Dev/AbsByAuth.cfm?per_id=7368581" target="_blank" rel="noopener"><b class="lg">SSRN</b><span>Social Science Research Network ↗</span></a>
+        <a class="pr rg" href="https://www.researchgate.net/profile/Maciej-Buczak" target="_blank" rel="noopener"><b class="lg">R<sup>G</sup></b><span>ResearchGate ↗</span></a>
+      </div>
       <ul class="po"><li><a href="https://doi.org/10.13140/RG.2.2.34226.57287" target="_blank" rel="noopener"><span class="t">Are Financial Phenomena Random? On the Limits of the Probabilistic Description of Risk</span><span class="m">2026 · preprint</span><span class="d">Jak aparat stworzony do opisu zjawisk fizycznych stał się jedynym uznanym sposobem „widzenia” ryzyka w finansach.</span></a></li><li><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7080238" target="_blank" rel="noopener"><span class="t">Pokryzysowa architektura bezpieczeństwa finansowego wobec epizodu kryzysowego 2023</span><span class="m">2026 · Metody Ilościowe w Badaniach Ekonomicznych (w recenzji)</span><span class="d">Upadki banków mimo spełnienia wymogów kapitałowych i płynnościowych – co to mówi o regulacjach.</span></a></li><li><a href="https://doi.org/10.22630/MIBE.2024.25.4.16" target="_blank" rel="noopener"><span class="t">Bieg wsteczny w rozwoju koncepcji modelowania wartości nieoczekiwanej… na przykładzie wycofania AMA</span><span class="m">2024 · Metody Ilościowe w Badaniach Ekonomicznych</span><span class="d">Dlaczego regulator wycofał najbardziej zaawansowaną metodę kapitałową w ryzyku operacyjnym.</span></a></li><li><a href="https://rcin.org.pl/ibsys/Content/198335/PDF/KS-2009-04-T11P03.pdf" target="_blank" rel="noopener"><span class="t">Badanie autoregresyjnej natury procesu liczby strat operacyjnych</span><span class="m">2009 · IBS PAN</span><span class="d">Czy kolejne straty operacyjne są od siebie niezależne – test na danych.</span></a></li></ul>
     </div>
 
     <div class="rs rv"><h3 class="rs-h"><span>02</span>Eseje o ryzyku</h3>
-      <div class="es-g"><a class="es" href="/risk-research/art-hydrology_flood/" target="_blank" rel="noopener"><span class="tg">Powódź stuletnia · ryzyko ekstremalne</span><h4>A Hundred Years of the Return Period and the Hundred-Year Flood</h4><p>Skąd finanse wzięły okres powrotu, stacjonarność i teorię wartości ekstremalnych – i co hydrologia wie o nich dziś.</p><span class="go">Czytaj ↗</span></a><a class="es" href="/risk-research/art-finance_random/" target="_blank" rel="noopener"><span class="tg">Błądzenie losowe · ryzyko kredytowe</span><h4>How Finance Borrowed Its Randomness</h4><p>Od Bacheliera i Wienera, przez Blacka-Scholesa, Mertona i Vasicka, do wymogów kapitałowych Bazylei.</p><span class="go">Czytaj ↗</span></a><a class="es" href="/risk-research/art-time_different/" target="_blank" rel="noopener"><span class="tg">Kryzys · fałszywa stabilność</span><h4>This Time Is Different Syndrome and Destabilizing Stability</h4><p>Osiem wieków kryzysów i ten sam wzorzec: spokojne rynki same w sobie są niebezpieczne.</p><span class="go">Czytaj ↗</span></a></div>
+      <div class="es-g"><a class="es" href="/risk-research/art-1_in_1000years/" target="_blank" rel="noopener"><span class="es-i"><img src="/assets/images/crisis2.jpg" alt="" loading="lazy"></span><span class="es-b"><span class="tg">Ryzyko systemowe · regulacje</span><h4>I Can’t Predict a 1,000-Year Catastrophe</h4><p>Ile lat trzeba czekać na katastrofę, przed którą chroni nas system regulacyjny? Według dokumentów nadzorczych – tysiąc.</p><span class="go">Czytaj ↗</span></span></a><a class="es" href="/risk-research/art-hydrology_flood/" target="_blank" rel="noopener"><span class="es-i"><img src="/assets/images/flood_barrier1.jpg" alt="" loading="lazy"></span><span class="es-b"><span class="tg">Powódź stuletnia · ryzyko ekstremalne</span><h4>A Hundred Years of the Return Period and the Hundred-Year Flood</h4><p>Skąd finanse wzięły okres powrotu, stacjonarność i teorię wartości ekstremalnych – i co hydrologia wie o nich dziś.</p><span class="go">Czytaj ↗</span></span></a><a class="es" href="/risk-research/art-finance_random/" target="_blank" rel="noopener"><span class="es-i"><img src="/assets/images/finance_random1.jpg" alt="" loading="lazy"></span><span class="es-b"><span class="tg">Błądzenie losowe · ryzyko kredytowe</span><h4>How Finance Borrowed Its Randomness</h4><p>Od Bacheliera i Wienera, przez Blacka-Scholesa, Mertona i Vasicka, do wymogów kapitałowych Bazylei.</p><span class="go">Czytaj ↗</span></span></a></div>
       <div class="rs-cta"><a class="btn terra" href="/articlestart/">Zobacz wszystkie eseje <span class="ar">→</span></a></div>
     </div>
 
