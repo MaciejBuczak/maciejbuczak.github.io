@@ -157,7 +157,7 @@
   <div class="wrap">
     <div>
       <span class="kick">Programy szkoleń</span>
-      <h1>Szkolenia z&nbsp;ryzyka, które <em>liczą się</em> w&nbsp;praktyce</h1>
+      <h1>Ryzyko <em>policzone</em> i&nbsp;zrozumiane</h1>
       <p class="lead">Warsztaty z modeli ryzyka, walidacji, kapitału i decyzji w warunkach niepewności. Każdy program ma pełny plan dzień po dniu i dopasowuję go do zespołu.</p>
       <div class="facts"><div><b id="fN">4</b><span>programy</span></div><div><b>1–2</b><span>dni warsztatów</span></div><div><b>2</b><span>formy: na sali lub zdalnie</span></div></div>
     </div>
@@ -301,9 +301,9 @@ const HERO=(function(){const sec=document.querySelector(".sh"),cv=document.getEl
       s.P.forEach(p=>{if(p.f)p.a-=.02;else if(p.a<1)p.a+=.04});if(s.hold>260&&s.P[0]&&s.P[0].a<=0)Object.assign(s,this.init())},
     draw(s){const B=box(),cxm=(B.l+B.r)/2,cym=(B.t+B.b)/2,sc=Math.min((B.r-B.l)/2,(B.b-B.t)/2)/3.6,Xs=x=>cxm+x*sc*1.6,Ys=y=>cym-y*sc;
       dash([4,5]);cx.strokeStyle=INK+".3)";cx.lineWidth=1;[1,2].forEach(k=>{cx.beginPath();for(let a=0;a<=6.3;a+=.05){const u=Math.cos(a),v=Math.sin(a),x=k*(u*Math.sqrt(1.5)/1.2247),y=k*(.5*u*Math.sqrt(1.5)/1.2247+v*Math.sqrt(.75));a?cx.lineTo(Xs(x),Ys(y)):cx.moveTo(Xs(x),Ys(y))}cx.stroke()});dash();
-      cx.lineWidth=1;[[Xs(-4.2),cym,Xs(4.2),cym],[cxm,Ys(-4),cxm,Ys(4)]].forEach(a=>{const g=cx.createLinearGradient(a[0],a[1],a[2],a[3]);g.addColorStop(0,INK+"0)");g.addColorStop(.5,INK+".3)");g.addColorStop(1,INK+"0)");cx.strokeStyle=g;cx.beginPath();cx.moveTo(a[0],a[1]);cx.lineTo(a[2],a[3]);cx.stroke()});
+      cx.lineWidth=1;[[Xs(-4.2),cym,Xs(4.2),cym],[cxm,Ys(-4),cxm,Ys(4)]].forEach(a=>{const g=cx.createLinearGradient(a[0],a[1],a[2],a[3]);g.addColorStop(.06,INK+"0)");g.addColorStop(.5,INK+".3)");g.addColorStop(.94,INK+"0)");cx.strokeStyle=g;cx.beginPath();cx.moveTo(a[0],a[1]);cx.lineTo(a[2],a[3]);cx.stroke()});
       s.P.forEach(p=>{const ex=(p.x>1.8&&p.y>1.8)||(p.x<-1.8&&p.y<-1.8);if(Math.abs(p.x)>4.4||Math.abs(p.y)>4.4)return;cx.fillStyle=ex?TER+p.a+")":INK+(.45*p.a)+")";cx.beginPath();cx.arc(Xs(p.x),Ys(p.y),ex?3.4:2.2,0,7);cx.fill()});
-      txt("ρ = 0,5",B.r,B.t+12)},
+      txt("ρ = 0,5",Math.min(B.r,Xs(3)),Math.min(B.b-6,Ys(-2.9)))},
     still(s){while(s.P.length<650)this.step(s);s.P.forEach(p=>p.a=1)}};
   const MODES={mc:MC,rw:RW,di:DI,ln:LN,co:CO};
   function set(m){mode=MODES[m]?m:"mc";S=MODES[mode].init();lg.innerHTML=MODES[mode].lg;size();if(red){MODES[mode].still(S);frame()}}
