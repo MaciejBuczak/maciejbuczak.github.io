@@ -246,36 +246,17 @@ document.querySelectorAll("[data-tlist]").forEach(function(el){var k=el.dataset.
 document.querySelectorAll("[data-agenda]").forEach(function(el){var t=T.find(function(x){return x.id===el.dataset.agenda})||T[0];if(!t)return;var d=t.program[0];
  el.innerHTML='<div class="ag-hd"><span>Przykładowy dzień szkolenia</span><b>'+e(t.title)+'</b><small>'+e(d.title)+'</small></div>'+d.blocks.map(function(b){return'<div class="ag-r"><span class="tm">'+e(b.time.split(/[–-]/)[0])+'</span><span class="tt">'+e(b.title)+'</span></div>'}).join("")+'<a class="ag-ft" href="szkolenia/#'+t.id+'">Pełny program dwóch dni →</a>'});
 document.querySelectorAll("[data-gfx]").forEach(function(el){var p=el.dataset.gfx.split(",");var g=gfx(p[0],+p[1],+p[2],+p[3],"#bf8165");if(p[4])g=g.replace(/<rect[^>]*>/g,"");el.innerHTML=g});
-/* kwadraty w tle – generator z ustawieniami; kod ustawień (np. „KW-1-40-6-40-28-100-11-12345”) odtwarza dokładnie ten sam układ */
-var SQ={m:1,n:40,a:6,b:40,t:28,o:100,d:11,z:12345};
-var SQM={1:"Równomiernie",2:"Ukos",3:"Przy krawędziach",4:"Swobodnie"};
-function sqCode(){return["KW",SQ.m,SQ.n,SQ.a,SQ.b,SQ.t,SQ.o,SQ.d,SQ.z].join("-")}
-function sqRead(c){var p=String(c||"").trim().toUpperCase().split("-");if(p[0]!=="KW"||p.length<9)return false;var k=["m","n","a","b","t","o","d","z"];for(var i=0;i<8;i++){var v=parseInt(p[i+1],10);if(!isFinite(v))return false;SQ[k[i]]=v}return true}
-function sqDraw(){var el=document.querySelector("[data-sqs]");if(!el)return;var r=rng(SQ.z),W=el.clientWidth||1440,H=el.clientHeight||800,pts=[],h="",sizes=[6,8,10,14,18,26,40,56].filter(function(v){return v>=SQ.a&&v<=SQ.b});if(!sizes.length)sizes=[SQ.a];
- var put=function(x,y,s){var c=r()*100<SQ.t?"#bf8165":"#0d0d0d",o=((s>20?.05:.08)+r()*.08)*SQ.o/100;h+='<i style="left:'+x.toFixed(1)+'px;top:'+y.toFixed(1)+'px;width:'+s+'px;height:'+s+'px;background:'+c+';opacity:'+Math.min(.6,o).toFixed(3)+'"></i>'};
- var md=Math.min(W,H)*SQ.d/100,far=function(x,y){for(var i=0;i<pts.length;i++){var p=pts[i];if((p[0]-x)*(p[0]-x)+(p[1]-y)*(p[1]-y)<md*md)return false}return true};
- /* zajęte miejsca: każdy wiersz tekstu, etykiety, przyciski i karta – kwadraty losują się tylko w wolnej przestrzeni */
- var box=el.getBoundingClientRect(),occ=[],pad=14,addR=function(rc){if(rc.width&&rc.height)occ.push([rc.left-box.left-pad,rc.top-box.top-pad,rc.right-box.left+pad,rc.bottom-box.top+pad])};
+/* kwadraty w tle – układ stały (kod KW-1-10-11-40-28-100-11-22383, jeden kwadrat przesunięty ręcznie).
+   Położenie liczone od krawędzi treści: L – część lewego marginesu, R – część prawego, C – przesunięcie od lewej krawędzi tekstu; y od góry sekcji.
+   Kwadrat, który na danym ekranie wszedłby na tekst albo kartę, nie jest pokazywany. */
+var SQF=[{"m":"L","f":0.867,"y":531,"s":14,"c":"t","o":0.137},{"m":"R","f":0.367,"y":315,"s":18,"c":"k","o":0.126},{"m":"R","f":0.683,"y":592,"s":40,"c":"t","o":0.069},{"m":"L","f":0.32,"y":363,"s":26,"c":"k","o":0.124},{"m":"C","dx":634,"y":545,"s":18,"c":"k","o":0.159},{"m":"C","dx":519,"y":496,"s":40,"c":"k","o":0.096},{"m":"C","dx":462,"y":174,"s":14,"c":"k","o":0.086},{"m":"R","f":0.376,"y":50,"s":18,"c":"k","o":0.115},{"m":"R","f":0.294,"y":398,"s":26,"c":"k","o":0.088},{"m":"C","dx":539,"y":110,"s":18,"c":"t","o":0.146}];
+function sqDraw(){var el=document.querySelector("[data-sqs]");if(!el)return;var box=el.getBoundingClientRect(),W=box.width,H=box.height,h1=el.parentNode.querySelector("h1"),L=h1.getBoundingClientRect().left-box.left,CW=el.parentNode.querySelector(".wrap").clientWidth-2*parseFloat(getComputedStyle(el.parentNode.querySelector(".wrap")).paddingLeft),Rm=W-(L+CW),occ=[],pad=6,
+ addR=function(rc){if(rc.width&&rc.height)occ.push([rc.left-box.left-pad,rc.top-box.top-pad,rc.right-box.left+pad,rc.bottom-box.top+pad])};
  el.parentNode.querySelectorAll(".kick,h1,.lead").forEach(function(n){var rg=document.createRange();rg.selectNodeContents(n);Array.prototype.forEach.call(rg.getClientRects(),addR)});
  el.parentNode.querySelectorAll(".chips li,.cta .btn,.person,.kick").forEach(function(n){addR(n.getBoundingClientRect())});
- var free=function(x,y,s){for(var i=0;i<occ.length;i++){var o=occ[i];if(x<o[2]&&x+s>o[0]&&y<o[3]&&y+s>o[1])return false}return x>=0&&y>=0&&x+s<=W&&y+s<=H};
- var ok=function(x,y){if(SQ.m===2)return r()<Math.pow(Math.abs((x/W)+(1-y/H)-1),1.4);if(SQ.m===3){var e=Math.min(x/W,1-x/W,y/H*.9,1-y/H);return e<.09}return true};
- for(var t=0;pts.length<SQ.n&&t<30000;t++){var x=r()*W,y=r()*H,sz=sizes[Math.floor(r()*sizes.length)];if(free(x,y,sz)&&ok(x,y)&&(SQ.m===4||far(x,y))){pts.push([x,y]);put(x,y,sz)}}
- el.innerHTML=h;var c=document.getElementById("sqCode");if(c)c.value=sqCode();try{localStorage.setItem("rt.sq3",sqCode())}catch(e){}}
-try{sqRead(localStorage.getItem("rt.sq3"))}catch(e){}
-function sqPanel(){var p=document.getElementById("sqPanel");p.innerHTML='<div class="sqrow"><b>Kwadraty w tle</b><button type="button" data-sqx="close" aria-label="Zamknij">✕</button></div>'+
- '<label>Układ<select data-sqk="m">'+Object.keys(SQM).map(function(k){return'<option value="'+k+'"'+(+k===SQ.m?" selected":"")+'>'+SQM[k]+'</option>'}).join("")+'</select></label>'+
- [["n","Liczba kwadratów",5,120,1],["a","Najmniejszy (px)",6,56,1],["b","Największy (px)",6,56,1],["t","Terakota (%)",0,100,1],["o","Intensywność (%)",30,250,5],["d","Odstęp (%)",0,25,1]].map(function(f){return'<label>'+f[1]+' <span id="sqv'+f[0]+'">'+SQ[f[0]]+'</span><input type="range" data-sqk="'+f[0]+'" min="'+f[2]+'" max="'+f[3]+'" step="'+f[4]+'" value="'+SQ[f[0]]+'"></label>'}).join("")+
- '<div class="sqrow"><button type="button" class="b1" data-sqx="roll">🎲 Losuj układ</button><button type="button" data-sqx="rollall">🎲 Losuj wszystko</button></div>'+
- '<label>Kod tego układu <input id="sqCode" value="'+sqCode()+'" spellcheck="false"></label><div class="sqrow"><button type="button" data-sqx="copy">Kopiuj kod</button><button type="button" data-sqx="apply">Wczytaj kod</button></div><small>Kod odtwarza dokładnie ten układ. Skopiuj go i wklej mi w rozmowie.</small>'}
-document.addEventListener("input",function(e){var k=e.target.dataset&&e.target.dataset.sqk;if(!k)return;SQ[k]=+e.target.value;if(k==="a"&&SQ.b<SQ.a){SQ.b=SQ.a;sqPanel()}if(k==="b"&&SQ.a>SQ.b){SQ.a=SQ.b;sqPanel()}var v=document.getElementById("sqv"+k);if(v)v.textContent=SQ[k];sqDraw()});
-document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("[data-sqx]");if(!b)return;var x=b.dataset.sqx,p=document.getElementById("sqPanel");
- if(x==="open"){p.hidden=!p.hidden;if(!p.hidden)sqPanel();return}if(x==="close"){p.hidden=true;return}
- if(x==="roll"){SQ.z=Math.floor(Math.random()*99999)+1;sqDraw();return}
- if(x==="rollall"){var R=Math.random;SQ.z=Math.floor(R()*99999)+1;SQ.m=1+Math.floor(R()*4);SQ.n=12+Math.floor(R()*70);SQ.a=[6,8,10][Math.floor(R()*3)];SQ.b=[18,26,40,56][Math.floor(R()*4)];SQ.t=10+Math.floor(R()*40);SQ.o=60+Math.floor(R()*12)*10;SQ.d=Math.floor(R()*16);sqPanel();sqDraw();return}
- if(x==="copy"){var c=document.getElementById("sqCode");c.select();try{navigator.clipboard.writeText(c.value)}catch(err){document.execCommand("copy")}b.textContent="Skopiowano ✓";return}
- if(x==="apply"){if(sqRead(document.getElementById("sqCode").value)){sqPanel();sqDraw()}else{b.textContent="Zły kod"}}});
-sqDraw();var sqT;addEventListener("resize",function(){clearTimeout(sqT);sqT=setTimeout(sqDraw,200)});if(document.fonts&&document.fonts.ready)document.fonts.ready.then(sqDraw);
+ var h="";SQF.forEach(function(q){var x=q.m==="L"?q.f*L:q.m==="R"?L+CW+q.f*Rm:L+q.dx,y=q.y,s=q.s;if(x<0||x+s>W||y+s>H)return;for(var i=0;i<occ.length;i++){var o=occ[i];if(x<o[2]&&x+s>o[0]&&y<o[3]&&y+s>o[1])return}
+  h+='<i style="left:'+x.toFixed(1)+'px;top:'+y+'px;width:'+s+'px;height:'+s+'px;background:'+(q.c==="t"?"#bf8165":"#0d0d0d")+';opacity:'+q.o+'"></i>'});el.innerHTML=h}
+sqDraw();var sqT;addEventListener("resize",function(){clearTimeout(sqT);sqT=setTimeout(sqDraw,150)});if(document.fonts&&document.fonts.ready)document.fonts.ready.then(sqDraw);
 })();
 </script>
 <script>
@@ -284,7 +265,6 @@ document.getElementById("featured").innerHTML=(window.RT_SZKOLENIA||[]).map(t=>{
   return`<a class="tcard rv" href="szkolenia/#${t.id}" style="text-decoration:none"><div class="eb"><span>${esc(t.eyebrow)}</span><span>${n} modułów</span></div><h3>${esc(t.title)}</h3><p class="sub">${esc(t.subtitle)}</p><div class="tags">${t.area.map(a=>`<span class="tag">${esc(a)}</span>`).join("")}</div><span class="more">Program szkolenia <span class="ar">→</span></span></a>`}).join("");
 </script>
 <script src="rt.js"></script>
-<div class="variants"><button type="button" data-sqx="open">◼ Kwadraty w tle – ustawienia</button></div>
-<div class="sqpanel" id="sqPanel" hidden></div>
+
 </body>
 </html>
