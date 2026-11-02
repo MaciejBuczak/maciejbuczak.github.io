@@ -355,14 +355,12 @@ function makeAnim(cv,lg,getM){const cx=cv.getContext("2d"),
   requestAnimationFrame(loop);return{set,resize(){size();frame()}}}
 const HERO=makeAnim(document.getElementById("mc"),document.getElementById("lg"),()=>document.querySelector(".sh").dataset.m);
 const HERO2=makeAnim(document.getElementById("mc2"),document.getElementById("lg2"),()=>"w");
-/* warianty (wersja próbna) */
-const GR=[["mc","Monte Carlo"],["rw","Random walk"],["di","Rozkład"],["ln","Zbieżność"],["co","Korelacja"],["bt","Backtest VaR"],["pd","PD lifetime"],["bs","Bootstrap"]],OPT={g:GR,m:[["r","Obok tytułu"],["b","Pod tytułem"],["f","Tło u dołu"]],g2:GR},
-  LAB={g:"Grafika",m:"Miejsce",g2:"Grafika 2"},Q=new URLSearchParams(location.search),CUR={g:Q.get("g")||"co",m:Q.get("m")||"r",g2:Q.get("g2")||"bt"};
-document.body.insertAdjacentHTML("beforeend",'<div class="variants vx" id="vx">'+Object.keys(OPT).map(k=>'<div class="row"><span>'+LAB[k]+'</span>'+OPT[k].map(o=>`<a href="#" data-k="${k}" data-v="${o[0]}">${o[1]}</a>`).join("")+'</div>').join("")+'</div>');
-function apply(){document.querySelector(".sh").dataset.m=CUR.m;document.getElementById("tiles").className="tiles lay-a";HERO.set(CUR.g);HERO2.set(CUR.g2);document.getElementById("an2t").textContent=(GR.find(x=>x[0]===CUR.g2)||["",""])[1];
-  document.querySelectorAll("#vx a").forEach(a=>a.classList.toggle("on",CUR[a.dataset.k]===a.dataset.v));try{history.replaceState(null,"","?"+new URLSearchParams(CUR))}catch(e){}}
-document.getElementById("vx").addEventListener("click",e=>{const a=e.target.closest("a");if(!a)return;e.preventDefault();CUR[a.dataset.k]=a.dataset.v;apply()});
-apply();
+/* wybrane grafiki: przy tytule – Korelacja (obok tytułu), pod listą – Backtest VaR.
+   Pozostałe gotowe grafiki do użycia: mc Monte Carlo, rw Random walk, di Rozkład, ln Zbieżność, co Korelacja, bt Backtest VaR, pd PD lifetime, bs Bootstrap;
+   miejsca w nagłówku: r obok tytułu, b pod tytułem, f tło u dołu. */
+const CUR={g:"co",m:"r",g2:"bt"},GR=[["mc","Monte Carlo"],["rw","Random walk"],["di","Rozkład"],["ln","Zbieżność"],["co","Korelacja"],["bt","Backtest VaR"],["pd","PD lifetime"],["bs","Bootstrap"]];
+document.querySelector(".sh").dataset.m=CUR.m;document.getElementById("tiles").className="tiles lay-a";HERO.set(CUR.g);HERO2.set(CUR.g2);
+document.getElementById("an2t").textContent=GR.find(x=>x[0]===CUR.g2)[1];
 </script>
 <script src="../rt.js"></script>
 </body>
