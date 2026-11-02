@@ -13,7 +13,7 @@
 /* hero */
 .hero{position:relative;overflow:hidden;padding:clamp(48px,7vw,96px) 0 clamp(64px,8vw,110px)}
 .hero>.wrap{position:relative;z-index:1}
-.hero h1{font-size:clamp(36px,4.5vw,60px);margin:22px 0 24px}
+.hero h1{font-size:clamp(34px,4vw,54px);margin:22px 0 24px}
 .hero h1 em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--terra-d);letter-spacing:0}
 .hero .lead{font-size:clamp(17px,1.5vw,19.5px);color:var(--ink2);max-width:600px;margin:0 0 26px;font-weight:300}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 30px;padding:0;list-style:none}
@@ -24,18 +24,28 @@
 .trainer img{width:54px;height:54px;border-radius:50%;object-fit:cover;object-position:50% 15%;border:2px solid var(--card);box-shadow:0 0 0 1px var(--line)}
 .trainer b{display:block;color:var(--ink);font-size:15px}
 
-.hero .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(32px,6vw,72px);align-items:center}
-.hero .bg{left:38%;opacity:.28;-webkit-mask-image:linear-gradient(90deg,transparent,#000 30%);mask-image:linear-gradient(90deg,transparent,#000 30%)}
-.cat{background:rgba(252,249,245,.92);backdrop-filter:blur(4px);border:1px solid var(--line);border-radius:22px;padding:26px 26px 14px;box-shadow:0 30px 60px -36px rgba(40,30,15,.5)}
-.cat h2{font-family:var(--body);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
-.cat-i{display:grid;grid-template-columns:38px 1fr 20px;gap:8px;align-items:center;padding:16px 0;border-top:1px solid var(--greige);text-decoration:none}
-.cat-i:first-of-type{border-top:0}
-.cat-i .no{font-family:var(--display);font-size:13px;color:var(--terra-d)}
-.cat-i b{display:block;font-size:15.5px;font-weight:600;line-height:1.3}
-.cat-i small{display:block;font-size:12px;color:var(--muted);margin-top:3px}
-.cat-i .ar{transition:transform .15s}.cat-i:hover .ar{transform:translateX(4px)}.cat-i:hover b{color:var(--terra-d)}
-.cat .all{display:block;text-align:center;font-size:13.5px;font-weight:600;padding:12px 0 4px;border-top:1px solid var(--greige);text-decoration:none}
-@media(max-width:900px){.hero .wrap{grid-template-columns:1fr}.hero .bg{left:0;opacity:.35}}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(32px,5vw,64px);align-items:center}
+.sqs{position:absolute;inset:0;z-index:0;pointer-events:none}
+.side{display:grid;gap:18px}
+.person{display:grid;grid-template-columns:132px minmax(0,1fr);gap:20px;align-items:start;background:rgba(252,249,245,.92);border:1px solid var(--line);border-radius:20px;padding:16px}
+.person img{width:132px;height:160px;object-fit:cover;object-position:50% 14%;border-radius:12px}
+.pdata .role{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--terra-d)}
+.pdata b{display:block;font-family:var(--display);font-weight:400;font-size:20px;margin:4px 0 2px}
+.pdata .org{display:block;font-size:13px;color:var(--muted);margin-bottom:10px}
+.pdata address{font-style:normal;display:grid;gap:2px;font-size:13.5px;line-height:1.45}
+.pdata address a{text-decoration:none;font-weight:500}.pdata address a:hover{color:var(--terra-d)}
+.todo{color:#b0a596}
+@media(max-width:480px){.person{grid-template-columns:96px 1fr}.person img{width:96px;height:120px}}
+.agenda{position:relative;background:var(--ink);color:var(--paper);border-radius:22px;padding:28px 28px 8px;box-shadow:0 30px 60px -30px rgba(0,0,0,.55)}
+.agenda::before{content:"";position:absolute;width:40px;height:40px;background:var(--terra);border-radius:6px;right:-14px;top:-14px}
+.ag-hd span{font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--sand)}
+.ag-hd b{display:block;font-family:var(--display);font-weight:400;font-size:22px;line-height:1.2;margin:10px 0 4px}
+.ag-hd small{display:block;font-size:12.5px;color:#a89f92;margin-bottom:14px}
+.ag-r{display:grid;grid-template-columns:62px 1fr;gap:10px;padding:12px 0;border-top:1px solid #2c2925;font-size:14.5px;line-height:1.4}
+.ag-r .tm{font-family:var(--display);font-size:14px;color:var(--terra)}
+.ag-ft{display:block;padding:14px 0;border-top:1px solid #2c2925;font-size:13.5px;font-weight:600;color:var(--paper);text-decoration:none}
+.ag-ft:hover{color:var(--terra)}
+@media(max-width:900px){.hero .wrap{grid-template-columns:1fr}}
 /* dla kogo */
 .aud{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
 .aud article{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:28px}
@@ -103,7 +113,7 @@
 
 <main>
 <section class="hero">
-  <div class="bg" data-gfx="kontury,4,160,110"></div>
+  <div class="sqs" data-sqs="11"></div>
   <div class="wrap">
     <div>
       <span class="kick">Risk Trainings · szkolenia z zarządzania ryzykiem</span>
@@ -111,9 +121,25 @@
       <p class="lead">Warsztaty z modeli ryzyka, walidacji, kapitału i decyzji w warunkach niepewności – z pełnym programem dzień po dniu, case’ami z praktyki i ćwiczeniami w zespołach.</p>
       <ul class="chips"><li><b>1–2 dni</b> warsztatów</li><li>stacjonarnie lub zdalnie</li><li>program dopasowany do zespołu</li></ul>
       <div class="cta"><a class="btn" href="szkolenia/">Zobacz programy szkoleń <span class="ar">→</span></a><a class="btn ghost" href="#kontakt">Zapytaj o szkolenie</a></div>
-      <div class="trainer"><img src="img/maciej-buczak.jpg" alt=""><span><b>Prowadzi Maciej Buczak</b>Risk Research · budowa i walidacja modeli ryzyka</span></div>
     </div>
-    <div class="cat rv"><h2>Programy szkoleń</h2><div data-tlist="cat"></div><a class="all" href="szkolenia/">Wszystkie szkolenia →</a></div>
+    <div class="side">
+      <div class="person rv">
+        <img src="img/maciej-buczak.jpg" alt="Maciej Buczak" width="1078" height="1100">
+        <div class="pdata">
+          <span class="role">Prowadzący</span>
+          <b>Maciej Buczak</b>
+          <span class="org">Risk Research · szkolenia z zarządzania ryzykiem</span>
+          <address>
+            <span class="todo">ul. [adres], [kod] [miasto]</span>
+            <span class="todo">NIP: [numer]</span>
+            <a href="mailto:maciej.buczak@gmail.com">maciej.buczak@gmail.com</a>
+            <span class="todo">tel. [numer]</span>
+            <a href="https://www.linkedin.com/in/maciej-buczak-561b95120" target="_blank" rel="noopener">LinkedIn ↗</a>
+          </address>
+        </div>
+      </div>
+      <div class="agenda rv" data-agenda="liczby"></div>
+    </div>
   </div>
 </section>
 
@@ -211,7 +237,14 @@ document.querySelectorAll("[data-tlist]").forEach(function(el){var k=el.dataset.
 document.querySelectorAll("[data-agenda]").forEach(function(el){var t=T.find(function(x){return x.id===el.dataset.agenda})||T[0];if(!t)return;var d=t.program[0];
  el.innerHTML='<div class="ag-hd"><span>Przykładowy dzień szkolenia</span><b>'+e(t.title)+'</b><small>'+e(d.title)+'</small></div>'+d.blocks.map(function(b){return'<div class="ag-r"><span class="tm">'+e(b.time.split(/[–-]/)[0])+'</span><span class="tt">'+e(b.title)+'</span></div>'}).join("")+'<a class="ag-ft" href="szkolenia/#'+t.id+'">Pełny program dwóch dni →</a>'});
 document.querySelectorAll("[data-gfx]").forEach(function(el){var p=el.dataset.gfx.split(",");var g=gfx(p[0],+p[1],+p[2],+p[3],"#bf8165");if(p[4])g=g.replace(/<rect[^>]*>/g,"");el.innerHTML=g});
-document.querySelectorAll("[data-sqs]").forEach(function(el){var r=rng(+el.dataset.sqs),h="";for(var i=0;i<34;i++){var s=[6,8,10,14,18,26,40][Math.floor(r()*7)],e0=r(),x=e0<.5?(r()<.5?r()*9:91+r()*9):r()*100,y=e0<.5?r()*100:(r()<.5?r()*10:90+r()*10),c=r()<.3?"#bf8165":"#0d0d0d",o=(s>20?.05:.09)+r()*.08;h+='<i style="left:'+x.toFixed(1)+'%;top:'+y.toFixed(1)+'%;width:'+s+'px;height:'+s+'px;background:'+c+';opacity:'+o.toFixed(2)+'"></i>'}el.innerHTML=h});
+/* kwadraty w tle – trzy układy do wyboru */
+window.rtSquares=function(mode){var el=document.querySelector("[data-sqs]");if(!el)return;var r=rng(+el.dataset.sqs),h="",W=el.clientWidth||1440,H=el.clientHeight||800,add=function(x,y,s,c,o){h+='<i style="left:'+x.toFixed(1)+'px;top:'+y.toFixed(1)+'px;width:'+s+'px;height:'+s+'px;background:'+c+';opacity:'+o.toFixed(2)+';border-radius:'+Math.max(1,s*.12).toFixed(1)+'px"></i>'};
+ if(mode==="1"){/* Trójki – motyw logo powtórzony w kilku skalach */var tr=[[.06,.16,1.6],[.9,.12,2.2],[.47,.9,1.3],[.02,.78,1],[.97,.66,1.1],[.6,.06,.9],[.33,.04,.7]];tr.forEach(function(t,i){var x=t[0]*W,y=t[1]*H,k=t[2]*(.8+r()*.4),c=i%3===1?"#bf8165":"#0d0d0d",o=.07+r()*.06;add(x,y,15*k,c,o);add(x-16*k,y+17*k,8*k,c,o);add(x-31*k,y+9*k,8*k,c,o)})}
+ else if(mode==="2"){/* Siatka – kwadraty na niewidocznej siatce, gęstsze przy prawej krawędzi i u dołu */var g=44;for(var x=g/2;x<W;x+=g)for(var y=g/2;y<H;y+=g){var d=Math.max(x/W,y/H*.8);if(r()<Math.pow(d,4)*.55){var s=[6,8,10,14,18][Math.floor(r()*5)];add(x-s/2,y-s/2,s,r()<.22?"#bf8165":"#0d0d0d",.05+r()*.09*d)}}}
+ else{/* Rozproszenie – kwadraty przy krawędziach */for(var i=0;i<34;i++){var s=[6,8,10,14,18,26,40][Math.floor(r()*7)],e0=r(),px=e0<.5?(r()<.5?r()*9:91+r()*9):r()*100,py=e0<.5?r()*100:(r()<.5?r()*10:90+r()*10);add(px/100*W,py/100*H,s,r()<.3?"#bf8165":"#0d0d0d",(s>20?.05:.09)+r()*.08)}}
+ el.innerHTML=h;document.querySelectorAll(".variants a[data-sq]").forEach(function(a){a.classList.toggle("on",a.dataset.sq===mode)});try{localStorage.setItem("rt.sq",mode)}catch(e){}};
+var sq0="1";try{sq0=localStorage.getItem("rt.sq")||"1"}catch(e){}window.rtSquares(sq0);
+document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a[data-sq]");if(a){e.preventDefault();window.rtSquares(a.dataset.sq)}});
 })();
 </script>
 <script>
@@ -220,6 +253,6 @@ document.getElementById("featured").innerHTML=(window.RT_SZKOLENIA||[]).map(t=>{
   return`<a class="tcard rv" href="szkolenia/#${t.id}" style="text-decoration:none"><div class="eb"><span>${esc(t.eyebrow)}</span><span>${n} modułów</span></div><h3>${esc(t.title)}</h3><p class="sub">${esc(t.subtitle)}</p><div class="tags">${t.area.map(a=>`<span class="tag">${esc(a)}</span>`).join("")}</div><span class="more">Program szkolenia <span class="ar">→</span></span></a>`}).join("");
 </script>
 <script src="rt.js"></script>
-<nav class="variants" aria-label="Warianty strony">Wariant: <a href="index.html" class=on title="Katalog · kontury">A</a><a href="wariant-b.html" title="Centrum · okręgi">B</a><a href="wariant-c.html" title="Agenda · kwadraty">C</a></nav>
+<nav class="variants" aria-label="Układ kwadratów">Kwadraty: <a href="#" data-sq="1" title="Trójki – motyw logo">1</a><a href="#" data-sq="2" title="Siatka przy krawędzi">2</a><a href="#" data-sq="3" title="Rozproszenie">3</a></nav>
 </body>
 </html>
