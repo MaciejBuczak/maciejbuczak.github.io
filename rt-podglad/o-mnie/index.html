@@ -19,7 +19,7 @@
 .ah .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
 .pic-w{position:relative;width:320px}
 .pic-w::after{content:"";position:absolute;width:42px;height:42px;background:var(--terra);border-radius:6px;right:-15px;top:-15px}
-.pic{border-radius:18px;overflow:hidden;background:#fff;border:1px solid var(--line);aspect-ratio:4/5}
+.pic{border-radius:18px;overflow:hidden;background:#fff;border:1px solid var(--line);aspect-ratio:1100/1129}
 .pic img{width:100%;height:100%;object-fit:cover;object-position:50% 8%}
 @media(max-width:860px){.ah .wrap{grid-template-columns:1fr}.pic-w{width:240px;order:-1}}
 
@@ -52,7 +52,7 @@
 @media(max-width:560px){.tl li{grid-template-columns:1fr}}
 
 /* działalność */
-.wk{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(28px,3vw,40px) clamp(20px,3vw,40px)}
+.wk{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(28px,3vw,40px) clamp(20px,3vw,40px)}
 .wk a{display:flex;flex-direction:column;border-top:2px solid var(--ink);padding:18px 0 0;text-decoration:none;color:inherit}
 .wk .n{font-family:var(--serif);font-style:italic;font-size:28px;line-height:1;color:var(--terra-d)}
 .wk h3{font-family:var(--body);font-weight:600;font-size:18px;line-height:1.35;margin:14px 0 10px}
@@ -62,8 +62,52 @@
 .wk .go{margin-top:auto;font-size:13.5px;font-weight:600;display:inline-flex;gap:8px;align-items:center}
 .wk a:hover .go{color:var(--terra-d)}.wk a:hover .ar{transform:translateX(3px)}.wk .ar{transition:transform .15s}
 .more-b{margin-top:44px;display:flex;justify-content:center}
-@media(max-width:900px){.wk{grid-template-columns:1fr 1fr}}
+@media(max-width:1000px){.wk{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.wk{grid-template-columns:1fr}}
+
+/* ekspert sektorowy */
+.exp{background:var(--panel)}
+.exp-g{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(30px,5vw,70px);align-items:start}
+.cph{margin:0;position:sticky;top:100px}
+.cph::after{content:"";position:absolute;width:42px;height:42px;background:var(--terra);border-radius:6px;right:-15px;top:-15px}
+.cph-i{aspect-ratio:4/3;border-radius:18px;overflow:hidden;background:var(--greige)}
+.cph-i img{width:100%;height:100%;object-fit:cover;display:block}
+.cph-i[data-empty]{display:grid;place-items:center;border:1.5px dashed var(--tan);background:repeating-linear-gradient(135deg,transparent 0 14px,rgba(178,158,132,.12) 14px 15px)}
+.cph-i[data-empty] span{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--tan);text-align:center;padding:0 20px}
+.cph figcaption{margin-top:12px;font-family:var(--serif);font-style:italic;font-size:15px;color:var(--muted)}
+.cl{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
+.cl li{display:grid;grid-template-columns:96px minmax(0,1fr);gap:18px;padding:22px 0;border-bottom:1px solid var(--line)}
+.cl .d{font-family:var(--serif);font-style:italic;font-size:22px;line-height:1.1;color:var(--terra-d)}
+.cl .d small{display:block;font-family:var(--body);font-style:normal;font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--tan);margin-top:8px}
+.cl h3{font-family:var(--body);font-weight:600;font-size:16.5px;line-height:1.4;margin:0 0 4px}
+.cl p{margin:0;font-size:14.5px;color:var(--muted)}
+.lk{display:flex;flex-wrap:wrap;gap:4px 16px;margin-top:8px!important}.lk a{font-size:13px;font-weight:600;text-decoration:none;color:var(--terra-d)}.lk a:hover{text-decoration:underline}
+.exp-m{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:30px}
+.exp-m h4,.gl h4{font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink2);margin:0 0 8px}
+.exp-m p{margin:0;font-size:14.5px;color:var(--muted)}
+@media(max-width:900px){.exp-g{grid-template-columns:1fr}.cph{position:relative;top:0}.exp-m{grid-template-columns:1fr}}
+@media(max-width:520px){.cl li{grid-template-columns:1fr;gap:6px}}
+
+/* uczelnie */
+.un-s{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--ink);border-bottom:1px solid var(--line);margin-bottom:34px}
+.un-s div{padding:20px 0 18px}.un-s div+div{padding-left:24px;border-left:1px solid var(--line)}
+.un-s b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(32px,3.6vw,46px);line-height:1}
+.un-s span{display:block;margin-top:8px;font-size:13.5px;color:var(--muted)}
+.un-g{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.un-g article{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:clamp(22px,3vw,32px)}
+.un-h .since{font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--terra-d)}
+.un-h h3{font-size:clamp(20px,2vw,24px);margin:10px 0 4px}
+.un-h p{margin:0 0 18px;color:var(--muted);font-size:14.5px}
+.sj{width:100%;border-collapse:collapse;font-size:14.5px}
+.sj th{text-align:left;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--tan);padding:0 10px 8px 0;border-bottom:1px solid var(--ink)}
+.sj td{padding:11px 10px 11px 0;border-bottom:1px solid var(--line);vertical-align:top;color:var(--muted)}
+.sj td:first-child{color:var(--ink);font-weight:500;width:60%}
+.sj th:nth-child(2),.sj td:nth-child(2){text-align:center;width:60px}
+.nt{margin:12px 0 0;font-size:13px;color:var(--muted)}
+.gl{margin-top:34px;border-top:2px solid var(--ink);padding-top:18px}
+.gl ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px 30px}
+.gl li{font-size:14.5px;color:var(--ink2)}.gl li b{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--terra-d);margin-right:12px}
+@media(max-width:860px){.un-g,.gl ul{grid-template-columns:1fr}.un-s{grid-template-columns:1fr 1fr}.un-s div:nth-child(3){padding-left:0;border-left:0}}
 
 /* podejście */
 .quote-s{padding-top:0}
@@ -97,7 +141,7 @@
       <p>Na szkoleniach przenoszę to doświadczenie na salę: pracujemy na przypadkach z banków, raportach walidacyjnych i decyzjach komitetów.</p>
       <div class="cta"><a class="btn" href="../szkolenia/">Programy szkoleń <span class="ar">→</span></a><a class="btn ghost" href="../#kontakt">Kontakt</a></div>
     </div>
-    <div class="pic-w rv"><div class="pic"><img src="../img/maciej-buczak-portret.jpg" alt="Maciej Buczak – portret" width="900" height="1066"></div></div>
+    <div class="pic-w rv"><div class="pic"><img src="../img/maciej-buczak.jpg" alt="Maciej Buczak" width="1100" height="1129"></div></div>
   </div>
 </section>
 
@@ -114,8 +158,8 @@
   <div class="wrap xp">
     <div class="xp-l rv">
       <span class="kick">Doświadczenie</span>
-      <h2>Systemy, doradztwo, bank i&nbsp;uczelnia.</h2>
-      <p>Różne perspektywy na te same modele: tego, kto je projektuje i wdraża, kto je ocenia i broni przed nadzorcą – i tego, kto uczy, jak działają.</p>
+      <h2>Systemy, doradztwo i&nbsp;bank.</h2>
+      <p>Trzy perspektywy na te same modele: tego, kto buduje systemy do ich liczenia, tego, kto doradza – i tego, kto je ocenia i broni przed nadzorcą.</p>
     </div>
     <ol class="tl">
       <li class="rv"><div class="org">Alior Bank<small>2016 – 2024</small></div><div><h3>Menedżer Zarządzania Ryzykiem · Departament Walidacji</h3><ul>
@@ -128,23 +172,46 @@
       <li class="rv"><div class="org">Bazy i Systemy Bankowe<small>2007 – 2013</small></div><div><h3>Analityk</h3><ul>
         <li>Metodyki i funkcje statystyczne modelowania ryzyka operacyjnego; moduł analityczny wdrożony w NBP i kilku bankach.</li>
         <li>Systemy do zarządzania ryzykiem operacyjnym i przeciwdziałania praniu pieniędzy (AML); doradztwo i szkolenia dla banków.</li></ul></div></li>
-      <li class="rv"><div class="org">SGGW<br>WSB Merito<small>od 2025</small></div><div><h3>Wykładowca</h3><ul>
-        <li>SGGW, Instytut Nauk Socjologicznych i Pedagogiki: statystyka, analiza sieci społecznych, analiza wielowymiarowa w Pythonie.</li>
-        <li>WSB Merito: zarządzanie ryzykiem finansowym, metody ilościowe w zarządzaniu, statystyka i ekonometria.</li></ul></div></li>
     </ol>
+  </div>
+</section>
+
+<section class="exp">
+  <div class="wrap">
+    <div class="sec-hd rv"><div><span class="kick">Ekspert sektorowy</span><h2 style="margin-top:16px">Na scenie konferencji i&nbsp;na sali szkoleniowej.</h2></div><p>Wystąpienia na konferencjach sektorowych i naukowych w Polsce i za granicą – o modelach kapitałowych, ryzyku operacyjnym i granicach statystyki w finansach.</p></div>
+    <div class="exp-g">
+      <figure class="cph rv"><div class="cph-i" data-empty="1"><span>Miejsce na zdjęcie z&nbsp;konferencji</span></div><figcaption>Wystąpienie konferencyjne</figcaption></figure>
+      <div>
+        <ol class="cl rv"><li><span class="d">06.2026<small>Warszawa</small></span><div><h3>„Modelowanie ryzyka operacyjnego”</h3><p>Zarządzanie ryzykiem operacyjnym. Aktualne trendy i wyzwania</p><p class="lk"><a href="https://doi.org/10.13140/RG.2.2.22277.92645" target="_blank" rel="noopener">Prezentacja ↗</a> <a href="https://maciejbuczak.github.io/conferences/Zarz%C4%85dzanie%20Ryzykiem%20Operacyjnym%2023-24.06.2026%20Warsaw%20Regent%20Hotel.pdf" target="_blank" rel="noopener">Program ↗</a></p></div></li><li><span class="d">05.2026<small>Łódź</small></span><div><h3>„Dlaczego kryzysy „stuletnie” zdarzają się co dekadę? Granice statystycznych modeli odporności na rynkach finansowych”</h3><p>Protection and Security in Financial Market</p><p class="lk"><a href="https://doi.org/10.13140/RG.2.2.15285.23523" target="_blank" rel="noopener">Prezentacja ↗</a> <a href="https://maciejbuczak.github.io/conferences/10th%20PAS%20CONFERENCE%20Schedule%20v5.pdf" target="_blank" rel="noopener">Program ↗</a></p></div></li><li><span class="d">11.2025<small>Warszawa</small></span><div><h3>„Nieoczywiste drogi rozwoju metod kalkulacji kapitałów. Na przykładzie metod IRB i AMA”</h3><p>CRR III / CRD VI – wyzwania dla sektora bankowego</p><p class="lk"><a href="https://doi.org/10.13140/RG.2.2.20318.40008" target="_blank" rel="noopener">Prezentacja ↗</a> <a href="https://maciejbuczak.github.io/conferences/p646.pdf" target="_blank" rel="noopener">Program ↗</a></p></div></li><li><span class="d">02.2025<small>Praga</small></span><div><h3>„Built-in mechanisms of the AMA framework that led to its cancellation”</h3><p>4th Annual Banking Operational Risk Summit</p><p class="lk"><a href="https://doi.org/10.13140/RG.2.2.33084.81289" target="_blank" rel="noopener">Prezentacja ↗</a> <a href="https://maciejbuczak.github.io/conferences/4th_OpRisk_Summit_BROCHURE.pdf" target="_blank" rel="noopener">Program ↗</a></p></div></li></ol>
+        <div class="exp-m rv">
+          <div><h4>Szkolenia dla sektora</h4><p>Prestige Conferences, od 2025: „Ryzyko kredytowe ECL / IFRS 9”, „Budowa modeli ryzyka”, „Ryzyko modeli, techniki kwantyfikacji i wyzwania”, „Modelowanie wartości nieoczekiwanej”. Pięć dwudniowych szkoleń w sezonie 2025/26.</p></div>
+          <div><h4>Wcześniej</h4><p>Wystąpienia w NBP (2009, także wykład dla przedstawicieli banków centralnych z Europy Wschodniej i Azji) i na konferencji Gazety Bankowej (2008). Szkolenia w NBP i bankach w latach 2007–2024.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="uni">
+  <div class="wrap">
+    <div class="sec-hd rv"><div><span class="kick">Uczelnie</span><h2 style="margin-top:16px">Dydaktyka akademicka.</h2></div><p>Uczę metod ilościowych i zarządzania ryzykiem – tak, by studenci rozumieli nie tylko technikę, ale też założenia i ograniczenia opisu zjawisk liczbami.</p></div>
+    <div class="un-s rv"><div><b>7</b><span>przedmiotów</span></div><div><b>21</b><span>grup zajęciowych</span></div><div><b>2</b><span>uczelnie</span></div><div><b>4</b><span>wykłady gościnne w 2026</span></div></div>
+    <div class="un-g">
+      <article class="rv"><div class="un-h"><span class="since">od 10.2025 · 0,5 etatu</span><h3>Szkoła Główna Gospodarstwa Wiejskiego</h3><p>Instytut Nauk Socjologicznych i Pedagogiki</p></div><table class="sj"><thead><tr><th>Przedmiot</th><th>Grupy</th><th>Semestr</th></tr></thead><tbody><tr><td>Statystyka dla socjologów I</td><td>3</td><td>zima 2025/26</td></tr><tr><td>Statystyka dla socjologów II</td><td>3 + 1</td><td>lato 2025/26, 2024/25</td></tr><tr><td>Analiza sieci społecznych</td><td>1</td><td>lato 2024/25</td></tr><tr><td>Wielowymiarowa analiza danych z programem Python</td><td>1</td><td>lato 2025/26</td></tr></tbody></table><p class="nt">Zajęcia od 02.2025, od 10.2025 na etacie.</p></article>
+      <article class="rv"><div class="un-h"><span class="since">od 02.2025</span><h3>Wyższa Szkoła Bankowa Merito</h3><p>Warszawa</p></div><table class="sj"><thead><tr><th>Przedmiot</th><th>Grupy</th><th>Semestr</th></tr></thead><tbody><tr><td>Zarządzanie ryzykiem finansowym</td><td>4</td><td>od 2025</td></tr><tr><td>Metody ilościowe w zarządzaniu</td><td>4</td><td>od 2025</td></tr><tr><td>Statystyka i ekonometria</td><td>4</td><td>od 2025</td></tr></tbody></table></article>
+    </div>
+    <div class="gl rv"><h4>Wykład gościnny „Dlaczego kryzysy 100-letnie zdarzają się co 10 lat?”</h4><ul><li><b>03.2026</b>Uniwersytet Warszawski · Wydział Nauk Ekonomicznych</li><li><b>04.2026</b>Uniwersytet Mikołaja Kopernika · Wydział Nauk Ekonomicznych i Zarządzania</li><li><b>04.2026</b>Uniwersytet Ekonomiczny w Katowicach · Wydział Ekonomii (online)</li><li><b>05.2026</b>Uniwersytet Ekonomiczny w Katowicach · Wydział Zarządzania</li></ul><p class="lk"><a href="https://doi.org/10.13140/RG.2.2.31505.39523" target="_blank" rel="noopener">Prezentacja ↗</a> <a href="https://maciejbuczak.github.io/conferences/Kryzysy%20100-letnie%20co%2010%20lat%20-%20konspekt.pdf" target="_blank" rel="noopener">Konspekt ↗</a></p></div>
   </div>
 </section>
 
 <section style="padding-top:0">
   <div class="wrap">
-    <div class="sec-hd rv"><div><span class="kick">Działalność</span><h2 style="margin-top:16px">Praktyka, badania i&nbsp;nauczanie.</h2></div><p>W skrócie – najważniejsze obszary. Pełne zestawienie: projekty, publikacje, wystąpienia i szkolenia – w szczegółowym profilu.</p></div>
+    <div class="sec-hd rv"><div><span class="kick">Działalność</span><h2 style="margin-top:16px">Badania i&nbsp;metodyki.</h2></div><p>W skrócie – pełne zestawienie projektów, publikacji i metod jest w szczegółowym profilu.</p></div>
     <div class="wk">
       <a class="rv" href="szczegoly/#projekty"><span class="n">01</span><h3>Projekty badawcze w banku</h3><ul><li>Kilkanaście projektów, które podważały utrwalone podejścia i zostały wdrożone.</li><li>Lifetime PD i SICR, wartości ekstremalne, zależności w ogonach, model wartości nieoczekiwanej.</li></ul><span class="go">Szczegóły <span class="ar">→</span></span></a>
       <a class="rv" href="szczegoly/#metodyki"><span class="n">02</span><h3>Metodyki oceny modeli</h3><ul><li>Holistyczna ocena modelu AMA – ponad 50 autorskich badań, bardzo dobra ocena nadzorcy.</li><li>Metodyki oceny lifetime PD, ECL i modeli ICAAP.</li></ul><span class="go">Szczegóły <span class="ar">→</span></span></a>
-      <a class="rv" href="szczegoly/#szkolenia"><span class="n">03</span><h3>Szkolenia dla sektora</h3><ul><li>Prestige Conferences: ECL / IFRS 9, budowa modeli, ryzyko modeli, wartość nieoczekiwana.</li><li>Szkolenia w NBP i bankach od 2007 roku.</li></ul><span class="go">Szczegóły <span class="ar">→</span></span></a>
-      <a class="rv" href="szczegoly/#wystapienia"><span class="n">04</span><h3>Wystąpienia</h3><ul><li>Konferencje: Praga, CRR III / CRD VI, Protection and Security in Financial Market, ryzyko operacyjne.</li><li>Wykład „Dlaczego kryzysy 100-letnie zdarzają się co 10 lat?” na czterech uczelniach.</li></ul><span class="go">Szczegóły <span class="ar">→</span></span></a>
-      <a class="rv" href="szczegoly/#publikacje"><span class="n">05</span><h3>Publikacje</h3><ul><li>Artykuły w Metodach Ilościowych w Badaniach Ekonomicznych i wydawnictwie IBS PAN.</li><li>Prace zgłoszone do międzynarodowych czasopism, preprinty na SSRN.</li></ul><span class="go">Szczegóły <span class="ar">→</span></span></a>
-      <a class="rv" href="szczegoly/#metody"><span class="n">06</span><h3>Metody i narzędzia</h3><ul><li>EVT, copule, Monte Carlo, analiza przeżycia, macierze przejść, bootstrap.</li><li>SAS (certyfikaty), R, Python, Matlab, SQL.</li></ul><span class="go">Szczegóły <span class="ar">→</span></span></a>
+      <a class="rv" href="szczegoly/#publikacje"><span class="n">03</span><h3>Publikacje</h3><ul><li>Artykuły w Metodach Ilościowych w Badaniach Ekonomicznych i wydawnictwie IBS PAN.</li><li>Prace zgłoszone do międzynarodowych czasopism, preprinty na SSRN.</li></ul><span class="go">Szczegóły <span class="ar">→</span></span></a>
+      <a class="rv" href="szczegoly/#metody"><span class="n">04</span><h3>Metody i narzędzia</h3><ul><li>EVT, copule, Monte Carlo, analiza przeżycia, macierze przejść, bootstrap.</li><li>SAS (certyfikaty), R, Python, Matlab, SQL.</li></ul><span class="go">Szczegóły <span class="ar">→</span></span></a>
     </div>
     <div class="more-b rv"><a class="btn ghost" href="szczegoly/">Pełny profil zawodowy <span class="ar">→</span></a></div>
   </div>
