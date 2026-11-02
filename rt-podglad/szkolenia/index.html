@@ -180,7 +180,6 @@
 .p5 .tile:nth-child(4n+3) .no{color:#a6824c}
 .p5 .tile:nth-child(4n+4) .art{background:#e8d8c3!important}
 .p5 .tile:nth-child(4n+4) .no{color:#a6824c}
-.vx{flex-direction:row;align-items:center;gap:3px;border-radius:999px}
 /* animacje grafik */
 .tile .dr{stroke-dasharray:var(--l,600);stroke-dashoffset:var(--l,600)}
 .tile.in .dr,.tile:hover .dr{animation:dr 1.6s cubic-bezier(.3,.6,.2,1) forwards;animation-delay:var(--d,0s)}
@@ -191,7 +190,7 @@
 @media(prefers-reduced-motion:reduce){.tile .dr{stroke-dashoffset:0;animation:none!important}.tile .gr{transform:none;animation:none!important}.tile .fd{opacity:1;animation:none!important}}
 
 /* na zamówienie */
-.cu{margin-bottom:clamp(64px,8vw,110px);display:grid;grid-template-columns:minmax(0,1.3fr) auto;gap:28px;align-items:center;border-top:1px solid var(--ink);padding-top:28px}
+.cu{margin-bottom:clamp(64px,8vw,110px);display:grid;grid-template-columns:minmax(0,1.3fr) auto;gap:28px;align-items:center}
 .cu h2{font-size:clamp(24px,2.8vw,34px);margin:12px 0 8px}
 .cu p{margin:0;color:var(--muted);max-width:620px}
 @media(max-width:760px){.cu{grid-template-columns:1fr}}
@@ -410,11 +409,7 @@ const HERO2=makeAnim(document.getElementById("mc2"),document.getElementById("lg2
    miejsca w nagłówku: r obok tytułu, b pod tytułem, f tło u dołu. */
 const CUR={g:"co",m:"r",g2:"bt"},GR=[["mc","Monte Carlo"],["rw","Random walk"],["di","Rozkład"],["ln","Zbieżność"],["co","Korelacja"],["bt","Backtest VaR"],["pd","PD lifetime"],["bs","Bootstrap"]];
 document.querySelector(".sh").dataset.m=CUR.m;document.getElementById("tiles").className="tiles lay-a";
-/* kolory kafelków – wersja próbna */
-const PAL=[["p0", "Obecne"], ["p1", "Jasne z akcentem"], ["p2", "Pastele"], ["p3", "Ziemie"], ["p4", "Złoto i miedź"], ["p5", "Piaskowy monochrom"]];let pal=new URLSearchParams(location.search).get("k")||"p0";
-document.body.insertAdjacentHTML("beforeend",'<div class="variants vx" id="vx">Kolory:'+PAL.map(o=>`<a href="#" data-k="${o[0]}">${o[1]}</a>`).join("")+'</div>');
-function setPal(k){pal=k;document.getElementById("tiles").className="tiles lay-a "+k;document.querySelectorAll("#vx a").forEach(a=>a.classList.toggle("on",a.dataset.k===k));try{history.replaceState(null,"","?k="+k)}catch(e){}}
-document.getElementById("vx").addEventListener("click",e=>{const a=e.target.closest("a");if(!a)return;e.preventDefault();setPal(a.dataset.k)});setPal(pal);
+document.getElementById("tiles").classList.add("p2");
 HERO.set(CUR.g);HERO2.set(CUR.g2);
 document.getElementById("an2t").textContent=GR.find(x=>x[0]===CUR.g2)[1];
 </script>
