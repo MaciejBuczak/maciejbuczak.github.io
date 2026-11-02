@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Oznaczenie urządzenia</title>
+<style>
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:#f5f1ea;color:#111;display:grid;place-items:center;min-height:100vh;padding:20px;box-sizing:border-box}
+.box{background:#fff;border:2px solid #111;border-radius:14px;padding:24px 26px;max-width:460px;width:100%}
+h1{font-size:20px;margin:0 0 12px}
+.st{font-size:17px;padding:12px 14px;border-radius:10px;margin:0 0 16px}
+.on{background:#e3f2dc;border:1.5px solid #4f8a35}.off{background:#fbe9e4;border:1.5px solid #b3261e}
+label{display:block;font-size:14px;font-weight:600;margin-bottom:6px}
+input{font:inherit;font-size:16px;width:100%;box-sizing:border-box;padding:9px 11px;border:1.5px solid #bbb;border-radius:8px;margin-bottom:12px}
+button{font:inherit;font-size:15px;font-weight:600;padding:10px 14px;border-radius:8px;border:1.5px solid #111;background:#111;color:#fff;cursor:pointer;margin:0 6px 6px 0}
+button.sec{background:#fff;color:#111}
+p.n{font-size:13px;color:#555;margin:10px 0 0}
+</style>
+</head>
+<body>
+<div class="box">
+  <h1>Oznaczenie urządzenia</h1>
+  <div id="st" class="st"></div>
+  <label for="nm">Nazwa tego urządzenia</label>
+  <input id="nm" placeholder="np. komputer1, komputer2, telefon" maxlength="40">
+  <button type="button" id="set">Oznacz jako moje</button><button type="button" class="sec" id="off">Usuń oznaczenie</button>
+  <p class="n">Oznaczenie dotyczy tej przeglądarki na tym urządzeniu i wszystkich stron pod maciejbuczak.github.io. Wejścia z oznaczonego urządzenia zapisują się w statystykach z dopiskiem „owner:nazwa”, a w narzędziu „Ruch na stronach” chowa je pole „ukryj mój ruch”. Nie działa w oknie prywatnym; po wyczyszczeniu danych przeglądarki oznacz urządzenie ponownie.</p>
+</div>
+<script>
+var K='rr_owner',st=document.getElementById('st'),nm=document.getElementById('nm');
+function get(){try{return localStorage.getItem(K)}catch(e){return null}}
+function show(){var o=get();st.className='st '+(o?'on':'off');st.textContent=o?'✓ To urządzenie jest oznaczone jako Twoje: '+o:'✗ To urządzenie nie jest oznaczone.';if(o)nm.value=o}
+try{var q=new URLSearchParams(location.search).get('owner');if(q!==null){if(q===''||q==='off')localStorage.removeItem(K);else localStorage.setItem(K,q.slice(0,40))}}catch(e){}
+document.getElementById('set').onclick=function(){var v=nm.value.trim();if(!v){nm.focus();return}try{localStorage.setItem(K,v.slice(0,40))}catch(e){st.textContent='Przeglądarka nie pozwala zapisać oznaczenia (okno prywatne?).';return}show()};
+document.getElementById('off').onclick=function(){try{localStorage.removeItem(K)}catch(e){}show()};
+show();
+</script>
+</body>
+</html>
