@@ -52,7 +52,7 @@
 @media(max-width:560px){.tl li{grid-template-columns:1fr}}
 
 /* działalność */
-.wk{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(28px,3vw,40px) clamp(20px,3vw,40px)}
+.wk{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(28px,3vw,40px) clamp(20px,3vw,40px)}
 .wk a{display:flex;flex-direction:column;border-top:2px solid var(--ink);padding:18px 0 0;text-decoration:none;color:inherit}
 .wk .n{font-family:var(--serif);font-style:italic;font-size:28px;line-height:1;color:var(--terra-d)}
 .wk h3{font-family:var(--body);font-weight:600;font-size:18px;line-height:1.35;margin:14px 0 10px}
@@ -98,6 +98,46 @@
 .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:auto}.chips span{font-size:13px;padding:5px 12px;border:1px solid var(--line);border-radius:999px;background:var(--paper);color:var(--ink2)}
 .gl2{margin:26px 0 0;font-size:14.5px;color:var(--muted)}.gl2 a{color:var(--terra-d);font-weight:600;text-decoration:none;white-space:nowrap}
 @media(max-width:860px){.un-g{grid-template-columns:1fr}}
+
+/* badania nad ryzykiem */
+.res .sec-hd h2{color:var(--paper)}
+.rs{margin-top:56px}.rs:first-of-type{margin-top:8px}
+.rs-h{display:flex;align-items:baseline;gap:14px;font-family:var(--body);font-weight:600;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--sand);border-top:1px solid #3a352f;padding-top:18px;margin:0 0 24px}
+.rs-h span{font-family:var(--serif);font-style:italic;font-weight:400;font-size:26px;letter-spacing:0;text-transform:none;color:var(--terra)}
+.res .lk{display:flex;flex-wrap:wrap;gap:4px 18px;margin:12px 0 0}.res .lk a{font-size:13.5px;font-weight:600;color:var(--terra);text-decoration:none}.res .lk a:hover{color:#e2a88c}
+.pf-g{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.pf{background:#171512;border:1px solid #2c2925;border-radius:var(--r);padding:clamp(22px,3vw,32px);position:relative}
+.pf-n{display:flex;align-items:baseline;gap:12px;margin-bottom:16px}
+.pf-n b{font-family:var(--display);font-weight:400;font-size:clamp(34px,3.8vw,48px);line-height:1;color:var(--terra)}
+.pf-n span{font-size:13px;color:#a9a194}
+.pf h4{font-family:var(--body);font-weight:600;font-size:19px;line-height:1.35;color:var(--paper);margin:0 0 6px}
+.pf .m{font-size:13px;color:var(--sand);margin:0 0 12px}
+.pf p{margin:0;font-size:15px;color:#cfc6b8}
+.po{list-style:none;margin:20px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;column-gap:40px}
+.po a{display:grid;gap:3px;padding:16px 0;border-bottom:1px solid #2c2925;text-decoration:none;color:inherit}
+.po .t{font-weight:600;font-size:15.5px;line-height:1.4;color:var(--paper)}
+.po .m{font-size:12.5px;color:var(--sand)}
+.po .d{font-size:14px;color:#a9a194}
+.po a:hover .t{color:#e2a88c}
+.es-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.es{display:flex;flex-direction:column;background:var(--paper);color:var(--ink);border-radius:var(--r);padding:24px 24px 20px;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.es:hover{transform:translateY(-3px);box-shadow:0 18px 40px -20px rgba(0,0,0,.7)}
+.es .tg{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--terra-d)}
+.es h4{font-family:var(--serif);font-style:italic;font-weight:400;font-size:21px;line-height:1.3;margin:12px 0 10px}
+.es p{margin:0 0 16px;font-size:14px;color:var(--muted)}
+.es .go{margin-top:auto;font-size:13.5px;font-weight:600}
+.rs-cta{margin-top:26px}
+.lc{display:grid;grid-template-columns:340px minmax(0,1fr);gap:clamp(28px,5vw,60px);align-items:start}
+.lc-ph{margin:0;position:relative}
+.lc-ph::after{content:"";position:absolute;width:42px;height:42px;background:var(--terra);border-radius:6px;right:-15px;top:-15px}
+.res .cph-i[data-empty]{background:repeating-linear-gradient(135deg,transparent 0 14px,rgba(212,196,176,.08) 14px 15px);border-color:#5c564d;aspect-ratio:4/3}
+.res .cph-i[data-empty] span{color:#8f877b}
+.lc-t{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(24px,2.6vw,32px);line-height:1.3;color:var(--paper);margin:0 0 14px}
+.lc p{margin:0;font-size:15.5px}
+.lc-l{list-style:none;margin:20px 0 0;padding:0;border-top:1px solid #2c2925}
+.lc-l li{padding:11px 0;border-bottom:1px solid #2c2925;font-size:14.5px;color:#e8e1d6}
+.lc-l b{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--terra);margin-right:14px}
+@media(max-width:900px){.pf-g,.po,.es-g,.lc{grid-template-columns:1fr}.lc-ph{max-width:340px}}
 
 /* podejście */
 .quote-s{padding-top:0}
@@ -188,18 +228,44 @@
       <article class="rv"><img class="un-logo" src="../img/logo-sggw.svg" alt="SGGW" height="56"><h3>Szkoła Główna Gospodarstwa Wiejskiego w Warszawie</h3><p>Statystyka i analiza danych dla nauk społecznych – od podstaw wnioskowania po analizę wielowymiarową i analizę sieci.</p><div class="chips"><span>Statystyka dla socjologów</span><span>Analiza sieci społecznych</span><span>Analiza danych w Pythonie</span></div></article>
       <article class="rv"><img class="un-logo wsb" src="../img/logo-wsb-merito.svg" alt="Uniwersytet WSB Merito Warszawa" height="56"><h3>Uniwersytet WSB Merito w Warszawie</h3><p>Zarządzanie ryzykiem i metody ilościowe dla przyszłych menedżerów i finansistów.</p><div class="chips"><span>Zarządzanie ryzykiem finansowym</span><span>Metody ilościowe w zarządzaniu</span><span>Statystyka i ekonometria</span></div></article>
     </div>
-    <p class="gl2 rv">Wykłady gościnne na Uniwersytecie Warszawskim, Uniwersytecie Mikołaja Kopernika i Uniwersytecie Ekonomicznym w Katowicach. <a href="szczegoly/#szkolenia">Szczegóły →</a></p>
+  </div>
+</section>
+
+<section class="dark res">
+  <div class="wrap">
+    <div class="sec-hd rv"><div><span class="kick">Badania nad ryzykiem</span><h2 style="margin-top:16px">Granice modeli ryzyka.</h2></div><p>Badam, czy zjawiska finansowe da się zasadnie opisywać jako losowe – i jak instytucje komunikują niepewność, której nie potrafią zmierzyć.</p></div>
+
+    <div class="rs rv"><h3 class="rs-h"><span>01</span>Publikacje naukowe</h3>
+      <div class="pf-g"><article class="pf"><div class="pf-n"><b>4500+</b><span>pobrań w 8 tygodni</span></div><h4>The AMA Method – Analytical Foundations of Its Failure</h4><p class="m">2026 · zgłoszony do Journal of Banking and Finance</p><p>Matematyczne własności metody AMA, które mogły doprowadzić do jej nieskuteczności – i pytanie, czy zjawiska skrajne da się w ogóle modelować statystycznie.</p><p class="lk"><a href="https://ssrn.com/abstract=6949518" target="_blank" rel="noopener">SSRN ↗</a><a href="https://doi.org/10.13140/RG.2.2.19243.60966" target="_blank" rel="noopener">Wersja polska ↗</a></p></article><article class="pf"><div class="pf-n"><b>1800+</b><span>pobrań w 3 tygodnie</span></div><h4>I Can’t Predict 1-in-1000-year Catastrophe</h4><p class="m">2026 · zgłoszony do Journal of Financial Regulation</p><p>Kwantyl 0,999 jako „zdarzenie raz na 1000 lat” – etykieta bez oparcia w modelu ani w rzeczywistości. Analogia z „powodzią stuletnią” w hydrologii.</p><p class="lk"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7259718" target="_blank" rel="noopener">SSRN ↗</a><a href="https://doi.org/10.13140/RG.2.2.17029.92646" target="_blank" rel="noopener">Wersja polska ↗</a></p></article></div>
+      <ul class="po"><li><a href="https://doi.org/10.13140/RG.2.2.34226.57287" target="_blank" rel="noopener"><span class="t">Are Financial Phenomena Random? On the Limits of the Probabilistic Description of Risk</span><span class="m">2026 · preprint</span><span class="d">Jak aparat stworzony do opisu zjawisk fizycznych stał się jedynym uznanym sposobem „widzenia” ryzyka w finansach.</span></a></li><li><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7080238" target="_blank" rel="noopener"><span class="t">Pokryzysowa architektura bezpieczeństwa finansowego wobec epizodu kryzysowego 2023</span><span class="m">2026 · Metody Ilościowe w Badaniach Ekonomicznych (w recenzji)</span><span class="d">Upadki banków mimo spełnienia wymogów kapitałowych i płynnościowych – co to mówi o regulacjach.</span></a></li><li><a href="https://doi.org/10.22630/MIBE.2024.25.4.16" target="_blank" rel="noopener"><span class="t">Bieg wsteczny w rozwoju koncepcji modelowania wartości nieoczekiwanej… na przykładzie wycofania AMA</span><span class="m">2024 · Metody Ilościowe w Badaniach Ekonomicznych</span><span class="d">Dlaczego regulator wycofał najbardziej zaawansowaną metodę kapitałową w ryzyku operacyjnym.</span></a></li><li><a href="https://rcin.org.pl/ibsys/Content/198335/PDF/KS-2009-04-T11P03.pdf" target="_blank" rel="noopener"><span class="t">Badanie autoregresyjnej natury procesu liczby strat operacyjnych</span><span class="m">2009 · IBS PAN</span><span class="d">Czy kolejne straty operacyjne są od siebie niezależne – test na danych.</span></a></li></ul>
+    </div>
+
+    <div class="rs rv"><h3 class="rs-h"><span>02</span>Eseje o ryzyku</h3>
+      <div class="es-g"><a class="es" href="/risk-research/art-hydrology_flood/" target="_blank" rel="noopener"><span class="tg">Powódź stuletnia · ryzyko ekstremalne</span><h4>A Hundred Years of the Return Period and the Hundred-Year Flood</h4><p>Skąd finanse wzięły okres powrotu, stacjonarność i teorię wartości ekstremalnych – i co hydrologia wie o nich dziś.</p><span class="go">Czytaj ↗</span></a><a class="es" href="/risk-research/art-finance_random/" target="_blank" rel="noopener"><span class="tg">Błądzenie losowe · ryzyko kredytowe</span><h4>How Finance Borrowed Its Randomness</h4><p>Od Bacheliera i Wienera, przez Blacka-Scholesa, Mertona i Vasicka, do wymogów kapitałowych Bazylei.</p><span class="go">Czytaj ↗</span></a><a class="es" href="/risk-research/art-time_different/" target="_blank" rel="noopener"><span class="tg">Kryzys · fałszywa stabilność</span><h4>This Time Is Different Syndrome and Destabilizing Stability</h4><p>Osiem wieków kryzysów i ten sam wzorzec: spokojne rynki same w sobie są niebezpieczne.</p><span class="go">Czytaj ↗</span></a></div>
+      <div class="rs-cta"><a class="btn terra" href="/articlestart/">Zobacz wszystkie eseje <span class="ar">→</span></a></div>
+    </div>
+
+    <div class="rs rv"><h3 class="rs-h"><span>03</span>Wykład otwarty</h3>
+      <div class="lc">
+        <figure class="lc-ph"><div class="cph-i" data-empty="1"><span>Miejsce na zdjęcie z&nbsp;wykładu</span></div></figure>
+        <div>
+          <h4 class="lc-t">„Dlaczego kryzysy 100-letnie zdarzają się co 10 lat?”</h4>
+          <p>Autorski wykład dla studentów i pracowników naukowych: historia metod modelowania ryzyk finansowych, zestawiona z metodami hydrologii – i problemy u fundamentów przyjętego w nich rozumowania.</p>
+          <ul class="lc-l"><li><b>03.2026</b>Uniwersytet Warszawski · Wydział Nauk Ekonomicznych</li><li><b>04.2026</b>Uniwersytet Mikołaja Kopernika · Wydział Nauk Ekonomicznych i Zarządzania</li><li><b>04.2026</b>Uniwersytet Ekonomiczny w Katowicach · Wydział Ekonomii (online)</li><li><b>05.2026</b>Uniwersytet Ekonomiczny w Katowicach · Wydział Zarządzania</li></ul>
+          <p class="lk"><a href="https://doi.org/10.13140/RG.2.2.31505.39523" target="_blank" rel="noopener">Prezentacja ↗</a><a href="https://maciejbuczak.github.io/conferences/Kryzysy%20100-letnie%20co%2010%20lat%20-%20konspekt.pdf" target="_blank" rel="noopener">Konspekt ↗</a></p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <section style="padding-top:0">
   <div class="wrap">
-    <div class="sec-hd rv"><div><span class="kick">Działalność</span><h2 style="margin-top:16px">Badania i&nbsp;metodyki.</h2></div><p>W skrócie – pełne zestawienie projektów, publikacji i metod jest w szczegółowym profilu.</p></div>
+    <div class="sec-hd rv"><div><span class="kick">Działalność</span><h2 style="margin-top:16px">Praktyka badawcza w&nbsp;banku.</h2></div><p>W skrócie – pełne zestawienie projektów, metodyk i metod jest w szczegółowym profilu.</p></div>
     <div class="wk">
       <a class="rv" href="szczegoly/#projekty"><span class="n">01</span><h3>Projekty badawcze w banku</h3><ul><li>Kilkanaście projektów, które podważały utrwalone podejścia i zostały wdrożone.</li><li>Lifetime PD i SICR, wartości ekstremalne, zależności w ogonach, model wartości nieoczekiwanej.</li></ul><span class="go">Szczegóły <span class="ar">→</span></span></a>
       <a class="rv" href="szczegoly/#metodyki"><span class="n">02</span><h3>Metodyki oceny modeli</h3><ul><li>Holistyczna ocena modelu AMA – ponad 50 autorskich badań, bardzo dobra ocena nadzorcy.</li><li>Metodyki oceny lifetime PD, ECL i modeli ICAAP.</li></ul><span class="go">Szczegóły <span class="ar">→</span></span></a>
-      <a class="rv" href="szczegoly/#publikacje"><span class="n">03</span><h3>Publikacje</h3><ul><li>Artykuły w Metodach Ilościowych w Badaniach Ekonomicznych i wydawnictwie IBS PAN.</li><li>Prace zgłoszone do międzynarodowych czasopism, preprinty na SSRN.</li></ul><span class="go">Szczegóły <span class="ar">→</span></span></a>
-      <a class="rv" href="szczegoly/#metody"><span class="n">04</span><h3>Metody i narzędzia</h3><ul><li>EVT, copule, Monte Carlo, analiza przeżycia, macierze przejść, bootstrap.</li><li>SAS (certyfikaty), R, Python, Matlab, SQL.</li></ul><span class="go">Szczegóły <span class="ar">→</span></span></a>
+      <a class="rv" href="szczegoly/#metody"><span class="n">03</span><h3>Metody i narzędzia</h3><ul><li>EVT, copule, Monte Carlo, analiza przeżycia, macierze przejść, bootstrap.</li><li>SAS (certyfikaty), R, Python, Matlab, SQL.</li></ul><span class="go">Szczegóły <span class="ar">→</span></span></a>
     </div>
     <div class="more-b rv"><a class="btn ghost" href="szczegoly/">Pełny profil zawodowy <span class="ar">→</span></a></div>
   </div>
