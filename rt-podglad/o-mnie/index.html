@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>O mnie – Risk Trainings | Maciej Buczak</title>
+<meta name="description" content="Maciej Buczak – walidacja i modele ryzyka w bankowości: IFRS 9, AMA, ICAAP. Doświadczenie z banku, doradztwa i uczelni.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Poppins:wght@300;400;500;600&family=Source+Serif+4:ital,opsz,wght@1,8..60,400&display=swap">
+<link rel="stylesheet" href="../rt.css">
+<style>
+/* nagłówek strony */
+.ah{padding:clamp(48px,7vw,90px) 0 clamp(56px,7vw,96px)}
+.ah .wrap{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:clamp(36px,7vw,100px);align-items:center}
+.ah h1{font-size:clamp(40px,5.6vw,72px);margin:18px 0 8px}
+.ah .role{font-family:var(--serif);font-style:italic;font-size:clamp(20px,2.2vw,26px);color:var(--terra-d);margin:0 0 26px}
+.ah p{font-size:17px;color:var(--ink2);font-weight:300;margin:0 0 16px;max-width:620px}
+.ah .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.pic-w{position:relative;width:320px}
+.pic-w::after{content:"";position:absolute;width:42px;height:42px;background:var(--terra);border-radius:6px;right:-15px;top:-15px}
+.pic{border-radius:18px;overflow:hidden;background:#fff;border:1px solid var(--line);aspect-ratio:4/5}
+.pic img{width:100%;height:100%;object-fit:cover;object-position:50% 8%}
+@media(max-width:860px){.ah .wrap{grid-template-columns:1fr}.pic-w{width:240px;order:-1}}
+
+/* liczby */
+.nums{padding:clamp(48px,6vw,72px) 0}
+.nums .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0}
+.nums div{padding:4px 26px 4px 0;margin-right:26px;border-right:1px solid #2c2925}
+.nums div:last-child{border-right:0;margin-right:0}
+.nums b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(34px,4vw,50px);line-height:1;color:var(--paper)}
+.nums b{white-space:nowrap}.nums b.w{font-size:clamp(28px,3vw,40px);padding-top:clamp(4px,.8vw,10px)}
+.nums b em{font-style:normal;color:var(--terra)}
+.nums span{display:block;margin-top:12px;font-size:14.5px;color:#cfc6b8;line-height:1.5}
+@media(max-width:860px){.nums .wrap{grid-template-columns:1fr 1fr;gap:28px 0}.nums div:nth-child(2){border-right:0;margin-right:0}}
+@media(max-width:480px){.nums .wrap{grid-template-columns:1fr}.nums div{border-right:0;margin-right:0}}
+
+/* doświadczenie */
+.xp{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(32px,6vw,90px);align-items:start}
+.xp-l{position:sticky;top:110px}
+.xp-l h2{font-size:clamp(30px,3.6vw,46px);margin:16px 0 18px}
+.xp-l p{margin:0;color:var(--muted);font-size:16px;max-width:420px}
+.tl{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
+.tl li{display:grid;grid-template-columns:150px minmax(0,1fr);gap:6px 28px;padding:30px 0;border-bottom:1px solid var(--line)}
+.tl .org{font-family:var(--serif);font-style:italic;font-size:22px;line-height:1.2;color:var(--terra-d)}
+.tl .org small{display:block;font-family:var(--body);font-style:normal;font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--tan);margin-top:8px}
+.tl h3{font-family:var(--body);font-weight:600;font-size:19px;line-height:1.3;margin:0 0 10px}
+.tl ul{margin:0;padding:0;list-style:none;display:grid;gap:7px}
+.tl ul li{display:block;padding:0 0 0 18px;border:0;position:relative;font-size:15px;color:var(--ink2)}
+.tl ul li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;border-radius:1px;background:var(--sand)}
+@media(max-width:900px){.xp{grid-template-columns:1fr}.xp-l{position:static}}
+@media(max-width:560px){.tl li{grid-template-columns:1fr}}
+
+/* dorobek */
+.wk{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 clamp(20px,3vw,40px)}
+.wk div{border-top:2px solid var(--ink);padding:18px 0 0}
+.wk .n{font-family:var(--serif);font-style:italic;font-size:28px;line-height:1;color:var(--terra-d)}
+.wk h3{font-family:var(--body);font-weight:600;font-size:17px;line-height:1.35;margin:14px 0 8px}
+.wk p{margin:0;color:var(--muted);font-size:14.5px}
+.wk div+div+div+div{margin-top:36px}
+@media(max-width:900px){.wk{grid-template-columns:1fr 1fr;gap:36px 28px}.wk div+div+div+div{margin-top:0}}
+@media(max-width:560px){.wk{grid-template-columns:1fr}}
+
+/* podejście */
+.quote-s{padding-top:0}
+.qb{border-left:3px solid var(--terra);padding:6px 0 6px clamp(20px,3vw,40px);max-width:900px}
+.qb p{font-family:var(--serif);font-style:italic;font-size:clamp(22px,2.6vw,31px);line-height:1.4;margin:0}
+
+/* kontakt */
+.cbox{background:var(--ink);color:var(--paper);border-radius:28px;padding:clamp(32px,5vw,60px);display:flex;flex-wrap:wrap;gap:28px;align-items:center;justify-content:space-between;position:relative;overflow:hidden}
+.cbox h2{font-size:clamp(26px,3.2vw,38px);margin:14px 0 0;max-width:620px}
+.cbox .cta{display:flex;flex-wrap:wrap;gap:12px}
+.cbox .btn.ghost{color:var(--paper);border-color:#5b544b}.cbox .btn.ghost:hover{background:#1c1a17}
+</style>
+</head>
+<body>
+<header class="top" id="top">
+  <div class="wrap">
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav"><a href="../">Start</a><a href="../szkolenia/">Szkolenia</a><a class="on" href="./">O mnie</a><a href="../#kontakt">Kontakt</a><a class="sci" href="/">Strona naukowa ↗</a></nav>
+    <a class="brand" href="../"><span><b>Risk Trainings</b><small>Maciej Buczak · Risk Research</small></span><span class="logo" aria-hidden="true"><i></i><i></i><i></i></span></a>
+  </div>
+</header>
+
+<main>
+<section class="ah">
+  <div class="wrap">
+    <div class="rv">
+      <span class="kick">O mnie</span>
+      <h1>Maciej Buczak</h1>
+      <p class="role">Modele ryzyka, walidacja, kapitał</p>
+      <p>Buduję, oceniam i bronię modele ryzyka. Moje projekty zawsze dotyczyły realnego problemu biznesowego – z jego wymiarem finansowym i kosztem wdrożenia zmian. Często wymagały wyjścia poza przyjęty sposób myślenia.</p>
+      <p>Na szkoleniach przenoszę to doświadczenie na salę: pracujemy na przypadkach z banków, raportach walidacyjnych i decyzjach komitetów.</p>
+      <div class="cta"><a class="btn" href="../szkolenia/">Programy szkoleń <span class="ar">→</span></a><a class="btn ghost" href="../#kontakt">Kontakt</a></div>
+    </div>
+    <div class="pic-w rv"><div class="pic"><img src="../img/maciej-buczak-portret.jpg" alt="Maciej Buczak – portret" width="900" height="1066"></div></div>
+  </div>
+</section>
+
+<section class="dark nums">
+  <div class="wrap">
+    <div class="rv"><b>8 <em>lat</em></b><span>w departamencie walidacji banku – modele kredytowe, operacyjne i kapitałowe</span></div>
+    <div class="rv"><b>50<em>+</em></b><span>autorskich badań analitycznych w ocenie modelu AMA</span></div>
+    <div class="rv"><b class="w">dziesiątki</b><span>holistycznych ocen modeli: ECL, ryzyko operacyjne, ICAAP</span></div>
+    <div class="rv"><b>2</b><span>uczelnie – SGGW i WSB Merito: zarządzanie ryzykiem i metody ilościowe</span></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap xp">
+    <div class="xp-l rv">
+      <span class="kick">Doświadczenie</span>
+      <h2>Bank, doradztwo i&nbsp;uczelnia.</h2>
+      <p>Trzy perspektywy na te same modele: tego, kto je ocenia i broni przed nadzorcą, tego, kto je projektuje – i tego, kto uczy, jak działają.</p>
+    </div>
+    <ol class="tl">
+      <li class="rv"><div class="org">Alior Bank<small>Departament Walidacji</small></div><div><h3>Menedżer Zarządzania Ryzykiem</h3><ul>
+        <li>Ocena modeli ryzyka kredytowego, operacyjnego i kapitału wewnętrznego – IFRS 9, Bazylea II / CRR, ICAAP.</li>
+        <li>Koordynacja wdrożenia IFRS 9 w obszarze walidacji.</li>
+        <li>Zarządzanie ryzykiem modelu AMA – wysoka ocena zespołu przez KNF, wkład w uzyskanie zgody na stosowanie metody.</li>
+        <li>Reprezentowanie zespołu w negocjacjach z nadzorcą.</li></ul></div></li>
+      <li class="rv"><div class="org">Accenture<small>Doradztwo</small></div><div><h3>Konsultant</h3><ul>
+        <li>Budowa systemu zarządzania ryzykiem operacyjnym.</li>
+        <li>Projekt podejścia do kalkulacji kapitału w metodzie AMA.</li></ul></div></li>
+      <li class="rv"><div class="org">SGGW<br>WSB Merito<small>Dydaktyka</small></div><div><h3>Wykładowca</h3><ul>
+        <li>Zarządzanie ryzykiem.</li>
+        <li>Metody ilościowe w zarządzaniu.</li>
+        <li>Statystyka dla socjologów.</li></ul></div></li>
+    </ol>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-hd rv"><div><span class="kick">Dorobek</span><h2 style="margin-top:16px">Metodyki, które przeszły ocenę nadzorcy.</h2></div><p>Autor kilkudziesięciu metodyk i ram holistycznej oceny modeli ryzyka.</p></div>
+    <div class="wk">
+      <div class="rv"><span class="n">01</span><h3>Holistyczna ocena modelu AMA</h3><p>Metodyka oceny modelu ryzyka operacyjnego – ponad 50 autorskich badań analitycznych, bardzo dobra ocena krajowego nadzorcy.</p></div>
+      <div class="rv"><span class="n">02</span><h3>Ocena modeli lifetime PD</h3><p>Metodyka holistycznej oceny modeli PD w IFRS 9, również bardzo dobrze oceniona przez nadzorcę.</p></div>
+      <div class="rv"><span class="n">03</span><h3>ECL i ICAAP</h3><p>Współautorstwo metodyk oceny modelu ECL i modeli w obszarze kapitału wewnętrznego.</p></div>
+      <div class="rv"><span class="n">04</span><h3>Procesy oceny modeli</h3><p>Kilkadziesiąt przeprowadzonych ocen: ECL / impairment, ryzyko operacyjne, ICAAP.</p></div>
+      <div class="rv"><span class="n">05</span><h3>Wystąpienia</h3><p>Prelegent na konferencjach i warsztatach branżowych z zakresu modeli ryzyka.</p></div>
+      <div class="rv"><span class="n">06</span><h3>Publikacje</h3><p>Eseje i teksty o ryzyku, zdarzeniach rzadkich i granicach modeli – na <a href="/">stronie naukowej</a>.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="quote-s">
+  <div class="wrap"><div class="qb rv"><p>Interesuje mnie przede wszystkim to, czy model naprawdę opisuje rzeczywistość – i co zrobić, gdy nie opisuje.</p></div></div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="cbox rv">
+      <div><span class="kick">Kontakt</span><h2>Porozmawiajmy o szkoleniu dla Twojego zespołu.</h2></div>
+      <div class="cta"><a class="btn terra" href="mailto:maciej.buczak@gmail.com?subject=Szkolenie%20%E2%80%93%20zapytanie">Napisz <span class="ar">→</span></a><a class="btn ghost" href="https://www.linkedin.com/in/maciej-buczak-561b95120" target="_blank" rel="noopener">LinkedIn ↗</a></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div><a class="brand" href="../"><span><b>Risk Trainings</b></span><span class="logo" aria-hidden="true"><i></i><i></i><i></i></span></a><p style="margin:14px 0 0;max-width:340px">Szkolenia z zarządzania ryzykiem dla banków i instytucji finansowych.</p></div>
+    <div><h4>Strony</h4><a href="../">Start</a><a href="../szkolenia/">Szkolenia</a><a href="./">O mnie</a><a href="/">Strona naukowa</a></div>
+    <div><h4>Kontakt</h4><a href="mailto:maciej.buczak@gmail.com">maciej.buczak@gmail.com</a><a href="https://www.linkedin.com/in/maciej-buczak-561b95120" target="_blank" rel="noopener">LinkedIn</a></div>
+    <div class="bottom"><span>© 2026 Maciej Buczak | Risk Research</span><span>Wersja próbna strony</span></div>
+  </div>
+</footer>
+<script src="../rt.js"></script>
+</body>
+</html>

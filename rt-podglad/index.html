@@ -112,25 +112,8 @@
 .obs-sec .obs li:hover h3::before{background:var(--terra)}
 .obs-sec .obs li p{color:#a9a194}
 
-/* szkolenia */
-.tgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
-@media(max-width:820px){.tgrid{grid-template-columns:1fr}}
-.tcard .more{margin-top:18px;font-size:14px;font-weight:600;display:inline-flex;gap:8px;align-items:center}
-.allbtn{margin-top:36px;display:flex;justify-content:center}
-
-/* o mnie */
-.about .wrap{display:grid;grid-template-columns:300px minmax(0,1fr);gap:clamp(32px,6vw,80px);align-items:start}
-.about .pic-w{position:sticky;top:100px;align-self:start;width:300px}.about .pic-w::after{content:"";position:absolute;width:40px;height:40px;background:var(--terra);border-radius:6px;right:-14px;top:-14px}
-.about .pic{border-radius:18px;overflow:hidden;background:#fff;border:1px solid var(--line);aspect-ratio:4/5;width:300px}.about .pic img{width:100%;height:100%;object-fit:cover;object-position:50% 8%}
-.about h2{font-size:clamp(30px,4vw,46px);margin:18px 0 22px}
-.about p{font-size:16.5px;color:var(--ink2);margin:0 0 16px}
-.creds{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:12px}
-.creds li{display:grid;grid-template-columns:26px 1fr;gap:10px;font-size:15px;color:var(--ink2)}
-.creds li::before{content:"";width:12px;height:12px;background:var(--terra);border-radius:2px;margin-top:6px}
-@media(max-width:860px){.about .wrap{grid-template-columns:1fr}.about .pic-w{position:relative;top:0;width:220px}.about .pic{width:220px}}
-
 /* kontakt */
-.contact{padding:0 0 clamp(64px,9vw,120px)}
+.contact{padding:clamp(64px,9vw,120px) 0}
 .cbox{background:var(--ink);color:var(--paper);border-radius:28px;padding:clamp(36px,6vw,72px);display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:40px;align-items:center;position:relative;overflow:hidden}
 .cbox h2{font-size:clamp(30px,4vw,48px);margin:16px 0 14px}
 .cbox p{margin:0;color:#cfc6b8;font-size:16.5px;max-width:560px}
@@ -145,7 +128,7 @@
 <header class="top" id="top">
   <div class="wrap">
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
-    <nav class="nav" id="nav"><a class="on" href="./">Start</a><a href="szkolenia/">Szkolenia</a><a href="#o-mnie">O mnie</a><a href="#kontakt">Kontakt</a><a class="sci" href="/">Strona naukowa ↗</a></nav>
+    <nav class="nav" id="nav"><a class="on" href="./">Start</a><a href="szkolenia/">Szkolenia</a><a href="o-mnie/">O mnie</a><a href="#kontakt">Kontakt</a><a class="sci" href="/">Strona naukowa ↗</a></nav>
     <a class="brand" href="./"><span><b>Risk Trainings</b><small>Maciej Buczak · Risk Research</small></span><span class="logo" aria-hidden="true"><i></i><i></i><i></i></span></a>
   </div>
 </header>
@@ -235,33 +218,6 @@
   </div>
 </section>
 
-<section>
-  <div class="wrap">
-    <div class="sec-hd rv"><div><span class="kick">Szkolenia</span><h2 style="margin-top:16px">Wybrane programy.</h2></div><p>Jedno- i dwudniowe warsztaty z pełnym programem dzień po dniu. Terminy i forma – stacjonarnie albo zdalnie – do uzgodnienia.</p></div>
-    <div class="tgrid" id="featured"></div>
-    <div class="allbtn"><a class="btn ghost" href="szkolenia/">Wszystkie szkolenia <span class="ar">→</span></a></div>
-  </div>
-</section>
-
-<section class="about" id="o-mnie" style="padding-top:0">
-  <div class="wrap">
-    <div class="pic-w rv"><div class="pic"><img src="img/maciej-buczak-portret.jpg" alt="Maciej Buczak – portret" width="900" height="1066"></div></div>
-    <div>
-      <span class="kick">O mnie</span>
-      <h2>Maciej Buczak</h2>
-      <p>Buduję, oceniam i bronię modele ryzyka. Moje projekty zawsze dotyczyły realnego problemu biznesowego – z jego wymiarem finansowym i kosztem wdrożenia zmian. Często wymagały wyjścia poza przyjęty sposób myślenia.</p>
-      <p>Na szkoleniach przenoszę to doświadczenie na salę: pracujemy na przypadkach z banków, raportach walidacyjnych i decyzjach komitetów. Interesuje mnie przede wszystkim to, czy model naprawdę opisuje rzeczywistość – i co zrobić, gdy nie opisuje.</p>
-      <ul class="creds">
-        <li>Autor metodyki holistycznej oceny modelu ryzyka operacyjnego AMA – ponad 50 autorskich badań analitycznych, bardzo dobra ocena krajowego nadzorcy.</li>
-        <li>Autor metodyki holistycznej oceny modeli lifetime PD (IFRS 9), również bardzo dobrze ocenionej przez nadzorcę.</li>
-        <li>Współautor metodyk oceny modelu ECL i modeli w obszarze ICAAP.</li>
-        <li>Kilkadziesiąt przeprowadzonych procesów oceny modeli: ECL / impairment, ryzyko operacyjne, ICAAP.</li>
-        <li><span>Autor esejów i publikacji o ryzyku, zdarzeniach rzadkich i granicach modeli – na <a href="/">stronie naukowej</a>.</span></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
 <section class="contact" id="kontakt">
   <div class="wrap">
     <div class="cbox rv">
@@ -276,7 +232,7 @@
 <footer class="foot">
   <div class="wrap">
     <div><a class="brand" href="./"><span><b>Risk Trainings</b></span><span class="logo" aria-hidden="true"><i></i><i></i><i></i></span></a><p style="margin:14px 0 0;max-width:340px">Szkolenia z zarządzania ryzykiem dla banków i instytucji finansowych.</p></div>
-    <div><h4>Strony</h4><a href="./">Start</a><a href="szkolenia/">Szkolenia</a><a href="#o-mnie">O mnie</a><a href="/">Strona naukowa</a></div>
+    <div><h4>Strony</h4><a href="./">Start</a><a href="szkolenia/">Szkolenia</a><a href="o-mnie/">O mnie</a><a href="/">Strona naukowa</a></div>
     <div><h4>Kontakt</h4><a href="mailto:maciej.buczak@gmail.com">maciej.buczak@gmail.com</a><a href="https://www.linkedin.com/in/maciej-buczak-561b95120" target="_blank" rel="noopener">LinkedIn</a></div>
     <div class="bottom"><span>© 2026 Maciej Buczak | Risk Research</span><span>Wersja próbna strony</span></div>
   </div>
@@ -303,11 +259,6 @@ function sqDraw(){var el=document.querySelector("[data-sqs]");if(!el)return;var 
   h+='<i style="left:'+x.toFixed(1)+'px;top:'+y+'px;width:'+s+'px;height:'+s+'px;background:'+(q.c==="t"?"#bf8165":"#0d0d0d")+';opacity:'+q.o+'"></i>'});el.innerHTML=h}
 sqDraw();var sqT;addEventListener("resize",function(){clearTimeout(sqT);sqT=setTimeout(sqDraw,150)});if(document.fonts&&document.fonts.ready)document.fonts.ready.then(sqDraw);
 })();
-</script>
-<script>
-const esc=s=>String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
-document.getElementById("featured").innerHTML=(window.RT_SZKOLENIA||[]).map(t=>{const n=t.program.reduce((s,d)=>s+d.blocks.length,0);
-  return`<a class="tcard rv" href="szkolenia/#${t.id}" style="text-decoration:none"><div class="eb"><span>${esc(t.eyebrow)}</span><span>${n} modułów</span></div><h3>${esc(t.title)}</h3><p class="sub">${esc(t.subtitle)}</p><div class="tags">${t.area.map(a=>`<span class="tag">${esc(a)}</span>`).join("")}</div><span class="more">Program szkolenia <span class="ar">→</span></span></a>`}).join("");
 </script>
 <script src="rt.js"></script>
 
