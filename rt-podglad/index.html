@@ -27,7 +27,7 @@
 .hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(32px,5vw,64px);align-items:center}
 .sqs{position:absolute;inset:0;z-index:0;pointer-events:none}
 .hero .wrap{align-items:stretch}
-.person{position:relative;display:flex;flex-direction:column;background:rgba(252,249,245,.94);border:1px solid var(--line);border-radius:22px;padding:20px 22px 22px;box-shadow:0 30px 60px -40px rgba(40,30,15,.45);max-width:420px;justify-self:end;width:100%}
+.person{--pc:rgba(252,249,245,.94);--pl:var(--line);--pg:var(--greige);position:relative;display:flex;flex-direction:column;background:var(--pc);border:1px solid var(--pl);border-radius:22px;padding:20px 22px 22px;box-shadow:0 30px 60px -40px rgba(40,30,15,.45);max-width:420px;justify-self:end;width:100%}
 .person::before{content:"";position:absolute;width:40px;height:40px;background:var(--terra);border-radius:6px;right:-14px;top:-14px}
 .person .phd{display:grid;grid-template-columns:112px minmax(0,1fr);gap:18px;align-items:center}
 .person .ph{width:112px;height:132px;border-radius:14px;overflow:hidden}
@@ -36,15 +36,25 @@
 .person .role{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--terra-d)}
 .person .nm{display:block;font-family:var(--display);font-weight:400;font-size:24px;line-height:1.15;margin:6px 0 4px}
 .person .org{font-size:14px;color:var(--muted)}
-.person .aff{list-style:none;margin:18px 0 0;padding:16px 0 0;border-top:1px solid var(--greige);display:grid;gap:8px}
+.person .aff{list-style:none;margin:18px 0 0;padding:16px 0 0;border-top:1px solid var(--pg);display:grid;gap:8px}
 .person .aff li{position:relative;padding-left:18px;font-size:14px;line-height:1.45}
 .person .aff li::before{content:"";position:absolute;left:0;top:.55em;width:7px;height:7px;background:var(--ink);border-radius:1px}
-.person address{font-style:normal;display:grid;gap:4px;margin:18px 0 22px;padding-top:16px;border-top:1px solid var(--greige);font-size:14px}
+.person address{font-style:normal;display:grid;gap:4px;margin:18px 0 22px;padding-top:16px;border-top:1px solid var(--pg);font-size:14px}
 .person address .lb{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
 .person address a{text-decoration:none;font-weight:500}.person address a:hover{color:var(--terra-d)}
 .person address span:last-child{color:var(--muted)}
 .person .sm-btn{margin-top:auto;align-self:flex-start;padding:11px 18px;font-size:14px}
 @media(max-width:900px){.person{justify-self:stretch;max-width:none}}
+.person.c-sage1{--pc:#e3e9d8;--pl:#cdd5bd;--pg:#cdd5bd}
+.person.c-sage2{--pc:#cfd7bd;--pl:#b6c0a0;--pg:#b6c0a0}
+.person.c-mint{--pc:#e2f1ec;--pl:#bcdcd1;--pg:#c6e2d8}
+.person.c-sand{--pc:#f1e7d3;--pl:#e0d2b6;--pg:#e0d2b6}
+.person.c-rose{--pc:#f4e1d7;--pl:#e6c7b7;--pg:#e9cdbf}
+.person.c-ink{--pc:#14130f;--pl:#14130f;--pg:#2c2925;color:var(--paper)}
+.person.c-ink .org,.person.c-ink address span:last-child{color:#b9b0a3}.person.c-ink .sm-btn{background:var(--terra);border-color:var(--terra)}.person.c-ink .aff li::before{background:var(--terra)}
+.pcol{position:fixed;left:16px;bottom:16px;z-index:90;display:flex;gap:6px;align-items:center;background:var(--ink);color:var(--paper);border-radius:999px;padding:7px 10px 7px 14px;font-size:12.5px;font-weight:600;box-shadow:0 10px 30px -10px rgba(0,0,0,.5)}
+.pcol button{width:24px;height:24px;border-radius:50%;border:2px solid #3a3631;cursor:pointer;padding:0}
+.pcol button[aria-pressed=true]{border-color:#fff;outline:2px solid var(--terra)}
 .agenda{position:relative;background:var(--ink);color:var(--paper);border-radius:22px;padding:28px 28px 8px;box-shadow:0 30px 60px -30px rgba(0,0,0,.55)}
 .agenda::before{content:"";position:absolute;width:40px;height:40px;background:var(--terra);border-radius:6px;right:-14px;top:-14px}
 .ag-hd span{font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--sand)}
@@ -143,6 +153,7 @@
       </ul>
       <address>
         <span class="lb">Kontakt</span>
+        <a href="tel:+48662871049">+48 662 871 049</a>
         <a href="mailto:maciej.buczak@gmail.com">maciej.buczak@gmail.com</a>
         <a href="https://www.linkedin.com/in/maciej-buczak-561b95120" target="_blank" rel="noopener">linkedin.com/in/maciej-buczak ↗</a>
         <span>Warszawa · szkolenia w całej Polsce i zdalnie</span>
@@ -266,5 +277,9 @@ document.getElementById("featured").innerHTML=(window.RT_SZKOLENIA||[]).map(t=>{
 </script>
 <script src="rt.js"></script>
 
+<div class="pcol" aria-label="Kolor karty Prowadzący">Kolor karty:
+<button type="button" data-pc="" title="Kremowy (obecny)" style="background:#fcf9f5"></button><button type="button" data-pc="c-sage1" title="Szałwia jasna" style="background:#e3e9d8"></button><button type="button" data-pc="c-sage2" title="Szałwia" style="background:#cfd7bd"></button><button type="button" data-pc="c-mint" title="Mięta" style="background:#e2f1ec"></button><button type="button" data-pc="c-sand" title="Piasek" style="background:#f1e7d3"></button><button type="button" data-pc="c-rose" title="Terakota jasna" style="background:#f4e1d7"></button><button type="button" data-pc="c-ink" title="Czerń" style="background:#14130f"></button></div>
+<script>(function(){var p=document.querySelector(".person"),set=function(c){p.className="person rv in"+(c?" "+c:"");document.querySelectorAll("[data-pc]").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.pc===c)});try{localStorage.setItem("rt.pc",c)}catch(e){}};
+var c0="c-sage1";try{var v=localStorage.getItem("rt.pc");if(v!==null)c0=v}catch(e){}set(c0);document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("[data-pc]");if(b)set(b.dataset.pc)})})();</script>
 </body>
 </html>
