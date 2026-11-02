@@ -49,6 +49,7 @@
 .person.c-sage2{--pc:#cfd7bd;--pl:#b6c0a0;--pg:#b6c0a0}
 .person.c-mint{--pc:#e2f1ec;--pl:#bcdcd1;--pg:#c6e2d8}
 .person.c-sand{--pc:#f1e7d3;--pl:#e0d2b6;--pg:#e0d2b6}
+.person.c-sand .sm-btn{background:var(--terra);border-color:var(--terra);color:#fff}.person.c-sand .sm-btn:hover{background:var(--terra-d);border-color:var(--terra-d)}
 .person.c-rose{--pc:#f4e1d7;--pl:#e6c7b7;--pg:#e9cdbf}
 .person.c-ink{--pc:#14130f;--pl:#14130f;--pg:#2c2925;color:var(--paper)}
 .person.c-ink .org,.person.c-ink address span:last-child{color:#b9b0a3}.person.c-ink .sm-btn{background:var(--terra);border-color:var(--terra)}.person.c-ink .aff li::before{background:var(--terra)}
@@ -142,7 +143,7 @@
       <ul class="chips"><li><b>1–2 dni</b> warsztatów</li><li>stacjonarnie lub zdalnie</li><li>program dopasowany do zespołu</li></ul>
       <div class="cta"><a class="btn" href="szkolenia/">Zobacz programy szkoleń <span class="ar">→</span></a><a class="btn ghost" href="#kontakt">Zapytaj o szkolenie</a></div>
     </div>
-    <aside class="person rv" aria-label="Prowadzący">
+    <aside class="person c-sand rv" aria-label="Prowadzący">
       <div class="phd"><div class="ph"><img src="img/maciej-buczak.jpg" alt="Maciej Buczak" width="1078" height="1100"></div>
       <div><span class="role">Prowadzący</span>
       <b class="nm">Maciej Buczak</b>
@@ -277,9 +278,5 @@ document.getElementById("featured").innerHTML=(window.RT_SZKOLENIA||[]).map(t=>{
 </script>
 <script src="rt.js"></script>
 
-<div class="pcol" aria-label="Kolor karty Prowadzący">Kolor karty:
-<button type="button" data-pc="" title="Kremowy (obecny)" style="background:#fcf9f5"></button><button type="button" data-pc="c-sage1" title="Szałwia jasna" style="background:#e3e9d8"></button><button type="button" data-pc="c-sage2" title="Szałwia" style="background:#cfd7bd"></button><button type="button" data-pc="c-mint" title="Mięta" style="background:#e2f1ec"></button><button type="button" data-pc="c-sand" title="Piasek" style="background:#f1e7d3"></button><button type="button" data-pc="c-rose" title="Terakota jasna" style="background:#f4e1d7"></button><button type="button" data-pc="c-ink" title="Czerń" style="background:#14130f"></button></div>
-<script>(function(){var p=document.querySelector(".person"),set=function(c){p.className="person rv in"+(c?" "+c:"");document.querySelectorAll("[data-pc]").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.pc===c)});try{localStorage.setItem("rt.pc",c)}catch(e){}};
-var c0="c-sage1";try{var v=localStorage.getItem("rt.pc");if(v!==null)c0=v}catch(e){}set(c0);document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("[data-pc]");if(b)set(b.dataset.pc)})})();</script>
 </body>
 </html>
