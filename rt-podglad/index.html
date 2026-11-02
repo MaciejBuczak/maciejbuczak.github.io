@@ -97,12 +97,20 @@
 .quote span{display:block;font-family:var(--body);font-style:normal;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--sand);margin-top:18px}
 
 /* obszary */
-.areas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
-.areas div{padding:28px 26px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);transition:background .2s}
-.areas div:hover{background:var(--card)}
-.areas b{font-family:var(--display);font-weight:400;font-size:19px;display:block;margin-bottom:8px}
-.areas p{margin:0;color:var(--muted);font-size:14.5px}
-@media(max-width:860px){.areas{grid-template-columns:1fr 1fr}}@media(max-width:560px){.areas{grid-template-columns:1fr}}
+.obs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 clamp(20px,2.6vw,36px)}
+.obs-g{border-top:2px solid var(--ink);padding-top:18px}
+.obs-h{display:flex;align-items:baseline;gap:12px;margin-bottom:4px;min-height:40px}
+.obs-h .n{font-family:var(--serif);font-style:italic;font-size:28px;line-height:1;color:var(--terra-d)}
+.obs-h b{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;line-height:1.45;color:var(--ink2)}
+.obs ul{list-style:none;margin:0;padding:0}
+.obs li{padding:16px 0 17px;border-top:1px solid var(--line);position:relative}
+.obs li:first-child{border-top:0}
+.obs li h3{font-family:var(--body);font-weight:600;font-size:16.5px;line-height:1.3;margin:0 0 5px;display:flex;align-items:flex-start;gap:9px}
+.obs li h3::before{content:"";width:7px;height:7px;border-radius:1px;background:var(--sand);flex:none;margin-top:.5em;transition:background .2s,transform .2s}
+.obs li:hover h3::before{background:var(--terra);transform:scale(1.25)}
+.obs li p{margin:0 0 0 16px;color:var(--muted);font-size:14px;line-height:1.55}
+@media(max-width:1020px){.obs{grid-template-columns:1fr 1fr;gap:34px 32px}}
+@media(max-width:600px){.obs{grid-template-columns:1fr}.obs-h{min-height:0}}
 
 /* szkolenia */
 .tgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
@@ -209,14 +217,29 @@
 
 <section>
   <div class="wrap">
-    <div class="sec-hd rv"><div><span class="kick">Obszary</span><h2 style="margin-top:16px">Tematy, w których pracuję na co dzień.</h2></div><p>Szkolenia z gotowych programów albo przygotowane pod potrzeby zespołu – z tych samych obszarów, w których prowadzę projekty.</p></div>
-    <div class="areas rv">
-      <div><b>ECL / IFRS 9</b><p>PD, LGD, EAD, SICR, scenariusze i złożenie ECL – budowa i ocena modeli.</p></div>
-      <div><b>Walidacja modeli</b><p>Backtesting, stabilność, wrażliwość, ocena jakościowa i raport walidacyjny.</p></div>
-      <div><b>Kapitał i ICAAP</b><p>RWA po CRR III, kapitał wewnętrzny, modele kapitału ekonomicznego.</p></div>
-      <div><b>Ryzyko rynkowe</b><p>VaR i Expected Shortfall, backtest, FRTB i porównywanie modeli.</p></div>
-      <div><b>Ryzyko operacyjne</b><p>Modele aktuarialne, rozkłady dotkliwości i grube ogony, podejście AMA.</p></div>
-      <div><b>Decyzje w niepewności</b><p>Myślenie probabilistyczne, zdarzenia rzadkie i pułapki interpretacji prognoz.</p></div>
+    <div class="sec-hd rv"><div><span class="kick">Obszary</span><h2 style="margin-top:16px">Od jednego parametru do kapitału całego banku.</h2></div><p>Każdy temat może być osobnym warsztatem albo częścią programu ułożonego pod potrzeby zespołu. Wszystkie wyrastają z praktyki: budowy, walidacji i obrony modeli przed nadzorcą.</p></div>
+    <div class="obs">
+      <div class="obs-g rv"><div class="obs-h"><span class="n">I</span><b>Ryzyko kredytowe</b></div><ul>
+        <li><h3>ECL / IFRS 9</h3><p>PD, LGD, EAD, SICR i scenariusze – od parametrów do odpisu.</p></li>
+        <li><h3>IRB</h3><p>Metoda wewnętrznych ratingów: parametry, kalibracja, wymogi CRR.</p></li>
+        <li><h3>CreditRisk+</h3><p>Aktuarialne podejście do strat portfela kredytowego.</p></li>
+        <li><h3>CreditMetrics</h3><p>Migracje ratingów i rozkład wartości portfela.</p></li>
+      </ul></div>
+      <div class="obs-g rv"><div class="obs-h"><span class="n">II</span><b>Kapitał i&nbsp;ryzyka</b></div><ul>
+        <li><h3>Kapitał i ICAAP</h3><p>Kapitał wewnętrzny, agregacja ryzyk, planowanie kapitałowe.</p></li>
+        <li><h3>Ryzyko rynkowe</h3><p>VaR i Expected Shortfall, FRTB, porównanie podejść.</p></li>
+        <li><h3>Modele aktuarialne</h3><p>Częstość i dotkliwość, grube ogony, ryzyko operacyjne i AMA.</p></li>
+      </ul></div>
+      <div class="obs-g rv"><div class="obs-h"><span class="n">III</span><b>Walidacja modeli</b></div><ul>
+        <li><h3>Walidacja modeli</h3><p>Ocena ilościowa i jakościowa, raport i rekomendacje.</p></li>
+        <li><h3>Testowanie modeli wartości nieoczekiwanych</h3><p>Backtesting, testy ogonów i wrażliwości modeli kapitałowych.</p></li>
+        <li><h3>Mapa modeli w banku</h3><p>Jak modele łączą się ze sobą i gdzie powstaje ryzyko modelu.</p></li>
+      </ul></div>
+      <div class="obs-g rv"><div class="obs-h"><span class="n">IV</span><b>Metody ilościowe</b></div><ul>
+        <li><h3>Statystyka w modelach ryzyka</h3><p>Rozkłady, testy i miary, które stoją za każdym modelem.</p></li>
+        <li><h3>Techniki estymacyjne w modelach ryzyka</h3><p>Od regresji po metody bayesowskie – dobór i ograniczenia.</p></li>
+        <li><h3>Decyzje w niepewności</h3><p>Myślenie probabilistyczne, zdarzenia rzadkie, pułapki interpretacji.</p></li>
+      </ul></div>
     </div>
   </div>
 </section>
