@@ -40,9 +40,13 @@
 .sh[data-m=f] .wrap{padding-bottom:clamp(250px,26vw,330px)}
 .sh[data-m=f] .bgsim{top:auto;bottom:0;width:100%;height:clamp(260px,26vw,340px);-webkit-mask-image:linear-gradient(180deg,transparent,#000 25%);mask-image:linear-gradient(180deg,transparent,#000 25%)}
 .sh[data-m=f] .sh-lg{bottom:16px}
+/* druga grafika pod listą */
+.an2{margin:-24px 0 clamp(40px,5vw,64px)}
+.bgsim2{display:block;width:100%;height:clamp(220px,22vw,300px);-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.sh-lg.lg2{position:static;justify-content:flex-end;flex-wrap:wrap;gap:6px 18px;margin-top:4px;padding-right:40px;right:auto;bottom:auto}
 /* przełącznik wariantów */
 .vx{flex-direction:column;align-items:stretch;border-radius:16px;padding:10px 12px;gap:4px;max-width:calc(100vw - 32px)}
-.vx .row{display:flex;flex-wrap:wrap;gap:2px;align-items:center}.vx .row>span{width:62px;opacity:.65;font-size:12px}
+.vx .row{display:flex;flex-wrap:wrap;gap:2px;align-items:center;max-width:640px}.vx .row>span{width:72px;opacity:.65;font-size:12px}
 .vx a{padding:4px 9px;font-size:12px}
 @media(max-width:900px){.sh{display:flex;flex-direction:column}.bgsim{order:2}.sh-lg{order:3}.sh .wrap{grid-template-columns:1fr;min-height:0}.bgsim{position:relative;display:block;width:100%;height:240px;-webkit-mask-image:none;mask-image:none;margin-top:8px}.sh-lg{position:static;padding:0 clamp(18px,4vw,40px);flex-wrap:wrap;gap:6px 14px}}
 @media(max-width:480px){.facts div{padding-right:14px;margin-right:14px}.facts b{font-size:22px}}
@@ -169,6 +173,7 @@
 <div class="wrap">
   <div class="lay-h"><h2 class="lay-t">Programy</h2></div>
   <div class="tiles" id="tiles"></div>
+  <div class="an2" aria-hidden="true"><canvas class="bgsim2" id="mc2"></canvas><div class="sh-lg lg2" id="lg2"></div></div>
   <div class="cu rv">
     <div><span class="kick">Na zamówienie</span><h2>Program dla Twojego zespołu.</h2><p>Każdy z tematów z zakładki „Obszary” może stać się osobnym warsztatem – z przypadkami z Twojego banku i w wybranej formie.</p></div>
     <a class="btn" href="../#kontakt">Zapytaj o szkolenie <span class="ar">→</span></a>
@@ -236,19 +241,19 @@ document.addEventListener("click",e=>{const t=e.target.closest(".tile");if(t)e.p
 draw();
 
 /* ---------- grafika dynamiczna nagłówka ---------- */
-const HERO=(function(){const sec=document.querySelector(".sh"),cv=document.getElementById("mc"),cx=cv.getContext("2d"),lg=document.getElementById("lg"),
+function makeAnim(cv,lg,getM){const cx=cv.getContext("2d"),
   red=matchMedia("(prefers-reduced-motion: reduce)").matches;let W=0,H=0,mode="mc",S=null,vis=true;
   const INK="rgba(13,13,13,",TER="rgba(191,129,101,",TERD="#a8694c";
   const gs=()=>{let u=0;while(!u)u=Math.random();return Math.sqrt(-2*Math.log(u))*Math.cos(6.2832*Math.random())};
   function size(){const d=Math.min(2,devicePixelRatio||1),r=cv.getBoundingClientRect();W=r.width;H=r.height;cv.width=Math.max(1,W*d);cv.height=Math.max(1,H*d);cx.setTransform(d,0,0,d,0,0)}
-  function box(){const m=sec.dataset.m,mob=W<600;if(m==="r"&&!mob)return{l:W*.17,r:W-36,t:28,b:H-56};
+  function box(){const m=getM(),mob=W<600;if(m==="r"&&!mob)return{l:W*.17,r:W-36,t:28,b:H-56};
     const cw=Math.min(1180,W),side=(W-cw)/2+Math.min(40,Math.max(18,W*.04));return{l:side,r:W-side,t:m==="f"?H*.18:20,b:H-(m==="f"?54:30)}}
   const dash=(a)=>cx.setLineDash(a||[]);
   function txt(t,x,y,al){cx.fillStyle=TERD;cx.font="600 12px Poppins, sans-serif";cx.textAlign=al||"right";cx.fillText(t,x,y)}
   /* 1. Monte Carlo – wachlarz ścieżek */
-  const MC={lg:'<span>ścieżki Monte Carlo · <b id="gN">0</b></span><span class="q">kwantyle 1% i 99%</span><span class="t">poza przedziałem</span>',
+  const MC={lg:'<span>ścieżki Monte Carlo · <b>0</b></span><span class="q">kwantyle 1% i 99%</span><span class="t">poza przedziałem</span>',
     init(){return{P:[],n:0,k:0}},
-    step(s){const N=120;if(++s.k%9===0){const y=[0];for(let i=1;i<=N;i++)y.push(y[i-1]+gs());s.P.push({y,t:0,a:1,o:Math.abs(y[N]/Math.sqrt(N))>2.326});s.n++;const e=document.getElementById("gN");if(e)e.textContent=s.n}
+    step(s){const N=120;if(++s.k%9===0){const y=[0];for(let i=1;i<=N;i++)y.push(y[i-1]+gs());s.P.push({y,t:0,a:1,o:Math.abs(y[N]/Math.sqrt(N))>2.326});s.n++;const e=lg.querySelector("b");if(e)e.textContent=s.n}
       s.P.forEach(p=>{if(p.t<N)p.t+=1.6;else p.a-=p.o?.0025:.004});s.P=s.P.filter(p=>p.a>0);if(s.P.length>90)s.P.shift()},
     draw(s){const B=box(),N=120,y0=(B.t+B.b)/2,sc=(B.b-B.t)*.46/(2.326*Math.sqrt(N)),dx=(B.r-B.l)/N;
       dash([5,6]);cx.strokeStyle=TER+"1)";cx.lineWidth=1.4;[1,-1].forEach(g=>{cx.beginPath();for(let k=0;k<=N;k++){const X=B.l+k*dx,Y=y0-g*2.326*Math.sqrt(k)*sc;k?cx.lineTo(X,Y):cx.moveTo(X,Y)}cx.stroke()});
@@ -305,17 +310,52 @@ const HERO=(function(){const sec=document.querySelector(".sh"),cv=document.getEl
       s.P.forEach(p=>{const ex=(p.x>1.8&&p.y>1.8)||(p.x<-1.8&&p.y<-1.8);if(Math.abs(p.x)>4.4||Math.abs(p.y)>4.4)return;cx.fillStyle=ex?TER+p.a+")":INK+(.45*p.a)+")";cx.beginPath();cx.arc(Xs(p.x),Ys(p.y),ex?3.4:2.2,0,7);cx.fill()});
       txt("ρ = 0,5",Math.min(B.r-40,Xs(2.3)),Math.min(B.b-40,Ys(-2.2)))},
     still(s){while(s.P.length<650)this.step(s);s.P.forEach(p=>p.a=1)}};
-  const MODES={mc:MC,rw:RW,di:DI,ln:LN,co:CO};
+  /* 6. Backtest VaR – zwroty i linia VaR */
+  const BT={lg:'<span>dzienny wynik</span><span class="q">VaR 99% (zmienna zmienność)</span><span class="t">przekroczenia</span>',
+    init(){const s={r:[],v:[],sig:1,k:0,off:0,ex:0,n:0};for(let i=0;i<120;i++)this.push(s);return s},
+    push(s){s.sig=Math.sqrt(.06+.86*s.sig*s.sig+.08*Math.pow((s.r[s.r.length-1]||0),2));const t=gs()*Math.sqrt(3/((gs()**2+gs()**2+gs()**2+gs()**2+gs()**2)/5*3||1));const r=s.sig*t*.9;s.r.push(r);s.v.push(-2.326*s.sig);s.n++;if(r<-2.326*s.sig)s.ex++;if(s.r.length>160){s.r.shift();s.v.shift()}},
+    step(s){s.off+=.12;if(s.off>=1){s.off-=1;this.push(s)}},
+    draw(s){const B=box(),N=150,dx=(B.r-B.l)/N,y0=B.t+(B.b-B.t)*.42,sc=(B.b-B.t)*.5/6,o=s.off*dx,st=s.r.length-N-1;
+      cx.strokeStyle=INK+".25)";cx.lineWidth=1;cx.beginPath();cx.moveTo(B.l,y0);cx.lineTo(B.r,y0);cx.stroke();
+      for(let i=0;i<=N;i++){const j=st+i;if(j<0)continue;const r=s.r[j],x=B.l+i*dx-o,ex=r<s.v[j];if(x<B.l-dx)continue;cx.fillStyle=ex?TER+"1)":INK+".22)";const h=-r*sc;cx.fillRect(x,h>0?y0:y0+h,Math.max(1,dx*.6),Math.abs(h))}
+      dash([4,4]);cx.strokeStyle=TER+"1)";cx.lineWidth=1.5;cx.beginPath();for(let i=0;i<=N;i++){const j=st+i;if(j<0)continue;const x=B.l+i*dx-o+dx*.3,y=y0-s.v[j]*sc;i&&j>st?cx.lineTo(x,y):cx.moveTo(x,y)}cx.stroke();dash();
+      txt("przekroczenia: "+s.ex+" / "+s.n,B.r,B.t+12)},
+    still(s){for(let i=0;i<60;i++)this.push(s)}};
+  /* 7. PD lifetime – krzywe Weibulla dla klas ratingowych */
+  const PD={lg:'<span>skumulowane PD w czasie</span><span class="q">horyzont 12 miesięcy</span><span class="t">najsłabsza klasa</span>',
+    init(){const C=[];for(let i=0;i<6;i++){C.push({k:.85+Math.random()*.5,l:(60-i*9.5)*(.9+Math.random()*.2)})}return{C,t:0,hold:0,a:1}},
+    step(s){if(s.t<1)s.t+=.006;else if(++s.hold>200){s.a-=.02;if(s.a<=0)Object.assign(s,this.init())}},
+    draw(s){const B=box(),T=60,X=t=>B.l+t/T*(B.r-B.l),Y=p=>B.b-p*(B.b-B.t)*.95;
+      cx.strokeStyle=INK+".25)";cx.lineWidth=1;cx.beginPath();cx.moveTo(B.l,B.b+.5);cx.lineTo(B.r,B.b+.5);cx.stroke();
+      dash([3,5]);cx.beginPath();cx.moveTo(X(12),B.t);cx.lineTo(X(12),B.b);cx.strokeStyle=TER+".8)";cx.stroke();dash();txt("12 m",X(12)+6,B.t+12,"left");
+      const tm=s.t*T;s.C.forEach((c,i)=>{const w=i===s.C.length-1;cx.strokeStyle=w?TER+s.a+")":INK+((.25+i*.1)*s.a)+")";cx.lineWidth=w?2.2:1.5;cx.beginPath();for(let t=0;t<=tm;t+=.4){const p=1-Math.exp(-Math.pow(t/c.l,c.k));t?cx.lineTo(X(t),Y(p)):cx.moveTo(X(t),Y(p))}cx.stroke()});
+      txt("PD lifetime · "+Math.round(tm)+" mies.",B.r,B.t+12)},
+    still(s){s.t=1}};
+  /* 8. Bootstrap – rozkład średniej */
+  const BS={lg:'<span>bootstrap: średnie z prób</span><span class="q">przedział 95%</span><span class="t">rozkład graniczny</span>',
+    init(){const base=[];for(let i=0;i<60;i++)base.push(Math.exp(gs()*.6));const m=base.reduce((a,b)=>a+b)/60,sd=Math.sqrt(base.reduce((a,b)=>a+(b-m)**2,0)/59)/Math.sqrt(60);return{base,m,sd,c:new Array(41).fill(0),h:new Array(41).fill(0),n:0,hold:0,all:[]}},
+    step(s){const NB=41;if(s.n<3000){for(let k=0;k<6;k++){let t=0;for(let i=0;i<60;i++)t+=s.base[Math.floor(Math.random()*60)];const mu=t/60,b=Math.round((mu-s.m)/(s.sd*4.4)*20+20);if(b>=0&&b<NB)s.c[b]++;s.all.push(mu);s.n++}}else if(++s.hold>220)Object.assign(s,this.init());
+      const mx=Math.max(...s.c,1);for(let i=0;i<NB;i++)s.h[i]+=(s.c[i]/mx-s.h[i])*.08},
+    draw(s){const B=box(),NB=41,bw=(B.r-B.l)/NB,Y=v=>B.b-v*(B.b-B.t)*.85;
+      cx.strokeStyle=INK+".25)";cx.lineWidth=1;cx.beginPath();cx.moveTo(B.l,B.b+.5);cx.lineTo(B.r,B.b+.5);cx.stroke();
+      for(let i=0;i<NB;i++){const h=s.h[i]*(B.b-B.t)*.85;cx.fillStyle=INK+".2)";cx.fillRect(B.l+i*bw+1,B.b-h,bw-2,h)}
+      if(s.n>300){cx.strokeStyle=TER+"1)";cx.lineWidth=2;cx.beginPath();for(let i=0;i<=200;i++){const z=-4.4+i*8.8/200,x=B.l+(z/4.4*20+20.5)*bw,v=Math.exp(-z*z/2);i?cx.lineTo(x,Y(v)):cx.moveTo(x,Y(v))}cx.stroke();
+        dash([4,5]);cx.strokeStyle=TER+"1)";cx.lineWidth=1.4;[-1.96,1.96].forEach(z=>{const x=B.l+(z/4.4*20+20.5)*bw;cx.beginPath();cx.moveTo(x,B.t+18);cx.lineTo(x,B.b);cx.stroke()});dash()}
+      txt("B = "+s.n,B.r,B.t+12)},
+    still(s){while(s.n<3000){this.step(s)}for(let i=0;i<200;i++)this.step(s)}};
+  const MODES={mc:MC,rw:RW,di:DI,ln:LN,co:CO,bt:BT,pd:PD,bs:BS};
   function set(m){mode=MODES[m]?m:"mc";S=MODES[mode].init();lg.innerHTML=MODES[mode].lg;size();if(red){MODES[mode].still(S);frame()}}
   function frame(){cx.clearRect(0,0,W,H);MODES[mode].draw(S)}
   addEventListener("resize",()=>{size();frame()});new IntersectionObserver(e=>{vis=e[0].isIntersecting}).observe(cv);
   let last=0;function loop(ts){requestAnimationFrame(loop);if(red||!vis||ts-last<16)return;last=ts;MODES[mode].step(S);frame()}
-  requestAnimationFrame(loop);return{set,resize(){size();frame()}}})();
+  requestAnimationFrame(loop);return{set,resize(){size();frame()}}}
+const HERO=makeAnim(document.getElementById("mc"),document.getElementById("lg"),()=>document.querySelector(".sh").dataset.m);
+const HERO2=makeAnim(document.getElementById("mc2"),document.getElementById("lg2"),()=>"b");
 /* warianty (wersja próbna) */
-const OPT={g:[["mc","Monte Carlo"],["rw","Random walk"],["di","Rozkład"],["ln","Zbieżność"],["co","Korelacja"]],m:[["r","Obok tytułu"],["b","Pod tytułem"],["f","Tło u dołu"]],v:[["a","Siatka"],["b","Mozaika"],["c","Lista"],["d","Plakaty"],["e","Zygzak"],["f","Kwadraty"]]},
-  LAB={g:"Grafika",m:"Miejsce",v:"Bloki"},Q=new URLSearchParams(location.search),CUR={g:Q.get("g")||"mc",m:Q.get("m")||"r",v:Q.get("v")||"a"};
+const GR=[["mc","Monte Carlo"],["rw","Random walk"],["di","Rozkład"],["ln","Zbieżność"],["co","Korelacja"],["bt","Backtest VaR"],["pd","PD lifetime"],["bs","Bootstrap"]],OPT={g:GR,m:[["r","Obok tytułu"],["b","Pod tytułem"],["f","Tło u dołu"]],g2:GR},
+  LAB={g:"Grafika",m:"Miejsce",g2:"Grafika 2"},Q=new URLSearchParams(location.search),CUR={g:Q.get("g")||"co",m:Q.get("m")||"r",g2:Q.get("g2")||"rw"};
 document.body.insertAdjacentHTML("beforeend",'<div class="variants vx" id="vx">'+Object.keys(OPT).map(k=>'<div class="row"><span>'+LAB[k]+'</span>'+OPT[k].map(o=>`<a href="#" data-k="${k}" data-v="${o[0]}">${o[1]}</a>`).join("")+'</div>').join("")+'</div>');
-function apply(){document.querySelector(".sh").dataset.m=CUR.m;document.getElementById("tiles").className="tiles lay-"+CUR.v;HERO.set(CUR.g);
+function apply(){document.querySelector(".sh").dataset.m=CUR.m;document.getElementById("tiles").className="tiles lay-a";HERO.set(CUR.g);HERO2.set(CUR.g2);
   document.querySelectorAll("#vx a").forEach(a=>a.classList.toggle("on",CUR[a.dataset.k]===a.dataset.v));try{history.replaceState(null,"","?"+new URLSearchParams(CUR))}catch(e){}}
 document.getElementById("vx").addEventListener("click",e=>{const a=e.target.closest("a");if(!a)return;e.preventDefault();CUR[a.dataset.k]=a.dataset.v;apply()});
 apply();
