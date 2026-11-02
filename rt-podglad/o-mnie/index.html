@@ -100,13 +100,14 @@
 @media(max-width:860px){.un-g{grid-template-columns:1fr}}
 
 /* badania nad ryzykiem */
-.res .sec-hd h2{color:var(--paper)}
+.res{background:#e6d8c3}
+.res .sec-hd p{color:var(--ink2)}
 .rs{margin-top:56px}.rs:first-of-type{margin-top:8px}
-.rs-h{display:flex;align-items:baseline;gap:14px;font-family:var(--body);font-weight:600;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--sand);border-top:1px solid #3a352f;padding-top:18px;margin:0 0 24px}
-.rs-h span{font-family:var(--serif);font-style:italic;font-weight:400;font-size:26px;letter-spacing:0;text-transform:none;color:var(--terra)}
-.res .lk{display:flex;flex-wrap:wrap;gap:4px 18px;margin:12px 0 0}.res .lk a{font-size:13.5px;font-weight:600;color:var(--terra);text-decoration:none}.res .lk a:hover{color:#e2a88c}
+.rs-h{display:flex;align-items:baseline;gap:14px;font-family:var(--body);font-weight:600;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink2);border-top:1px solid var(--ink);padding-top:18px;margin:0 0 24px}
+.rs-h span{font-family:var(--serif);font-style:italic;font-weight:400;font-size:26px;letter-spacing:0;text-transform:none;color:var(--terra-d)}
+.res .lk{display:flex;flex-wrap:wrap;gap:4px 18px;margin:12px 0 0}.res .lk a{font-size:13.5px;font-weight:600;color:var(--terra-d);text-decoration:none}.res .lk a:hover{color:var(--ink)}
 .pf-g{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.pf{background:var(--paper);border:1px solid var(--paper);border-radius:var(--r);padding:clamp(22px,3vw,32px);position:relative}
+.pf{background:var(--card);border:1px solid #d6c6ae;border-radius:var(--r);padding:clamp(22px,3vw,32px);position:relative}
 .pf-n{display:flex;align-items:baseline;gap:12px;margin-bottom:16px}
 .pf-n b{font-family:var(--display);font-weight:400;font-size:clamp(34px,3.8vw,48px);line-height:1;color:var(--terra-d)}
 .pf-n span{font-size:13px;color:var(--muted)}
@@ -115,22 +116,22 @@
 .pf p{margin:0;font-size:15px;color:var(--ink2)}
 .res .pf .lk a{color:var(--terra-d)}.res .pf .lk a:hover{color:var(--ink)}
 .po{list-style:none;margin:20px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;column-gap:40px}
-.po a{display:grid;gap:3px;padding:16px 0;border-bottom:1px solid #2c2925;text-decoration:none;color:inherit}
-.po .t{font-weight:600;font-size:15.5px;line-height:1.4;color:var(--paper)}
-.po .m{font-size:12.5px;color:var(--sand)}
-.po .d{font-size:14px;color:#a9a194}
-.po a:hover .t{color:#e2a88c}
+.po a{display:grid;gap:3px;padding:16px 0;border-bottom:1px solid #cdbca3;text-decoration:none;color:inherit}
+.po .t{font-weight:600;font-size:15.5px;line-height:1.4;color:var(--ink)}
+.po .m{font-size:12.5px;color:var(--terra-d)}
+.po .d{font-size:14px;color:var(--muted)}
+.po a:hover .t{color:var(--terra-d)}
 .es-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.es{display:flex;flex-direction:column;background:var(--paper);color:var(--ink);border-radius:var(--r);overflow:hidden;text-decoration:none;transition:transform .2s,box-shadow .2s}
-.es:hover{transform:translateY(-3px);box-shadow:0 18px 40px -20px rgba(0,0,0,.7)}
+.es{display:flex;flex-direction:column;background:var(--card);color:var(--ink);border-radius:var(--r);overflow:hidden;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.es:hover{transform:translateY(-3px);box-shadow:0 18px 40px -22px rgba(60,40,20,.5)}
 .es-i{display:block;aspect-ratio:16/9;background:var(--greige);overflow:hidden}.es-i img{width:100%;height:100%;object-fit:cover;transition:transform .5s}.es:hover .es-i img{transform:scale(1.04)}
 .es-b{display:flex;flex-direction:column;flex:1;padding:20px 24px 20px}
 .prof{display:flex;flex-wrap:wrap;align-items:center;gap:12px 14px;margin:22px 0 4px}
-.prof>span{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--sand);margin-right:6px}
-.pr{display:inline-flex;align-items:center;gap:12px;padding:8px 16px 8px 8px;border:1px solid #3a352f;border-radius:999px;text-decoration:none;color:#e8e1d6;font-size:14px;font-weight:500;transition:border-color .2s,background .2s}
-.pr:hover{border-color:var(--terra);background:#171512}
+.prof>span{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink2);margin-right:6px}
+.pr{display:inline-flex;align-items:center;gap:12px;padding:8px 16px 8px 8px;border:1px solid #cdbca3;border-radius:999px;background:var(--card);text-decoration:none;color:var(--ink);font-size:14px;font-weight:500;transition:border-color .2s,background .2s}
+.pr:hover{border-color:var(--terra-d)}
 .pr .lg{display:inline-grid;place-items:center;height:34px;min-width:34px;padding:0 9px;border-radius:999px;font-weight:700;letter-spacing:.04em;font-size:13px}
-.pr.ssrn .lg{background:#fff;color:#1f3864;font-family:Georgia,serif;letter-spacing:.08em}
+.pr.ssrn .lg{background:#fff;border:1px solid #d6c6ae;color:#1f3864;font-family:Georgia,serif;letter-spacing:.08em}
 .pr.rg .lg{display:inline-flex;align-items:center;justify-content:center;width:34px;background:#00d0af;color:#fff;font-family:var(--body);font-size:15px;padding:0 0 0 2px}
 .pr.rg sup{font-size:9px;line-height:1;margin-left:1px;position:relative;top:-4px;vertical-align:baseline}
 .es .tg{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--terra-d)}
@@ -138,16 +139,16 @@
 .es p{margin:0 0 16px;font-size:14px;color:var(--muted)}
 .es .go{margin-top:auto;font-size:13.5px;font-weight:600}
 .rs-cta{margin-top:26px}
-.lc{display:grid;grid-template-columns:340px minmax(0,1fr);gap:clamp(28px,5vw,60px);align-items:start}
+.lc{display:grid;grid-template-columns:300px minmax(0,1fr);gap:clamp(28px,5vw,60px);align-items:start}
 .lc-ph{margin:0;position:relative}
 .lc-ph::after{content:"";position:absolute;width:42px;height:42px;background:var(--terra);border-radius:6px;right:-15px;top:-15px}
-.res .cph-i[data-empty]{background:repeating-linear-gradient(135deg,transparent 0 14px,rgba(212,196,176,.08) 14px 15px);border-color:#5c564d;aspect-ratio:4/3}
-.res .cph-i[data-empty] span{color:#8f877b}
-.lc-t{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(24px,2.6vw,32px);line-height:1.3;color:var(--paper);margin:0 0 14px}
-.lc p{margin:0;font-size:15.5px}
-.lc-l{list-style:none;margin:20px 0 0;padding:0;border-top:1px solid #2c2925}
-.lc-l li{padding:11px 0;border-bottom:1px solid #2c2925;font-size:14.5px;color:#e8e1d6}
-.lc-l b{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--terra);margin-right:14px}
+.lc-i{aspect-ratio:3/4}
+.lc-i img{object-position:50% 45%}
+.lc-t{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(24px,2.6vw,32px);line-height:1.3;color:var(--ink);margin:0 0 14px}
+.lc p{margin:0;font-size:15.5px;color:var(--ink2)}
+.lc-l{list-style:none;margin:20px 0 0;padding:0;border-top:1px solid var(--ink)}
+.lc-l li{padding:11px 0;border-bottom:1px solid #cdbca3;font-size:14.5px;color:var(--ink)}
+.lc-l b{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--terra-d);margin-right:14px}
 @media(max-width:900px){.pf-g,.po,.es-g,.lc{grid-template-columns:1fr}.lc-ph{max-width:340px}}
 
 /* podejście */
@@ -242,7 +243,7 @@
   </div>
 </section>
 
-<section class="dark res">
+<section class="res">
   <div class="wrap">
     <div class="sec-hd rv"><div><span class="kick">Badania nad ryzykiem</span><h2 style="margin-top:16px">Granice modeli ryzyka.</h2></div><p>Badam, czy zjawiska finansowe da się zasadnie opisywać jako losowe – i jak instytucje komunikują niepewność zdarzeń skrajnych.</p></div>
 
@@ -257,13 +258,13 @@
     </div>
 
     <div class="rs rv"><h3 class="rs-h"><span>02</span>Eseje o ryzyku</h3>
-      <div class="es-g"><a class="es" href="/risk-research/art-1_in_1000years/" target="_blank" rel="noopener"><span class="es-i"><img src="/assets/images/crisis2.jpg" alt="" loading="lazy"></span><span class="es-b"><span class="tg">Ryzyko systemowe · regulacje</span><h4>I Can’t Predict a 1,000-Year Catastrophe</h4><p>Ile lat trzeba czekać na katastrofę, przed którą chroni nas system regulacyjny? Według dokumentów nadzorczych – tysiąc.</p><span class="go">Czytaj ↗</span></span></a><a class="es" href="/risk-research/art-hydrology_flood/" target="_blank" rel="noopener"><span class="es-i"><img src="/assets/images/flood_barrier1.jpg" alt="" loading="lazy"></span><span class="es-b"><span class="tg">Powódź stuletnia · ryzyko ekstremalne</span><h4>A Hundred Years of the Return Period and the Hundred-Year Flood</h4><p>Skąd finanse wzięły okres powrotu, stacjonarność i teorię wartości ekstremalnych – i co hydrologia wie o nich dziś.</p><span class="go">Czytaj ↗</span></span></a><a class="es" href="/risk-research/art-finance_random/" target="_blank" rel="noopener"><span class="es-i"><img src="/assets/images/finance_random1.jpg" alt="" loading="lazy"></span><span class="es-b"><span class="tg">Błądzenie losowe · ryzyko kredytowe</span><h4>How Finance Borrowed Its Randomness</h4><p>Od Bacheliera i Wienera, przez Blacka-Scholesa, Mertona i Vasicka, do wymogów kapitałowych Bazylei.</p><span class="go">Czytaj ↗</span></span></a></div>
+      <div class="es-g"><a class="es" href="/risk-research/art-1_in_1000years/"><span class="es-i"><img src="/assets/images/crisis2.jpg" alt="" loading="lazy"></span><span class="es-b"><span class="tg">Ryzyko systemowe · regulacje</span><h4>I Can’t Predict a 1,000-Year Catastrophe</h4><p>Ile lat trzeba czekać na katastrofę, przed którą chroni nas system regulacyjny? Według dokumentów nadzorczych – tysiąc.</p><span class="go">Czytaj →</span></span></a><a class="es" href="/risk-research/art-hydrology_flood/"><span class="es-i"><img src="/assets/images/flood_barrier1.jpg" alt="" loading="lazy"></span><span class="es-b"><span class="tg">Powódź stuletnia · ryzyko ekstremalne</span><h4>A Hundred Years of the Return Period and the Hundred-Year Flood</h4><p>Skąd finanse wzięły okres powrotu, stacjonarność i teorię wartości ekstremalnych – i co hydrologia wie o nich dziś.</p><span class="go">Czytaj →</span></span></a><a class="es" href="/risk-research/art-finance_random/"><span class="es-i"><img src="/assets/images/finance_random1.jpg" alt="" loading="lazy"></span><span class="es-b"><span class="tg">Błądzenie losowe · ryzyko kredytowe</span><h4>How Finance Borrowed Its Randomness</h4><p>Od Bacheliera i Wienera, przez Blacka-Scholesa, Mertona i Vasicka, do wymogów kapitałowych Bazylei.</p><span class="go">Czytaj →</span></span></a></div>
       <div class="rs-cta"><a class="btn terra" href="/articlestart/">Zobacz wszystkie eseje <span class="ar">→</span></a></div>
     </div>
 
     <div class="rs rv"><h3 class="rs-h"><span>03</span>Wykład otwarty</h3>
       <div class="lc">
-        <figure class="lc-ph"><div class="cph-i" data-empty="1"><span>Miejsce na zdjęcie z&nbsp;wykładu</span></div></figure>
+        <figure class="lc-ph"><div class="cph-i lc-i"><img src="../img/wyklad-kryzysy-100-letnie.jpg" alt="Maciej Buczak podczas wykładu „Dlaczego kryzysy 100-letnie zdarzają się co 10 lat?”" width="480" height="853" loading="lazy"></div></figure>
         <div>
           <h4 class="lc-t">„Dlaczego kryzysy 100-letnie zdarzają się co 10 lat?”</h4>
           <p>Autorski wykład dla studentów i pracowników naukowych: historia metod modelowania ryzyk finansowych, zestawiona z metodami hydrologii – i problemy u fundamentów przyjętego w nich rozumowania.</p>
