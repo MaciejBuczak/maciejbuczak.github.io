@@ -131,6 +131,56 @@
 .lay-f .tile .no{font-size:18px;left:16px;top:12px}
 @media(max-width:1000px){.lay-f{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:520px){.lay-f{grid-template-columns:1fr}}
 
+/* warianty kolorów kafelków (paleta 3) */
+.p1 .tile:nth-child(4n+1) .art{background:#fff7e5!important}
+.p1 .tile:nth-child(4n+1) .no{color:#d17a1b}
+.p1 .tile:nth-child(4n+1) .art::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:#d17a1b;z-index:2}
+.p1 .tile:nth-child(4n+1){background:#fff7e5;border-color:#f4d8b2}
+.p1 .tile:nth-child(4n+2) .art{background:#fdf4ed!important}
+.p1 .tile:nth-child(4n+2) .no{color:#be9170}
+.p1 .tile:nth-child(4n+2) .art::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:#f6ba92;z-index:2}
+.p1 .tile:nth-child(4n+2){background:#fdf4ed;border-color:#fbe6d6}
+.p1 .tile:nth-child(4n+3) .art{background:#faf9f4!important}
+.p1 .tile:nth-child(4n+3) .no{color:#8a7f60}
+.p1 .tile:nth-child(4n+3) .art::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:#b4a988;z-index:2}
+.p1 .tile:nth-child(4n+3){background:#faf9f4;border-color:#e8e5d9}
+.p1 .tile:nth-child(4n+4) .art{background:#fdfaf1!important}
+.p1 .tile:nth-child(4n+4) .no{color:#a68a23}
+.p1 .tile:nth-child(4n+4) .art::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:#d4af37;z-index:2}
+.p1 .tile:nth-child(4n+4){background:#fdfaf1;border-color:#f3e7c2}
+.p2 .tile:nth-child(4n+1) .art{background:#f4e7c9!important}
+.p2 .tile:nth-child(4n+1) .no{color:#a6824c}
+.p2 .tile:nth-child(4n+2) .art{background:#fadeca!important}
+.p2 .tile:nth-child(4n+2) .no{color:#be9170}
+.p2 .tile:nth-child(4n+3) .art{background:#e1dccd!important}
+.p2 .tile:nth-child(4n+3) .no{color:#8a7f60}
+.p2 .tile:nth-child(4n+4) .art{background:#ebddc9!important}
+.p2 .tile:nth-child(4n+4) .no{color:#a6824c}
+.p3 .tile:nth-child(4n+1) .art{background:#ebd5b8!important}
+.p3 .tile:nth-child(4n+1) .no{color:#c79452}
+.p3 .tile:nth-child(4n+2) .art{background:#e3cfc1!important}
+.p3 .tile:nth-child(4n+2) .no{color:#be9170}
+.p3 .tile:nth-child(4n+3) .art{background:#ded0bc!important}
+.p3 .tile:nth-child(4n+3) .no{color:#a6824c}
+.p3 .tile:nth-child(4n+4) .art{background:#e8d7c0!important}
+.p3 .tile:nth-child(4n+4) .no{color:#a6824c}
+.p4 .tile:nth-child(4n+1) .art{background:#f1e4b9!important}
+.p4 .tile:nth-child(4n+1) .no{color:#a68a23}
+.p4 .tile:nth-child(4n+2) .art{background:#fbe3d2!important}
+.p4 .tile:nth-child(4n+2) .no{color:#be9170}
+.p4 .tile:nth-child(4n+3) .art{background:#f2e4c2!important}
+.p4 .tile:nth-child(4n+3) .no{color:#a6824c}
+.p4 .tile:nth-child(4n+4) .art{background:#e9dace!important}
+.p4 .tile:nth-child(4n+4) .no{color:#be9170}
+.p5 .tile:nth-child(4n+1) .art{background:#f3e8da!important}
+.p5 .tile:nth-child(4n+1) .no{color:#a6824c}
+.p5 .tile:nth-child(4n+2) .art{background:#ecdecb!important}
+.p5 .tile:nth-child(4n+2) .no{color:#a6824c}
+.p5 .tile:nth-child(4n+3) .art{background:#efe3d2!important}
+.p5 .tile:nth-child(4n+3) .no{color:#a6824c}
+.p5 .tile:nth-child(4n+4) .art{background:#e8d8c3!important}
+.p5 .tile:nth-child(4n+4) .no{color:#a6824c}
+.vx{flex-direction:row;align-items:center;gap:3px;border-radius:999px}
 /* animacje grafik */
 .tile .dr{stroke-dasharray:var(--l,600);stroke-dashoffset:var(--l,600)}
 .tile.in .dr,.tile:hover .dr{animation:dr 1.6s cubic-bezier(.3,.6,.2,1) forwards;animation-delay:var(--d,0s)}
@@ -359,7 +409,13 @@ const HERO2=makeAnim(document.getElementById("mc2"),document.getElementById("lg2
    Pozostałe gotowe grafiki do użycia: mc Monte Carlo, rw Random walk, di Rozkład, ln Zbieżność, co Korelacja, bt Backtest VaR, pd PD lifetime, bs Bootstrap;
    miejsca w nagłówku: r obok tytułu, b pod tytułem, f tło u dołu. */
 const CUR={g:"co",m:"r",g2:"bt"},GR=[["mc","Monte Carlo"],["rw","Random walk"],["di","Rozkład"],["ln","Zbieżność"],["co","Korelacja"],["bt","Backtest VaR"],["pd","PD lifetime"],["bs","Bootstrap"]];
-document.querySelector(".sh").dataset.m=CUR.m;document.getElementById("tiles").className="tiles lay-a";HERO.set(CUR.g);HERO2.set(CUR.g2);
+document.querySelector(".sh").dataset.m=CUR.m;document.getElementById("tiles").className="tiles lay-a";
+/* kolory kafelków – wersja próbna */
+const PAL=[["p0", "Obecne"], ["p1", "Jasne z akcentem"], ["p2", "Pastele"], ["p3", "Ziemie"], ["p4", "Złoto i miedź"], ["p5", "Piaskowy monochrom"]];let pal=new URLSearchParams(location.search).get("k")||"p0";
+document.body.insertAdjacentHTML("beforeend",'<div class="variants vx" id="vx">Kolory:'+PAL.map(o=>`<a href="#" data-k="${o[0]}">${o[1]}</a>`).join("")+'</div>');
+function setPal(k){pal=k;document.getElementById("tiles").className="tiles lay-a "+k;document.querySelectorAll("#vx a").forEach(a=>a.classList.toggle("on",a.dataset.k===k));try{history.replaceState(null,"","?k="+k)}catch(e){}}
+document.getElementById("vx").addEventListener("click",e=>{const a=e.target.closest("a");if(!a)return;e.preventDefault();setPal(a.dataset.k)});setPal(pal);
+HERO.set(CUR.g);HERO2.set(CUR.g2);
 document.getElementById("an2t").textContent=GR.find(x=>x[0]===CUR.g2)[1];
 </script>
 <script src="../rt.js"></script>
