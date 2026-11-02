@@ -62,12 +62,15 @@ section{padding:clamp(64px,9vw,120px) 0}
 
 /* stopka */
 .foot{background:var(--ink);color:#cfc6b8;padding:56px 0 40px;font-size:14px}
-.foot .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}
+.foot .wrap{display:grid;grid-template-columns:1fr 1fr 1.4fr;gap:32px}
+.foot .wrap>div:first-child{order:3;text-align:right;display:flex;flex-direction:column;align-items:flex-end}
+.foot .wrap>div:first-child p{margin-left:auto}
+.foot .bottom{order:4}
 .foot .brand{color:var(--paper)}
 .foot h4{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--sand);margin:0 0 12px;font-weight:600}
 .foot a{text-decoration:none;color:#e8e1d6;display:block;padding:3px 0}.foot a:hover{color:#fff}
 .foot .bottom{grid-column:1/-1;border-top:1px solid #2c2925;padding-top:22px;margin-top:10px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12.5px;color:#8f877b}
-@media(max-width:760px){.foot .wrap{grid-template-columns:1fr}}
+@media(max-width:760px){.foot .wrap{grid-template-columns:1fr}.foot .wrap>div:first-child{order:0;text-align:left;align-items:flex-start}.foot .wrap>div:first-child p{margin-left:0}}
 
 /* karta szkolenia */
 .tcard{position:relative;display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:28px 28px 24px;transition:border-color .2s,transform .2s,box-shadow .2s}
