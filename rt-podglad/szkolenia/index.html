@@ -180,6 +180,13 @@
 .p5 .tile:nth-child(4n+3) .no{color:#a6824c}
 .p5 .tile:nth-child(4n+4) .art{background:#e8d8c3!important}
 .p5 .tile:nth-child(4n+4) .no{color:#a6824c}
+/* kafelki – sześć kolorów z palety */
+.p2 .tile:nth-child(1) .art{background:#f3e4c4!important}
+.p2 .tile:nth-child(2) .art{background:#faddc9!important}
+.p2 .tile:nth-child(3) .art{background:#ded9c9!important}
+.p2 .tile:nth-child(4) .art{background:#f2e6c1!important}
+.p2 .tile:nth-child(5) .art{background:#e5d4c6!important}
+.p2 .tile:nth-child(6) .art{background:#eadbc6!important}
 /* animacje grafik */
 .tile .dr{stroke-dasharray:var(--l,600);stroke-dashoffset:var(--l,600)}
 .tile.in .dr,.tile:hover .dr{animation:dr 1.6s cubic-bezier(.3,.6,.2,1) forwards;animation-delay:var(--d,0s)}
@@ -247,38 +254,29 @@
 /* ---------- grafiki kafelków (SVG 400×225) ---------- */
 const INK="#0d0d0d",TER="#bf8165",TERD="#a8694c",TAN="#b29e84",LINE="#cbbca6";
 const ART={
-/* krzywa logistyczna – scoring */
-budowa(){let s="";const X=x=>40+x*320,Y=p=>185-p*140,f=x=>1/(1+Math.exp(-(x-.5)*11));
-  let sd=7;const rn=()=>(sd=(sd*9301+49297)%233280)/233280;
-  for(let i=0;i<30;i++){const x=(i+.5)/30,d=rn()<f(x)?1:0;s+=`<circle class="fd" style="--d:${.02*i}s" cx="${X(x).toFixed(1)}" cy="${(Y(d)+(d?-9:9)).toFixed(1)}" r="3.4" fill="${d?TER:INK}" fill-opacity="${d?.85:.35}"/>`}
-  let p="";for(let x=0;x<=1.0001;x+=.02)p+=(x?" L":"M")+X(x).toFixed(1)+" "+Y(f(x)).toFixed(1);
-  s+=`<path class="dr" style="--l:420;--d:.5s" d="${p}" fill="none" stroke="${INK}" stroke-width="2.2"/>`;
-  return s+``},
-/* krzywe PD lifetime dla etapów */
-ecl(){let s="";const X=t=>40+t/60*320,Y=p=>195-p*160,L=[[.9,140,.35],[.95,85,.5],[1,48,.7]];
-  L.forEach((c,i)=>{let p="";for(let t=0;t<=60;t+=1.5)p+=(t?" L":"M")+X(t).toFixed(1)+" "+Y(1-Math.exp(-Math.pow(t/c[1],c[0]))).toFixed(1);s+=`<path class="dr" style="--l:360;--d:${i*.2}s" d="${p}" fill="none" stroke="${i===2?TER:INK}" stroke-width="${i===2?2.4:1.8}" opacity="${i===2?1:c[2]}"/>`});
-  s+=`<line x1="${X(12)}" y1="34" x2="${X(12)}" y2="195" stroke="${TER}" stroke-dasharray="4 4" stroke-width="1.2"/><text x="${X(12)+5}" y="44" font-size="10" font-family="Poppins,sans-serif" fill="${TERD}">12 m</text>`;
-  ["Etap 1","Etap 2","Etap 3"].forEach((t,i)=>{const c=L[i],yy=Y(1-Math.exp(-Math.pow(60/c[1],c[0])))-7;s+=`<text class="fd" style="--d:${1+i*.15}s" x="364" y="${yy}" text-anchor="end" font-size="10" font-family="Poppins,sans-serif" fill="${i===2?TERD:INK}" opacity="${i===2?1:.6}">${t}</text>`});
-  return s+`<line x1="40" y1="195" x2="360" y2="195" stroke="${INK}" opacity=".25"/>`},
-/* krzywa ROC */
-estymacja(){const X=v=>110+v*180,Y=v=>200-v*180;let s=`<rect x="110" y="20" width="180" height="180" fill="none" stroke="${INK}" opacity=".2"/><line x1="${X(0)}" y1="${Y(0)}" x2="${X(1)}" y2="${Y(1)}" stroke="${INK}" stroke-dasharray="4 4" opacity=".4"/>`;
-  [[3.2,INK,.35,"1.6"],[6,TER,1,"2.4"]].forEach((c,i)=>{let p="",a="M"+X(0)+" "+Y(0);for(let v=0;v<=1.0001;v+=.02){const r=1-Math.pow(1-v,c[0]);p+=(v?" L":"M")+X(v).toFixed(1)+" "+Y(r).toFixed(1)}
-    if(i===1)s+=`<path class="fd" style="--d:1s" d="${p} L ${X(1)} ${Y(0)} Z" fill="${TER}" fill-opacity=".14"/>`;s+=`<path class="dr" style="--l:330;--d:${i*.25}s" d="${p}" fill="none" stroke="${c[1]}" stroke-width="${c[3]}" opacity="${c[2]}"/>`});
-  return s+`<text class="fd" style="--d:1.2s" x="${X(.6)}" y="${Y(.3)}" font-size="11" font-weight="600" font-family="Poppins,sans-serif" fill="${TERD}">Gini 0,71</text><text x="296" y="204" font-size="9" font-family="Poppins,sans-serif" fill="${INK}" opacity=".5">FPR</text><text x="98" y="26" font-size="9" font-family="Poppins,sans-serif" fill="${INK}" opacity=".5" text-anchor="end">TPR</text>`},
-/* pięć modeli kapitału */
-piec(){const D=[["IRB",.62],["CreditMetrics",.78],["CreditRisk+",.7],["aktuarialny",.9],["VaR",.55]];let s="";const bw=46,g=18,x0=200-(5*bw+4*g)/2;
-  D.forEach((d,i)=>{const h=d[1]*140,x=x0+i*(bw+g);s+=`<rect class="gr" style="--d:${i*.12}s" x="${x}" y="${190-h}" width="${bw}" height="${h}" rx="4" fill="${i===3?TER:INK}" opacity="${i===3?.9:.16+i*.04}"/><text class="fd" style="--d:${.6+i*.1}s" x="${x+bw/2}" y="206" text-anchor="middle" font-size="8.5" font-family="Poppins,sans-serif" fill="${INK}" opacity=".7">${d[0]}</text>`});
-  return s+`<line x1="${x0-10}" y1="190" x2="${x0+5*bw+4*g+10}" y2="190" stroke="${INK}" opacity=".3"/><line class="fd" style="--d:1s" x1="${x0-10}" y1="${190-.7*140}" x2="${x0+5*bw+4*g+10}" y2="${190-.7*140}" stroke="${TER}" stroke-dasharray="4 4"/>`},
-/* rozkład strat: EL, VaR, UL */
-mwn(){const x0=40,x1=370,yb=185,f=x=>{const z=Math.log((x-30)/60);return x<=31?0:Math.exp(-.5*(z/.45)**2)/(x-30)},Xs=[];let mx=0;for(let x=x0;x<=x1;x++)mx=Math.max(mx,f(x));const Y=x=>yb-f(x)/mx*130;
-  let p="M"+x0+" "+yb;for(let x=x0;x<=x1;x+=2)p+=" L"+x+" "+Y(x).toFixed(1);let tail="M248 "+yb;for(let x=248;x<=x1;x+=2)tail+=" L"+x+" "+Y(x).toFixed(1);tail+=" L"+x1+" "+yb+" Z";
-  let s=`<path class="fd" style="--d:.9s" d="${tail}" fill="${TER}" fill-opacity=".5"/><path class="dr" style="--l:460" d="${p}" fill="none" stroke="${INK}" stroke-width="2"/>`;
-  s+=`<line x1="${x0}" y1="${yb}" x2="${x1}" y2="${yb}" stroke="${INK}" opacity=".3"/>`;
-  s+=`<line class="fd" style="--d:1.1s" x1="112" y1="40" x2="112" y2="${yb}" stroke="${INK}" stroke-dasharray="3 4" opacity=".6"/><text class="fd" style="--d:1.1s" x="116" y="48" font-size="10" font-weight="600" font-family="Poppins,sans-serif" fill="${INK}">EL</text>`;
-  s+=`<line class="fd" style="--d:1.2s" x1="248" y1="40" x2="248" y2="${yb}" stroke="${TER}" stroke-dasharray="4 4" stroke-width="1.4"/><text class="fd" style="--d:1.2s" x="252" y="48" font-size="10" font-weight="600" font-family="Poppins,sans-serif" fill="${TERD}">VaR 99,9%</text>`;
-  s+=`<path class="fd" style="--d:1.4s" d="M112 32 L112 26 L248 26 L248 32" fill="none" stroke="${TERD}" stroke-width="1.2"/><text class="fd" style="--d:1.4s" x="180" y="20" text-anchor="middle" font-size="10" font-weight="600" font-family="Poppins,sans-serif" fill="${TERD}">UL – kapitał</text>`;
-  return s},
-ryzmod(){return ART.liczby()},
+/* budowa modeli – bloki układające się w krzywą */
+budowa(){let s="";const n=11,w=19,g=6,x0=200-(n*w+(n-1)*g)/2;
+  for(let i=0;i<n;i++){const v=1/(1+Math.exp(-(i-5)*.9)),k=Math.max(1,Math.round(v*5));for(let j=0;j<k;j++){const top=j===k-1;s+=`<rect class="gr" style="--d:${(i*.07+j*.03).toFixed(2)}s" x="${x0+i*(w+g)}" y="${190-(j+1)*(w+4)}" width="${w}" height="${w}" rx="3" fill="${top&&i>6?TER:INK}" fill-opacity="${top&&i>6?.95:.14+j*.05}"/>`}}
+  let p="";for(let i=0;i<=40;i++){const x=i/40*(n-1),v=1/(1+Math.exp(-(x-5)*.9));p+=(i?" L":"M")+(x0+x*(w+g)+w/2).toFixed(1)+" "+(190-v*5*(w+4)-8).toFixed(1)}
+  return s+`<path class="dr" style="--l:360;--d:.8s" d="${p}" fill="none" stroke="${INK}" stroke-width="2" stroke-linecap="round"/>`},
+/* ECL – trzy ścieżki rozchodzące się z jednego punktu */
+ecl(){let s="";const o=[70,175];[[.25,.6],[.5,.75],[.85,1]].forEach((c,i)=>{const ex=330,ey=175-c[0]*140;s+=`<path class="dr" style="--l:340;--d:${i*.25}s" d="M${o[0]} ${o[1]} C 160 ${o[1]-10}, 240 ${ey+20}, ${ex} ${ey}" fill="none" stroke="${i===2?TER:INK}" stroke-width="${i===2?3:2}" stroke-opacity="${i===2?1:c[1]*.6}" stroke-linecap="round"/><circle class="fd" style="--d:${1+i*.2}s" cx="${ex}" cy="${ey}" r="${7+i*3}" fill="${i===2?TER:INK}" fill-opacity="${i===2?1:.25+i*.15}"/>`});
+  return s+`<circle cx="${o[0]}" cy="${o[1]}" r="6" fill="${INK}"/>`},
+/* ryzyko modeli – tarcza i rozrzut trafień */
+ryzmod(){let s="";const c=[190,112];[78,56,34,12].forEach((r,i)=>s+=`<circle class="fd" style="--d:${i*.1}s" cx="${c[0]}" cy="${c[1]}" r="${r}" fill="none" stroke="${INK}" stroke-opacity="${.18+i*.12}" stroke-width="1.5"/>`);
+  const P=[[-8,6],[12,-10],[4,14],[-16,-6],[18,8],[-4,-18],[10,20],[-20,14],[2,-4]];P.forEach((p,i)=>s+=`<circle class="fd" style="--d:${.5+i*.06}s" cx="${c[0]+p[0]}" cy="${c[1]+p[1]}" r="4" fill="${INK}" fill-opacity=".75"/>`);
+  s+=`<circle class="fd" style="--d:1.2s" cx="${c[0]+92}" cy="${c[1]-46}" r="7" fill="${TER}"/><path class="dr" style="--l:120;--d:1.1s" d="M${c[0]} ${c[1]} L ${c[0]+86} ${c[1]-43}" stroke="${TER}" stroke-width="1.6" stroke-dasharray="4 4"/>`;return s},
+/* estymacja i walidacja – łuk ROC jako znak */
+estymacja(){const X=v=>120+v*160,Y=v=>196-v*160;let p="",a="";for(let v=0;v<=1.0001;v+=.025){const r=1-Math.pow(1-v,4.5);p+=(v?" L":"M")+X(v).toFixed(1)+" "+Y(r).toFixed(1)}
+  return `<rect x="120" y="36" width="160" height="160" rx="10" fill="none" stroke="${INK}" stroke-opacity=".2" stroke-width="1.5"/><path class="fd" style="--d:.9s" d="${p} L ${X(1)} ${Y(0)} Z" fill="${TER}" fill-opacity=".28"/><line x1="${X(0)}" y1="${Y(0)}" x2="${X(1)}" y2="${Y(1)}" stroke="${INK}" stroke-opacity=".35" stroke-dasharray="4 5" stroke-width="1.4"/><path class="dr" style="--l:300" d="${p}" fill="none" stroke="${INK}" stroke-width="2.6" stroke-linecap="round"/><circle class="fd" style="--d:1.2s" cx="${X(.18)}" cy="${Y(1-Math.pow(.82,4.5))}" r="6" fill="${TER}"/>`},
+/* pięć modeli kapitału – pięć kolumn */
+piec(){const D=[.55,.78,.66,.92,.48];let s="";const bw=38,g=16,x0=200-(5*bw+4*g)/2;
+  D.forEach((d,i)=>{const h=d*140,x=x0+i*(bw+g);s+=`<rect class="gr" style="--d:${i*.12}s" x="${x}" y="${195-h}" width="${bw}" height="${h}" rx="${bw/2}" fill="${i===3?TER:INK}" fill-opacity="${i===3?.9:.14+i*.05}"/>`});
+  return s+`<line class="fd" style="--d:1s" x1="${x0-14}" y1="${195-.7*140}" x2="${x0+5*bw+4*g+14}" y2="${195-.7*140}" stroke="${INK}" stroke-opacity=".45" stroke-dasharray="4 5" stroke-width="1.4"/>`},
+/* wartość nieoczekiwana – rozkład z ogonem */
+mwn(){const x0=41,x1=360,yb=190,f=x=>{const z=Math.log(Math.max(1e-6,(x-40)/60));return x<=41?0:Math.exp(-.5*(z/.75)**2)/(x-40)};let mx=0;for(let x=x0;x<=x1;x++)mx=Math.max(mx,f(x));const Y=x=>yb-f(x)/mx*140;
+  let p="M"+x0+" "+yb;for(let x=x0;x<=x1;x+=2)p+=" L"+x+" "+Y(x).toFixed(1);let t="M215 "+yb;for(let x=215;x<=x1;x+=2)t+=" L"+x+" "+Y(x).toFixed(1);t+=" L"+x1+" "+yb+" Z";
+  return `<path class="fd" style="--d:.9s" d="${t}" fill="${TER}" fill-opacity=".85"/><path class="fd" style="--d:.3s" d="${p} L ${x1} ${yb} Z" fill="${INK}" fill-opacity=".08"/><path class="dr" style="--l:460" d="${p}" fill="none" stroke="${INK}" stroke-width="2.4" stroke-linecap="round"/><line x1="${x0}" y1="${yb}" x2="${x1}" y2="${yb}" stroke="${INK}" stroke-opacity=".3"/><line class="fd" style="--d:1.1s" x1="215" y1="44" x2="215" y2="${yb}" stroke="${TER}" stroke-width="1.6" stroke-dasharray="4 4"/>`},
 /* przedziały ufności */
 liczby(){let s=`<line x1="210" y1="34" x2="210" y2="200" stroke="${INK}" stroke-width="1.2" stroke-dasharray="4 5" opacity=".55"/>`;
   const R=[[150,262,198],[176,250,213],[128,282,205],[190,236,214],[160,300,226],[232,330,281],[140,268,201]];
