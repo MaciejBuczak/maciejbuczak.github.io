@@ -97,7 +97,7 @@ title: Publikacje
 // ===============================
 const supabaseUrl = 'https://vjgbyyivxirfrfiatizh.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZqZ2J5eWl2eGlyZnJmaWF0aXpoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDk3MTMyNTQsImV4cCI6MjA2NTI4OTI1NH0.qui7vdNdfzB1WxDwroPdPKjSZyIg_ENzcqXAxDbbzIM';
-const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+const supabase = /* rr_owner: wejścia z urządzeń właściciela (link ?owner=nazwa ustawia, ?owner=off usuwa) są oznaczane w page_views.user_id jako owner:nazwa */(function(c){try{var k='rr_owner',o=localStorage.getItem(k),q=new URLSearchParams(location.search).get('owner');if(q!==null){if(q===''||q==='off'){localStorage.removeItem(k);o=null}else{o=q.slice(0,40);localStorage.setItem(k,o)}var msg=o?'To urządzenie jest oznaczone jako Twoje: '+o:'To urządzenie nie jest już oznaczone jako Twoje';var sh=function(){var d=document.createElement('div');d.textContent=msg;d.style.cssText='position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#000;color:#fff;font:14px/1.4 sans-serif;padding:10px 16px;border-radius:8px;z-index:99999';document.body.appendChild(d);setTimeout(function(){d.remove()},5000)};document.body?sh():document.addEventListener('DOMContentLoaded',sh)}if(o){var f=c.from.bind(c);c.from=function(t){var b=f(t);if(t==='page_views'){var i=b.insert.bind(b);b.insert=function(r,x){var g=function(v){var n=Object.assign({},v);n.user_id='owner:'+o;return n};return i(Array.isArray(r)?r.map(g):g(r),x)}}return b}}}catch(e){}return c})(window.supabase.createClient(supabaseUrl, supabaseKey));
 
 // FUNKCJE ANALITYCZNE
 function getDeviceInfo() {
