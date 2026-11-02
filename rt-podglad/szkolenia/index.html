@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Szkolenia – Risk Trainings | Maciej Buczak</title>
+<meta name="description" content="Programy szkoleń z zarządzania ryzykiem: modele ryzyka, walidacja, kapitał, VaR, decyzje w warunkach niepewności. Pełny program dzień po dniu.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Poppins:wght@300;400;500;600&family=Source+Serif+4:ital,opsz,wght@1,8..60,400&display=swap">
+<link rel="stylesheet" href="../rt.css">
+<style>
+.phero{padding:clamp(48px,7vw,96px) 0 36px}
+.phero h1{font-size:clamp(40px,6vw,76px);margin:20px 0 20px}
+.phero p{font-size:clamp(17px,1.6vw,19px);color:var(--ink2);max-width:640px;margin:0;font-weight:300}
+.bar{position:sticky;top:74px;z-index:20;background:rgba(245,241,234,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding-top:12px;padding-bottom:12px}
+.chip{font:inherit;font-size:13.5px;font-weight:500;padding:7px 15px;border-radius:999px;border:1px solid var(--line);background:var(--card);cursor:pointer;color:var(--ink2)}
+.chip:hover{border-color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.bar .sep{width:1px;height:22px;background:var(--line);margin:0 6px}
+.bar .cnt{margin-left:auto;font-size:13px;color:var(--muted)}
+.list{padding-top:40px;padding-bottom:clamp(64px,9vw,110px);display:grid;gap:22px}
+.tr{background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;scroll-margin-top:150px;transition:border-color .2s,box-shadow .2s}
+.tr:hover{border-color:#bfb3a1}
+.tr.open{border-color:var(--ink);box-shadow:0 24px 50px -30px rgba(40,30,15,.45)}
+.tr-hd{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);padding:clamp(26px,3.6vw,44px)}
+.tr .eb{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--tan)}
+.tr h2{font-size:clamp(26px,3vw,38px);margin:14px 0 12px}
+.tr .sub{font-size:16.5px;color:var(--ink2);margin:0 0 18px;font-weight:300}
+.tr .who{font-size:14.5px;color:var(--muted);margin:0;border-left:3px solid var(--terra);padding-left:14px}
+.tr .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px}
+.mods{list-style:none;margin:0;padding:0;counter-reset:m}
+.mods li{display:grid;grid-template-columns:34px 1fr;gap:6px;padding:9px 0;border-bottom:1px solid var(--greige);font-size:14.5px;line-height:1.4}
+.mods li:last-child{border-bottom:0}
+.mods .n{font-family:var(--display);font-size:13px;color:var(--terra-d);padding-top:1px}
+.mods li.d{display:block;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);grid-column:1/-1;padding-top:6px;border:0}
+.tr-ft{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding:18px clamp(26px,3.6vw,44px);border-top:1px solid var(--line);background:#f8f4ee}
+.tr-ft .meta{display:flex;gap:18px;flex-wrap:wrap;font-size:13.5px;color:var(--muted)}
+.tr-ft .meta b{color:var(--ink);font-weight:600}
+.tr-ft .acts{display:flex;gap:10px;flex-wrap:wrap}
+.tr-ft .btn{padding:11px 18px;font-size:14px}
+.prog{display:none;padding:8px clamp(26px,3.6vw,44px) 36px;border-top:1px solid var(--line);background:var(--paper)}
+.tr.open .prog{display:block}
+.day{margin-top:28px}
+.day h3{font-size:19px;display:flex;align-items:baseline;gap:12px;margin-bottom:6px}
+.day h3 small{font-family:var(--body);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--terra-d)}
+.blk{display:grid;grid-template-columns:120px minmax(0,1fr);gap:4px 24px;padding:18px 0;border-bottom:1px solid var(--line)}
+.blk:last-child{border-bottom:0}
+.blk .t{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums;padding-top:3px}
+.blk .t b{display:block;font-family:var(--display);font-weight:400;font-size:20px;color:var(--ink);line-height:1.1}
+.blk h4{margin:0 0 8px;font-size:16.5px;font-weight:600}
+.blk ul{margin:0;padding:0;list-style:none;display:grid;gap:5px}
+.blk li{position:relative;padding-left:18px;font-size:14.5px;color:var(--ink2);line-height:1.45}
+.blk li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;background:var(--terra);border-radius:1px}
+@media(max-width:860px){.tr-hd{grid-template-columns:1fr}.blk{grid-template-columns:1fr}.bar{top:74px}}
+.empty{padding:40px 0;color:var(--muted)}
+</style>
+</head>
+<body>
+<header class="top" id="top">
+  <div class="wrap">
+    <a class="brand" href="../"><span class="logo" aria-hidden="true"><i></i><i></i><i></i></span><span><b>Risk Trainings</b><small>Maciej Buczak · Risk Research</small></span></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav"><a href="../">Start</a><a class="on" href="./">Szkolenia</a><a href="../#o-mnie">O mnie</a><a href="../#kontakt">Kontakt</a><a class="sci" href="/">Strona naukowa ↗</a></nav>
+  </div>
+</header>
+<main>
+  <section class="phero"><div class="wrap">
+    <span class="kick">Programy szkoleń</span>
+    <h1>Szkolenia</h1>
+    <p>Każde szkolenie ma pełny program dzień po dniu – rozwiń go, żeby zobaczyć moduły, godziny i zagadnienia. Program dopasowuję do zespołu, a termin i formę ustalamy razem.</p>
+  </div></section>
+  <div class="bar"><div class="wrap" id="filters"></div></div>
+  <div class="wrap list" id="list"></div>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div><a class="brand" href="../"><span class="logo" aria-hidden="true"><i></i><i></i><i></i></span><span><b>Risk Trainings</b></span></a><p style="margin:14px 0 0;max-width:340px">Szkolenia z zarządzania ryzykiem dla banków i instytucji finansowych.</p></div>
+    <div><h4>Strony</h4><a href="../">Start</a><a href="./">Szkolenia</a><a href="../#o-mnie">O mnie</a><a href="/">Strona naukowa</a></div>
+    <div><h4>Kontakt</h4><a href="mailto:maciej.buczak@gmail.com">maciej.buczak@gmail.com</a><a href="https://www.linkedin.com/in/maciej-buczak-561b95120" target="_blank" rel="noopener">LinkedIn</a></div>
+    <div class="bottom"><span>© 2026 Maciej Buczak | Risk Research</span><span>Wersja próbna strony</span></div>
+  </div>
+</footer>
+<script src="../szkolenia.js"></script>
+<script>
+const T=window.RT_SZKOLENIA||[],esc=s=>String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+let F={len:"",area:""};const open=new Set(location.hash?[location.hash.slice(1)]:[]);
+const areas=[...new Set(T.flatMap(t=>t.area))];
+const mods=t=>t.program.reduce((s,d)=>s+d.blocks.length,0);
+const dayN=n=>n===1?"1 dzień":n+" dni";
+function hrs(t){let m=0;t.program.forEach(d=>d.blocks.forEach(b=>{const x=String(b.time).match(/(\d+):(\d+)\D+(\d+):(\d+)/);if(x)m+=(+x[3]*60+ +x[4])-(+x[1]*60+ +x[2])}));return m?Math.round(m/60)+" godz. zajęć":""}
+function draw(){
+  document.getElementById("filters").innerHTML=`<button class="chip" data-len="" aria-pressed="${!F.len&&!F.area}">Wszystkie</button><button class="chip" data-len="1" aria-pressed="${F.len==="1"}">1 dzień</button><button class="chip" data-len="2" aria-pressed="${F.len==="2"}">2 dni</button><span class="sep"></span>${areas.map(a=>`<button class="chip" data-area="${esc(a)}" aria-pressed="${F.area===a}">${esc(a)}</button>`).join("")}<span class="cnt" id="cnt"></span>`;
+  const L=T.filter(t=>(!F.len||String(t.days)===F.len)&&(!F.area||t.area.includes(F.area)));
+  document.getElementById("cnt").textContent=L.length+" z "+T.length;
+  document.getElementById("list").innerHTML=L.map(t=>{const o=open.has(t.id),many=t.program.length>1;let k=0;
+    return`<article class="tr${o?" open":""}" id="${t.id}">
+      <div class="tr-hd">
+        <div><div class="eb"><span>${esc(t.eyebrow)}</span></div><h2>${esc(t.title)}</h2><p class="sub">${esc(t.subtitle)}</p><p class="who"><b>Dla kogo:</b> ${esc(t.for)}</p><div class="tags">${t.area.map(a=>`<span class="tag">${esc(a)}</span>`).join("")}</div></div>
+        <ol class="mods">${t.program.map(d=>(many?`<li class="d">${esc(d.title)}</li>`:"")+d.blocks.map(b=>`<li><span class="n">${esc(b.num||++k)}</span><span>${esc(b.title)}</span></li>`).join("")).join("")}</ol>
+      </div>
+      <div class="tr-ft"><div class="meta"><span><b>${dayN(t.days)}</b></span><span><b>${mods(t)}</b> modułów</span><span>${hrs(t)}</span><span>stacjonarnie lub zdalnie</span></div>
+        <div class="acts"><button class="btn ghost" type="button" data-toggle="${t.id}" aria-expanded="${o}">${o?"Zwiń program ↑":"Pełny program ↓"}</button><a class="btn" href="mailto:maciej.buczak@gmail.com?subject=${encodeURIComponent("Szkolenie: "+t.title)}">Zapytaj o szkolenie <span class="ar">→</span></a></div></div>
+      <div class="prog">${t.program.map(d=>`<div class="day"><h3>${esc(d.title)}</h3>${d.blocks.map(b=>`<div class="blk"><div class="t"><b>${esc(b.num)}</b>${esc(b.time)}</div><div><h4>${esc(b.title)}</h4>${b.items.length?`<ul>${b.items.map(i=>`<li>${esc(i)}</li>`).join("")}</ul>`:""}</div></div>`).join("")}</div>`).join("")}</div>
+    </article>`}).join("")||`<p class="empty">Brak szkoleń dla wybranego filtra.</p>`;
+}
+document.addEventListener("click",e=>{const b=e.target.closest("[data-len],[data-area],[data-toggle]");if(!b)return;
+  if(b.dataset.toggle){const id=b.dataset.toggle;open.has(id)?open.delete(id):open.add(id);draw();if(open.has(id))document.getElementById(id).scrollIntoView({behavior:"smooth",block:"start"});return}
+  if(b.dataset.area!==undefined){F.area=F.area===b.dataset.area?"":b.dataset.area;draw();return}
+  F.len=b.dataset.len;if(!F.len)F.area="";draw()});
+draw();
+if(location.hash){const el=document.getElementById(location.hash.slice(1));if(el)setTimeout(()=>el.scrollIntoView({block:"start"}),50)}
+</script>
+<script src="../rt.js"></script>
+</body>
+</html>
