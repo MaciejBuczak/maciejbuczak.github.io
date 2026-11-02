@@ -37,7 +37,14 @@
 
 /* doświadczenie */
 .xp{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(32px,6vw,90px);align-items:start}
-.xp-l{position:sticky;top:110px}
+.xp-l{position:static}
+.xs{margin-top:34px;display:grid;gap:14px}
+.xs>div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+.xs h3{font-family:var(--body);font-weight:600;font-size:16px;margin:0 0 6px;display:flex;align-items:center;gap:10px}
+.xs h3::before{content:"";width:8px;height:8px;border-radius:1px;background:var(--terra)}
+.xs p{margin:0 0 14px;font-size:14.5px;color:var(--muted);line-height:1.55}
+.xs-all{font-size:14px;font-weight:600;color:var(--terra-d);text-decoration:none;padding-left:4px}.xs-all:hover{color:var(--ink)}
+.btn.sm{padding:8px 15px;font-size:13.5px}
 .xp-l h2{font-size:clamp(30px,3.6vw,46px);margin:16px 0 18px}
 .xp-l p{margin:0;color:var(--muted);font-size:16px;max-width:420px}
 .tl{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
@@ -152,7 +159,7 @@
 @media(max-width:900px){.pf-g,.po,.es-g,.lc{grid-template-columns:1fr}.lc-ph{max-width:340px}}
 
 /* podejście */
-.quote-s{padding-top:0}
+.quote-s{padding-bottom:clamp(48px,6vw,80px)}
 .qb{border-left:3px solid var(--terra);padding:6px 0 6px clamp(20px,3vw,40px);max-width:900px}
 .qb p{font-family:var(--serif);font-style:italic;font-size:clamp(22px,2.6vw,31px);line-height:1.4;margin:0}
 
@@ -202,6 +209,11 @@
       <span class="kick">Doświadczenie</span>
       <h2>Ryzyko w&nbsp;banku, systemy IT i&nbsp;doradztwo.</h2>
       <p>Trzy perspektywy na te same modele: tego, kto je ocenia i broni przed nadzorcą, tego, kto buduje systemy do ich liczenia – i tego, kto doradza.</p>
+      <div class="xs">
+        <div><h3>Projekty badawcze</h3><p>Kilkanaście projektów w banku, które podważały utrwalone podejścia – od lifetime PD i SICR po wartości ekstremalne i zależności w ogonach. Większość obroniłem i wdrożyłem.</p><a class="btn ghost sm" href="szczegoly/#projekty">Zobacz więcej <span class="ar">→</span></a></div>
+        <div><h3>Opracowane metodyki</h3><p>Holistyczna ocena modelu AMA i modeli lifetime PD – obie bardzo dobrze ocenione przez nadzorcę. Współautor metodyk oceny modeli ECL i ICAAP.</p><a class="btn ghost sm" href="szczegoly/#metodyki">Zobacz więcej <span class="ar">→</span></a></div>
+        <a class="xs-all" href="szczegoly/">Pełny profil zawodowy →</a>
+      </div>
     </div>
     <ol class="tl">
       <li class="rv"><div class="org">Alior Bank<small>2016 – 2024</small></div><div><h3>Menedżer Zarządzania Ryzykiem · Departament Walidacji</h3><ul>
@@ -273,18 +285,6 @@
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<section style="padding-top:0">
-  <div class="wrap">
-    <div class="sec-hd rv"><div><span class="kick">Działalność</span><h2 style="margin-top:16px">Praktyka badawcza w&nbsp;banku.</h2></div><p>W skrócie – pełne zestawienie projektów, metodyk i metod jest w szczegółowym profilu.</p></div>
-    <div class="wk">
-      <a class="rv" href="szczegoly/#projekty"><span class="n">01</span><h3>Projekty badawcze w banku</h3><ul><li>Kilkanaście projektów, które podważały utrwalone podejścia i zostały wdrożone.</li><li>Lifetime PD i SICR, wartości ekstremalne, zależności w ogonach, model wartości nieoczekiwanej.</li></ul><span class="go">Szczegóły <span class="ar">→</span></span></a>
-      <a class="rv" href="szczegoly/#metodyki"><span class="n">02</span><h3>Metodyki oceny modeli</h3><ul><li>Holistyczna ocena modelu AMA – ponad 50 autorskich badań, bardzo dobra ocena nadzorcy.</li><li>Metodyki oceny lifetime PD, ECL i modeli ICAAP.</li></ul><span class="go">Szczegóły <span class="ar">→</span></span></a>
-      <a class="rv" href="szczegoly/#metody"><span class="n">03</span><h3>Metody i narzędzia</h3><ul><li>EVT, copule, Monte Carlo, analiza przeżycia, macierze przejść, bootstrap.</li><li>SAS (certyfikaty), R, Python, Matlab, SQL.</li></ul><span class="go">Szczegóły <span class="ar">→</span></span></a>
-    </div>
-    <div class="more-b rv"><a class="btn ghost" href="szczegoly/">Pełny profil zawodowy <span class="ar">→</span></a></div>
   </div>
 </section>
 
