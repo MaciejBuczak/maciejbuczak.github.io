@@ -89,25 +89,14 @@
 @media(max-width:520px){.cl li{grid-template-columns:1fr;gap:6px}}
 
 /* uczelnie */
-.un-s{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--ink);border-bottom:1px solid var(--line);margin-bottom:34px}
-.un-s div{padding:20px 0 18px}.un-s div+div{padding-left:24px;border-left:1px solid var(--line)}
-.un-s b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(32px,3.6vw,46px);line-height:1}
-.un-s span{display:block;margin-top:8px;font-size:13.5px;color:var(--muted)}
 .un-g{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.un-g article{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:clamp(22px,3vw,32px)}
-.un-h .since{font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--terra-d)}
-.un-h h3{font-size:clamp(20px,2vw,24px);margin:10px 0 4px}
-.un-h p{margin:0 0 18px;color:var(--muted);font-size:14.5px}
-.sj{width:100%;border-collapse:collapse;font-size:14.5px}
-.sj th{text-align:left;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--tan);padding:0 10px 8px 0;border-bottom:1px solid var(--ink)}
-.sj td{padding:11px 10px 11px 0;border-bottom:1px solid var(--line);vertical-align:top;color:var(--muted)}
-.sj td:first-child{color:var(--ink);font-weight:500;width:60%}
-.sj th:nth-child(2),.sj td:nth-child(2){text-align:center;width:60px}
-.nt{margin:12px 0 0;font-size:13px;color:var(--muted)}
-.gl{margin-top:34px;border-top:2px solid var(--ink);padding-top:18px}
-.gl ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px 30px}
-.gl li{font-size:14.5px;color:var(--ink2)}.gl li b{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--terra-d);margin-right:12px}
-@media(max-width:860px){.un-g,.gl ul{grid-template-columns:1fr}.un-s{grid-template-columns:1fr 1fr}.un-s div:nth-child(3){padding-left:0;border-left:0}}
+.un-g article{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:clamp(24px,3vw,34px);display:flex;flex-direction:column}
+.un-logo{height:46px;width:auto;max-width:100%;margin-bottom:22px;object-fit:contain;object-position:left center}
+.un-g h3{font-family:var(--body);font-weight:600;font-size:18px;line-height:1.35;margin:0 0 8px}
+.un-g p{margin:0 0 18px;color:var(--muted);font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:auto}.chips span{font-size:13px;padding:5px 12px;border:1px solid var(--line);border-radius:999px;background:var(--paper);color:var(--ink2)}
+.gl2{margin:26px 0 0;font-size:14.5px;color:var(--muted)}.gl2 a{color:var(--terra-d);font-weight:600;text-decoration:none;white-space:nowrap}
+@media(max-width:860px){.un-g{grid-template-columns:1fr}}
 
 /* podejście */
 .quote-s{padding-top:0}
@@ -193,13 +182,12 @@
 
 <section class="uni">
   <div class="wrap">
-    <div class="sec-hd rv"><div><span class="kick">Uczelnie</span><h2 style="margin-top:16px">Dydaktyka akademicka.</h2></div><p>Uczę metod ilościowych i zarządzania ryzykiem – tak, by studenci rozumieli nie tylko technikę, ale też założenia i ograniczenia opisu zjawisk liczbami.</p></div>
-    <div class="un-s rv"><div><b>7</b><span>przedmiotów</span></div><div><b>21</b><span>grup zajęciowych</span></div><div><b>2</b><span>uczelnie</span></div><div><b>4</b><span>wykłady gościnne w 2026</span></div></div>
+    <div class="sec-hd rv"><div><span class="kick">Uczelnie</span><h2 style="margin-top:16px">Dydaktyka akademicka.</h2></div><p>Na uczelniach uczę metod ilościowych i zarządzania ryzykiem. Zależy mi, by studenci rozumieli nie tylko technikę, ale też założenia i ograniczenia opisu zjawisk za pomocą liczb.</p></div>
     <div class="un-g">
-      <article class="rv"><div class="un-h"><span class="since">od 10.2025 · 0,5 etatu</span><h3>Szkoła Główna Gospodarstwa Wiejskiego</h3><p>Instytut Nauk Socjologicznych i Pedagogiki</p></div><table class="sj"><thead><tr><th>Przedmiot</th><th>Grupy</th><th>Semestr</th></tr></thead><tbody><tr><td>Statystyka dla socjologów I</td><td>3</td><td>zima 2025/26</td></tr><tr><td>Statystyka dla socjologów II</td><td>3 + 1</td><td>lato 2025/26, 2024/25</td></tr><tr><td>Analiza sieci społecznych</td><td>1</td><td>lato 2024/25</td></tr><tr><td>Wielowymiarowa analiza danych z programem Python</td><td>1</td><td>lato 2025/26</td></tr></tbody></table><p class="nt">Zajęcia od 02.2025, od 10.2025 na etacie.</p></article>
-      <article class="rv"><div class="un-h"><span class="since">od 02.2025</span><h3>Wyższa Szkoła Bankowa Merito</h3><p>Warszawa</p></div><table class="sj"><thead><tr><th>Przedmiot</th><th>Grupy</th><th>Semestr</th></tr></thead><tbody><tr><td>Zarządzanie ryzykiem finansowym</td><td>4</td><td>od 2025</td></tr><tr><td>Metody ilościowe w zarządzaniu</td><td>4</td><td>od 2025</td></tr><tr><td>Statystyka i ekonometria</td><td>4</td><td>od 2025</td></tr></tbody></table></article>
+      <article class="rv"><img class="un-logo" src="../img/logo-sggw.svg" alt="SGGW" height="56"><h3>Szkoła Główna Gospodarstwa Wiejskiego w Warszawie</h3><p>Statystyka i analiza danych dla nauk społecznych – od podstaw wnioskowania po analizę wielowymiarową i analizę sieci.</p><div class="chips"><span>Statystyka dla socjologów</span><span>Analiza sieci społecznych</span><span>Analiza danych w Pythonie</span></div></article>
+      <article class="rv"><img class="un-logo" src="../img/logo-wsb-merito.svg" alt="Uniwersytet WSB Merito Warszawa" height="56"><h3>Uniwersytet WSB Merito w Warszawie</h3><p>Zarządzanie ryzykiem i metody ilościowe dla przyszłych menedżerów i finansistów.</p><div class="chips"><span>Zarządzanie ryzykiem finansowym</span><span>Metody ilościowe w zarządzaniu</span><span>Statystyka i ekonometria</span></div></article>
     </div>
-    <div class="gl rv"><h4>Wykład gościnny „Dlaczego kryzysy 100-letnie zdarzają się co 10 lat?”</h4><ul><li><b>03.2026</b>Uniwersytet Warszawski · Wydział Nauk Ekonomicznych</li><li><b>04.2026</b>Uniwersytet Mikołaja Kopernika · Wydział Nauk Ekonomicznych i Zarządzania</li><li><b>04.2026</b>Uniwersytet Ekonomiczny w Katowicach · Wydział Ekonomii (online)</li><li><b>05.2026</b>Uniwersytet Ekonomiczny w Katowicach · Wydział Zarządzania</li></ul><p class="lk"><a href="https://doi.org/10.13140/RG.2.2.31505.39523" target="_blank" rel="noopener">Prezentacja ↗</a> <a href="https://maciejbuczak.github.io/conferences/Kryzysy%20100-letnie%20co%2010%20lat%20-%20konspekt.pdf" target="_blank" rel="noopener">Konspekt ↗</a></p></div>
+    <p class="gl2 rv">Wykłady gościnne na Uniwersytecie Warszawskim, Uniwersytecie Mikołaja Kopernika i Uniwersytecie Ekonomicznym w Katowicach. <a href="szczegoly/#szkolenia">Szczegóły →</a></p>
   </div>
 </section>
 
