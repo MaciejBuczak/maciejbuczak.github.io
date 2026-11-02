@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>O mnie – Risk Trainings | Maciej Buczak</title>
-<meta name="description" content="Maciej Buczak – walidacja i modele ryzyka w bankowości: IFRS 9, AMA, ICAAP. Doświadczenie z banku, doradztwa i uczelni.">
+<meta name="description" content="Maciej Buczak – 17 lat w sektorze finansowym: walidacja i modele ryzyka (IFRS 9, AMA, ICAAP), badania, szkolenia i dydaktyka.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Poppins:wght@300;400;500;600&family=Source+Serif+4:ital,opsz,wght@1,8..60,400&display=swap">
 <link rel="stylesheet" href="../rt.css">
@@ -29,7 +29,7 @@
 .nums div{padding:4px 26px 4px 0;margin-right:26px;border-right:1px solid #2c2925}
 .nums div:last-child{border-right:0;margin-right:0}
 .nums b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(34px,4vw,50px);line-height:1;color:var(--paper)}
-.nums b{white-space:nowrap}.nums b.w{font-size:clamp(28px,3vw,40px);padding-top:clamp(4px,.8vw,10px)}
+.nums b{white-space:nowrap}.nums b.w{font-size:clamp(22px,2.3vw,31px);padding-top:clamp(6px,1.2vw,16px)}
 .nums b em{font-style:normal;color:var(--terra)}
 .nums span{display:block;margin-top:12px;font-size:14.5px;color:#cfc6b8;line-height:1.5}
 @media(max-width:860px){.nums .wrap{grid-template-columns:1fr 1fr;gap:28px 0}.nums div:nth-child(2){border-right:0;margin-right:0}}
@@ -51,14 +51,18 @@
 @media(max-width:900px){.xp{grid-template-columns:1fr}.xp-l{position:static}}
 @media(max-width:560px){.tl li{grid-template-columns:1fr}}
 
-/* dorobek */
-.wk{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 clamp(20px,3vw,40px)}
-.wk div{border-top:2px solid var(--ink);padding:18px 0 0}
+/* działalność */
+.wk{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(28px,3vw,40px) clamp(20px,3vw,40px)}
+.wk a{display:flex;flex-direction:column;border-top:2px solid var(--ink);padding:18px 0 0;text-decoration:none;color:inherit}
 .wk .n{font-family:var(--serif);font-style:italic;font-size:28px;line-height:1;color:var(--terra-d)}
-.wk h3{font-family:var(--body);font-weight:600;font-size:17px;line-height:1.35;margin:14px 0 8px}
-.wk p{margin:0;color:var(--muted);font-size:14.5px}
-.wk div+div+div+div{margin-top:36px}
-@media(max-width:900px){.wk{grid-template-columns:1fr 1fr;gap:36px 28px}.wk div+div+div+div{margin-top:0}}
+.wk h3{font-family:var(--body);font-weight:600;font-size:18px;line-height:1.35;margin:14px 0 10px}
+.wk ul{list-style:none;margin:0 0 14px;padding:0;display:grid;gap:7px}
+.wk li{position:relative;padding-left:16px;color:var(--muted);font-size:14.5px;line-height:1.55}
+.wk li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:1px;background:var(--sand)}
+.wk .go{margin-top:auto;font-size:13.5px;font-weight:600;display:inline-flex;gap:8px;align-items:center}
+.wk a:hover .go{color:var(--terra-d)}.wk a:hover .ar{transform:translateX(3px)}.wk .ar{transition:transform .15s}
+.more-b{margin-top:44px;display:flex;justify-content:center}
+@media(max-width:900px){.wk{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.wk{grid-template-columns:1fr}}
 
 /* podejście */
@@ -99,10 +103,10 @@
 
 <section class="dark nums">
   <div class="wrap">
-    <div class="rv"><b>8 <em>lat</em></b><span>w departamencie walidacji banku – modele kredytowe, operacyjne i kapitałowe</span></div>
-    <div class="rv"><b>50<em>+</em></b><span>autorskich badań analitycznych w ocenie modelu AMA</span></div>
-    <div class="rv"><b class="w">dziesiątki</b><span>holistycznych ocen modeli: ECL, ryzyko operacyjne, ICAAP</span></div>
-    <div class="rv"><b>2</b><span>uczelnie – SGGW i WSB Merito: zarządzanie ryzykiem i metody ilościowe</span></div>
+    <div class="rv"><b>17 <em>lat</em></b><span>w sektorze finansowym – bank, doradztwo, systemy ryzyka</span></div>
+    <div class="rv"><b class="w">kilkadziesiąt</b><span>procesów walidacji modeli: ECL, ryzyko operacyjne, ICAAP</span></div>
+    <div class="rv"><b class="w">kilkanaście</b><span>projektów badawczych w banku, wdrożonych do stosowania</span></div>
+    <div class="rv"><b>6300<em>+</em></b><span>pobrań moich preprintów na SSRN w kilka tygodni</span></div>
   </div>
 </section>
 
@@ -110,37 +114,39 @@
   <div class="wrap xp">
     <div class="xp-l rv">
       <span class="kick">Doświadczenie</span>
-      <h2>Bank, doradztwo i&nbsp;uczelnia.</h2>
-      <p>Trzy perspektywy na te same modele: tego, kto je ocenia i broni przed nadzorcą, tego, kto je projektuje – i tego, kto uczy, jak działają.</p>
+      <h2>Systemy, doradztwo, bank i&nbsp;uczelnia.</h2>
+      <p>Różne perspektywy na te same modele: tego, kto je projektuje i wdraża, kto je ocenia i broni przed nadzorcą – i tego, kto uczy, jak działają.</p>
     </div>
     <ol class="tl">
-      <li class="rv"><div class="org">Alior Bank<small>Departament Walidacji</small></div><div><h3>Menedżer Zarządzania Ryzykiem</h3><ul>
-        <li>Ocena modeli ryzyka kredytowego, operacyjnego i kapitału wewnętrznego – IFRS 9, Bazylea II / CRR, ICAAP.</li>
-        <li>Koordynacja wdrożenia IFRS 9 w obszarze walidacji.</li>
-        <li>Zarządzanie ryzykiem modelu AMA – wysoka ocena zespołu przez KNF, wkład w uzyskanie zgody na stosowanie metody.</li>
-        <li>Reprezentowanie zespołu w negocjacjach z nadzorcą.</li></ul></div></li>
-      <li class="rv"><div class="org">Accenture<small>Doradztwo</small></div><div><h3>Konsultant</h3><ul>
-        <li>Budowa systemu zarządzania ryzykiem operacyjnym.</li>
-        <li>Projekt podejścia do kalkulacji kapitału w metodzie AMA.</li></ul></div></li>
-      <li class="rv"><div class="org">SGGW<br>WSB Merito<small>Dydaktyka</small></div><div><h3>Wykładowca</h3><ul>
-        <li>Zarządzanie ryzykiem.</li>
-        <li>Metody ilościowe w zarządzaniu.</li>
-        <li>Statystyka dla socjologów.</li></ul></div></li>
+      <li class="rv"><div class="org">Alior Bank<small>2016 – 2024</small></div><div><h3>Menedżer Zarządzania Ryzykiem · Departament Walidacji</h3><ul>
+        <li>Walidacja modeli ryzyka kredytowego (impairment, ECL), kapitału wewnętrznego i ryzyka operacyjnego (AMA).</li>
+        <li>Metodyki walidacji i zarządzania ryzykiem modeli; kierownik projektu systemu do obsługi procesu zarządzania ryzykiem modeli.</li>
+        <li>Koordynacja wdrożenia IFRS 9 w obszarze walidacji; zarządzanie ryzykiem modelu AMA.</li>
+        <li>Obrona wniosków przed komitetami, audytem, audytorami zewnętrznymi i KNF.</li></ul></div></li>
+      <li class="rv"><div class="org">Accenture<small>2014 – 2016</small></div><div><h3>Konsultant · Capability Network</h3><ul>
+        <li>Projekty analityczne w Wielkiej Brytanii, Niemczech, Danii i w Polsce: ryzyko nadużyć (conduct risk) w grupie bankowej, analiza sieci dostawców, środowisko analityczne dla administracji podatkowej, model CRM i macierze przejść klientów.</li></ul></div></li>
+      <li class="rv"><div class="org">Bazy i Systemy Bankowe<small>2007 – 2013</small></div><div><h3>Analityk</h3><ul>
+        <li>Metodyki i funkcje statystyczne modelowania ryzyka operacyjnego; moduł analityczny wdrożony w NBP i kilku bankach.</li>
+        <li>Systemy do zarządzania ryzykiem operacyjnym i przeciwdziałania praniu pieniędzy (AML); doradztwo i szkolenia dla banków.</li></ul></div></li>
+      <li class="rv"><div class="org">SGGW<br>WSB Merito<small>od 2025</small></div><div><h3>Wykładowca</h3><ul>
+        <li>SGGW, Instytut Nauk Socjologicznych i Pedagogiki: statystyka, analiza sieci społecznych, analiza wielowymiarowa w Pythonie.</li>
+        <li>WSB Merito: zarządzanie ryzykiem finansowym, metody ilościowe w zarządzaniu, statystyka i ekonometria.</li></ul></div></li>
     </ol>
   </div>
 </section>
 
 <section style="padding-top:0">
   <div class="wrap">
-    <div class="sec-hd rv"><div><span class="kick">Dorobek</span><h2 style="margin-top:16px">Metodyki, które przeszły ocenę nadzorcy.</h2></div><p>Autor kilkudziesięciu metodyk i ram holistycznej oceny modeli ryzyka.</p></div>
+    <div class="sec-hd rv"><div><span class="kick">Działalność</span><h2 style="margin-top:16px">Praktyka, badania i&nbsp;nauczanie.</h2></div><p>W skrócie – najważniejsze obszary. Pełne zestawienie: projekty, publikacje, wystąpienia i szkolenia – w szczegółowym profilu.</p></div>
     <div class="wk">
-      <div class="rv"><span class="n">01</span><h3>Holistyczna ocena modelu AMA</h3><p>Metodyka oceny modelu ryzyka operacyjnego – ponad 50 autorskich badań analitycznych, bardzo dobra ocena krajowego nadzorcy.</p></div>
-      <div class="rv"><span class="n">02</span><h3>Ocena modeli lifetime PD</h3><p>Metodyka holistycznej oceny modeli PD w IFRS 9, również bardzo dobrze oceniona przez nadzorcę.</p></div>
-      <div class="rv"><span class="n">03</span><h3>ECL i ICAAP</h3><p>Współautorstwo metodyk oceny modelu ECL i modeli w obszarze kapitału wewnętrznego.</p></div>
-      <div class="rv"><span class="n">04</span><h3>Procesy oceny modeli</h3><p>Kilkadziesiąt przeprowadzonych ocen: ECL / impairment, ryzyko operacyjne, ICAAP.</p></div>
-      <div class="rv"><span class="n">05</span><h3>Wystąpienia</h3><p>Prelegent na konferencjach i warsztatach branżowych z zakresu modeli ryzyka.</p></div>
-      <div class="rv"><span class="n">06</span><h3>Publikacje</h3><p>Eseje i teksty o ryzyku, zdarzeniach rzadkich i granicach modeli – na <a href="/">stronie naukowej</a>.</p></div>
+      <a class="rv" href="szczegoly/#projekty"><span class="n">01</span><h3>Projekty badawcze w banku</h3><ul><li>Kilkanaście projektów, które podważały utrwalone podejścia i zostały wdrożone.</li><li>Lifetime PD i SICR, wartości ekstremalne, zależności w ogonach, model wartości nieoczekiwanej.</li></ul><span class="go">Szczegóły <span class="ar">→</span></span></a>
+      <a class="rv" href="szczegoly/#metodyki"><span class="n">02</span><h3>Metodyki oceny modeli</h3><ul><li>Holistyczna ocena modelu AMA – ponad 50 autorskich badań, bardzo dobra ocena nadzorcy.</li><li>Metodyki oceny lifetime PD, ECL i modeli ICAAP.</li></ul><span class="go">Szczegóły <span class="ar">→</span></span></a>
+      <a class="rv" href="szczegoly/#szkolenia"><span class="n">03</span><h3>Szkolenia dla sektora</h3><ul><li>Prestige Conferences: ECL / IFRS 9, budowa modeli, ryzyko modeli, wartość nieoczekiwana.</li><li>Szkolenia w NBP i bankach od 2007 roku.</li></ul><span class="go">Szczegóły <span class="ar">→</span></span></a>
+      <a class="rv" href="szczegoly/#wystapienia"><span class="n">04</span><h3>Wystąpienia</h3><ul><li>Konferencje: Praga, CRR III / CRD VI, Protection and Security in Financial Market, ryzyko operacyjne.</li><li>Wykład „Dlaczego kryzysy 100-letnie zdarzają się co 10 lat?” na czterech uczelniach.</li></ul><span class="go">Szczegóły <span class="ar">→</span></span></a>
+      <a class="rv" href="szczegoly/#publikacje"><span class="n">05</span><h3>Publikacje</h3><ul><li>Artykuły w Metodach Ilościowych w Badaniach Ekonomicznych i wydawnictwie IBS PAN.</li><li>Prace zgłoszone do międzynarodowych czasopism, preprinty na SSRN.</li></ul><span class="go">Szczegóły <span class="ar">→</span></span></a>
+      <a class="rv" href="szczegoly/#metody"><span class="n">06</span><h3>Metody i narzędzia</h3><ul><li>EVT, copule, Monte Carlo, analiza przeżycia, macierze przejść, bootstrap.</li><li>SAS (certyfikaty), R, Python, Matlab, SQL.</li></ul><span class="go">Szczegóły <span class="ar">→</span></span></a>
     </div>
+    <div class="more-b rv"><a class="btn ghost" href="szczegoly/">Pełny profil zawodowy <span class="ar">→</span></a></div>
   </div>
 </section>
 
