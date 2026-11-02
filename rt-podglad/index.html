@@ -84,18 +84,6 @@
 @media(max-width:900px){.who{grid-template-columns:1fr}.who-l{position:static}}
 @media(max-width:520px){.wl li{grid-template-columns:44px 1fr}.wl .n{font-size:24px}}
 
-/* jak pracuję */
-.how{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1px solid #2c2925}
-.how div{padding:30px 26px 6px 0;border-right:1px solid #2c2925;margin-right:26px}
-.how div:last-child{border-right:0;margin-right:0}
-.how .n{font-family:var(--display);font-size:15px;color:var(--terra)}
-.how h3{font-size:21px;margin:12px 0 12px;color:var(--paper)}
-.how p{margin:0;font-size:15px}
-@media(max-width:900px){.how{grid-template-columns:1fr 1fr}.how div{border-right:0;margin-right:0;border-bottom:1px solid #2c2925;padding-bottom:24px}}
-@media(max-width:560px){.how{grid-template-columns:1fr}}
-.quote{margin:64px 0 0;max-width:860px;font-family:var(--serif);font-style:italic;font-size:clamp(22px,2.6vw,32px);line-height:1.35;color:var(--paper)}
-.quote span{display:block;font-family:var(--body);font-style:normal;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--sand);margin-top:18px}
-
 /* obszary */
 .obs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 clamp(20px,2.6vw,36px)}
 .obs-g{border-top:2px solid var(--ink);padding-top:18px}
@@ -111,6 +99,18 @@
 .obs li p{margin:0 0 0 16px;color:var(--muted);font-size:14px;line-height:1.55}
 @media(max-width:1020px){.obs{grid-template-columns:1fr 1fr;gap:34px 32px}}
 @media(max-width:600px){.obs{grid-template-columns:1fr}.obs-h{min-height:0}}
+
+/* obszary na ciemnym tle */
+.obs-sec .sec-hd h2{color:var(--paper)}
+.obs-sec .obs-g{border-top-color:var(--paper)}
+.obs-sec .obs-h b{color:var(--sand)}
+.obs-sec .obs-h .n{color:var(--terra)}
+.obs-sec .obs li{border-top-color:#2c2925}
+.obs-sec .obs li:first-child{border-top:0}
+.obs-sec .obs li h3{color:var(--paper)}
+.obs-sec .obs li h3::before{background:#4a443d}
+.obs-sec .obs li:hover h3::before{background:var(--terra)}
+.obs-sec .obs li p{color:#a9a194}
 
 /* szkolenia */
 .tgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
@@ -202,20 +202,7 @@
   </div>
 </section>
 
-<section class="dark">
-  <div class="wrap">
-    <div class="sec-hd rv"><div><span class="kick">Jak pracuję</span><h2 style="margin-top:16px">Mniej slajdów,<br>więcej przypadków.</h2></div><p>Każdy dzień kończy się czymś, co uczestnik zabiera do swojej pracy: listą pytań, schematem oceny albo gotowym argumentem na komitet.</p></div>
-    <div class="how">
-      <div class="rv"><span class="n">01</span><h3>Liczba na mapie banku</h3><p>Każdy model pokazuję tam, gdzie działa: w procesie, w bilansie, w wyniku i w kapitale.</p></div>
-      <div class="rv"><span class="n">02</span><h3>Prawdziwe przypadki</h3><p>Pracujemy na skróconych raportach walidacyjnych, danych i wynikach testów, a nie na podręcznikowych przykładach.</p></div>
-      <div class="rv"><span class="n">03</span><h3>Warsztat, nie wykład</h3><p>Zespoły, role i symulacje posiedzeń komitetu – każdy ma inny pakiet informacji, decyzję trzeba obronić.</p></div>
-      <div class="rv"><span class="n">04</span><h3>Wynik jako przedział</h3><p>Uczę patrzeć na niepewność modelu: skąd się bierze, jak ją mierzyć i jak o niej mówić.</p></div>
-    </div>
-    <p class="quote rv">„Model nie daje jednej liczby. Daje przedział – a dobra decyzja zaczyna się od zrozumienia, jak szeroki on jest.”<span>Maciej Buczak</span></p>
-  </div>
-</section>
-
-<section>
+<section class="dark obs-sec">
   <div class="wrap">
     <div class="sec-hd rv"><div><span class="kick">Obszary</span><h2 style="margin-top:16px">Od jednego parametru do odpisów i&nbsp;kapitału całego banku.</h2></div><p>Każdy temat może być osobnym warsztatem albo częścią programu ułożonego pod potrzeby zespołu. Wszystkie wyrastają z praktyki: budowy, walidacji i obrony modeli przed nadzorcą.</p></div>
     <div class="obs">
@@ -248,7 +235,7 @@
   </div>
 </section>
 
-<section style="padding-top:0">
+<section>
   <div class="wrap">
     <div class="sec-hd rv"><div><span class="kick">Szkolenia</span><h2 style="margin-top:16px">Wybrane programy.</h2></div><p>Jedno- i dwudniowe warsztaty z pełnym programem dzień po dniu. Terminy i forma – stacjonarnie albo zdalnie – do uzgodnienia.</p></div>
     <div class="tgrid" id="featured"></div>
