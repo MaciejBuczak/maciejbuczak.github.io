@@ -27,7 +27,7 @@
 @media(max-width:1100px){.fx{grid-template-columns:repeat(2,auto)}}
 @media(max-width:620px){.fx{grid-template-columns:1fr}}
 /* układ */
-.lay{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:22px;align-items:start}
+.lay{display:grid;grid-template-columns:minmax(0,1fr);gap:22px;align-items:start}
 @media(max-width:1000px){.lay{grid-template-columns:1fr}}
 /* mapa */
 .bank{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px 30px}
@@ -70,15 +70,17 @@
 @media(max-width:1000px){.bank{grid-template-columns:1fr 1fr;gap:16px}.col+.col::before{display:none}}
 @media(max-width:560px){.bank{grid-template-columns:1fr}}
 /* modele */
-.md{background:#fffdf9;border:1px solid var(--line);border-radius:24px;padding:18px 16px}
+.md{background:#fffdf9;border:1px solid var(--line);border-radius:24px;padding:16px 18px 18px;margin-bottom:22px}
+.md-h{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 18px;margin-bottom:12px;border-bottom:1px solid var(--ink);padding-bottom:8px}.md .md-h h3{border:0;padding:0;margin:0}.md-h .leg{margin:0}
+#ml{display:flex;flex-wrap:wrap;gap:10px}
 .md h3,.tr h3,.inf .k{font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink2);margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid var(--ink)}
-.mg{margin-bottom:10px}.mg>span{display:block;font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--tan);margin:8px 0 4px}
-.mb{display:flex;align-items:center;gap:9px;width:100%;text-align:left;font:inherit;font-size:13px;font-weight:500;color:var(--ink);background:transparent;border:1px solid transparent;border-radius:10px;padding:6px 9px;cursor:pointer;transition:background .2s,border-color .2s,opacity .2s}
+.mg{border-radius:16px;background:var(--panel);border-top:3px solid var(--gc);padding:10px 10px 10px;display:flex;flex-wrap:wrap;align-content:flex-start;gap:5px}.mg>span{width:100%;font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);margin:0 0 3px 2px}
+.mb{display:inline-flex;align-items:center;gap:7px;width:auto;text-align:left;font:inherit;font-size:12.5px;font-weight:500;color:var(--ink);background:#fffdf9;border:1px solid rgba(13,13,13,.08);border-radius:999px;padding:5px 10px;cursor:pointer;transition:background .2s,border-color .2s,opacity .2s}
 .mb i{width:9px;height:9px;border-radius:2px;flex:none}
-.mb .mn{flex:1;line-height:1.3}.mb .mp{flex:none;white-space:nowrap}.mb .mp .pl{margin-left:3px}
+.mb .mn{line-height:1.25}.mb .mp{flex:none;white-space:nowrap}.mb .mp .pl{margin-left:3px}
 .md .leg{font-size:11.5px;color:var(--muted);line-height:1.5;margin:0 0 6px}
-.mb:hover{background:var(--card);border-color:var(--line)}
-.md.sel .mb{opacity:.35}.md.sel .mb.on{opacity:1;background:var(--card);border-color:var(--line)}.md.sel .mb.cur{opacity:1;background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.mb:hover{border-color:var(--ink)}
+.md.sel .mb{opacity:.35}.md.sel .mb.on{opacity:1;border-color:var(--ink)}.md.sel .mb.cur{opacity:1;background:var(--ink);color:var(--paper);border-color:var(--ink)}
 /* informacja */
 .inf{margin-top:26px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:22px;align-items:start}
 .ib{background:#fffdf9;border:1px solid var(--line);border-radius:24px;padding:22px 24px;min-height:150px}
@@ -160,13 +162,13 @@
   <div class="fx" id="fx"></div>
   <div class="lay">
     <div>
+      <aside class="md" id="md"><div class="md-h"><h3>Modele ryzyka</h3><p class="leg"><span class="pl el" style="margin:0">EL</span> strata oczekiwana – odpisy, rezerwy, koszty · <span class="pl ul" style="margin:0">UL</span> nieoczekiwana – RWA i Filar 2 · bez znacznika: wycena, odsetki, płynność.</p></div><div id="ml"></div></aside>
       <div class="bank" id="bank"></div>
       <div class="inf">
         <div class="ib" id="ib"></div>
         <div class="tr" id="tr"><h3>Szkolenia</h3><div class="tg" id="tg"></div></div>
       </div>
     </div>
-    <aside class="md" id="md"><h3>Modele ryzyka</h3><p class="leg"><span class="pl el" style="margin:0">EL</span> strata oczekiwana – odpisy, rezerwy, koszty · <span class="pl ul" style="margin:0">UL</span> nieoczekiwana – RWA i Filar 2 · bez znacznika: wycena, odsetki, płynność.</p><div id="ml"></div></aside>
   </div>
   </div>
 </div>
@@ -259,7 +261,7 @@ const bank=document.getElementById("bank");
 bank.innerHTML=COL.map((c,ci)=>`<div class="col c${ci+1}"><h3>${c[1]}<b>${c[2]}</b></h3><div class="cb">${B.filter(b=>b[1]===c[0]).map(b=>blk(b[0])).join("")}${c[0]==="A"?blk("z_pozab"):""}</div></div>`).join("")+`<div class="rtb"><div class="rtb-h"><span>Wskaźniki</span><b>To, na co patrzą zarząd i nadzór</b><small>liczone z pozycji powyżej – kliknij, aby zobaczyć licznik i mianownik</small></div><div class="rtb-g">${[["k","Kapitał"],["l","Płynność"],["w","Wynik i portfel"]].map(g=>`<div class="rg"><span>${g[1]}</span><div>${Object.entries(RT).filter(([k,r])=>r.g===g[0]).map(([k,r])=>`<button type="button" class="bl rq" data-s="q:${k}" data-b="q_${k}"><b>${esc(r.n)} <em>${r.dir}</em></b><small>${esc(r.f[0])} / ${esc(r.f[1])}</small><span class="bd"></span><span class="rl"></span></button>`).join("")}</div></div>`).join("")}</div></div><div class="lg">${["K","R","O","A","M","S"].map(r=>`<span><i style="background:${RISK[r].c}"></i>${RISK[r].n}</span>`).join("")}<span><span class="pl el" style="margin:0">EL</span> strata oczekiwana</span><span><span class="pl ul" style="margin:0">UL</span> nieoczekiwana</span></div>`;
 function blk(id){const b=BI[id],f=FEED[id]?[...FEED[id]]:[];return`<button type="button" class="bl${b.dark?" dark":""}${b.sum?" sum":""}" data-s="b:${id}" data-b="${id}" style="min-height:${b.h}px"><b>${esc(b.n)}</b>${b.s?`<small>${esc(b.s)}</small>`:""}${f.length&&!b.sum?`<span class="rd">${["K","R","O","A","M","S"].filter(r=>f.includes(r)).map(r=>`<i style="background:${RISK[r].c}" title="${RISK[r].n}"></i>`).join("")}</span>`:""}<span class="bd"></span><span class="rl"></span></button>`}
 const grp=[["K","Ryzyko kredytowe"],["R","Ryzyko rynkowe"],["O","Ryzyko operacyjne"],["A","Stopa % i płynność"],["M","Ryzyko modeli"],["S","Stres testy"]];
-document.getElementById("ml").innerHTML=grp.map(g=>{const ms=M.filter(m=>m.r===g[0]);return ms.length?`<div class="mg"><span>${g[1]}</span>${ms.map(m=>`<button type="button" class="mb" data-s="m:${m.id}"><i style="background:${RISK[m.r].c}"></i><span class="mn">${esc(m.n)}</span><span class="mp">${pl(m.lt)}</span></button>`).join("")}</div>`:""}).join("");
+document.getElementById("ml").innerHTML=grp.map(g=>{const ms=M.filter(m=>m.r===g[0]);return ms.length?`<div class="mg" style="flex:${ms.length} 1 ${Math.max(140,ms.length*85)}px;--gc:${RISK[g[0]].c}"><span>${g[1]}</span>${ms.map(m=>`<button type="button" class="mb" data-s="m:${m.id}"><i style="background:${RISK[m.r].c}"></i><span class="mn">${esc(m.n)}</span><span class="mp">${pl(m.lt)}</span></button>`).join("")}</div>`:""}).join("");
 document.getElementById("fx").innerHTML=
  `<div class="fg"><span>Rodzaj ryzyka</span>${["K","R","O","A","M"].map(r=>`<button type="button" class="ch" data-s="r:${r}"><i style="background:${RISK[r].c}"></i>${RISK[r].n}</button>`).join("")}</div>`+
  `<div class="fg"><span>Klasa problemu</span>${Object.entries(PROB).map(([k,v])=>`<button type="button" class="ch" data-s="l:${k}">${v[0]}</button>`).join("")}</div>`+
