@@ -70,6 +70,39 @@
 .mod li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:1px;background:var(--sand)}
 .mod li.v{color:var(--terra-d)}.mod li.v::before{background:var(--terra)}
 @media(max-width:820px){.mods{grid-template-columns:1fr}.goal{grid-template-columns:1fr}}
+.sm{padding:clamp(28px,4vw,56px) 0 clamp(48px,6vw,80px)}
+.sm-h{margin-bottom:22px}.sm-h h2{font-size:clamp(26px,3vw,40px);margin:12px 0 0}
+.smv{display:none}.smv.on{display:block}
+.smv>svg{display:block;width:100%;height:auto;max-height:62vh}
+@media(max-width:760px){.smv#smv1,.smv#smv2,.smv#smv5{overflow-x:auto}.smv>svg{min-width:760px;max-height:none}}
+.sm.run .nd{opacity:1;transform:none}.sm.run .ln{stroke-dashoffset:0}
+.ring{stroke-dashoffset:214;transition:stroke-dashoffset 1.4s .5s cubic-bezier(.3,.6,.2,1)}.sm.run .ring{stroke-dashoffset:0}
+/* bento */
+.bento{display:grid;grid-template-columns:1.3fr 1fr 1fr;grid-template-areas:'a b d' 'a c c';gap:14px}
+.b1{grid-area:a}.b2{grid-area:b}.b3{grid-area:c}.b4{grid-area:d}
+.b{border-radius:22px;padding:22px 24px;background:var(--card);border:1px solid var(--line);display:flex;flex-direction:column;gap:10px}
+.b .bk{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--tcd)}
+.b h3{font-family:var(--body);font-weight:600;font-size:19px;line-height:1.3;margin:0}
+.b p{margin:0;font-size:14px;color:var(--muted)}
+.b1{background:var(--tc);border-color:transparent}.b1 svg{width:100%;height:auto;margin:6px 0}
+.b2{background:#f9dcc9;border-color:transparent;flex-direction:row;flex-wrap:wrap;align-items:flex-end;gap:10px 28px}.b2 .bk{flex-basis:100%}
+.big b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(44px,4.4vw,62px);line-height:.95}.big span{font-size:13px;color:var(--ink2)}
+.b3 .gl{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}.b3 .gl svg{width:100%;height:auto;background:#fcf9f5;border-radius:10px;border:1px solid var(--line)}
+.b3{background:#e4e1d4;border-color:transparent}
+.b4 .rg{display:flex;gap:16px;align-items:center}.b4 .rg svg{width:84px;flex:none}.b4 b{display:block;font-family:var(--display);font-weight:400;font-size:28px}.b4 span{font-size:13.5px;color:var(--muted)}
+.b5{background:#ead9c4;border-color:transparent}
+@media(max-width:900px){.bento{grid-template-columns:1fr 1fr;grid-template-areas:'a a' 'b d' 'c c'}.b3 .gl{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:560px){.bento{grid-template-columns:1fr;grid-template-areas:'a' 'b' 'd' 'c'}}
+/* pytania */
+.qs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.q{position:relative;border-radius:22px;padding:24px 24px 20px;background:var(--card);border:1px solid var(--line);min-height:170px;display:flex;flex-direction:column}
+.q:nth-child(3n+2){transform:translateY(26px)}.sm.run .q:nth-child(3n+2){transform:translateY(26px)}
+.q .qn{font-family:var(--serif);font-style:italic;font-size:34px;line-height:1;color:var(--tcd)}
+.q p{font-family:var(--serif);font-style:italic;font-size:clamp(19px,1.7vw,23px);line-height:1.3;margin:8px 0 16px;color:var(--ink)}
+.q .qm{margin-top:auto;font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--terra-d)}
+.q.hi{background:var(--tc);border-color:transparent}
+.q:nth-child(5){background:#f9dcc9;border-color:transparent}
+@media(max-width:820px){.qs{grid-template-columns:1fr}.q:nth-child(3n+2),.sm.run .q:nth-child(3n+2){transform:none}}
 .vx{flex-direction:row;align-items:center;gap:3px;border-radius:999px}
 </style>
 </head>
@@ -98,6 +131,11 @@
     </div>
     <div class="art"><span class="no">01</span><svg viewBox="50 60 300 145" preserveAspectRatio="xMidYMid meet" aria-hidden="true" id="artA"></svg></div>
   </div>
+</div></section>
+
+<section class="sm" id="sm"><div class="wrap">
+  <div class="sm-h"><span class="kick" id="smK"></span><h2 id="smT"></h2></div>
+  <div class="smv" id="smv1"></div><div class="smv" id="smv2"></div><div class="smv" id="smv3"></div><div class="smv" id="smv4"></div><div class="smv" id="smv5"></div>
 </div></section>
 
 <div class="wrap">
@@ -156,6 +194,67 @@ const G={
 
 
 
+/* ---------- podsumowanie szkolenia – warianty ---------- */
+const MS=["Po co model ryzyka","Model a rzeczywistość","Etapy budowy modelu","Oczekiwane vs nieoczekiwane","Rozkład prawdopodobieństwa","Analiza przeżycia","Modelowanie stanów","Metody numeryczne","VaR i Expected Shortfall","Metody scenariuszowe"];
+const TCD="#d9bf86",SAND="#e8d9b4";
+/* 1. Ścieżka – mapa linii przez dwa dni */
+(function(){const W=1100,y1=120,y2=300,xs=[120,310,500,690,880],R=60;let s="";
+  const line=`M60 ${y1} L${xs[4]} ${y1} C ${xs[4]+R*2.2} ${y1}, ${xs[4]+R*2.2} ${y2}, ${xs[4]} ${y2} L60 ${y2}`;
+  s+=`<path d="${line}" fill="none" stroke="${SAND}" stroke-width="16" stroke-linecap="round"/><path class="ln" style="--l:2300" d="${line}" fill="none" stroke="${INK}" stroke-width="5" stroke-linecap="round"/>`;
+  s+=`<text x="40" y="${y1+40}" ${F} font-size="12" font-weight="600" letter-spacing="2" fill="${TERD}">DZIEŃ 1</text><text x="40" y="${y2-26}" ${F} font-size="12" font-weight="600" letter-spacing="2" fill="${TERD}">DZIEŃ 2</text>`;
+  MS.forEach((m,i)=>{const d2=i>4,x=d2?xs[9-i]:xs[i],y=d2?y2:y1,v=i>=4,dl=(i*.12).toFixed(2);const w=m.split(" "),l1=w.slice(0,Math.ceil(w.length/2)).join(" "),l2=w.slice(Math.ceil(w.length/2)).join(" ");
+    const ty=d2?y+44:y-46;
+    s+=`<g class="nd" style="transition-delay:${dl}s"><circle cx="${x}" cy="${y}" r="17" fill="#fcf9f5" stroke="${v?TER:INK}" stroke-width="4"/><text x="${x}" y="${y+4.5}" text-anchor="middle" ${F} font-size="12" font-weight="600" fill="${INK}">${String(i+1).padStart(2,"0")}</text>
+      <text x="${x}" y="${ty}" text-anchor="middle" ${F} font-size="14" font-weight="600" fill="${INK}">${l1}</text><text x="${x}" y="${ty+18}" text-anchor="middle" ${F} font-size="14" font-weight="600" fill="${INK}">${l2}</text></g>`});
+  s+=`<g class="nd" style="transition-delay:1.4s"><circle cx="${W-330}" cy="${y2+82}" r="6" fill="#fcf9f5" stroke="${TER}" stroke-width="3"/><text x="${W-316}" y="${y2+86}" ${F} font-size="12.5" fill="${INK}" fill-opacity=".7">moduł z częścią „okiem walidatora”</text></g>`;
+  document.getElementById("smv1").innerHTML=`<svg viewBox="0 30 ${W} 400" role="img" aria-label="Mapa szkolenia: dziesięć modułów na linii przez dwa dni.">${s}</svg>`})();
+/* 2. Mapa metod */
+(function(){let s="";const root=[90,220],cls=[["Ryzyka oczekiwane","EL, wartość oczekiwana",400,130],["Ryzyka nieoczekiwane","UL, kapitał regulacyjny i ekonomiczny",400,310]];
+  const ms=[["Rozkład prawdopodobieństwa","dist",[0,1]],["Analiza przeżycia","surv",[0]],["Modelowanie stanów","mat",[0]],["Metody numeryczne","mc",[0,1]],["VaR i Expected Shortfall","var",[1]],["Probabilistyczno-scenariuszowe","scen",[1]]];
+  cls.forEach((c,i)=>s+=`<path class="ln" style="--l:400;transition-delay:${.2+i*.1}s" d="M${root[0]+80} ${root[1]} C ${root[0]+180} ${root[1]}, ${c[2]-120} ${c[3]}, ${c[2]-8} ${c[3]}" fill="none" stroke="${INK}" stroke-opacity=".35" stroke-width="1.6"/>`);
+  ms.forEach((m,i)=>{const y=40+i*72,x=780;m[2].forEach(k=>{const c=cls[k];s+=`<path class="ln" style="--l:500;transition-delay:${.6+i*.08}s" d="M${c[2]+232} ${c[3]} C ${c[2]+320} ${c[3]}, ${x-110} ${y}, ${x-36} ${y}" fill="none" stroke="${k?TER:INK}" stroke-opacity="${k?.75:.35}" stroke-width="1.5"/>`})});
+  s+=`<g class="nd"><rect x="${root[0]-70}" y="${root[1]-34}" width="150" height="68" rx="34" fill="${INK}"/><text x="${root[0]+5}" y="${root[1]+5}" text-anchor="middle" ${F} font-size="15" font-weight="600" fill="#f5f1ea">Model ryzyka</text></g>`;
+  cls.forEach((c,i)=>s+=`<g class="nd" style="transition-delay:${.4+i*.1}s"><rect x="${c[2]-8}" y="${c[3]-36}" width="240" height="72" rx="18" fill="#fcf9f5" stroke="${i?TER:INK}" stroke-opacity="${i?1:.25}" stroke-width="${i?1.6:1}"/><text x="${c[2]+12}" y="${c[3]-6}" ${F} font-size="15" font-weight="600" fill="${INK}">${c[0]}</text><text x="${c[2]+12}" y="${c[3]+16}" ${F} font-size="11.5" fill="${INK}" fill-opacity=".6">${c[1]}</text></g>`);
+  ms.forEach((m,i)=>{const y=40+i*72,x=780;s+=`<g class="nd" style="transition-delay:${.9+i*.1}s"><rect x="${x-36}" y="${y-28}" width="320" height="56" rx="16" fill="#fcf9f5" stroke="${INK}" stroke-opacity=".18"/><g>${G[m[1]](x,y)}</g><text x="${x+40}" y="${y+5}" ${F} font-size="14" font-weight="600" fill="${INK}">${m[0]}</text></g>`});
+  document.getElementById("smv2").innerHTML=`<svg viewBox="0 0 1100 440" role="img" aria-label="Mapa metod: model ryzyka, ryzyka oczekiwane i nieoczekiwane, sześć klas metod.">${s}</svg>`})();
+/* 3. Bento */
+(function(){const eu=(()=>{let p="M10 120",t="";for(let x=10;x<=330;x+=4){const z=(x-120)/48,v=Math.exp(-z*z/2)+.12*Math.exp(-(((x-250)/40)**2));p+=` L${x} ${(120-v*95).toFixed(1)}`}let tl="M230 120";for(let x=230;x<=330;x+=4){const z=(x-120)/48,v=Math.exp(-z*z/2)+.12*Math.exp(-(((x-250)/40)**2));tl+=` L${x} ${(120-v*95).toFixed(1)}`}tl+=" L330 120 Z";
+    return`<svg viewBox="0 0 340 140" aria-hidden="true"><path d="${tl}" fill="${TER}" fill-opacity=".8"/><path d="${p}" fill="none" stroke="${INK}" stroke-width="2.2"/><line x1="120" y1="18" x2="120" y2="120" stroke="${INK}" stroke-dasharray="3 4" stroke-opacity=".6"/><line x1="230" y1="18" x2="230" y2="120" stroke="${TER}" stroke-dasharray="4 4" stroke-width="1.5"/><text x="124" y="28" ${F} font-size="11" font-weight="600" fill="${INK}">EL</text><text x="236" y="28" ${F} font-size="11" font-weight="600" fill="${TERD}">UL · kapitał</text><line x1="10" y1="120.5" x2="330" y2="120.5" stroke="${INK}" stroke-opacity=".25"/></svg>`})();
+  const gl=["dist","surv","mat","mc","var","scen"].map(k=>`<svg viewBox="-30 -26 60 52">${G[k](0,0)}</svg>`).join("");
+  const ring=(()=>{const r=34,c=2*Math.PI*r;return`<svg viewBox="0 0 90 90" aria-hidden="true"><circle cx="45" cy="45" r="${r}" fill="none" stroke="${INK}" stroke-opacity=".12" stroke-width="9"/><circle class="ring" cx="45" cy="45" r="${r}" fill="none" stroke="${TER}" stroke-width="9" stroke-linecap="round" stroke-dasharray="${(c*.6).toFixed(1)} ${c.toFixed(1)}" transform="rotate(-90 45 45)"/></svg>`})();
+  document.getElementById("smv3").innerHTML=`<div class="bento">
+    <div class="b b1 nd"><span class="bk">Dwie klasy problemów</span><h3>Strata oczekiwana albo kapitał na nieoczekiwaną.</h3>${eu}<p>Od celu modelu zależy wybór metody: estymacja oczekiwanych strat czy kapitał regulacyjny lub ekonomiczny.</p></div>
+    <div class="b b2 nd" style="transition-delay:.1s"><span class="bk">Format</span><div class="big"><b>10</b><span>modułów</span></div><div class="big"><b>2</b><span>dni warsztatów</span></div><p style="flex-basis:100%">Proces budowy modelu zgodny z Rekomendacją W.</p></div>
+    <div class="b b3 nd" style="transition-delay:.2s"><span class="bk">Sześć klas metod</span><div class="gl">${gl}</div><p>rozkłady · przeżycie · stany · Monte Carlo i bootstrap · VaR i ES · scenariusze</p></div>
+    <div class="b b4 nd" style="transition-delay:.3s"><span class="bk">Okiem walidatora</span><div class="rg">${ring}<div><b>6 z 10</b><span>modułów kończy się najczęstszymi błędami i wyzwaniami walidacyjnymi</span></div></div></div>
+    </div>`})();
+/* 4. Pytania */
+(function(){const Q=[["Po co bankowi model ryzyka – i czy może się bez niego obejść?","01"],["Co tak naprawdę modelujemy, skoro ryzyko jest niewidoczne?","02"],["Strata oczekiwana czy nieoczekiwana – i jaki model do której?","04"],["Jaki rozkład opisze zjawisko i jak go oszacować?","05"],["Kiedy symulacja daje więcej niż wzór?","08"],["Kiedy wiedza ekspertów jest cenniejsza niż model?","10"]];
+  document.getElementById("smv4").innerHTML=`<div class="qs">${Q.map((q,i)=>`<div class="q nd${i===2?" hi":""}" style="transition-delay:${i*.08}s"><span class="qn">?</span><p>${q[0]}</p><span class="qm">moduł ${q[1]}</span></div>`).join("")}</div>`})();
+/* 5. Drzewo decyzji */
+(function(){let s=`<defs><marker id="ar2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="${INK}" fill-opacity=".5"/></marker></defs>`;
+  const N={r:[70,210,"Do czego służy model?",1],a:[330,110,"Strata oczekiwana (EL)"],b:[330,330,"Kapitał (UL)"],
+    q1:[590,50,"Czas do zdarzenia?"],q2:[590,120,"Przejścia między stanami?"],q3:[590,190,"Wielkość lub częstość?"],q4:[590,270,"Znamy ogon rozkładu?"],q5:[590,340,"Złożona struktura?"],q6:[590,410,"Brak danych o skrajnościach?"],
+    m1:[900,50,"Analiza przeżycia","surv"],m2:[900,120,"Modelowanie stanów","mat"],m3:[900,190,"Rozkład prawdopodobieństwa","dist"],m4:[900,270,"VaR i Expected Shortfall","var"],m5:[900,340,"Monte Carlo, bootstrap","mc"],m6:[900,410,"Scenariusze eksperckie","scen"]};
+  const E=[["r","a"],["r","b"],["a","q1"],["a","q2"],["a","q3"],["b","q4"],["b","q5"],["b","q6"],["q1","m1"],["q2","m2"],["q3","m3"],["q4","m4"],["q5","m5"],["q6","m6"]];
+  const wd={r:190,a:200,b:200,q:240,m:285};const W=k=>k==="r"?wd.r:k==="a"||k==="b"?wd.a:k[0]==="q"?wd.q:wd.m;
+  E.forEach((e,i)=>{const a=N[e[0]],b=N[e[1]],x1=a[0]+W(e[0]),x2=b[0]-6;s+=`<path class="ln" style="--l:400;transition-delay:${(.1+i*.05).toFixed(2)}s" d="M${x1} ${a[1]} C ${x1+60} ${a[1]}, ${x2-60} ${b[1]}, ${x2} ${b[1]}" fill="none" stroke="${e[0]==="b"||["q4","q5","q6"].includes(e[0])?TER:INK}" stroke-opacity=".6" stroke-width="1.5" marker-end="url(#ar2)"/>`});
+  Object.entries(N).forEach(([k,n],i)=>{const w=W(k),h=k[0]==="m"?50:44,x=n[0],y=n[1]-h/2,dl=(k[0]==="m"?.9:k[0]==="q"?.5:.2)+i*.02;
+    if(k==="r")s+=`<g class="nd"><rect x="${x}" y="${y-6}" width="${w}" height="${h+12}" rx="${(h+12)/2}" fill="${INK}"/><text x="${x+w/2}" y="${n[1]+5}" text-anchor="middle" ${F} font-size="14" font-weight="600" fill="#f5f1ea">${n[2]}</text></g>`;
+    else if(k==="a"||k==="b")s+=`<g class="nd" style="transition-delay:${dl}s"><rect x="${x}" y="${y}" width="${w}" height="${h}" rx="14" fill="#fcf9f5" stroke="${k==="b"?TER:INK}" stroke-opacity="${k==="b"?1:.3}" stroke-width="1.5"/><text x="${x+18}" y="${n[1]+5}" ${F} font-size="14" font-weight="600" fill="${INK}">${n[2]}</text></g>`;
+    else if(k[0]==="q")s+=`<g class="nd" style="transition-delay:${dl}s"><rect x="${x}" y="${y}" width="${w}" height="${h}" rx="22" fill="none" stroke="${INK}" stroke-opacity=".3" stroke-dasharray="3 4"/><text x="${x+18}" y="${n[1]+5}" ${F} font-size="13" font-style="italic" fill="${INK}" fill-opacity=".8">${n[2]}</text></g>`;
+    else s+=`<g class="nd" style="transition-delay:${dl}s"><rect x="${x}" y="${y}" width="${w}" height="${h}" rx="14" fill="#fcf9f5" stroke="${INK}" stroke-opacity=".18"/><g>${G[n[3]](x+34,n[1])}</g><text x="${x+70}" y="${n[1]+5}" ${F} font-size="13.5" font-weight="600" fill="${INK}">${n[2]}</text></g>`});
+  document.getElementById("smv5").innerHTML=`<svg viewBox="0 0 1200 460" role="img" aria-label="Drzewo decyzji: od celu modelu do wyboru metody.">${s}</svg>`})();
+/* przełącznik (wersja próbna) + uruchamianie animacji przy przewinięciu */
+const SV=[["1","Ścieżka"],["2","Mapa metod"],["3","Bento"],["4","Pytania"],["5","Drzewo decyzji"]],SH={1:["Program w pigułce","Dwa dni, jedna linia: od celu modelu do metod"],2:["Mapa metod","Od klasy problemu do metody"],3:["W skrócie","Szkolenie w czterech kafelkach"],4:["Na jakie pytania odpowiada szkolenie","Sześć pytań, które zadaje każdy twórca modelu"],5:["Jak dobrać metodę","Od celu modelu do metody – w trzech krokach"]};
+const smEl=document.getElementById("sm");let smSeen=false;
+function setSm(v){document.querySelectorAll(".smv").forEach(e=>e.classList.toggle("on",e.id==="smv"+v));document.getElementById("smK").textContent=SH[v][0];document.getElementById("smT").textContent=SH[v][1];
+  smEl.classList.remove("run");if(smSeen)requestAnimationFrame(()=>requestAnimationFrame(()=>smEl.classList.add("run")));
+  document.querySelectorAll("#vx a").forEach(a=>a.classList.toggle("on",a.dataset.v===v));try{history.replaceState(null,"","?s="+v)}catch(e){}}
+new IntersectionObserver(es=>{if(es[0].isIntersecting&&!smSeen){smSeen=true;smEl.classList.add("run")}},{threshold:.25}).observe(smEl);
+document.body.insertAdjacentHTML("beforeend",'<div class="variants vx" id="vx">Podsumowanie:'+SV.map(o=>`<a href="#" data-v="${o[0]}">${o[1]}</a>`).join("")+'</div>');
+document.getElementById("vx").addEventListener("click",e=>{const a=e.target.closest("a");if(!a)return;e.preventDefault();setSm(a.dataset.v)});
+setSm(new URLSearchParams(location.search).get("s")||"1");
 requestAnimationFrame(()=>requestAnimationFrame(()=>document.querySelector('.ha').classList.add('run')));
 </script>
 <script src="../../rt.js"></script>
