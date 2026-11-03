@@ -100,7 +100,15 @@
 .ib li b{color:var(--ink)}
 .ib .hint{color:var(--muted);font-size:14px}
 .pl{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;padding:1px 7px;border-radius:999px;margin-left:6px;vertical-align:1px}
-.pl.el{background:#ead9a2;color:#5c4a12}.pl.ul{background:var(--ink);color:var(--paper)}.pl.s{background:#9a3b25;color:#fff}
+.pl.el{background:#ead9a2;color:#5c4a12}.pl.ul{background:var(--ink);color:var(--paper)}.pl.s{background:#9a3b25;color:#fff}.pl.nn{background:#e3ddd1;color:#6d6457}
+.lk{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0 0 14px}
+.lc{display:grid;grid-template-columns:auto 1fr;gap:2px 10px;align-items:baseline;text-align:left;font:inherit;color:var(--ink);background:#fffdf9;border:1px solid var(--line);border-radius:16px;padding:11px 14px;cursor:pointer;transition:opacity .25s,border-color .25s,box-shadow .25s}
+.lc .pl{margin:0;grid-row:1/3;align-self:start;margin-top:2px;min-width:30px;text-align:center}
+.lc b{font-size:13px;font-weight:600}.lc small{font-size:11.5px;color:var(--muted);line-height:1.4}
+.lc.lel{--lc:#c9a43c}.lc.lul{--lc:#0d0d0d}.lc.lnn{--lc:#a69a86}
+.lc:hover{border-color:var(--lc)}
+.lk.sel .lc{opacity:.4}.lk.sel .lc.on{opacity:1;border-color:var(--lc);box-shadow:0 0 0 2px var(--lc)}
+@media(max-width:760px){.lk{grid-template-columns:1fr}}
 .tg{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .tb{display:flex;align-items:center;gap:10px;text-align:left;font:inherit;font-size:13.5px;font-weight:500;line-height:1.3;color:var(--ink);background:#fffdf9;border:1px solid var(--line);border-radius:999px;padding:8px 14px 8px 8px;cursor:pointer;text-decoration:none;transition:opacity .25s,background .25s,border-color .25s}
 .tb i{flex:none;width:26px;height:26px;border-radius:7px;display:grid;place-items:center;font-family:var(--serif);font-style:italic;font-size:13px;color:var(--ink)}
@@ -170,7 +178,7 @@
   <div class="fx" id="fx"></div>
   <div class="lay">
     <div>
-      <aside class="md" id="md"><div class="md-h"><h3>Modele ryzyka</h3><p class="leg"><span class="pl el" style="margin:0">EL</span> strata oczekiwana – odpisy, rezerwy, koszty · <span class="pl ul" style="margin:0">UL</span> nieoczekiwana – RWA i Filar 2 · bez znacznika: wycena, odsetki, płynność.</p></div><div id="ml"></div></aside>
+      <aside class="md" id="md"><div class="md-h"><h3>Modele ryzyka</h3></div><div class="lk" id="lk"><button type="button" class="lc lel" data-s="l:EL"><span class="pl el">EL</span><b>Strata oczekiwana</b><small>odpisy, rezerwy, koszt ryzyka – pokrywa ją marża i bieżący wynik</small></button><button type="button" class="lc lul" data-s="l:UL"><span class="pl ul">UL</span><b>Strata nieoczekiwana</b><small>RWA i Filar 2 – pokrywają ją fundusze własne</small></button><button type="button" class="lc lnn" data-s="l:N"><span class="pl nn">—</span><b>Ani EL, ani UL</b><small>wycena, odsetki, płynność, scenariusze stresowe</small></button></div><div id="ml"></div></aside>
       <div class="bank" id="bank"></div>
       <div class="inf">
         <div class="ib" id="ib"></div>
@@ -252,7 +260,8 @@ const M=[
  {id:"stres",r:"S",lt:"S",n:"Stres testy i plan kapitałowy",d:"Projekcja bilansu, wyniku i kapitału w scenariuszu niekorzystnym.",o:[["r_ecl","Koszt ryzyka w scenariuszu stresu.","S"],["r_nii","Wynik odsetkowy w stresie.","S"],["q_cet1","Czy bank utrzyma współczynniki kapitałowe w stresie.","S"],["k_buf","Wytyczna P2G i bufory zarządcze.","S"],["k_p2","Kapitał wewnętrzny w scenariuszu stresu.","S"]],t:["mwn","ryzmod"]}];
 const MI=Object.fromEntries(M.map(m=>[m.id,m]));
 const FEED={};M.forEach(m=>m.o.forEach(o=>{(FEED[o[0]]=FEED[o[0]]||new Set()).add(m.r)}));
-const PROB={EL:["Strata oczekiwana (EL)","Odpisy i rezerwy w bilansie, koszt ryzyka w wyniku. Pokrywa ją marża i bieżący wynik."],UL:["Strata nieoczekiwana (UL)","Wymogi kapitałowe – RWA, Filar 2. Pokrywają ją fundusze własne."],S:["Scenariusz skrajny","Stres testy: co stanie się z wynikiem i kapitałem w dekoniunkturze."]};
+const PROB={EL:["Strata oczekiwana (EL)","Odpisy i rezerwy w bilansie, koszt ryzyka w wyniku. Pokrywa ją marża i bieżący wynik."],UL:["Strata nieoczekiwana (UL)","Wymogi kapitałowe – RWA, Filar 2. Pokrywają ją fundusze własne."],S:["Scenariusz skrajny","Stres testy: co stanie się z wynikiem i kapitałem w dekoniunkturze."],N:["Ani EL, ani UL","Modele, które nie liczą straty: wycena, odsetki, płynność i scenariusze. Wpływają na bilans, wynik i kapitał inną drogą."]};
+const cat=m=>/EL/.test(m.lt)&&/UL/.test(m.lt)?["EL","UL"]:/EL/.test(m.lt)?["EL"]:/UL/.test(m.lt)?["UL"]:["N"];
 const PROC={bud:["Budowa modeli",["budowa","ecl","piec","estymacja"],"Projektowanie modelu: koncepcja, dane, rozkłady i techniki estymacji."],wal:["Walidacja modeli",["estymacja","ryzmod","ecl","budowa"],"Ocena, czy model działa: testy ilościowe, logika biznesowa, okiem walidatora."],dcz:["Decyzje zarządu",["mwn","piec","ryzmod"],"Jak wyniki modeli przekładają się na kapitał, wynik i decyzje – i jak o nich rozmawiać."]};
 const RT={
  cet1:{g:"k",n:"Współczynnik CET1",f:["CET1","RWA"],dir:"↑",num:["k_cet1"],den:["k_rwa_k","k_rwa_cva","k_rwa_r","k_rwa_o"],d:"Im niższe RWA z modeli przy tej samej ekspozycji, tym wyższy wskaźnik – dlatego nadzór wymaga konserwatyzmu i stosuje output floor."},
@@ -279,7 +288,7 @@ const grp=[["K","Ryzyko kredytowe"],["R","Ryzyko rynkowe"],["O","Ryzyko operacyj
 document.getElementById("ml").innerHTML=grp.map(g=>{const ms=M.filter(m=>m.r===g[0]);return ms.length?`<div class="mg" style="flex:${ms.length} 1 ${Math.max(140,ms.length*85)}px;--gc:${RISK[g[0]].c}"><span>${g[1]}</span>${ms.map(m=>`<button type="button" class="mb" data-s="m:${m.id}"><i style="background:${RISK[m.r].c}"></i><span class="mn">${esc(m.n)}</span><span class="mp">${pl(m.lt)}</span></button>`).join("")}</div>`:""}).join("");
 document.getElementById("fx").innerHTML=
  `<div class="fg"><span>Rodzaj ryzyka</span>${["K","R","O","A","M"].map(r=>`<button type="button" class="ch" data-s="r:${r}"><i style="background:${RISK[r].c}"></i>${RISK[r].n}</button>`).join("")}</div>`+
- `<div class="fg"><span>Klasa problemu</span>${Object.entries(PROB).map(([k,v])=>`<button type="button" class="ch" data-s="l:${k}">${v[0]}</button>`).join("")}</div>`+
+ `<div class="fg"><span>Klasa problemu</span>${Object.entries(PROB).filter(([k])=>k!=="N").map(([k,v])=>`<button type="button" class="ch" data-s="l:${k}">${v[0]}</button>`).join("")}</div>`+
  `<div class="fg"><span>Proces</span>${Object.entries(PROC).map(([k,v])=>`<button type="button" class="ch" data-s="p:${k}">${v[0]}</button>`).join("")}</div>`;
 document.getElementById("tg").innerHTML=T.map((t,i)=>`<button type="button" class="tb" data-s="t:${t.id}"><i style="background:${TC[i%TC.length]}">${String(i+1).padStart(2,"0")}</i>${esc(t.title)}</button>`).join("");
 /* ---------- logika ---------- */
@@ -290,6 +299,7 @@ function resolve(sel){const [k,id]=sel.split(":"),R={m:new Set(),b:new Map(),t:n
   if(k==="m"){addM(id);R.hc=RISK[MI[id].r].c}
   else if(k==="b"){M.forEach(m=>{if(m.o.some(o=>o[0]===id))addM(m.id)});R.b=new Map([[id,[]]])}
   else if(k==="r"){M.filter(m=>m.r===id).forEach(m=>addM(m.id));R.hc=RISK[id].c}
+  else if(k==="l"&&id==="N"){M.filter(m=>cat(m)[0]==="N").forEach(m=>addM(m.id));R.hc="#8a8270"}
   else if(k==="l"){M.forEach(m=>{const hit=m.o.filter(o=>o[2]===id);if(hit.length){R.m.add(m.id);m.t.forEach(t=>R.t.add(t));hit.forEach(o=>{if(!R.b.has(o[0]))R.b.set(o[0],[])})}});R.hc=id==="UL"?"#0d0d0d":id==="S"?"#9a3b25":"#a8862c"}
   else if(k==="p"){PROC[id][1].forEach(t=>R.t.add(t));M.forEach(m=>{if(m.t.some(t=>R.t.has(t)))addM(m.id)});R.t=new Set(PROC[id][1])}
   else if(k==="q"){const r=RT[id];R.ring=r;[...r.num,...r.den].forEach(b=>R.b.set(b,[]));M.forEach(m=>{if(m.o.some(o=>R.b.has(o[0])||o[0]==="q_"+id)){R.m.add(m.id);m.t.forEach(t=>R.t.add(t))}})}
@@ -326,19 +336,20 @@ addEventListener("resize",()=>flows(curFl));if(document.fonts&&document.fonts.re
 function paint(sel){setFlows(sel);const md=document.getElementById("md"),tr=document.getElementById("tr");
   document.querySelectorAll("[data-s]").forEach(e=>e.classList.remove("on","cur","hit"));
   bank.querySelectorAll(".bl").forEach(e=>{e.querySelector(".bd").innerHTML="";e.querySelector(".rl").innerHTML="";e.style.removeProperty("--hc")});
-  [bank,md,tr].forEach(e=>e.classList.toggle("sel",!!sel));
+  [bank,md,tr].forEach(e=>e.classList.toggle("sel",!!sel));document.getElementById("lk").classList.toggle("sel",!!sel);
   if(!sel){info(null);flowNote();return}
-  const R=resolve(sel);
+  const R=resolve(sel),k0=sel.split(":")[0];
   R.b.forEach((nums,bid)=>{const el=bank.querySelector(`[data-b="${bid}"]`);if(!el)return;el.classList.add("hit");el.style.setProperty("--hc",R.hc);
     if(nums.length)el.querySelector(".bd").innerHTML=nums.map(n=>`<span>${n}</span>`).join("");
     if(R.ring){const r=R.ring,x=[];if(r.num.includes(bid))x.push('<span>licznik</span>');if(r.den.includes(bid))x.push('<span class="d">mianownik</span>');el.querySelector(".rl").innerHTML=x.join("")}});
   R.m.forEach(m=>{const e=document.querySelector(`.mb[data-s="m:${m}"]`);if(e)e.classList.add("on")});
+  const lc=new Set();if(k0==="l")lc.add(sel.split(":")[1]);else R.m.forEach(m=>cat(MI[m]).forEach(c=>lc.add(c)));lc.forEach(c=>{const e=document.querySelector(`.lc[data-s="l:${c}"]`);if(e)e.classList.add("on")});
   R.t.forEach(t=>{const e=document.querySelector(`.tb[data-s="t:${t}"]`);if(e)e.classList.add("on")});
   const cur=document.querySelector(`[data-s="${sel}"]`);if(cur){cur.classList.add(cur.classList.contains("ch")?"on":"cur")}
   info(sel,R);flowNote()}
 document.addEventListener("click",e=>{if(e.target.closest("[data-clr]")){lock=null;paint(null);return}const el=e.target.closest("[data-s]");if(!el)return;const s=el.dataset.s;lock=lock===s?null:s;paint(lock)});
-document.addEventListener("mouseover",e=>{if(lock)return;const el=e.target.closest(".bl,.mb,.tb");if(el)paint(el.dataset.s)});
-document.addEventListener("mouseout",e=>{if(lock)return;const el=e.target.closest(".bl,.mb,.tb");if(el&&!el.contains(e.relatedTarget))paint(null)});
+document.addEventListener("mouseover",e=>{if(lock)return;const el=e.target.closest(".bl,.mb,.tb,.lc");if(el)paint(el.dataset.s)});
+document.addEventListener("mouseout",e=>{if(lock)return;const el=e.target.closest(".bl,.mb,.tb,.lc");if(el&&!el.contains(e.relatedTarget))paint(null)});
 paint(null);
 /* ---------- widok prosty ---------- */
 const SB=[["Bilans","Aktywa",[["kred","Kredyty","portfel i limity",["a_kredyty","z_pozab"]],["odp","Odpisy ECL","oczekiwane straty",["a_ecl","p_rezerwy"]],["rynk","Portfel rynkowy","handel i papiery",["a_handl","p_handl","a_papiery","a_kasa"]]]],
