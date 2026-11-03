@@ -124,6 +124,21 @@
 .tb{display:flex;align-items:center;gap:10px;text-align:left;font:inherit;font-size:13.5px;font-weight:500;line-height:1.3;color:var(--ink);background:#fffdf9;border:1px solid var(--line);border-radius:999px;padding:8px 14px 8px 8px;cursor:pointer;text-decoration:none;transition:opacity .25s,background .25s,border-color .25s}
 .tb i{flex:none;width:26px;height:26px;border-radius:7px;display:grid;place-items:center;font-family:var(--serif);font-style:italic;font-size:13px;color:var(--ink)}
 .tb:hover{border-color:var(--ink)}
+.reg{margin-top:56px}
+.reg-h h2{font-family:var(--display);font-size:clamp(26px,3vw,38px);line-height:1.1;margin:10px 0 22px;letter-spacing:-.01em}.reg-h h2 em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--terra)}
+.rtop{background:var(--ink);color:var(--paper);border-radius:24px;padding:20px 24px 22px;margin-bottom:16px}
+.rtop-h{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--sand);margin-bottom:14px}
+.rtop-g{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
+.rtop-g span{display:block;font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#a89e8f;margin-bottom:6px}
+.rtop-g p{font-size:12.5px;line-height:1.45;margin:0 0 6px;color:#e8e1d6}.rtop-g b{color:#e6cd94;font-weight:600}
+.rgr{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}
+.rd{background:var(--panel);border-radius:18px;border-top:3px solid var(--gc);padding:14px 14px 12px;transition:opacity .25s,box-shadow .25s}
+.rd h4{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin:0 0 10px;line-height:1.3}
+.rd ul{list-style:none;margin:0;padding:0;display:grid;gap:7px}.rd li{font-size:12px;line-height:1.45;color:var(--ink2);padding-left:12px;position:relative}
+.rd li::before{content:"";position:absolute;left:0;top:7px;width:5px;height:5px;border-radius:50%;background:var(--gc)}.rd b{color:var(--ink);font-weight:600}
+.reg.sel .rd{opacity:.35}.reg.sel .rd.on{opacity:1;box-shadow:0 0 0 2px var(--gc)}
+@media(max-width:1100px){.rgr{grid-template-columns:repeat(3,minmax(0,1fr))}.rtop-g{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.rgr,.rtop-g{grid-template-columns:1fr}}
 .fx .tr{margin-bottom:18px;padding-bottom:18px;border-bottom:1px solid var(--line)}.fx .tr .flw-h{display:block;margin-bottom:10px}
 .fx .tg{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}
 .fx .tb{display:flex;flex-direction:column;align-items:stretch;gap:0;padding:0;border-radius:16px;overflow:hidden;background:#fffdf9;font-size:12.5px;font-weight:600;line-height:1.3}
@@ -207,6 +222,7 @@
       </div>
     </div>
   </div>
+  <section class="reg" id="reg"></section>
   </div>
 </div>
 </main>
@@ -338,6 +354,21 @@ mwn(){const x0=41,x1=360,yb=190,f=x=>{const z=Math.log(Math.max(1e-6,(x-40)/60))
 };
 const TPC=["#f3e4c4","#faddc9","#ded9c9","#f2e6c1","#e5d4c6","#eadbc6"],TNC=["#a6824c","#be9170","#8a7f60","#a6824c","#a6824c","#a6824c"];
 document.getElementById("tg").innerHTML=T.map((t,i)=>`<button type="button" class="tb" data-s="t:${t.id}"><span class="ta" style="background:${TPC[i%6]}"><em style="color:${TNC[i%6]}">${String(i+1).padStart(2,"0")}</em><svg viewBox="0 0 400 225" preserveAspectRatio="xMidYMid meet" aria-hidden="true">${TART[t.id]?TART[t.id]():""}</svg></span><b>${esc(t.title)}</b></button>`).join("")}
+const TOPDOCS=[
+ ['Prawo i regulacje UE',['<b>CRR</b> – rozporządzenie 575/2013 (z CRR3): kapitał, RWA, płynność, dźwignia','<b>CRD</b> (z CRD VI) → <b>Prawo bankowe</b>: system zarządzania ryzykiem','Ustawa o nadzorze makroostrożnościowym – bufory kapitałowe']],
+ ['Ład i kontrola',['Rozporządzenie MRiF z 6.03.2017 – system zarządzania ryzykiem i kontroli wewnętrznej','<b>Rekomendacja Z</b> – ład wewnętrzny','<b>Rekomendacja H</b> – system kontroli wewnętrznej','Wytyczne EBA – zarządzanie wewnętrzne']],
+ ['Modele',['<b>Rekomendacja W</b> (KNF) – zarządzanie ryzykiem modeli: cykl życia, walidacja, rejestr, istotność – dla wszystkich modeli na mapie']],
+ ['Kapitał, nadzór, ujawnienia',['<b>ICAAP</b> (Prawo bankowe) i <b>SREP</b> (wytyczne EBA) – Filar 2','<b>Filar 3</b> – CRR, część ósma (ujawnienia)','<b>MSSF</b> – MSSF 9, MSSF 7 (ujawnienia o ryzyku)']]];
+const RDOCS={
+ K:['<b>MSSF 9</b> – utrata wartości (ECL), koszyki','<b>Rekomendacja R</b> – klasyfikacja ekspozycji i oczekiwane straty','<b>Rekomendacja S</b> – kredyty hipoteczne; <b>T</b> – detaliczne','<b>Rekomendacja C</b> – ryzyko koncentracji','<b>CRR</b> cz. 3 tyt. II – metoda standardowa i IRB','Wytyczne EBA: definicja defaultu, szacowanie PD/LGD, udzielanie i monitorowanie kredytów'],
+ R:['<b>CRR</b> cz. 3 tyt. IV – ryzyko rynkowe (FRTB – w UE odroczone)','<b>MSSF 13</b> – wartość godziwa; <b>MSSF 9</b> – rachunkowość zabezpieczeń','<b>Rekomendacja A</b> – instrumenty pochodne','<b>Rekomendacja I</b> – ryzyko walutowe','RTS – ostrożna wycena (AVA); CRR – ryzyko CVA'],
+ O:['<b>Rekomendacja M</b> – ryzyko operacyjne','<b>Rekomendacja D</b> – IT i bezpieczeństwo środowiska teleinformatycznego','<b>DORA</b> – odporność cyfrowa (od 2025 r.)','<b>CRR</b> cz. 3 tyt. III – metoda standardowa (CRR3)','<b>MSR 37</b> – rezerwy (ryzyko prawne); wytyczne EBA – outsourcing'],
+ A:['<b>Rekomendacja P</b> – ryzyko płynności','<b>CRR</b> cz. 6 i rozporządzenie delegowane 2015/61 – LCR, NSFR','Wytyczne EBA – IRRBB i CSRBB (stopa procentowa w księdze bankowej)','RTS – test wartości odstających (ΔEVE, ΔNII)','<b>ILAAP</b> – wewnętrzna ocena płynności'],
+ M:['<b>Rekomendacja W</b> – cykl życia modelu, walidacja niezależna, rejestr i istotność modeli','<b>Przewodnik EBC</b> po modelach wewnętrznych; RTS EBA – istotność zmian w modelach IRB'],
+ S:['Wytyczne EBA – testy warunków skrajnych w bankach','Testy nadzorcze EBA / KNF','<b>ICAAP</b> – plan kapitałowy w stresie','Plan naprawy (ustawa o BFG)']};
+document.getElementById("reg").innerHTML=`<div class="reg-h"><span class="kick">Otoczenie regulacyjne</span><h2>Dokumenty, które regulują <em>modele ryzyka</em></h2></div>
+<div class="rtop"><div class="rtop-h">Nad wszystkim – dokumenty nadrzędne</div><div class="rtop-g">${TOPDOCS.map(([n,l])=>`<div><span>${n}</span>${l.map(x=>`<p>${x}</p>`).join("")}</div>`).join("")}</div></div>
+<div class="rgr">${["K","R","O","A","M","S"].map(r=>`<div class="rd" data-r="${r}" style="--gc:${RISK[r].c}"><h4>${r==="A"?"Stopa procentowa i płynność":r==="M"||r==="S"?RISK[r].n:"Ryzyko "+RISK[r].n.toLowerCase()}</h4><ul>${RDOCS[r].map(x=>`<li>${x}</li>`).join("")}</ul></div>`).join("")}</div>`;
 /* ---------- logika ---------- */
 function pl(t){return !t?"":t==="EL+UL"?pl("EL")+pl("UL"):t==="EL"?'<span class="pl el">EL</span>':t==="UL"?'<span class="pl ul">UL</span>':t==="S"?'<span class="pl s">stres</span>':""}
 const tName=id=>(T.find(t=>t.id===id)||{}).title||id;
@@ -383,13 +414,14 @@ addEventListener("resize",()=>flows(curFl));if(document.fonts&&document.fonts.re
 function paint(sel){setFlows(sel);const md=document.getElementById("md"),tr=document.getElementById("tr");
   document.querySelectorAll("[data-s]").forEach(e=>e.classList.remove("on","cur","hit"));
   bank.querySelectorAll(".bl").forEach(e=>{e.querySelector(".bd").innerHTML="";e.querySelector(".rl").innerHTML="";e.style.removeProperty("--hc")});
-  [bank,md,tr].forEach(e=>e.classList.toggle("sel",!!sel));document.getElementById("lk").classList.toggle("sel",!!sel);
+  [bank,md,tr,document.getElementById("reg")].forEach(e=>e.classList.toggle("sel",!!sel));document.getElementById("lk").classList.toggle("sel",!!sel);
   if(!sel){info(null);flowNote();return}
   const R=resolve(sel),k0=sel.split(":")[0];
   R.b.forEach((nums,bid)=>{const el=bank.querySelector(`[data-b="${bid}"]`);if(!el)return;el.classList.add("hit");el.style.setProperty("--hc",R.hc);
     if(nums.length)el.querySelector(".bd").innerHTML=nums.map(n=>`<span>${n}</span>`).join("");
     if(R.ring){const r=R.ring,x=[];if(r.num.includes(bid))x.push('<span>licznik</span>');if(r.den.includes(bid))x.push('<span class="d">mianownik</span>');el.querySelector(".rl").innerHTML=x.join("")}});
   R.m.forEach(m=>{const e=document.querySelector(`.mb[data-s="m:${m}"]`);if(e)e.classList.add("on")});
+  {const rs=new Set([...R.m].map(m=>MI[m].r));document.querySelectorAll(".rd").forEach(e=>e.classList.toggle("on",rs.has(e.dataset.r)))}
   const lc=new Set();if(k0==="l")lc.add(sel.split(":")[1]);else R.m.forEach(m=>cat(MI[m]).forEach(c=>lc.add(c)));lc.forEach(c=>{const e=document.querySelector(`.lc[data-s="l:${c}"]`);if(e)e.classList.add("on")});
   R.t.forEach(t=>{const e=document.querySelector(`.tb[data-s="t:${t}"]`);if(e)e.classList.add("on")});
   const cur=document.querySelector(`[data-s="${sel}"]`);if(cur){cur.classList.add(cur.classList.contains("ch")?"on":"cur")}
