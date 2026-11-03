@@ -17,8 +17,17 @@
 .mh h1 em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--terra-d)}
 .mh p{margin:0;font-size:16px;font-weight:300;color:var(--ink2);max-width:540px}
 /* filtry */
-.fx{display:grid;grid-template-columns:auto auto auto;justify-content:space-between;align-items:start;gap:10px 28px;padding:18px 22px;border-radius:24px;background:var(--panel);margin-bottom:22px}
+.fx{display:block;justify-content:space-between;align-items:start;gap:10px 28px;padding:18px 22px;border-radius:24px;background:var(--panel);margin-bottom:22px}
 .fg{display:flex;flex-wrap:wrap;align-items:center;align-content:flex-start;gap:6px;max-width:360px}
+.flw{display:flex;flex-direction:column;gap:10px;width:100%}
+.flw-h{font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--tan)}
+.flw-r{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:22px}
+.ch.st{position:relative;flex-direction:column;align-items:flex-start;gap:2px;border-radius:14px;padding:10px 14px;text-align:left;line-height:1.3;min-height:58px;justify-content:center}
+.ch.st em{font-style:normal;font-size:10.5px;font-weight:600;letter-spacing:.1em;color:var(--terra)}
+.ch.st.on em{color:var(--sand)}
+.ch.st:not(:last-child)::after{content:"→";position:absolute;right:-17px;top:50%;transform:translateY(-50%);color:var(--tan);font-size:14px;pointer-events:none}
+@media(max-width:1000px){.flw-r{grid-template-columns:repeat(3,minmax(0,1fr))}.ch.st:nth-child(3)::after{display:none}}
+@media(max-width:600px){.flw-r{grid-template-columns:1fr 1fr}.ch.st::after{display:none}}
 .fx .fg{max-width:none;gap:8px}.fx .fg>span{width:auto;margin:0 12px 0 0}.fx{padding:14px 22px}
 .fg>span{width:100%;font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--tan);margin-bottom:2px}
 .ch{font:inherit;font-size:13px;font-weight:500;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink2);cursor:pointer;display:inline-flex;align-items:center;gap:7px;transition:background .2s,border-color .2s,color .2s}
@@ -264,7 +273,7 @@ const MI=Object.fromEntries(M.map(m=>[m.id,m]));
 const FEED={};M.forEach(m=>m.o.forEach(o=>{(FEED[o[0]]=FEED[o[0]]||new Set()).add(m.r)}));
 const PROB={EL:["Strata oczekiwana (EL)","Odpisy i rezerwy w bilansie, koszt ryzyka w wyniku. Pokrywa ją marża i bieżący wynik."],UL:["Strata nieoczekiwana (UL)","Wymogi kapitałowe – RWA, Filar 2. Pokrywają ją fundusze własne."],S:["Scenariusz skrajny","Stres testy: co stanie się z wynikiem i kapitałem w dekoniunkturze."],N:["Wycena, marża i płynność","Modele, które nie liczą straty: wycena, odsetki, płynność i scenariusze. Wpływają na bilans, wynik i kapitał inną drogą."]};
 const cat=m=>/EL/.test(m.lt)&&/UL/.test(m.lt)?["EL","UL"]:/EL/.test(m.lt)?["EL"]:/UL/.test(m.lt)?["UL"]:["N"];
-const PROC={bud:["Budowa modeli",["budowa","ecl","piec","estymacja"],"Projektowanie modelu: koncepcja, dane, rozkłady i techniki estymacji."],wal:["Walidacja modeli",["estymacja","ryzmod","ecl","budowa"],"Ocena, czy model działa: testy ilościowe, logika biznesowa, okiem walidatora."],dcz:["Decyzje zarządu",["mwn","piec","ryzmod"],"Jak wyniki modeli przekładają się na kapitał, wynik i decyzje – i jak o nich rozmawiać."]};
+const PROC={kon:["Koncepcja modelu",["budowa","ryzmod","piec"],"Cel i zakres: jakie ryzyko, jaka metoda, jakie dane i jakie ograniczenia."],bud:["Budowa modelu",["budowa","ecl","estymacja","mwn"],"Dane, rozkłady, techniki estymacji i kalibracja."],wal:["Walidacja modelu",["estymacja","ryzmod","ecl","budowa"],"Ocena, czy model działa: testy ilościowe, logika biznesowa, okiem walidatora."],wdr:["Wdrożenie modelu",["ryzmod","ecl"],"Implementacja w systemach, zgodność z dokumentacją, zatwierdzenie i włączenie do procesów."],adm:["Administrowanie modelem",["ryzmod","estymacja"],"Monitoring, rekalibracja, inwentarz modeli i zarządzanie zmianą."],dcz:["Wyniki modelu i decyzje",["mwn","piec","ryzmod"],"Jak wyniki modeli przekładają się na kapitał, wynik i decyzje – i jak o nich rozmawiać."]};
 const RT={
  cet1:{g:"k",n:"Współczynnik CET1",f:["CET1","RWA"],dir:"↑",num:["k_cet1"],den:["k_rwa_k","k_rwa_cva","k_rwa_r","k_rwa_o"],d:"Im niższe RWA z modeli przy tej samej ekspozycji, tym wyższy wskaźnik – dlatego nadzór wymaga konserwatyzmu i stosuje output floor."},
  tcr:{g:"k",n:"Łączny współczynnik kapitałowy",f:["fundusze własne","RWA"],dir:"↑",num:["k_cet1","k_at1","k_t2"],den:["k_rwa_k","k_rwa_cva","k_rwa_r","k_rwa_o"],d:"Jak CET1, ale w liczniku także AT1 i Tier 2. Przy IRB nadwyżka rezerw nad EL może zwiększyć Tier 2."},
@@ -289,7 +298,7 @@ function blk(id){const b=BI[id],f=FEED[id]?[...FEED[id]]:[];return`<button type=
 const grp=[["K","Ryzyko kredytowe"],["R","Ryzyko rynkowe"],["O","Ryzyko operacyjne"],["A","Stopa % i płynność"],["M","Ryzyko modeli"],["S","Stres testy"]];
 document.getElementById("ml").innerHTML=grp.map(g=>{const ms=M.filter(m=>m.r===g[0]);return ms.length?`<div class="mg" data-s="r:${g[0]}" title="Pokaż całą grupę: ${g[1]}" style="flex:${ms.length} 1 ${Math.max(140,ms.length*85)}px;--gc:${RISK[g[0]].c}"><span>${g[1]}</span>${ms.map(m=>`<button type="button" class="mb" data-s="m:${m.id}"><i style="background:${RISK[m.r].c}"></i><span class="mn">${esc(m.n)}</span><span class="mp">${pl(m.lt)}</span></button>`).join("")}</div>`:""}).join("");
 document.getElementById("fx").innerHTML=
- `<div class="fg"><span>Proces</span>${Object.entries(PROC).map(([k,v])=>`<button type="button" class="ch" data-s="p:${k}">${v[0]}</button>`).join("")}</div>`;
+ `<div class="flw"><span class="flw-h">Cykl życia modelu</span><div class="flw-r">${Object.entries(PROC).map(([k,v],i)=>`<button type="button" class="ch st" data-s="p:${k}"><em>${String(i+1).padStart(2,"0")}</em>${v[0]}</button>`).join("")}</div></div>`;
 document.getElementById("tg").innerHTML=T.map((t,i)=>`<button type="button" class="tb" data-s="t:${t.id}"><i style="background:${TC[i%TC.length]}">${String(i+1).padStart(2,"0")}</i>${esc(t.title)}</button>`).join("");
 /* ---------- logika ---------- */
 function pl(t){return !t?"":t==="EL+UL"?pl("EL")+pl("UL"):t==="EL"?'<span class="pl el">EL</span>':t==="UL"?'<span class="pl ul">UL</span>':t==="S"?'<span class="pl s">stres</span>':""}
@@ -313,7 +322,7 @@ function info(sel,R){if(!sel){ib.innerHTML=`<span class="kick" style="font-size:
   ib.style.removeProperty("--hc");
   if(k==="b"){const b=BI[id],ms=M.filter(m=>m.o.some(o=>o[0]===id));ib.innerHTML=`<span class="kick" style="font-size:11px">Pozycja w banku</span><h4>${esc(b.n)}</h4>${ms.length?`<p>Kształtują ją:</p><ol>${ms.map(m=>`<li><b>${esc(m.n)}</b>${pl(m.o.find(o=>o[0]===id)[2])} – ${esc(m.o.find(o=>o[0]===id)[1])}</li>`).join("")}</ol>`:`<p class="hint">Na tej mapie żaden z modeli nie zasila tej pozycji wprost.</p>`}${clr}`;return}
   if(k==="q"){const r=RT[id];ib.innerHTML=`<span class="kick" style="font-size:11px">Wskaźnik · ${({k:"kapitał",l:"płynność",w:"wynik i portfel"})[r.g]}</span><h4>${esc(r.n)}</h4><p><b>licznik:</b> ${esc(r.f[0])} · <b style="color:var(--terra-d)">mianownik:</b> ${esc(r.f[1])}</p><p>${esc(r.d)}</p>${cnt}${clr}`;return}
-  const tt=k==="r"?["Rodzaj ryzyka",RISK[id].n,"Modele tego ryzyka i miejsca, w których ich wyniki trafiają do bilansu, wyniku i kapitału."]:k==="l"?["Klasa problemu",PROB[id][0],PROB[id][1]]:k==="p"?["Proces",PROC[id][0],PROC[id][2]]:["Szkolenie",tName(id),"Modele omawiane na szkoleniu i miejsca w banku, w których działają."];
+  const tt=k==="r"?["Rodzaj ryzyka",RISK[id].n,"Modele tego ryzyka i miejsca, w których ich wyniki trafiają do bilansu, wyniku i kapitału."]:k==="l"?["Klasa problemu",PROB[id][0],PROB[id][1]]:k==="p"?["Cykl życia modelu",PROC[id][0],PROC[id][2]]:["Szkolenie",tName(id),"Modele omawiane na szkoleniu i miejsca w banku, w których działają."];
   ib.innerHTML=`<span class="kick" style="font-size:11px">${tt[0]}</span><h4>${esc(tt[1])}</h4><p>${esc(tt[2])}</p>${cnt}${k==="t"&&TL[id]?`<a class="clr" style="display:inline-block;text-decoration:none;margin-right:8px" href="${TL[id]}">Program szkolenia →</a>`:""}${clr}`}
 let lock=null;
 const FL=[["r_netto","p_kapital","zysk zatrzymany"],["r_oci","p_kapital","skumulowane OCI"],["p_kapital","k_cet1","kapitał własny − odliczenia"],["p_emisje","k_t2","dług podporządkowany"],["p_emisje","k_at1","instrumenty AT1"],["a_ecl","r_ecl","zmiana stanu odpisów"],["a_kredyty","r_przych","odsetki od kredytów"],["p_depozyty","r_koszt","odsetki od depozytów"],["a_kredyty","k_rwa_k","ekspozycje × wagi ryzyka"],["z_pozab","k_rwa_k","EAD (CCF)"],["a_handl","k_rwa_r","pozycje handlowe"],["p_rezerwy","r_ecl","rezerwy na pozabilans"]];
