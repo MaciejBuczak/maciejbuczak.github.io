@@ -84,6 +84,35 @@
 .clr:hover{border-color:var(--ink)}
 @media(max-width:900px){.inf{grid-template-columns:1fr}.tg{grid-template-columns:1fr}}
 .mapw{padding-bottom:clamp(56px,7vw,96px)}
+/* przełącznik widoku */
+.vs{display:inline-flex;gap:4px;padding:4px;border-radius:999px;background:var(--panel);border:1px solid var(--line);margin-bottom:18px}
+.vs button{font:inherit;font-size:13.5px;font-weight:600;padding:8px 18px;border-radius:999px;border:0;background:transparent;color:var(--ink2);cursor:pointer}
+.vs button.on{background:var(--ink);color:var(--paper)}
+#vS[hidden],#vD[hidden]{display:none}
+/* widok prosty */
+.sb{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:34px;position:relative;padding:4px 0 8px}
+.sc{position:relative;border-radius:24px;padding:22px 20px 18px;background:var(--card);border:1px solid var(--line);display:flex;flex-direction:column;gap:10px}
+.sc+.sc::before{content:"→";position:absolute;left:-28px;top:50%;transform:translateY(-50%);font-size:20px;color:var(--tan)}
+.sc h3{font-family:var(--body);font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink2);margin:0 0 4px}
+.sc h3 b{display:block;font-family:var(--display);font-weight:400;font-size:22px;letter-spacing:0;text-transform:none;color:var(--ink);margin-top:4px}
+.si{position:relative;font:inherit;text-align:left;border-radius:16px;border:1px solid var(--line);background:#fffdf9;padding:14px 16px;cursor:pointer;transition:opacity .25s,box-shadow .25s,border-color .25s,background .25s}
+.si b{display:block;font-size:15px;font-weight:600;color:var(--ink)}.si small{display:block;font-size:12px;color:var(--muted);margin-top:2px}
+.si .rd{display:flex;gap:4px;margin-top:8px}.si .rd i{width:10px;height:10px;border-radius:3px}
+.si .cn{position:absolute;top:-10px;right:12px;min-width:22px;height:22px;padding:0 7px;border-radius:999px;background:var(--hc,var(--terra));color:#fff;font-size:11.5px;font-weight:600;display:none;place-items:center}
+.si:hover{border-color:var(--ink)}
+.sv.sel .si{opacity:.3}.sv.sel .si.hit{opacity:1;border-color:var(--hc,var(--terra));box-shadow:0 0 0 2px var(--hc,var(--terra))}.sv.sel .si.hit .cn{display:grid}
+.sv.sel .si.cur{opacity:1;background:var(--ink);border-color:var(--ink)}.sv.sel .si.cur b{color:var(--paper)}.sv.sel .si.cur small{color:#b9b0a2}
+.sc1{background:#f3e4c4;border-color:transparent}.sc2{background:#e0dccb;border-color:transparent}.sc3{background:#f9d5bd;border-color:transparent}.sc4{background:#e7d4c4;border-color:transparent}
+.sp{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:28px;margin-top:26px;padding-top:18px;border-top:1px solid var(--ink)}
+.sg>span{display:block;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--tan);margin-bottom:10px}
+.sg>div{display:flex;flex-wrap:wrap;gap:8px}
+.sk{font:inherit;font-size:14px;font-weight:500;padding:10px 16px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;display:inline-flex;align-items:center;gap:9px;transition:opacity .25s,background .25s,border-color .25s,color .25s}
+.sk i{width:11px;height:11px;border-radius:3px;flex:none}
+.sk:hover{border-color:var(--ink)}
+.sv.sel .sk{opacity:.35}.sv.sel .sk.on{opacity:1;border-color:var(--ink)}.sv.sel .sk.cur{opacity:1;background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.sn{margin:18px 0 0;font-size:15px;color:var(--ink2);min-height:24px}.sn b{color:var(--ink)}.sn .clr{margin:0 0 0 10px}
+@media(max-width:1000px){.sb{grid-template-columns:1fr 1fr;gap:16px}.sc+.sc::before{display:none}.sp{grid-template-columns:1fr}}
+@media(max-width:560px){.sb{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -102,6 +131,16 @@
 </div></section>
 
 <div class="wrap mapw">
+  <div class="vs" role="tablist" aria-label="Widok mapy"><button type="button" role="tab" data-view="s">Widok prosty</button><button type="button" role="tab" data-view="d">Widok szczegółowy</button></div>
+  <div id="vS" class="sv">
+    <div class="sb" id="sb"></div>
+    <div class="sp">
+      <div class="sg"><span>Ryzyka</span><div id="sr"></div></div>
+      <div class="sg"><span>Szkolenia</span><div id="st"></div></div>
+    </div>
+    <p class="sn" id="sn"></p>
+  </div>
+  <div id="vD">
   <div class="fx" id="fx"></div>
   <div class="lay">
     <div>
@@ -112,6 +151,7 @@
       </div>
     </div>
     <aside class="md" id="md"><h3>Modele ryzyka</h3><p class="leg"><span class="pl el" style="margin:0">EL</span> strata oczekiwana – odpisy, rezerwy, koszty · <span class="pl ul" style="margin:0">UL</span> nieoczekiwana – RWA i Filar 2 · bez znacznika: wycena, odsetki, płynność.</p><div id="ml"></div></aside>
+  </div>
   </div>
 </div>
 </main>
@@ -245,6 +285,36 @@ document.addEventListener("click",e=>{if(e.target.closest("[data-clr]")){lock=nu
 document.addEventListener("mouseover",e=>{if(lock)return;const el=e.target.closest(".bl,.mb,.tb");if(el)paint(el.dataset.s)});
 document.addEventListener("mouseout",e=>{if(lock)return;const el=e.target.closest(".bl,.mb,.tb");if(el&&!el.contains(e.relatedTarget))paint(null)});
 paint(null);
+/* ---------- widok prosty ---------- */
+const SB=[["Bilans","Aktywa",[["kred","Kredyty","portfel i limity",["a_kredyty","z_pozab"]],["odp","Odpisy ECL","oczekiwane straty",["a_ecl","p_rezerwy"]],["rynk","Portfel rynkowy","handel i papiery",["a_handl","p_handl","a_papiery","a_kasa"]]]],
+ ["Bilans","Pasywa",[["dep","Depozyty","finansowanie banku",["p_depozyty","p_banki"]],["kw","Kapitał własny","zyski zatrzymane, OCI",["p_kapital","p_emisje"]]]],
+ ["Rachunek zysków i strat","Wynik",[["nii","Wynik odsetkowy","marża między kredytem a depozytem",["r_przych","r_koszt","r_nii"]],["cor","Koszt ryzyka","odpisy ECL, straty, sprawy sądowe",["r_ecl","r_prawne","r_koszty"]],["zn","Zysk netto","także wynik na instrumentach",["r_netto","r_handl","r_oci"]]]],
+ ["Kapitał i wymogi","Kapitał",[["fw","Fundusze własne","i współczynniki kapitałowe",["k_cet1","k_wsk"]],["rwa","RWA – wymogi","kredytowe, rynkowe, operacyjne",["k_rwa_k","k_rwa_r","k_rwa_o","k_rwa_cva"]],["p2","Filar 2 i płynność","ICAAP, stres testy, LCR, NSFR",["k_p2","k_plyn"]]]]];
+const SI={};SB.forEach(c=>c[2].forEach(i=>SI[i[0]]={n:i[1],b:i[3]}));
+const sv=document.getElementById("vS"),sn=document.getElementById("sn");
+const itemRisks=id=>{const r=new Set();M.forEach(m=>{if(m.o.some(o=>SI[id].b.includes(o[0])))r.add(m.r)});return r};
+document.getElementById("sb").innerHTML=SB.map((c,ci)=>`<div class="sc sc${ci+1}"><h3>${c[0]}<b>${c[1]}</b></h3>${c[2].map(i=>`<button type="button" class="si" data-x="i:${i[0]}"><span class="cn"></span><b>${esc(i[1])}</b><small>${esc(i[2])}</small><span class="rd">${["K","R","O","A","M","S"].filter(r=>itemRisks(i[0]).has(r)).map(r=>`<i style="background:${RISK[r].c}" title="${RISK[r].n}"></i>`).join("")}</span></button>`).join("")}</div>`).join("");
+document.getElementById("sr").innerHTML=["K","R","O","A","M","S"].map(r=>`<button type="button" class="sk" data-x="r:${r}"><i style="background:${RISK[r].c}"></i>${RISK[r].n}</button>`).join("");
+document.getElementById("st").innerHTML=T.map((t,i)=>`<button type="button" class="sk" data-x="t:${t.id}"><i style="background:${TC[i%TC.length]};width:22px;height:22px;border-radius:6px;font-family:var(--serif);font-style:italic;font-size:11px;display:grid;place-items:center;color:var(--ink)">${String(i+1).padStart(2,"0")}</i>${esc(t.title)}</button>`).join("");
+let slock=null;const plN=(n,a,b,c)=>n===1?a:(n%10>=2&&n%10<=4&&(n%100<10||n%100>=20))?b:c;
+function spaint(sel){sv.querySelectorAll("[data-x]").forEach(e=>{e.classList.remove("hit","on","cur");e.style.removeProperty("--hc");const c=e.querySelector(".cn");if(c)c.textContent=""});sv.classList.toggle("sel",!!sel);
+  if(!sel){sn.innerHTML='Kliknij ryzyko, szkolenie albo element banku. Strzałki pokazują drogę: od kredytów i depozytów, przez wynik, do kapitału.';return}
+  const [k,id]=sel.split(":");let ms=[];
+  if(k==="r")ms=M.filter(m=>m.r===id);else if(k==="t")ms=M.filter(m=>m.t.includes(id));else ms=M.filter(m=>m.o.some(o=>SI[id].b.includes(o[0])));
+  const hc=k==="r"?RISK[id].c:"#bf8165",items={};ms.forEach(m=>Object.entries(SI).forEach(([iid,v])=>{if(m.o.some(o=>v.b.includes(o[0])))items[iid]=(items[iid]||0)+1}));
+  Object.entries(items).forEach(([iid,n])=>{const e=sv.querySelector(`[data-x="i:${iid}"]`);e.classList.add("hit");e.style.setProperty("--hc",hc);e.querySelector(".cn").textContent=n});
+  const rs=new Set(ms.map(m=>m.r)),ts=new Set();ms.forEach(m=>m.t.forEach(t=>ts.add(t)));if(k==="t"){ts.clear();ts.add(id)}
+  rs.forEach(r=>{const e=sv.querySelector(`[data-x="r:${r}"]`);if(e)e.classList.add("on")});ts.forEach(t=>{const e=sv.querySelector(`[data-x="t:${t}"]`);if(e)e.classList.add("on")});
+  const cur=sv.querySelector(`[data-x="${sel}"]`);cur.classList.add("cur");
+  const name=k==="r"?"Ryzyko "+RISK[id].n.toLowerCase():k==="t"?tName(id):SI[id].n;
+  sn.innerHTML=`<b>${esc(name)}</b> → ${ms.length} ${plN(ms.length,"model","modele","modeli")}, ${Object.keys(items).length} ${plN(Object.keys(items).length,"obszar","obszary","obszarów")} banku, ${ts.size} ${plN(ts.size,"szkolenie","szkolenia","szkoleń")}. <span style="color:var(--muted)">Szczegóły – w widoku szczegółowym.</span>${slock?'<button type="button" class="clr" data-sclr>Wyczyść ✕</button>':""}`}
+sv.addEventListener("click",e=>{if(e.target.closest("[data-sclr]")){slock=null;spaint(null);return}const el=e.target.closest("[data-x]");if(!el)return;e.stopPropagation();slock=slock===el.dataset.x?null:el.dataset.x;spaint(slock)});
+sv.addEventListener("mouseover",e=>{if(slock)return;const el=e.target.closest("[data-x]");if(el)spaint(el.dataset.x)});
+sv.addEventListener("mouseout",e=>{if(slock)return;const el=e.target.closest("[data-x]");if(el&&!el.contains(e.relatedTarget))spaint(null)});
+spaint(null);
+function setView(v){document.getElementById("vS").hidden=v!=="s";document.getElementById("vD").hidden=v!=="d";document.querySelectorAll(".vs button").forEach(b=>{const on=b.dataset.view===v;b.classList.toggle("on",on);b.setAttribute("aria-selected",on)});try{localStorage.setItem("rt_mapa_view",v)}catch(e){}}
+document.querySelector(".vs").addEventListener("click",e=>{const b=e.target.closest("[data-view]");if(b)setView(b.dataset.view)});
+let v0="s";try{v0=localStorage.getItem("rt_mapa_view")||"s"}catch(e){}setView(v0);
 })();
 </script>
 <script src="../rt.js"></script>
