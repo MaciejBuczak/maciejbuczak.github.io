@@ -321,7 +321,7 @@ function flows(list){let sv=document.getElementById("fl");if(!sv){bank.style.pos
     h+=`<path d="${d}" fill="none" stroke="#0d0d0d" stroke-width="1.6" stroke-dasharray="6 5" marker-end="url(#fa)"/><circle cx="${lx}" cy="${ly}" r="10" fill="#0d0d0d"/><text x="${lx}" y="${ly+4}" text-anchor="middle" font-family="Poppins,sans-serif" font-size="11" font-weight="600" fill="#f5f1ea">${n+1}</text>`});
   sv.innerHTML=h}
 function flowNote(){if(!curFl.length||innerWidth<1000)return;ib.insertAdjacentHTML("beforeend",`<div class="fln"><span class="kick" style="font-size:11px">Przepływy na mapie</span><ol>${curFl.map((f,n)=>`<li><i>${n+1}</i><span><b>${esc(BI[f[0]].n)} → ${esc(BI[f[1]].n)}</b><br>${esc(f[2])}</span></li>`).join("")}</ol></div>`)}
-let curFl=[];function setFlows(sel){const k=sel&&sel.split(":")[0],id=sel&&sel.split(":")[1];curFl=k==="b"?FL.filter(f=>f[0]===id||f[1]===id):[FL[0],FL[2]];flows(curFl)}
+let curFl=[];function setFlows(sel){const k=sel&&sel.split(":")[0],id=sel&&sel.split(":")[1];curFl=!sel?[FL[0],FL[2]]:k==="b"?FL.filter(f=>f[0]===id||f[1]===id):[];flows(curFl)}
 addEventListener("resize",()=>flows(curFl));if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>flows(curFl));
 function paint(sel){setFlows(sel);const md=document.getElementById("md"),tr=document.getElementById("tr");
   document.querySelectorAll("[data-s]").forEach(e=>e.classList.remove("on","cur","hit"));
