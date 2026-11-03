@@ -288,7 +288,7 @@ const tName=id=>(T.find(t=>t.id===id)||{}).title||id;
 function resolve(sel){const [k,id]=sel.split(":"),R={m:new Set(),b:new Map(),t:new Set(),ring:null,hc:"#bf8165"};
   const addM=mid=>{R.m.add(mid);MI[mid].o.forEach((o,i)=>{if(!R.b.has(o[0]))R.b.set(o[0],[]);if(k==="m")R.b.get(o[0]).push(i+1)});MI[mid].t.forEach(t=>R.t.add(t))};
   if(k==="m"){addM(id);R.hc=RISK[MI[id].r].c}
-  else if(k==="b"){M.forEach(m=>{if(m.o.some(o=>o[0]===id))addM(m.id)});R.b=new Map([[id,[]]]);M.forEach(m=>{if(R.m.has(m.id))m.o.forEach(o=>{if(!R.b.has(o[0]))R.b.set(o[0],[])})})}
+  else if(k==="b"){M.forEach(m=>{if(m.o.some(o=>o[0]===id))addM(m.id)});R.b=new Map([[id,[]]])}
   else if(k==="r"){M.filter(m=>m.r===id).forEach(m=>addM(m.id));R.hc=RISK[id].c}
   else if(k==="l"){M.forEach(m=>{const hit=m.o.filter(o=>o[2]===id);if(hit.length){R.m.add(m.id);m.t.forEach(t=>R.t.add(t));hit.forEach(o=>{if(!R.b.has(o[0]))R.b.set(o[0],[])})}});R.hc=id==="UL"?"#0d0d0d":id==="S"?"#9a3b25":"#a8862c"}
   else if(k==="p"){PROC[id][1].forEach(t=>R.t.add(t));M.forEach(m=>{if(m.t.some(t=>R.t.has(t)))addM(m.id)});R.t=new Set(PROC[id][1])}
