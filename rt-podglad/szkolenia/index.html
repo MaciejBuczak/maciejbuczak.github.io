@@ -187,42 +187,11 @@
 .p2 .tile:nth-child(4) .art{background:#f2e6c1!important}
 .p2 .tile:nth-child(5) .art{background:#e5d4c6!important}
 .p2 .tile:nth-child(6) .art{background:#eadbc6!important}
-/* mapa tematów */
-.mp{background:var(--ink);color:var(--paper);padding:clamp(56px,7vw,96px) 0 clamp(48px,6vw,80px);margin-top:clamp(8px,2vw,24px)}
-.mp .kick{color:var(--sand)}
-.mp-h{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px 60px;align-items:end;margin-bottom:26px}
-.mp-h h2{font-size:clamp(28px,3.4vw,44px);margin:14px 0 0;color:var(--paper)}
-.mp-h p{margin:0;color:#b9b0a2;font-size:15.5px;max-width:520px}
-.mp-st{display:flex;align-items:center;gap:14px;min-height:40px;border-top:1px solid #2c2925;padding-top:14px;margin-bottom:8px;font-size:14px;color:#cfc6b8}
-.mp-st b{color:var(--paper);font-weight:600}.mp-st b+span{margin-left:10px}.mp-st em{font-style:normal;color:var(--terra)}
-.mp-st button{margin-left:auto;font:inherit;font-size:12.5px;font-weight:600;color:var(--paper);background:transparent;border:1px solid #4a443d;border-radius:999px;padding:6px 14px;cursor:pointer}
-.mp-st button:hover{border-color:var(--terra)}
-.mp-cv svg{display:block;width:100%;height:auto}
-.mp-cv .n{cursor:pointer;opacity:0;transition:opacity .7s ease var(--d,0s)}.mp-cv.in .n{opacity:1}
-.mp-cv .e{opacity:0;transition:opacity 1.2s ease .6s}.mp-cv.in .e{opacity:1}
-.mp-cv .n rect{transition:fill .25s,stroke .25s,opacity .25s}
-.mp-cv .n text{transition:fill .25s,opacity .25s;pointer-events:none}
-.mp-cv .n:hover rect{stroke:#8f877b}
-.mp-cv .n:focus{outline:none}.mp-cv .n:focus-visible rect{stroke:var(--terra);stroke-width:2}
-.mp-cv .e{fill:none;stroke:#f5f1ea;stroke-opacity:.07;stroke-width:1;transition:stroke .3s,stroke-opacity .3s,stroke-width .3s}
-.mp-cv.sel .e{stroke-opacity:.025}
-.mp-cv .e.on{stroke:var(--terra);stroke-opacity:.95;stroke-width:1.8}
-.mp-cv .e.on2{stroke:#d4c4b0;stroke-opacity:.35;stroke-width:1.2}
-.mp-cv.sel .n:not(.on):not(.on2):not(.cur) rect,.mp-cv.sel .n:not(.on):not(.on2):not(.cur) text{opacity:.28}
-.mp-cv .n.on rect{fill:var(--terra);stroke:var(--terra)}.mp-cv .n.on text{fill:#fff}
-.mp-cv .n.on2 rect{stroke:#d4c4b0}.mp-cv .n.cur rect{fill:#f5f1ea;stroke:#f5f1ea}.mp-cv .n.cur text{fill:#0d0d0d}
-.mp-cv .hd{font:600 11px Poppins,sans-serif;letter-spacing:.16em;fill:#d4c4b0}
-.mp-cv .hdl{stroke:#3a352f}
-.mp-tr{display:grid;grid-template-columns:110px minmax(0,1fr);gap:16px;align-items:start;border-top:1px solid #2c2925;padding-top:18px;margin-top:10px}
-.mp-tl{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#d4c4b0;padding-top:12px}
-.mp-tg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
-.mp-t{display:flex;align-items:center;gap:12px;text-align:left;font:inherit;color:#e8e1d6;background:#171512;border:1px solid #2c2925;border-radius:14px;padding:11px 14px;cursor:pointer;transition:background .25s,border-color .25s,opacity .25s,color .25s}
-.mp-t i{flex:none;width:28px;height:28px;border-radius:8px;display:grid;place-items:center;font-style:normal;font-family:var(--serif);font-style:italic;font-size:14px;color:#0d0d0d}
-.mp-t span{font-size:13.5px;font-weight:500;line-height:1.3}
-.mp-t:hover{border-color:#5c564d}
-.mp.sel .mp-t{opacity:.35}.mp.sel .mp-t.on{opacity:1;background:#f5f1ea;color:#0d0d0d;border-color:#f5f1ea}.mp.sel .mp-t.cur{opacity:1;background:var(--terra);color:#fff;border-color:var(--terra)}
-@media(max-width:900px){.mp-h{grid-template-columns:1fr}.mp-cv{overflow-x:auto;margin:0 calc(-1*clamp(18px,4vw,40px));padding:0 clamp(18px,4vw,40px)}.mp-cv svg{min-width:900px}.mp-tr{grid-template-columns:1fr}.mp-tg{grid-template-columns:1fr 1fr}}
-@media(max-width:520px){.mp-tg{grid-template-columns:1fr}}
+.mpl{display:flex;align-items:center;justify-content:space-between;gap:24px;margin:8px 0 clamp(8px,2vw,16px);padding:24px 28px;border-radius:22px;background:var(--ink);color:var(--paper);text-decoration:none;transition:transform .3s,box-shadow .3s}
+.mpl:hover{transform:translateY(-2px);box-shadow:0 24px 50px -30px rgba(0,0,0,.6)}
+.mpl .kick{color:var(--sand)}.mpl b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(19px,2vw,26px);line-height:1.2;margin-top:10px}
+.mpl .go{flex:none;display:grid;place-items:center;width:52px;height:52px;border-radius:50%;border:1.5px solid var(--paper);font-size:20px;transition:background .25s,color .25s,transform .25s}
+.mpl:hover .go{background:var(--paper);color:var(--ink);transform:rotate(-45deg)}
 /* animacje grafik */
 .tile .dr{stroke-dasharray:var(--l,600);stroke-dashoffset:var(--l,600)}
 .tile.in .dr,.tile:hover .dr{animation:dr 1.6s cubic-bezier(.3,.6,.2,1) forwards;animation-delay:var(--d,0s)}
@@ -244,7 +213,7 @@
 <header class="top" id="top">
   <div class="wrap">
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
-    <nav class="nav" id="nav"><a href="../">Start</a><a class="on" href="./">Szkolenia</a><a href="../o-mnie/">O mnie</a><a href="../#kontakt">Kontakt</a><a class="sci" href="/">Strona naukowa ↗</a></nav>
+    <nav class="nav" id="nav"><a href="../">Start</a><a class="on" href="./">Szkolenia</a><a href="../mapa-banku/">Mapa banku</a><a href="../o-mnie/">O mnie</a><a href="../#kontakt">Kontakt</a><a class="sci" href="/">Strona naukowa ↗</a></nav>
     <a class="brand" href="../"><span><b>Risk Trainings</b><small>Maciej Buczak · Risk Research</small></span><span class="logo" aria-hidden="true"><i></i><i></i><i></i></span></a>
   </div>
 </header>
@@ -268,17 +237,7 @@
   <div class="lay-h"><h2 class="lay-t">Programy</h2></div>
   <div class="tiles" id="tiles"></div>
 </div>
-<section class="mp" id="mapa">
-  <div class="wrap">
-    <div class="mp-h">
-      <div><span class="kick">Mapa tematów</span><h2>Gdzie w banku pracują modele ryzyka.</h2></div>
-      <p>Obszary banku, rodzaje ryzyk, klasy problemów i procesy – połączone z modelami i szkoleniami. Kliknij dowolny element, aby zobaczyć, co się z nim łączy.</p>
-    </div>
-    <div class="mp-st" id="mpSt"><span id="mpTxt">Wybierz element mapy albo szkolenie.</span><button type="button" id="mpClr" hidden>Wyczyść ✕</button></div>
-    <div class="mp-cv"><svg id="mpSvg" viewBox="0 0 1200 640" role="img" aria-label="Interaktywna mapa: obszary banku, rodzaje ryzyk, modele ryzyka, klasy problemów i procesy oraz powiązane szkolenia."></svg></div>
-    <div class="mp-tr"><span class="mp-tl">Szkolenia</span><div class="mp-tg" id="mpTr"></div></div>
-  </div>
-</section>
+<div class="wrap"><a class="mpl rv" href="../mapa-banku/"><span><span class="kick">Mapa banku</span><b>Gdzie modele ryzyka zmieniają liczby banku – i które szkolenia to obejmują.</b></span><span class="go" aria-hidden="true">→</span></a></div>
 <div class="an2" aria-hidden="true"><div class="an2-o"><span class="an2-t" id="an2t">Backtest VaR</span><span class="an2-c" id="lg2"></span></div><canvas class="bgsim2" id="mc2"></canvas></div>
 <div class="wrap">
   <div class="cu rv">
@@ -291,7 +250,7 @@
 <footer class="foot">
   <div class="wrap">
     <div><a class="brand" href="../"><span><b>Risk Trainings</b></span><span class="logo" aria-hidden="true"><i></i><i></i><i></i></span></a><p style="margin:14px 0 0;max-width:340px">Szkolenia z zarządzania ryzykiem dla banków i instytucji finansowych.</p></div>
-    <div><h4>Strony</h4><a href="../">Start</a><a href="./">Szkolenia</a><a href="../o-mnie/">O mnie</a><a href="/">Strona naukowa</a></div>
+    <div><h4>Strony</h4><a href="../">Start</a><a href="./">Szkolenia</a><a href="../mapa-banku/">Mapa banku</a><a href="../o-mnie/">O mnie</a><a href="/">Strona naukowa</a></div>
     <div><h4>Kontakt</h4><a href="mailto:maciej.buczak@gmail.com">maciej.buczak@gmail.com</a><a href="https://www.linkedin.com/in/maciej-buczak-561b95120" target="_blank" rel="noopener">LinkedIn</a></div>
     <div class="bottom"><span>© 2026 Maciej Buczak | Risk Research</span><span>Wersja próbna strony</span></div>
   </div>
@@ -491,70 +450,6 @@ HERO.set(CUR.g);HERO2.set(CUR.g2);
 document.getElementById("an2t").textContent=GR.find(x=>x[0]===CUR.g2)[1];
 </script>
 <script>
-/* ---------- mapa tematów ---------- */
-(function(){
-  const COLS=[{k:"a",t:"OBSZARY BANKU",x:0,w:220},{k:"r",t:"RODZAJE RYZYK",x:250,w:170},{k:"m",t:"MODELE",x:470,w:250},{k:"p",t:"KLASY PROBLEMÓW",x:770,w:200},{k:"s",t:"PROCESY",x:1010,w:190}];
-  const N={
-    a:[["dec","Decyzje kredytowe i pricing"],["rez","Rezerwy i wynik (IFRS 9)"],["kreg","Kapitał regulacyjny (Filar 1)"],["kwew","Kapitał wewnętrzny (ICAAP)"],["rm","Ryzyko modeli (Rek. W)"]],
-    r:[["kred","Ryzyko kredytowe"],["ryn","Ryzyko rynkowe"],["oper","Ryzyko operacyjne"],["mod","Ryzyko modeli"]],
-    m:[["sc","Scoring i rating"],["pd","PD – 12 m i lifetime"],["lgd","LGD"],["ead","EAD / CCF"],["ecl","ECL – IFRS 9"],["irb","IRB"],["cm","CreditMetrics"],["crp","CreditRisk+"],["lda","Model aktuarialny (LDA)"],["var","VaR i Expected Shortfall"],["mr","Kwantyfikacja ryzyka modeli"]],
-    p:[["el","Strata oczekiwana (EL)"],["ul","Strata nieoczekiwana (UL)"],["par","Parametry ryzyka"],["niep","Niepewność modelu"]],
-    s:[["bud","Budowa modeli"],["wal","Walidacja modeli"],["dcz","Decyzje i komunikacja"]]};
-  /* powiązania modeli: obszary, ryzyka, problemy, procesy, szkolenia */
-  const L={
-    sc:{a:["dec"],r:["kred"],p:["par"],s:["bud","wal","dcz"],t:["budowa","estymacja"]},
-    pd:{a:["dec","rez","kreg"],r:["kred"],p:["par","el"],s:["bud","wal"],t:["budowa","ecl","estymacja","piec"]},
-    lgd:{a:["rez","kreg"],r:["kred"],p:["par","el"],s:["bud","wal"],t:["ecl","estymacja","budowa"]},
-    ead:{a:["rez","kreg"],r:["kred"],p:["par","el"],s:["bud","wal"],t:["ecl","estymacja"]},
-    ecl:{a:["rez"],r:["kred"],p:["el"],s:["bud","wal","dcz"],t:["ecl"]},
-    irb:{a:["kreg"],r:["kred"],p:["ul"],s:["bud","wal","dcz"],t:["piec","mwn"]},
-    cm:{a:["kwew"],r:["kred"],p:["ul"],s:["bud","wal","dcz"],t:["piec","mwn"]},
-    crp:{a:["kwew"],r:["kred"],p:["ul"],s:["bud","wal","dcz"],t:["piec","mwn"]},
-    lda:{a:["kreg","kwew"],r:["oper"],p:["ul"],s:["bud","wal","dcz"],t:["piec","mwn","budowa"]},
-    var:{a:["kreg","kwew"],r:["ryn"],p:["ul"],s:["bud","wal","dcz"],t:["piec","mwn","budowa"]},
-    mr:{a:["rm"],r:["mod"],p:["niep"],s:["wal","dcz"],t:["ryzmod","estymacja"]}};
-  const T=(window.RT_SZKOLENIA||[]),TC=["#f3e4c4","#f9d5bd","#e0dccb","#efe4bc","#e7d4c4","#f0e2cf"],H=40,GAP=12,TOP=56,NS="http://www.w3.org/2000/svg";
-  const pos={},svg=document.getElementById("mpSvg"),cv=svg.parentNode,sec=document.getElementById("mapa");
-  /* układ: kolumny wyśrodkowane w pionie */
-  const maxN=Math.max(...COLS.map(c=>N[c.k].length));const Hh=TOP+maxN*(H+GAP);svg.setAttribute("viewBox","0 0 1200 "+(Hh+8));
-  COLS.forEach(c=>{const n=N[c.k],h=n.length*(H+GAP)-GAP,y0=TOP+(maxN*(H+GAP)-GAP-h)/2;n.forEach((d,i)=>pos[c.k+":"+d[0]]={x:c.x,y:y0+i*(H+GAP),w:c.w,k:c.k,id:d[0],t:d[1]})});
-  const edges=[];Object.entries(L).forEach(([m,l])=>{["a","r","p","s"].forEach(k=>l[k].forEach(id=>edges.push(["m:"+m,k+":"+id])))});
-  let h="";COLS.forEach(c=>{h+=`<text class="hd" x="${c.x}" y="18">${c.t}</text><line class="hdl" x1="${c.x}" y1="30" x2="${c.x+c.w}" y2="30"/>`});
-  edges.forEach((e,i)=>{const m=pos[e[0]],o=pos[e[1]],left=o.x<m.x,x1=left?o.x+o.w:o.x,x2=left?m.x:m.x+m.w,y1=o.y+H/2,y2=m.y+H/2,dx=(x2-x1)/2;h+=`<path class="e" data-e="${i}" d="M${x1} ${y1} C ${x1+dx} ${y1}, ${x2-dx} ${y2}, ${x2} ${y2}"/>`});
-  Object.values(pos).forEach(p=>{const mdl=p.k==="m";h+=`<g class="n" style="--d:${(COLS.findIndex(c=>c.k===p.k)*.12).toFixed(2)}s" tabindex="0" role="button" data-id="${p.k}:${p.id}" aria-label="${p.t}"><rect x="${p.x}" y="${p.y}" width="${p.w}" height="${H}" rx="${mdl?12:20}" fill="${mdl?"#1f1c19":"#171512"}" stroke="${mdl?"#4a443d":"#2c2925"}" stroke-width="1.2"/>${mdl?`<rect x="${p.x+12}" y="${p.y+16}" width="8" height="8" rx="2" fill="#bf8165" stroke="none"/>`:""}<text x="${p.x+(mdl?30:16)}" y="${p.y+H/2+4.5}" font-family="Poppins,sans-serif" font-size="${mdl?13.5:13}" font-weight="${mdl?600:500}" fill="#e8e1d6">${p.t}</text></g>`});
-  svg.innerHTML=h;
-  /* szkolenia */
-  const tr=document.getElementById("mpTr");tr.innerHTML=T.map((t,i)=>`<button type="button" class="mp-t" data-t="${t.id}"><i style="background:${TC[i%TC.length]}">${String(i+1).padStart(2,"0")}</i><span>${t.title}</span></button>`).join("");
-  const nameT=id=>(T.find(t=>t.id===id)||{}).title||id;
-  /* wybór */
-  let lock=null;
-  function rel(sel){const R={m:new Set(),o:new Set(),t:new Set(),strong:new Set(),soft:new Set()};const [k,id]=sel.split(":");
-    if(k==="m"){R.m.add(id);const l=L[id];["a","r","p","s"].forEach(c=>l[c].forEach(x=>R.o.add(c+":"+x)));l.t.forEach(x=>R.t.add(x));edges.forEach((e,i)=>{if(e[0]===sel)R.strong.add(i)})}
-    else if(k==="t"){Object.entries(L).forEach(([m,l])=>{if(l.t.includes(id)){R.m.add(m);["a","r","p","s"].forEach(c=>l[c].forEach(x=>R.o.add(c+":"+x)))}});R.t.add(id);edges.forEach((e,i)=>{if(R.m.has(e[0].slice(2)))R.strong.add(i)})}
-    else{Object.entries(L).forEach(([m,l])=>{if(l[k].includes(id)){R.m.add(m);l.t.forEach(x=>R.t.add(x));["a","r","p","s"].forEach(c=>l[c].forEach(x=>R.o.add(c+":"+x)))}});
-      edges.forEach((e,i)=>{const mm=e[0].slice(2);if(!R.m.has(mm))return;if(e[1]===sel)R.strong.add(i);else R.soft.add(i)})}
-    return R}
-  function paint(sel){svg.querySelectorAll(".n").forEach(n=>n.classList.remove("on","on2","cur"));svg.querySelectorAll(".e").forEach(e=>e.classList.remove("on","on2"));tr.querySelectorAll(".mp-t").forEach(b=>b.classList.remove("on","cur"));
-    const st=document.getElementById("mpTxt"),clr=document.getElementById("mpClr");
-    if(!sel){cv.classList.remove("sel");sec.classList.remove("sel");st.innerHTML="Wybierz element mapy albo szkolenie.";clr.hidden=true;return}
-    cv.classList.add("sel");sec.classList.add("sel");const R=rel(sel),[k,id]=sel.split(":");
-    R.m.forEach(m=>svg.querySelector(`[data-id="m:${m}"]`).classList.add("on"));R.o.forEach(o=>{const n=svg.querySelector(`[data-id="${o}"]`);if(n)n.classList.add("on2")});
-    R.strong.forEach(i=>svg.querySelector(`[data-e="${i}"]`).classList.add("on"));R.soft.forEach(i=>svg.querySelector(`[data-e="${i}"]`).classList.add("on2"));
-    R.t.forEach(t=>{const b=tr.querySelector(`[data-t="${t}"]`);if(b)b.classList.add("on")});
-    if(k==="t"){const b=tr.querySelector(`[data-t="${id}"]`);if(b)b.classList.add("cur")}else{const n=svg.querySelector(`[data-id="${sel}"]`);n.classList.remove("on","on2");n.classList.add("cur")}
-    const name=k==="t"?nameT(id):pos[sel].t,pl=(n,a,b,c)=>n===1?a:(n%10>=2&&n%10<=4&&(n%100<10||n%100>=20))?b:c;
-    const mm=k==="m"?`<em>${R.o.size}</em> ${pl(R.o.size,"powiązanie","powiązania","powiązań")}`:`<em>${R.m.size}</em> ${pl(R.m.size,"model","modele","modeli")}`;st.innerHTML=`<b>${name}</b><span>→ ${mm} · <em>${R.t.size}</em> ${pl(R.t.size,"szkolenie","szkolenia","szkoleń")}</span>`;clr.hidden=!lock}
-  svg.addEventListener("click",e=>{const n=e.target.closest(".n");if(!n)return;lock=lock===n.dataset.id?null:n.dataset.id;paint(lock)});
-  svg.addEventListener("keydown",e=>{if(e.key!=="Enter"&&e.key!==" ")return;const n=e.target.closest(".n");if(!n)return;e.preventDefault();lock=lock===n.dataset.id?null:n.dataset.id;paint(lock)});
-  svg.addEventListener("mouseover",e=>{const n=e.target.closest(".n");if(n&&!lock)paint(n.dataset.id)});
-  svg.addEventListener("mouseleave",()=>{if(!lock)paint(null)});
-  tr.addEventListener("click",e=>{const b=e.target.closest(".mp-t");if(!b)return;const s="t:"+b.dataset.t;lock=lock===s?null:s;paint(lock)});
-  tr.addEventListener("mouseover",e=>{const b=e.target.closest(".mp-t");if(b&&!lock)paint("t:"+b.dataset.t)});
-  tr.addEventListener("mouseleave",()=>{if(!lock)paint(null)});
-  document.getElementById("mpClr").addEventListener("click",()=>{lock=null;paint(null)});
-  new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){cv.classList.add("in");o.disconnect()}},{threshold:.15}).observe(cv);
-  if(matchMedia("(prefers-reduced-motion: reduce)").matches)cv.classList.add("in");
-})();
 </script>
 <script src="../rt.js"></script>
 </body>

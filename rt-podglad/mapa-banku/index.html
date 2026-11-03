@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Mapa banku – Risk Trainings | Maciej Buczak</title>
+<meta name="description" content="Interaktywna mapa banku: bilans, rachunek zysków i strat, kapitał – i modele ryzyka, które je kształtują. Z powiązanymi szkoleniami.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Poppins:wght@300;400;500;600&family=Source+Serif+4:ital,opsz,wght@1,8..60,400&display=swap">
+<link rel="stylesheet" href="../rt.css">
+<style>
+.mh{padding:clamp(24px,3vw,44px) 0 18px}
+.mh .wrap,.mapw,.top .wrap,.foot .wrap{max-width:1380px}
+.mh .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px 60px;align-items:end}
+.mh h1{font-size:clamp(32px,3.6vw,50px);margin:16px 0 0;letter-spacing:-.02em}
+.mh h1 em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--terra-d)}
+.mh p{margin:0;font-size:16px;font-weight:300;color:var(--ink2);max-width:540px}
+/* filtry */
+.fx{display:grid;grid-template-columns:auto auto auto auto;justify-content:space-between;align-items:start;gap:10px 28px;padding:14px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--line);margin-bottom:18px}
+.fg{display:flex;flex-wrap:wrap;align-items:center;align-content:flex-start;gap:6px;max-width:360px}
+.fg>span{width:100%;font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--tan);margin-bottom:2px}
+.ch{font:inherit;font-size:12.5px;font-weight:500;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink2);cursor:pointer;display:inline-flex;align-items:center;gap:7px;transition:background .2s,border-color .2s,color .2s}
+.ch i{width:8px;height:8px;border-radius:2px;flex:none}
+.ch:hover{border-color:var(--ink)}
+.ch.on{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+@media(max-width:1100px){.fx{grid-template-columns:repeat(2,auto)}}
+@media(max-width:620px){.fx{grid-template-columns:1fr}}
+/* układ */
+.lay{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:22px;align-items:start}
+@media(max-width:1000px){.lay{grid-template-columns:1fr}}
+/* mapa */
+.bank{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px 12px}
+.col h3{font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink2);margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid var(--ink)}
+.col h3 small{font-weight:500;color:var(--tan);letter-spacing:.1em}
+.cb{display:flex;flex-direction:column;gap:6px}
+.bl{position:relative;display:block;width:100%;text-align:left;font:inherit;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px 11px;cursor:pointer;transition:opacity .25s,border-color .25s,box-shadow .25s,background .25s;overflow:visible}
+.bl b{display:block;font-size:13px;font-weight:600;line-height:1.3;padding-right:34px}
+.bl small{display:block;font-size:11px;color:var(--muted);line-height:1.35;margin-top:2px}
+.bl.sum{background:transparent;border-color:transparent;border-top:1.5px solid var(--ink);border-radius:0}
+.bl.dark{background:var(--ink);border-color:var(--ink);color:var(--paper)}.bl.dark small{color:#b9b0a2}
+.bl .rd{position:absolute;right:8px;top:9px;display:flex;gap:3px}.bl .rd i{width:7px;height:7px;border-radius:2px}
+.bl:hover{border-color:#a99d8b}
+.bank.sel .bl{opacity:.28}
+.bank.sel .bl.hit{opacity:1;border-color:var(--hc,var(--terra));box-shadow:0 0 0 2px var(--hc,var(--terra));background:var(--hb,#fffaf3)}
+.bank.sel .bl.hit.dark{background:var(--ink)}
+.bank.sel .bl.cur{opacity:1;box-shadow:0 0 0 3px var(--ink)}
+.bl .bd{position:absolute;top:-9px;right:8px;display:flex;gap:4px}
+.bl .bd span{min-width:20px;height:20px;padding:0 6px;border-radius:999px;background:var(--hc,var(--terra));color:#fff;font-size:11px;font-weight:600;display:grid;place-items:center}
+.bl .rl{position:absolute;bottom:-9px;right:8px;display:flex;gap:4px}
+.bl .rl span{font-size:9.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:999px;background:var(--ink);color:var(--paper)}
+.bl .rl span.d{background:var(--terra)}
+.zb{grid-column:1/3}
+.lg{grid-column:3/5;display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;font-size:11.5px;color:var(--muted);padding-top:6px}
+.lg span{display:inline-flex;align-items:center;gap:6px}.lg i{width:8px;height:8px;border-radius:2px}
+@media(max-width:760px){.bank{grid-template-columns:1fr 1fr}.zb,.lg{grid-column:1/-1}}
+/* modele */
+.md h3,.tr h3,.inf .k{font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink2);margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid var(--ink)}
+.mg{margin-bottom:10px}.mg>span{display:block;font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--tan);margin:8px 0 4px}
+.mb{display:flex;align-items:center;gap:9px;width:100%;text-align:left;font:inherit;font-size:13px;font-weight:500;color:var(--ink);background:transparent;border:1px solid transparent;border-radius:10px;padding:6px 9px;cursor:pointer;transition:background .2s,border-color .2s,opacity .2s}
+.mb i{width:9px;height:9px;border-radius:2px;flex:none}
+.mb:hover{background:var(--card);border-color:var(--line)}
+.md.sel .mb{opacity:.35}.md.sel .mb.on{opacity:1;background:var(--card);border-color:var(--line)}.md.sel .mb.cur{opacity:1;background:var(--ink);color:var(--paper);border-color:var(--ink)}
+/* informacja */
+.inf{margin-top:20px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:22px;align-items:start}
+.ib{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 22px;min-height:150px}
+.ib h4{font-family:var(--display);font-weight:400;font-size:22px;margin:4px 0 6px}
+.ib p{margin:0 0 8px;font-size:14px;color:var(--ink2)}
+.ib ol{margin:8px 0 0;padding:0;list-style:none;display:grid;gap:6px;counter-reset:o}
+.ib li{position:relative;padding-left:30px;font-size:13.5px;color:var(--ink2);line-height:1.45}
+.ib li::before{counter-increment:o;content:counter(o);position:absolute;left:0;top:0;width:20px;height:20px;border-radius:999px;background:var(--hc,var(--terra));color:#fff;font-size:11px;font-weight:600;display:grid;place-items:center}
+.ib li b{color:var(--ink)}
+.ib .hint{color:var(--muted);font-size:14px}
+.pl{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;padding:1px 7px;border-radius:999px;margin-left:6px;vertical-align:1px}
+.pl.el{background:#ead9a2;color:#5c4a12}.pl.ul{background:var(--ink);color:var(--paper)}.pl.s{background:#9a3b25;color:#fff}
+.tg{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.tb{display:flex;align-items:center;gap:10px;text-align:left;font:inherit;font-size:13px;font-weight:500;line-height:1.3;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:12px;padding:9px 11px;cursor:pointer;text-decoration:none;transition:opacity .25s,background .25s,border-color .25s}
+.tb i{flex:none;width:26px;height:26px;border-radius:7px;display:grid;place-items:center;font-family:var(--serif);font-style:italic;font-size:13px;color:var(--ink)}
+.tb:hover{border-color:var(--ink)}
+.tr.sel .tb{opacity:.35}.tr.sel .tb.on{opacity:1;border-color:var(--ink);box-shadow:0 0 0 1px var(--ink)}.tr.sel .tb.cur{opacity:1;background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.clr{font:inherit;font-size:12.5px;font-weight:600;border:1px solid var(--line);background:transparent;border-radius:999px;padding:6px 14px;cursor:pointer;color:var(--ink2);margin-top:10px}
+.clr:hover{border-color:var(--ink)}
+@media(max-width:900px){.inf{grid-template-columns:1fr}.tg{grid-template-columns:1fr}}
+.mapw{padding-bottom:clamp(56px,7vw,96px)}
+</style>
+</head>
+<body>
+<header class="top" id="top">
+  <div class="wrap">
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav"><a href="../">Start</a><a href="../szkolenia/">Szkolenia</a><a class="on" href="./">Mapa banku</a><a href="../o-mnie/">O mnie</a><a href="../#kontakt">Kontakt</a><a class="sci" href="/">Strona naukowa ↗</a></nav>
+    <a class="brand" href="../"><span><b>Risk Trainings</b><small>Maciej Buczak · Risk Research</small></span><span class="logo" aria-hidden="true"><i></i><i></i><i></i></span></a>
+  </div>
+</header>
+
+<main>
+<section class="mh"><div class="wrap">
+  <div><span class="kick">Mapa banku</span><h1>Gdzie modele ryzyka <em>zmieniają liczby</em> banku</h1></div>
+  <p>Bilans, rachunek zysków i strat oraz kapitał – i modele, które je kształtują. Kliknij model, pozycję w banku, rodzaj ryzyka, klasę problemu, proces albo szkolenie: mapa pokaże, co się z nim łączy.</p>
+</div></section>
+
+<div class="wrap mapw">
+  <div class="fx" id="fx"></div>
+  <div class="lay">
+    <div>
+      <div class="bank" id="bank"></div>
+      <div class="inf">
+        <div class="ib" id="ib"></div>
+        <div class="tr" id="tr"><h3>Szkolenia</h3><div class="tg" id="tg"></div></div>
+      </div>
+    </div>
+    <aside class="md" id="md"><h3>Modele ryzyka</h3><div id="ml"></div></aside>
+  </div>
+</div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div><a class="brand" href="../"><span><b>Risk Trainings</b></span><span class="logo" aria-hidden="true"><i></i><i></i><i></i></span></a><p style="margin:14px 0 0;max-width:340px">Szkolenia z zarządzania ryzykiem dla banków i instytucji finansowych.</p></div>
+    <div><h4>Strony</h4><a href="../">Start</a><a href="../szkolenia/">Szkolenia</a><a href="./">Mapa banku</a><a href="../o-mnie/">O mnie</a><a href="/">Strona naukowa</a></div>
+    <div><h4>Kontakt</h4><a href="mailto:maciej.buczak@gmail.com">maciej.buczak@gmail.com</a><a href="https://www.linkedin.com/in/maciej-buczak-561b95120" target="_blank" rel="noopener">LinkedIn</a></div>
+    <div class="bottom"><span>© 2026 Maciej Buczak | Risk Research</span><span>Wersja próbna strony</span></div>
+  </div>
+</footer>
+<script src="../szkolenia.js"></script>
+<script>
+(function(){
+const esc=s=>String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+/* ---------- dane ---------- */
+const RISK={K:{n:"Kredytowe",c:"#bf8165"},R:{n:"Rynkowe",c:"#6f7f58"},O:{n:"Operacyjne",c:"#8a6c90"},M:{n:"Ryzyko modeli",c:"#a6824c"},S:{n:"Stres testy",c:"#5c564d"}};
+const COL=[["A","Bilans","aktywa"],["P","Bilans","pasywa"],["R","Rachunek zysków i strat",""],["K","Kapitał i wymogi","CRR"]];
+const B=[
+ ["a_kasa","A",40,"Kasa i bank centralny","bufor płynności"],
+ ["a_banki","A",40,"Należności od banków",""],
+ ["a_handl","A",48,"Aktywa handlowe","pochodne, papiery – wycena rynkowa"],
+ ["a_papiery","A",48,"Papiery inwestycyjne","obligacje: AC lub OCI"],
+ ["a_kredyty","A",128,"Kredyty dla klientów","hipoteczne, konsumpcyjne, firmowe – wartość brutto"],
+ ["a_ecl","A",52,"Odpisy na oczekiwane straty (−)","ECL, MSSF 9 – koszyki 1, 2, 3"],
+ ["p_banki","P",40,"Zobowiązania wobec banków",""],
+ ["p_depozyty","P",150,"Depozyty klientów","bieżące, oszczędnościowe, terminowe"],
+ ["p_emisje","P",48,"Emisje i dług podporządkowany","obligacje, listy zastawne"],
+ ["p_rezerwy","P",52,"Rezerwy","ECL od pozabilansu, sprawy sądowe"],
+ ["p_kapital","P",56,"Kapitał własny","zyski zatrzymane, OCI",1],
+ ["r_przych","R",40,"Przychody odsetkowe","od kredytów i papierów"],
+ ["r_koszt","R",40,"Koszty odsetkowe (−)","od depozytów i emisji"],
+ ["r_nii","R",34,"= Wynik odsetkowy","",0,1],
+ ["r_handl","R",48,"Wynik na instrumentach","handlowy, wycena"],
+ ["r_koszty","R",48,"Koszty działania (−)","w tym straty operacyjne"],
+ ["r_ecl","R",60,"Odpisy ECL – koszt ryzyka (−)","zmiana stanu odpisów"],
+ ["r_netto","R",34,"= Zysk netto","",0,1],
+ ["k_cet1","K",56,"Fundusze własne","CET1, AT1, Tier 2",1],
+ ["k_rwa_k","K",62,"RWA – ryzyko kredytowe","metoda standardowa lub IRB"],
+ ["k_rwa_r","K",44,"RWA – ryzyko rynkowe","standard lub VaR / ES"],
+ ["k_rwa_o","K",44,"RWA – ryzyko operacyjne","metoda standardowa (BIC)"],
+ ["k_wsk","K",52,"Współczynniki kapitałowe","fundusze własne / RWA",1],
+ ["k_p2","K",52,"Filar 2 / ICAAP","kapitał wewnętrzny, stres testy"],
+ ["z_pozab","Z",40,"Pozabilans: limity i gwarancje","ekspozycja przez współczynnik CCF"]];
+const BI=Object.fromEntries(B.map(b=>[b[0],{id:b[0],k:b[1],h:b[2],n:b[3],s:b[4],dark:b[5],sum:b[6]}]));
+const M=[
+ {id:"score",r:"K",lt:"wejście",n:"Scoring i rating",d:"Ocena ryzyka klienta przy decyzji kredytowej i w trakcie życia kredytu.",o:[["a_kredyty","Kto dostaje kredyt i jaki limit – wolumen i jakość portfela.",""],["r_przych","Cena kredytu zależna od ryzyka.","EL"],["a_ecl","Klasa ratingowa jako wejście do PD w ECL.","EL"]],t:["budowa","estymacja"]},
+ {id:"pd",r:"K",lt:"EL",n:"PD 12 m i lifetime",d:"Prawdopodobieństwo defaultu w roku i w całym życiu kredytu – ze scenariuszami.",o:[["a_ecl","ECL = PD × LGD × EAD – stan odpisów w bilansie.","EL"],["r_ecl","Zmiana PD i migracje między koszykami zmieniają koszt ryzyka.","EL"],["p_rezerwy","Ta sama metodyka dla rezerw na limity i gwarancje.","EL"]],t:["budowa","ecl","estymacja","piec"]},
+ {id:"lgd",r:"K",lt:"EL",n:"LGD",d:"Strata w razie defaultu – z odzysków i zabezpieczeń.",o:[["a_ecl","Drugi czynnik ECL – wysokość straty po defaultcie.","EL"],["r_ecl","Spadek cen zabezpieczeń podnosi odpisy.","EL"]],t:["budowa","ecl","estymacja"]},
+ {id:"ccf",r:"K",lt:"EL+UL",n:"EAD i CCF",d:"Ekspozycja w chwili defaultu – ile niewykorzystanego limitu klient wykorzysta.",o:[["z_pozab","Przelicza pozabilans na ekspozycję.",""],["a_ecl","Trzeci czynnik ECL.","EL"],["k_rwa_k","Podstawa RWA kredytowych.","UL"]],t:["ecl","estymacja"]},
+ {id:"makro",r:"K",lt:"EL",n:"Scenariusze makro (FLI)",d:"Prognozy PKB, bezrobocia, stóp i cen nieruchomości przekładane na PD i LGD.",o:[["a_ecl","ECL to średnia ważona strat w scenariuszach.","EL"],["r_ecl","Zmiana prognoz zmienia koszt ryzyka – nawet bez nowych defaultów.","EL"]],t:["ecl"]},
+ {id:"irb",r:"K",lt:"UL",n:"IRB: PD, LGD downturn, EAD",d:"Parametry regulacyjne do wymogów kapitałowych – kwantyl 99,9%.",o:[["k_rwa_k","Wzór IRB → RWA kredytowe, kapitał na stratę nieoczekiwaną.","UL"],["k_cet1","Niedobór rezerw wobec EL regulacyjnej obniża CET1.","EL"],["k_wsk","Niższe RWA – wyższy współczynnik kapitałowy.","UL"]],t:["piec","mwn","estymacja"]},
+ {id:"konc",r:"K",lt:"UL",n:"Kapitał ekonomiczny: CreditMetrics, CreditRisk+",d:"Model straty nieoczekiwanej portfela – korelacje i koncentracja.",o:[["k_p2","Narzut kapitału w Filarze 2 na koncentrację.","UL"],["a_kredyty","Limity koncentracji kształtują strukturę portfela.",""]],t:["piec","mwn"]},
+ {id:"var",r:"R",lt:"UL",n:"VaR i Expected Shortfall",d:"Potencjalna strata portfela handlowego przy danym poziomie ufności.",o:[["k_rwa_r","Podstawa wymogu na ryzyko rynkowe przy modelu wewnętrznym.","UL"],["r_handl","Limity VaR ograniczają zmienność wyniku; backtesting porównuje VaR z wynikiem.",""]],t:["piec","mwn","budowa"]},
+ {id:"oprisk",r:"O",lt:"EL+UL",n:"Model aktuarialny (LDA)",d:"Rozkład częstości i dotkliwości strat operacyjnych, analizy scenariuszowe.",o:[["r_koszty","Zrealizowane straty operacyjne w kosztach działania.","EL"],["k_rwa_o","Dawniej (AMA) wprost wymóg kapitałowy.","UL"],["k_p2","Kapitał wewnętrzny na ryzyko operacyjne.","UL"]],t:["piec","mwn","budowa"]},
+ {id:"mr",r:"M",lt:"UL",n:"Kwantyfikacja ryzyka modeli",d:"Pomiar niepewności i błędów modeli – zgodnie z Rekomendacją W.",o:[["k_p2","Narzut kapitałowy na ryzyko modeli w ICAAP.","UL"],["a_ecl","Korekty i nakładki (overlaye) na wyniki modeli ECL.","EL"],["k_rwa_k","Marginesy ostrożności w parametrach IRB.","UL"]],t:["ryzmod","estymacja"]},
+ {id:"stres",r:"S",lt:"S",n:"Stres testy i plan kapitałowy",d:"Projekcja bilansu, wyniku i kapitału w scenariuszu niekorzystnym.",o:[["r_ecl","Koszt ryzyka w scenariuszu stresu.","S"],["r_nii","Wynik odsetkowy w stresie.","S"],["k_wsk","Czy bank zachowa wymogi kapitałowe.","S"],["k_p2","Bufory zarządcze i wytyczna P2G.","S"]],t:["mwn","ryzmod"]}];
+const MI=Object.fromEntries(M.map(m=>[m.id,m]));
+const FEED={};M.forEach(m=>m.o.forEach(o=>{(FEED[o[0]]=FEED[o[0]]||new Set()).add(m.r)}));
+const PROB={EL:["Strata oczekiwana (EL)","Odpisy i rezerwy w bilansie, koszt ryzyka w wyniku. Pokrywa ją marża i bieżący wynik."],UL:["Strata nieoczekiwana (UL)","Wymogi kapitałowe – RWA, Filar 2. Pokrywają ją fundusze własne."],S:["Scenariusz skrajny","Stres testy: co stanie się z wynikiem i kapitałem w dekoniunkturze."]};
+const PROC={bud:["Budowa modeli",["budowa","ecl","piec","estymacja"],"Projektowanie modelu: koncepcja, dane, rozkłady i techniki estymacji."],wal:["Walidacja modeli",["estymacja","ryzmod","ecl","budowa"],"Ocena, czy model działa: testy ilościowe, logika biznesowa, okiem walidatora."],dcz:["Decyzje zarządu",["mwn","piec","ryzmod"],"Jak wyniki modeli przekładają się na kapitał, wynik i decyzje – i jak o nich rozmawiać."]};
+const RT={cet1:{n:"Współczynnik CET1",f:["CET1","RWA"],num:["k_cet1"],den:["k_rwa_k","k_rwa_r","k_rwa_o"],d:"Im niższe RWA z modeli przy tej samej ekspozycji, tym wyższy wskaźnik – dlatego nadzór wymaga konserwatyzmu."},
+ cor:{n:"Koszt ryzyka",f:["odpisy ECL w roku","średnie kredyty"],num:["r_ecl","a_ecl"],den:["a_kredyty"],d:"W liczniku wprost modele PD, LGD, EAD i scenariusze makro – każda zmiana parametrów od razu zmienia wynik."},
+ roe:{n:"ROE",f:["zysk netto","kapitał własny"],num:["r_netto","r_ecl"],den:["p_kapital","k_wsk"],d:"Licznik obniża koszt ryzyka, mianownik podnoszą wymogi kapitałowe – modele działają po obu stronach."},
+ raroc:{n:"RAROC",f:["dochody − koszty − EL","kapitał na UL"],num:["r_przych","r_koszty","a_ecl"],den:["k_rwa_k","k_p2"],d:"Łączy obie straty: EL w liczniku, UL w mianowniku. Niedoszacowane PD zawyża RAROC podwójnie."}};
+const T=window.RT_SZKOLENIA||[],TC=["#f3e4c4","#f9d5bd","#e0dccb","#efe4bc","#e7d4c4","#f0e2cf"],TL={budowa:"../szkolenia/budowa/"};
+/* ---------- rysowanie ---------- */
+const bank=document.getElementById("bank");
+bank.innerHTML=COL.map(c=>`<div class="col"><h3>${c[1]}${c[2]?` <small>${c[2]}</small>`:""}</h3><div class="cb">${B.filter(b=>b[1]===c[0]).map(b=>blk(b[0])).join("")}</div></div>`).join("")+`<div class="zb">${blk("z_pozab")}</div><div class="lg">${["K","R","O","M","S"].map(r=>`<span><i style="background:${RISK[r].c}"></i>${RISK[r].n}</span>`).join("")}<span><span class="pl el" style="margin:0">EL</span> strata oczekiwana</span><span><span class="pl ul" style="margin:0">UL</span> nieoczekiwana</span></div>`;
+function blk(id){const b=BI[id],f=FEED[id]?[...FEED[id]]:[];return`<button type="button" class="bl${b.dark?" dark":""}${b.sum?" sum":""}" data-s="b:${id}" style="min-height:${b.h}px"><b>${esc(b.n)}</b>${b.s?`<small>${esc(b.s)}</small>`:""}${f.length&&!b.sum?`<span class="rd">${["K","R","O","M","S"].filter(r=>f.includes(r)).map(r=>`<i style="background:${RISK[r].c}" title="${RISK[r].n}"></i>`).join("")}</span>`:""}<span class="bd"></span><span class="rl"></span></button>`}
+const grp=[["K","Ryzyko kredytowe"],["R","Ryzyko rynkowe"],["O","Ryzyko operacyjne"],["M","Ryzyko modeli"],["S","Przekrojowo"]];
+document.getElementById("ml").innerHTML=grp.map(g=>{const ms=M.filter(m=>m.r===g[0]);return ms.length?`<div class="mg"><span>${g[1]}</span>${ms.map(m=>`<button type="button" class="mb" data-s="m:${m.id}"><i style="background:${RISK[m.r].c}"></i>${esc(m.n)}</button>`).join("")}</div>`:""}).join("");
+document.getElementById("fx").innerHTML=
+ `<div class="fg"><span>Rodzaj ryzyka</span>${["K","R","O","M"].map(r=>`<button type="button" class="ch" data-s="r:${r}"><i style="background:${RISK[r].c}"></i>${RISK[r].n}</button>`).join("")}</div>`+
+ `<div class="fg"><span>Klasa problemu</span>${Object.entries(PROB).map(([k,v])=>`<button type="button" class="ch" data-s="l:${k}">${v[0]}</button>`).join("")}</div>`+
+ `<div class="fg"><span>Proces</span>${Object.entries(PROC).map(([k,v])=>`<button type="button" class="ch" data-s="p:${k}">${v[0]}</button>`).join("")}</div>`+
+ `<div class="fg"><span>Wskaźniki zarządu</span>${Object.entries(RT).map(([k,v])=>`<button type="button" class="ch" data-s="q:${k}">${v.n}</button>`).join("")}</div>`;
+document.getElementById("tg").innerHTML=T.map((t,i)=>`<button type="button" class="tb" data-s="t:${t.id}"><i style="background:${TC[i%TC.length]}">${String(i+1).padStart(2,"0")}</i>${esc(t.title)}</button>`).join("");
+/* ---------- logika ---------- */
+const pl=t=>!t?"":t==="EL+UL"?pl("EL")+pl("UL"):t==="EL"?'<span class="pl el">EL</span>':t==="UL"?'<span class="pl ul">UL</span>':t==="S"?'<span class="pl s">stres</span>':"";
+const tName=id=>(T.find(t=>t.id===id)||{}).title||id;
+function resolve(sel){const [k,id]=sel.split(":"),R={m:new Set(),b:new Map(),t:new Set(),ring:null,hc:"#bf8165"};
+  const addM=mid=>{R.m.add(mid);MI[mid].o.forEach((o,i)=>{if(!R.b.has(o[0]))R.b.set(o[0],[]);if(k==="m")R.b.get(o[0]).push(i+1)});MI[mid].t.forEach(t=>R.t.add(t))};
+  if(k==="m"){addM(id);R.hc=RISK[MI[id].r].c}
+  else if(k==="b"){M.forEach(m=>{if(m.o.some(o=>o[0]===id))addM(m.id)});R.b=new Map([[id,[]]]);M.forEach(m=>{if(R.m.has(m.id))m.o.forEach(o=>{if(!R.b.has(o[0]))R.b.set(o[0],[])})})}
+  else if(k==="r"){M.filter(m=>m.r===id).forEach(m=>addM(m.id));R.hc=RISK[id].c}
+  else if(k==="l"){M.forEach(m=>{const hit=m.o.filter(o=>o[2]===id);if(hit.length){R.m.add(m.id);m.t.forEach(t=>R.t.add(t));hit.forEach(o=>{if(!R.b.has(o[0]))R.b.set(o[0],[])})}});R.hc=id==="UL"?"#0d0d0d":id==="S"?"#9a3b25":"#a8862c"}
+  else if(k==="p"){PROC[id][1].forEach(t=>R.t.add(t));M.forEach(m=>{if(m.t.some(t=>R.t.has(t)))addM(m.id)});R.t=new Set(PROC[id][1])}
+  else if(k==="q"){const r=RT[id];R.ring=r;[...r.num,...r.den].forEach(b=>R.b.set(b,[]));M.forEach(m=>{if(m.o.some(o=>R.b.has(o[0]))){R.m.add(m.id);m.t.forEach(t=>R.t.add(t))}})}
+  else if(k==="t"){M.forEach(m=>{if(m.t.includes(id))addM(m.id)});R.t=new Set([id])}
+  return R}
+const ib=document.getElementById("ib");
+function info(sel,R){if(!sel){ib.innerHTML=`<span class="kick" style="font-size:11px">Jak czytać mapę</span><h4>Wybierz element</h4><p class="hint">Model ryzyka pokaże, w których miejscach bilansu, wyniku i kapitału lądują jego wyniki. Pozycja w banku – które modele ją kształtują. Szkolenie – jakie modele i obszary obejmuje. Kolorowe znaczniki przy pozycjach oznaczają rodzaje ryzyka, które je zasilają.</p>`;return}
+  const [k,id]=sel.split(":"),cnt=`<p class="hint">${R.m.size} ${R.m.size===1?"model":R.m.size<5?"modele":"modeli"} · ${R.t.size} ${R.t.size===1?"szkolenie":R.t.size<5?"szkolenia":"szkoleń"}</p>`;
+  const clr='<button type="button" class="clr" data-clr>Wyczyść wybór ✕</button>';
+  if(k==="m"){const m=MI[id];ib.style.setProperty("--hc",RISK[m.r].c);ib.innerHTML=`<span class="kick" style="font-size:11px">Model · ${RISK[m.r].n}</span><h4>${esc(m.n)} ${pl(m.lt)}</h4><p>${esc(m.d)}</p><ol>${m.o.map(o=>`<li><b>${esc(BI[o[0]].n)}</b>${pl(o[2])} – ${esc(o[1])}</li>`).join("")}</ol>${clr}`;return}
+  ib.style.removeProperty("--hc");
+  if(k==="b"){const b=BI[id],ms=M.filter(m=>m.o.some(o=>o[0]===id));ib.innerHTML=`<span class="kick" style="font-size:11px">Pozycja w banku</span><h4>${esc(b.n)}</h4>${ms.length?`<p>Kształtują ją:</p><ol>${ms.map(m=>`<li><b>${esc(m.n)}</b>${pl(m.o.find(o=>o[0]===id)[2])} – ${esc(m.o.find(o=>o[0]===id)[1])}</li>`).join("")}</ol>`:`<p class="hint">Na tej mapie żaden z modeli nie zasila tej pozycji wprost.</p>`}${clr}`;return}
+  if(k==="q"){const r=RT[id];ib.innerHTML=`<span class="kick" style="font-size:11px">Wskaźnik zarządu</span><h4>${esc(r.n)}</h4><p><b>licznik:</b> ${esc(r.f[0])} · <b style="color:var(--terra-d)">mianownik:</b> ${esc(r.f[1])}</p><p>${esc(r.d)}</p>${cnt}${clr}`;return}
+  const tt=k==="r"?["Rodzaj ryzyka",RISK[id].n,"Modele tego ryzyka i miejsca, w których ich wyniki trafiają do bilansu, wyniku i kapitału."]:k==="l"?["Klasa problemu",PROB[id][0],PROB[id][1]]:k==="p"?["Proces",PROC[id][0],PROC[id][2]]:["Szkolenie",tName(id),"Modele omawiane na szkoleniu i miejsca w banku, w których działają."];
+  ib.innerHTML=`<span class="kick" style="font-size:11px">${tt[0]}</span><h4>${esc(tt[1])}</h4><p>${esc(tt[2])}</p>${cnt}${k==="t"&&TL[id]?`<a class="clr" style="display:inline-block;text-decoration:none;margin-right:8px" href="${TL[id]}">Program szkolenia →</a>`:""}${clr}`}
+let lock=null;
+function paint(sel){const md=document.getElementById("md"),tr=document.getElementById("tr");
+  document.querySelectorAll("[data-s]").forEach(e=>e.classList.remove("on","cur","hit"));
+  bank.querySelectorAll(".bl").forEach(e=>{e.querySelector(".bd").innerHTML="";e.querySelector(".rl").innerHTML="";e.style.removeProperty("--hc")});
+  [bank,md,tr].forEach(e=>e.classList.toggle("sel",!!sel));
+  if(!sel){info(null);return}
+  const R=resolve(sel);
+  R.b.forEach((nums,bid)=>{const el=bank.querySelector(`[data-s="b:${bid}"]`);if(!el)return;el.classList.add("hit");el.style.setProperty("--hc",R.hc);
+    if(nums.length)el.querySelector(".bd").innerHTML=nums.map(n=>`<span>${n}</span>`).join("");
+    if(R.ring){const r=R.ring,x=[];if(r.num.includes(bid))x.push('<span>licznik</span>');if(r.den.includes(bid))x.push('<span class="d">mianownik</span>');el.querySelector(".rl").innerHTML=x.join("")}});
+  R.m.forEach(m=>{const e=document.querySelector(`.mb[data-s="m:${m}"]`);if(e)e.classList.add("on")});
+  R.t.forEach(t=>{const e=document.querySelector(`.tb[data-s="t:${t}"]`);if(e)e.classList.add("on")});
+  const cur=document.querySelector(`[data-s="${sel}"]`);if(cur){cur.classList.add(cur.classList.contains("ch")?"on":"cur")}
+  info(sel,R)}
+document.addEventListener("click",e=>{if(e.target.closest("[data-clr]")){lock=null;paint(null);return}const el=e.target.closest("[data-s]");if(!el)return;const s=el.dataset.s;lock=lock===s?null:s;paint(lock)});
+document.addEventListener("mouseover",e=>{if(lock)return;const el=e.target.closest(".bl,.mb,.tb");if(el)paint(el.dataset.s)});
+document.addEventListener("mouseout",e=>{if(lock)return;const el=e.target.closest(".bl,.mb,.tb");if(el&&!el.contains(e.relatedTarget))paint(null)});
+paint(null);
+})();
+</script>
+<script src="../rt.js"></script>
+</body>
+</html>
