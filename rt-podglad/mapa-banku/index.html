@@ -232,6 +232,17 @@ body.rotating .fbx,body.rotating .inf,body.rotating #fl{opacity:0!important;poin
 .kx-h{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px 60px;align-items:end;margin-bottom:18px}
 .kx-h h2{font-family:"Archivo Black",sans-serif;font-weight:400;font-size:clamp(28px,3vw,40px);margin:12px 0 0;letter-spacing:-.02em}
 .kx-h p{margin:0;font-size:15px;font-weight:300;color:var(--ink2)}
+.kx-t{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px}
+.kx-th,.kx-tc,.kx-te{position:relative;border-radius:14px;padding:10px 34px 10px 12px;min-height:74px}
+.kx-tc{background:color-mix(in srgb,var(--dc) 16%,#fffdf9)}
+.kx-tc b{display:block;font-size:13px;font-weight:600;line-height:1.25}.kx-tc small{display:block;font-size:11.5px;color:var(--ink2);margin-top:2px;line-height:1.3}
+.kx-tc.old{filter:grayscale(1);opacity:.6}.kx-tc.old b{text-decoration:line-through}
+.kx-th{background:var(--dc);color:#fff;display:flex;flex-direction:column;justify-content:space-between;padding-right:12px}
+.kx-th b{font-family:"Archivo Black",sans-serif;font-weight:400;font-size:15px;line-height:1.15}.kx-th small{font-size:11px;font-weight:600;opacity:.85;letter-spacing:.04em}
+.kx-te{background:var(--ink);color:var(--paper);text-decoration:none;display:flex;flex-direction:column;justify-content:center;gap:4px;padding:12px 16px}
+.kx-te span{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--sand)}.kx-te b{font-size:15px}
+.kx-te:hover{background:var(--terra-d)}
+@media(max-width:1100px){.kx-t{grid-template-columns:repeat(4,minmax(0,1fr))}}@media(max-width:640px){.kx-t{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .kx-g{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start}.kx-lane{display:flex;flex-direction:column;gap:14px;min-width:0}
 .kx-d{border-radius:24px;padding:14px 12px 12px;background:color-mix(in srgb,var(--dc) 13%,#faf6ef);display:flex;flex-direction:column;gap:8px}.kx-d.w{grid-column:span 8}
 .kx-dh{display:flex;align-items:baseline;gap:8px;padding:0 4px 2px}.kx-dh b{font-family:"Archivo Black",sans-serif;font-weight:400;font-size:17px}.kx-dh small{margin-left:auto;font-size:12px;color:var(--ink2)}
@@ -553,7 +564,8 @@ spaint(null);
   const E=t=>String(t==null?"":t).replace(/&/g,"&amp;").replace(/</g,"&lt;");const DI={};D.dom.forEach(x=>DI[x[0]]=x);const CI={};D.c.forEach(c=>CI[c.id]=c);
   const UT=["","niszowo","rzadko","w części banków","często","powszechnie"],sg=u=>[1,2,3,4,5].map(k=>`<i${k<=u?' class="f"':""}></i>`).join("");
   kx.innerHTML=`<div class="kx-h"><div><span class="kick">Druga ściana</span><h2>Koncepcje modeli</h2></div><p>${D.c.length} modeli ryzyka omawianych na szkoleniach, w ${D.dom.length} obszarach. Pełne opisy z przykładami – na stronie <a href="../koncepcje/">Koncepcje modeli</a>.</p></div>
-  <div class="kx-g">${(()=>{const L=[[],[]],H=[0,0];D.dom.map(d=>[d,D.c.filter(c=>c.d===d[0]).length]).sort((a,b)=>b[1]-a[1]).forEach(([d,n])=>{const i=H[0]<=H[1]?0:1;L[i].push(d);H[i]+=Math.ceil(n/3)*76+62});return L})().map(lane=>`<div class="kx-lane">${lane.map(d=>{const cs=D.c.filter(c=>c.d===d[0]);return`<section class="kx-d" style="--dc:${d[3]}"><div class="kx-dh"><b>${E(d[1])}</b><small>${cs.length}</small></div><div class="kx-l">${cs.map(c=>`<div class="kx-c${c.old?" old":""}"><b>${c.reg?'<em class="kx-rg">§</em>':""}${E(c.n)}</b><small>${E(c.old||c.o)}</small><span class="kx-k ${c.k}">${c.k}</span></div>`).join("")}</div></section>`}).join("")}</div>`).join("")}</div>`;
+  <div class="kx-t" id="kxt">${D.dom.map(d=>{const cs=D.c.filter(c=>c.d===d[0]);return`<div class="kx-th" style="--dc:${d[3]}"><b>${E(d[1])}</b><small>${cs.length} ${cs.length<5?"koncepcje":"koncepcji"}</small></div>`+cs.map(c=>`<div class="kx-tc${c.old?" old":""}" style="--dc:${d[3]}"><b>${c.reg?'<em class="kx-rg">§</em>':""}${E(c.n)}</b><small>${E(c.old||c.o)}</small><span class="kx-k ${c.k}">${c.k}</span></div>`).join("")}).join("")}<a class="kx-te" id="kxe" href="../koncepcje/"><span>Pełne opisy z przykładami</span><b>Koncepcje modeli →</b></a></div>`;
+  const fit=()=>{const g=document.getElementById("kxt"),e=document.getElementById("kxe");if(!g)return;const n=getComputedStyle(g).gridTemplateColumns.split(" ").length,cells=g.children.length-1;e.style.gridColumn=`span ${n-(cells%n)||n}`};fit();addEventListener("resize",fit);
   const m=document.getElementById("kxm"),mc=document.getElementById("kxc");
   function op(id){const c=CI[id],d=DI[c.d],x=c.det;m.style.setProperty("--dc",d[3]);
     mc.innerHTML=`<div class="kx-mt"></div><button type="button" class="kx-mx" aria-label="Zamknij">✕</button><div class="kx-mi"><span class="kick">${E(d[1])}${c.g?" · "+E(c.g):""}</span><h2>${E(c.n)}</h2><div class="kx-mo">${E(c.o)}</div>${c.reg?`<div class="kx-mr"><em class="kx-rg">§</em><span>${E(c.reg)}</span></div>`:""}<div class="kx-mu"><span class="kx-ub inl">${sg(c.u)}</span>Stosowanie w bankach: <b>${UT[c.u]}</b> (${c.u} / 5)</div>
