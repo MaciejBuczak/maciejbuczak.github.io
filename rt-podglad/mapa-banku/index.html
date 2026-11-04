@@ -105,7 +105,7 @@
 .inf.open{opacity:1;transform:none;pointer-events:auto}
 .inf .ib{min-height:0;border-radius:24px}
 .inf-x{position:absolute;right:14px;top:14px;width:30px;height:30px;border-radius:50%;border:1px solid var(--line);background:var(--card);cursor:pointer;font-size:13px;color:var(--ink2);z-index:1}
-.fbx{position:fixed;right:24px;bottom:24px;z-index:60;display:flex;align-items:center;gap:8px;pointer-events:none}
+.fbx{position:fixed;right:24px;bottom:24px;z-index:60;display:flex;flex-direction:row-reverse;align-items:center;gap:8px;pointer-events:none}
 .fclr{font:inherit;font-size:13.5px;font-weight:600;padding:12px 18px;border-radius:999px;border:1px solid var(--line);background:#fffdf9;color:var(--ink);cursor:pointer;box-shadow:0 14px 34px -14px rgba(13,13,13,.35);opacity:0;transform:translateY(16px);transition:opacity .25s,transform .25s}
 .fclr:hover{border-color:var(--ink)}
 .fbx.has .fclr.on{opacity:1;transform:none;pointer-events:auto}
@@ -435,7 +435,7 @@ function flows(list){let sv=document.getElementById("fl");if(!sv){bank.style.pos
     h+=`<path d="${d}" fill="none" stroke="#0d0d0d" stroke-width="1.6" stroke-dasharray="6 5" marker-end="url(#fa)"/><circle cx="${lx}" cy="${ly}" r="10" fill="#0d0d0d"/><text x="${lx}" y="${ly+4}" text-anchor="middle" font-family="Poppins,sans-serif" font-size="11" font-weight="600" fill="#f5f1ea">${n+1}</text>`});
   sv.innerHTML=h}
 function flowNote(){if(!curFl.length||innerWidth<1000)return;ib.insertAdjacentHTML("beforeend",`<div class="fln"><span class="kick" style="font-size:11px">Przepływy na mapie</span><ol>${curFl.map((f,n)=>`<li><i>${n+1}</i><span><b>${esc(BI[f[0]].n)} → ${esc(BI[f[1]].n)}</b><br>${esc(f[2])}</span></li>`).join("")}</ol></div>`)}
-let curFl=[];function setFlows(sel){const k=sel&&sel.split(":")[0],id=sel&&sel.split(":")[1];curFl=!sel?[FL[0],FL[2]]:k==="b"?FL.filter(f=>f[0]===id||f[1]===id):[];flows(curFl)}
+let curFl=[];function setFlows(sel){const k=sel&&sel.split(":")[0],id=sel&&sel.split(":")[1];curFl=!sel?[]:k==="b"?FL.filter(f=>f[0]===id||f[1]===id):[];flows(curFl)}
 addEventListener("resize",()=>flows(curFl));if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>flows(curFl));
 function paint(sel){setFlows(sel);const md=document.getElementById("md"),tr=document.getElementById("tr");
   document.querySelectorAll("[data-s]").forEach(e=>e.classList.remove("on","cur","hit"));
