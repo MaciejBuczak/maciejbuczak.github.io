@@ -232,7 +232,12 @@ body.rotating .fbx,body.rotating .inf,body.rotating #fl{opacity:0!important;poin
 .kx-h{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px 60px;align-items:end;margin-bottom:18px}
 .kx-h h2{font-family:"Archivo Black",sans-serif;font-weight:400;font-size:clamp(28px,3vw,40px);margin:12px 0 0;letter-spacing:-.02em}
 .kx-h p{margin:0;font-size:15px;font-weight:300;color:var(--ink2)}
-.kx-t{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px}
+.kx-lane{min-width:0;display:grid;grid-template-columns:repeat(var(--cols),minmax(0,1fr));align-content:start}
+.kx-cl{position:relative;padding:8px 8px;display:flex;flex-direction:column}
+.kx-cl::before{content:"";position:absolute;inset:var(--ins);border-radius:var(--rad);background:color-mix(in srgb,var(--dc) 15%,#faf6ef);z-index:0}
+.kx-cl>*{position:relative;z-index:1}
+.kx-cl .kx-tc{flex:1;background:#fffdf9;border:1px solid rgba(13,13,13,.06)}
+.kx-cl{min-height:92px}.kx-hh{flex:1;display:flex;flex-direction:column;justify-content:space-between;padding:6px 6px 4px}.kx-hh b{font-family:"Archivo Black",sans-serif;font-weight:400;font-size:17px;line-height:1.15}.kx-hh small{font-size:12px;color:var(--ink2);font-weight:600}
 .kx-th,.kx-tc,.kx-te{position:relative;border-radius:14px;padding:10px 34px 10px 12px;min-height:74px}
 .kx-tc{background:color-mix(in srgb,var(--dc) 16%,#fffdf9)}
 .kx-tc b{display:block;font-size:13px;font-weight:600;line-height:1.25}.kx-tc small{display:block;font-size:11.5px;color:var(--ink2);margin-top:2px;line-height:1.3}
@@ -243,7 +248,7 @@ body.rotating .fbx,body.rotating .inf,body.rotating #fl{opacity:0!important;poin
 .kx-te span{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--sand)}.kx-te b{font-size:15px}
 .kx-te:hover{background:var(--terra-d)}
 @media(max-width:1100px){.kx-t{grid-template-columns:repeat(4,minmax(0,1fr))}}@media(max-width:640px){.kx-t{grid-template-columns:repeat(2,minmax(0,1fr))}}
-.kx-g{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start}.kx-lane{display:flex;flex-direction:column;gap:14px;min-width:0}
+.kx-g{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;align-items:start}
 .kx-d{border-radius:24px;padding:14px 12px 12px;background:color-mix(in srgb,var(--dc) 13%,#faf6ef);display:flex;flex-direction:column;gap:8px}.kx-d.w{grid-column:span 8}
 .kx-dh{display:flex;align-items:baseline;gap:8px;padding:0 4px 2px}.kx-dh b{font-family:"Archivo Black",sans-serif;font-weight:400;font-size:17px}.kx-dh small{margin-left:auto;font-size:12px;color:var(--ink2)}
 .kx-l{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
@@ -564,8 +569,16 @@ spaint(null);
   const E=t=>String(t==null?"":t).replace(/&/g,"&amp;").replace(/</g,"&lt;");const DI={};D.dom.forEach(x=>DI[x[0]]=x);const CI={};D.c.forEach(c=>CI[c.id]=c);
   const UT=["","niszowo","rzadko","w części banków","często","powszechnie"],sg=u=>[1,2,3,4,5].map(k=>`<i${k<=u?' class="f"':""}></i>`).join("");
   kx.innerHTML=`<div class="kx-h"><div><span class="kick">Druga ściana</span><h2>Koncepcje modeli</h2></div><p>${D.c.length} modeli ryzyka omawianych na szkoleniach, w ${D.dom.length} obszarach. Pełne opisy z przykładami – na stronie <a href="../koncepcje/">Koncepcje modeli</a>.</p></div>
-  <div class="kx-t" id="kxt">${D.dom.map(d=>{const cs=D.c.filter(c=>c.d===d[0]);return`<div class="kx-th" style="--dc:${d[3]}"><b>${E(d[1])}</b><small>${cs.length} ${cs.length<5?"koncepcje":"koncepcji"}</small></div>`+cs.map(c=>`<div class="kx-tc${c.old?" old":""}" style="--dc:${d[3]}"><b>${c.reg?'<em class="kx-rg">§</em>':""}${E(c.n)}</b><small>${E(c.old||c.o)}</small><span class="kx-k ${c.k}">${c.k}</span></div>`).join("")}).join("")}<a class="kx-te" id="kxe" href="../koncepcje/"><span>Pełne opisy z przykładami</span><b>Koncepcje modeli →</b></a></div>`;
-  const fit=()=>{const g=document.getElementById("kxt"),e=document.getElementById("kxe");if(!g)return;const n=getComputedStyle(g).gridTemplateColumns.split(" ").length,cells=g.children.length-1;e.style.gridColumn=`span ${n-(cells%n)||n}`};fit();addEventListener("resize",fit);
+  <div class="kx-g" id="kxg"></div>`;
+  const lanes=()=>{const L=[[],[]],H=[0,0];D.dom.map(d=>[d,D.c.filter(c=>c.d===d[0]).length]).sort((a,b)=>b[1]-a[1]).forEach(([d,n])=>{const i=H[0]<=H[1]?0:1;L[i].push(d);H[i]+=n+1});return L};
+  const cell=(c,d,head)=>`<div class="kx-tc${c.old?" old":""}"><b>${c.reg?'<em class="kx-rg">§</em>':""}${E(c.n)}</b><small>${E(c.old||c.o)}</small><span class="kx-k ${c.k}">${c.k}</span></div>`;
+  function laneHTML(doms,cols){const items=[];doms.forEach(d=>{items.push([null,d,true]);D.c.filter(c=>c.d===d[0]).forEach(c=>items.push([c,d,false]))});
+    const g=(r,k)=>{const x=items[r*cols+k];return x?x[1][0]:null};
+    return items.map((x,n)=>{const r=Math.floor(n/cols),k=n%cols,me=x[1][0],T=g(r-1,k)===me&&r>0,B=g(r+1,k)===me,Lf=k>0&&g(r,k-1)===me,Rt=k<cols-1&&g(r,k+1)===me;
+      const R=18,rad=`${!T&&!Lf?R:0}px ${!T&&!Rt?R:0}px ${!B&&!Rt?R:0}px ${!B&&!Lf?R:0}px`,ins=`${T?0:4}px ${Rt?0:4}px ${B?0:4}px ${Lf?0:4}px`;
+      return`<div class="kx-cl${x[2]?" hd":""}" style="--dc:${x[1][3]};--rad:${rad};--ins:${ins}">${x[2]?`<div class="kx-hh"><b>${E(x[1][1])}</b><small>${D.c.filter(c=>c.d===me).length} ${D.c.filter(c=>c.d===me).length<5?"koncepcje":"koncepcji"}</small></div>`:cell(x[0])}</div>`}).join("")}
+  let lastCols=0;const fit=()=>{const w=innerWidth,cols=w<640?2:3,one=w<1100;const key=cols+(one?"o":"t");if(key===lastCols)return;lastCols=key;const L=lanes();
+    document.getElementById("kxg").innerHTML=(one?[L[0].concat(L[1])]:L).map(l=>`<div class="kx-lane" style="--cols:${cols}">${laneHTML(l,cols)}</div>`).join("")};fit();addEventListener("resize",fit);
   const m=document.getElementById("kxm"),mc=document.getElementById("kxc");
   function op(id){const c=CI[id],d=DI[c.d],x=c.det;m.style.setProperty("--dc",d[3]);
     mc.innerHTML=`<div class="kx-mt"></div><button type="button" class="kx-mx" aria-label="Zamknij">✕</button><div class="kx-mi"><span class="kick">${E(d[1])}${c.g?" · "+E(c.g):""}</span><h2>${E(c.n)}</h2><div class="kx-mo">${E(c.o)}</div>${c.reg?`<div class="kx-mr"><em class="kx-rg">§</em><span>${E(c.reg)}</span></div>`:""}<div class="kx-mu"><span class="kx-ub inl">${sg(c.u)}</span>Stosowanie w bankach: <b>${UT[c.u]}</b> (${c.u} / 5)</div>
