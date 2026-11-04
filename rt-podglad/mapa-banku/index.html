@@ -349,6 +349,16 @@ body.tsel .tq-s li.cur small{color:#cfc6b8}
 .cube.explode .fc:not(.f4):hover{transform:none}
 .cube.explode .fc::before{content:attr(data-lbl);display:block;position:absolute;left:0;right:0;top:0;padding:18px 26px;font-family:"Archivo Black",sans-serif;font-size:46px;color:#fff;background:var(--ink);z-index:5}
 @media(max-width:1100px){.mstrip{grid-template-columns:repeat(5,minmax(0,1fr))}}
+.lid{position:absolute;left:0;right:0;top:0;z-index:3;perspective:2400px;perspective-origin:50% 40%}
+.lid-b{position:absolute;left:0;top:0;transform-style:preserve-3d}
+.lid-b.go{transition:transform 1.1s cubic-bezier(.65,0,.25,1)}
+.lid-f{position:absolute;overflow:hidden;background:var(--paper);border-radius:28px;box-shadow:0 0 0 2px var(--ink2),inset 0 0 0 1px var(--line);backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.lid-f>*{pointer-events:none}
+.lid-f::after{content:"";position:absolute;inset:0;pointer-events:none;transition:background .6s}
+.lid-hi .lf-front::after{background:rgba(13,13,13,.10)}.lid-hi .lf-side::after{background:rgba(13,13,13,.22)}
+.lf-top{box-shadow:0 0 0 6px var(--terra-d),inset 0 0 0 1px var(--line)}
+.lid-tag{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);padding:28px 56px;border-radius:999px;background:var(--terra-d);color:#fff;font-family:"Archivo Black",sans-serif;font-size:44px;white-space:nowrap;box-shadow:0 20px 60px -20px rgba(13,13,13,.5);opacity:0;transition:opacity .5s}
+.lid-hi .lid-tag{opacity:1}
 </style>
 </head>
 <body>
@@ -742,18 +752,24 @@ spaint(null);
   cbar.insertAdjacentHTML("afterend",`<div class="cver"><span>Mapa modelu – wersja</span><button type="button" data-mv="1">1 · Dach bryły</button><button type="button" data-mv="2">2 · Pas nad bryłą</button><button type="button" data-mv="3">3 · Rozłożona bryła</button><button type="button" class="cver-go" id="mmgo"></button></div><div class="mstrip" id="mstrip" hidden></div><div class="mpan" id="mpan" hidden></div>`);
   const mmBlock=document.getElementById("mmg");
   /* wersja 1 – dach */
-  function lookUp(){if(busy||face===3)return;busy=true;const fr=F[face],tp=F[3];window.mmMas&&window.mmMas();
-    const top=cube.getBoundingClientRect().top+scrollY-120;scrollTo({top,behavior:"instant"});
-    tp.hidden=false;fr.hidden=false;const h3=tp.offsetHeight;document.body.classList.add("rotating");
-    box.className="box d3";box.style.transformOrigin="50% 0";fr.style.transform="none";tp.style.top=`${-h3}px`;tp.style.transformOrigin="50% 100%";tp.style.transform="rotateX(90deg)";
-    cube.style.perspectiveOrigin=`50% ${Math.round(innerHeight*.35)}px`;cube.style.height=fr.offsetHeight+"px";box.style.transform="rotateX(0deg)";void box.offsetWidth;
-    box.classList.add("go");box.style.transform="rotateX(-90deg) translateY(0)";
-    setTimeout(()=>{prev=face;face=3;tp.style.top="";tp.style.transformOrigin="";box.style.transformOrigin="";box.style.transform="";cube.style.height="";rest();busy=false;mvUI()},1150)}
   let prev=0;
-  function backFromModel(){if(busy)return;if(V===1){busy=true;const fr=F[prev],tp=F[3];fr.hidden=false;tp.hidden=false;const h3=tp.offsetHeight;document.body.classList.add("rotating");
-      box.className="box d3";box.style.transformOrigin="50% 0";fr.style.transform="none";tp.style.top=`${-h3}px`;tp.style.transformOrigin="50% 100%";tp.style.transform="rotateX(90deg)";box.style.transform="rotateX(-90deg)";void box.offsetWidth;
-      box.classList.add("go");box.style.transform="rotateX(0deg)";setTimeout(()=>{face=prev;tp.style.top="";tp.style.transformOrigin="";box.style.transformOrigin="";box.style.transform="";rest();busy=false;mvUI()},1150)}
-    else{face=prev;rest();mvUI()}}
+  /* bryła w miniaturze: przód + bok + dach; kamera unosi się nad bryłę */
+  function lid(up,cb){busy=true;const W=cube.clientWidth,fr=up?face:prev,H=Math.min(F[fr].offsetHeight||900,Math.max(560,innerHeight-200));
+    const h4=F[3].hidden;F[3].hidden=false;window.mmMas&&window.mmMas();const top=cube.getBoundingClientRect().top+scrollY-120;scrollTo({top,behavior:"instant"});
+    const cl=(el)=>{const c=el.cloneNode(true);c.hidden=false;c.removeAttribute("id");c.querySelectorAll("[id]").forEach(x=>x.removeAttribute("id"));c.style.cssText="";return c};
+    const sc=document.createElement("div");sc.className="lid";sc.style.height=H+"px";
+    const bx=document.createElement("div");bx.className="lid-b";bx.style.cssText=`width:${W}px;height:${H}px`;
+    const mk=(src,cls,w,h,tr)=>{const f=document.createElement("div");f.className="lid-f "+cls;f.style.cssText=`width:${w}px;height:${h}px;left:${(W-w)/2}px;top:${(H-h)/2}px;transform:${tr}`;f.appendChild(cl(src));bx.appendChild(f);return f};
+    mk(F[fr],"lf-front",W,H,`translateZ(${W/2}px)`);mk(F[(fr+1)%3],"lf-side",W,H,`rotateY(90deg) translateZ(${W/2}px)`);
+    const tp=mk(F[3],"lf-top",W,W,`rotateX(90deg) translateZ(${H/2}px)`);
+    F[3].hidden=h4;sc.appendChild(bx);cube.appendChild(sc);document.body.classList.add("rotating");box.style.visibility="hidden";cube.style.height=H+"px";
+    const S0=`translateZ(${-W/2}px)`,S1=`translateY(${H*.12}px) scale3d(.46,.46,.46) rotateX(-30deg) rotateY(-34deg)`,S2=`translateY(${(W-H)/2}px) translateZ(${-H/2}px) rotateX(-90deg)`;
+    const seq=up?[S0,S1,S2]:[S2,S1,S0];bx.style.transform=seq[0];if(!up)sc.classList.add("lid-hi");void bx.offsetWidth;
+    requestAnimationFrame(()=>{bx.classList.add("go");bx.style.transform=seq[1];sc.classList.toggle("lid-hi",true);
+      setTimeout(()=>{bx.style.transform=seq[2];sc.classList.remove("lid-hi");
+        setTimeout(()=>{sc.remove();box.style.visibility="";cube.style.height="";cb();busy=false;mvUI()},1150)},1100+650)})}
+  function lookUp(){if(busy||face===3)return;prev=face;lid(true,()=>{face=3;rest()})}
+  function backFromModel(){if(busy)return;if(V===1)lid(false,()=>{face=prev;rest()});else{face=prev;rest();mvUI()}}
   /* wersja 2 – pas */
   const MMAP={"01":{n:"modele na mapie banku i grupy koncepcji",s:[".mb",".kx-hh"]},"02":{n:"gdzie trafia wynik: kapitał, odpisy i wskaźniki; miary ryzyka",s:['[data-b^="k_"]','[data-b="a_ecl"]','[data-b="r_ecl"]','[data-b^="q_"]','[data-tid="pr_risk"]']},
     "03":{n:"koncepcje modeli i rodziny rozkładów",s:["[data-cid]",'[data-tid="pr_dist"]','[data-tid="pr_fac"]','[data-tq-x]']},"04":{n:"pozycje bilansu jako dane wejściowe; statystyka opisowa i dane niepełne",s:['[data-b^="a_"]','[data-b^="p_"]','[data-b="z_pozab"]','[data-tid^="so_"]','[data-tid="wn_inc"]','[data-tid="wn_cens"]']},
