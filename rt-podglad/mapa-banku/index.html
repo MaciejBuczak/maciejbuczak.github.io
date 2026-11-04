@@ -138,7 +138,19 @@
 .tb{display:flex;align-items:center;gap:10px;text-align:left;font:inherit;font-size:13.5px;font-weight:500;line-height:1.3;color:var(--ink);background:#fffdf9;border:1px solid var(--line);border-radius:999px;padding:8px 14px 8px 8px;cursor:pointer;text-decoration:none;transition:opacity .25s,background .25s,border-color .25s}
 .tb i{flex:none;width:26px;height:26px;border-radius:7px;display:grid;place-items:center;font-family:var(--serif);font-style:italic;font-size:13px;color:var(--ink)}
 .tb:hover{border-color:var(--ink)}
-.reg{margin-top:12px;padding:0}
+.reg{margin:14px 0;padding:0}
+.regb{width:100%;display:flex;align-items:center;gap:16px;text-align:left;font:inherit;color:var(--paper);background:var(--ink);border:0;border-radius:20px;padding:12px 20px;cursor:pointer;transition:background .2s}
+.regb:hover{background:#1f1d1a}
+.regb .rtop-ic{width:26px;height:30px;margin:0;flex:none}
+.regb-t{display:flex;flex-direction:column;flex:1;min-width:0}
+.regb-t small{font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--sand)}
+.regb-t b{font-size:15px;font-weight:600}
+.regb-a{display:flex;align-items:center;gap:10px;font-size:12.5px;color:#cfc6b8;flex:none}
+.regb-a i{font-style:normal;width:28px;height:28px;border-radius:50%;border:1px solid #4a4640;display:grid;place-items:center;transition:transform .3s}
+.reg.open .regb-a i{transform:rotate(180deg)}
+.reg.open .regb{border-radius:20px 20px 0 0}
+.regc{display:none}.reg.open .regc{display:block}
+.regc .rtop{border-radius:0 0 20px 20px;grid-template-columns:1fr;padding-top:6px}
 .reg-h h2{font-family:var(--display);font-size:clamp(26px,3vw,38px);line-height:1.1;margin:10px 0 22px;letter-spacing:-.01em}.reg-h h2 em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--terra)}
 .rtop{background:var(--ink);color:var(--paper);border-radius:24px;padding:20px 24px 22px;margin-bottom:12px;display:grid;grid-template-columns:210px minmax(0,1fr);gap:24px}
 .rtop-ic{width:34px;height:40px;display:block;margin-bottom:12px}.rtop-h span{display:block;font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--sand);margin-bottom:8px}.rtop-h b{display:block;font-family:var(--display);font-weight:400;font-size:21px;line-height:1.15;margin-bottom:8px}.rtop-h small{display:block;font-size:11.5px;line-height:1.45;color:#a89e8f}
@@ -231,8 +243,8 @@
   <div class="lay">
     <div>
       <aside class="md" id="md"><div class="md-h"><h3>Modele ryzyka</h3></div><div class="lk" id="lk"><button type="button" class="lc lel" data-s="l:EL"><span class="pl el">EL</span><b>Strata oczekiwana</b><small>odpisy, rezerwy, koszt ryzyka – pokrywa ją marża i bieżący wynik</small></button><button type="button" class="lc lul" data-s="l:UL"><span class="pl ul">UL</span><b>Strata nieoczekiwana</b><small>RWA i Filar 2 – pokrywają ją fundusze własne</small></button><button type="button" class="lc lnn" data-s="l:N"><span class="pl nn">—</span><b>Wycena, marża i płynność</b><small>modele, które nie liczą straty: wycena instrumentów, odsetki, płynność, scenariusze</small></button></div><div id="ml"></div></aside>
-      <div class="bank" id="bank"></div>
       <section class="reg" id="reg"></section>
+      <div class="bank" id="bank"></div>
       <div class="fbx" id="fbx"><button type="button" class="fclr" data-clr>Wyczyść <span aria-hidden="true">✕</span></button><button type="button" class="ibb" id="ibb" aria-expanded="false" aria-controls="inf"><span class="ibb-i">i</span><span class="ibb-t"><small id="ibbk">Opis</small><b id="ibbt">Jak czytać mapę</b></span></button></div>
       <div class="inf" id="inf" role="dialog" aria-label="Opis zaznaczenia"><button type="button" class="inf-x" id="infx" aria-label="Zamknij">✕</button><div class="ib" id="ib"></div></div>
     </div>
@@ -380,8 +392,9 @@ const RDOCS={
  A:['<b>Rekomendacja P</b> – ryzyko płynności','<b>CRR</b> cz. 6 i rozporządzenie delegowane 2015/61 – LCR, NSFR','Wytyczne EBA – IRRBB i CSRBB (stopa procentowa w księdze bankowej)','RTS – test wartości odstających (ΔEVE, ΔNII)','<b>ILAAP</b> – wewnętrzna ocena płynności'],
  M:['<b>Rekomendacja W</b> – cykl życia modelu, walidacja niezależna, rejestr i istotność modeli','<b>Przewodnik EBC</b> po modelach wewnętrznych; RTS EBA – istotność zmian w modelach IRB'],
  S:['Wytyczne EBA – testy warunków skrajnych w bankach','Testy nadzorcze EBA / KNF','<b>ICAAP</b> – plan kapitałowy w stresie','Plan naprawy (ustawa o BFG)']};
-document.getElementById("reg").innerHTML=`<div class="rtop"><div class="rtop-h"><svg class="rtop-ic" viewBox="0 0 48 56" aria-hidden="true"><path d="M8 2h22l12 12v36a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4z" fill="none" stroke="#d4c4b0" stroke-width="2"/><path d="M30 2v12h12" fill="none" stroke="#d4c4b0" stroke-width="2"/><path d="M11 20h16M11 26h22M11 32h18" stroke="#d4c4b0" stroke-width="2" stroke-linecap="round" opacity=".7"/><circle cx="32" cy="43" r="7" fill="#bf8165"/><path d="M29 43l2 2 4-4" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Otoczenie regulacyjne</span><b>Dokumenty, które regulują modele</b><small>nad wszystkim – dokumenty nadrzędne; poniżej – według rodzaju ryzyka</small></div><div class="rtop-g">${TOPDOCS.map(([n,l],i)=>`<div class="tdg" data-g="${i}"><span>${n}</span>${l.map(x=>`<p>${x}</p>`).join("")}</div>`).join("")}</div></div>
-<div class="rgr">${["K","R","O","A","M","S"].map(r=>`<div class="rdc" data-r="${r}" style="--gc:${RISK[r].c}"><h4>${r==="A"?"Stopa procentowa i płynność":r==="M"||r==="S"?RISK[r].n:"Ryzyko "+RISK[r].n.toLowerCase()}</h4><ul>${RDOCS[r].map(x=>`<li>${x}</li>`).join("")}</ul></div>`).join("")}</div>`;
+document.getElementById("reg").innerHTML=`<button type="button" class="regb" id="regb" aria-expanded="false" aria-controls="regc"><svg class="rtop-ic" viewBox="0 0 48 56" aria-hidden="true"><path d="M8 2h22l12 12v36a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4z" fill="none" stroke="#d4c4b0" stroke-width="2"/><path d="M30 2v12h12" fill="none" stroke="#d4c4b0" stroke-width="2"/><path d="M11 20h16M11 26h22M11 32h18" stroke="#d4c4b0" stroke-width="2" stroke-linecap="round" opacity=".7"/><circle cx="32" cy="43" r="7" fill="#bf8165"/><path d="M29 43l2 2 4-4" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="regb-t"><small>Otoczenie regulacyjne</small><b>Modele ryzyka – otoczenie regulacyjne</b></span><span class="regb-a"><span class="regb-l">Pokaż dokumenty</span><i aria-hidden="true">↓</i></span></button><div class="regc" id="regc"><div class="rtop"><div class="rtop-g">${TOPDOCS.map(([n,l],i)=>`<div class="tdg" data-g="${i}"><span>${n}</span>${l.map(x=>`<p>${x}</p>`).join("")}</div>`).join("")}</div></div>
+<div class="rgr">${["K","R","O","A","M","S"].map(r=>`<div class="rdc" data-r="${r}" style="--gc:${RISK[r].c}"><h4>${r==="A"?"Stopa procentowa i płynność":r==="M"||r==="S"?RISK[r].n:"Ryzyko "+RISK[r].n.toLowerCase()}</h4><ul>${RDOCS[r].map(x=>`<li>${x}</li>`).join("")}</ul></div>`).join("")}</div></div>`;
+document.getElementById("regb").addEventListener("click",e=>{const r=document.getElementById("reg"),o=!r.classList.contains("open");r.classList.toggle("open",o);e.currentTarget.setAttribute("aria-expanded",o);r.querySelector(".regb-l").textContent=o?"Zwiń":"Pokaż dokumenty"});
 /* ---------- logika ---------- */
 function pl(t){return !t?"":t==="EL+UL"?pl("EL")+pl("UL"):t==="EL"?'<span class="pl el">EL</span>':t==="UL"?'<span class="pl ul">UL</span>':t==="S"?'<span class="pl s">stres</span>':""}
 const tName=id=>(T.find(t=>t.id===id)||{}).title||id;
