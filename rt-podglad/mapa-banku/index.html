@@ -291,6 +291,18 @@ body.rotating .fbx,body.rotating .inf,body.rotating #fl{opacity:0!important;poin
 .tq-m{min-width:22px;height:20px;border-radius:999px;background:color-mix(in srgb,var(--tc) 18%,#fff);color:var(--ink);border:1px solid color-mix(in srgb,var(--tc) 40%,#fff);font-size:10.5px;font-weight:600;display:grid;place-items:center;padding:0 6px}
 .tq-e{display:inline-grid;place-items:center;width:18px;height:18px;border-radius:5px;background:#2f6f8f;color:#fff;font-size:10px;font-weight:700;font-style:normal;vertical-align:1px}.tq-r{display:flex;gap:5px;align-items:center}.tq-h p .tq-e{margin:0 2px}
 @media(max-width:1100px){.tq-g{grid-template-columns:1fr 1fr}.tq-s{--sp:2!important;--ic:2!important}.tq-h{grid-template-columns:1fr}}@media(max-width:640px){.tq-g{grid-template-columns:1fr}.tq-s{--sp:1!important;--ic:1!important}}
+
+.kx-tc[data-cid]{cursor:pointer;transition:opacity .2s,box-shadow .2s}
+.kx-tc[data-cid]:hover{box-shadow:0 0 0 1.5px var(--dc)}
+body.tsel .kx-tc[data-cid]{opacity:.35}body.tsel .kx-tc[data-cid].hit{opacity:1;box-shadow:0 0 0 2px var(--dc)}body.tsel .kx-tc[data-cid].cur{opacity:1;background:var(--ink);color:var(--paper);box-shadow:0 0 0 3px var(--dc)}
+body.tsel .kx-tc.cur small{color:#cfc6b8}
+.tq-s li{cursor:pointer;transition:opacity .2s,background .2s}
+body.tsel .tq-s li{opacity:.35}body.tsel .tq-s li.hit{opacity:1;background:color-mix(in srgb,var(--tc) 14%,#fff)}body.tsel .tq-s li.cur{opacity:1;background:var(--ink);color:var(--paper)}
+body.tsel .tq-s li.cur small{color:#cfc6b8}
+.csel{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--paper);border-radius:999px;padding:6px 6px 6px 16px;font-size:13px}
+.csel b{font-weight:600}.csel button{font:inherit;font-size:12.5px;font-weight:600;border:0;border-radius:999px;padding:6px 12px;cursor:pointer;background:var(--terra-d);color:#fff}
+.csel button[data-unsel]{background:#2a2622;padding:6px 10px}
+.csel[hidden]{display:none}
 </style>
 </head>
 <body>
@@ -332,7 +344,7 @@ body.rotating .fbx,body.rotating .inf,body.rotating #fl{opacity:0!important;poin
   </div>
   <span id="vDhome" hidden></span>
   <div id="vP" hidden>
-    <div class="cbar"><div class="cfaces" role="tablist" aria-label="Ściana"><button type="button" data-face="0" class="on"><i>1</i>Bilans, wynik i kapitał</button><button type="button" data-face="1"><i>2</i>Koncepcje modeli</button><button type="button" data-face="2"><i>3</i>Techniki ilościowe</button></div><button type="button" class="crot" id="crot"><span aria-hidden="true">↻</span> Obróć bryłę</button></div>
+    <div class="cbar"><div class="cfaces" role="tablist" aria-label="Ściana"><button type="button" data-face="0" class="on"><i>1</i>Bilans, wynik i kapitał</button><button type="button" data-face="1"><i>2</i>Koncepcje modeli</button><button type="button" data-face="2"><i>3</i>Techniki ilościowe</button></div><div class="csel" id="csel" hidden></div><button type="button" class="crot" id="crot"><span aria-hidden="true">↻</span> Obróć bryłę</button></div>
     <div class="cube" id="cube"><div class="box" id="box"><div class="fc f1" id="f1"></div><div class="fc f2" id="f2"><div class="kx" id="kx"></div></div><div class="fc f3" id="f3"><div class="tq" id="tqf"></div></div></div></div>
   </div>
 </div>
@@ -588,10 +600,10 @@ spaint(null);
 (function(){const D=window.RT_KON;if(!D)return;const kx=document.getElementById("kx");
   const E=t=>String(t==null?"":t).replace(/&/g,"&amp;").replace(/</g,"&lt;");const DI={};D.dom.forEach(x=>DI[x[0]]=x);const CI={};D.c.forEach(c=>CI[c.id]=c);
   const UT=["","niszowo","rzadko","w części banków","często","powszechnie"],sg=u=>[1,2,3,4,5].map(k=>`<i${k<=u?' class="f"':""}></i>`).join("");
-  kx.innerHTML=`<div class="kx-h"><div><span class="kick">Druga ściana</span><h2>Koncepcje modeli</h2></div><p>${D.c.length} modeli ryzyka omawianych na szkoleniach, w ${D.dom.length} obszarach. Pełne opisy z przykładami – na stronie <a href="../koncepcje/">Koncepcje modeli</a>.</p></div>
+  kx.innerHTML=`<div class="kx-h"><div><span class="kick">Druga ściana</span><h2>Koncepcje modeli</h2></div><p>${D.c.length} modeli ryzyka omawianych na szkoleniach, w ${D.dom.length} obszarach. Kliknij koncepcję, żeby zobaczyć jej techniki ilościowe na trzeciej ścianie. Pełne opisy – na stronie <a href="../koncepcje/">Koncepcje modeli</a>.</p></div>
   <div class="kx-g" id="kxg"></div>`;
   const lanes=()=>{const L=[[],[]],H=[0,0];D.dom.map(d=>[d,D.c.filter(c=>c.d===d[0]).length]).sort((a,b)=>b[1]-a[1]).forEach(([d,n])=>{const i=H[0]<=H[1]?0:1;L[i].push(d);H[i]+=n+1});return L};
-  const cell=(c,d,head)=>`<div class="kx-tc${c.old?" old":""}"><b>${c.reg?'<em class="kx-rg">§</em>':""}${E(c.n)}</b><small>${E(c.old||c.o)}</small><span class="kx-k ${c.k}">${c.k}</span></div>`;
+  const cell=(c,d,head)=>`<div class="kx-tc${c.old?" old":""}" data-cid="${c.id}" role="button" tabindex="0"><b>${c.reg?'<em class="kx-rg">§</em>':""}${E(c.n)}</b><small>${E(c.old||c.o)}</small><span class="kx-k ${c.k}">${c.k}</span></div>`;
   function laneHTML(doms,cols){const items=[];doms.forEach(d=>{items.push([null,d,true]);D.c.filter(c=>c.d===d[0]).forEach(c=>items.push([c,d,false]))});
     const g=(r,k)=>{const x=items[r*cols+k];return x?x[1][0]:null};
     return items.map((x,n)=>{const r=Math.floor(n/cols),k=n%cols,me=x[1][0],T=g(r-1,k)===me&&r>0,B=g(r+1,k)===me,Lf=k>0&&g(r,k-1)===me,Rt=k<cols-1&&g(r,k+1)===me;
@@ -607,7 +619,7 @@ spaint(null);
       let pts=[];st.forEach(q=>{pts.push([q[1],q[2]],[q[1],q[3]])});st.slice().reverse().forEach(q=>{pts.push([q[0],q[3]],[q[0],q[2]])});
       pts=pts.filter((p,i)=>{const a=pts[(i-1+pts.length)%pts.length],b=pts[(i+1)%pts.length];return !((a[0]===p[0]&&p[0]===b[0])||(a[1]===p[1]&&p[1]===b[1]))});
       return`<path d="${rp(pts,26)}" fill="color-mix(in srgb, ${g.col} 19%, #faf6ef)" stroke="var(--paper)" stroke-width="14" stroke-linejoin="round"/>`}).join("")})}
-  window.kxDraw=draw;fit();addEventListener("resize",()=>{lastCols=0;fit()});if(document.fonts)document.fonts.ready.then(draw);
+  window.kxDraw=draw;fit();addEventListener("resize",()=>{lastCols=0;fit();setTimeout(()=>paintSel())});if(document.fonts)document.fonts.ready.then(draw);
   const m=document.getElementById("kxm"),mc=document.getElementById("kxc");
   function op(id){const c=CI[id],d=DI[c.d],x=c.det;m.style.setProperty("--dc",d[3]);
     mc.innerHTML=`<div class="kx-mt"></div><button type="button" class="kx-mx" aria-label="Zamknij">✕</button><div class="kx-mi"><span class="kick">${E(d[1])}${c.g?" · "+E(c.g):""}</span><h2>${E(c.n)}</h2><div class="kx-mo">${E(c.o)}</div>${c.reg?`<div class="kx-mr"><em class="kx-rg">§</em><span>${E(c.reg)}</span></div>`:""}<div class="kx-mu"><span class="kx-ub inl">${sg(c.u)}</span>Stosowanie w bankach: <b>${UT[c.u]}</b> (${c.u} / 5)</div>
@@ -619,11 +631,24 @@ spaint(null);
   m.addEventListener("click",e=>{if(e.target===m||e.target.closest(".kx-mx"))cl()});addEventListener("keydown",e=>{if(e.key==="Escape")cl()});
   /* trzecia ściana – techniki */
   {const T=window.RT_TECH,el=document.getElementById("tqf");if(T&&el){const by=c=>T.t.filter(t=>t.c===c);const ORD=[["WN",2],["PR",2],["SO",2],["EK",2],["NU",4]];
-    el.innerHTML=`<div class="tq-h"><div><span class="kick">Trzecia ściana</span><h2>Techniki ilościowe</h2></div><p>${T.t.length} technik statystycznych, ekonometrycznych, probabilistycznych i numerycznych, na których stoją modele ryzyka. <span class="tq-e">E</span> oznacza technikę estymacyjną.</p></div>
-    <div class="tq-g">${ORD.map(([cid,sp])=>{const c=T.cats.find(x=>x[0]===cid);if(!c)return"";const ts=by(cid);return`<div class="tq-s" style="--tc:${c[2]};--sp:${sp};--ic:${sp}"><div class="tq-sh"><b>${E(c[1])}</b><small>${ts.length}</small></div><ol>${ts.map((t,i)=>`<li><span class="tq-n">${String(i+1).padStart(2,"0")}</span><span class="tq-t"><b>${E(t.n)}</b><small>${E(t.x)}</small></span><span class="tq-r">${t.est?'<span class="tq-e" title="technika estymacyjna">E</span>':""}<span class="tq-m" title="liczba modeli, w których technika jest stosowana">${t.m}</span></span></li>`).join("")}</ol></div>`}).join("")}</div>`}}
+    el.innerHTML=`<div class="tq-h"><div><span class="kick">Trzecia ściana</span><h2>Techniki ilościowe</h2></div><p>${T.t.length} technik statystycznych, ekonometrycznych, probabilistycznych i numerycznych, na których stoją modele ryzyka. <span class="tq-e">E</span> oznacza technikę estymacyjną, a liczba – w ilu koncepcjach z drugiej ściany jest stosowana. Kliknij technikę albo koncepcję, żeby zobaczyć powiązania.</p></div>
+    <div class="tq-g">${ORD.map(([cid,sp])=>{const c=T.cats.find(x=>x[0]===cid);if(!c)return"";const ts=by(cid);return`<div class="tq-s" style="--tc:${c[2]};--sp:${sp};--ic:${sp}"><div class="tq-sh"><b>${E(c[1])}</b><small>${ts.length}</small></div><ol>${ts.map((t,i)=>`<li data-tid="${t.id}" role="button" tabindex="0"><span class="tq-n">${String(i+1).padStart(2,"0")}</span><span class="tq-t"><b>${E(t.n)}</b><small>${E(t.x)}</small></span><span class="tq-r">${t.est?'<span class="tq-e" title="technika estymacyjna">E</span>':""}<span class="tq-m" title="w ilu koncepcjach z drugiej ściany technika jest stosowana">${t.m}</span></span></li>`).join("")}</ol></div>`}).join("")}</div>`}}
+  /* powiązania technika ↔ koncepcja */
+  const TT=(window.RT_TECH||{t:[]}).t,TI={};TT.forEach(t=>TI[t.id]=t);let SEL=null;
+  function paintSel(){const tset=new Set(),cset=new Set();if(SEL){if(SEL.k==="t"){tset.add(SEL.id);TI[SEL.id].cs.forEach(c=>cset.add(c))}else{cset.add(SEL.id);TT.forEach(t=>{if(t.cs.includes(SEL.id))tset.add(t.id)})}}
+    document.body.classList.toggle("tsel",!!SEL);document.querySelectorAll("[data-cid]").forEach(e=>{e.classList.toggle("hit",cset.has(e.dataset.cid));e.classList.toggle("cur",!!SEL&&SEL.k==="c"&&SEL.id===e.dataset.cid)});
+    document.querySelectorAll("[data-tid]").forEach(e=>{e.classList.toggle("hit",tset.has(e.dataset.tid));e.classList.toggle("cur",!!SEL&&SEL.k==="t"&&SEL.id===e.dataset.tid)});
+    const b=document.getElementById("csel");if(!SEL){b.hidden=true;return}b.hidden=false;const n=SEL.k==="t"?cset.size-0:tset.size;
+    if(SEL.k==="t"){const t=TI[SEL.id];b.innerHTML=`<span><b>${E(t.n)}</b> · ${cset.size} ${cset.size===1?"koncepcja":cset.size<5&&cset.size>1?"koncepcje":"koncepcji"}</span>${face!==1?'<button type="button" data-go="1">Pokaż koncepcje →</button>':""}<button type="button" data-unsel>✕</button>`}
+    else{const c=CI[SEL.id];b.innerHTML=`<span><b>${E(c.n)}</b> · ${tset.size} ${tset.size===1?"technika":tset.size<5&&tset.size>1?"techniki":"technik"}</span>${face!==2?'<button type="button" data-go="2">Pokaż techniki →</button>':""}<button type="button" data-unsel>✕</button>`}}
+  document.addEventListener("click",e=>{const t=e.target.closest("[data-tid]"),c=e.target.closest("[data-cid]");
+    if(t){SEL=SEL&&SEL.k==="t"&&SEL.id===t.dataset.tid?null:{k:"t",id:t.dataset.tid};paintSel();return}
+    if(c){SEL=SEL&&SEL.k==="c"&&SEL.id===c.dataset.cid?null:{k:"c",id:c.dataset.cid};paintSel();return}
+    if(e.target.closest("[data-unsel]")){SEL=null;paintSel();return}
+    const g=e.target.closest("#csel [data-go]");if(g){turn(+g.dataset.go);return}});
   /* obrót */
   const cube=document.getElementById("cube"),box=document.getElementById("box"),F=[document.getElementById("f1"),document.getElementById("f2"),document.getElementById("f3")];let face=0,busy=false;
-  function rest(){box.className="box";cube.style.height="";F.forEach((f,i)=>{f.style.transform="";f.hidden=i!==face});document.querySelectorAll("[data-face]").forEach(b=>b.classList.toggle("on",+b.dataset.face===face));document.body.classList.remove("rotating");if(face===0)requestAnimationFrame(()=>flows(curFl));else if(face===1)window.kxDraw&&window.kxDraw()}
+  function rest(){setTimeout(()=>paintSel());box.className="box";cube.style.height="";F.forEach((f,i)=>{f.style.transform="";f.hidden=i!==face});document.querySelectorAll("[data-face]").forEach(b=>b.classList.toggle("on",+b.dataset.face===face));document.body.classList.remove("rotating");if(face===0)requestAnimationFrame(()=>flows(curFl));else if(face===1)window.kxDraw&&window.kxDraw()}
   function turn(to){if(busy||to===face)return;busy=true;const W=cube.clientWidth;
     const top=document.querySelector(".cbar").getBoundingClientRect().top+scrollY-100;if(scrollY>top)scrollTo({top,behavior:"instant"});
     F.forEach(f=>f.hidden=false);window.kxDraw&&window.kxDraw();const h0=F[face].offsetHeight,h1=F[to].offsetHeight;document.body.classList.add("rotating");
