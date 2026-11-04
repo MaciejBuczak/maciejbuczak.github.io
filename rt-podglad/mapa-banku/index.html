@@ -105,7 +105,11 @@
 .inf.open{opacity:1;transform:none;pointer-events:auto}
 .inf .ib{min-height:0;border-radius:24px}
 .inf-x{position:absolute;right:14px;top:14px;width:30px;height:30px;border-radius:50%;border:1px solid var(--line);background:var(--card);cursor:pointer;font-size:13px;color:var(--ink2);z-index:1}
-.ibb{position:fixed;right:24px;bottom:24px;z-index:60;display:flex;align-items:center;gap:10px;max-width:min(380px,calc(100vw - 32px));padding:8px 18px 8px 8px;border-radius:999px;border:0;background:var(--ink);color:var(--paper);font:inherit;cursor:pointer;box-shadow:0 14px 34px -12px rgba(13,13,13,.5);opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .25s,transform .25s}
+.fbx{position:fixed;right:24px;bottom:24px;z-index:60;display:flex;align-items:center;gap:8px;pointer-events:none}
+.fclr{font:inherit;font-size:13.5px;font-weight:600;padding:12px 18px;border-radius:999px;border:1px solid var(--line);background:#fffdf9;color:var(--ink);cursor:pointer;box-shadow:0 14px 34px -14px rgba(13,13,13,.35);opacity:0;transform:translateY(16px);transition:opacity .25s,transform .25s}
+.fclr:hover{border-color:var(--ink)}
+.fbx.has .fclr.on{opacity:1;transform:none;pointer-events:auto}
+.ibb{position:relative;display:flex;align-items:center;gap:10px;max-width:min(380px,calc(100vw - 32px));padding:8px 18px 8px 8px;border-radius:999px;border:0;background:var(--ink);color:var(--paper);font:inherit;cursor:pointer;box-shadow:0 14px 34px -12px rgba(13,13,13,.5);opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .25s,transform .25s}
 .ibb.show{opacity:1;transform:none;pointer-events:auto}
 .ibb-i{flex:none;width:34px;height:34px;border-radius:50%;background:var(--terra);display:grid;place-items:center;font-family:var(--serif);font-style:italic;font-weight:600;font-size:17px}
 .ibb-t{display:flex;flex-direction:column;align-items:flex-start;min-width:0;line-height:1.2;text-align:left}
@@ -229,7 +233,7 @@
       <aside class="md" id="md"><div class="md-h"><h3>Modele ryzyka</h3></div><div class="lk" id="lk"><button type="button" class="lc lel" data-s="l:EL"><span class="pl el">EL</span><b>Strata oczekiwana</b><small>odpisy, rezerwy, koszt ryzyka – pokrywa ją marża i bieżący wynik</small></button><button type="button" class="lc lul" data-s="l:UL"><span class="pl ul">UL</span><b>Strata nieoczekiwana</b><small>RWA i Filar 2 – pokrywają ją fundusze własne</small></button><button type="button" class="lc lnn" data-s="l:N"><span class="pl nn">—</span><b>Wycena, marża i płynność</b><small>modele, które nie liczą straty: wycena instrumentów, odsetki, płynność, scenariusze</small></button></div><div id="ml"></div></aside>
       <div class="bank" id="bank"></div>
       <section class="reg" id="reg"></section>
-      <button type="button" class="ibb" id="ibb" aria-expanded="false" aria-controls="inf"><span class="ibb-i">i</span><span class="ibb-t"><small id="ibbk">Opis</small><b id="ibbt">Jak czytać mapę</b></span></button>
+      <div class="fbx" id="fbx"><button type="button" class="fclr" data-clr>Wyczyść <span aria-hidden="true">✕</span></button><button type="button" class="ibb" id="ibb" aria-expanded="false" aria-controls="inf"><span class="ibb-i">i</span><span class="ibb-t"><small id="ibbk">Opis</small><b id="ibbt">Jak czytać mapę</b></span></button></div>
       <div class="inf" id="inf" role="dialog" aria-label="Opis zaznaczenia"><button type="button" class="inf-x" id="infx" aria-label="Zamknij">✕</button><div class="ib" id="ib"></div></div>
     </div>
   </div>
@@ -442,12 +446,13 @@ function paint(sel){setFlows(sel);const md=document.getElementById("md"),tr=docu
   const cur=document.querySelector(`[data-s="${sel}"]`);if(cur){cur.classList.add(cur.classList.contains("ch")?"on":"cur")}
   info(sel,R);flowNote();ibLabel(sel)}
 const ibb=document.getElementById("ibb"),inf=document.getElementById("inf");
+function setClr(){document.querySelector(".fclr").classList.toggle("on",!!lock&&ibb.classList.contains("show"));document.getElementById("fbx").classList.toggle("has",!!lock)}
 function setInf(o){inf.classList.toggle("open",o);ibb.setAttribute("aria-expanded",o)}
 ibb.addEventListener("click",()=>setInf(!inf.classList.contains("open")));document.getElementById("infx").addEventListener("click",()=>setInf(false));
 addEventListener("keydown",e=>{if(e.key==="Escape")setInf(false)});
-{const lay=document.querySelector(".lay");new IntersectionObserver(es=>es.forEach(e=>{ibb.classList.toggle("show",e.isIntersecting);if(!e.isIntersecting)setInf(false)}),{rootMargin:"-25% 0px -25% 0px"}).observe(lay)}
+{const lay=document.querySelector(".lay");new IntersectionObserver(es=>es.forEach(e=>{ibb.classList.toggle("show",e.isIntersecting);setClr();if(!e.isIntersecting)setInf(false)}),{rootMargin:"-25% 0px -25% 0px"}).observe(lay)}
 function ibLabel(sel){const h=ib.querySelector("h4"),k=ib.querySelector(".kick");document.getElementById("ibbt").textContent=sel&&h?h.textContent:"Jak czytać mapę";document.getElementById("ibbk").textContent=sel&&k?k.textContent:"Opis"}
-document.addEventListener("click",e=>{if(e.target.closest("[data-clr]")){lock=null;paint(null);return}const el=e.target.closest("[data-s]");if(!el)return;const s=el.dataset.s;lock=lock===s?null:s;paint(lock);ibb.classList.remove("ping");void ibb.offsetWidth;ibb.classList.add("ping")});
+document.addEventListener("click",e=>{if(e.target.closest("[data-clr]")){lock=null;paint(null);setClr();return}const el=e.target.closest("[data-s]");if(!el)return;const s=el.dataset.s;lock=lock===s?null:s;paint(lock);ibb.classList.remove("ping");void ibb.offsetWidth;ibb.classList.add("ping");setClr()});
 document.addEventListener("mouseover",e=>{if(lock)return;const el=e.target.closest(".bl,.mb,.tb,.lc");if(el)paint(el.dataset.s)});
 document.addEventListener("mouseout",e=>{if(lock)return;const el=e.target.closest(".bl,.mb,.tb,.lc");if(el&&!el.contains(e.relatedTarget))paint(null)});
 paint(null);
