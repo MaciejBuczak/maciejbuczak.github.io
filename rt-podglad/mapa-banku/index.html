@@ -323,6 +323,32 @@ body.tsel .tq-s li.cur small{color:#cfc6b8}
 .mm-p b{font-weight:600}.mm-p small{font-size:10.5px;color:var(--ink2);margin-top:1px}
 @media(max-width:1100px){.mm-g{grid-template-columns:repeat(6,minmax(0,1fr))}.mm-b{grid-column:span 6!important;--ic:2!important}.mm-hd{grid-template-columns:1fr}}
 @media(max-width:640px){.mm-b{--ic:1!important}}
+
+.cfaces [data-face="3"]{display:none}
+.mstrip[hidden],.mpan[hidden],.cver [hidden],#crot[hidden]{display:none!important}
+.cver{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:-4px 0 14px;padding:8px 10px;border:1.5px dashed var(--terra-d);border-radius:18px;background:#fffdf9}
+.cver>span{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--terra-d);margin:0 8px 0 4px}
+.cver button{font:inherit;font-size:12.5px;font-weight:600;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:#fff;cursor:pointer}
+.cver button.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.cver .cver-go{margin-left:auto;background:var(--terra-d);color:#fff;border-color:var(--terra-d)}
+.mstrip{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:6px;margin:0 0 12px}
+.mstrip button{display:flex;flex-direction:column;align-items:flex-start;gap:6px;text-align:left;font:inherit;font-size:12px;font-weight:600;line-height:1.2;padding:9px;border-radius:16px;border:1px solid var(--line);background:color-mix(in srgb,var(--c) 12%,#fffdf9);cursor:pointer;transition:transform .2s,box-shadow .2s}
+.mstrip button:hover{transform:translateY(-2px)}.mstrip button.on{box-shadow:0 0 0 2px var(--c);background:color-mix(in srgb,var(--c) 22%,#fffdf9)}
+.mstrip .mm-ic{width:32px;height:32px;border-radius:10px}.mstrip .mm-ic svg{width:19px;height:19px}.mstrip small{display:block;font-family:var(--serif);font-style:italic;color:var(--c);font-size:12px}
+.mpan{margin:0 0 14px;display:grid;gap:8px}.mpan .mm-b{grid-column:auto!important}
+.mpan-l{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--ink2)}.mpan-l b{color:var(--ink)}.mpan-l button{margin-left:auto;border:1px solid var(--line);background:#fff;border-radius:50%;width:30px;height:30px;cursor:pointer}
+.mmh{outline:2.5px solid var(--terra-d)!important;outline-offset:2px;box-shadow:0 0 0 6px color-mix(in srgb,var(--terra-d) 18%,transparent)!important;opacity:1!important;border-radius:12px}
+.cube.explode{height:auto!important}
+.cube.explode .box{display:grid;grid-template-columns:1fr 1.6fr 1fr;grid-template-rows:auto auto;gap:22px;align-items:start;perspective:1800px}
+.cube.explode .fc{position:relative!important;cursor:zoom-in;border-radius:22px;background:#fffdf9;box-shadow:0 0 0 1px var(--line),0 24px 50px -30px rgba(13,13,13,.45);overflow:hidden;transition:transform .5s}
+.cube.explode .fc>*{pointer-events:none}
+.cube.explode .f1{grid-column:1;grid-row:1;zoom:.32;transform:rotateY(14deg)}
+.cube.explode .f2{grid-column:3;grid-row:1;zoom:.32;transform:rotateY(-14deg)}
+.cube.explode .f3{grid-column:1/4;grid-row:2;zoom:.34;width:70%;justify-self:center;transform:rotateX(10deg)}
+.cube.explode .f4{grid-column:2;grid-row:1;zoom:.52;cursor:default;box-shadow:0 0 0 2px var(--terra-d),0 30px 60px -30px rgba(13,13,13,.5)}
+.cube.explode .fc:not(.f4):hover{transform:none}
+.cube.explode .fc::before{content:attr(data-lbl);display:block;position:absolute;left:0;right:0;top:0;padding:18px 26px;font-family:"Archivo Black",sans-serif;font-size:46px;color:#fff;background:var(--ink);z-index:5}
+@media(max-width:1100px){.mstrip{grid-template-columns:repeat(5,minmax(0,1fr))}}
 </style>
 </head>
 <body>
@@ -365,7 +391,7 @@ body.tsel .tq-s li.cur small{color:#cfc6b8}
   <span id="vDhome" hidden></span>
   <div id="vP" hidden>
     <div class="cbar"><div class="cfaces" role="tablist" aria-label="Ściana"><button type="button" data-face="0" class="on"><i>1</i>Bilans, wynik i kapitał</button><button type="button" data-face="1"><i>2</i>Koncepcje modeli</button><button type="button" data-face="2"><i>3</i>Techniki ilościowe</button><button type="button" data-face="3"><i>4</i>Mapa modelu</button></div><div class="csel" id="csel" hidden></div><button type="button" class="crot" id="crot"><span aria-hidden="true">↻</span> Obróć bryłę</button></div>
-    <div class="cube" id="cube"><div class="box" id="box"><div class="fc f1" id="f1"></div><div class="fc f2" id="f2"><div class="kx" id="kx"></div></div><div class="fc f3" id="f3"><div class="tq" id="tqf"></div></div><div class="fc f4" id="f4"><div class="mm" id="mmf"></div></div></div></div>
+    <div class="cube" id="cube"><div class="box" id="box"><div class="fc f1" id="f1" data-lbl="1 · Bilans, wynik i kapitał"></div><div class="fc f2" id="f2" data-lbl="2 · Koncepcje modeli"><div class="kx" id="kx"></div></div><div class="fc f3" id="f3" data-lbl="3 · Techniki ilościowe"><div class="tq" id="tqf"></div></div><div class="fc f4" id="f4" data-lbl="Mapa modelu"><div class="mm" id="mmf"></div></div></div></div>
   </div>
 </div>
 </main>
@@ -703,15 +729,54 @@ spaint(null);
   function rest(){setTimeout(()=>paintSel());box.className="box";cube.style.height="";F.forEach((f,i)=>{f.style.transform="";f.hidden=i!==face});document.querySelectorAll("[data-face]").forEach(b=>b.classList.toggle("on",+b.dataset.face===face));document.body.classList.remove("rotating");if(face===0)requestAnimationFrame(()=>flows(curFl));else if(face===1)window.kxDraw&&window.kxDraw();else if(face===3)window.mmMas&&window.mmMas()}
   function turn(to){if(busy||to===face)return;busy=true;const W=cube.clientWidth;
     const top=document.querySelector(".cbar").getBoundingClientRect().top+scrollY-100;if(scrollY>top)scrollTo({top,behavior:"instant"});
-    F.forEach(f=>f.hidden=false);window.kxDraw&&window.kxDraw();window.mmMas&&window.mmMas();const h0=F[face].offsetHeight,h1=F[to].offsetHeight;document.body.classList.add("rotating");
+    F.forEach((f,i)=>f.hidden=i===3&&face!==3&&to!==3);window.kxDraw&&window.kxDraw();const h0=F[face].offsetHeight,h1=F[to].offsetHeight;document.body.classList.add("rotating");
     cube.style.height=h0+"px";cube.style.perspectiveOrigin=`50% ${Math.max(200,scrollY+innerHeight/2-(cube.getBoundingClientRect().top+scrollY))}px`;
     F.forEach((f,i)=>f.style.transform=`rotateY(${90*i}deg) translateZ(${W/2}px)`);
     box.className="box d3";let st=((to-face)%4+4)%4;if(st===3)st=-1;box.style.transform=`translateZ(${-W/2}px) rotateY(${-90*face}deg)`;void box.offsetWidth;
     const far=Math.abs(st)>1;box.style.transitionDuration=far?"1.5s":"";cube.style.animationDuration=far?"1.5s":"";cube.style.transitionDuration=far?"1.5s":"";box.classList.add("go");box.style.transform=`translateZ(${-W/2}px) rotateY(${-90*(face+st)}deg)`;cube.style.height=h1+"px";cube.classList.add("pulse");
     setTimeout(()=>{face=to;box.style.transform="";box.style.transitionDuration="";cube.style.animationDuration="";cube.style.transitionDuration="";cube.classList.remove("pulse");rest();busy=false},far?1550:1150)}
-  document.getElementById("crot").addEventListener("click",()=>turn((face+1)%4));
+  document.getElementById("crot").addEventListener("click",()=>{if(face===3){backFromModel();return}turn((face+1)%3)});
   document.querySelector(".cfaces").addEventListener("click",e=>{const b=e.target.closest("[data-face]");if(b)turn(+b.dataset.face)});
-  rest()})();
+  /* ---------- trzy wersje ściany modelu ---------- */
+  const vP=document.getElementById("vP"),cbar=document.querySelector(".cbar");let V=1;try{V=+localStorage.getItem("rt_mm_v")||1}catch(_){}
+  cbar.insertAdjacentHTML("afterend",`<div class="cver"><span>Mapa modelu – wersja</span><button type="button" data-mv="1">1 · Dach bryły</button><button type="button" data-mv="2">2 · Pas nad bryłą</button><button type="button" data-mv="3">3 · Rozłożona bryła</button><button type="button" class="cver-go" id="mmgo"></button></div><div class="mstrip" id="mstrip" hidden></div><div class="mpan" id="mpan" hidden></div>`);
+  const mmBlock=document.getElementById("mmg");
+  /* wersja 1 – dach */
+  function lookUp(){if(busy||face===3)return;busy=true;const fr=F[face],tp=F[3];window.mmMas&&window.mmMas();
+    const top=cube.getBoundingClientRect().top+scrollY-120;scrollTo({top,behavior:"instant"});
+    tp.hidden=false;fr.hidden=false;const h3=tp.offsetHeight;document.body.classList.add("rotating");
+    box.className="box d3";box.style.transformOrigin="50% 0";fr.style.transform="none";tp.style.top=`${-h3}px`;tp.style.transformOrigin="50% 100%";tp.style.transform="rotateX(90deg)";
+    cube.style.perspectiveOrigin=`50% ${Math.round(innerHeight*.35)}px`;cube.style.height=fr.offsetHeight+"px";box.style.transform="rotateX(0deg)";void box.offsetWidth;
+    box.classList.add("go");box.style.transform="rotateX(-90deg) translateY(0)";
+    setTimeout(()=>{prev=face;face=3;tp.style.top="";tp.style.transformOrigin="";box.style.transformOrigin="";box.style.transform="";cube.style.height="";rest();busy=false;mvUI()},1150)}
+  let prev=0;
+  function backFromModel(){if(busy)return;if(V===1){busy=true;const fr=F[prev],tp=F[3];fr.hidden=false;tp.hidden=false;const h3=tp.offsetHeight;document.body.classList.add("rotating");
+      box.className="box d3";box.style.transformOrigin="50% 0";fr.style.transform="none";tp.style.top=`${-h3}px`;tp.style.transformOrigin="50% 100%";tp.style.transform="rotateX(90deg)";box.style.transform="rotateX(-90deg)";void box.offsetWidth;
+      box.classList.add("go");box.style.transform="rotateX(0deg)";setTimeout(()=>{face=prev;tp.style.top="";tp.style.transformOrigin="";box.style.transformOrigin="";box.style.transform="";rest();busy=false;mvUI()},1150)}
+    else{face=prev;rest();mvUI()}}
+  /* wersja 2 – pas */
+  const MMAP={"01":{n:"modele na mapie banku i grupy koncepcji",s:[".mb",".kx-hh"]},"02":{n:"gdzie trafia wynik: kapitał, odpisy i wskaźniki; miary ryzyka",s:['[data-b^="k_"]','[data-b="a_ecl"]','[data-b="r_ecl"]','[data-b^="q_"]','[data-tid="pr_risk"]']},
+    "03":{n:"koncepcje modeli i rodziny rozkładów",s:["[data-cid]",'[data-tid="pr_dist"]','[data-tid="pr_fac"]','[data-tq-x]']},"04":{n:"pozycje bilansu jako dane wejściowe; statystyka opisowa i dane niepełne",s:['[data-b^="a_"]','[data-b^="p_"]','[data-b="z_pozab"]','[data-tid^="so_"]','[data-tid="wn_inc"]','[data-tid="wn_cens"]']},
+    "05":{n:"parametry modeli i techniki estymacji",s:['[data-tid^="wn_"]','[data-tid^="ek_"]','[data-tid^="pr_"]','[data-s="p:bud"]']},"06":{n:"testy i backtesting; krok walidacji w cyklu życia",s:['[data-tid="wn_test"]','[data-tid="wn_gof"]','[data-tid="wn_ci"]','[data-tid="nu_boot"]','[data-tid="nu_hs"]','[data-tid="so_mig"]','[data-s="p:wal"]']},
+    "07":{n:"krok wdrożenia w cyklu życia",s:['[data-s="p:wdr"]']},"08":{n:"administrowanie, ryzyko modeli i regulacje (Rekomendacja W)",s:['[data-s="p:adm"]','[data-s="m:mr"]','#regb']},"09":{n:"wdrożenie i akceptacja modelu",s:['[data-s="p:wdr"]','[data-s="p:dcz"]']},"10":{n:"administrowanie i otoczenie regulacyjne",s:['[data-s="p:adm"]','#regb']}};
+  let MSEL=null;const strip=document.getElementById("mstrip"),pan=document.getElementById("mpan");
+  strip.innerHTML=window.RT_MODEL?window.RT_MODEL.map((r,i)=>{const b=mmBlock.children[i];return`<button type="button" data-mc="${r[0]}" style="--c:${b.style.getPropertyValue("--c")}"><span class="mm-ic">${b.querySelector(".mm-ic").innerHTML}</span><span><small>#${r[0]}</small>${E(r[1])}</span></button>`}).join(""):"";
+  function mHi(){document.querySelectorAll(".mmh").forEach(e=>e.classList.remove("mmh"));strip.querySelectorAll("[data-mc]").forEach(b=>b.classList.toggle("on",b.dataset.mc===MSEL));
+    if(!MSEL){pan.hidden=true;return}const i=window.RT_MODEL.findIndex(r=>r[0]===MSEL),blk=mmBlock.children[i].cloneNode(true);blk.style.gridColumn="";blk.style.gridRowEnd="";blk.style.setProperty("--ic",3);
+    pan.innerHTML=`<div class="mpan-l">Na ścianach: <b>${E(MMAP[MSEL].n)}</b><button type="button" data-mc="${MSEL}">✕</button></div>`;pan.appendChild(blk);pan.hidden=false;
+    MMAP[MSEL].s.forEach(q=>document.querySelectorAll(q).forEach(e=>e.classList.add("mmh")))}
+  strip.addEventListener("click",e=>{const b=e.target.closest("[data-mc]");if(b){MSEL=MSEL===b.dataset.mc?null:b.dataset.mc;mHi()}});pan.addEventListener("click",e=>{if(e.target.closest("[data-mc]")){MSEL=null;mHi()}});
+  /* wersja 3 – rozłożona */
+  let EXP=false;
+  function explode(on){EXP=on;cube.classList.toggle("explode",on);if(on){F.forEach(f=>{f.hidden=false;f.style.transform=""});box.className="box";window.mmMas&&window.mmMas();window.kxDraw&&window.kxDraw()}else rest();mvUI()}
+  cube.addEventListener("click",e=>{if(!EXP)return;const f=e.target.closest(".fc");if(!f||f===F[3])return;e.preventDefault();e.stopPropagation();const i=F.indexOf(f);explode(false);face=i;rest();mvUI()},true);
+  /* przełącznik wersji */
+  function mvUI(){document.querySelectorAll("[data-mv]").forEach(b=>b.classList.toggle("on",+b.dataset.mv===V));const g=document.getElementById("mmgo");
+    g.hidden=V===2;g.textContent=V===1?(face===3?"↓ Wróć do ścian":"⤒ Spójrz z góry"):(EXP?"Złóż bryłę":"⤢ Rozłóż bryłę");strip.hidden=V!==2;if(V!==2){MSEL=null;mHi()}
+    document.getElementById("crot").hidden=EXP;document.querySelector(".cfaces").style.visibility=EXP?"hidden":""}
+  function setV(v){V=v;try{localStorage.setItem("rt_mm_v",v)}catch(_){}if(EXP)explode(false);if(face===3){face=prev;rest()}mvUI()}
+  document.querySelector(".cver").addEventListener("click",e=>{const b=e.target.closest("[data-mv]");if(b){setV(+b.dataset.mv);return}if(e.target.closest("#mmgo")){if(V===1){face===3?backFromModel():lookUp()}else if(V===3)explode(!EXP)}});
+  rest();mvUI()})();
 function setView(v){const vD=document.getElementById("vD"),f1=document.getElementById("f1"),home=document.getElementById("vDhome"),fx=document.getElementById("fx"),vP=document.getElementById("vP");if(v==="p"){if(vD.parentNode!==f1)f1.appendChild(vD);if(fx.parentNode!==vP)vP.insertBefore(fx,vP.firstChild)}else{if(vD.parentNode===f1)home.parentNode.insertBefore(vD,home);if(fx.parentNode!==vD)vD.insertBefore(fx,vD.firstChild)}document.getElementById("vS").hidden=v!=="s";vD.hidden=!(v==="d"||v==="p");document.getElementById("vP").hidden=v!=="p";document.querySelectorAll(".vs button").forEach(b=>{const on=b.dataset.view===v;b.classList.toggle("on",on);b.setAttribute("aria-selected",on)});try{localStorage.setItem("rt_mapa_view",v)}catch(e){}if(v==="d"||v==="p")requestAnimationFrame(()=>flows(curFl))}
 document.querySelector(".vs").addEventListener("click",e=>{const b=e.target.closest("[data-view]");if(b)setView(b.dataset.view)});
 let v0="s";try{v0=localStorage.getItem("rt_mapa_view")||"s"}catch(e){}setView(v0);
