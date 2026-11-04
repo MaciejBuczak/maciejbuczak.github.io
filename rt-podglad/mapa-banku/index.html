@@ -101,7 +101,17 @@
 .mb:hover{border-color:var(--ink)}
 .md.sel .mb{opacity:.35}.md.sel .mb.on{opacity:1;border-color:var(--ink)}.md.sel .mb.cur{opacity:1;background:var(--ink);color:var(--paper);border-color:var(--ink)}
 /* informacja */
-.inf{margin-top:26px;display:grid;grid-template-columns:minmax(0,760px);gap:22px;align-items:start}
+.inf{position:fixed;right:24px;bottom:88px;z-index:61;width:min(460px,calc(100vw - 32px));max-height:min(72vh,680px);overflow:auto;border-radius:24px;box-shadow:0 24px 60px -20px rgba(13,13,13,.35);opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .25s,transform .25s}
+.inf.open{opacity:1;transform:none;pointer-events:auto}
+.inf .ib{min-height:0;border-radius:24px}
+.inf-x{position:absolute;right:14px;top:14px;width:30px;height:30px;border-radius:50%;border:1px solid var(--line);background:var(--card);cursor:pointer;font-size:13px;color:var(--ink2);z-index:1}
+.ibb{position:fixed;right:24px;bottom:24px;z-index:60;display:flex;align-items:center;gap:10px;max-width:min(380px,calc(100vw - 32px));padding:8px 18px 8px 8px;border-radius:999px;border:0;background:var(--ink);color:var(--paper);font:inherit;cursor:pointer;box-shadow:0 14px 34px -12px rgba(13,13,13,.5);opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .25s,transform .25s}
+.ibb.show{opacity:1;transform:none;pointer-events:auto}
+.ibb-i{flex:none;width:34px;height:34px;border-radius:50%;background:var(--terra);display:grid;place-items:center;font-family:var(--serif);font-style:italic;font-weight:600;font-size:17px}
+.ibb-t{display:flex;flex-direction:column;align-items:flex-start;min-width:0;line-height:1.2;text-align:left}
+.ibb-t small{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--sand)}
+.ibb-t b{font-size:13.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:300px}
+.ibb.ping .ibb-i{animation:ibp .6s ease}@keyframes ibp{50%{transform:scale(1.18)}}
 .ib{background:#fffdf9;border:1px solid var(--line);border-radius:24px;padding:22px 24px;min-height:150px}
 .ib h4{font-family:var(--display);font-weight:400;font-size:22px;margin:4px 0 6px}
 .ib p{margin:0 0 8px;font-size:14px;color:var(--ink2)}
@@ -124,10 +134,10 @@
 .tb{display:flex;align-items:center;gap:10px;text-align:left;font:inherit;font-size:13.5px;font-weight:500;line-height:1.3;color:var(--ink);background:#fffdf9;border:1px solid var(--line);border-radius:999px;padding:8px 14px 8px 8px;cursor:pointer;text-decoration:none;transition:opacity .25s,background .25s,border-color .25s}
 .tb i{flex:none;width:26px;height:26px;border-radius:7px;display:grid;place-items:center;font-family:var(--serif);font-style:italic;font-size:13px;color:var(--ink)}
 .tb:hover{border-color:var(--ink)}
-.reg{margin-top:16px}
+.reg{margin-top:12px;padding:0}
 .reg-h h2{font-family:var(--display);font-size:clamp(26px,3vw,38px);line-height:1.1;margin:10px 0 22px;letter-spacing:-.01em}.reg-h h2 em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--terra)}
 .rtop{background:var(--ink);color:var(--paper);border-radius:24px;padding:20px 24px 22px;margin-bottom:12px;display:grid;grid-template-columns:210px minmax(0,1fr);gap:24px}
-.rtop-h span{display:block;font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--sand);margin-bottom:8px}.rtop-h b{display:block;font-family:var(--display);font-weight:400;font-size:21px;line-height:1.15;margin-bottom:8px}.rtop-h small{display:block;font-size:11.5px;line-height:1.45;color:#a89e8f}
+.rtop-ic{width:34px;height:40px;display:block;margin-bottom:12px}.rtop-h span{display:block;font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--sand);margin-bottom:8px}.rtop-h b{display:block;font-family:var(--display);font-weight:400;font-size:21px;line-height:1.15;margin-bottom:8px}.rtop-h small{display:block;font-size:11.5px;line-height:1.45;color:#a89e8f}
 .tdg{transition:opacity .25s}.reg.sel .tdg{opacity:.3}.reg.sel .tdg.on{opacity:1}
 .rtop-g{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
 .rtop-g span{display:block;font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#a89e8f;margin-bottom:6px}
@@ -154,7 +164,7 @@
 .tr.sel .tb{opacity:.35}.tr.sel .tb.on{opacity:1;border-color:var(--ink);box-shadow:0 0 0 1px var(--ink)}.tr.sel .tb.cur{opacity:1;background:var(--ink);color:var(--paper);border-color:var(--ink)}
 .clr{font:inherit;font-size:12.5px;font-weight:600;border:1px solid var(--line);background:transparent;border-radius:999px;padding:6px 14px;cursor:pointer;color:var(--ink2);margin-top:10px}
 .clr:hover{border-color:var(--ink)}
-@media(max-width:900px){.inf{grid-template-columns:1fr}.tg{grid-template-columns:1fr}}
+@media(max-width:900px){.tg{grid-template-columns:1fr}}
 .mapw{padding-bottom:clamp(56px,7vw,96px)}
 /* przełącznik widoku */
 .vs{display:inline-flex;gap:4px;padding:4px;border-radius:999px;background:var(--panel);border:1px solid var(--line);margin-bottom:18px}
@@ -219,9 +229,8 @@
       <aside class="md" id="md"><div class="md-h"><h3>Modele ryzyka</h3></div><div class="lk" id="lk"><button type="button" class="lc lel" data-s="l:EL"><span class="pl el">EL</span><b>Strata oczekiwana</b><small>odpisy, rezerwy, koszt ryzyka – pokrywa ją marża i bieżący wynik</small></button><button type="button" class="lc lul" data-s="l:UL"><span class="pl ul">UL</span><b>Strata nieoczekiwana</b><small>RWA i Filar 2 – pokrywają ją fundusze własne</small></button><button type="button" class="lc lnn" data-s="l:N"><span class="pl nn">—</span><b>Wycena, marża i płynność</b><small>modele, które nie liczą straty: wycena instrumentów, odsetki, płynność, scenariusze</small></button></div><div id="ml"></div></aside>
       <div class="bank" id="bank"></div>
       <section class="reg" id="reg"></section>
-      <div class="inf">
-        <div class="ib" id="ib"></div>
-      </div>
+      <button type="button" class="ibb" id="ibb" aria-expanded="false" aria-controls="inf"><span class="ibb-i">i</span><span class="ibb-t"><small id="ibbk">Opis</small><b id="ibbt">Jak czytać mapę</b></span></button>
+      <div class="inf" id="inf" role="dialog" aria-label="Opis zaznaczenia"><button type="button" class="inf-x" id="infx" aria-label="Zamknij">✕</button><div class="ib" id="ib"></div></div>
     </div>
   </div>
   </div>
@@ -316,7 +325,7 @@ Object.entries(RT).forEach(([k,r])=>BI["q_"+k]={id:"q_"+k,n:r.n});
 const T=window.RT_SZKOLENIA||[],TC=["#f3e4c4","#f9d5bd","#e0dccb","#efe4bc","#e7d4c4","#f0e2cf"],TL={budowa:"../szkolenia/budowa/"};
 /* ---------- rysowanie ---------- */
 const bank=document.getElementById("bank");
-bank.innerHTML=COL.map((c,ci)=>`<div class="col c${ci+1}"><h3>${c[1]}<b>${c[2]}</b></h3><div class="cb">${c[0]==="K"?kcol():B.filter(b=>b[1]===c[0]).map(b=>(b[7]?`<div class="grh">${b[7]}</div>`:"")+blk(b[0])).join("")}${c[0]==="A"?blk("z_pozab"):""}</div></div>`).join("")+`<div class="rtb"><div class="rtb-h"><span>Wskaźniki</span><b>To, na co patrzą zarząd i nadzór</b><small>liczone z pozycji powyżej – kliknij, aby zobaczyć licznik i mianownik</small></div><div class="rtb-g">${[["k","Kapitał"],["l","Płynność"],["w","Wynik i portfel"]].map(g=>`<div class="rg"><span>${g[1]}</span><div>${Object.entries(RT).filter(([k,r])=>r.g===g[0]).map(([k,r])=>`<button type="button" class="bl rq" data-s="q:${k}" data-b="q_${k}"><b>${esc(r.n)} <em>${r.dir}</em></b><small>${esc(r.f[0])} / ${esc(r.f[1])}</small><span class="bd"></span><span class="rl"></span></button>`).join("")}</div></div>`).join("")}</div></div><div class="lg">${["K","R","O","A","M","S"].map(r=>`<span><i style="background:${RISK[r].c}"></i>${RISK[r].n}</span>`).join("")}<span><span class="pl el" style="margin:0">EL</span> strata oczekiwana</span><span><span class="pl ul" style="margin:0">UL</span> nieoczekiwana</span></div>`;
+bank.innerHTML=COL.map((c,ci)=>`<div class="col c${ci+1}"><h3>${c[1]}<b>${c[2]}</b></h3><div class="cb">${c[0]==="K"?kcol():B.filter(b=>b[1]===c[0]).map(b=>(b[7]?`<div class="grh">${b[7]}</div>`:"")+blk(b[0])).join("")}${c[0]==="A"?blk("z_pozab"):""}</div></div>`).join("")+`<div class="rtb"><div class="rtb-h"><span>Wskaźniki</span><b>To, na co patrzą zarząd i nadzór</b><small>liczone z pozycji powyżej – kliknij, aby zobaczyć licznik i mianownik</small></div><div class="rtb-g">${[["k","Kapitał"],["l","Płynność"],["w","Wynik i portfel"]].map(g=>`<div class="rg"><span>${g[1]}</span><div>${Object.entries(RT).filter(([k,r])=>r.g===g[0]).map(([k,r])=>`<button type="button" class="bl rq" data-s="q:${k}" data-b="q_${k}"><b>${esc(r.n)} <em>${r.dir}</em></b><small>${esc(r.f[0])} / ${esc(r.f[1])}</small><span class="bd"></span><span class="rl"></span></button>`).join("")}</div></div>`).join("")}</div></div>`;
 function kcol(){const KP=[["k_at1","k_t2"],["k_rwa_k","k_rwa_cva"],["k_rwa_r","k_rwa_o"],["k_p2","k_buf"]];let h="",open=false;B.filter(b=>b[1]==="K").forEach(b=>{const g=b[7]||"";
   if(g.startsWith("av:")||g.startsWith("rq:")){if(open)h+="</div>";const [t,sub]=g.slice(3).split("|"),av=g.startsWith("av:");
     if(!av)h+=`<div class="kvs"><span>musi pokryć</span></div>`;h+=`<div class="kp ${av?"kav":"krq"}"><div class="kph"><b>${t}</b><small>${sub}</small></div>`;open=true}
@@ -367,7 +376,7 @@ const RDOCS={
  A:['<b>Rekomendacja P</b> – ryzyko płynności','<b>CRR</b> cz. 6 i rozporządzenie delegowane 2015/61 – LCR, NSFR','Wytyczne EBA – IRRBB i CSRBB (stopa procentowa w księdze bankowej)','RTS – test wartości odstających (ΔEVE, ΔNII)','<b>ILAAP</b> – wewnętrzna ocena płynności'],
  M:['<b>Rekomendacja W</b> – cykl życia modelu, walidacja niezależna, rejestr i istotność modeli','<b>Przewodnik EBC</b> po modelach wewnętrznych; RTS EBA – istotność zmian w modelach IRB'],
  S:['Wytyczne EBA – testy warunków skrajnych w bankach','Testy nadzorcze EBA / KNF','<b>ICAAP</b> – plan kapitałowy w stresie','Plan naprawy (ustawa o BFG)']};
-document.getElementById("reg").innerHTML=`<div class="rtop"><div class="rtop-h"><span>Otoczenie regulacyjne</span><b>Dokumenty, które regulują modele</b><small>nad wszystkim – dokumenty nadrzędne; poniżej – według rodzaju ryzyka</small></div><div class="rtop-g">${TOPDOCS.map(([n,l],i)=>`<div class="tdg" data-g="${i}"><span>${n}</span>${l.map(x=>`<p>${x}</p>`).join("")}</div>`).join("")}</div></div>
+document.getElementById("reg").innerHTML=`<div class="rtop"><div class="rtop-h"><svg class="rtop-ic" viewBox="0 0 48 56" aria-hidden="true"><path d="M8 2h22l12 12v36a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4z" fill="none" stroke="#d4c4b0" stroke-width="2"/><path d="M30 2v12h12" fill="none" stroke="#d4c4b0" stroke-width="2"/><path d="M11 20h16M11 26h22M11 32h18" stroke="#d4c4b0" stroke-width="2" stroke-linecap="round" opacity=".7"/><circle cx="32" cy="43" r="7" fill="#bf8165"/><path d="M29 43l2 2 4-4" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Otoczenie regulacyjne</span><b>Dokumenty, które regulują modele</b><small>nad wszystkim – dokumenty nadrzędne; poniżej – według rodzaju ryzyka</small></div><div class="rtop-g">${TOPDOCS.map(([n,l],i)=>`<div class="tdg" data-g="${i}"><span>${n}</span>${l.map(x=>`<p>${x}</p>`).join("")}</div>`).join("")}</div></div>
 <div class="rgr">${["K","R","O","A","M","S"].map(r=>`<div class="rdc" data-r="${r}" style="--gc:${RISK[r].c}"><h4>${r==="A"?"Stopa procentowa i płynność":r==="M"||r==="S"?RISK[r].n:"Ryzyko "+RISK[r].n.toLowerCase()}</h4><ul>${RDOCS[r].map(x=>`<li>${x}</li>`).join("")}</ul></div>`).join("")}</div>`;
 /* ---------- logika ---------- */
 function pl(t){return !t?"":t==="EL+UL"?pl("EL")+pl("UL"):t==="EL"?'<span class="pl el">EL</span>':t==="UL"?'<span class="pl ul">UL</span>':t==="S"?'<span class="pl s">stres</span>':""}
@@ -415,7 +424,7 @@ function paint(sel){setFlows(sel);const md=document.getElementById("md"),tr=docu
   document.querySelectorAll("[data-s]").forEach(e=>e.classList.remove("on","cur","hit"));
   bank.querySelectorAll(".bl").forEach(e=>{e.querySelector(".bd").innerHTML="";e.querySelector(".rl").innerHTML="";e.style.removeProperty("--hc")});
   [bank,md,tr,document.getElementById("reg")].forEach(e=>e.classList.toggle("sel",!!sel));document.getElementById("lk").classList.toggle("sel",!!sel);
-  if(!sel){info(null);flowNote();return}
+  if(!sel){info(null);flowNote();ibLabel(null);return}
   const R=resolve(sel),k0=sel.split(":")[0];
   R.b.forEach((nums,bid)=>{const el=bank.querySelector(`[data-b="${bid}"]`);if(!el)return;el.classList.add("hit");el.style.setProperty("--hc",R.hc);
     if(nums.length)el.querySelector(".bd").innerHTML=nums.map(n=>`<span>${n}</span>`).join("");
@@ -431,8 +440,14 @@ function paint(sel){setFlows(sel);const md=document.getElementById("md"),tr=docu
   const lc=new Set();if(k0==="l")lc.add(sel.split(":")[1]);else R.m.forEach(m=>cat(MI[m]).forEach(c=>lc.add(c)));lc.forEach(c=>{const e=document.querySelector(`.lc[data-s="l:${c}"]`);if(e)e.classList.add("on")});
   R.t.forEach(t=>{const e=document.querySelector(`.tb[data-s="t:${t}"]`);if(e)e.classList.add("on")});
   const cur=document.querySelector(`[data-s="${sel}"]`);if(cur){cur.classList.add(cur.classList.contains("ch")?"on":"cur")}
-  info(sel,R);flowNote()}
-document.addEventListener("click",e=>{if(e.target.closest("[data-clr]")){lock=null;paint(null);return}const el=e.target.closest("[data-s]");if(!el)return;const s=el.dataset.s;lock=lock===s?null:s;paint(lock)});
+  info(sel,R);flowNote();ibLabel(sel)}
+const ibb=document.getElementById("ibb"),inf=document.getElementById("inf");
+function setInf(o){inf.classList.toggle("open",o);ibb.setAttribute("aria-expanded",o)}
+ibb.addEventListener("click",()=>setInf(!inf.classList.contains("open")));document.getElementById("infx").addEventListener("click",()=>setInf(false));
+addEventListener("keydown",e=>{if(e.key==="Escape")setInf(false)});
+{const lay=document.querySelector(".lay");new IntersectionObserver(es=>es.forEach(e=>{ibb.classList.toggle("show",e.isIntersecting);if(!e.isIntersecting)setInf(false)}),{rootMargin:"-25% 0px -25% 0px"}).observe(lay)}
+function ibLabel(sel){const h=ib.querySelector("h4"),k=ib.querySelector(".kick");document.getElementById("ibbt").textContent=sel&&h?h.textContent:"Jak czytać mapę";document.getElementById("ibbk").textContent=sel&&k?k.textContent:"Opis"}
+document.addEventListener("click",e=>{if(e.target.closest("[data-clr]")){lock=null;paint(null);return}const el=e.target.closest("[data-s]");if(!el)return;const s=el.dataset.s;lock=lock===s?null:s;paint(lock);ibb.classList.remove("ping");void ibb.offsetWidth;ibb.classList.add("ping")});
 document.addEventListener("mouseover",e=>{if(lock)return;const el=e.target.closest(".bl,.mb,.tb,.lc");if(el)paint(el.dataset.s)});
 document.addEventListener("mouseout",e=>{if(lock)return;const el=e.target.closest(".bl,.mb,.tb,.lc");if(el&&!el.contains(e.relatedTarget))paint(null)});
 paint(null);
