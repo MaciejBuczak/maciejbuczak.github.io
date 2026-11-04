@@ -277,20 +277,20 @@ body.rotating .fbx,body.rotating .inf,body.rotating #fl{opacity:0!important;poin
 .tq-h{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px 60px;align-items:end;margin-bottom:18px}
 .tq-h h2{font-family:"Archivo Black",sans-serif;font-weight:400;font-size:clamp(28px,3vw,40px);margin:12px 0 0;letter-spacing:-.02em}
 .tq-h p{margin:0;font-size:15px;font-weight:300;color:var(--ink2)}
-.tq-g{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;align-items:start}
+.tq-g{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;align-items:stretch}.tq-s ol{align-content:start}
 .tq-col{display:flex;flex-direction:column;gap:14px;min-width:0}
-.tq-s{border-radius:22px;background:#fffdf9;border:1px solid var(--line);overflow:hidden;box-shadow:0 14px 30px -26px rgba(13,13,13,.4)}
-.tq-sh{display:flex;align-items:baseline;gap:8px;padding:14px 16px 12px;background:color-mix(in srgb,var(--tc) 20%,#faf6ef);border-left:5px solid var(--tc)}
+.tq-s{grid-column:span var(--sp);border-radius:22px;background:#fffdf9;border:1px solid var(--line);overflow:hidden;box-shadow:0 14px 30px -26px rgba(13,13,13,.4)}
+.tq-sh{display:flex;align-items:baseline;gap:8px;padding:14px 16px 12px;background:color-mix(in srgb,var(--tc) 22%,#faf6ef)}
 .tq-sh b{font-family:"Archivo Black",sans-serif;font-weight:400;font-size:15px;line-height:1.2}.tq-sh small{margin-left:auto;font-size:12px;color:var(--ink2);font-weight:600}
-.tq-s ol{list-style:none;margin:0;padding:6px 8px 10px;display:grid;gap:0}
+.tq-s ol{list-style:none;margin:0;padding:6px 8px 10px;display:grid;grid-template-columns:repeat(var(--ic),minmax(0,1fr));column-gap:10px}
 .tq-s li{display:grid;grid-template-columns:26px minmax(0,1fr) auto;gap:8px;align-items:start;padding:8px;border-radius:12px;border-bottom:1px dashed var(--line)}
-.tq-s li:last-child{border-bottom:0}
+
 .tq-s li:hover{background:color-mix(in srgb,var(--tc) 8%,#fff)}
 .tq-n{font-family:var(--serif);font-style:italic;font-size:13px;color:var(--tc);padding-top:1px;font-weight:600}
 .tq-t b{display:block;font-size:13px;font-weight:600;line-height:1.3}.tq-t small{display:block;font-size:11.5px;color:var(--ink2);line-height:1.35;margin-top:1px}
 .tq-m{min-width:22px;height:20px;border-radius:999px;background:color-mix(in srgb,var(--tc) 18%,#fff);color:var(--ink);border:1px solid color-mix(in srgb,var(--tc) 40%,#fff);font-size:10.5px;font-weight:600;display:grid;place-items:center;padding:0 6px}
 .tq-e{display:inline-grid;place-items:center;width:16px;height:16px;border-radius:4px;background:#2f6f8f;color:#fff;font-size:9.5px;font-weight:700;margin-left:6px;vertical-align:1px;font-style:normal}
-@media(max-width:1100px){.tq-g{grid-template-columns:1fr 1fr}.tq-h{grid-template-columns:1fr}}@media(max-width:640px){.tq-g{grid-template-columns:1fr}}
+@media(max-width:1100px){.tq-g{grid-template-columns:1fr 1fr}.tq-s{--sp:2!important;--ic:2!important}.tq-h{grid-template-columns:1fr}}@media(max-width:640px){.tq-g{grid-template-columns:1fr}.tq-s{--sp:1!important;--ic:1!important}}
 </style>
 </head>
 <body>
@@ -618,9 +618,9 @@ spaint(null);
   kx.addEventListener("click",e=>{const b=e.target.closest("[data-kx]");if(b)op(b.dataset.kx)});
   m.addEventListener("click",e=>{if(e.target===m||e.target.closest(".kx-mx"))cl()});addEventListener("keydown",e=>{if(e.key==="Escape")cl()});
   /* trzecia ściana – techniki */
-  {const T=window.RT_TECH,el=document.getElementById("tqf");if(T&&el){const by=c=>T.t.filter(t=>t.c===c);const cols=[["SO"],["WN"],["EK","NU"],["PR"]];
+  {const T=window.RT_TECH,el=document.getElementById("tqf");if(T&&el){const by=c=>T.t.filter(t=>t.c===c);const ORD=[["WN",2],["PR",2],["SO",2],["EK",2],["NU",4]];
     el.innerHTML=`<div class="tq-h"><div><span class="kick">Trzecia ściana</span><h2>Techniki ilościowe</h2></div><p>${T.t.length} technik statystycznych, ekonometrycznych, probabilistycznych i numerycznych, na których stoją modele ryzyka. <span class="tq-e">E</span> oznacza technikę estymacyjną.</p></div>
-    <div class="tq-g">${cols.map(cs=>`<div class="tq-col">${cs.map(cid=>{const c=T.cats.find(x=>x[0]===cid);if(!c)return"";const ts=by(cid);return`<div class="tq-s" style="--tc:${c[2]}"><div class="tq-sh"><b>${E(c[1])}</b><small>${ts.length}</small></div><ol>${ts.map((t,i)=>`<li><span class="tq-n">${String(i+1).padStart(2,"0")}</span><span class="tq-t"><b>${E(t.n)}${t.est?'<span class="tq-e">E</span>':""}</b><small>${E(t.x)}</small></span><span class="tq-m" title="liczba modeli, w których technika jest stosowana">${t.m}</span></li>`).join("")}</ol></div>`}).join("")}</div>`).join("")}</div>`}}
+    <div class="tq-g">${ORD.map(([cid,sp])=>{const c=T.cats.find(x=>x[0]===cid);if(!c)return"";const ts=by(cid);return`<div class="tq-s" style="--tc:${c[2]};--sp:${sp};--ic:${sp}"><div class="tq-sh"><b>${E(c[1])}</b><small>${ts.length}</small></div><ol>${ts.map((t,i)=>`<li><span class="tq-n">${String(i+1).padStart(2,"0")}</span><span class="tq-t"><b>${E(t.n)}${t.est?'<span class="tq-e">E</span>':""}</b><small>${E(t.x)}</small></span><span class="tq-m" title="liczba modeli, w których technika jest stosowana">${t.m}</span></li>`).join("")}</ol></div>`}).join("")}</div>`}}
   /* obrót */
   const cube=document.getElementById("cube"),box=document.getElementById("box"),F=[document.getElementById("f1"),document.getElementById("f2"),document.getElementById("f3")];let face=0,busy=false;
   function rest(){box.className="box";cube.style.height="";F.forEach((f,i)=>{f.style.transform="";f.hidden=i!==face});document.querySelectorAll("[data-face]").forEach(b=>b.classList.toggle("on",+b.dataset.face===face));document.body.classList.remove("rotating");if(face===0)requestAnimationFrame(()=>flows(curFl));else if(face===1)window.kxDraw&&window.kxDraw()}
