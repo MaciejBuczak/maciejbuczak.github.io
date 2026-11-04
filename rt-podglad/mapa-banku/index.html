@@ -303,6 +303,26 @@ body.tsel .tq-s li.cur small{color:#cfc6b8}
 .csel b{font-weight:600}.csel button{font:inherit;font-size:12.5px;font-weight:600;border:0;border-radius:999px;padding:6px 12px;cursor:pointer;background:var(--terra-d);color:#fff}
 .csel button[data-unsel]{background:#2a2622;padding:6px 10px}
 .csel[hidden]{display:none}
+
+.mm-hd{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px 60px;align-items:end;margin-bottom:18px}
+.mm-hd h2{font-family:"Archivo Black",sans-serif;font-weight:400;font-size:clamp(28px,3vw,40px);margin:12px 0 0;letter-spacing:-.02em}.mm-hd p{margin:0;font-size:15px;font-weight:300;color:var(--ink2)}
+.mm-g{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-auto-rows:8px;column-gap:14px;grid-auto-flow:dense}
+.mm-b{position:relative;border-radius:26px;background:color-mix(in srgb,var(--c) 13%,#fbf8f2);padding:16px;display:flex;flex-direction:column;gap:12px;overflow:hidden}
+.mm-b::after{content:"";position:absolute;right:-40px;top:-40px;width:130px;height:130px;border-radius:50%;background:color-mix(in srgb,var(--c) 14%,transparent);pointer-events:none}
+.mm-bh{display:flex;gap:12px;align-items:flex-start;position:relative;z-index:1}
+.mm-ic{flex:none;width:46px;height:46px;border-radius:14px;background:var(--c);display:grid;place-items:center;box-shadow:0 10px 20px -12px var(--c)}
+.mm-ic svg{width:26px;height:26px;fill:none;stroke:#fff;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.mm-no{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--c);font-weight:600}
+.mm-bh h3{margin:0;font-family:"Archivo Black",sans-serif;font-weight:400;font-size:18px;line-height:1.15}
+.mm-bh p{margin:4px 0 0;font-size:12.5px;color:var(--ink2);line-height:1.4}
+.mm-sg{display:grid;grid-template-columns:repeat(var(--ic),minmax(0,1fr));gap:10px;align-items:start;position:relative;z-index:1}
+.mm-s{background:rgba(255,253,249,.7);border:1px solid color-mix(in srgb,var(--c) 22%,transparent);border-radius:16px;padding:10px}
+.mm-s h4{margin:0 0 8px;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:color-mix(in srgb,var(--c) 75%,#000)}
+.mm-p{display:flex;flex-wrap:wrap;gap:5px}
+.mm-p span{display:inline-flex;flex-direction:column;background:#fff;border:1px solid rgba(13,13,13,.07);border-radius:10px;padding:5px 9px;font-size:12px;line-height:1.25}
+.mm-p b{font-weight:600}.mm-p small{font-size:10.5px;color:var(--ink2);margin-top:1px}
+@media(max-width:1100px){.mm-g{grid-template-columns:repeat(6,minmax(0,1fr))}.mm-b{grid-column:span 6!important;--ic:2!important}.mm-hd{grid-template-columns:1fr}}
+@media(max-width:640px){.mm-b{--ic:1!important}}
 </style>
 </head>
 <body>
@@ -344,8 +364,8 @@ body.tsel .tq-s li.cur small{color:#cfc6b8}
   </div>
   <span id="vDhome" hidden></span>
   <div id="vP" hidden>
-    <div class="cbar"><div class="cfaces" role="tablist" aria-label="Ściana"><button type="button" data-face="0" class="on"><i>1</i>Bilans, wynik i kapitał</button><button type="button" data-face="1"><i>2</i>Koncepcje modeli</button><button type="button" data-face="2"><i>3</i>Techniki ilościowe</button></div><div class="csel" id="csel" hidden></div><button type="button" class="crot" id="crot"><span aria-hidden="true">↻</span> Obróć bryłę</button></div>
-    <div class="cube" id="cube"><div class="box" id="box"><div class="fc f1" id="f1"></div><div class="fc f2" id="f2"><div class="kx" id="kx"></div></div><div class="fc f3" id="f3"><div class="tq" id="tqf"></div></div></div></div>
+    <div class="cbar"><div class="cfaces" role="tablist" aria-label="Ściana"><button type="button" data-face="0" class="on"><i>1</i>Bilans, wynik i kapitał</button><button type="button" data-face="1"><i>2</i>Koncepcje modeli</button><button type="button" data-face="2"><i>3</i>Techniki ilościowe</button><button type="button" data-face="3"><i>4</i>Mapa modelu</button></div><div class="csel" id="csel" hidden></div><button type="button" class="crot" id="crot"><span aria-hidden="true">↻</span> Obróć bryłę</button></div>
+    <div class="cube" id="cube"><div class="box" id="box"><div class="fc f1" id="f1"></div><div class="fc f2" id="f2"><div class="kx" id="kx"></div></div><div class="fc f3" id="f3"><div class="tq" id="tqf"></div></div><div class="fc f4" id="f4"><div class="mm" id="mmf"></div></div></div></div>
   </div>
 </div>
 </main>
@@ -362,6 +382,7 @@ body.tsel .tq-s li.cur small{color:#cfc6b8}
 <script src="../szkolenia.js"></script>
 <script src="../koncepcje/dane.js?v=20261104b"></script>
 <script src="../koncepcje/techniki.js?v=20261104b"></script>
+<script src="../koncepcje/model.js?v=20261104a"></script>
 <script>
 (function(){
 const esc=s=>String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
@@ -633,6 +654,25 @@ spaint(null);
   {const T=window.RT_TECH,el=document.getElementById("tqf");if(T&&el){const by=c=>T.t.filter(t=>t.c===c);const ORD=[["WN",2],["PR",2],["SO",2],["EK",2],["NU",4]];
     el.innerHTML=`<div class="tq-h"><div><span class="kick">Trzecia ściana</span><h2>Techniki ilościowe</h2></div><p>${T.t.length} technik statystycznych, ekonometrycznych, probabilistycznych i numerycznych, na których stoją modele ryzyka. <span class="tq-e">E</span> oznacza technikę estymacyjną, a liczba – w ilu koncepcjach z drugiej ściany jest stosowana. Kliknij technikę albo koncepcję, żeby zobaczyć powiązania.</p></div>
     <div class="tq-g">${ORD.map(([cid,sp])=>{const c=T.cats.find(x=>x[0]===cid);if(!c)return"";const ts=by(cid);return`<div class="tq-s" style="--tc:${c[2]};--sp:${sp};--ic:${sp}"><div class="tq-sh"><b>${E(c[1])}</b><small>${ts.length}</small></div><ol>${ts.map((t,i)=>`<li data-tid="${t.id}" role="button" tabindex="0"><span class="tq-n">${String(i+1).padStart(2,"0")}</span><span class="tq-t"><b>${E(t.n)}</b><small>${E(t.x)}</small></span><span class="tq-r">${t.est?'<span class="tq-e" title="technika estymacyjna">E</span>':""}<span class="tq-m" title="w ilu koncepcjach z drugiej ściany technika jest stosowana">${t.m}</span></span></li>`).join("")}</ol></div>`}).join("")}</div>`}}
+  /* czwarta ściana – mapa modelu */
+  {const R=window.RT_MODEL,el=document.getElementById("mmf");if(R&&el){
+    const IC={id:'<rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="11" r="2.2"/><path d="M5.8 16.2c.7-1.6 1.8-2.4 3.2-2.4s2.5.8 3.2 2.4M14 10h4M14 13.5h3"/>',
+      target:'<circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.6"/><path d="M17 7l3-3M18 4h2v2"/>',
+      bulb:'<path d="M9 17.5h6M10 20.5h4M12 3.5a6 6 0 0 0-3.6 10.8c.6.5 1 1.3 1 2.1V17h5.2v-.6c0-.8.4-1.6 1-2.1A6 6 0 0 0 12 3.5z"/>',
+      db:'<ellipse cx="12" cy="6" rx="7.5" ry="2.8"/><path d="M4.5 6v12c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8V6M4.5 12c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8"/>',
+      sigma:'<path d="M17 5H7l5.5 7L7 19h10"/><path d="M19.5 15.5c-1 0-1.5.8-1.5 2s.5 2 1.5 2" opacity=".0"/>',
+      check:'<path d="M12 3l7.5 3v5.5c0 4.5-3.2 8-7.5 9.5-4.3-1.5-7.5-5-7.5-9.5V6z"/><path d="M8.5 12.2l2.4 2.4 4.6-4.8"/>',
+      rocket:'<path d="M14.5 4.5c3-.8 5-.5 5-.5s.3 2-.5 5c-.8 3-3.6 6-6.5 7.5l-4.5-4.5C9.5 9.1 11.5 5.3 14.5 4.5z"/><circle cx="15" cy="9" r="1.6"/><path d="M8 12l-3 .5-1.5 3 4-.5M12 16l-.5 3-3 1.5.5-4M6.5 17.5l-2 2"/>',
+      puzzle:'<path d="M5 8h3.2a1.8 1.8 0 1 1 3.6 0H15v3.2a1.8 1.8 0 1 1 0 3.6V18h-3.2a1.8 1.8 0 1 0-3.6 0H5v-3.2a1.8 1.8 0 1 0 0-3.6z"/>',
+      doc:'<path d="M7 3.5h7l4 4v13H7z"/><path d="M14 3.5v4h4M9.5 12h6M9.5 15h6M9.5 18h3.5"/>',
+      folder:'<path d="M3.5 7.5a2 2 0 0 1 2-2h4l2 2.2h7a2 2 0 0 1 2 2v8.3a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/><path d="M3.5 10.5h17"/>'};
+    const COLS=["#bf8165","#c9a24a","#a6824c","#4f7390","#8a4f8f","#6f7f58","#c07a1f","#8a7f60","#5f8aa6","#9a9176"];
+    const SPAN={"01":[4,1],"02":[3,1],"03":[5,2],"04":[3,1],"05":[9,3],"06":[6,2],"07":[3,1],"08":[6,2],"09":[3,1],"10":[3,1]};
+    const pills=it=>`<div class="mm-p">${it.map(x=>`<span><b>${E(x[0])}</b>${x[1]?`<small>${E(x[1])}</small>`:""}</span>`).join("")}</div>`;
+    el.innerHTML=`<div class="mm-hd"><div><span class="kick">Czwarta ściana</span><h2>Mapa modelu</h2></div><p>Z czego składa się model – od metryki i celu, przez koncepcję, dane i model statystyczny, po weryfikację, wdrożenie i dokumentację. Dziesięć komponentów, o które pyta się przy budowie i walidacji każdego modelu.</p></div>
+    <div class="mm-g" id="mmg">${R.map((r,i)=>{const sp=SPAN[r[0]]||[4,1];return`<section class="mm-b" style="--c:${COLS[i%COLS.length]};grid-column:span ${sp[0]};--ic:${sp[1]}"><div class="mm-bh"><span class="mm-ic"><svg viewBox="0 0 24 24" aria-hidden="true">${IC[r[2]]||""}</svg></span><div><span class="mm-no">#${r[0]}</span><h3>${E(r[1])}</h3><p>${E(r[3])}</p></div></div><div class="mm-sg">${r[4].map(g=>`<div class="mm-s">${g[0]?`<h4>${E(g[0])}</h4>`:""}${pills(g[1])}</div>`).join("")}</div></section>`}).join("")}</div>`;
+    const mas=()=>{const g=document.getElementById("mmg");if(!g||!g.offsetWidth)return;g.querySelectorAll(".mm-b").forEach(b=>{b.style.gridRowEnd="auto";const h=b.firstElementChild.offsetHeight+b.lastElementChild.offsetHeight+40;b.style.gridRowEnd=`span ${Math.ceil((h+14)/8)}`})};
+    window.mmMas=mas;addEventListener("resize",mas);if(document.fonts)document.fonts.ready.then(mas)}}
   /* powiązania technika ↔ koncepcja */
   const C2M={score:["score"],rating:["pd"],merton:["pd"],surv:["pd"],migr:["pd"],lgdw:["lgd"],lgd2:["lgd"],lgdd:["lgd","irb"],lgdid:["lgd","irb"],ccf:["ccf"],ecl:["pd","lgd","ccf","makro"],pdlt:["pd"],lgdlt:["lgd"],eadlt:["ccf","prepay"],sicr:["pd"],fli:["makro"],vasicek:["irb"],irb:["irb"],sa:["irb"],cmetrics:["konc"],crplus:["konc"],copula:["konc"],varp:["var"],varh:["var"],varmc:["var"],garch:["var"],rm:["var"],es:["var"],evt:["var","oprisk"],stv:["var"],mktsa:["var"],frtbsa:["var"],lda:["oprisk"],ama:["oprisk"],sma:["oprisk"],bia:["oprisk"],scen:["oprisk"],bayes:["oprisk"],rep:["oprisk","plyn"],lcr:["plyn"],nsfr:["plyn"],lgap:["plyn","depmod"],lst:["plyn","stres"],agg:["konc"],raroc:["ftp"],p2:["konc","irrbb"],biz:["stres"],sens:["stres"],macro:["stres","makro"],rst:["stres"],eba:["stres"],plan:["stres"],mrq:["mr"],tier:["mr"]};
   const m2c=m=>Object.keys(C2M).filter(c=>C2M[c].includes(m));
@@ -659,17 +699,17 @@ spaint(null);
     if(lock&&lock.startsWith("m:")){SEL={k:"m",id:lock.slice(2)};paintSel()}else if(lock===null&&SEL&&SEL.k==="m"){SEL=null;paintSel()}else if(lock&&SEL){SEL=null;paintSel()}}
 }
   /* obrót */
-  const cube=document.getElementById("cube"),box=document.getElementById("box"),F=[document.getElementById("f1"),document.getElementById("f2"),document.getElementById("f3")];let face=0,busy=false;
-  function rest(){setTimeout(()=>paintSel());box.className="box";cube.style.height="";F.forEach((f,i)=>{f.style.transform="";f.hidden=i!==face});document.querySelectorAll("[data-face]").forEach(b=>b.classList.toggle("on",+b.dataset.face===face));document.body.classList.remove("rotating");if(face===0)requestAnimationFrame(()=>flows(curFl));else if(face===1)window.kxDraw&&window.kxDraw()}
+  const cube=document.getElementById("cube"),box=document.getElementById("box"),F=[1,2,3,4].map(i=>document.getElementById("f"+i));let face=0,busy=false;
+  function rest(){setTimeout(()=>paintSel());box.className="box";cube.style.height="";F.forEach((f,i)=>{f.style.transform="";f.hidden=i!==face});document.querySelectorAll("[data-face]").forEach(b=>b.classList.toggle("on",+b.dataset.face===face));document.body.classList.remove("rotating");if(face===0)requestAnimationFrame(()=>flows(curFl));else if(face===1)window.kxDraw&&window.kxDraw();else if(face===3)window.mmMas&&window.mmMas()}
   function turn(to){if(busy||to===face)return;busy=true;const W=cube.clientWidth;
     const top=document.querySelector(".cbar").getBoundingClientRect().top+scrollY-100;if(scrollY>top)scrollTo({top,behavior:"instant"});
-    F.forEach(f=>f.hidden=false);window.kxDraw&&window.kxDraw();const h0=F[face].offsetHeight,h1=F[to].offsetHeight;document.body.classList.add("rotating");
+    F.forEach(f=>f.hidden=false);window.kxDraw&&window.kxDraw();window.mmMas&&window.mmMas();const h0=F[face].offsetHeight,h1=F[to].offsetHeight;document.body.classList.add("rotating");
     cube.style.height=h0+"px";cube.style.perspectiveOrigin=`50% ${Math.max(200,scrollY+innerHeight/2-(cube.getBoundingClientRect().top+scrollY))}px`;
     F.forEach((f,i)=>f.style.transform=`rotateY(${90*i}deg) translateZ(${W/2}px)`);
-    box.className="box d3";box.style.transform=`translateZ(${-W/2}px) rotateY(${-90*face}deg)`;void box.offsetWidth;
-    const far=Math.abs(to-face)>1;box.style.transitionDuration=far?"1.5s":"";cube.style.animationDuration=far?"1.5s":"";cube.style.transitionDuration=far?"1.5s":"";box.classList.add("go");box.style.transform=`translateZ(${-W/2}px) rotateY(${-90*to}deg)`;cube.style.height=h1+"px";cube.classList.add("pulse");
+    box.className="box d3";let st=((to-face)%4+4)%4;if(st===3)st=-1;box.style.transform=`translateZ(${-W/2}px) rotateY(${-90*face}deg)`;void box.offsetWidth;
+    const far=Math.abs(st)>1;box.style.transitionDuration=far?"1.5s":"";cube.style.animationDuration=far?"1.5s":"";cube.style.transitionDuration=far?"1.5s":"";box.classList.add("go");box.style.transform=`translateZ(${-W/2}px) rotateY(${-90*(face+st)}deg)`;cube.style.height=h1+"px";cube.classList.add("pulse");
     setTimeout(()=>{face=to;box.style.transform="";box.style.transitionDuration="";cube.style.animationDuration="";cube.style.transitionDuration="";cube.classList.remove("pulse");rest();busy=false},far?1550:1150)}
-  document.getElementById("crot").addEventListener("click",()=>turn((face+1)%3));
+  document.getElementById("crot").addEventListener("click",()=>turn((face+1)%4));
   document.querySelector(".cfaces").addEventListener("click",e=>{const b=e.target.closest("[data-face]");if(b)turn(+b.dataset.face)});
   rest()})();
 function setView(v){const vD=document.getElementById("vD"),f1=document.getElementById("f1"),home=document.getElementById("vDhome"),fx=document.getElementById("fx"),vP=document.getElementById("vP");if(v==="p"){if(vD.parentNode!==f1)f1.appendChild(vD);if(fx.parentNode!==vP)vP.insertBefore(fx,vP.firstChild)}else{if(vD.parentNode===f1)home.parentNode.insertBefore(vD,home);if(fx.parentNode!==vD)vD.insertBefore(fx,vD.firstChild)}document.getElementById("vS").hidden=v!=="s";vD.hidden=!(v==="d"||v==="p");document.getElementById("vP").hidden=v!=="p";document.querySelectorAll(".vs button").forEach(b=>{const on=b.dataset.view===v;b.classList.toggle("on",on);b.setAttribute("aria-selected",on)});try{localStorage.setItem("rt_mapa_view",v)}catch(e){}if(v==="d"||v==="p")requestAnimationFrame(()=>flows(curFl))}
