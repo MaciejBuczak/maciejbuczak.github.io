@@ -108,7 +108,7 @@
 .fbx{position:fixed;right:24px;bottom:24px;z-index:60;display:flex;flex-direction:row-reverse;align-items:center;gap:8px;pointer-events:none}
 .fclr{font:inherit;font-size:13.5px;font-weight:600;padding:12px 18px;border-radius:999px;border:1px solid var(--line);background:#fffdf9;color:var(--ink);cursor:pointer;box-shadow:0 14px 34px -14px rgba(13,13,13,.35);opacity:0;transform:translateY(16px);transition:opacity .25s,transform .25s}
 .fclr:hover{border-color:var(--ink)}
-.fbx.has .fclr.on{opacity:1;transform:none;pointer-events:auto}
+.fclr{display:none}.fbx.has .fclr.on{display:block;opacity:1;transform:none;pointer-events:auto;animation:fci .25s ease}@keyframes fci{from{opacity:0;transform:translateY(10px)}}
 .ibb{position:relative;display:flex;align-items:center;gap:10px;max-width:min(380px,calc(100vw - 32px));padding:8px 18px 8px 8px;border-radius:999px;border:0;background:var(--ink);color:var(--paper);font:inherit;cursor:pointer;box-shadow:0 14px 34px -12px rgba(13,13,13,.5);opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .25s,transform .25s}
 .ibb.show{opacity:1;transform:none;pointer-events:auto}
 .ibb-i{flex:none;width:34px;height:34px;border-radius:50%;background:var(--terra);display:grid;place-items:center;font-family:var(--serif);font-style:italic;font-weight:600;font-size:17px}
