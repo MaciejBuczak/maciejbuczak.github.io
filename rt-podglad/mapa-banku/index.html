@@ -360,8 +360,8 @@ body.tsel .tq-s li.cur small{color:#cfc6b8}
   </div>
 </footer>
 <script src="../szkolenia.js"></script>
-<script src="../koncepcje/dane.js"></script>
-<script src="../koncepcje/techniki.js"></script>
+<script src="../koncepcje/dane.js?v=20261104b"></script>
+<script src="../koncepcje/techniki.js?v=20261104b"></script>
 <script>
 (function(){
 const esc=s=>String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
@@ -634,7 +634,7 @@ spaint(null);
     el.innerHTML=`<div class="tq-h"><div><span class="kick">Trzecia ściana</span><h2>Techniki ilościowe</h2></div><p>${T.t.length} technik statystycznych, ekonometrycznych, probabilistycznych i numerycznych, na których stoją modele ryzyka. <span class="tq-e">E</span> oznacza technikę estymacyjną, a liczba – w ilu koncepcjach z drugiej ściany jest stosowana. Kliknij technikę albo koncepcję, żeby zobaczyć powiązania.</p></div>
     <div class="tq-g">${ORD.map(([cid,sp])=>{const c=T.cats.find(x=>x[0]===cid);if(!c)return"";const ts=by(cid);return`<div class="tq-s" style="--tc:${c[2]};--sp:${sp};--ic:${sp}"><div class="tq-sh"><b>${E(c[1])}</b><small>${ts.length}</small></div><ol>${ts.map((t,i)=>`<li data-tid="${t.id}" role="button" tabindex="0"><span class="tq-n">${String(i+1).padStart(2,"0")}</span><span class="tq-t"><b>${E(t.n)}</b><small>${E(t.x)}</small></span><span class="tq-r">${t.est?'<span class="tq-e" title="technika estymacyjna">E</span>':""}<span class="tq-m" title="w ilu koncepcjach z drugiej ściany technika jest stosowana">${t.m}</span></span></li>`).join("")}</ol></div>`}).join("")}</div>`}}
   /* powiązania technika ↔ koncepcja */
-  const TT=(window.RT_TECH||{t:[]}).t,TI={};TT.forEach(t=>TI[t.id]=t);let SEL=null;
+  const TT=(window.RT_TECH||{t:[]}).t,TI={};TT.forEach(t=>{t.cs=t.cs||[];TI[t.id]=t});let SEL=null;
   function paintSel(){const tset=new Set(),cset=new Set();if(SEL){if(SEL.k==="t"){tset.add(SEL.id);TI[SEL.id].cs.forEach(c=>cset.add(c))}else{cset.add(SEL.id);TT.forEach(t=>{if(t.cs.includes(SEL.id))tset.add(t.id)})}}
     document.body.classList.toggle("tsel",!!SEL);document.querySelectorAll("[data-cid]").forEach(e=>{e.classList.toggle("hit",cset.has(e.dataset.cid));e.classList.toggle("cur",!!SEL&&SEL.k==="c"&&SEL.id===e.dataset.cid)});
     document.querySelectorAll("[data-tid]").forEach(e=>{e.classList.toggle("hit",tset.has(e.dataset.tid));e.classList.toggle("cur",!!SEL&&SEL.k==="t"&&SEL.id===e.dataset.tid)});
