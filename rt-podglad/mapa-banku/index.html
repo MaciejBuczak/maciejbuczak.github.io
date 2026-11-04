@@ -232,11 +232,11 @@ body.rotating .fbx,body.rotating .inf,body.rotating #fl{opacity:0!important;poin
 .kx-h{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px 60px;align-items:end;margin-bottom:18px}
 .kx-h h2{font-family:"Archivo Black",sans-serif;font-weight:400;font-size:clamp(28px,3vw,40px);margin:12px 0 0;letter-spacing:-.02em}
 .kx-h p{margin:0;font-size:15px;font-weight:300;color:var(--ink2)}
-.kx-g{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:14px}
-.kx-d{grid-column:span 4;border-radius:24px;padding:14px 12px 12px;background:color-mix(in srgb,var(--dc) 13%,#faf6ef);display:flex;flex-direction:column;gap:8px}.kx-d.w{grid-column:span 8}
+.kx-g{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start}.kx-lane{display:flex;flex-direction:column;gap:14px;min-width:0}
+.kx-d{border-radius:24px;padding:14px 12px 12px;background:color-mix(in srgb,var(--dc) 13%,#faf6ef);display:flex;flex-direction:column;gap:8px}.kx-d.w{grid-column:span 8}
 .kx-dh{display:flex;align-items:baseline;gap:8px;padding:0 4px 2px}.kx-dh b{font-family:"Archivo Black",sans-serif;font-weight:400;font-size:17px}.kx-dh small{margin-left:auto;font-size:12px;color:var(--ink2)}
-.kx-l{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px}
-.kx-c{position:relative;text-align:left;font:inherit;color:var(--ink);background:#fffdf9;border:1px solid rgba(13,13,13,.07);border-radius:15px;padding:10px 38px 28px 12px;min-height:90px;cursor:pointer;transition:transform .2s,box-shadow .2s,border-color .2s}
+.kx-l{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.kx-c{position:relative;text-align:left;font:inherit;color:var(--ink);background:#fffdf9;border:1px solid rgba(13,13,13,.07);border-radius:15px;padding:10px 36px 28px 12px;min-height:88px;cursor:pointer;transition:transform .2s,box-shadow .2s,border-color .2s}
 .kx-c:hover{transform:translateY(-2px);box-shadow:0 10px 24px -14px rgba(13,13,13,.35);border-color:var(--dc)}
 .kx-c b{display:block;font-size:13.5px;font-weight:600;line-height:1.25}.kx-c small{display:block;font-size:11.5px;color:var(--ink2);margin-top:2px}
 .kx-c.old{filter:grayscale(1);opacity:.6}.kx-c.old b{text-decoration:line-through}
@@ -255,7 +255,7 @@ body.rotating .fbx,body.rotating .inf,body.rotating #fl{opacity:0!important;poin
 .kx-ex ol{margin:0;padding-left:22px;display:grid;gap:6px}.kx-ex li{font-size:14.5px;line-height:1.5}
 .kx-h4{margin:22px 0 8px;font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--tan)}.kx-id{font-family:var(--serif);font-style:italic;font-size:16px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 16px}
 .kx-par{display:grid;gap:8px}.kx-par div{display:grid;grid-template-columns:100px 1fr;gap:12px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 14px}.kx-par em{font-family:var(--serif);font-size:19px;color:var(--dc)}.kx-par b{display:block;font-size:14px}.kx-par span{font-size:13.5px;color:var(--ink2)}
-@media(max-width:1100px){.kx-d,.kx-d.w{grid-column:span 12}.kx-h{grid-template-columns:1fr}}
+@media(max-width:1100px){.kx-g{grid-template-columns:1fr}.kx-h{grid-template-columns:1fr}}@media(max-width:640px){.kx-l{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
@@ -553,7 +553,7 @@ spaint(null);
   const E=t=>String(t==null?"":t).replace(/&/g,"&amp;").replace(/</g,"&lt;");const DI={};D.dom.forEach(x=>DI[x[0]]=x);const CI={};D.c.forEach(c=>CI[c.id]=c);
   const UT=["","niszowo","rzadko","w części banków","często","powszechnie"],sg=u=>[1,2,3,4,5].map(k=>`<i${k<=u?' class="f"':""}></i>`).join("");
   kx.innerHTML=`<div class="kx-h"><div><span class="kick">Druga ściana</span><h2>Koncepcje modeli</h2></div><p>${D.c.length} modeli ryzyka omawianych na szkoleniach, w ${D.dom.length} obszarach. Kliknij koncepcję, żeby zobaczyć opis, przykład, parametry i podstawę regulacyjną.</p></div>
-  <div class="kx-g">${D.dom.map(d=>{const cs=D.c.filter(c=>c.d===d[0]);return`<section class="kx-d${d[0]==="K1"?" w":""}" style="--dc:${d[3]}"><div class="kx-dh"><b>${E(d[1])}</b><small>${cs.length}</small></div><div class="kx-l">${cs.map(c=>`<button type="button" class="kx-c${c.old?" old":""}" data-kx="${c.id}"><b>${c.reg?'<em class="kx-rg">§</em>':""}${E(c.n)}</b><small>${E(c.old||c.o)}</small><span class="kx-k ${c.k}">${c.k}</span><span class="kx-ot" style="--oc:${c.otc}">${E(c.ot)}</span><span class="kx-ub">${sg(c.u)}</span></button>`).join("")}</div></section>`}).join("")}</div>`;
+  <div class="kx-g">${(()=>{const L=[[],[]],H=[0,0];D.dom.map(d=>[d,D.c.filter(c=>c.d===d[0]).length]).sort((a,b)=>b[1]-a[1]).forEach(([d,n])=>{const i=H[0]<=H[1]?0:1;L[i].push(d);H[i]+=Math.ceil(n/3)*96+62});return L})().map(lane=>`<div class="kx-lane">${lane.map(d=>{const cs=D.c.filter(c=>c.d===d[0]);return`<section class="kx-d" style="--dc:${d[3]}"><div class="kx-dh"><b>${E(d[1])}</b><small>${cs.length}</small></div><div class="kx-l">${cs.map(c=>`<button type="button" class="kx-c${c.old?" old":""}" data-kx="${c.id}"><b>${c.reg?'<em class="kx-rg">§</em>':""}${E(c.n)}</b><small>${E(c.old||c.o)}</small><span class="kx-k ${c.k}">${c.k}</span><span class="kx-ot" style="--oc:${c.otc}">${E(c.ot)}</span><span class="kx-ub">${sg(c.u)}</span></button>`).join("")}</div></section>`}).join("")}</div>`).join("")}</div>`;
   const m=document.getElementById("kxm"),mc=document.getElementById("kxc");
   function op(id){const c=CI[id],d=DI[c.d],x=c.det;m.style.setProperty("--dc",d[3]);
     mc.innerHTML=`<div class="kx-mt"></div><button type="button" class="kx-mx" aria-label="Zamknij">✕</button><div class="kx-mi"><span class="kick">${E(d[1])}${c.g?" · "+E(c.g):""}</span><h2>${E(c.n)}</h2><div class="kx-mo">${E(c.o)}</div>${c.reg?`<div class="kx-mr"><em class="kx-rg">§</em><span>${E(c.reg)}</span></div>`:""}<div class="kx-mu"><span class="kx-ub inl">${sg(c.u)}</span>Stosowanie w bankach: <b>${UT[c.u]}</b> (${c.u} / 5)</div>
