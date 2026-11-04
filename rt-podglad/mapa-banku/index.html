@@ -59,7 +59,7 @@
 .bl small{display:block;font-size:11px;color:var(--muted);line-height:1.35;margin-top:2px}
 .bl.sum{background:transparent;border-color:transparent;border-top:1.5px solid rgba(13,13,13,.55);border-radius:0}
 .bl.dark{background:var(--ink);border-color:var(--ink);color:var(--paper)}.bl.dark small{color:#b9b0a2}
-.bl .rd{position:absolute;right:8px;top:9px;display:flex;gap:3px}.bl .rd i{width:7px;height:7px;border-radius:2px}
+.bl .rd{position:absolute;right:8px;top:9px;display:flex;gap:3px}.bl>b{display:block;padding-right:var(--dw,0)}.kg .bl{min-width:0}@media(max-width:1300px){.kg .bl>b{padding-right:0;font-size:12.5px}.kg .bl .rd{position:static;margin-top:5px}.kg .bl{padding:7px 8px}}@media(max-width:1180px){.kg{grid-template-columns:1fr}.kg .bl .rd{position:absolute;margin:0}}.bl .rd i{width:7px;height:7px;border-radius:2px}
 .bl:hover{border-color:#a99d8b}
 .bank.sel .bl{opacity:.3}
 .bank.sel .bl.hit{opacity:1;border-color:var(--hc,var(--terra));box-shadow:0 0 0 2px var(--hc,var(--terra));background:#fff}
@@ -132,11 +132,11 @@
 .rtop-g span{display:block;font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#a89e8f;margin-bottom:6px}
 .rtop-g p{font-size:12.5px;line-height:1.45;margin:0 0 6px;color:#e8e1d6}.rtop-g b{color:#e6cd94;font-weight:600}
 .rgr{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}
-.rd{background:var(--panel);border-radius:18px;border-top:3px solid var(--gc);padding:14px 14px 12px;transition:opacity .25s,box-shadow .25s}
-.rd h4{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin:0 0 10px;line-height:1.3}
-.rd ul{list-style:none;margin:0;padding:0;display:grid;gap:7px}.rd li{font-size:12px;line-height:1.45;color:var(--ink2);padding-left:12px;position:relative}
-.rd li::before{content:"";position:absolute;left:0;top:7px;width:5px;height:5px;border-radius:50%;background:var(--gc)}.rd b{color:var(--ink);font-weight:600}
-.reg.sel .rd{opacity:.35}.reg.sel .rd.on{opacity:1;box-shadow:0 0 0 2px var(--gc)}
+.rdc{background:var(--panel);border-radius:18px;border-top:3px solid var(--gc);padding:14px 14px 12px;transition:opacity .25s,box-shadow .25s}
+.rdc h4{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin:0 0 10px;line-height:1.3}
+.rdc ul{list-style:none;margin:0;padding:0;display:grid;gap:7px}.rdc li{font-size:12px;line-height:1.45;color:var(--ink2);padding-left:12px;position:relative}
+.rdc li::before{content:"";position:absolute;left:0;top:7px;width:5px;height:5px;border-radius:50%;background:var(--gc)}.rdc b{color:var(--ink);font-weight:600}
+.reg.sel .rdc{opacity:.35}.reg.sel .rdc.on{opacity:1;box-shadow:0 0 0 2px var(--gc)}
 @media(max-width:1100px){.rgr{grid-template-columns:repeat(3,minmax(0,1fr))}.rtop-g{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.rgr,.rtop-g{grid-template-columns:1fr}}
 .fx .tr{margin-bottom:18px;padding-bottom:18px;border-bottom:1px solid var(--line)}.fx .tr .flw-h{display:block;margin-bottom:10px}
@@ -320,7 +320,7 @@ function kcol(){const KP=[["k_at1","k_t2"],["k_rwa_k","k_rwa_cva"],["k_rwa_r","k
   if(g.startsWith("av:")||g.startsWith("rq:")){if(open)h+="</div>";const [t,sub]=g.slice(3).split("|"),av=g.startsWith("av:");
     if(!av)h+=`<div class="kvs"><span>musi pokryć</span></div>`;h+=`<div class="kp ${av?"kav":"krq"}"><div class="kph"><b>${t}</b><small>${sub}</small></div>`;open=true}
   else if(g.startsWith("sub:"))h+=`<div class="grh">${g.slice(4)}</div>`;const pr=KP.find(x=>x.includes(b[0]));h+=(pr&&pr[0]===b[0]?'<div class="kg">':"")+blk(b[0])+(pr&&pr[1]===b[0]?"</div>":"")});return h+(open?"</div>":"")+`<div class="kft">fundusze własne ÷ RWA → współczynniki ↓</div>`}
-function blk(id){const b=BI[id],f=FEED[id]?[...FEED[id]]:[];return`<button type="button" class="bl${b.dark?" dark":""}${b.sum?" sum":""}" data-s="b:${id}" data-b="${id}" style="min-height:${b.h}px"><b>${esc(b.n)}</b>${b.s?`<small>${esc(b.s)}</small>`:""}${f.length&&!b.sum?`<span class="rd">${["K","R","O","A","M","S"].filter(r=>f.includes(r)).map(r=>`<i style="background:${RISK[r].c}" title="${RISK[r].n}"></i>`).join("")}</span>`:""}<span class="bd"></span><span class="rl"></span></button>`}
+function blk(id){const b=BI[id],f=FEED[id]?[...FEED[id]]:[];return`<button type="button" class="bl${b.dark?" dark":""}${b.sum?" sum":""}" data-s="b:${id}" data-b="${id}" style="min-height:${b.h}px;--dw:${f.length&&!b.sum?["K","R","O","A","M","S"].filter(r=>f.includes(r)).length*9+6:0}px"><b>${esc(b.n)}</b>${b.s?`<small>${esc(b.s)}</small>`:""}${f.length&&!b.sum?`<span class="rd">${["K","R","O","A","M","S"].filter(r=>f.includes(r)).map(r=>`<i style="background:${RISK[r].c}" title="${RISK[r].n}"></i>`).join("")}</span>`:""}<span class="bd"></span><span class="rl"></span></button>`}
 const grp=[["K","Ryzyko kredytowe"],["R","Ryzyko rynkowe"],["O","Ryzyko operacyjne"],["A","Stopa % i płynność"],["M","Ryzyko modeli"],["S","Stres testy"]];
 document.getElementById("ml").innerHTML=grp.map(g=>{const ms=M.filter(m=>m.r===g[0]);return ms.length?`<div class="mg" data-s="r:${g[0]}" title="Pokaż całą grupę: ${g[1]}" style="flex:${ms.length} 1 ${Math.max(140,ms.length*85)}px;--gc:${RISK[g[0]].c}"><span>${g[1]}</span>${ms.map(m=>`<button type="button" class="mb" data-s="m:${m.id}"><i style="background:${RISK[m.r].c}"></i><span class="mn">${esc(m.n)}</span><span class="mp">${pl(m.lt)}</span></button>`).join("")}</div>`:""}).join("");
 document.getElementById("fx").innerHTML=
@@ -368,7 +368,7 @@ const RDOCS={
  S:['Wytyczne EBA – testy warunków skrajnych w bankach','Testy nadzorcze EBA / KNF','<b>ICAAP</b> – plan kapitałowy w stresie','Plan naprawy (ustawa o BFG)']};
 document.getElementById("reg").innerHTML=`<div class="reg-h"><span class="kick">Otoczenie regulacyjne</span><h2>Dokumenty, które regulują <em>modele ryzyka</em></h2></div>
 <div class="rtop"><div class="rtop-h">Nad wszystkim – dokumenty nadrzędne</div><div class="rtop-g">${TOPDOCS.map(([n,l])=>`<div><span>${n}</span>${l.map(x=>`<p>${x}</p>`).join("")}</div>`).join("")}</div></div>
-<div class="rgr">${["K","R","O","A","M","S"].map(r=>`<div class="rd" data-r="${r}" style="--gc:${RISK[r].c}"><h4>${r==="A"?"Stopa procentowa i płynność":r==="M"||r==="S"?RISK[r].n:"Ryzyko "+RISK[r].n.toLowerCase()}</h4><ul>${RDOCS[r].map(x=>`<li>${x}</li>`).join("")}</ul></div>`).join("")}</div>`;
+<div class="rgr">${["K","R","O","A","M","S"].map(r=>`<div class="rdc" data-r="${r}" style="--gc:${RISK[r].c}"><h4>${r==="A"?"Stopa procentowa i płynność":r==="M"||r==="S"?RISK[r].n:"Ryzyko "+RISK[r].n.toLowerCase()}</h4><ul>${RDOCS[r].map(x=>`<li>${x}</li>`).join("")}</ul></div>`).join("")}</div>`;
 /* ---------- logika ---------- */
 function pl(t){return !t?"":t==="EL+UL"?pl("EL")+pl("UL"):t==="EL"?'<span class="pl el">EL</span>':t==="UL"?'<span class="pl ul">UL</span>':t==="S"?'<span class="pl s">stres</span>':""}
 const tName=id=>(T.find(t=>t.id===id)||{}).title||id;
@@ -421,7 +421,7 @@ function paint(sel){setFlows(sel);const md=document.getElementById("md"),tr=docu
     if(nums.length)el.querySelector(".bd").innerHTML=nums.map(n=>`<span>${n}</span>`).join("");
     if(R.ring){const r=R.ring,x=[];if(r.num.includes(bid))x.push('<span>licznik</span>');if(r.den.includes(bid))x.push('<span class="d">mianownik</span>');el.querySelector(".rl").innerHTML=x.join("")}});
   R.m.forEach(m=>{const e=document.querySelector(`.mb[data-s="m:${m}"]`);if(e)e.classList.add("on")});
-  {const rs=new Set([...R.m].map(m=>MI[m].r));document.querySelectorAll(".rd").forEach(e=>e.classList.toggle("on",rs.has(e.dataset.r)))}
+  {const rs=new Set([...R.m].map(m=>MI[m].r));document.querySelectorAll(".rdc").forEach(e=>e.classList.toggle("on",rs.has(e.dataset.r)))}
   const lc=new Set();if(k0==="l")lc.add(sel.split(":")[1]);else R.m.forEach(m=>cat(MI[m]).forEach(c=>lc.add(c)));lc.forEach(c=>{const e=document.querySelector(`.lc[data-s="l:${c}"]`);if(e)e.classList.add("on")});
   R.t.forEach(t=>{const e=document.querySelector(`.tb[data-s="t:${t}"]`);if(e)e.classList.add("on")});
   const cur=document.querySelector(`[data-s="${sel}"]`);if(cur){cur.classList.add(cur.classList.contains("ch")?"on":"cur")}
