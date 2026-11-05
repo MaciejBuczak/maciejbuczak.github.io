@@ -570,6 +570,10 @@
 .lay{transition:opacity .5s ease!important}
 .cube .fa{transition:transform 1s cubic-bezier(.65,0,.25,1),opacity .5s ease!important}
 .slf.sd{opacity:1}
+.rod.feed i{animation:none!important;background:var(--fc,#4f7390)!important;opacity:.7!important}
+.rod.res i{background:#a8823a!important;opacity:.75!important}
+.rod i{background:rgba(13,13,13,.4)}
+.jn{position:absolute;left:50%;top:50%;width:0;height:0}
 </style>
 </head>
 <body>
@@ -680,17 +684,17 @@ const FACES=[
 const HUB={id:"stat",n:"Model statystyczny",p:"W środku",c:["05"],ic:"sigma",d:"Próba, segmentacja, zmienne, parametry, estymacja i wynik – serce modelu. Może to być jeden moduł albo kilka połączonych.",col:"#8a4f8f"};
 const MODS=[
  {id:"pd",n:"PD",s:"12 m · lifetime",col:"#5e3a72",at:[-.22,-.13,.14],k:.12,d:"Prawdopodobieństwo niewykonania zobowiązania – w horyzoncie 12 miesięcy i w całym okresie życia ekspozycji."},
- {id:"ttc",n:"TTC",s:"przez cykl",col:"#9c78a8",at:[-.31,-.32,-.06],k:.1,d:"PD przez cykl (through the cycle): długookresowa średnia, punkt kotwiczenia kalibracji."},
- {id:"pit",n:"PIT",s:"w punkcie cyklu",col:"#9c78a8",at:[-.07,-.32,.27],k:.1,d:"PD w punkcie cyklu (point in time): bieżące ryzyko z korektą o scenariusze makroekonomiczne."},
+ {id:"ttc",n:"TTC",s:"przez cykl",col:"#9c78a8",at:[-.4,-.34,.14],k:.1,d:"PD przez cykl (through the cycle): długookresowa średnia, punkt kotwiczenia kalibracji."},
+ {id:"pit",n:"PIT",s:"w punkcie cyklu",col:"#9c78a8",at:[-.04,-.34,.14],k:.1,d:"PD w punkcie cyklu (point in time): bieżące ryzyko z korektą o scenariusze makroekonomiczne."},
  {id:"sicr",n:"SICR",s:"koszyk 2",col:"#bf8165",at:[-.3,.14,.22],k:.11,d:"Znaczący wzrost ryzyka kredytowego od początkowego ujęcia – decyduje o przejściu do koszyka 2 i stracie w całym okresie życia."},
  {id:"lgd",n:"LGD",s:"strata",col:"#4f7390",at:[.28,-.17,.13],k:.12,d:"Strata w razie niewykonania zobowiązania – część ekspozycji, której bank nie odzyska."},
  {id:"ead",n:"EAD",s:"ekspozycja · CCF",col:"#6f7f58",at:[.27,.17,-.18],k:.12,d:"Ekspozycja w chwili niewykonania zobowiązania, z uwzględnieniem wykorzystania limitów (CCF)."}];
-const LINKS=[["stat","pd"],["stat","lgd"],["stat","ead"],["stat","sicr"],["pd","ttc"],["pd","pit"],["pit","sicr"],["ttc","pit"]];
+const LINKS=[["stat","pd"],["stat","lgd"],["stat","ead"],["stat","sicr"],["pd","ttc"],["pd","pit"]];
 MODS.forEach(m=>{m.p="Moduł modelu statystycznego";m.mod=1;m.c=[]});
 const DB={id:"db",n:"Baza danych",p:"W środku · zasilanie",c:["04"],col:"#4f7390",at:[.02,.36,-.02],r:.1,h:.12,d:"Dane, którymi model jest zasilany – do estymacji i produkcyjne. Strzałki pokazują, które moduły pobierają dane z bazy."};
-const FEEDS=[["db","stat"],["db","pd"],["db","lgd"],["db","ead"]];
+const FEEDS=[["db","stat"]];
 const WY={id:"wyn",n:"Wyniki",p:"Wyniki modelu",c:["05","02"],sg:{"05":["Wynik modelu"],"02":[""]},col:"#a8823a",at:[0,-.8,0],w:.2,h:.13,d:"Tu trafiają wyniki każdego modułu – PD, TTC i PIT, LGD, EAD, koszyki z SICR i ECL – a dalej do odpisów, raportów i decyzji."};
-const RES=[["stat","wyn"],["pd","wyn"],["ttc","wyn"],["pit","wyn"],["sicr","wyn"],["lgd","wyn"],["ead","wyn"]];
+const RES=[["stat","wyn"]];
 const INNER=[HUB,...MODS];
 const ALL=[...FACES,...INNER,DB,WY],AI={};ALL.forEach(f=>AI[f.id]=f);
 const cube=document.getElementById("cube"),scene=document.getElementById("scene");
@@ -702,7 +706,8 @@ cube.innerHTML=FACES.map(f=>`<div class="fa" data-f="${f.id}" style="--c:${f.col
 const EXITS={1:{n:"Przez dach",at:[0,-.8,0],port:[0,-.5,0],pt:"rotateX(90deg)"},2:{n:"Bokiem",at:[.82,-.12,0],port:[.5,-.12,0],pt:"rotateY(90deg)"},3:{n:"Strumień w górę",at:[0,-.3,0],out:[0,-.86,0]}};
 let EX=1;try{EX=+localStorage.getItem("rt_mr_ex")||1}catch(_){}
 const T3=a=>`translate3d(calc(var(--s)*${a[0]}),calc(var(--s)*${a[1]}),calc(var(--s)*${a[2]}))`;
-const rod=(A,B,cl,l)=>{const dx=B[0]-A[0],dy=B[1]-A[1],dz=B[2]-A[2],h=Math.hypot(dx,dz),L=Math.hypot(dx,dy,dz);
+const rod=(A,B,cl,l)=>{const ax=["x","y","z"].map((_,i)=>Math.abs(B[i]-A[i])),P1=[B[0],A[1],A[2]],P2=[B[0],A[1],B[2]];if(ax.filter(v=>v>.004).length>1)return[[A,P1],[P1,P2],[P2,B]].filter(([u,v])=>Math.hypot(v[0]-u[0],v[1]-u[1],v[2]-u[2])>.002).map(([u,v])=>seg(u,v,cl,l)).join("")+`<i class="jn" style="transform:${T3(P1)}"></i><i class="jn" style="transform:${T3(P2)}"></i>`;return seg(A,B,cl,l)};
+const seg=(A,B,cl,l)=>{const dx=B[0]-A[0],dy=B[1]-A[1],dz=B[2]-A[2],h=Math.hypot(dx,dz),L=Math.hypot(dx,dy,dz);
   return`<div class="rod ${cl}" data-l="${l}" style="width:calc(var(--s)*${L.toFixed(4)});transform:${T3(A)} rotateY(${(Math.atan2(-dz,dx)*180/Math.PI).toFixed(2)}deg) rotateZ(${(Math.atan2(dy,h)*180/Math.PI).toFixed(2)}deg)"><i></i><i style="transform:rotateX(90deg)"></i></div>`};
 function table(){const W=WY.w,Ht=WY.h,D=.035,c=`calc(var(--s)*`;const face=(w,h,t,cl)=>`<i class="${cl}" style="width:${c}${w});height:${c}${h});margin:${c}${-h/2}) 0 0 ${c}${-w/2});transform:${t}"></i>`;
   return`<div class="tb" data-f="wyn" style="--c:${WY.col};transform:${T3(WY.at)}">${face(W,Ht,`translateZ(${c}${D/2}))`,"g")}${face(W,Ht,`rotateY(180deg) translateZ(${c}${D/2}))`,"g")}${face(D,Ht,`rotateY(90deg) translateZ(${c}${W/2}))`,"")}${face(D,Ht,`rotateY(-90deg) translateZ(${c}${W/2}))`,"")}${face(W,D,`rotateX(90deg) translateZ(${c}${Ht/2}))`,"")}${face(W,D,`rotateX(-90deg) translateZ(${c}${Ht/2}))`,"")}<div class="yb wl" data-t=""><b>Wyniki</b>${EX!==3?"<small>opuszczają model</small>":""}</div></div>`}
