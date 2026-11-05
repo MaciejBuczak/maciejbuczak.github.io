@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Model ryzyka – Risk Trainings | Maciej Buczak</title>
+<meta name="description" content="Model ryzyka jako bryła: cel, koncepcja, dane, model statystyczny, weryfikacja, wdrożenie i dokumentacja – sześć ścian jednego modelu.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Poppins:wght@300;400;500;600&family=Source+Serif+4:ital,opsz,wght@1,8..60,400&display=swap">
+<link rel="stylesheet" href="../rt.css">
+<style>
+.mh{padding:clamp(24px,3vw,44px) 0 0}
+.mh .wrap,.top .wrap,.foot .wrap,.mw{max-width:1380px}
+.mh .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px 60px;align-items:end}
+.mh h1{font-size:clamp(32px,3.6vw,50px);margin:16px 0 0;letter-spacing:-.02em}
+.mh h1 em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--terra-d)}
+.mh p{margin:0;font-size:16px;font-weight:300;color:var(--ink2);max-width:560px}
+.mw{margin:0 auto;padding:0 clamp(18px,4vw,40px) 80px}
+
+/* scena */
+.stage{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:30px;padding:30px 0 10px;min-height:min(78vh,720px)}
+.scene{--s:clamp(170px,22vw,320px);width:var(--s);height:var(--s);perspective:calc(var(--s)*7);margin:calc(var(--s)*.42) calc(var(--s)*.4);position:relative;touch-action:none;cursor:grab;user-select:none;-webkit-user-select:none}
+.scene.drag{cursor:grabbing}
+.scene::after{content:"";position:absolute;left:8%;right:8%;bottom:calc(var(--s)*-.42);height:calc(var(--s)*.16);border-radius:50%;background:radial-gradient(closest-side,rgba(13,13,13,.22),transparent);filter:blur(4px);pointer-events:none}
+.cube{position:absolute;inset:0;transform-style:preserve-3d;will-change:transform}
+.cube.ease{transition:transform .9s cubic-bezier(.65,0,.25,1)}
+.fa{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:calc(var(--s)*.07);background:linear-gradient(155deg,color-mix(in srgb,var(--c) 8%,#fffdf9),color-mix(in srgb,var(--c) 24%,#f5f1ea));box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--c) 35%,transparent),inset 0 0 0 calc(var(--s)*.025) rgba(255,253,249,.55);padding:calc(var(--s)*.08);display:flex;flex-direction:column;overflow:hidden}
+.fa::before{content:"";position:absolute;right:-18%;top:-18%;width:60%;height:60%;border-radius:50%;background:color-mix(in srgb,var(--c) 16%,transparent)}
+.fa-ic{display:flex;gap:6px;position:relative}
+.fa-ic span{width:calc(var(--s)*.13);height:calc(var(--s)*.13);border-radius:calc(var(--s)*.035);background:var(--c);display:grid;place-items:center;box-shadow:0 10px 22px -12px var(--c)}
+.fa-ic svg{width:58%;height:58%;fill:none;stroke:#fff;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.fa-no{position:relative;margin-top:calc(var(--s)*.05);font-family:var(--serif);font-style:italic;font-size:calc(var(--s)*.042);color:var(--c);font-weight:600}
+.fa h2{position:relative;font-size:calc(var(--s)*.085);line-height:1.02;margin:2px 0 0}
+.fa ul{position:relative;list-style:none;margin:auto 0 0;padding:0;display:flex;flex-wrap:wrap;gap:4px}
+.fa li{font-size:calc(var(--s)*.03);font-weight:600;line-height:1.2;padding:3px 8px;border-radius:999px;background:rgba(255,253,249,.8);border:1px solid color-mix(in srgb,var(--c) 25%,transparent)}
+.fa .pos{position:absolute;right:calc(var(--s)*.08);bottom:calc(var(--s)*.06);font-size:calc(var(--s)*.026);letter-spacing:.16em;text-transform:uppercase;color:var(--c);font-weight:700;opacity:.0}
+.fa.on{box-shadow:inset 0 0 0 3px var(--c),inset 0 0 0 calc(var(--s)*.025) rgba(255,253,249,.55)}
+
+/* boczne listy ścian */
+.side{display:flex;flex-direction:column;gap:10px}
+.side.l{align-items:flex-end;text-align:right}
+.fb{font:inherit;display:flex;width:280px;align-items:center;gap:12px;padding:10px 14px;border-radius:18px;border:1px solid var(--line);background:#fffdf9;cursor:pointer;color:var(--ink);text-align:inherit;max-width:300px;transition:border-color .2s,transform .2s,box-shadow .2s}
+.side.l .fb{flex-direction:row-reverse}
+.fb:hover{transform:translateY(-2px);border-color:var(--c)}
+.fb.on{border-color:var(--c);box-shadow:0 0 0 2px var(--c)}
+.fb .ic{flex:none;width:38px;height:38px;border-radius:12px;background:var(--c);display:grid;place-items:center}
+.fb .ic svg{width:21px;height:21px;fill:none;stroke:#fff;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.fb small{display:block;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--c)}
+.fb b{display:block;font-size:14.5px;font-weight:600;line-height:1.2}
+.ctl{display:flex;justify-content:center;gap:8px;margin-top:6px}
+.ctl button{font:inherit;font-size:13px;font-weight:600;padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:#fff;cursor:pointer}
+.ctl button:hover{border-color:var(--ink)}
+.hint{text-align:center;font-size:12.5px;color:var(--muted);margin-top:8px}
+
+/* panel ściany */
+.pan{margin-top:34px;border-radius:30px;background:color-mix(in srgb,var(--c) 11%,#fbf8f2);padding:clamp(18px,2.4vw,30px);position:relative;overflow:hidden}
+.pan::before{content:"";position:absolute;right:-80px;top:-80px;width:240px;height:240px;border-radius:50%;background:color-mix(in srgb,var(--c) 14%,transparent)}
+.pan-h{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px 40px;align-items:end;margin-bottom:18px}
+.pan-h .kick{color:var(--c)}.pan-h .kick::before{background:var(--c)}
+.pan-h h2{font-size:clamp(26px,2.8vw,38px);margin-top:8px}
+.pan-h p{margin:0;color:var(--ink2);font-weight:300}
+.cmp{position:relative;display:grid;gap:14px}
+.cm{background:rgba(255,253,249,.72);border:1px solid color-mix(in srgb,var(--k) 25%,transparent);border-radius:22px;padding:16px}
+.cm-h{display:flex;gap:12px;align-items:center;margin-bottom:12px}
+.cm-h .ic{flex:none;width:40px;height:40px;border-radius:12px;background:var(--k);display:grid;place-items:center}
+.cm-h .ic svg{width:22px;height:22px;fill:none;stroke:#fff;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.cm-h em{display:block;font-family:var(--serif);font-size:13px;color:var(--k);font-weight:600}
+.cm-h b{font-family:var(--display);font-weight:400;font-size:19px;line-height:1.1}
+.cm-h span{display:block;font-size:13px;color:var(--ink2)}
+.sg{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.sgb{background:#fffdf9;border:1px solid rgba(13,13,13,.07);border-radius:16px;padding:10px}
+.sgb>span{display:block;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--k);margin:0 0 8px 2px}
+.it{display:flex;flex-wrap:wrap;gap:5px}
+.it i{font-style:normal;font-size:12.5px;font-weight:600;line-height:1.25;padding:5px 10px;border-radius:12px;background:color-mix(in srgb,var(--k) 7%,#fff);border:1px solid color-mix(in srgb,var(--k) 18%,transparent)}
+.it i small{display:block;font-weight:400;font-size:11px;color:var(--muted)}
+@media(max-width:1100px){.mh .wrap{grid-template-columns:1fr}.stage{grid-template-columns:1fr;gap:10px}.side,.side.l{flex-direction:row;flex-wrap:wrap;justify-content:center;align-items:stretch;text-align:left}.side.l .fb{flex-direction:row}.side.l{order:2}.side.r{order:3}.side,.side.l{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));width:100%}.fb{width:auto;max-width:none;padding:8px 10px;gap:9px}.fb .ic{width:32px;height:32px;border-radius:10px}.fb b{font-size:13px}.fb small{font-size:9.5px}.pan-h{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.cube.ease{transition:none}}
+</style>
+</head>
+<body>
+<header class="top" id="top">
+  <div class="wrap">
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav"><a href="../">Start</a><a href="../szkolenia/">Szkolenia</a><a href="../mapa-banku/">Mapa banku</a><a class="on" href="./">Model ryzyka</a><a href="../o-mnie/">O mnie</a><a href="../#kontakt">Kontakt</a><a class="sci" href="/">Strona naukowa ↗</a></nav>
+    <a class="brand" href="../"><span><b>Risk Trainings</b><small>Maciej Buczak · Risk Research</small></span><span class="logo" aria-hidden="true"><i></i><i></i><i></i></span></a>
+  </div>
+</header>
+
+<main>
+<section class="mh"><div class="wrap">
+  <div><span class="kick">Model ryzyka</span><h1>Jeden model, <em>sześć ścian</em></h1></div>
+  <div><p>Na dole dane, na górze cel. Pomiędzy – koncepcja, model statystyczny, weryfikacja oraz wdrożenie z dokumentacją. Obróć bryłę albo wybierz ścianę, żeby zobaczyć, z czego się składa.</p></div>
+</div></section>
+
+<div class="mw">
+  <div class="stage">
+    <div class="side l" id="sl"></div>
+    <div>
+      <div class="scene" id="scene" aria-label="Model ryzyka – sześcian"><div class="cube" id="cube"></div></div>
+      <div class="ctl"><button type="button" id="bspin">Obracaj</button><button type="button" id="biso">Widok bryły</button></div>
+      <div class="hint">Przeciągnij, aby obrócić · kliknij ścianę, aby ją otworzyć</div>
+    </div>
+    <div class="side r" id="sr"></div>
+  </div>
+  <div class="pan" id="pan"></div>
+</div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div><a class="brand" href="../"><span><b>Risk Trainings</b></span><span class="logo" aria-hidden="true"><i></i><i></i><i></i></span></a><p style="margin:14px 0 0;max-width:340px">Szkolenia z zarządzania ryzykiem dla banków i instytucji finansowych.</p></div>
+    <div><h4>Strony</h4><a href="../">Start</a><a href="../szkolenia/">Szkolenia</a><a href="../mapa-banku/">Mapa banku</a><a href="./">Model ryzyka</a><a href="../o-mnie/">O mnie</a><a href="/">Strona naukowa</a></div>
+    <div><h4>Kontakt</h4><a href="mailto:maciej.buczak@gmail.com">maciej.buczak@gmail.com</a><a href="https://www.linkedin.com/in/maciej-buczak-561b95120" target="_blank" rel="noopener">LinkedIn</a></div>
+    <div class="bottom"><span>© 2026 Maciej Buczak | Risk Research</span><span>Wersja próbna strony</span></div>
+  </div>
+</footer>
+<script src="../koncepcje/model.js?v=1"></script>
+<script>
+(()=>{
+const M=window.RT_MODEL,MI={};M.forEach(r=>MI[r[0]]=r);
+const E=t=>String(t==null?"":t).replace(/&/g,"&amp;").replace(/</g,"&lt;");
+const IC={id:'<rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="11" r="2.2"/><path d="M5.8 16.2c.7-1.6 1.8-2.4 3.2-2.4s2.5.8 3.2 2.4M14 10h4M14 13.5h3"/>',
+ target:'<circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.6"/><path d="M17 7l3-3M18 4h2v2"/>',
+ bulb:'<path d="M9 17.5h6M10 20.5h4M12 3.5a6 6 0 0 0-3.6 10.8c.6.5 1 1.3 1 2.1V17h5.2v-.6c0-.8.4-1.6 1-2.1A6 6 0 0 0 12 3.5z"/>',
+ db:'<ellipse cx="12" cy="6" rx="7.5" ry="2.8"/><path d="M4.5 6v12c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8V6M4.5 12c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8"/>',
+ sigma:'<path d="M17 5H7l5.5 7L7 19h10"/>',
+ check:'<path d="M12 3l7.5 3v5.5c0 4.5-3.2 8-7.5 9.5-4.3-1.5-7.5-5-7.5-9.5V6z"/><path d="M8.5 12.2l2.4 2.4 4.6-4.8"/>',
+ rocket:'<path d="M14.5 4.5c3-.8 5-.5 5-.5s.3 2-.5 5c-.8 3-3.6 6-6.5 7.5l-4.5-4.5C9.5 9.1 11.5 5.3 14.5 4.5z"/><circle cx="15" cy="9" r="1.6"/><path d="M8 12l-3 .5-1.5 3 4-.5M12 16l-.5 3-3 1.5.5-4M6.5 17.5l-2 2"/>',
+ puzzle:'<path d="M5 8h3.2a1.8 1.8 0 1 1 3.6 0H15v3.2a1.8 1.8 0 1 1 0 3.6V18h-3.2a1.8 1.8 0 1 0-3.6 0H5v-3.2a1.8 1.8 0 1 0 0-3.6z"/>',
+ doc:'<path d="M7 3.5h7l4 4v13H7z"/><path d="M14 3.5v4h4M9.5 12h6M9.5 15h6M9.5 18h3.5"/>',
+ folder:'<path d="M3.5 7.5a2 2 0 0 1 2-2h4l2 2.2h7a2 2 0 0 1 2 2v8.3a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/><path d="M3.5 10.5h17"/>'};
+const COL={"01":"#bf8165","02":"#c9a24a","03":"#a6824c","04":"#4f7390","05":"#8a4f8f","06":"#6f7f58","07":"#c07a1f","08":"#8a7f60","09":"#5f8aa6","10":"#9a9176"};
+const sv=k=>`<svg viewBox="0 0 24 24" aria-hidden="true">${IC[k]}</svg>`;
+/* ściany: id, nazwa, położenie, komponenty, opis, transform ściany, obrót bryły pokazujący ścianę */
+const FACES=[
+ {id:"top",n:"Cel i informacje",p:"Góra",c:["01","02"],d:"Po co jest model, czyj jest i gdzie działa – to, co widać z góry.",col:"#c9a24a",tf:"rotateX(90deg)",v:[-90,0]},
+ {id:"left",n:"Koncepcja",p:"Lewa ściana",c:["03"],d:"Otoczenie, warunki brzegowe, wybrana koncepcja i jej alternatywy.",col:"#a6824c",tf:"rotateY(-90deg)",v:[0,90]},
+ {id:"front",n:"Model statystyczny",p:"Przód",c:["05"],d:"Próba, segmentacja, zmienne, parametry, estymacja i wynik – serce modelu.",col:"#8a4f8f",tf:"rotateY(0deg)",v:[0,0]},
+ {id:"right",n:"Weryfikacja",p:"Prawa ściana",c:["06"],d:"Statystyka, poprawność, koncepcja i logika biznesowa – czy model działa i czy rozumiemy dlaczego.",col:"#6f7f58",tf:"rotateY(90deg)",v:[0,-90]},
+ {id:"back",n:"Wdrożenie i dokumentacja",p:"Tył",c:["07","08","09","10"],d:"Środowisko produkcyjne, elementy składowe oraz dokumentacja wdrożeniowa i administracyjna.",col:"#c07a1f",tf:"rotateY(180deg)",v:[0,180]},
+ {id:"bottom",n:"Dane",p:"Podstawa",c:["04"],d:"Źródła danych i obsługa ich problemów – fundament, na którym stoi cały model.",col:"#4f7390",tf:"rotateX(-90deg)",v:[90,0]}];
+const cube=document.getElementById("cube"),scene=document.getElementById("scene");
+cube.innerHTML=FACES.map(f=>{let subs=[...new Set(f.c.flatMap(k=>MI[k][4].map(s=>s[0]||MI[k][1])))];if(subs.length<4)subs=f.c.flatMap(k=>MI[k][4].flatMap(s=>s[1].map(i=>i[0])));
+  return`<div class="fa" data-f="${f.id}" style="--c:${f.col};transform:${f.tf} translateZ(calc(var(--s)/2))"><div class="fa-ic">${f.c.map(k=>`<span style="background:${COL[k]}">${sv(MI[k][2])}</span>`).join("")}</div><div class="fa-no">${f.c.map(k=>"#"+k).join(" · ")}</div><h2>${E(f.n)}</h2><ul>${subs.slice(0,7).map(s=>`<li>${E(s)}</li>`).join("")}${subs.length>7?`<li>+${subs.length-7}</li>`:""}</ul></div>`}).join("");
+const fb=f=>`<button type="button" class="fb" data-f="${f.id}" style="--c:${f.col}"><span class="ic">${sv(MI[f.c[0]][2])}</span><span><small>${f.p}</small><b>${E(f.n)}</b></span></button>`;
+document.getElementById("sl").innerHTML=FACES.slice(0,3).map(fb).join("");document.getElementById("sr").innerHTML=FACES.slice(3).map(fb).join("");
+/* obrót */
+let rx=-24,ry=-36,spin=!matchMedia("(prefers-reduced-motion: reduce)").matches,cur=null,last=performance.now();
+const set=()=>{cube.style.transform=`rotateX(${rx}deg) rotateY(${ry}deg)`};set();
+function tick(t){const dt=t-last;last=t;if(spin&&!drag){ry-=dt*.012;set()}requestAnimationFrame(tick)}requestAnimationFrame(tick);
+const bspin=document.getElementById("bspin");const ui=()=>{bspin.textContent=spin?"Zatrzymaj":"Obracaj"};ui();
+function go(x,y){spin=false;ui();const near=v=>ry+((((v-ry)%360)+540)%360-180);cube.classList.add("ease");rx=x;ry=near(y);set();clearTimeout(go.t);go.t=setTimeout(()=>cube.classList.remove("ease"),950)}
+function pick(id,turn){cur=id;const f=FACES.find(q=>q.id===id);document.querySelectorAll("[data-f]").forEach(e=>e.classList.toggle("on",e.dataset.f===id));if(turn)go(f.v[0],f.v[1]);panel(f)}
+let drag=null,moved=0;
+scene.addEventListener("pointerdown",e=>{drag={x:e.clientX,y:e.clientY,rx,ry};moved=0;scene.setPointerCapture(e.pointerId);scene.classList.add("drag");cube.classList.remove("ease")});
+scene.addEventListener("pointermove",e=>{if(!drag)return;const dx=e.clientX-drag.x,dy=e.clientY-drag.y;moved=Math.max(moved,Math.abs(dx)+Math.abs(dy));if(moved<4)return;spin=false;ui();ry=drag.ry+dx*.45;rx=Math.max(-90,Math.min(90,drag.rx-dy*.45));set()});
+scene.addEventListener("pointerup",e=>{scene.classList.remove("drag");const d=drag;drag=null;if(d&&moved<4){const el=document.elementFromPoint(e.clientX,e.clientY),fa=el&&el.closest(".fa");if(fa)pick(fa.dataset.f,true)}});
+scene.addEventListener("pointercancel",()=>{drag=null;scene.classList.remove("drag")});
+document.querySelector(".stage").addEventListener("click",e=>{const b=e.target.closest(".fb");if(b)pick(b.dataset.f,true)});
+bspin.addEventListener("click",()=>{spin=!spin;ui()});
+document.getElementById("biso").addEventListener("click",()=>go(-24,-36));
+/* panel */
+const pan=document.getElementById("pan");
+function panel(f){pan.style.setProperty("--c",f.col);
+  pan.innerHTML=`<div class="pan-h"><div><span class="kick">${f.p} bryły · ${f.c.map(k=>"#"+k).join(" · ")}</span><h2>${E(f.n)}</h2></div><p>${E(f.d)}</p></div><div class="cmp">${f.c.map(k=>{const r=MI[k];return`<div class="cm" style="--k:${COL[k]}"><div class="cm-h"><span class="ic">${sv(r[2])}</span><span><em>#${r[0]}</em><b>${E(r[1])}</b><span>${E(r[3])}</span></span></div><div class="sg">${r[4].map(s=>`<div class="sgb">${s[0]?`<span>${E(s[0])}</span>`:""}<div class="it">${s[1].map(i=>`<i>${E(i[0])}${i[1]?`<small>${E(i[1])}</small>`:""}</i>`).join("")}</div></div>`).join("")}</div></div>`}).join("")}</div>`}
+pick("front",false);
+})();
+</script>
+<script src="../rt.js"></script>
+</body>
+</html>
