@@ -726,6 +726,8 @@ function links(){if(depv.offsetParent===null)return;const g=dgrid.getBoundingCli
     const st=document.querySelector(".dew .tip"),sp=document.querySelector(".dew").getBoundingClientRect();st.style.width=W+"px";st.style.left=(eR+20-sp.left)+"px";st.style.top=(eT+(eB-eT)*.25-sp.top)+"px";
     const PP=[...document.querySelectorAll("#proc .pch3 svg")].map(x=>x.getBoundingClientRect()),pR=Math.max(...PP.map(r=>r.right)),pT=Math.min(...PP.map(r=>r.top)),pL=Math.min(...PP.map(r=>r.left)),pt=document.querySelector(".dpw .tip"),pp=document.querySelector(".dpw").getBoundingClientRect();pt.style.width=W+"px";
     const vw=document.documentElement.clientWidth,lx=Math.min(pR+20,vw-W-14);pt.style.left=(lx-pp.left)+"px";pt.style.top=(pT-10-pp.top)+"px"}
+  {const GAP=34,vis=sel=>{const rs=[...document.querySelectorAll(sel)].map(x=>x.getBoundingClientRect()).filter(r=>r.width||r.height);return rs.length?Math.max(...rs.map(r=>r.bottom)):null};
+    [[".dmw .cap","#drot button"],[".dew .cap","#env .ef, #env .cyl"],[".dpw .cap","#proc .pch3 svg, #proc .cl"]].forEach(([c,v])=>{const cap=document.querySelector(c),b=vis(v);if(!cap||b==null)return;cap.style.transform="";const t=cap.getBoundingClientRect().top;cap.style.transform=`translateY(${Math.round(b+GAP-t)}px)`})}
   if(DV===2){const W=g.width,H=g.height,cy=H*.7;fl.innerHTML=`<path d="M${W*.03},${cy} L${W*.5},${cy-H*.2} L${W*.97},${cy} L${W*.5},${cy+H*.2}Z" class="fl1"/><path d="M${W*.14},${cy} L${W*.5},${cy-H*.15} L${W*.86},${cy} L${W*.5},${cy+H*.15}Z" class="fl2"/>`}else fl.innerHTML=""}
 /* przepływ: model → system → wyniki → procesy, powoli i od nowa */
 const FL={p1:2600,p2:1500,p3:2600,p4:2400,h:2200};let flT0=performance.now();
