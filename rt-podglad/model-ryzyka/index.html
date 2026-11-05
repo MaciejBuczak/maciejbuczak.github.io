@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Model ryzyka – Risk Trainings | Maciej Buczak</title>
-<meta name="description" content="Model ryzyka jako bryła: cel, koncepcja, dane, model statystyczny, weryfikacja, wdrożenie i dokumentacja – sześć ścian jednego modelu.">
+<meta name="description" content="Model ryzyka jako bryła: sześć ścian otoczenia modelu, a w środku model statystyczny, kod i dokumentacja.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Poppins:wght@300;400;500;600&family=Source+Serif+4:ital,opsz,wght@1,8..60,400&display=swap">
 <link rel="stylesheet" href="../rt.css">
@@ -18,29 +18,78 @@
 .mh p{margin:0;font-size:16px;font-weight:300;color:var(--ink2);max-width:560px}
 .mw{margin:0 auto;padding:0 clamp(18px,4vw,40px) 80px}
 
-/* scena */
-.stage{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:30px;padding:30px 0 10px;min-height:min(78vh,720px)}
-.scene{--s:clamp(170px,22vw,320px);width:var(--s);height:var(--s);perspective:calc(var(--s)*7);margin:calc(var(--s)*.42) calc(var(--s)*.4);position:relative;touch-action:none;cursor:grab;user-select:none;-webkit-user-select:none}
-.scene.drag{cursor:grabbing}
-.scene::after{content:"";position:absolute;left:8%;right:8%;bottom:calc(var(--s)*-.42);height:calc(var(--s)*.16);border-radius:50%;background:radial-gradient(closest-side,rgba(13,13,13,.22),transparent);filter:blur(4px);pointer-events:none}
-.cube{position:absolute;inset:0;transform-style:preserve-3d;will-change:transform}
-.cube.ease{transition:transform .9s cubic-bezier(.65,0,.25,1)}
-.fa{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:calc(var(--s)*.07);background:linear-gradient(155deg,color-mix(in srgb,var(--c) 8%,#fffdf9),color-mix(in srgb,var(--c) 24%,#f5f1ea));box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--c) 35%,transparent),inset 0 0 0 calc(var(--s)*.025) rgba(255,253,249,.55);padding:calc(var(--s)*.08);display:flex;flex-direction:column;overflow:hidden}
-.fa::before{content:"";position:absolute;right:-18%;top:-18%;width:60%;height:60%;border-radius:50%;background:color-mix(in srgb,var(--c) 16%,transparent)}
-.fa-ic{display:flex;gap:6px;position:relative}
-.fa-ic span{width:calc(var(--s)*.13);height:calc(var(--s)*.13);border-radius:calc(var(--s)*.035);background:var(--c);display:grid;place-items:center;box-shadow:0 10px 22px -12px var(--c)}
-.fa-ic svg{width:58%;height:58%;fill:none;stroke:#fff;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
-.fa-no{position:relative;margin-top:calc(var(--s)*.05);font-family:var(--serif);font-style:italic;font-size:calc(var(--s)*.042);color:var(--c);font-weight:600}
-.fa h2{position:relative;font-size:calc(var(--s)*.085);line-height:1.02;margin:2px 0 0}
-.fa ul{position:relative;list-style:none;margin:auto 0 0;padding:0;display:flex;flex-wrap:wrap;gap:4px}
-.fa li{font-size:calc(var(--s)*.03);font-weight:600;line-height:1.2;padding:3px 8px;border-radius:999px;background:rgba(255,253,249,.8);border:1px solid color-mix(in srgb,var(--c) 25%,transparent)}
-.fa .pos{position:absolute;right:calc(var(--s)*.08);bottom:calc(var(--s)*.06);font-size:calc(var(--s)*.026);letter-spacing:.16em;text-transform:uppercase;color:var(--c);font-weight:700;opacity:.0}
-.fa.on{box-shadow:inset 0 0 0 3px var(--c),inset 0 0 0 calc(var(--s)*.025) rgba(255,253,249,.55)}
+/* przełącznik propozycji */
+.pv{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:26px 0 0;padding:8px 10px;border:1.5px dashed var(--terra-d);border-radius:18px;background:#fffdf9}
+.pv>span{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--terra-d);margin:0 8px 0 4px}
+.pv button{font:inherit;font-size:13px;font-weight:600;padding:6px 14px;border-radius:999px;border:1px solid var(--line);background:#fff;cursor:pointer}
+.pv button.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 
-/* boczne listy ścian */
+/* scena */
+.stage{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:20px;padding:10px 0}
+.scene{--s:clamp(230px,31vw,440px);width:var(--s);height:var(--s);perspective:calc(var(--s)*5);margin:calc(var(--s)*.36) calc(var(--s)*.3);position:relative;touch-action:none;cursor:grab;user-select:none;-webkit-user-select:none}
+.scene.drag{cursor:grabbing}
+.scene::after{content:"";position:absolute;left:4%;right:4%;bottom:calc(var(--s)*-.38);height:calc(var(--s)*.14);border-radius:50%;background:radial-gradient(closest-side,rgba(13,13,13,.18),transparent);filter:blur(5px);pointer-events:none}
+.cube{position:absolute;inset:0;transform-style:preserve-3d}
+.cube.ease{transition:transform .75s cubic-bezier(.65,0,.25,1)}
+.fa{position:absolute;inset:0;transform-style:preserve-3d;pointer-events:none;transition:background .3s,border-color .3s}
+.lb{position:absolute;backface-visibility:hidden;-webkit-backface-visibility:hidden;pointer-events:auto;cursor:pointer;display:flex;align-items:center;gap:8px;font-weight:600;color:var(--ink)}
+.lb .ic{flex:none;display:grid;place-items:center;background:var(--c);border-radius:28%}
+.lb svg{width:60%;height:60%;fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.lb small{display:block;font-size:.72em;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--c)}
+
+/* 1 · stelaż */
+.v1 .fa{border:calc(var(--s)*.016) solid var(--ink);border-radius:calc(var(--s)*.02)}
+.v1 .fa.on{border-color:var(--c);background:color-mix(in srgb,var(--c) 10%,transparent)}
+.v1 .lb{left:50%;top:calc(var(--s)*.04);transform:translateX(-50%);white-space:nowrap;font-size:calc(var(--s)*.03);padding:5px 12px 5px 5px;border-radius:999px;background:#fffdf9;box-shadow:0 0 0 1px var(--line),0 8px 18px -10px rgba(13,13,13,.4)}
+.v1 .lb .ic{width:calc(var(--s)*.06);height:calc(var(--s)*.06);border-radius:50%}
+.v1 .lb small{display:none}
+.v1 .nd{display:block}
+.nd{display:none;position:absolute;left:50%;top:50%;width:calc(var(--s)*.05);height:calc(var(--s)*.05);margin:calc(var(--s)*-.025);transform-style:preserve-3d}
+.nd i{position:absolute;inset:0;background:radial-gradient(circle at 35% 30%,#d9a184,var(--terra-d) 60%,#7d4a33);border-radius:50%;box-shadow:0 0 0 2px var(--paper)}
+
+/* 2 · szkło */
+.v2 .fa{background:linear-gradient(150deg,rgba(255,255,255,.42),rgba(255,253,249,.12) 55%,rgba(191,129,101,.08));border:1.5px solid rgba(13,13,13,.22);border-radius:calc(var(--s)*.05);box-shadow:inset 0 0 0 calc(var(--s)*.012) rgba(255,255,255,.35)}
+.v2 .fa.on{background:linear-gradient(150deg,color-mix(in srgb,var(--c) 30%,rgba(255,255,255,.4)),color-mix(in srgb,var(--c) 10%,transparent));border-color:var(--c)}
+.v2 .lb{left:calc(var(--s)*.05);top:calc(var(--s)*.05);font-size:calc(var(--s)*.036);flex-direction:column;align-items:flex-start;gap:6px;line-height:1.05;max-width:62%}
+.v2 .lb .ic{width:calc(var(--s)*.08);height:calc(var(--s)*.08)}
+
+/* 3 · plan */
+.v3 .fa{border:1.5px dashed var(--terra-d);background-image:linear-gradient(rgba(168,105,76,.13) 1px,transparent 1px),linear-gradient(90deg,rgba(168,105,76,.13) 1px,transparent 1px);background-size:calc(var(--s)/10) calc(var(--s)/10);background-color:rgba(250,246,239,.35)}
+.v3 .fa::before,.v3 .fa::after{content:"";position:absolute;width:calc(var(--s)*.07);height:calc(var(--s)*.07);border:2.5px solid var(--ink)}
+.v3 .fa::before{left:-2px;top:-2px;border-right:0;border-bottom:0}.v3 .fa::after{right:-2px;bottom:-2px;border-left:0;border-top:0}
+.v3 .fa.on{border-style:solid;border-color:var(--c);background-color:color-mix(in srgb,var(--c) 12%,transparent)}
+.v3 .lb{left:calc(var(--s)*.05);bottom:calc(var(--s)*.05);font-size:calc(var(--s)*.03);font-family:ui-monospace,Menlo,Consolas,monospace;font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+.v3 .lb .ic{width:calc(var(--s)*.055);height:calc(var(--s)*.055);border-radius:4px}
+.v3 .lb small{font-family:inherit;letter-spacing:.1em}
+
+/* kostki w środku */
+.ik{position:absolute;left:50%;top:50%;width:var(--k);height:var(--k);margin:calc(var(--k)/-2);transform-style:preserve-3d;cursor:pointer}
+.kf{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:14%;background:linear-gradient(150deg,color-mix(in srgb,var(--c) 70%,#fff),var(--c));box-shadow:inset 0 0 0 1px rgba(255,255,255,.25);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8%;text-align:center;color:#fff;padding:8%}
+.kf.sd{filter:brightness(.86)}.kf.tp{filter:brightness(1.08)}
+.kf .ic{width:30%;height:30%;display:grid;place-items:center;border-radius:28%;background:rgba(255,255,255,.18)}
+.kf svg{width:72%;height:72%;fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.kf b{font-family:var(--display);font-weight:400;font-size:calc(var(--k)*.12);line-height:1.05}
+.kf code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:calc(var(--k)*.2);font-weight:700}
+.ik.on .kf{box-shadow:inset 0 0 0 3px #fff,0 0 0 3px var(--c)}
+
+/* sterowanie */
+.ctl{display:flex;justify-content:center;align-items:center;gap:8px;flex-wrap:wrap}
+.ctl button{font:inherit;font-size:13px;font-weight:600;min-width:42px;height:42px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:#fff;cursor:pointer;display:inline-grid;place-items:center}
+.ctl button:hover{border-color:var(--ink)}
+.ctl .ar{font-size:17px;padding:0}
+.ctl .sep{width:1px;height:26px;background:var(--line);margin:0 4px}
+.hint{text-align:center;font-size:12.5px;color:var(--muted);margin-top:8px}
+.inn{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:14px;align-items:center}
+.inn>span{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tan);margin-right:4px}
+.ib{font:inherit;font-size:13px;font-weight:600;display:inline-flex;align-items:center;gap:8px;padding:6px 14px 6px 6px;border-radius:999px;border:1px solid var(--line);background:#fffdf9;cursor:pointer}
+.ib i{width:26px;height:26px;border-radius:50%;background:var(--c);display:grid;place-items:center}
+.ib i svg{width:15px;height:15px;fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.ib.on{box-shadow:0 0 0 2px var(--c);border-color:var(--c)}
+
+/* boczne listy */
 .side{display:flex;flex-direction:column;gap:10px}
 .side.l{align-items:flex-end;text-align:right}
-.fb{font:inherit;display:flex;width:280px;align-items:center;gap:12px;padding:10px 14px;border-radius:18px;border:1px solid var(--line);background:#fffdf9;cursor:pointer;color:var(--ink);text-align:inherit;max-width:300px;transition:border-color .2s,transform .2s,box-shadow .2s}
+.fb{font:inherit;width:270px;display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:18px;border:1px solid var(--line);background:#fffdf9;cursor:pointer;color:var(--ink);text-align:inherit;transition:border-color .2s,transform .2s,box-shadow .2s}
 .side.l .fb{flex-direction:row-reverse}
 .fb:hover{transform:translateY(-2px);border-color:var(--c)}
 .fb.on{border-color:var(--c);box-shadow:0 0 0 2px var(--c)}
@@ -48,12 +97,8 @@
 .fb .ic svg{width:21px;height:21px;fill:none;stroke:#fff;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .fb small{display:block;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--c)}
 .fb b{display:block;font-size:14.5px;font-weight:600;line-height:1.2}
-.ctl{display:flex;justify-content:center;gap:8px;margin-top:6px}
-.ctl button{font:inherit;font-size:13px;font-weight:600;padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:#fff;cursor:pointer}
-.ctl button:hover{border-color:var(--ink)}
-.hint{text-align:center;font-size:12.5px;color:var(--muted);margin-top:8px}
 
-/* panel ściany */
+/* panel */
 .pan{margin-top:34px;border-radius:30px;background:color-mix(in srgb,var(--c) 11%,#fbf8f2);padding:clamp(18px,2.4vw,30px);position:relative;overflow:hidden}
 .pan::before{content:"";position:absolute;right:-80px;top:-80px;width:240px;height:240px;border-radius:50%;background:color-mix(in srgb,var(--c) 14%,transparent)}
 .pan-h{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px 40px;align-items:end;margin-bottom:18px}
@@ -74,23 +119,8 @@
 .it{display:flex;flex-wrap:wrap;gap:5px}
 .it i{font-style:normal;font-size:12.5px;font-weight:600;line-height:1.25;padding:5px 10px;border-radius:12px;background:color-mix(in srgb,var(--k) 7%,#fff);border:1px solid color-mix(in srgb,var(--k) 18%,transparent)}
 .it i small{display:block;font-weight:400;font-size:11px;color:var(--muted)}
-@media(max-width:1100px){.mh .wrap{grid-template-columns:1fr}.stage{grid-template-columns:1fr;gap:10px}.side,.side.l{flex-direction:row;flex-wrap:wrap;justify-content:center;align-items:stretch;text-align:left}.side.l .fb{flex-direction:row}.side.l{order:2}.side.r{order:3}.side,.side.l{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));width:100%}.fb{width:auto;max-width:none;padding:8px 10px;gap:9px}.fb .ic{width:32px;height:32px;border-radius:10px}.fb b{font-size:13px}.fb small{font-size:9.5px}.pan-h{grid-template-columns:1fr}}
+@media(max-width:1100px){.mh .wrap{grid-template-columns:1fr}.stage{grid-template-columns:1fr;gap:10px}.side,.side.l{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));width:100%;text-align:left}.side.l .fb{flex-direction:row}.side.l{order:2}.side.r{order:3}.fb{width:auto;padding:8px 10px;gap:9px}.fb .ic{width:32px;height:32px;border-radius:10px}.fb b{font-size:13px}.fb small{font-size:9.5px}.pan-h{grid-template-columns:1fr}.scene{margin:calc(var(--s)*.36) auto}}
 @media(prefers-reduced-motion:reduce){.cube.ease{transition:none}}
-
-.fa{transition:opacity .7s,transform .8s cubic-bezier(.65,0,.25,1)}
-.cube.open{--ex:calc(var(--s)*.4)}
-.cube.open .fa{opacity:.2;pointer-events:none}
-.core{position:absolute;left:50%;top:50%;width:calc(var(--s)*.46);height:calc(var(--s)*.46);margin:calc(var(--s)*-.23);transform-style:preserve-3d;cursor:pointer}
-.core-i{position:absolute;inset:0;transform-style:preserve-3d;animation:cspin 16s linear infinite}
-@keyframes cspin{to{transform:rotateY(360deg)}}
-.cf{position:absolute;inset:0;border-radius:14%;background:radial-gradient(120% 90% at 30% 20%,#2c2620,#100e0c);color:#efe2d1;font-family:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;font-size:calc(var(--s)*.03);line-height:1.55;padding:14% 11%;display:flex;flex-direction:column;justify-content:center;white-space:pre;overflow:hidden;outline:calc(var(--s)*.006) dashed var(--terra);outline-offset:calc(var(--s)*.008);box-shadow:inset 0 0 0 1px rgba(255,255,255,.1),0 0 calc(var(--s)*.12) rgba(191,129,101,.45)}
-.cf b{color:var(--terra);font-weight:700}.cf i{color:#e6c27a;font-style:normal}.cf em{color:#8f877c;font-style:normal}
-.cf.ct{align-items:center;text-align:center}.cf.ct span:first-child{font-family:var(--display);font-size:calc(var(--s)*.09);color:var(--terra);line-height:1}
-.cf.ct span:last-child{font-family:var(--body);font-size:calc(var(--s)*.024);letter-spacing:.18em;text-transform:uppercase}
-.ctl .dk,.fb.dk{background:var(--ink);color:var(--paper);border-color:var(--ink)}
-.fb.dk small{color:var(--terra)}.fb .ic.code{background:var(--terra-d);color:#fff;font-family:ui-monospace,Menlo,monospace;font-weight:700;font-size:13px}
-.fb.dk.on{box-shadow:0 0 0 2px var(--terra-d)}
-@media(prefers-reduced-motion:reduce){.core-i{animation:none}}
 </style>
 </head>
 <body>
@@ -104,17 +134,27 @@
 
 <main>
 <section class="mh"><div class="wrap">
-  <div><span class="kick">Model ryzyka</span><h1>Jeden model, <em>sześć ścian</em></h1></div>
-  <div><p>Na dole dane, na górze cel. Pomiędzy – koncepcja, model statystyczny, weryfikacja oraz wdrożenie z dokumentacją. Obróć bryłę albo wybierz ścianę, żeby zobaczyć, z czego się składa.</p></div>
+  <div><span class="kick">Model ryzyka</span><h1>Jeden model, <em>sześć ścian</em> i trzy kostki w środku</h1></div>
+  <div><p>Ściany to otoczenie modelu: cel, koncepcja, dane, weryfikacja, wdrożenie i zarządzanie. W środku to, z czego model jest zrobiony – model statystyczny, kod i dokumentacja. Obracaj bryłę strzałkami albo przeciągnij ją; kliknij ścianę lub kostkę.</p></div>
 </div></section>
 
 <div class="mw">
+  <div class="pv" id="pv"><span>Propozycja bryły</span><button type="button" data-v="1">1 · Stelaż</button><button type="button" data-v="2">2 · Szkło</button><button type="button" data-v="3">3 · Plan techniczny</button></div>
   <div class="stage">
     <div class="side l" id="sl"></div>
     <div>
-      <div class="scene" id="scene" aria-label="Model ryzyka – sześcian"><div class="cube" id="cube"></div></div>
-      <div class="ctl"><button type="button" id="bspin">Obracaj</button><button type="button" id="biso">Widok bryły</button><button type="button" id="bcode" class="dk">&lt;/&gt; Pokaż kod</button></div>
-      <div class="hint">Przeciągnij, aby obrócić · kliknij ścianę, aby ją otworzyć</div>
+      <div class="scene v1" id="scene" aria-label="Model ryzyka – sześcian"><div class="cube" id="cube"></div></div>
+      <div class="ctl" id="ctl">
+        <button type="button" class="ar" data-r="0,-30" aria-label="Obróć w lewo" title="Obróć w lewo">⟲</button>
+        <button type="button" class="ar" data-r="0,30" aria-label="Obróć w prawo" title="Obróć w prawo">⟳</button>
+        <span class="sep"></span>
+        <button type="button" class="ar" data-r="-30,0" aria-label="Pochyl – widok z góry" title="Pochyl – widok z góry">↑</button>
+        <button type="button" class="ar" data-r="30,0" aria-label="Pochyl – widok z dołu" title="Pochyl – widok z dołu">↓</button>
+        <span class="sep"></span>
+        <button type="button" id="biso">Widok bryły</button>
+      </div>
+      <div class="hint">Strzałki obracają co 30° · możesz też przeciągnąć bryłę</div>
+      <div class="inn" id="inn"></div>
     </div>
     <div class="side r" id="sr"></div>
   </div>
@@ -144,55 +184,58 @@ const IC={id:'<rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy
  rocket:'<path d="M14.5 4.5c3-.8 5-.5 5-.5s.3 2-.5 5c-.8 3-3.6 6-6.5 7.5l-4.5-4.5C9.5 9.1 11.5 5.3 14.5 4.5z"/><circle cx="15" cy="9" r="1.6"/><path d="M8 12l-3 .5-1.5 3 4-.5M12 16l-.5 3-3 1.5.5-4M6.5 17.5l-2 2"/>',
  puzzle:'<path d="M5 8h3.2a1.8 1.8 0 1 1 3.6 0H15v3.2a1.8 1.8 0 1 1 0 3.6V18h-3.2a1.8 1.8 0 1 0-3.6 0H5v-3.2a1.8 1.8 0 1 0 0-3.6z"/>',
  doc:'<path d="M7 3.5h7l4 4v13H7z"/><path d="M14 3.5v4h4M9.5 12h6M9.5 15h6M9.5 18h3.5"/>',
- folder:'<path d="M3.5 7.5a2 2 0 0 1 2-2h4l2 2.2h7a2 2 0 0 1 2 2v8.3a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/><path d="M3.5 10.5h17"/>'};
+ folder:'<path d="M3.5 7.5a2 2 0 0 1 2-2h4l2 2.2h7a2 2 0 0 1 2 2v8.3a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/><path d="M3.5 10.5h17"/>',
+ code:'<path d="M8.5 7L3.5 12l5 5M15.5 7l5 5-5 5M13.5 4.5l-3 15"/>'};
 const COL={"01":"#bf8165","02":"#c9a24a","03":"#a6824c","04":"#4f7390","05":"#8a4f8f","06":"#6f7f58","07":"#c07a1f","08":"#8a7f60","09":"#5f8aa6","10":"#9a9176"};
 const sv=k=>`<svg viewBox="0 0 24 24" aria-hidden="true">${IC[k]}</svg>`;
-/* ściany: id, nazwa, położenie, komponenty, opis, transform ściany, obrót bryły pokazujący ścianę */
+/* ściany bryły (sg – wybrane podgrupy komponentu) */
 const FACES=[
- {id:"top",n:"Cel i informacje",p:"Góra",c:["01","02"],d:"Po co jest model, czyj jest i gdzie działa – to, co widać z góry.",col:"#c9a24a",tf:"rotateX(90deg)",v:[-90,0]},
- {id:"left",n:"Koncepcja",p:"Lewa ściana",c:["03"],d:"Otoczenie, warunki brzegowe, wybrana koncepcja i jej alternatywy.",col:"#a6824c",tf:"rotateY(-90deg)",v:[0,90]},
- {id:"front",n:"Model statystyczny",p:"Przód",c:["05"],d:"Próba, segmentacja, zmienne, parametry, estymacja i wynik – serce modelu.",col:"#8a4f8f",tf:"rotateY(0deg)",v:[0,0]},
- {id:"right",n:"Weryfikacja",p:"Prawa ściana",c:["06"],d:"Statystyka, poprawność, koncepcja i logika biznesowa – czy model działa i czy rozumiemy dlaczego.",col:"#6f7f58",tf:"rotateY(90deg)",v:[0,-90]},
- {id:"back",n:"Wdrożenie i dokumentacja",p:"Tył",c:["07","08","09","10"],d:"Środowisko produkcyjne, elementy składowe oraz dokumentacja wdrożeniowa i administracyjna.",col:"#c07a1f",tf:"rotateY(180deg)",v:[0,180]},
- {id:"bottom",n:"Dane",p:"Podstawa",c:["04"],d:"Źródła danych i obsługa ich problemów – fundament, na którym stoi cały model.",col:"#4f7390",tf:"rotateX(-90deg)",v:[90,0]},
- {id:"core",n:"Kod modelu",p:"Wnętrze",c:["08"],sg:["Kod modelu"],d:"Rdzeń w środku bryły: kod, który naprawdę liczy. Ściany mówią, czym model jest – kod mówi, co robi. Ten sam kod musi dać się odtworzyć i zgadzać z dokumentacją.",col:"#a8694c",v:[-24,-36]}];
+ {id:"top",n:"Cel i informacje",p:"Góra",c:["01","02"],ic:"target",d:"Po co jest model, czyj jest i gdzie działa – to, co widać z góry.",col:"#c9a24a",tf:"rotateX(90deg)",v:[-90,0]},
+ {id:"left",n:"Koncepcja",p:"Lewa ściana",c:["03"],ic:"bulb",d:"Otoczenie, warunki brzegowe, wybrana koncepcja i jej alternatywy.",col:"#a6824c",tf:"rotateY(-90deg)",v:[0,90]},
+ {id:"front",n:"Zarządzanie modelem",p:"Przód",c:["08"],sg:{"08":["Elementy administracyjne","Ocena jakości modelu","Proces zarządzania ryzykiem modeli"]},ic:"puzzle",d:"Karta, dziennik i harmonogram modelu, ocena jakości oraz proces zarządzania ryzykiem modeli.",col:"#8a7f60",tf:"rotateY(0deg)",v:[0,0]},
+ {id:"right",n:"Weryfikacja",p:"Prawa ściana",c:["06"],ic:"check",d:"Statystyka, poprawność, koncepcja i logika biznesowa – czy model działa i czy rozumiemy dlaczego.",col:"#6f7f58",tf:"rotateY(90deg)",v:[0,-90]},
+ {id:"back",n:"Wdrożenie",p:"Tył",c:["07"],ic:"rocket",d:"Gdzie i jak model działa produkcyjnie i kto z niego korzysta.",col:"#c07a1f",tf:"rotateY(180deg)",v:[0,180]},
+ {id:"bottom",n:"Dane",p:"Podstawa",c:["04"],ic:"db",d:"Źródła danych i obsługa ich problemów – fundament, na którym stoi cały model.",col:"#4f7390",tf:"rotateX(-90deg)",v:[90,0]}];
+/* kostki w środku: x – położenie, k – wielkość (część krawędzi bryły) */
+const INNER=[
+ {id:"doc",n:"Dokumentacja",p:"W środku",c:["08","09","10"],sg:{"08":["Dokumentacja modelu"]},ic:"doc",d:"Metodyka, dokumentacja modelu i techniczna, dokumentacja wdrożeniowa i administracyjna.",col:"#5f8aa6",x:-.32,k:.19},
+ {id:"stat",n:"Model statystyczny",p:"W środku",c:["05"],ic:"sigma",d:"Próba, segmentacja, zmienne, parametry, estymacja i wynik – serce modelu.",col:"#8a4f8f",x:0,k:.25},
+ {id:"code",n:"Kod modelu",p:"W środku",c:["08"],sg:{"08":["Kod modelu"]},ic:"code",d:"Kod, który naprawdę liczy: środowiska, jakość i czytelność kodu, zgodność z dokumentacją i możliwość odtworzenia.",col:"#2b2723",x:.32,k:.19}];
+const ALL=[...FACES,...INNER],AI={};ALL.forEach(f=>AI[f.id]=f);
 const cube=document.getElementById("cube"),scene=document.getElementById("scene");
-cube.innerHTML=FACES.filter(f=>f.tf).map(f=>{let subs=[...new Set(f.c.flatMap(k=>MI[k][4].map(s=>s[0]||MI[k][1])))];if(subs.length<4)subs=f.c.flatMap(k=>MI[k][4].flatMap(s=>s[1].map(i=>i[0])));
-  return`<div class="fa" data-f="${f.id}" style="--c:${f.col};transform:${f.tf} translateZ(calc(var(--s)/2 + var(--ex,0px)))"><div class="fa-ic">${f.c.map(k=>`<span style="background:${COL[k]}">${sv(MI[k][2])}</span>`).join("")}</div><div class="fa-no">${f.c.map(k=>"#"+k).join(" · ")}</div><h2>${E(f.n)}</h2><ul>${subs.slice(0,7).map(s=>`<li>${E(s)}</li>`).join("")}${subs.length>7?`<li>+${subs.length-7}</li>`:""}</ul></div>`}).join("");
-const CODE=[
- ["rdzeń","<b>model</b>.licz()","→ wynik"],
- ["front",'<i>z</i>  = b0 + b·<i>x</i>','<i>pd</i> = 1/(1+e<sup>−z</sup>)','<b>return</b> pd'],
- ["right",'<b>for</b> s <b>in</b> segmenty:','  dopasuj(s)','  zapisz(θ<sub>s</sub>)'],
- ["back",'<b>assert</b> ks(p) &lt; kryt','<b>assert</b> wynik ≈ dok','<em># replikacja</em>'],
- ["left",'dane = wczytaj(źródło)','dane = czyść(dane)','<em># braki, skrajne</em>'],
- ["top",'&lt;/&gt;','kod modelu'],
- ["bottom",'<em># środowisko</em>','dane · obliczenia']];
-const CT=["","rotateY(0deg)","rotateY(90deg)","rotateY(180deg)","rotateY(-90deg)","rotateX(90deg)","rotateX(-90deg)"];
-cube.insertAdjacentHTML("beforeend",`<div class="core" data-f="core" title="Kod modelu"><div class="core-i">${CODE.slice(1).map((c,i)=>`<div class="cf${c[0]==="top"?" ct":""}" style="transform:${CT[i+1]} translateZ(calc(var(--s)*.23))">${c.slice(1).map(l=>`<span>${l}</span>`).join("")}</div>`).join("")}</div></div>`);
-const fb=f=>`<button type="button" class="fb" data-f="${f.id}" style="--c:${f.col}"><span class="ic">${sv(MI[f.c[0]][2])}</span><span><small>${f.p}</small><b>${E(f.n)}</b></span></button>`;
-document.getElementById("sl").innerHTML=FACES.slice(0,3).map(fb).join("");document.getElementById("sr").innerHTML=FACES.slice(3,6).map(fb).join("");document.getElementById("sl").insertAdjacentHTML("beforeend",`<button type="button" class="fb dk" data-f="core" style="--c:#a8694c"><span class="ic code">&lt;/&gt;</span><span><small>Wnętrze bryły</small><b>Kod modelu</b></span></button>`);
-/* obrót */
-let rx=-24,ry=-36,spin=!matchMedia("(prefers-reduced-motion: reduce)").matches,cur=null,last=performance.now();
-const set=()=>{cube.style.transform=`rotateX(${rx}deg) rotateY(${ry}deg)`};set();
-function tick(t){const dt=t-last;last=t;if(spin&&!drag){ry-=dt*.012;set()}requestAnimationFrame(tick)}requestAnimationFrame(tick);
-const bspin=document.getElementById("bspin");const ui=()=>{bspin.textContent=spin?"Zatrzymaj":"Obracaj"};ui();
-function go(x,y){spin=false;ui();const near=v=>ry+((((v-ry)%360)+540)%360-180);cube.classList.add("ease");rx=x;ry=near(y);set();clearTimeout(go.t);go.t=setTimeout(()=>cube.classList.remove("ease"),950)}
-const bcode=document.getElementById("bcode");function openC(on){cube.classList.toggle("open",on);bcode.innerHTML=on?"Zamknij bryłę":"&lt;/&gt; Pokaż kod"}
-function pick(id,turn){cur=id;openC(id==="core");const f=FACES.find(q=>q.id===id);document.querySelectorAll("[data-f]").forEach(e=>e.classList.toggle("on",e.dataset.f===id));if(turn)go(f.v[0],f.v[1]);panel(f)}
+const H="calc(var(--s)/2)";
+const corners=[];for(const x of[-1,1])for(const y of[-1,1])for(const z of[-1,1])corners.push([x,y,z]);
+cube.innerHTML=FACES.map(f=>`<div class="fa" data-f="${f.id}" style="--c:${f.col};transform:${f.tf} translateZ(${H})"><div class="lb" data-f="${f.id}"><span class="ic">${sv(f.ic)}</span><span><small>${f.p}</small>${E(f.n)}</span></div></div>`).join("")
+ +corners.map(([x,y,z])=>`<div class="nd" data-t="translate3d(calc(var(--s)*${x/2}),calc(var(--s)*${y/2}),calc(var(--s)*${z/2}))"><i></i></div>`).join("")
+ +INNER.map(k=>{const kf=(t,cls,body)=>`<div class="kf ${cls}" style="transform:${t} translateZ(calc(var(--k)/2))">${body}</div>`,
+   side=`<span class="ic">${sv(k.ic)}</span><b>${E(k.n)}</b>`,cap=k.id==="code"?`<code>&lt;/&gt;</code>`:`<span class="ic">${sv(k.ic)}</span>`;
+   return`<div class="ik" data-f="${k.id}" style="--c:${k.col};--k:calc(var(--s)*${k.k});transform:translateX(calc(var(--s)*${k.x}))">${kf("rotateY(0deg)","",side)}${kf("rotateY(90deg)","sd",side)}${kf("rotateY(180deg)","",side)}${kf("rotateY(-90deg)","sd",side)}${kf("rotateX(90deg)","tp",cap)}${kf("rotateX(-90deg)","sd",cap)}</div>`}).join("");
+const fb=f=>`<button type="button" class="fb" data-f="${f.id}" style="--c:${f.col}"><span class="ic">${sv(f.ic)}</span><span><small>${f.p}</small><b>${E(f.n)}</b></span></button>`;
+document.getElementById("sl").innerHTML=FACES.slice(0,3).map(fb).join("");document.getElementById("sr").innerHTML=FACES.slice(3).map(fb).join("");
+document.getElementById("inn").innerHTML=`<span>W środku</span>`+INNER.map(k=>`<button type="button" class="ib" data-f="${k.id}" style="--c:${k.col}"><i>${sv(k.ic)}</i>${E(k.n)}</button>`).join("");
+/* obrót – tylko na żądanie */
+let rx=-22,ry=-34;
+const NDS=[...cube.querySelectorAll(".nd")];
+const set=(ease)=>{cube.classList.toggle("ease",!!ease);cube.style.transform=`rotateX(${rx}deg) rotateY(${ry}deg)`;NDS.forEach(n=>{n.style.transition=ease?"transform .75s cubic-bezier(.65,0,.25,1)":"none";n.style.transform=`${n.dataset.t} rotateY(${-ry}deg) rotateX(${-rx}deg)`})};set();
+const near=v=>ry+((((v-ry)%360)+540)%360-180);
+function go(x,y){rx=x;ry=near(y);set(true)}
+document.getElementById("ctl").addEventListener("click",e=>{const b=e.target.closest("[data-r]");if(b){const[a,c]=b.dataset.r.split(",").map(Number);rx=Math.max(-90,Math.min(90,rx+a));ry+=c;set(true);return}if(e.target.closest("#biso"))go(-22,-34)});
+function pick(id,turn){const f=AI[id];document.querySelectorAll("[data-f]").forEach(e=>e.classList.toggle("on",e.dataset.f===id));if(turn&&f.v)go(f.v[0],f.v[1]);panel(f)}
 let drag=null,moved=0;
-scene.addEventListener("pointerdown",e=>{drag={x:e.clientX,y:e.clientY,rx,ry};moved=0;scene.setPointerCapture(e.pointerId);scene.classList.add("drag");cube.classList.remove("ease")});
-scene.addEventListener("pointermove",e=>{if(!drag)return;const dx=e.clientX-drag.x,dy=e.clientY-drag.y;moved=Math.max(moved,Math.abs(dx)+Math.abs(dy));if(moved<4)return;spin=false;ui();ry=drag.ry+dx*.45;rx=Math.max(-90,Math.min(90,drag.rx-dy*.45));set()});
-scene.addEventListener("pointerup",e=>{scene.classList.remove("drag");const d=drag;drag=null;if(d&&moved<4){const el=document.elementFromPoint(e.clientX,e.clientY),fa=el&&el.closest(".fa,.core");if(fa)pick(fa.dataset.f,fa.dataset.f!=="core")}});
+scene.addEventListener("pointerdown",e=>{drag={x:e.clientX,y:e.clientY,rx,ry};moved=0;scene.setPointerCapture(e.pointerId);scene.classList.add("drag")});
+scene.addEventListener("pointermove",e=>{if(!drag)return;const dx=e.clientX-drag.x,dy=e.clientY-drag.y;moved=Math.max(moved,Math.abs(dx)+Math.abs(dy));if(moved<4)return;ry=drag.ry+dx*.4;rx=Math.max(-90,Math.min(90,drag.rx-dy*.4));set(false)});
+scene.addEventListener("pointerup",e=>{scene.classList.remove("drag");const d=drag;drag=null;if(d&&moved<4){scene.releasePointerCapture(e.pointerId);const el=document.elementFromPoint(e.clientX,e.clientY),t=el&&el.closest("[data-f]");if(t)pick(t.dataset.f,false)}});
 scene.addEventListener("pointercancel",()=>{drag=null;scene.classList.remove("drag")});
-document.querySelector(".stage").addEventListener("click",e=>{const b=e.target.closest(".fb");if(b)pick(b.dataset.f,true)});
-bspin.addEventListener("click",()=>{spin=!spin;ui()});
-bcode.addEventListener("click",()=>{if(cube.classList.contains("open")){openC(false);pick("front",false);go(-24,-36)}else pick("core",true)});
-document.getElementById("biso").addEventListener("click",()=>go(-24,-36));
+document.querySelector(".stage").addEventListener("click",e=>{const b=e.target.closest(".fb,.ib");if(b)pick(b.dataset.f,b.classList.contains("fb"))});
+/* propozycje */
+const pv=document.getElementById("pv");let V=1;try{V=+localStorage.getItem("rt_mr_v")||1}catch(_){}
+function setV(v){V=v;scene.classList.remove("v1","v2","v3");scene.classList.add("v"+v);pv.querySelectorAll("[data-v]").forEach(b=>b.classList.toggle("on",+b.dataset.v===v));try{localStorage.setItem("rt_mr_v",v)}catch(_){}}
+pv.addEventListener("click",e=>{const b=e.target.closest("[data-v]");if(b)setV(+b.dataset.v)});setV(V);
 /* panel */
 const pan=document.getElementById("pan");
 function panel(f){pan.style.setProperty("--c",f.col);
-  pan.innerHTML=`<div class="pan-h"><div><span class="kick">${f.p} bryły · ${f.c.map(k=>"#"+k).join(" · ")}${f.sg?" · "+E(f.sg.join(", ")):""}</span><h2>${E(f.n)}</h2></div><p>${E(f.d)}</p></div><div class="cmp">${f.c.map(k=>{const r=MI[k],sgs=f.sg?r[4].filter(x=>f.sg.includes(x[0])):r[4];return`<div class="cm" style="--k:${COL[k]}"><div class="cm-h"><span class="ic">${sv(r[2])}</span><span><em>#${r[0]}</em><b>${E(r[1])}</b><span>${E(r[3])}</span></span></div><div class="sg">${sgs.map(s=>`<div class="sgb">${s[0]?`<span>${E(s[0])}</span>`:""}<div class="it">${s[1].map(i=>`<i>${E(i[0])}${i[1]?`<small>${E(i[1])}</small>`:""}</i>`).join("")}</div></div>`).join("")}</div></div>`}).join("")}</div>`}
-pick("front",false);
+  pan.innerHTML=`<div class="pan-h"><div><span class="kick">${f.p}${f.v?" bryły":""} · ${f.c.map(k=>"#"+k).join(" · ")}</span><h2>${E(f.n)}</h2></div><p>${E(f.d)}</p></div><div class="cmp">${f.c.map(k=>{const r=MI[k],sgs=f.sg&&f.sg[k]?r[4].filter(x=>f.sg[k].includes(x[0])):r[4];return`<div class="cm" style="--k:${COL[k]}"><div class="cm-h"><span class="ic">${sv(r[2])}</span><span><em>#${r[0]}</em><b>${E(r[1])}</b><span>${f.sg&&f.sg[k]?"Wybrane: "+E(f.sg[k].join(", ")):E(r[3])}</span></span></div><div class="sg">${sgs.map(s=>`<div class="sgb">${s[0]?`<span>${E(s[0])}</span>`:""}<div class="it">${s[1].map(i=>`<i>${E(i[0])}${i[1]?`<small>${E(i[1])}</small>`:""}</i>`).join("")}</div></div>`).join("")}</div></div>`}).join("")}</div>`}
+pick("stat",false);
 })();
 </script>
 <script src="../rt.js"></script>
