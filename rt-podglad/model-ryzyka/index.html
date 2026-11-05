@@ -25,7 +25,7 @@
 .pv button.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 
 /* scena */
-.stage{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:20px;padding:10px 0}
+.stage{display:grid;grid-template-columns:auto minmax(120px,200px) auto;justify-content:center;align-items:center;gap:10px 18px;padding:10px 0}
 .scene{--s:clamp(230px,31vw,440px);width:var(--s);height:var(--s);perspective:calc(var(--s)*5);margin:calc(var(--s)*.36) calc(var(--s)*.3);position:relative;touch-action:none;cursor:grab;user-select:none;-webkit-user-select:none}
 .scene.drag{cursor:grabbing}
 .scene::after{content:"";position:absolute;left:4%;right:4%;bottom:calc(var(--s)*-.38);height:calc(var(--s)*.14);border-radius:50%;background:radial-gradient(closest-side,rgba(13,13,13,.18),transparent);filter:blur(5px);pointer-events:none}
@@ -218,6 +218,37 @@
 @media(min-width:1101px){.scene{margin:calc(var(--s)*.55) calc(var(--s)*.42) calc(var(--s)*.36)}}
 @media(max-width:1100px){.scene{margin:calc(var(--s)*.55) auto calc(var(--s)*.36)}}
 .cube.simple .rod.out{opacity:1}
+
+/* strzałka wdrożenia */
+.dep{display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;text-align:center}
+.dep svg{width:100%;height:30px;overflow:visible}
+.dep-l{fill:none;stroke:#c07a1f;stroke-width:3;stroke-dasharray:10 8;animation:dep 1s linear infinite}
+.dep-h{fill:none;stroke:#c07a1f;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+@keyframes dep{to{stroke-dashoffset:-18}}
+.dep-t{font-family:var(--display);font-size:17px;color:#c07a1f}
+.dep-s{font-size:11.5px;color:var(--muted);line-height:1.35;max-width:170px}
+/* środowisko produkcyjne */
+.envw{display:flex;flex-direction:column;align-items:center;gap:10px}
+.env{--e:clamp(190px,21vw,320px);width:var(--e);height:calc(var(--e)*1.05);perspective:calc(var(--e)*5);position:relative;cursor:pointer}
+.env::after{content:"";position:absolute;left:0;right:0;bottom:-6%;height:14%;border-radius:50%;background:radial-gradient(closest-side,rgba(13,13,13,.16),transparent);filter:blur(5px)}
+.envb{position:absolute;left:50%;top:50%;width:0;height:0;transform-style:preserve-3d;transform:rotateX(-22deg) rotateY(-34deg)}
+.envb>div{position:absolute;left:0;top:0;width:0;height:0;transform-style:preserve-3d}
+.envb i{position:absolute;left:0;top:0;box-sizing:border-box}
+.ef{border:1px solid rgba(13,13,13,.22);border-radius:6px;background:linear-gradient(150deg,rgba(255,255,255,.34),rgba(255,253,249,.06) 55%,rgba(192,122,31,.06));box-shadow:inset 0 0 0 calc(var(--e)*.01) rgba(255,255,255,.35)}
+.gr{transform-style:preserve-3d}
+.gs{position:absolute;left:calc(var(--e)*var(--g)/-2);top:calc(var(--e)*var(--g)/-2);width:calc(var(--e)*var(--g));height:calc(var(--e)*var(--g));animation:spin 14s linear infinite}
+.gr.rv .gs{animation-direction:reverse;animation-duration:10s}
+.gs svg{width:100%;height:100%;fill:color-mix(in srgb,#c07a1f 8%,transparent);stroke:#c07a1f;stroke-width:1.6;stroke-linejoin:round}
+@keyframes spin{to{transform:rotate(360deg)}}
+.mf{border:1px solid rgba(13,13,13,.3);border-radius:3px;background:linear-gradient(150deg,rgba(255,255,255,.4),rgba(255,253,249,.08))}
+.mc{border:1.5px solid #8a4f8f;border-radius:2px}
+.mi2{position:absolute;left:0;top:0;transform-style:preserve-3d;transform:translateY(calc(var(--e)*-.03))}
+.mdb{position:absolute;left:calc(var(--e)*-.03);top:calc(var(--e)*.065);width:calc(var(--e)*.06);height:calc(var(--e)*.04);border-left:1.5px solid #4f7390;border-right:1.5px solid #4f7390}
+.mdb span{position:absolute;left:-1.5px;right:-1.5px;height:calc(var(--e)*.016);border:1.5px solid #4f7390;border-radius:50%}
+.mdb span:first-child{top:calc(var(--e)*-.008)}.mdb span:last-child{bottom:calc(var(--e)*-.008);border-top-color:transparent}
+.env-c{text-align:center}.env-c b{display:block;font-family:var(--display);font-weight:400;font-size:17px}.env-c small{font-size:12px;color:var(--muted)}
+@media(max-width:1100px){.stage{grid-template-columns:1fr}.dep{flex-direction:column}.dep svg{width:40px;height:70px;transform:rotate(90deg)}}
+@media(prefers-reduced-motion:reduce){.gs,.dep-l{animation:none}}
 </style>
 </head>
 <body>
@@ -232,15 +263,13 @@
 <main>
 <section class="mh"><div class="wrap">
   <div><span class="kick">Model ryzyka</span><h1>Jeden model, <em>sześć ścian</em>, a w środku model statystyczny</h1></div>
-  <div><p>Ściany to otoczenie modelu: cel, koncepcja, dane, weryfikacja, wdrożenie i zarządzanie. W środku model statystyczny – czasem jeden moduł, czasem kilka połączonych (PD, LGD, EAD, SICR, TTC, PIT). Obracaj bryłę strzałkami albo przeciągnij ją; kliknij ścianę lub moduł.</p></div>
+  <div><p>Szklana bryła to model, a w środku jego model statystyczny – czasem jeden moduł, czasem kilka połączonych (PD, LGD, EAD, SICR, TTC, PIT). Dane wchodzą od dołu, wyniki wychodzą na zewnątrz, a sam model trafia do środowiska produkcyjnego. Obracaj bryłę strzałkami albo przeciągnij ją; kliknij moduł.</p></div>
 </div></section>
 
 <div class="mw">
-  <div class="pv" id="pv"><span>Propozycja bryły</span><button type="button" data-v="1">1 · Stelaż</button><button type="button" data-v="2">2 · Szkło</button><button type="button" data-v="3">3 · Plan techniczny</button><button type="button" data-v="4">4 · Plan – błękitny</button><button type="button" data-v="5">5 · Plan – rysunek kreślarski</button></div>
   <div class="stage">
-    <div class="side l" id="sl"></div>
     <div>
-      <div class="scene v1" id="scene" aria-label="Model ryzyka – sześcian"><div class="cube" id="cube"></div></div>
+      <div class="scene v2" id="scene" aria-label="Model ryzyka – sześcian"><div class="cube" id="cube"></div></div>
       <div class="ctl" id="ctl">
         <button type="button" class="ar" data-r="0,-30" aria-label="Obróć w lewo" title="Obróć w lewo">⟲</button>
         <button type="button" class="ar" data-r="0,30" aria-label="Obróć w prawo" title="Obróć w prawo">⟳</button>
@@ -253,7 +282,11 @@
       <div class="hint">Strzałki obracają co 30° · możesz też przeciągnąć bryłę</div>
       <div class="inn" id="inn"></div>
     </div>
-    <div class="side r" id="sr"></div>
+    <div class="dep" id="dep" data-f="back"><span class="dep-t">Wdrożenie</span><svg viewBox="0 0 200 40" preserveAspectRatio="none" aria-hidden="true"><path class="dep-l" d="M4 20H178"/><path class="dep-h" d="M172 8l22 12-22 12"/></svg><span class="dep-s">model trafia do środowiska produkcyjnego</span></div>
+    <div class="envw">
+      <div class="env" id="env" data-f="back" aria-label="Środowisko produkcyjne"><div class="envb" id="envb"></div></div>
+      <div class="env-c"><b>Środowisko produkcyjne</b><small>tu model działa w procesie biznesowym</small></div>
+    </div>
   </div>
   <div class="pan" id="pan"></div>
 </div>
@@ -314,7 +347,7 @@ const ALL=[...FACES,...INNER,DB,WY],AI={};ALL.forEach(f=>AI[f.id]=f);
 const cube=document.getElementById("cube"),scene=document.getElementById("scene");
 const H="calc(var(--s)/2)";
 const corners=[];for(const x of[-1,1])for(const y of[-1,1])for(const z of[-1,1])corners.push([x,y,z]);
-cube.innerHTML=FACES.map(f=>`<div class="fa" data-f="${f.id}" style="--c:${f.col};transform:${f.tf} translateZ(${H})"><div class="lb" data-f="${f.id}"><span class="ic">${sv(f.ic)}</span><span><small>${f.p}</small>${E(f.n)}</span></div></div>`).join("")
+cube.innerHTML=FACES.map(f=>`<div class="fa" data-f="${f.id}" style="--c:${f.col};transform:${f.tf} translateZ(${H})"></div>`).join("")
  +corners.map(([x,y,z])=>`<div class="nd" data-t="translate3d(calc(var(--s)*${x/2}),calc(var(--s)*${y/2}),calc(var(--s)*${z/2}))"><i></i></div>`).join("")+`<div class="inr" id="inr"></div>`;
 /* wyjście wyników – trzy propozycje */
 const EXITS={1:{n:"Przez dach",at:[0,-.8,0],port:[0,-.5,0],pt:"rotateX(90deg)"},2:{n:"Bokiem",at:[.82,-.12,0],port:[.5,-.12,0],pt:"rotateY(90deg)"},3:{n:"Strumień w górę",at:[0,-.3,0],out:[0,-.86,0]}};
@@ -337,7 +370,7 @@ function renderInner(){const X=EXITS[EX];WY.at=X.at;const tgt=X.port||X.at;
   document.getElementById("inr").innerHTML=h;YB=[...cube.querySelectorAll(".yb")];
   const sel=document.querySelector(".fb.on,.ib.on");if(sel)pick(sel.dataset.f,false);if(typeof set==="function")set()}
 const fb=f=>`<button type="button" class="fb" data-f="${f.id}" style="--c:${f.col}"><span class="ic">${sv(f.ic)}</span><span><small>${f.p}</small><b>${E(f.n)}</b></span></button>`;
-document.getElementById("sl").innerHTML=FACES.slice(0,3).map(fb).join("");document.getElementById("sr").innerHTML=FACES.slice(3).map(fb).join("");
+
 const inn=document.getElementById("inn");
 inn.innerHTML=`<div class="mx2"><span>Model w środku</span><button type="button" data-mx="1">Złożony – kilka modułów</button><button type="button" data-mx="0">Prosty – jeden moduł</button></div><div class="mx2 ex"><span>Wyjście wyników</span>${Object.entries(EXITS).map(([k,v])=>`<button type="button" data-ex="${k}">${k} · ${v.n}</button>`).join("")}</div><div class="mods"><button type="button" class="ib" data-f="db" style="--c:${DB.col}"><i>${sv("db")}</i>Baza danych</button><button type="button" class="ib" data-f="stat" style="--c:${HUB.col}"><i>${sv("sigma")}</i>ECL</button><button type="button" class="ib" data-f="wyn" style="--c:${WY.col}"><i>${sv("doc")}</i>Wyniki</button>${MODS.map(m=>`<button type="button" class="ib md" data-f="${m.id}" style="--c:${m.col}"><i><b>${m.n[0]}</b></i>${m.n}</button>`).join("")}</div>`;
 let CX=1;try{CX=localStorage.getItem("rt_mr_cx")==="0"?0:1}catch(_){}
@@ -363,9 +396,6 @@ scene.addEventListener("pointerup",e=>{scene.classList.remove("drag");const d=dr
 scene.addEventListener("pointercancel",()=>{drag=null;scene.classList.remove("drag")});
 document.querySelector(".stage").addEventListener("click",e=>{const b=e.target.closest(".fb,.ib");if(b)pick(b.dataset.f,b.classList.contains("fb"))});
 /* propozycje */
-const pv=document.getElementById("pv");let V=1;try{V=+localStorage.getItem("rt_mr_v")||1}catch(_){}
-function setV(v){V=v;scene.classList.remove("v1","v2","v3","v4","v5");scene.classList.add("v"+v);pv.querySelectorAll("[data-v]").forEach(b=>b.classList.toggle("on",+b.dataset.v===v));try{localStorage.setItem("rt_mr_v",v)}catch(_){}}
-pv.addEventListener("click",e=>{const b=e.target.closest("[data-v]");if(b)setV(+b.dataset.v)});setV(V);
 /* panel */
 const pan=document.getElementById("pan");pan.addEventListener("click",e=>{const g=e.target.closest("[data-go]");if(g)pick(g.dataset.go,false)});
 
@@ -374,6 +404,17 @@ function panel(f){pan.style.setProperty("--c",f.col);
     pan.innerHTML=`<div class="pan-h"><div><span class="kick">${f.p}</span><h2>${E(f.n)} <span class="pmod">${E(f.s)}</span></h2></div><p>${E(f.d)}</p></div><div class="cmp"><div class="cm" style="--k:${f.col}"><div class="sgb"><span>Połączony z</span><div class="it">${nb.map(x=>`<i class="lnk" data-go="${x.id}">${E(x.n)}</i>`).join("")}</div></div></div></div>`;return}
   pan.innerHTML=`<div class="pan-h"><div><span class="kick">${f.p}${f.v?" bryły":""} · ${f.c.map(k=>"#"+k).join(" · ")}</span><h2>${E(f.n)}</h2></div><p>${E(f.d)}</p></div><div class="cmp">${f.c.map(k=>{const r=MI[k],sgs=f.sg&&f.sg[k]?r[4].filter(x=>f.sg[k].includes(x[0])):r[4];return`<div class="cm" style="--k:${COL[k]}"><div class="cm-h"><span class="ic">${sv(r[2])}</span><span><em>#${r[0]}</em><b>${E(r[1])}</b><span>${f.sg&&f.sg[k]?"Wybrane: "+E(f.sg[k].join(", ")):E(r[3])}</span></span></div><div class="sg">${sgs.map(s=>`<div class="sgb">${s[0]?`<span>${E(s[0])}</span>`:""}<div class="it">${s[1].map(i=>`<i>${E(i[0])}${i[1]?`<small>${E(i[1])}</small>`:""}</i>`).join("")}</div></div>`).join("")}</div></div>`}).join("")}</div>`}
 setEX(EX);setCX(CX);pick("stat",false);
+/* środowisko produkcyjne: szklana skrzynia, tryby i mniejsza kopia modelu */
+(()=>{const eb=document.getElementById("envb");
+  const gear=(n,R,r)=>{let d="";for(let i=0;i<n;i++){const a=i/n*2*Math.PI,s1=Math.PI/n*.55,s2=Math.PI/n*.4,P=(rr,aa)=>`${(50+rr*Math.cos(aa)).toFixed(2)} ${(50+rr*Math.sin(aa)).toFixed(2)}`;
+    d+=(i?"L":"M")+P(r,a-s1-.12)+"L"+P(R,a-s2)+"L"+P(R,a+s2)+"L"+P(r,a+s1+.12)}return`<svg viewBox="0 0 100 100" aria-hidden="true"><path d="${d}Z"/><circle cx="50" cy="50" r="${(r*.42).toFixed(1)}"/><circle cx="50" cy="50" r="4"/></svg>`};
+  const B=(w,h,d,cls)=>[["rotateY(0deg)",w,h,d],["rotateY(180deg)",w,h,d],["rotateY(90deg)",d,h,w],["rotateY(-90deg)",d,h,w],["rotateX(90deg)",w,d,h],["rotateX(-90deg)",w,d,h]].map(([t,a,b,z])=>`<i class="${cls}" style="width:calc(var(--e)*${a});height:calc(var(--e)*${b});margin:calc(var(--e)*${-b/2}) 0 0 calc(var(--e)*${-a/2});transform:${t} translateZ(calc(var(--e)*${z/2}))"></i>`).join("");
+  eb.innerHTML=`<div class="eo">${B(1,.62,.7,"ef")}</div>
+   <div class="gr" style="--g:.34;transform:translate3d(calc(var(--e)*-.24),calc(var(--e)*-.06),calc(var(--e)*-.2))"><div class="gs">${gear(12,46,38)}</div></div>
+   <div class="gr rv" style="--g:.24;transform:translate3d(calc(var(--e)*.04),calc(var(--e)*-.14),calc(var(--e)*-.2))"><div class="gs">${gear(9,46,37)}</div></div>
+   <div class="gr" style="--g:.18;transform:translate3d(calc(var(--e)*.33),calc(var(--e)*.12),calc(var(--e)*-.25)) rotateY(90deg)"><div class="gs">${gear(8,46,36)}</div></div>
+   <div class="mini" style="transform:translate3d(calc(var(--e)*.12),calc(var(--e)*.08),calc(var(--e)*.12))">${B(.3,.3,.3,"mf")}<div class="mi2">${B(.1,.1,.1,"mc")}</div><div class="mdb"><span></span><span></span></div></div>`})();
+document.querySelector(".stage").addEventListener("click",e=>{const t=e.target.closest("#env,#dep");if(t)pick("back",false)});
 })();
 </script>
 <script src="../rt.js"></script>
