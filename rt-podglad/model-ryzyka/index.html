@@ -366,30 +366,29 @@
 @media(max-width:1100px){.tip{left:50%;top:auto;bottom:calc(100% - 40px);transform:translate(-50%,8px)}.dew:hover .tip,.dew.tipon .tip{transform:translate(-50%,0)}}
 
 /* pakiet dokumentów i komitet */
-.depv[data-dv="3"] .dpw{grid-column:3/5!important;justify-self:end;margin-right:2%}
-.depv[data-dv="3"] .dgrid{grid-template-columns:1fr 1fr 1fr .85fr;grid-template-rows:auto auto auto;column-gap:clamp(40px,5vw,90px);padding:0 0 30px}
+.depv[data-dv="3"] .dgrid{grid-template-columns:1fr 1.15fr 1fr .8fr;grid-template-rows:auto auto auto;column-gap:clamp(40px,5vw,90px);padding:0 0 30px}
 .depv[data-dv="3"] .dew{grid-row:1/3;margin-top:70px}
 .depv .dn{gap:24px}
 .depv .dmod{--s:clamp(170px,13.5vw,210px)}
 .depv .env{--e:clamp(160px,13vw,205px)}
-.band{grid-column:1/4;grid-row:3;display:grid;grid-template-columns:repeat(3,1fr);gap:10px 34px;margin-top:22px;padding:14px 0 0;border-top:1px solid var(--line);position:relative;z-index:1}
-.band-h{grid-column:1/-1;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.band{grid-column:1/4;grid-row:3;display:grid;grid-template-columns:subgrid;row-gap:14px;margin-top:22px;padding:14px 0 0;position:relative;z-index:1}
+.band-h{grid-column:1/-1;margin-top:40px;justify-content:center;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
 .bk{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink2)}
 .lg{display:inline-flex;align-items:center;gap:7px;font-size:12px;color:var(--muted)}.lg i{width:9px;height:9px;border-radius:50%}
 .lg.jm i,.dk-g.jm .ab{background:var(--terra-d)}.lg.jw i,.dk-g.jw .ab{background:#3f6f6a}
-.dk{display:flex;flex-direction:column;gap:8px}
+.dk{display:flex;flex-direction:column;gap:8px;align-items:center;text-align:center}
 .dk-h{grid-column:1/-1;display:flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;color:var(--ink)}
 .dk-h i{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--terra-d)}
 .dk-g{display:flex;flex-direction:column;gap:5px;align-items:stretch}
 .ab{align-self:flex-start;height:16px;padding:0 7px;border-radius:999px;color:#fff;font-size:8.5px;font-weight:700;letter-spacing:.08em;display:grid;place-items:center}
-.shs{display:flex;flex-wrap:wrap;gap:5px}
+.shs{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;max-width:340px}
 .sh{display:inline-flex;align-items:center;gap:7px;padding:4px 9px 4px 7px;border-radius:9px;background:#fffdf9;border:1px solid var(--line);font-size:11.5px;font-weight:500;line-height:1.2;box-shadow:0 8px 16px -14px rgba(13,13,13,.5)}
 .sh i{flex:none;width:11px;height:14px;border-radius:1.5px;background:linear-gradient(-135deg,transparent 3.5px,var(--a) 3.5px)}
 .sh.jm{--a:color-mix(in srgb,var(--terra-d) 75%,transparent)}.sh.jw{--a:#3f6f6a;border-color:color-mix(in srgb,#3f6f6a 30%,transparent)}
 .rail{fill:none;stroke:#d6ccbe;stroke-width:1.4;stroke-dasharray:4 6}
 .ticks{fill:none;stroke:#d6ccbe;stroke-width:1.2}
 .lp.l3{stroke:var(--ink2)}.hd.h3{stroke:var(--ink2)}
-.kom{grid-column:4;grid-row:3;align-self:start;margin-top:20px;display:flex;flex-direction:column;align-items:center;gap:14px;position:relative;z-index:1;margin-bottom:6px}
+.kom{grid-column:4;grid-row:2/4;align-self:end;margin-top:20px;display:flex;flex-direction:column;align-items:center;gap:14px;position:relative;z-index:1;margin-bottom:6px}
 .kom-s{width:clamp(160px,13vw,210px);overflow:visible}
 .tbl{fill:rgba(255,253,249,.85);stroke:rgba(13,13,13,.35);stroke-width:1.2}.tbl2{fill:rgba(13,13,13,.05);stroke:rgba(13,13,13,.15);stroke-width:1}
 .seats circle{fill:#fffdf9;stroke:rgba(13,13,13,.35);stroke-width:1.1}
@@ -401,7 +400,7 @@
 .kom.stamp .seal{animation:stamp .7s cubic-bezier(.3,1.6,.5,1)}
 @keyframes stamp{0%{transform:scale(1)}40%{transform:scale(1.14)}100%{transform:scale(1)}}
 .kom-t{display:inline-flex;padding:3px;border-radius:999px;border:1px solid var(--line);background:#fffdf9}
-.kom-t button{font:inherit;font-size:11.5px;font-weight:600;padding:5px 11px;border-radius:999px;border:0;background:none;cursor:pointer;color:var(--muted)}
+.kom-t button{white-space:nowrap;font:inherit;font-size:11.5px;font-weight:600;padding:5px 11px;border-radius:999px;border:0;background:none;cursor:pointer;color:var(--muted)}
 .kom.rec .kom-t .on{background:#3f6f6a;color:#fff}.kom.no .kom-t .on{background:#b0553a;color:#fff}
 @media(max-width:1100px){.band{grid-template-columns:1fr;grid-column:1;grid-row:auto}.kom{grid-column:1!important;grid-row:auto!important;align-self:center}.rail,.ticks,.lp.l3{display:none}}
 
@@ -440,6 +439,11 @@
 .tip-p{margin:0 2px 8px;font-size:12.5px;line-height:1.5;color:var(--ink2)}
 .tipl .tip-k{color:#6f7f58}
 .ti.g{background:color-mix(in srgb,#6f7f58 14%,#fff);font-family:var(--serif);font-style:italic;color:#4f5d3d;font-size:15px}
+
+.efeed.v i{width:calc(var(--e)*.21)!important}
+.depv .dew .env{height:calc(var(--e)*1.55)}.depv .dew .envb{top:42%}
+.depv[data-dv="3"] .dew{margin-top:40px}
+.drot{margin-top:-10px}.es b{transform:none!important}.drot button{font-size:16px}
 </style>
 </head>
 <body>
@@ -482,7 +486,7 @@
     <div class="dgrid" id="dgrid">
       <svg class="dfloor" id="dfloor" aria-hidden="true"></svg>
       <svg class="dlinks" id="dlinks" aria-hidden="true"><defs><marker id="ah1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1l8 4-8 4" fill="none" stroke="#c07a1f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker><marker id="ah2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1l8 4-8 4" fill="none" stroke="#a8823a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker></defs><path class="lk l1" id="lk1" marker-end="url(#ah1)"/><path class="lk l2" id="lk2" marker-end="url(#ah2)"/><path class="lp l1" id="lp1"/><path class="lp l2" id="lp2"/><path class="rail" id="rl"/><path class="ticks" id="tk"/><path class="lp l3" id="lp3"/><circle class="hd" id="hd" r="4.5"/></svg>
-      <div class="dn dmw" data-f="stat"><div class="dmod" id="dmod"></div><div class="drot" id="drot"><button type="button" data-dr="0,-30" aria-label="Obróć w lewo">⟲</button><button type="button" data-dr="0,30" aria-label="Obróć w prawo">⟳</button><button type="button" data-dr="-20,0" aria-label="Pochyl">↑</button><button type="button" data-dr="20,0" aria-label="Pochyl w dół">↓</button></div><span class="cap"><i>01</i><b>Model</b></span></div>
+      <div class="dn dmw" data-f="stat"><div class="dmod" id="dmod"></div><div class="drot" id="drot"><button type="button" data-dr="reset" aria-label="Przywróć widok podstawowy" title="Przywróć widok podstawowy">↺</button></div><span class="cap"><i>01</i><b>Model</b></span></div>
       <div class="dn dew" data-f="env"><div class="env" id="env"><div class="envb" id="envb"></div></div><span class="cap"><i>02</i><b>System produkcyjny</b></span>
         <div class="tip" role="tooltip"><span class="tip-k">Typy wdrożenia modelu</span>
           <div class="tip-i"><span class="ti"><svg viewBox="0 0 24 24"><rect x="8" y="8" width="11.5" height="11.5" rx="2"/><path d="M15.5 8V6a1.5 1.5 0 0 0-1.5-1.5H6A1.5 1.5 0 0 0 4.5 6v8A1.5 1.5 0 0 0 6 15.5h2"/></svg></span><span><b>Replikacja kodu modelu</b><small>w środowisku produkcyjnym</small></span></div>
@@ -495,14 +499,14 @@
           <div class="tip-i"><span class="ti g">2</span><span><b>Użytkownicy</b><small>kto korzysta z wyników i jest przeszkolony</small></span></div>
           <div class="tip-i"><span class="ti g">3</span><span><b>Sposób korzystania</b><small>jak wynik wpływa na decyzję i kto to kontroluje</small></span></div>
         </div></div>
-      <div class="band" id="band"><div class="band-h"><span class="bk">Pakiet dokumentów</span><span class="lg jm"><i></i>Jednostka modelarska</span><span class="lg jw"><i></i>Jednostka walidacji</span></div><div class="dk"><span class="dk-h"><i>01</i>Model</span><div class="shs"><span class="sh jm"><i></i>Kod modelu</span><span class="sh jm"><i></i>Dokumentacja modelu</span><span class="sh jm"><i></i>Wyniki weryfikacji modelu</span><span class="sh jw"><i></i>Raport z prewalidacji</span></div></div><div class="dk"><span class="dk-h"><i>02</i>Wdrożenie techniczne</span><div class="shs"><span class="sh jm"><i></i>Testy wdrożeniowe</span><span class="sh jm"><i></i>Raport z wdrożenia technicznego</span><span class="sh jw"><i></i>Testy wdrożeniowe</span><span class="sh jw"><i></i>Raport z niezależnej oceny wdrożenia</span></div></div><div class="dk"><span class="dk-h"><i>03</i>Wdrożenie procesowe</span><div class="shs"><span class="sh jm"><i></i>Raport z wdrożenia procesowego</span><span class="sh jw"><i></i>Ocena wdrożenia procesowego</span></div></div></div>
+      <div class="band" id="band"><div class="dk"><span class="dk-h"><i>01</i>Model</span><div class="shs"><span class="sh jm"><i></i>Karta modelu</span><span class="sh jm"><i></i>Kod modelu</span><span class="sh jm"><i></i>Dokumentacja modelu</span><span class="sh jm"><i></i>Wyniki weryfikacji modelu</span><span class="sh jw"><i></i>Raport z prewalidacji</span></div></div><div class="dk"><span class="dk-h"><i>02</i>Wdrożenie techniczne</span><div class="shs"><span class="sh jm"><i></i>Testy wdrożeniowe</span><span class="sh jm"><i></i>Raport z wdrożenia technicznego</span><span class="sh jw"><i></i>Testy wdrożeniowe</span><span class="sh jw"><i></i>Raport z niezależnej oceny wdrożenia</span></div></div><div class="dk"><span class="dk-h"><i>03</i>Wdrożenie procesowe</span><div class="shs"><span class="sh jm"><i></i>Raport z wdrożenia procesowego</span><span class="sh jw"><i></i>Ocena wdrożenia procesowego</span></div></div><div class="band-h"><span class="bk">Pakiet dokumentów</span><span class="lg jm"><i></i>Jednostka modelarska</span><span class="lg jw"><i></i>Jednostka walidacji</span></div></div>
       <div class="kom rec" id="kom"><svg class="kom-s" viewBox="0 0 220 170" aria-hidden="true">
   <g class="seats"><circle cx="197.5" cy="128.5" r="6"/><circle cx="164.1" cy="145.5" r="6"/><circle cx="110.0" cy="152.0" r="6"/><circle cx="55.9" cy="145.5" r="6"/><circle cx="22.5" cy="128.5" r="6"/><circle cx="22.5" cy="107.5" r="6"/><circle cx="55.9" cy="90.5" r="6"/><circle cx="110.0" cy="84.0" r="6"/><circle cx="164.1" cy="90.5" r="6"/><circle cx="197.5" cy="107.5" r="6"/></g>
   <ellipse cx="110" cy="124" rx="74" ry="25" class="tbl2"/><ellipse cx="110" cy="118" rx="74" ry="25" class="tbl"/>
   <g class="seal"><circle cx="110" cy="52" r="34" class="sr1"/><circle cx="110" cy="52" r="27" class="sr2"/><path class="ok" d="M97 52l9 9 17-18"/><path class="no" d="M99 41l22 22M121 41l-22 22"/></g>
   <path d="M110 86V100" class="stem"/></svg>
   <span class="cap"><i>04</i><b>Komitet Ryzyka</b></span>
-  <div class="kom-t" role="group" aria-label="Decyzja komitetu"><button type="button" data-k="rec" class="on">Rekomenduje</button><button type="button" data-k="no">Nie rekomenduje</button></div></div>
+  <div class="kom-t" role="group" aria-label="Decyzja komitetu"><button type="button" data-k="rec" class="on">Rekomendacja wdrożenia</button><button type="button" data-k="no">Brak rekomendacji</button></div></div>
       <span class="tcap" id="tcap">Wyniki</span><span class="chip c1" id="ch1">Wdrożenie techniczne</span><span class="chip c2" id="ch2">Wdrożenie procesowe</span>
     </div>
   </div>
@@ -637,8 +641,8 @@ setEX(EX);setCX(CX);pick("stat",false);
    <div class="mon" style="transform:translate3d(calc(var(--e)*.499),calc(var(--e)*-.05),calc(var(--e)*-.06)) rotateY(90deg)"><svg viewBox="0 0 100 60" aria-hidden="true"><rect x="2" y="2" width="96" height="56" rx="6"/><path class="pulse" d="M8 36h18l5-14 7 26 6-20 4 8h44"/><path class="ax" d="M8 48h84"/></svg></div>
    <div class="clk" style="transform:translate3d(calc(var(--e)*.3),calc(var(--e)*-.2),calc(var(--e)*-.349))"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17"/><path class="hh" d="M20 20V10"/><path class="mh" d="M20 20h9"/><circle cx="20" cy="20" r="1.6"/></svg></div>
    <div class="mini" style="transform:translate3d(calc(var(--e)*.12),calc(var(--e)*.08),calc(var(--e)*.12))">${B(.3,.3,.3,"mf")}<div class="mi2">${B(.1,.1,.1,"mc")}</div><div class="mdb"><span></span><span></span></div></div>
-   <div class="edb" style="transform:translate3d(calc(var(--e)*-.7),calc(var(--e)*.14),calc(var(--e)*.16))">${[-.5,-.17,.17,.5].map((y,i)=>`<i class="er${i?"":" lid"}" style="transform:translateY(calc(var(--e)*${(y*.2).toFixed(3)})) rotateX(90deg)"></i>`).join("")}<i class="es" style="transform:rotateY(34deg)"><b style="transform:rotateX(22deg)">Dane</b></i></div>
-   <div class="efeed" style="transform:translate3d(calc(var(--e)*-.58),calc(var(--e)*.14),calc(var(--e)*.16)) rotateY(-2deg)"><i></i><i style="transform:rotateX(90deg)"></i></div>
+   <div class="edb" style="transform:translate3d(calc(var(--e)*.12),calc(var(--e)*.56),calc(var(--e)*.12))">${[-.5,-.17,.17,.5].map((y,i)=>`<i class="er${i?"":" lid"}" style="transform:translateY(calc(var(--e)*${(y*.2).toFixed(3)})) rotateX(90deg)"></i>`).join("")}<i class="es" style="transform:rotateY(34deg)"><b style="transform:rotateX(22deg)">Dane</b></i></div>
+   <div class="efeed v" style="transform:translate3d(calc(var(--e)*.12),calc(var(--e)*.45),calc(var(--e)*.12)) rotateZ(-90deg)"><i></i><i style="transform:rotateX(90deg)"></i></div>
    <div class="eport" style="transform:translate3d(calc(var(--e)*.12),calc(var(--e)*-.31),calc(var(--e)*.12)) rotateX(90deg)"></div>
    <div class="vrod" id="vrod" style="transform:translate3d(calc(var(--e)*.12),calc(var(--e)*-.07),calc(var(--e)*.12))"><i class="vt"></i><i class="vt" style="transform:rotateY(90deg)"></i><i class="vp"></i><i class="vp" style="transform:rotateY(90deg) scaleY(var(--vp,1))"></i></div>
    <div class="etb" id="etb" style="transform:translate3d(calc(var(--e)*.12),calc(var(--e)*-.66),calc(var(--e)*.12))">${B(.26,.16,.035,"tg")}</div>`;
@@ -656,7 +660,7 @@ function danim(x,y){cancelAnimationFrame(dtw);const x0=drx,y0=dry,t0=performance
 (()=>{const d=document.getElementById("dmod");let g=null;d.addEventListener("pointerdown",e=>{g={x:e.clientX,y:e.clientY,rx:drx,ry:dry,m:0};d.setPointerCapture(e.pointerId);cancelAnimationFrame(dtw);e.stopPropagation()});
   d.addEventListener("pointermove",e=>{if(!g)return;const dx=e.clientX-g.x,dy=e.clientY-g.y;g.m=Math.max(g.m,Math.abs(dx)+Math.abs(dy));if(g.m<4)return;dry=g.ry+dx*.4;drx=Math.max(-90,Math.min(90,g.rx-dy*.4));setDR()});
   d.addEventListener("pointerup",()=>{g=null});d.addEventListener("pointercancel",()=>{g=null});
-  document.getElementById("drot").addEventListener("click",e=>{e.stopPropagation();const b=e.target.closest("[data-dr]");if(!b)return;const[a,c]=b.dataset.dr.split(",").map(Number);danim(Math.max(-90,Math.min(90,drx+a)),dry+c)})})();
+  document.getElementById("drot").addEventListener("click",e=>{e.stopPropagation();const b=e.target.closest("[data-dr]");if(!b)return;const ny=dry+((((-30-dry)%360)+540)%360-180);danim(-16,ny)})})();
 /* układ ekranu wdrożenia – trzy propozycje, linie liczone z położenia obiektów */
 const depv=document.getElementById("depv"),dgrid=document.getElementById("dgrid");let DV=3;
 function anc(el,side){const g=dgrid.getBoundingClientRect(),r=el.getBoundingClientRect();const x={l:r.left,r:r.right,c:(r.left+r.right)/2}[side[0]]-g.left,y={t:r.top,b:r.bottom,m:(r.top+r.bottom)/2}[side[1]]-g.top;return[x,y]}
@@ -672,7 +676,7 @@ function links(){if(depv.offsetParent===null)return;const g=dgrid.getBoundingCli
   document.getElementById("lk1").setAttribute("d",c1);document.getElementById("lk2").setAttribute("d",c2);document.getElementById("lp1").setAttribute("d",c1);document.getElementById("lp2").setAttribute("d",c2);
   {const rs=[...TB.querySelectorAll("i")].map(x=>x.getBoundingClientRect()),tr={left:Math.min(...rs.map(r=>r.left)),top:Math.min(...rs.map(r=>r.top)),bottom:Math.max(...rs.map(r=>r.bottom))},tc=document.getElementById("tcap");tc.style.left=(tr.left-g.left-8)+"px";tc.style.top=((tr.top+tr.bottom)/2-g.top)+"px"}
   const mid=(id,ch,dy)=>{const pth=document.getElementById(id),L=pth.getTotalLength(),pt=pth.getPointAtLength(L/2),c=document.getElementById(ch);c.style.left=pt.x+"px";c.style.top=(pt.y+dy)+"px"};mid("lk1","ch1",-44);mid("lk2","ch2",-40);
-  {const band=document.getElementById("band"),cells=[...band.querySelectorAll(".dk")],K=document.querySelector("#kom .tbl");if(cells.length&&K){const kr=K.getBoundingClientRect(),br=band.getBoundingClientRect(),ry=br.bottom-g.top+16;
+  {const band=document.getElementById("band"),cells=[...band.querySelectorAll(".dk")],K=document.querySelector("#kom .tbl");if(cells.length&&K){const kr=K.getBoundingClientRect(),ry=Math.max(...cells.map(c=>c.getBoundingClientRect().bottom))-g.top+18;
     const xs=cells.map(c=>{const r=c.getBoundingClientRect();return[(r.left+r.right)/2-g.left,r.bottom-g.top+2]});const kx=kr.left-g.left-10,ky=(kr.top+kr.bottom)/2-g.top;
     document.getElementById("tk").setAttribute("d",xs.map(([x,y])=>`M${x},${y} V${ry}`).join(" "));
     const rd=`M${xs[0][0]},${ry} H${xs[2][0]+40} C${xs[2][0]+120},${ry} ${kx-70},${ky} ${kx},${ky}`;document.getElementById("rl").setAttribute("d",rd);document.getElementById("lp3").setAttribute("d",rd)}}
