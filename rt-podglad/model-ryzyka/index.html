@@ -337,6 +337,34 @@
 .depv .env{height:calc(var(--e)*1.25)}
 .depv[data-dv="3"] .dgrid{column-gap:clamp(70px,8vw,150px);padding:10px 0 30px}
 .depv[data-dv="3"] .dew{margin-top:150px}
+
+/* podpisy obiektów */
+.depv .dn{gap:34px}
+.cap{display:flex;flex-direction:column;align-items:center;gap:6px}
+.cap i{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--terra-d);line-height:1;display:flex;align-items:center;gap:10px}
+.cap i::before,.cap i::after{content:"";width:22px;height:1px;background:color-mix(in srgb,var(--terra-d) 45%,transparent)}
+.cap b{font-family:var(--body);font-weight:600;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink2)}
+.dn.on .cap b{color:var(--ink)}
+/* baza danych systemu */
+.edb{position:absolute;left:0;top:0;transform-style:preserve-3d}
+.er{position:absolute;left:calc(var(--e)*-.075);top:calc(var(--e)*-.075);width:calc(var(--e)*.15);height:calc(var(--e)*.15);border-radius:50%;border:1.5px solid #4f7390;box-sizing:border-box}
+.er.lid{background:rgba(79,115,144,.12)}
+.es{position:absolute;left:calc(var(--e)*-.075);top:calc(var(--e)*-.065);width:calc(var(--e)*.15);height:calc(var(--e)*.13);border-left:1.5px solid #4f7390;border-right:1.5px solid #4f7390;box-sizing:border-box}
+.efeed{position:absolute;left:0;top:0;transform-style:preserve-3d}
+.efeed i{position:absolute;left:0;top:-1px;width:calc(var(--e)*.84);height:2px;transform-origin:0 50%;background:repeating-linear-gradient(90deg,#4f7390 0 6px,transparent 6px 11px);background-size:11px 100%;animation:flowx 1.2s linear infinite;opacity:.8}
+@keyframes flowx{to{background-position:11px 0}}
+/* okno: typy wdrożenia */
+.dew{position:relative}
+.tip{position:absolute;left:calc(100% - 30px);top:58%;z-index:6;width:300px;padding:16px 16px 10px;border-radius:20px;background:rgba(255,253,249,.96);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid var(--line);box-shadow:0 30px 60px -30px rgba(13,13,13,.45),0 0 0 1px rgba(255,255,255,.6) inset;opacity:0;visibility:hidden;transform:translateY(8px) scale(.98);transition:opacity .25s,transform .25s,visibility 0s .25s;pointer-events:none;text-align:left}
+.dew:hover .tip,.dew:focus-within .tip,.dew.tipon .tip{opacity:1;visibility:visible;transform:none;transition:opacity .25s,transform .25s}
+.tip-k{display:block;font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#c07a1f;margin:0 0 10px 2px}
+.tip-i{display:flex;gap:12px;align-items:center;padding:9px 4px;border-top:1px solid rgba(13,13,13,.07)}
+.tip-i:first-of-type{border-top:0}
+.ti{flex:none;width:34px;height:34px;border-radius:11px;background:color-mix(in srgb,#c07a1f 12%,#fff);display:grid;place-items:center}
+.ti svg{width:19px;height:19px;fill:none;stroke:#c07a1f;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.tip-i b{display:block;font-size:13.5px;font-weight:600;line-height:1.25}
+.tip-i small{display:block;font-size:12px;color:var(--muted);line-height:1.3}
+@media(max-width:1100px){.tip{left:50%;top:auto;bottom:calc(100% - 40px);transform:translate(-50%,8px)}.dew:hover .tip,.dew.tipon .tip{transform:translate(-50%,0)}}
 </style>
 </head>
 <body>
@@ -379,9 +407,14 @@
     <div class="dgrid" id="dgrid">
       <svg class="dfloor" id="dfloor" aria-hidden="true"></svg>
       <svg class="dlinks" id="dlinks" aria-hidden="true"><defs><marker id="ah1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1l8 4-8 4" fill="none" stroke="#c07a1f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker><marker id="ah2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1l8 4-8 4" fill="none" stroke="#a8823a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker></defs><path class="lk l1" id="lk1" marker-end="url(#ah1)"/><path class="lk l2" id="lk2" marker-end="url(#ah2)"/><path class="lp l1" id="lp1"/><path class="lp l2" id="lp2"/><circle class="hd" id="hd" r="4.5"/></svg>
-      <div class="dn dmw" data-f="stat"><div class="dmod" id="dmod"></div><b>Model</b></div>
-      <div class="dn dew" data-f="env"><div class="env" id="env"><div class="envb" id="envb"></div></div><b>System produkcyjny</b></div>
-      <div class="dn dpw" data-f="proc"><div class="env prc" id="proc"><div class="envb" id="procb"></div></div><b>Procesy biznesowe</b></div>
+      <div class="dn dmw" data-f="stat"><div class="dmod" id="dmod"></div><span class="cap"><i>01</i><b>Model</b></span></div>
+      <div class="dn dew" data-f="env"><div class="env" id="env"><div class="envb" id="envb"></div></div><span class="cap"><i>02</i><b>System produkcyjny</b></span>
+        <div class="tip" role="tooltip"><span class="tip-k">Typy wdrożenia modelu</span>
+          <div class="tip-i"><span class="ti"><svg viewBox="0 0 24 24"><rect x="8" y="8" width="11.5" height="11.5" rx="2"/><path d="M15.5 8V6a1.5 1.5 0 0 0-1.5-1.5H6A1.5 1.5 0 0 0 4.5 6v8A1.5 1.5 0 0 0 6 15.5h2"/></svg></span><span><b>Replikacja kodu modelu</b><small>w środowisku produkcyjnym</small></span></div>
+          <div class="tip-i"><span class="ti"><svg viewBox="0 0 24 24"><path d="M5 8h3.2a1.8 1.8 0 1 1 3.6 0H15v3.2a1.8 1.8 0 1 1 0 3.6V18h-3.2a1.8 1.8 0 1 0-3.6 0H5v-3.2a1.8 1.8 0 1 0 0-3.6z"/></svg></span><span><b>Integracja kodu modelu</b><small>ze środowiskiem produkcyjnym</small></span></div>
+          <div class="tip-i"><span class="ti"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M4 9.5h16M9.5 9.5V19M14.5 9.5V19"/></svg></span><span><b>Integracja wyników modelu</b><small>ze środowiskiem produkcyjnym</small></span></div>
+        </div></div>
+      <div class="dn dpw" data-f="proc"><div class="env prc" id="proc"><div class="envb" id="procb"></div></div><span class="cap"><i>03</i><b>Procesy biznesowe</b></span></div>
       <span class="tcap" id="tcap">Wyniki</span><span class="chip c1" id="ch1">Wdrożenie techniczne</span><span class="chip c2" id="ch2">Wdrożenie procesowe</span>
     </div>
   </div>
@@ -515,13 +548,15 @@ setEX(EX);setCX(CX);pick("stat",false);
    <div class="gr rv" style="--g:.24;transform:translate3d(calc(var(--e)*.04),calc(var(--e)*-.14),calc(var(--e)*-.2))"><div class="gs">${gear(9,46,37)}</div></div>
    <div class="gr" style="--g:.18;transform:translate3d(calc(var(--e)*.33),calc(var(--e)*.12),calc(var(--e)*-.25)) rotateY(90deg)"><div class="gs">${gear(8,46,36)}</div></div>
    <div class="mini" style="transform:translate3d(calc(var(--e)*.12),calc(var(--e)*.08),calc(var(--e)*.12))">${B(.3,.3,.3,"mf")}<div class="mi2">${B(.1,.1,.1,"mc")}</div><div class="mdb"><span></span><span></span></div></div>
+   <div class="edb" style="transform:translate3d(calc(var(--e)*-.72),calc(var(--e)*.18),calc(var(--e)*.12))">${[-.5,-.17,.17,.5].map((y,i)=>`<i class="er${i?"":" lid"}" style="transform:translateY(calc(var(--e)*${(y*.13).toFixed(3)})) rotateX(90deg)"></i>`).join("")}<i class="es" style="transform:rotateY(34deg)"></i></div>
+   <div class="efeed" style="transform:translate3d(calc(var(--e)*-.72),calc(var(--e)*.18),calc(var(--e)*.12)) rotateY(0deg)"><i></i><i style="transform:rotateX(90deg)"></i></div>
    <div class="eport" style="transform:translate3d(calc(var(--e)*.12),calc(var(--e)*-.31),calc(var(--e)*.12)) rotateX(90deg)"></div>
    <div class="vrod" id="vrod" style="transform:translate3d(calc(var(--e)*.12),calc(var(--e)*-.07),calc(var(--e)*.12))"><i class="vt"></i><i class="vt" style="transform:rotateY(90deg)"></i><i class="vp"></i><i class="vp" style="transform:rotateY(90deg) scaleY(var(--vp,1))"></i></div>
    <div class="etb" id="etb" style="transform:translate3d(calc(var(--e)*.12),calc(var(--e)*-.66),calc(var(--e)*.12))">${B(.26,.16,.035,"tg")}</div>`;
   const pb=document.getElementById("procb"),PI={coin:'<ellipse cx="12" cy="7" rx="6.5" ry="2.6"/><path d="M5.5 7v4.5c0 1.4 2.9 2.6 6.5 2.6s6.5-1.2 6.5-2.6V7M5.5 11.5V16c0 1.4 2.9 2.6 6.5 2.6s6.5-1.2 6.5-2.6v-4.5"/>',dec:'<path d="M12 3.5l7.5 4.5v8L12 20.5 4.5 16V8z"/><path d="M8.5 12l2.4 2.4 4.6-4.8"/>',rep:'<path d="M4.5 19.5h15M7 16.5v-5M11 16.5v-9M15 16.5v-6.5M19 16.5V5"/>'};
   const steps=[["coin","Odpisy"],["dec","Decyzje"],["rep","Raporty"]];
   pb.innerHTML=`<div class="pbase" style="transform:translateY(calc(var(--e)*.17)) rotateX(90deg)"><svg viewBox="0 0 120 50" aria-hidden="true"><path d="M18 25 H102" class="ptrack"/><path d="M37 21l4 4-4 4M79 21l4 4-4 4" class="pchv"/></svg></div>`+steps.map((t,i)=>{const x=(i-1)*.42;return`<div class="pstep" style="transform:translate3d(calc(var(--e)*${x}),calc(var(--e)*-.02),0)"><i class="pd b"></i><i class="pd f"><svg viewBox="0 0 24 24" aria-hidden="true">${PI[t[0]]}</svg></i><i class="pstem"></i><span class="pl">${t[1]}</span></div>`}).join("")})();
-document.getElementById("depv").addEventListener("click",e=>{const t=e.target.closest(".dn");if(t)pick(t.dataset.f,false)});
+document.getElementById("depv").addEventListener("click",e=>{const t=e.target.closest(".dn");if(t){pick(t.dataset.f,false);if(t.classList.contains("dew")&&matchMedia("(hover: none)").matches)t.classList.toggle("tipon")}});document.querySelector(".dew").tabIndex=0;
 /* model w zakładce wdrożenia: nieruchoma kopia bez wyników */
 function cloneModel(){const d=document.getElementById("dmod");const c=cube.cloneNode(true);c.removeAttribute("id");c.querySelectorAll("[id]").forEach(x=>x.removeAttribute("id"));
   c.querySelectorAll(".tb,.rod.res,.port,.arw,.lb,.nd").forEach(x=>x.remove());c.style.transform="rotateX(-13deg) rotateY(-23deg)";c.dataset.lf="0";c.classList.remove("fr");c.querySelectorAll(".yb").forEach(y=>y.style.transform="rotateY(23deg)");d.innerHTML="";d.appendChild(c)}
@@ -539,7 +574,7 @@ function links(){if(depv.offsetParent===null)return;const g=dgrid.getBoundingCli
     else{c1=`M${a1[0]+6},${a1[1]+40} Q${(a1[0]+b1[0])/2},${a1[1]+70} ${b1[0]-14},${b1[1]+20}`;c2=`M${a2[0]+8},${a2[1]} Q${(a2[0]+b2[0])/2},${a2[1]-30} ${b2[0]-12},${b2[1]}`}}
   document.getElementById("lk1").setAttribute("d",c1);document.getElementById("lk2").setAttribute("d",c2);document.getElementById("lp1").setAttribute("d",c1);document.getElementById("lp2").setAttribute("d",c2);
   {const rs=[...TB.querySelectorAll("i")].map(x=>x.getBoundingClientRect()),tr={left:Math.min(...rs.map(r=>r.left)),top:Math.min(...rs.map(r=>r.top)),bottom:Math.max(...rs.map(r=>r.bottom))},tc=document.getElementById("tcap");tc.style.left=(tr.left-g.left-8)+"px";tc.style.top=((tr.top+tr.bottom)/2-g.top)+"px"}
-  const mid=(id,ch,dy)=>{const pth=document.getElementById(id),L=pth.getTotalLength(),pt=pth.getPointAtLength(L/2),c=document.getElementById(ch);c.style.left=pt.x+"px";c.style.top=(pt.y+dy)+"px"};mid("lk1","ch1",-26);mid("lk2","ch2",-26);
+  const mid=(id,ch,dy)=>{const pth=document.getElementById(id),L=pth.getTotalLength(),pt=pth.getPointAtLength(L/2),c=document.getElementById(ch);c.style.left=pt.x+"px";c.style.top=(pt.y+dy)+"px"};mid("lk1","ch1",-44);mid("lk2","ch2",-40);
   if(DV===2){const W=g.width,H=g.height,cy=H*.7;fl.innerHTML=`<path d="M${W*.03},${cy} L${W*.5},${cy-H*.2} L${W*.97},${cy} L${W*.5},${cy+H*.2}Z" class="fl1"/><path d="M${W*.14},${cy} L${W*.5},${cy-H*.15} L${W*.86},${cy} L${W*.5},${cy+H*.15}Z" class="fl2"/>`}else fl.innerHTML=""}
 /* przepływ: model → system → wyniki → procesy, powoli i od nowa */
 const FL={p1:2600,p2:1500,p3:2600,h:1400};let flT0=performance.now();
