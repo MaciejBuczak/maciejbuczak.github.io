@@ -249,6 +249,29 @@
 .env-c{text-align:center}.env-c b{display:block;font-family:var(--display);font-weight:400;font-size:17px}.env-c small{font-size:12px;color:var(--muted)}
 @media(max-width:1100px){.stage{grid-template-columns:1fr}.dep{flex-direction:column}.dep svg{width:40px;height:70px;transform:rotate(90deg)}}
 @media(prefers-reduced-motion:reduce){.gs,.dep-l{animation:none}}
+
+/* zakładki */
+.tabs{display:inline-flex;gap:4px;margin:26px 0 0;padding:5px;border-radius:999px;background:#fffdf9;border:1px solid var(--line)}
+.tabs button{font:inherit;font-size:14px;font-weight:600;padding:9px 22px;border-radius:999px;border:0;background:none;cursor:pointer;color:var(--ink2)}
+.tabs button.on{background:var(--ink);color:var(--paper)}
+.mw[data-tab="model"] .dep,.mw[data-tab="model"] .envw{display:none}
+.mw[data-tab="dep"] .side,.mw[data-tab="dep"] .inn,.mw[data-tab="dep"] .lb,.mw[data-tab="dep"] .hint{display:none}
+.mw[data-tab="model"] .stage{grid-template-columns:minmax(0,1fr) auto minmax(0,1fr)}
+.mw[data-tab="dep"] .stage{grid-template-columns:auto minmax(90px,150px) auto minmax(90px,150px) auto}
+.mw[data-tab="dep"] .scene{--s:clamp(200px,18vw,290px);margin:calc(var(--s)*.55) calc(var(--s)*.3) calc(var(--s)*.3)}
+.mw[data-tab="dep"] .env{--e:clamp(170px,15vw,240px)}
+.mw[data-tab="dep"] .ctl{transform:scale(.9)}
+.dep.res2 .dep-l,.dep.res2 .dep-h{stroke:#6f7f58}.dep.res2 .dep-t{color:#6f7f58}
+.dep-t{font-size:15px!important;line-height:1.15}
+/* procesy biznesowe */
+.pp{border:1px solid rgba(13,13,13,.2);border-radius:4px;background:linear-gradient(150deg,rgba(255,255,255,.35),rgba(111,127,88,.06))}
+.pf{border:1.5px solid #6f7f58;border-radius:4px;background:linear-gradient(160deg,rgba(255,255,255,.5),rgba(111,127,88,.08))}
+.pt{position:absolute;left:calc(var(--e)*-.155);top:calc(var(--e)*-.18);width:calc(var(--e)*.31);height:calc(var(--e)*.36);display:flex;flex-direction:column;justify-content:flex-end;padding:calc(var(--e)*.03) calc(var(--e)*.02);box-sizing:border-box;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-top:calc(var(--e)*.02) solid #6f7f58;border-radius:4px}
+.pt .pn{font-family:var(--serif);font-style:italic;font-size:calc(var(--e)*.055);color:#6f7f58;margin-bottom:auto}
+.pt b{font-family:var(--display);font-weight:400;font-size:calc(var(--e)*.054);line-height:1.05;color:var(--ink)}
+.pt small{font-size:calc(var(--e)*.042);font-weight:500;color:var(--muted);line-height:1.2}
+.pch{position:absolute;left:calc(var(--e)*-.025);top:calc(var(--e)*-.025);width:calc(var(--e)*.05);height:calc(var(--e)*.05);fill:none;stroke:#6f7f58;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:1100px){.mw[data-tab] .stage{grid-template-columns:1fr}.mw[data-tab="dep"] .scene{margin:calc(var(--s)*.55) auto calc(var(--s)*.3)}}
 </style>
 </head>
 <body>
@@ -267,8 +290,10 @@
 </div></section>
 
 <div class="mw">
+  <div class="tabs" id="tabs" role="tablist"><button type="button" role="tab" data-tab="model">Model</button><button type="button" role="tab" data-tab="dep">Wdrożenie modelu</button></div>
   <div class="stage">
-    <div>
+    <div class="side l" id="sl"></div>
+    <div class="mcol">
       <div class="scene v2" id="scene" aria-label="Model ryzyka – sześcian"><div class="cube" id="cube"></div></div>
       <div class="ctl" id="ctl">
         <button type="button" class="ar" data-r="0,-30" aria-label="Obróć w lewo" title="Obróć w lewo">⟲</button>
@@ -282,10 +307,16 @@
       <div class="hint">Strzałki obracają co 30° · możesz też przeciągnąć bryłę</div>
       <div class="inn" id="inn"></div>
     </div>
-    <div class="dep" id="dep" data-f="back"><span class="dep-t">Wdrożenie</span><svg viewBox="0 0 200 40" preserveAspectRatio="none" aria-hidden="true"><path class="dep-l" d="M4 20H178"/><path class="dep-h" d="M172 8l22 12-22 12"/></svg><span class="dep-s">model trafia do środowiska produkcyjnego</span></div>
+    <div class="side r" id="sr"></div>
+    <div class="dep" id="dep" data-f="env"><span class="dep-t">Wdrożenie techniczne</span><svg viewBox="0 0 200 40" preserveAspectRatio="none" aria-hidden="true"><path class="dep-l" d="M4 20H178"/><path class="dep-h" d="M172 8l22 12-22 12"/></svg><span class="dep-s">model trafia do systemu produkcyjnego</span></div>
     <div class="envw">
-      <div class="env" id="env" data-f="back" aria-label="Środowisko produkcyjne"><div class="envb" id="envb"></div></div>
-      <div class="env-c"><b>Środowisko produkcyjne</b><small>tu model działa w procesie biznesowym</small></div>
+      <div class="env" id="env" data-f="env" aria-label="Środowisko produkcyjne"><div class="envb" id="envb"></div></div>
+      <div class="env-c"><b>Środowisko produkcyjne</b><small>tu model liczy wyniki</small></div>
+    </div>
+    <div class="dep res2" id="dep2" data-f="proc"><span class="dep-t">Wdrożenie procesowe</span><svg viewBox="0 0 200 40" preserveAspectRatio="none" aria-hidden="true"><path class="dep-l" d="M4 20H178"/><path class="dep-h" d="M172 8l22 12-22 12"/></svg><span class="dep-s">wyniki z systemu trafiają do procesów</span></div>
+    <div class="envw">
+      <div class="env proc" id="proc" data-f="proc" aria-label="Procesy biznesowe"><div class="envb" id="procb"></div></div>
+      <div class="env-c"><b>Procesy biznesowe</b><small>tu wyniki są używane</small></div>
     </div>
   </div>
   <div class="pan" id="pan"></div>
@@ -347,7 +378,7 @@ const ALL=[...FACES,...INNER,DB,WY],AI={};ALL.forEach(f=>AI[f.id]=f);
 const cube=document.getElementById("cube"),scene=document.getElementById("scene");
 const H="calc(var(--s)/2)";
 const corners=[];for(const x of[-1,1])for(const y of[-1,1])for(const z of[-1,1])corners.push([x,y,z]);
-cube.innerHTML=FACES.map(f=>`<div class="fa" data-f="${f.id}" style="--c:${f.col};transform:${f.tf} translateZ(${H})"></div>`).join("")
+cube.innerHTML=FACES.map(f=>`<div class="fa" data-f="${f.id}" style="--c:${f.col};transform:${f.tf} translateZ(${H})"><div class="lb" data-f="${f.id}"><span class="ic">${sv(f.ic)}</span><span><small>${f.p}</small>${E(f.n)}</span></div></div>`).join("")
  +corners.map(([x,y,z])=>`<div class="nd" data-t="translate3d(calc(var(--s)*${x/2}),calc(var(--s)*${y/2}),calc(var(--s)*${z/2}))"><i></i></div>`).join("")+`<div class="inr" id="inr"></div>`;
 /* wyjście wyników – trzy propozycje */
 const EXITS={1:{n:"Przez dach",at:[0,-.8,0],port:[0,-.5,0],pt:"rotateX(90deg)"},2:{n:"Bokiem",at:[.82,-.12,0],port:[.5,-.12,0],pt:"rotateY(90deg)"},3:{n:"Strumień w górę",at:[0,-.3,0],out:[0,-.86,0]}};
@@ -369,6 +400,9 @@ function renderInner(){const X=EXITS[EX];WY.at=X.at;const tgt=X.port||X.at;
    +`<div class="db" data-f="db" style="--c:${DB.col};--r:calc(var(--s)*${DB.r});--h:calc(var(--s)*${DB.h});transform:${T3(DB.at)}">${[-.5,-.17,.17,.5].map((y,i)=>`<div class="ring${i?"":" lid"}" style="transform:translateY(calc(var(--h)*${y})) rotateX(90deg)"></div>`).join("")}${Array.from({length:16},(_,i)=>`<div class="vl" style="transform:rotateY(${i*22.5}deg) translateZ(var(--r))"></div>`).join("")}<div class="yb sil" data-t="">${[-.5,-.17,.17,.5].map((y,i)=>`<span class="el${i?" lo":""}" style="top:calc(var(--h)*${y+.5} - var(--e)/2)"></span>`).join("")}<b>Dane</b></div></div>`;
   document.getElementById("inr").innerHTML=h;YB=[...cube.querySelectorAll(".yb")];
   const sel=document.querySelector(".fb.on,.ib.on");if(sel)pick(sel.dataset.f,false);if(typeof set==="function")set()}
+const ENVO={id:"env",n:"Środowisko produkcyjne",p:"Wdrożenie techniczne",c:["07","09"],sg:{"07":["Środowisko produkcyjne"],"09":[""]},col:"#c07a1f",d:"System, w którym model działa naprawdę: kod przepisany lub zintegrowany, parametry, zasilanie danymi. Tu model produkuje wyniki."};
+const PROC={id:"proc",n:"Procesy biznesowe",p:"Wdrożenie procesowe",c:["07"],sg:{"07":["Proces biznesowy"]},col:"#6f7f58",d:"Procesy korzystają z wyników, które pochodzą z systemu produkcyjnego, ale produkuje je model działający w tym systemie – np. odpisy, decyzje kredytowe, raporty dla zarządu."};
+AI.env=ENVO;AI.proc=PROC;
 const fb=f=>`<button type="button" class="fb" data-f="${f.id}" style="--c:${f.col}"><span class="ic">${sv(f.ic)}</span><span><small>${f.p}</small><b>${E(f.n)}</b></span></button>`;
 
 const inn=document.getElementById("inn");
@@ -403,6 +437,7 @@ function panel(f){pan.style.setProperty("--c",f.col);
   if(f.mod){const nb=LINKS.filter(l=>l.includes(f.id)).map(l=>l[0]===f.id?l[1]:l[0]).map(id=>AI[id]);
     pan.innerHTML=`<div class="pan-h"><div><span class="kick">${f.p}</span><h2>${E(f.n)} <span class="pmod">${E(f.s)}</span></h2></div><p>${E(f.d)}</p></div><div class="cmp"><div class="cm" style="--k:${f.col}"><div class="sgb"><span>Połączony z</span><div class="it">${nb.map(x=>`<i class="lnk" data-go="${x.id}">${E(x.n)}</i>`).join("")}</div></div></div></div>`;return}
   pan.innerHTML=`<div class="pan-h"><div><span class="kick">${f.p}${f.v?" bryły":""} · ${f.c.map(k=>"#"+k).join(" · ")}</span><h2>${E(f.n)}</h2></div><p>${E(f.d)}</p></div><div class="cmp">${f.c.map(k=>{const r=MI[k],sgs=f.sg&&f.sg[k]?r[4].filter(x=>f.sg[k].includes(x[0])):r[4];return`<div class="cm" style="--k:${COL[k]}"><div class="cm-h"><span class="ic">${sv(r[2])}</span><span><em>#${r[0]}</em><b>${E(r[1])}</b><span>${f.sg&&f.sg[k]?"Wybrane: "+E(f.sg[k].join(", ")):E(r[3])}</span></span></div><div class="sg">${sgs.map(s=>`<div class="sgb">${s[0]?`<span>${E(s[0])}</span>`:""}<div class="it">${s[1].map(i=>`<i>${E(i[0])}${i[1]?`<small>${E(i[1])}</small>`:""}</i>`).join("")}</div></div>`).join("")}</div></div>`}).join("")}</div>`}
+document.getElementById("sl").innerHTML=FACES.slice(0,3).map(fb).join("");document.getElementById("sr").innerHTML=FACES.slice(3).map(fb).join("");
 setEX(EX);setCX(CX);pick("stat",false);
 /* środowisko produkcyjne: szklana skrzynia, tryby i mniejsza kopia modelu */
 (()=>{const eb=document.getElementById("envb");
@@ -413,8 +448,16 @@ setEX(EX);setCX(CX);pick("stat",false);
    <div class="gr" style="--g:.34;transform:translate3d(calc(var(--e)*-.24),calc(var(--e)*-.06),calc(var(--e)*-.2))"><div class="gs">${gear(12,46,38)}</div></div>
    <div class="gr rv" style="--g:.24;transform:translate3d(calc(var(--e)*.04),calc(var(--e)*-.14),calc(var(--e)*-.2))"><div class="gs">${gear(9,46,37)}</div></div>
    <div class="gr" style="--g:.18;transform:translate3d(calc(var(--e)*.33),calc(var(--e)*.12),calc(var(--e)*-.25)) rotateY(90deg)"><div class="gs">${gear(8,46,36)}</div></div>
-   <div class="mini" style="transform:translate3d(calc(var(--e)*.12),calc(var(--e)*.08),calc(var(--e)*.12))">${B(.3,.3,.3,"mf")}<div class="mi2">${B(.1,.1,.1,"mc")}</div><div class="mdb"><span></span><span></span></div></div>`})();
-document.querySelector(".stage").addEventListener("click",e=>{const t=e.target.closest("#env,#dep");if(t)pick("back",false)});
+   <div class="mini" style="transform:translate3d(calc(var(--e)*.12),calc(var(--e)*.08),calc(var(--e)*.12))">${B(.3,.3,.3,"mf")}<div class="mi2">${B(.1,.1,.1,"mc")}</div><div class="mdb"><span></span><span></span></div></div>`;
+  const pb=document.getElementById("procb"),cards=[["Odpisy","ECL w wyniku"],["Decyzje","kredytowe"],["Raporty","dla zarządu"]];
+  pb.innerHTML=`<div style="transform:translateY(calc(var(--e)*.2))">${B(1.18,.025,.42,"pp")}</div>`+cards.map((c,i)=>{const x=(i-1)*.38;return`<div style="transform:translate3d(calc(var(--e)*${x}),calc(var(--e)*.01),0)">${B(.31,.36,.035,"pf")}<div class="pt" style="transform:translateZ(calc(var(--e)*.02))"><span class="pn">${String(i+1).padStart(2,"0")}</span><b>${c[0]}</b><small>${c[1]}</small></div></div>`+(i<2?`<div style="transform:translate3d(calc(var(--e)*${x+.19}),calc(var(--e)*.01),0)"><svg class="pch" viewBox="0 0 20 20" aria-hidden="true"><path d="M6 4l7 6-7 6"/></svg></div>`:"")}).join("")})();
+document.querySelector(".stage").addEventListener("click",e=>{const t=e.target.closest("#env,#dep,#proc,#dep2");if(t)pick(t.dataset.f,false)});
+/* zakładki */
+const mw=document.querySelector(".mw"),tabs=document.getElementById("tabs");let TAB="model";try{TAB=localStorage.getItem("rt_mr_tab")||"model"}catch(_){}
+function setTab(t){TAB=t;mw.dataset.tab=t;tabs.querySelectorAll("[data-tab]").forEach(b=>{const on=b.dataset.tab===t;b.classList.toggle("on",on);b.setAttribute("aria-selected",on)});try{localStorage.setItem("rt_mr_tab",t)}catch(_){}
+  if(t==="dep"){const sel=document.querySelector(".fb.on");if(sel)pick("env",false)}else if(["env","proc"].includes((document.querySelector(".on[data-f]")||{}).dataset?.f))pick("stat",false);
+  requestAnimationFrame(()=>window.dispatchEvent(new Event("resize")))}
+tabs.addEventListener("click",e=>{const b=e.target.closest("[data-tab]");if(b)setTab(b.dataset.tab)});setTab(TAB);
 })();
 </script>
 <script src="../rt.js"></script>
