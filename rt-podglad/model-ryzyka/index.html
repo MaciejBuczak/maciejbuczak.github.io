@@ -86,8 +86,31 @@
 
 /* moduły w środku – przezroczyste */
 .ik{position:absolute;left:50%;top:50%;width:var(--k);height:var(--k);margin:calc(var(--k)/-2);transform-style:preserve-3d;cursor:pointer}
-.kf{position:absolute;inset:0;border:1.5px solid color-mix(in srgb,var(--c) 85%,transparent);border-radius:calc(var(--k)*.08);background:linear-gradient(150deg,color-mix(in srgb,var(--c) 16%,transparent),color-mix(in srgb,var(--c) 5%,transparent));box-shadow:inset 0 0 calc(var(--k)*.18) color-mix(in srgb,var(--c) 18%,transparent);transition:background .3s,border-color .3s}
-.ik.on .kf{border-width:2.5px;background:linear-gradient(150deg,color-mix(in srgb,var(--c) 34%,transparent),color-mix(in srgb,var(--c) 12%,transparent))}
+.kf{position:absolute;inset:0;border:1.5px solid var(--c);border-radius:calc(var(--k)*.06);background:none;transition:border-color .3s,border-width .2s}
+.ik.on .kf{border-width:2.5px}
+.kt{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;backface-visibility:hidden;-webkit-backface-visibility:hidden;color:var(--c);pointer-events:none}
+.kt b{font-family:var(--display);font-weight:400;font-size:calc(var(--k)*.3);line-height:1;letter-spacing:.02em}
+.hub .kt b{font-family:var(--body);font-weight:600;font-size:calc(var(--k)*.1);line-height:1.15;color:var(--ink2)}
+.ki{display:grid;place-items:center;width:calc(var(--k)*.2);height:calc(var(--k)*.2);border:1.5px solid var(--c);border-radius:28%;margin-bottom:calc(var(--k)*.06)}
+.ki svg{width:66%;height:66%;fill:none;stroke:var(--c);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.kt,.dt{opacity:0;transition:opacity .35s}
+.cube[data-lf="0"] .i0,.cube[data-lf="1"] .i1,.cube[data-lf="2"] .i2,.cube[data-lf="3"] .i3{opacity:1}
+/* baza danych – walec */
+.db{position:absolute;left:50%;top:50%;width:0;height:0;transform-style:preserve-3d;cursor:pointer}
+.ring{position:absolute;left:calc(var(--r)*-1);top:calc(var(--r)*-1);width:calc(var(--r)*2);height:calc(var(--r)*2);border-radius:50%;border:1.5px solid var(--c)}
+.ring.lid{background:color-mix(in srgb,var(--c) 10%,transparent)}
+.ring:not(.lid){border-color:color-mix(in srgb,var(--c) 70%,transparent)}
+.vl{position:absolute;left:-.5px;top:calc(var(--h)/-2);width:1px;height:var(--h);background:color-mix(in srgb,var(--c) 28%,transparent)}
+.dt{position:absolute;left:calc(var(--r)*-.6);top:calc(var(--h)/-2);width:calc(var(--r)*1.2);height:var(--h);display:grid;place-items:center;backface-visibility:hidden;-webkit-backface-visibility:hidden;color:var(--c);pointer-events:none}
+.dt b{font-family:var(--display);font-weight:400;font-size:calc(var(--r)*.32);letter-spacing:.04em}
+.db.on .ring{border-width:2.5px}.db.on .vl{background:color-mix(in srgb,var(--c) 55%,transparent)}
+/* zasilanie danymi */
+.rod.feed i{background:repeating-linear-gradient(90deg,var(--fc,#4f7390) 0 calc(var(--s)*.014),transparent calc(var(--s)*.014) calc(var(--s)*.028));background-size:calc(var(--s)*.028) 100%;animation:flow 1.1s linear infinite;opacity:.85}
+.rod.feed{height:calc(var(--s)*.005);margin-top:calc(var(--s)*-.0025)}
+.rod.feed.on i{--fc:var(--terra-d);opacity:1}
+@keyframes flow{to{background-position:calc(var(--s)*.028) 0}}
+.v4 .rod.feed i{--fc:#fff}.v4 .kt,.v4 .dt{color:#fff}.v4 .hub .kt b{color:#fff}
+@media(prefers-reduced-motion:reduce){.rod.feed i{animation:none}}
 .v4 .kf{border-color:rgba(255,255,255,.9)}
 
 /* sterowanie */
@@ -150,7 +173,7 @@
 .rod i{position:absolute;inset:0;background:rgba(13,13,13,.32);border-radius:2px}
 .rod.on i{background:var(--terra-d)}
 .v4 .rod i{background:rgba(255,255,255,.85)}.v4 .rod.on i{background:#ffd9a8}
-.cube.simple .rod{opacity:0}
+.cube.simple .rod:not(.feed),.cube.simple .rod.m{opacity:0}
 .mx2{display:flex;justify-content:center;flex-wrap:wrap;gap:6px;align-items:center;width:100%}
 .mx2>span{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tan);margin-right:4px}
 .mx2 button{font:inherit;font-size:13px;font-weight:600;padding:6px 14px;border-radius:999px;border:1px solid var(--line);background:#fff;cursor:pointer}
@@ -161,16 +184,6 @@
 .pmod{font-family:var(--body);font-size:.45em;font-weight:500;color:var(--muted);vertical-align:middle}
 .lnk{cursor:pointer}.lnk:hover{border-color:var(--k)}
 
-.lbl{position:absolute;inset:0;pointer-events:none}
-.tag{position:absolute;transform:translate(-50%,0);pointer-events:auto;font:inherit;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:1px;padding:4px 10px;border-radius:12px;border:1px solid color-mix(in srgb,var(--c) 35%,transparent);background:rgba(255,253,249,.86);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);box-shadow:0 6px 16px -10px rgba(13,13,13,.45);transition:opacity .45s,transform .45s,box-shadow .2s}
-.tag b{font-family:var(--display);font-weight:400;font-size:clamp(11px,calc(var(--s)*.034),15px);line-height:1;color:color-mix(in srgb,var(--c) 85%,#000)}
-.tag small{font-size:clamp(8.5px,calc(var(--s)*.019),10px);font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
-.tag.hub{flex-direction:row;gap:7px;padding:5px 12px 5px 5px;border-radius:999px;background:#fffdf9}
-.tag.hub i{width:22px;height:22px;border-radius:50%;background:var(--c);display:grid;place-items:center}.tag.hub i svg{width:13px;height:13px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.tag.hub b{font-family:var(--body);font-weight:600;font-size:clamp(11px,calc(var(--s)*.03),14px);color:var(--ink)}
-.tag.on{box-shadow:0 0 0 2px var(--c),0 8px 18px -10px rgba(13,13,13,.5)}
-.cube.simple~.lbl .tag.m{opacity:0;transform:translate(-50%,0) scale(.6);pointer-events:none}
-.cube.simple~.lbl .tag.hub{transform:translate(-50%,0) scale(1.1)}
 </style>
 </head>
 <body>
@@ -249,41 +262,42 @@ const FACES=[
 /* model statystyczny w środku: moduły (położenie w częściach krawędzi bryły) i połączenia */
 const HUB={id:"stat",n:"Model statystyczny",p:"W środku",c:["05"],ic:"sigma",d:"Próba, segmentacja, zmienne, parametry, estymacja i wynik – serce modelu. Może to być jeden moduł albo kilka połączonych.",col:"#8a4f8f"};
 const MODS=[
- {id:"pd",n:"PD",s:"12 m · lifetime",col:"#5e3a72",at:[-.22,-.13,.14],k:.11,d:"Prawdopodobieństwo niewykonania zobowiązania – w horyzoncie 12 miesięcy i w całym okresie życia ekspozycji."},
- {id:"ttc",n:"TTC",s:"przez cykl",col:"#9c78a8",at:[-.32,-.33,-.06],k:.085,d:"PD przez cykl (through the cycle): długookresowa średnia, punkt kotwiczenia kalibracji."},
- {id:"pit",n:"PIT",s:"w punkcie cyklu",col:"#9c78a8",at:[-.08,-.33,.27],k:.085,d:"PD w punkcie cyklu (point in time): bieżące ryzyko z korektą o scenariusze makroekonomiczne."},
- {id:"sicr",n:"SICR",s:"koszyk 2",col:"#bf8165",at:[-.12,.28,.24],k:.1,d:"Znaczący wzrost ryzyka kredytowego od początkowego ujęcia – decyduje o przejściu do koszyka 2 i stracie w całym okresie życia."},
- {id:"lgd",n:"LGD",s:"strata",col:"#4f7390",at:[.28,-.17,.13],k:.11,d:"Strata w razie niewykonania zobowiązania – część ekspozycji, której bank nie odzyska."},
- {id:"ead",n:"EAD",s:"ekspozycja · CCF",col:"#6f7f58",at:[.25,.22,-.16],k:.11,d:"Ekspozycja w chwili niewykonania zobowiązania, z uwzględnieniem wykorzystania limitów (CCF)."}];
+ {id:"pd",n:"PD",s:"12 m · lifetime",col:"#5e3a72",at:[-.22,-.13,.14],k:.12,d:"Prawdopodobieństwo niewykonania zobowiązania – w horyzoncie 12 miesięcy i w całym okresie życia ekspozycji."},
+ {id:"ttc",n:"TTC",s:"przez cykl",col:"#9c78a8",at:[-.31,-.32,-.06],k:.1,d:"PD przez cykl (through the cycle): długookresowa średnia, punkt kotwiczenia kalibracji."},
+ {id:"pit",n:"PIT",s:"w punkcie cyklu",col:"#9c78a8",at:[-.07,-.32,.27],k:.1,d:"PD w punkcie cyklu (point in time): bieżące ryzyko z korektą o scenariusze makroekonomiczne."},
+ {id:"sicr",n:"SICR",s:"koszyk 2",col:"#bf8165",at:[-.3,.14,.22],k:.11,d:"Znaczący wzrost ryzyka kredytowego od początkowego ujęcia – decyduje o przejściu do koszyka 2 i stracie w całym okresie życia."},
+ {id:"lgd",n:"LGD",s:"strata",col:"#4f7390",at:[.28,-.17,.13],k:.12,d:"Strata w razie niewykonania zobowiązania – część ekspozycji, której bank nie odzyska."},
+ {id:"ead",n:"EAD",s:"ekspozycja · CCF",col:"#6f7f58",at:[.27,.17,-.18],k:.12,d:"Ekspozycja w chwili niewykonania zobowiązania, z uwzględnieniem wykorzystania limitów (CCF)."}];
 const LINKS=[["stat","pd"],["stat","lgd"],["stat","ead"],["stat","sicr"],["pd","ttc"],["pd","pit"],["pit","sicr"],["ttc","pit"]];
 MODS.forEach(m=>{m.p="Moduł modelu statystycznego";m.mod=1;m.c=[]});
+const DB={id:"db",n:"Baza danych",p:"W środku · zasilanie",c:["04"],col:"#4f7390",at:[.02,.3,-.02],r:.1,h:.13,d:"Dane, którymi model jest zasilany – do estymacji i produkcyjne. Strzałki pokazują, które moduły pobierają dane z bazy."};
+const FEEDS=[["db","stat"],["db","pd"],["db","lgd"],["db","ead"]];
 const INNER=[HUB,...MODS];
-const ALL=[...FACES,...INNER],AI={};ALL.forEach(f=>AI[f.id]=f);
+const ALL=[...FACES,...INNER,DB],AI={};ALL.forEach(f=>AI[f.id]=f);
 const cube=document.getElementById("cube"),scene=document.getElementById("scene");
 const H="calc(var(--s)/2)";
 const corners=[];for(const x of[-1,1])for(const y of[-1,1])for(const z of[-1,1])corners.push([x,y,z]);
 cube.innerHTML=FACES.map(f=>`<div class="fa" data-f="${f.id}" style="--c:${f.col};transform:${f.tf} translateZ(${H})"><div class="lb" data-f="${f.id}"><span class="ic">${sv(f.ic)}</span><span><small>${f.p}</small>${E(f.n)}</span></div></div>`).join("")
  +corners.map(([x,y,z])=>`<div class="nd" data-t="translate3d(calc(var(--s)*${x/2}),calc(var(--s)*${y/2}),calc(var(--s)*${z/2}))"><i></i></div>`).join("")
- +LINKS.map(([a,b])=>{const A=a==="stat"?[0,0,0]:MODS.find(m=>m.id===a).at,B=MODS.find(m=>m.id===b).at,dx=B[0]-A[0],dy=B[1]-A[1],dz=B[2]-A[2],h=Math.hypot(dx,dz),L=Math.hypot(dx,dy,dz);
-   return`<div class="rod" data-l="${a} ${b}" style="width:calc(var(--s)*${L.toFixed(4)});transform:translate3d(calc(var(--s)*${A[0]}),calc(var(--s)*${A[1]}),calc(var(--s)*${A[2]})) rotateY(${(Math.atan2(-dz,dx)*180/Math.PI).toFixed(2)}deg) rotateZ(${(Math.atan2(dy,h)*180/Math.PI).toFixed(2)}deg)"><i></i><i style="transform:rotateX(90deg)"></i></div>`}).join("")
- +INNER.map(k=>{const at=k.at||[0,0,0],f=t=>`<div class="kf" style="transform:${t} translateZ(calc(var(--k)/2))"></div>`;
-   return`<div class="ik${k.mod?" m":" hub"}" data-f="${k.id}" style="--c:${k.col};--k:calc(var(--s)*${k.k||.26});transform:translate3d(calc(var(--s)*${at[0]}),calc(var(--s)*${at[1]}),calc(var(--s)*${at[2]})) scale3d(var(--sc,1),var(--sc,1),var(--sc,1))">${["rotateY(0deg)","rotateY(90deg)","rotateY(180deg)","rotateY(-90deg)","rotateX(90deg)","rotateX(-90deg)"].map(f).join("")}</div>`}).join("");
+ +[...LINKS.map(l=>[...l,""]),...FEEDS.map(l=>[...l,"feed"])].map(([a,b,cl])=>{const P=id=>id==="stat"?[0,0,0]:id==="db"?[DB.at[0],DB.at[1]-DB.h/2,DB.at[2]]:MODS.find(m=>m.id===id).at,A=P(a),B=P(b),dx=B[0]-A[0],dy=B[1]-A[1],dz=B[2]-A[2],h=Math.hypot(dx,dz),L=Math.hypot(dx,dy,dz),m=[a,b].some(x=>x!=="stat"&&x!=="db");
+   return`<div class="rod${cl?" "+cl:""}${m?" m":""}" data-l="${a} ${b}" style="width:calc(var(--s)*${L.toFixed(4)});transform:translate3d(calc(var(--s)*${A[0]}),calc(var(--s)*${A[1]}),calc(var(--s)*${A[2]})) rotateY(${(Math.atan2(-dz,dx)*180/Math.PI).toFixed(2)}deg) rotateZ(${(Math.atan2(dy,h)*180/Math.PI).toFixed(2)}deg)"><i></i><i style="transform:rotateX(90deg)"></i></div>`}).join("")
+ +INNER.map(k=>{const at=k.at||[0,0,0],f=t=>`<div class="kf" style="transform:${t} translateZ(calc(var(--k)/2))"></div>`,
+   txt=k.mod?`<b>${E(k.n)}</b>`:`<span class="ki">${sv("sigma")}</span><b>Model<br>statystyczny</b>`,lab=(t,i)=>`<div class="kt i${i}" style="transform:${t} translateZ(calc(var(--k)/2 + 1px))">${txt}</div>`;
+   return`<div class="ik${k.mod?" m":" hub"}" data-f="${k.id}" style="--c:${k.col};--k:calc(var(--s)*${k.k||.26});transform:translate3d(calc(var(--s)*${at[0]}),calc(var(--s)*${at[1]}),calc(var(--s)*${at[2]})) scale3d(var(--sc,1),var(--sc,1),var(--sc,1))">${["rotateY(0deg)","rotateY(90deg)","rotateY(180deg)","rotateY(-90deg)","rotateX(90deg)","rotateX(-90deg)"].map(f).join("")}${["rotateY(0deg)","rotateY(90deg)","rotateY(180deg)","rotateY(-90deg)"].map(lab).join("")}</div>`}).join("")
+ +`<div class="db" data-f="db" style="--c:${DB.col};--r:calc(var(--s)*${DB.r});--h:calc(var(--s)*${DB.h});transform:translate3d(calc(var(--s)*${DB.at[0]}),calc(var(--s)*${DB.at[1]}),calc(var(--s)*${DB.at[2]}))">${[-.5,-.17,.17,.5].map((y,i)=>`<div class="ring${i?"":" lid"}" style="transform:translateY(calc(var(--h)*${y})) rotateX(90deg)"></div>`).join("")}${Array.from({length:16},(_,i)=>`<div class="vl" style="transform:rotateY(${i*22.5}deg) translateZ(var(--r))"></div>`).join("")}${[0,90,180,270].map((a,i)=>`<div class="dt i${i}" style="transform:rotateY(${a}deg) translateZ(calc(var(--r) + 1px))"><b>Dane</b></div>`).join("")}</div>`;
 const fb=f=>`<button type="button" class="fb" data-f="${f.id}" style="--c:${f.col}"><span class="ic">${sv(f.ic)}</span><span><small>${f.p}</small><b>${E(f.n)}</b></span></button>`;
 document.getElementById("sl").innerHTML=FACES.slice(0,3).map(fb).join("");document.getElementById("sr").innerHTML=FACES.slice(3).map(fb).join("");
 const inn=document.getElementById("inn");
-inn.innerHTML=`<div class="mx2"><span>Model w środku</span><button type="button" data-mx="1">Złożony – kilka modułów</button><button type="button" data-mx="0">Prosty – jeden moduł</button></div><div class="mods"><button type="button" class="ib" data-f="stat" style="--c:${HUB.col}"><i>${sv("sigma")}</i>Model statystyczny</button>${MODS.map(m=>`<button type="button" class="ib md" data-f="${m.id}" style="--c:${m.col}"><i><b>${m.n[0]}</b></i>${m.n}</button>`).join("")}</div>`;
+inn.innerHTML=`<div class="mx2"><span>Model w środku</span><button type="button" data-mx="1">Złożony – kilka modułów</button><button type="button" data-mx="0">Prosty – jeden moduł</button></div><div class="mods"><button type="button" class="ib" data-f="db" style="--c:${DB.col}"><i>${sv("db")}</i>Baza danych</button><button type="button" class="ib" data-f="stat" style="--c:${HUB.col}"><i>${sv("sigma")}</i>Model statystyczny</button>${MODS.map(m=>`<button type="button" class="ib md" data-f="${m.id}" style="--c:${m.col}"><i><b>${m.n[0]}</b></i>${m.n}</button>`).join("")}</div>`;
 let CX=1;try{CX=localStorage.getItem("rt_mr_cx")==="0"?0:1}catch(_){}
-function setCX(v){CX=v;cube.classList.toggle("simple",!v);place();inn.querySelectorAll("[data-mx]").forEach(b=>b.classList.toggle("on",+b.dataset.mx===v));try{localStorage.setItem("rt_mr_cx",v)}catch(_){}
+function setCX(v){CX=v;cube.classList.toggle("simple",!v);inn.querySelectorAll("[data-mx]").forEach(b=>b.classList.toggle("on",+b.dataset.mx===v));try{localStorage.setItem("rt_mr_cx",v)}catch(_){}
   const cur=document.querySelector(".ik.on");if(!v&&cur&&cur.classList.contains("m"))pick("stat",false)}
 inn.addEventListener("click",e=>{const b=e.target.closest("[data-mx]");if(b)setCX(+b.dataset.mx)});
 /* obrót – tylko na żądanie */
 let rx=-22,ry=-34;
 const NDS=[...cube.querySelectorAll(".nd")];
-scene.insertAdjacentHTML("beforeend",`<div class="lbl">${INNER.map(k=>`<button type="button" class="tag${k.mod?" m":" hub"}" data-f="${k.id}" style="--c:${k.col}">${k.mod?`<b>${E(k.n)}</b><small>${E(k.s)}</small>`:`<i>${sv("sigma")}</i><b>${E(k.n)}</b>`}</button>`).join("")}</div>`);
-const TAGS=[...scene.querySelectorAll(".tag")].map(t=>({el:t,at:(AI[t.dataset.f].at)||[0,0,0],k:AI[t.dataset.f].k||.26,hub:!AI[t.dataset.f].mod}));
-function place(){const S=scene.clientWidth,d=S*5,a=ry*Math.PI/180,b=rx*Math.PI/180,ca=Math.cos(a),sa=Math.sin(a),cb=Math.cos(b),sb=Math.sin(b);
-  TAGS.forEach(t=>{const[x,y,z]=t.at,x1=x*ca+z*sa,z1=-x*sa+z*ca,y2=y*cb-z1*sb,z2=y*sb+z1*cb,f=d/(d-z2*S);t.el.style.left=(S/2+x1*S*f)+"px";const kk=t.k*(t.hub?(cube.classList.contains("simple")?1:.6):1);t.el.style.top=(S/2+y2*S*f+kk*S*f*.62+4)+"px";t.el.style.zIndex=Math.round(500+z2*400)})}
-const set=()=>{cube.classList.remove("ease");cube.style.transform=`rotateX(${rx}deg) rotateY(${ry}deg)`;NDS.forEach(n=>{n.style.transition="none";n.style.transform=`${n.dataset.t} rotateY(${-ry}deg) rotateX(${-rx}deg)`});place()};set();addEventListener("resize",place);
+function place(){}
+const set=()=>{cube.classList.remove("ease");cube.dataset.lf=Math.round((((-ry)%360)+360)%360/90)%4;cube.style.transform=`rotateX(${rx}deg) rotateY(${ry}deg)`;NDS.forEach(n=>{n.style.transition="none";n.style.transform=`${n.dataset.t} rotateY(${-ry}deg) rotateX(${-rx}deg)`});place()};set();addEventListener("resize",place);
 const near=v=>ry+((((v-ry)%360)+540)%360-180);
 let tw=0;function anim(x,y){cancelAnimationFrame(tw);const x0=rx,y0=ry,t0=performance.now(),D=matchMedia("(prefers-reduced-motion: reduce)").matches?1:700;
   const st=t=>{const k=Math.min(1,(t-t0)/D),e=k<.5?4*k*k*k:1-Math.pow(-2*k+2,3)/2;rx=x0+(x-x0)*e;ry=y0+(y-y0)*e;set();if(k<1)tw=requestAnimationFrame(st)};tw=requestAnimationFrame(st)}
