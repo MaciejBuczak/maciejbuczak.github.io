@@ -143,6 +143,27 @@
 .it i small{display:block;font-weight:400;font-size:11px;color:var(--muted)}
 @media(max-width:1100px){.mh .wrap{grid-template-columns:1fr}.stage{grid-template-columns:1fr;gap:10px}.side,.side.l{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));width:100%;text-align:left}.side.l .fb{flex-direction:row}.side.l{order:2}.side.r{order:3}.fb{width:auto;padding:8px 10px;gap:9px}.fb .ic{width:32px;height:32px;border-radius:10px}.fb b{font-size:13px}.fb small{font-size:9.5px}.pan-h{grid-template-columns:1fr}.scene{margin:calc(var(--s)*.36) auto}}
 @media(prefers-reduced-motion:reduce){.cube.ease{transition:none}}
+
+/* model statystyczny: moduły i połączenia */
+.ik{transition:transform .7s cubic-bezier(.65,0,.25,1),opacity .5s}
+.ik.hub{--sc:.6}.cube.simple .ik.hub{--sc:1}
+.cube.simple .ik.m{--sc:.01;opacity:0;pointer-events:none}
+.ik.m .kf{gap:4%}.ik.m .kf b{font-size:calc(var(--k)*.3);letter-spacing:.02em}.ik.m .kf small{font-size:calc(var(--k)*.1);font-weight:600;opacity:.85;line-height:1.1}
+.ik.m .kf.tp b,.ik.m .kf.sd b{font-size:calc(var(--k)*.26)}
+.rod{position:absolute;left:50%;top:50%;height:calc(var(--s)*.008);margin-top:calc(var(--s)*-.004);transform-origin:0 50%;transform-style:preserve-3d;pointer-events:none;transition:opacity .5s}
+.rod i{position:absolute;inset:0;background:rgba(13,13,13,.55);border-radius:2px}
+.rod.on i{background:var(--terra-d)}
+.v4 .rod i{background:rgba(255,255,255,.85)}.v4 .rod.on i{background:#ffd9a8}
+.cube.simple .rod{opacity:0}
+.mx2{display:flex;justify-content:center;flex-wrap:wrap;gap:6px;align-items:center;width:100%}
+.mx2>span{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tan);margin-right:4px}
+.mx2 button{font:inherit;font-size:13px;font-weight:600;padding:6px 14px;border-radius:999px;border:1px solid var(--line);background:#fff;cursor:pointer}
+.mx2 button.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.inn{width:0;min-width:100%}.mods{display:flex;justify-content:center;flex-wrap:wrap;gap:6px;width:100%;margin-top:4px}
+.ib i b{color:#fff;font-size:12px;font-weight:700}
+.inn:has(.mx2 [data-mx="0"].on) .ib.md{display:none}
+.pmod{font-family:var(--body);font-size:.45em;font-weight:500;color:var(--muted);vertical-align:middle}
+.lnk{cursor:pointer}.lnk:hover{border-color:var(--k)}
 </style>
 </head>
 <body>
@@ -156,8 +177,8 @@
 
 <main>
 <section class="mh"><div class="wrap">
-  <div><span class="kick">Model ryzyka</span><h1>Jeden model, <em>sześć ścian</em> i trzy kostki w środku</h1></div>
-  <div><p>Ściany to otoczenie modelu: cel, koncepcja, dane, weryfikacja, wdrożenie i zarządzanie. W środku to, z czego model jest zrobiony – model statystyczny, kod i dokumentacja. Obracaj bryłę strzałkami albo przeciągnij ją; kliknij ścianę lub kostkę.</p></div>
+  <div><span class="kick">Model ryzyka</span><h1>Jeden model, <em>sześć ścian</em>, a w środku model statystyczny</h1></div>
+  <div><p>Ściany to otoczenie modelu: cel, koncepcja, dane, weryfikacja, wdrożenie i zarządzanie. W środku model statystyczny – czasem jeden moduł, czasem kilka połączonych (PD, LGD, EAD, SICR, TTC, PIT). Obracaj bryłę strzałkami albo przeciągnij ją; kliknij ścianę lub moduł.</p></div>
 </div></section>
 
 <div class="mw">
@@ -214,27 +235,41 @@ const sv=k=>`<svg viewBox="0 0 24 24" aria-hidden="true">${IC[k]}</svg>`;
 const FACES=[
  {id:"top",n:"Cel i informacje",p:"Góra",c:["01","02"],ic:"target",d:"Po co jest model, czyj jest i gdzie działa – to, co widać z góry.",col:"#c9a24a",tf:"rotateX(90deg)",v:[-90,0]},
  {id:"left",n:"Koncepcja",p:"Lewa ściana",c:["03"],ic:"bulb",d:"Otoczenie, warunki brzegowe, wybrana koncepcja i jej alternatywy.",col:"#a6824c",tf:"rotateY(-90deg)",v:[0,90]},
- {id:"front",n:"Zarządzanie modelem",p:"Przód",c:["08"],sg:{"08":["Elementy administracyjne","Ocena jakości modelu","Proces zarządzania ryzykiem modeli"]},ic:"puzzle",d:"Karta, dziennik i harmonogram modelu, ocena jakości oraz proces zarządzania ryzykiem modeli.",col:"#8a7f60",tf:"rotateY(0deg)",v:[0,0]},
+ {id:"front",n:"Kod, dokumentacja i zarządzanie",p:"Przód",c:["08","09","10"],ic:"puzzle",d:"Kod modelu, karta i dziennik, dokumentacja modelu, wdrożeniowa i administracyjna, ocena jakości oraz proces zarządzania ryzykiem modeli.",col:"#8a7f60",tf:"rotateY(0deg)",v:[0,0]},
  {id:"right",n:"Weryfikacja",p:"Prawa ściana",c:["06"],ic:"check",d:"Statystyka, poprawność, koncepcja i logika biznesowa – czy model działa i czy rozumiemy dlaczego.",col:"#6f7f58",tf:"rotateY(90deg)",v:[0,-90]},
  {id:"back",n:"Wdrożenie",p:"Tył",c:["07"],ic:"rocket",d:"Gdzie i jak model działa produkcyjnie i kto z niego korzysta.",col:"#c07a1f",tf:"rotateY(180deg)",v:[0,180]},
  {id:"bottom",n:"Dane",p:"Podstawa",c:["04"],ic:"db",d:"Źródła danych i obsługa ich problemów – fundament, na którym stoi cały model.",col:"#4f7390",tf:"rotateX(-90deg)",v:[90,0]}];
-/* kostki w środku: x – położenie, k – wielkość (część krawędzi bryły) */
-const INNER=[
- {id:"doc",n:"Dokumentacja",p:"W środku",c:["08","09","10"],sg:{"08":["Dokumentacja modelu"]},ic:"doc",d:"Metodyka, dokumentacja modelu i techniczna, dokumentacja wdrożeniowa i administracyjna.",col:"#5f8aa6",x:-.32,k:.19},
- {id:"stat",n:"Model statystyczny",p:"W środku",c:["05"],ic:"sigma",d:"Próba, segmentacja, zmienne, parametry, estymacja i wynik – serce modelu.",col:"#8a4f8f",x:0,k:.25},
- {id:"code",n:"Kod modelu",p:"W środku",c:["08"],sg:{"08":["Kod modelu"]},ic:"code",d:"Kod, który naprawdę liczy: środowiska, jakość i czytelność kodu, zgodność z dokumentacją i możliwość odtworzenia.",col:"#2b2723",x:.32,k:.19}];
+/* model statystyczny w środku: moduły (położenie w częściach krawędzi bryły) i połączenia */
+const HUB={id:"stat",n:"Model statystyczny",p:"W środku",c:["05"],ic:"sigma",d:"Próba, segmentacja, zmienne, parametry, estymacja i wynik – serce modelu. Może to być jeden moduł albo kilka połączonych.",col:"#8a4f8f"};
+const MODS=[
+ {id:"pd",n:"PD",s:"12 m · lifetime",col:"#5e3a72",at:[-.22,-.13,.14],k:.11,d:"Prawdopodobieństwo niewykonania zobowiązania – w horyzoncie 12 miesięcy i w całym okresie życia ekspozycji."},
+ {id:"ttc",n:"TTC",s:"przez cykl",col:"#9c78a8",at:[-.32,-.33,-.06],k:.085,d:"PD przez cykl (through the cycle): długookresowa średnia, punkt kotwiczenia kalibracji."},
+ {id:"pit",n:"PIT",s:"w punkcie cyklu",col:"#9c78a8",at:[-.08,-.33,.27],k:.085,d:"PD w punkcie cyklu (point in time): bieżące ryzyko z korektą o scenariusze makroekonomiczne."},
+ {id:"sicr",n:"SICR",s:"koszyk 2",col:"#bf8165",at:[-.12,.28,.24],k:.1,d:"Znaczący wzrost ryzyka kredytowego od początkowego ujęcia – decyduje o przejściu do koszyka 2 i stracie w całym okresie życia."},
+ {id:"lgd",n:"LGD",s:"strata",col:"#4f7390",at:[.28,-.17,.13],k:.11,d:"Strata w razie niewykonania zobowiązania – część ekspozycji, której bank nie odzyska."},
+ {id:"ead",n:"EAD",s:"ekspozycja · CCF",col:"#6f7f58",at:[.25,.22,-.16],k:.11,d:"Ekspozycja w chwili niewykonania zobowiązania, z uwzględnieniem wykorzystania limitów (CCF)."}];
+const LINKS=[["stat","pd"],["stat","lgd"],["stat","ead"],["stat","sicr"],["pd","ttc"],["pd","pit"],["pit","sicr"],["ttc","pit"]];
+MODS.forEach(m=>{m.p="Moduł modelu statystycznego";m.mod=1;m.c=[]});
+const INNER=[HUB,...MODS];
 const ALL=[...FACES,...INNER],AI={};ALL.forEach(f=>AI[f.id]=f);
 const cube=document.getElementById("cube"),scene=document.getElementById("scene");
 const H="calc(var(--s)/2)";
 const corners=[];for(const x of[-1,1])for(const y of[-1,1])for(const z of[-1,1])corners.push([x,y,z]);
 cube.innerHTML=FACES.map(f=>`<div class="fa" data-f="${f.id}" style="--c:${f.col};transform:${f.tf} translateZ(${H})"><div class="lb" data-f="${f.id}"><span class="ic">${sv(f.ic)}</span><span><small>${f.p}</small>${E(f.n)}</span></div></div>`).join("")
  +corners.map(([x,y,z])=>`<div class="nd" data-t="translate3d(calc(var(--s)*${x/2}),calc(var(--s)*${y/2}),calc(var(--s)*${z/2}))"><i></i></div>`).join("")
+ +LINKS.map(([a,b])=>{const A=a==="stat"?[0,0,0]:MODS.find(m=>m.id===a).at,B=MODS.find(m=>m.id===b).at,dx=B[0]-A[0],dy=B[1]-A[1],dz=B[2]-A[2],h=Math.hypot(dx,dz),L=Math.hypot(dx,dy,dz);
+   return`<div class="rod" data-l="${a} ${b}" style="width:calc(var(--s)*${L.toFixed(4)});transform:translate3d(calc(var(--s)*${A[0]}),calc(var(--s)*${A[1]}),calc(var(--s)*${A[2]})) rotateY(${(Math.atan2(-dz,dx)*180/Math.PI).toFixed(2)}deg) rotateZ(${(Math.atan2(dy,h)*180/Math.PI).toFixed(2)}deg)"><i></i><i style="transform:rotateX(90deg)"></i></div>`}).join("")
  +INNER.map(k=>{const kf=(t,cls,body)=>`<div class="kf ${cls}" style="transform:${t} translateZ(calc(var(--k)/2))">${body}</div>`,
-   side=`<span class="ic">${sv(k.ic)}</span><b>${E(k.n)}</b>`,cap=k.id==="code"?`<code>&lt;/&gt;</code>`:`<span class="ic">${sv(k.ic)}</span>`;
-   return`<div class="ik" data-f="${k.id}" style="--c:${k.col};--k:calc(var(--s)*${k.k});transform:translateX(calc(var(--s)*${k.x}))">${kf("rotateY(0deg)","",side)}${kf("rotateY(90deg)","sd",side)}${kf("rotateY(180deg)","",side)}${kf("rotateY(-90deg)","sd",side)}${kf("rotateX(90deg)","tp",cap)}${kf("rotateX(-90deg)","sd",cap)}</div>`}).join("");
+   side=k.mod?`<b>${E(k.n)}</b><small>${E(k.s)}</small>`:`<span class="ic">${sv(k.ic)}</span><b>${E(k.n)}</b>`,cap=k.mod?`<b>${E(k.n)}</b>`:`<span class="ic">${sv(k.ic)}</span>`,at=k.at||[0,0,0];
+   return`<div class="ik${k.mod?" m":" hub"}" data-f="${k.id}" style="--c:${k.col};--k:calc(var(--s)*${k.k||.26});transform:translate3d(calc(var(--s)*${at[0]}),calc(var(--s)*${at[1]}),calc(var(--s)*${at[2]})) scale3d(var(--sc,1),var(--sc,1),var(--sc,1))">${kf("rotateY(0deg)","",side)}${kf("rotateY(90deg)","sd",side)}${kf("rotateY(180deg)","",side)}${kf("rotateY(-90deg)","sd",side)}${kf("rotateX(90deg)","tp",cap)}${kf("rotateX(-90deg)","sd",cap)}</div>`}).join("");
 const fb=f=>`<button type="button" class="fb" data-f="${f.id}" style="--c:${f.col}"><span class="ic">${sv(f.ic)}</span><span><small>${f.p}</small><b>${E(f.n)}</b></span></button>`;
 document.getElementById("sl").innerHTML=FACES.slice(0,3).map(fb).join("");document.getElementById("sr").innerHTML=FACES.slice(3).map(fb).join("");
-document.getElementById("inn").innerHTML=`<span>W środku</span>`+INNER.map(k=>`<button type="button" class="ib" data-f="${k.id}" style="--c:${k.col}"><i>${sv(k.ic)}</i>${E(k.n)}</button>`).join("");
+const inn=document.getElementById("inn");
+inn.innerHTML=`<div class="mx2"><span>Model w środku</span><button type="button" data-mx="1">Złożony – kilka modułów</button><button type="button" data-mx="0">Prosty – jeden moduł</button></div><div class="mods"><button type="button" class="ib" data-f="stat" style="--c:${HUB.col}"><i>${sv("sigma")}</i>Model statystyczny</button>${MODS.map(m=>`<button type="button" class="ib md" data-f="${m.id}" style="--c:${m.col}"><i><b>${m.n[0]}</b></i>${m.n}</button>`).join("")}</div>`;
+let CX=1;try{CX=localStorage.getItem("rt_mr_cx")==="0"?0:1}catch(_){}
+function setCX(v){CX=v;cube.classList.toggle("simple",!v);inn.querySelectorAll("[data-mx]").forEach(b=>b.classList.toggle("on",+b.dataset.mx===v));try{localStorage.setItem("rt_mr_cx",v)}catch(_){}
+  const cur=document.querySelector(".ik.on");if(!v&&cur&&cur.classList.contains("m"))pick("stat",false)}
+inn.addEventListener("click",e=>{const b=e.target.closest("[data-mx]");if(b)setCX(+b.dataset.mx)});
 /* obrót – tylko na żądanie */
 let rx=-22,ry=-34;
 const NDS=[...cube.querySelectorAll(".nd")];
@@ -242,7 +277,7 @@ const set=(ease)=>{cube.classList.toggle("ease",!!ease);cube.style.transform=`ro
 const near=v=>ry+((((v-ry)%360)+540)%360-180);
 function go(x,y){rx=x;ry=near(y);set(true)}
 document.getElementById("ctl").addEventListener("click",e=>{const b=e.target.closest("[data-r]");if(b){const[a,c]=b.dataset.r.split(",").map(Number);rx=Math.max(-90,Math.min(90,rx+a));ry+=c;set(true);return}if(e.target.closest("#biso"))go(-22,-34)});
-function pick(id,turn){const f=AI[id];document.querySelectorAll("[data-f]").forEach(e=>e.classList.toggle("on",e.dataset.f===id));if(turn&&f.v)go(f.v[0],f.v[1]);panel(f)}
+function pick(id,turn){const f=AI[id];document.querySelectorAll("[data-f]").forEach(e=>e.classList.toggle("on",e.dataset.f===id));document.querySelectorAll(".rod").forEach(r=>r.classList.toggle("on",r.dataset.l.split(" ").includes(id)));if(turn&&f.v)go(f.v[0],f.v[1]);panel(f)}
 let drag=null,moved=0;
 scene.addEventListener("pointerdown",e=>{drag={x:e.clientX,y:e.clientY,rx,ry};moved=0;scene.setPointerCapture(e.pointerId);scene.classList.add("drag")});
 scene.addEventListener("pointermove",e=>{if(!drag)return;const dx=e.clientX-drag.x,dy=e.clientY-drag.y;moved=Math.max(moved,Math.abs(dx)+Math.abs(dy));if(moved<4)return;ry=drag.ry+dx*.4;rx=Math.max(-90,Math.min(90,drag.rx-dy*.4));set(false)});
@@ -254,10 +289,13 @@ const pv=document.getElementById("pv");let V=1;try{V=+localStorage.getItem("rt_m
 function setV(v){V=v;scene.classList.remove("v1","v2","v3","v4","v5");scene.classList.add("v"+v);pv.querySelectorAll("[data-v]").forEach(b=>b.classList.toggle("on",+b.dataset.v===v));try{localStorage.setItem("rt_mr_v",v)}catch(_){}}
 pv.addEventListener("click",e=>{const b=e.target.closest("[data-v]");if(b)setV(+b.dataset.v)});setV(V);
 /* panel */
-const pan=document.getElementById("pan");
+const pan=document.getElementById("pan");pan.addEventListener("click",e=>{const g=e.target.closest("[data-go]");if(g)pick(g.dataset.go,false)});
+
 function panel(f){pan.style.setProperty("--c",f.col);
+  if(f.mod){const nb=LINKS.filter(l=>l.includes(f.id)).map(l=>l[0]===f.id?l[1]:l[0]).map(id=>AI[id]);
+    pan.innerHTML=`<div class="pan-h"><div><span class="kick">${f.p}</span><h2>${E(f.n)} <span class="pmod">${E(f.s)}</span></h2></div><p>${E(f.d)}</p></div><div class="cmp"><div class="cm" style="--k:${f.col}"><div class="sgb"><span>Połączony z</span><div class="it">${nb.map(x=>`<i class="lnk" data-go="${x.id}">${E(x.n)}</i>`).join("")}</div></div></div></div>`;return}
   pan.innerHTML=`<div class="pan-h"><div><span class="kick">${f.p}${f.v?" bryły":""} · ${f.c.map(k=>"#"+k).join(" · ")}</span><h2>${E(f.n)}</h2></div><p>${E(f.d)}</p></div><div class="cmp">${f.c.map(k=>{const r=MI[k],sgs=f.sg&&f.sg[k]?r[4].filter(x=>f.sg[k].includes(x[0])):r[4];return`<div class="cm" style="--k:${COL[k]}"><div class="cm-h"><span class="ic">${sv(r[2])}</span><span><em>#${r[0]}</em><b>${E(r[1])}</b><span>${f.sg&&f.sg[k]?"Wybrane: "+E(f.sg[k].join(", ")):E(r[3])}</span></span></div><div class="sg">${sgs.map(s=>`<div class="sgb">${s[0]?`<span>${E(s[0])}</span>`:""}<div class="it">${s[1].map(i=>`<i>${E(i[0])}${i[1]?`<small>${E(i[1])}</small>`:""}</i>`).join("")}</div></div>`).join("")}</div></div>`}).join("")}</div>`}
-pick("stat",false);
+setCX(CX);pick("stat",false);
 })();
 </script>
 <script src="../rt.js"></script>
