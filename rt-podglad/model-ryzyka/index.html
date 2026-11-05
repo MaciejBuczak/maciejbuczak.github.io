@@ -272,6 +272,55 @@
 .pt small{font-size:calc(var(--e)*.042);font-weight:500;color:var(--muted);line-height:1.2}
 .pch{position:absolute;left:calc(var(--e)*-.025);top:calc(var(--e)*-.025);width:calc(var(--e)*.05);height:calc(var(--e)*.05);fill:none;stroke:#6f7f58;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
 @media(max-width:1100px){.mw[data-tab] .stage{grid-template-columns:1fr}.mw[data-tab="dep"] .scene{margin:calc(var(--s)*.55) auto calc(var(--s)*.3)}}
+
+/* zakładka wdrożenia */
+.mw[data-tab="dep"] .stage{display:none}.mw[data-tab="model"] .depv{display:none}
+.depv{padding:8px 0 0}
+.dpv{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:14px 0 0}
+.dpv>span{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tan);margin-right:6px}
+.dpv button{font:inherit;font-size:13px;font-weight:600;padding:6px 14px;border-radius:999px;border:1px solid var(--line);background:#fff;cursor:pointer}
+.dpv button.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.dgrid{position:relative;display:grid;align-items:center;justify-items:center;margin-top:10px}
+.dlinks,.dfloor{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+.dlinks{z-index:2}
+.lk{fill:none;stroke-width:2.2;stroke-dasharray:8 7;animation:dep 1s linear infinite}
+.lk.l1{stroke:#c07a1f}.lk.l2{stroke:#a8823a}
+.fl1{fill:rgba(255,253,249,.55);stroke:rgba(13,13,13,.12);stroke-width:1}.fl2{fill:none;stroke:rgba(168,105,76,.18);stroke-width:1;stroke-dasharray:3 5}
+.chip{position:absolute;z-index:3;transform:translate(-50%,-50%);font-size:11.5px;font-weight:600;letter-spacing:.02em;padding:5px 12px;border-radius:999px;background:#fffdf9;border:1px solid var(--line);white-space:nowrap;box-shadow:0 6px 16px -12px rgba(13,13,13,.4)}
+.chip.c1{color:#c07a1f;border-color:color-mix(in srgb,#c07a1f 35%,transparent)}.chip.c2{color:#a8823a;border-color:color-mix(in srgb,#a8823a 35%,transparent)}
+.dn{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer}
+.dn>b{font-family:var(--display);font-weight:400;font-size:15px;letter-spacing:.01em}
+.dn.on>b{color:var(--terra-d)}
+.dmod{--s:clamp(170px,15vw,230px);width:var(--s);height:var(--s);perspective:calc(var(--s)*5);position:relative;margin:calc(var(--s)*.18) calc(var(--s)*.2) calc(var(--s)*.3)}
+.dmod .cube{position:absolute;inset:0;transform-style:preserve-3d}
+.dmod .fa{background:linear-gradient(150deg,rgba(255,255,255,.34),rgba(255,253,249,.06) 55%,rgba(191,129,101,.05));border:1px solid rgba(13,13,13,.2);border-radius:calc(var(--s)*.05);box-shadow:inset 0 0 0 calc(var(--s)*.012) rgba(255,255,255,.35)}
+.dmod .fa.on{border-color:rgba(13,13,13,.2)}
+.depv .env{--e:clamp(170px,15vw,230px);height:calc(var(--e)*1.15)}
+.depv .envb{top:58%}
+.envb>.eport{position:absolute;left:calc(var(--e)*-.045);top:calc(var(--e)*-.045);width:calc(var(--e)*.09);height:calc(var(--e)*.09);border-radius:50%;border:1.5px solid #a8823a;background:rgba(168,130,58,.18)}
+.vrod{position:absolute;left:0;top:0;transform-style:preserve-3d}
+.vrod i{position:absolute;left:-1.5px;top:calc(var(--e)*-.52);width:3px;height:calc(var(--e)*.52);background:repeating-linear-gradient(0deg,#a8823a 0 6px,transparent 6px 12px);background-size:100% 12px;animation:up 1s linear infinite}
+@keyframes up{to{background-position:0 -12px}}
+.tg{border:1.5px solid #a8823a;border-radius:2px;background:linear-gradient(rgba(168,130,58,.28),rgba(168,130,58,.28)) top/100% 25% no-repeat,repeating-linear-gradient(180deg,transparent 0 calc(25% - 1px),rgba(168,130,58,.6) calc(25% - 1px) 25%),repeating-linear-gradient(90deg,transparent 0 calc(33.333% - 1px),rgba(168,130,58,.5) calc(33.333% - 1px) 33.333%)}
+/* procesy */
+.prc .envb{top:50%;transform:rotateX(-20deg) rotateY(-22deg)}
+.envb>.pbase,.envb>.eport{display:block}
+.envb>.pbase{position:absolute;left:calc(var(--e)*-.6);top:calc(var(--e)*-.25);width:calc(var(--e)*1.2);height:calc(var(--e)*.5);border-radius:calc(var(--e)*.25);border:1px solid rgba(13,13,13,.18);background:radial-gradient(120% 120% at 30% 20%,rgba(255,255,255,.6),rgba(111,127,88,.08))}
+.pbase svg{width:100%;height:100%}.pchv{fill:none;stroke:#6f7f58;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}.ptrack{fill:none;stroke:#6f7f58;stroke-width:1.2;stroke-dasharray:3 4;opacity:.6}
+.pstep{position:absolute;left:0;top:0;transform-style:preserve-3d}
+.pd{position:absolute;left:calc(var(--e)*-.13);top:calc(var(--e)*-.13);width:calc(var(--e)*.26);height:calc(var(--e)*.26);border-radius:50%;border:1.5px solid #6f7f58;box-sizing:border-box}
+.pd.b{transform:translateZ(calc(var(--e)*-.025));opacity:.45}
+.pd.f{background:radial-gradient(circle at 35% 30%,rgba(255,255,255,.8),rgba(111,127,88,.12));display:grid;place-items:center;transform:translateZ(calc(var(--e)*.01))}
+.pd.f svg{width:52%;height:52%;fill:none;stroke:#4f5d3d;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.pstem{position:absolute;left:-.75px;top:calc(var(--e)*.13);width:1.5px;height:calc(var(--e)*.06);background:#6f7f58;opacity:.6}
+.pl{position:absolute;left:calc(var(--e)*-.22);top:calc(var(--e)*-.25);width:calc(var(--e)*.44);text-align:center;font-size:calc(var(--e)*.068);font-weight:600;color:#4f5d3d;transform:translateZ(calc(var(--e)*.02))}
+/* propozycje układu */
+.depv[data-dv="1"] .dgrid{align-items:end;grid-template-columns:1fr 1fr 1fr;column-gap:clamp(60px,8vw,140px);padding:30px 0 10px}
+.depv[data-dv="2"] .dgrid{align-items:end;grid-template-columns:1fr 1fr 1fr;column-gap:clamp(40px,5vw,90px);padding:20px 0 40px}
+.depv[data-dv="2"] .dn{transform:translateY(-14px)}
+.depv[data-dv="3"] .dgrid{grid-template-columns:1fr 1fr 1fr;grid-template-rows:auto auto;column-gap:clamp(30px,4vw,70px)}
+.depv[data-dv="3"] .dmw{grid-column:1;grid-row:1}.depv[data-dv="3"] .dew{grid-column:2;grid-row:1/3;align-self:end;margin-top:120px}.depv[data-dv="3"] .dpw{grid-column:3;grid-row:1}
+@media(max-width:1100px){.depv[data-dv] .dgrid{grid-template-columns:1fr;row-gap:50px}.depv[data-dv="3"] .dn{grid-column:1!important;grid-row:auto!important;margin:0!important}.chip{display:none}.dlinks{display:none}}
 </style>
 </head>
 <body>
@@ -308,15 +357,16 @@
       <div class="inn" id="inn"></div>
     </div>
     <div class="side r" id="sr"></div>
-    <div class="dep" id="dep" data-f="env"><span class="dep-t">Wdrożenie techniczne</span><svg viewBox="0 0 200 40" preserveAspectRatio="none" aria-hidden="true"><path class="dep-l" d="M4 20H178"/><path class="dep-h" d="M172 8l22 12-22 12"/></svg><span class="dep-s">model trafia do systemu produkcyjnego</span></div>
-    <div class="envw">
-      <div class="env" id="env" data-f="env" aria-label="Środowisko produkcyjne"><div class="envb" id="envb"></div></div>
-      <div class="env-c"><b>Środowisko produkcyjne</b><small>tu model liczy wyniki</small></div>
-    </div>
-    <div class="dep res2" id="dep2" data-f="proc"><span class="dep-t">Wdrożenie procesowe</span><svg viewBox="0 0 200 40" preserveAspectRatio="none" aria-hidden="true"><path class="dep-l" d="M4 20H178"/><path class="dep-h" d="M172 8l22 12-22 12"/></svg><span class="dep-s">wyniki z systemu trafiają do procesów</span></div>
-    <div class="envw">
-      <div class="env proc" id="proc" data-f="proc" aria-label="Procesy biznesowe"><div class="envb" id="procb"></div></div>
-      <div class="env-c"><b>Procesy biznesowe</b><small>tu wyniki są używane</small></div>
+  </div>
+  <div class="depv" id="depv">
+    <div class="dpv" id="dpv"><span>Układ ekranu</span><button type="button" data-dv="1">1 · Linia</button><button type="button" data-dv="2">2 · Scena</button><button type="button" data-dv="3">3 · Dolina</button></div>
+    <div class="dgrid" id="dgrid">
+      <svg class="dfloor" id="dfloor" aria-hidden="true"></svg>
+      <svg class="dlinks" id="dlinks" aria-hidden="true"><defs><marker id="ah1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1l8 4-8 4" fill="none" stroke="#c07a1f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker><marker id="ah2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1l8 4-8 4" fill="none" stroke="#a8823a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker></defs><path class="lk l1" id="lk1" marker-end="url(#ah1)"/><path class="lk l2" id="lk2" marker-end="url(#ah2)"/></svg>
+      <div class="dn dmw" data-f="stat"><div class="dmod" id="dmod"></div><b>Model</b></div>
+      <div class="dn dew" data-f="env"><div class="env" id="env"><div class="envb" id="envb"></div></div><b>System produkcyjny</b></div>
+      <div class="dn dpw" data-f="proc"><div class="env prc" id="proc"><div class="envb" id="procb"></div></div><b>Procesy biznesowe</b></div>
+      <span class="chip c1" id="ch1">Wdrożenie techniczne</span><span class="chip c2" id="ch2">Wdrożenie procesowe</span>
     </div>
   </div>
   <div class="pan" id="pan"></div>
@@ -448,14 +498,38 @@ setEX(EX);setCX(CX);pick("stat",false);
    <div class="gr" style="--g:.34;transform:translate3d(calc(var(--e)*-.24),calc(var(--e)*-.06),calc(var(--e)*-.2))"><div class="gs">${gear(12,46,38)}</div></div>
    <div class="gr rv" style="--g:.24;transform:translate3d(calc(var(--e)*.04),calc(var(--e)*-.14),calc(var(--e)*-.2))"><div class="gs">${gear(9,46,37)}</div></div>
    <div class="gr" style="--g:.18;transform:translate3d(calc(var(--e)*.33),calc(var(--e)*.12),calc(var(--e)*-.25)) rotateY(90deg)"><div class="gs">${gear(8,46,36)}</div></div>
-   <div class="mini" style="transform:translate3d(calc(var(--e)*.12),calc(var(--e)*.08),calc(var(--e)*.12))">${B(.3,.3,.3,"mf")}<div class="mi2">${B(.1,.1,.1,"mc")}</div><div class="mdb"><span></span><span></span></div></div>`;
-  const pb=document.getElementById("procb"),cards=[["Odpisy","ECL w wyniku"],["Decyzje","kredytowe"],["Raporty","dla zarządu"]];
-  pb.innerHTML=`<div style="transform:translateY(calc(var(--e)*.2))">${B(1.18,.025,.42,"pp")}</div>`+cards.map((c,i)=>{const x=(i-1)*.38;return`<div style="transform:translate3d(calc(var(--e)*${x}),calc(var(--e)*.01),0)">${B(.31,.36,.035,"pf")}<div class="pt" style="transform:translateZ(calc(var(--e)*.02))"><span class="pn">${String(i+1).padStart(2,"0")}</span><b>${c[0]}</b><small>${c[1]}</small></div></div>`+(i<2?`<div style="transform:translate3d(calc(var(--e)*${x+.19}),calc(var(--e)*.01),0)"><svg class="pch" viewBox="0 0 20 20" aria-hidden="true"><path d="M6 4l7 6-7 6"/></svg></div>`:"")}).join("")})();
-document.querySelector(".stage").addEventListener("click",e=>{const t=e.target.closest("#env,#dep,#proc,#dep2");if(t)pick(t.dataset.f,false)});
+   <div class="mini" style="transform:translate3d(calc(var(--e)*.12),calc(var(--e)*.08),calc(var(--e)*.12))">${B(.3,.3,.3,"mf")}<div class="mi2">${B(.1,.1,.1,"mc")}</div><div class="mdb"><span></span><span></span></div></div>
+   <div class="eport" style="transform:translate3d(calc(var(--e)*.12),calc(var(--e)*-.31),calc(var(--e)*.12)) rotateX(90deg)"></div>
+   <div class="vrod" style="transform:translate3d(calc(var(--e)*.12),calc(var(--e)*-.07),calc(var(--e)*.12))"><i></i><i style="transform:rotateY(90deg)"></i></div>
+   <div class="etb" id="etb" style="transform:translate3d(calc(var(--e)*.12),calc(var(--e)*-.66),calc(var(--e)*.12))">${B(.26,.16,.035,"tg")}</div>`;
+  const pb=document.getElementById("procb"),PI={coin:'<ellipse cx="12" cy="7" rx="6.5" ry="2.6"/><path d="M5.5 7v4.5c0 1.4 2.9 2.6 6.5 2.6s6.5-1.2 6.5-2.6V7M5.5 11.5V16c0 1.4 2.9 2.6 6.5 2.6s6.5-1.2 6.5-2.6v-4.5"/>',dec:'<path d="M12 3.5l7.5 4.5v8L12 20.5 4.5 16V8z"/><path d="M8.5 12l2.4 2.4 4.6-4.8"/>',rep:'<path d="M4.5 19.5h15M7 16.5v-5M11 16.5v-9M15 16.5v-6.5M19 16.5V5"/>'};
+  const steps=[["coin","Odpisy"],["dec","Decyzje"],["rep","Raporty"]];
+  pb.innerHTML=`<div class="pbase" style="transform:translateY(calc(var(--e)*.17)) rotateX(90deg)"><svg viewBox="0 0 120 50" aria-hidden="true"><path d="M18 25 H102" class="ptrack"/><path d="M37 21l4 4-4 4M79 21l4 4-4 4" class="pchv"/></svg></div>`+steps.map((t,i)=>{const x=(i-1)*.42;return`<div class="pstep" style="transform:translate3d(calc(var(--e)*${x}),calc(var(--e)*-.02),0)"><i class="pd b"></i><i class="pd f"><svg viewBox="0 0 24 24" aria-hidden="true">${PI[t[0]]}</svg></i><i class="pstem"></i><span class="pl">${t[1]}</span></div>`}).join("")})();
+document.getElementById("depv").addEventListener("click",e=>{const t=e.target.closest(".dn");if(t)pick(t.dataset.f,false)});
+/* model w zakładce wdrożenia: nieruchoma kopia bez wyników */
+function cloneModel(){const d=document.getElementById("dmod");const c=cube.cloneNode(true);c.removeAttribute("id");c.querySelectorAll("[id]").forEach(x=>x.removeAttribute("id"));
+  c.querySelectorAll(".tb,.rod.res,.port,.arw,.lb,.nd").forEach(x=>x.remove());c.style.transform="rotateX(-22deg) rotateY(-34deg)";c.dataset.lf="0";c.classList.remove("fr");c.querySelectorAll(".yb").forEach(y=>y.style.transform="rotateY(34deg)");d.innerHTML="";d.appendChild(c)}
+/* układ ekranu wdrożenia – trzy propozycje, linie liczone z położenia obiektów */
+const depv=document.getElementById("depv"),dgrid=document.getElementById("dgrid");let DV=1;try{DV=+localStorage.getItem("rt_mr_dv")||1}catch(_){}
+function anc(el,side){const g=dgrid.getBoundingClientRect(),r=el.getBoundingClientRect();const x={l:r.left,r:r.right,c:(r.left+r.right)/2}[side[0]]-g.left,y={t:r.top,b:r.bottom,m:(r.top+r.bottom)/2}[side[1]]-g.top;return[x,y]}
+function links(){if(depv.offsetParent===null)return;const g=dgrid.getBoundingClientRect(),sv=document.getElementById("dlinks"),fl=document.getElementById("dfloor");[sv,fl].forEach(x=>{x.setAttribute("viewBox",`0 0 ${g.width} ${g.height}`)});
+  const M=document.querySelector("#dmod .cube"),EN=document.querySelector("#env .eo"),TB=document.getElementById("etb"),PR=document.querySelector("#proc .pbase");if(!M||!EN||!TB||!PR)return;
+  const mR=M.getBoundingClientRect(),gx=v=>v-g.left,gy=v=>v-g.top;
+  let a1,b1,a2,b2,c1,c2;
+  if(DV===3){a1=[gx(mR.right)-10,gy(mR.bottom)-mR.height*.2];b1=anc(EN,"lm");a2=anc(TB,"rm");b2=anc(PR,"lm");
+    c1=`M${a1} C${a1[0]+60},${a1[1]+50} ${b1[0]-80},${b1[1]} ${b1[0]-14},${b1[1]}`;c2=`M${a2[0]+8},${a2[1]} C${a2[0]+90},${a2[1]} ${b2[0]-70},${b2[1]-40} ${b2[0]-12},${b2[1]-6}`}
+  else{a1=[gx(mR.right)-mR.width*.08,gy((mR.top+mR.bottom)/2)];b1=anc(EN,"lm");a2=anc(TB,"rm");b2=anc(PR,"lm");
+    if(DV===1){c1=`M${a1[0]+6},${a1[1]} L${b1[0]-14},${b1[1]}`;c2=`M${a2[0]+8},${a2[1]} C${a2[0]+70},${a2[1]} ${b2[0]-60},${b2[1]} ${b2[0]-12},${b2[1]}`}
+    else{c1=`M${a1[0]+6},${a1[1]+40} Q${(a1[0]+b1[0])/2},${a1[1]+70} ${b1[0]-14},${b1[1]+20}`;c2=`M${a2[0]+8},${a2[1]} Q${(a2[0]+b2[0])/2},${a2[1]-30} ${b2[0]-12},${b2[1]}`}}
+  document.getElementById("lk1").setAttribute("d",c1);document.getElementById("lk2").setAttribute("d",c2);
+  const mid=(id,ch,dy)=>{const pth=document.getElementById(id),L=pth.getTotalLength(),pt=pth.getPointAtLength(L/2),c=document.getElementById(ch);c.style.left=pt.x+"px";c.style.top=(pt.y+dy)+"px"};mid("lk1","ch1",-26);mid("lk2","ch2",-26);
+  if(DV===2){const W=g.width,H=g.height,cy=H*.7;fl.innerHTML=`<path d="M${W*.03},${cy} L${W*.5},${cy-H*.2} L${W*.97},${cy} L${W*.5},${cy+H*.2}Z" class="fl1"/><path d="M${W*.14},${cy} L${W*.5},${cy-H*.15} L${W*.86},${cy} L${W*.5},${cy+H*.15}Z" class="fl2"/>`}else fl.innerHTML=""}
+function setDV(v){DV=v;depv.dataset.dv=v;document.querySelectorAll("[data-dv]").forEach(b=>b.classList.toggle("on",+b.dataset.dv===v));try{localStorage.setItem("rt_mr_dv",v)}catch(_){}requestAnimationFrame(links)}
+document.getElementById("dpv").addEventListener("click",e=>{const b=e.target.closest("[data-dv]");if(b)setDV(+b.dataset.dv)});addEventListener("resize",()=>requestAnimationFrame(links));
 /* zakładki */
 const mw=document.querySelector(".mw"),tabs=document.getElementById("tabs");let TAB="model";try{TAB=localStorage.getItem("rt_mr_tab")||"model"}catch(_){}
 function setTab(t){TAB=t;mw.dataset.tab=t;tabs.querySelectorAll("[data-tab]").forEach(b=>{const on=b.dataset.tab===t;b.classList.toggle("on",on);b.setAttribute("aria-selected",on)});try{localStorage.setItem("rt_mr_tab",t)}catch(_){}
-  if(t==="dep"){const sel=document.querySelector(".fb.on");if(sel)pick("env",false)}else if(["env","proc"].includes((document.querySelector(".on[data-f]")||{}).dataset?.f))pick("stat",false);
+  if(t==="dep"){cloneModel();setDV(DV);const sel=document.querySelector(".fb.on");if(sel)pick("env",false)}else if(["env","proc"].includes((document.querySelector(".on[data-f]")||{}).dataset?.f))pick("stat",false);
   requestAnimationFrame(()=>window.dispatchEvent(new Event("resize")))}
 tabs.addEventListener("click",e=>{const b=e.target.closest("[data-tab]");if(b)setTab(b.dataset.tab)});setTab(TAB);
 })();
