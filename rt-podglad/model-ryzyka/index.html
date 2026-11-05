@@ -484,6 +484,10 @@
 .tfr{position:absolute;left:0;top:0;box-sizing:border-box;border:1.5px solid #a8823a;border-radius:3px;background:linear-gradient(#a8823a,#a8823a) 0 30%/100% 1px no-repeat,linear-gradient(#a8823a,#a8823a) 0 65%/100% 1px no-repeat,rgba(255,253,249,.9);display:flex;align-items:flex-start;padding:2px 5px}
 .tfr b{font-size:calc(var(--e)*.034);font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8a6a2c;line-height:1.2}
 .band-h{justify-content:flex-start!important;justify-self:start!important;width:100%}
+.cyl .cb{fill:none!important}.cyl .ct{fill:none!important}.cyl .cbk{fill:none;stroke:rgba(79,115,144,.3);stroke-width:1;stroke-dasharray:3 3}.cyl .cm{stroke:rgba(79,115,144,.25)!important}
+.tfr{display:block!important;padding:0!important;background:linear-gradient(#a8823a,#a8823a) 0 46%/100% 1px no-repeat,linear-gradient(rgba(168,130,58,.5),rgba(168,130,58,.5)) 0 73%/100% 1px no-repeat,linear-gradient(rgba(168,130,58,.12),rgba(168,130,58,.12)) 0 0/100% 46% no-repeat,rgba(255,253,249,.9)!important}
+.tfr b{display:flex;height:46%;align-items:center;justify-content:center;width:100%;line-height:1}
+.depv .env::after{display:none}
 </style>
 </head>
 <body>
@@ -681,7 +685,7 @@ setEX(EX);setCX(CX);pick("stat",false);
    <div class="mon" style="transform:translate3d(calc(var(--e)*.499),calc(var(--e)*-.05),calc(var(--e)*-.06)) rotateY(90deg)"><svg viewBox="0 0 100 60" aria-hidden="true"><rect x="2" y="2" width="96" height="56" rx="6"/><path class="pulse" d="M8 36h18l5-14 7 26 6-20 4 8h44"/><path class="ax" d="M8 48h84"/></svg></div>
    <div class="clk" style="transform:translate3d(calc(var(--e)*.3),calc(var(--e)*-.2),calc(var(--e)*-.349))"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17"/><path class="hh" d="M20 20V10"/><path class="mh" d="M20 20h9"/><circle cx="20" cy="20" r="1.6"/></svg></div>
    <div class="mini" style="transform:translate3d(calc(var(--e)*.12),calc(var(--e)*.08),calc(var(--e)*.12))">${B(.3,.3,.3,"mf")}<div class="mi2">${B(.1,.1,.1,"mc")}</div><div class="mdb"><span></span><span></span></div></div>
-   <div class="edb" style="transform:translate3d(calc(var(--e)*.12),calc(var(--e)*.66),calc(var(--e)*.12)) rotateY(34deg) rotateX(22deg)"><svg class="cyl" viewBox="0 0 120 80" aria-hidden="true"><path class="cb" d="M6 18v42c0 8.3 24.2 15 54 15s54-6.7 54-15V18"/><path class="cm" d="M6 39c0 8.3 24.2 15 54 15s54-6.7 54-15"/><ellipse class="ct" cx="60" cy="18" rx="54" ry="14"/><text x="60" y="70" text-anchor="middle">DANE</text></svg></div>
+   <div class="edb" style="transform:translate3d(calc(var(--e)*.12),calc(var(--e)*.66),calc(var(--e)*.12)) rotateY(34deg) rotateX(22deg)"><svg class="cyl" viewBox="0 0 120 80" aria-hidden="true"><path class="cbk" d="M6 60c0-8.3 24.2-15 54-15s54 6.7 54 15"/><path class="cb" d="M6 18v42c0 8.3 24.2 15 54 15s54-6.7 54-15V18"/><path class="cm" d="M6 39c0 8.3 24.2 15 54 15s54-6.7 54-15"/><ellipse class="ct" cx="60" cy="18" rx="54" ry="14"/><text x="60" y="70" text-anchor="middle">DANE</text></svg></div>
    <div class="efeed v" style="transform:translate3d(calc(var(--e)*.12),calc(var(--e)*.45),calc(var(--e)*.12)) rotateZ(-90deg)"><i></i><i style="transform:rotateX(90deg)"></i></div>
    <div class="vrod" id="vrod" style="transform:translate3d(calc(var(--e)*.12),calc(var(--e)*-.07),calc(var(--e)*.12))"><i class="vt"></i><i class="vt" style="transform:rotateY(90deg)"></i><i class="vp"></i><i class="vp" style="transform:rotateY(90deg) scaleY(var(--vp,1))"></i></div>
    <div class="etb" id="etb" style="transform:translate3d(calc(var(--e)*.12),calc(var(--e)*-.66),calc(var(--e)*.12))">${B(.27,.15,.03,"tsd")}<i class="tfr" style="width:calc(var(--e)*.27);height:calc(var(--e)*.15);margin:calc(var(--e)*-.075) 0 0 calc(var(--e)*-.135);transform:translateZ(calc(var(--e)*.016))"><b>Wyniki</b></i></div>`;
