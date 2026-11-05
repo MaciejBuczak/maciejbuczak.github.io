@@ -622,6 +622,14 @@
 .port.pw{background:radial-gradient(circle,rgba(168,130,58,.12),rgba(255,253,249,.2) 70%)!important}
 .wbf{border-radius:calc(var(--s)*.05)!important;background:none!important;border:1.8px solid rgba(168,130,58,.8)!important}
 .wbf.sd{border-radius:calc(var(--s)*.04)!important}
+.scene::after{display:none!important}
+.v2 .fa{border-radius:calc(var(--s)*.02)!important}
+.wbf{border-radius:calc(var(--s)*.012)!important;backface-visibility:visible!important;-webkit-backface-visibility:visible!important}
+.wbf.sd{border-radius:calc(var(--s)*.01)!important}
+.port.pb{width:calc(var(--s)*.12)!important;height:calc(var(--s)*.12)!important;left:calc(50% - var(--s)*.06)!important;top:calc(50% - var(--s)*.06)!important;border-color:#4f7390!important;background:radial-gradient(circle,rgba(79,115,144,.15),rgba(255,253,249,.3) 70%)!important}
+.wbl{position:absolute;left:0;top:0;display:grid;place-items:center;backface-visibility:hidden;-webkit-backface-visibility:hidden;pointer-events:none}
+.wbl b{font-family:var(--body);font-weight:600;font-size:calc(var(--s)*.034);letter-spacing:.3em;color:#8a6a2c}
+.mw[data-tab="model"] .duo .scene:not(.sc2){margin-bottom:calc(var(--s)*.8)!important}
 </style>
 </head>
 <body>
@@ -739,8 +747,8 @@ const MODS=[
  {id:"ead",n:"EAD",s:"ekspozycja · CCF",col:"#6f7f58",at:[.27,.17,-.18],k:.12,d:"Ekspozycja w chwili niewykonania zobowiązania, z uwzględnieniem wykorzystania limitów (CCF)."}];
 const LINKS=[["stat","pd"],["stat","lgd"],["stat","ead"],["stat","sicr"],["pd","ttc"],["pd","pit"]];
 MODS.forEach(m=>{m.p="Moduł modelu statystycznego";m.mod=1;m.c=[]});
-const DB={id:"db",n:"Baza danych",p:"W środku · zasilanie",c:["04"],col:"#4f7390",at:[0,.36,0],r:.1,h:.12,d:"Dane, którymi model jest zasilany – do estymacji i produkcyjne. Strzałki pokazują, które moduły pobierają dane z bazy."};
-const FEEDS=[["db","stat"]];
+const DB={id:"db",n:"Baza danych",p:"W środku · zasilanie",c:["04"],col:"#4f7390",at:[0,1,0],r:.085,h:.11,d:"Dane, którymi model jest zasilany – do estymacji i produkcyjne. Strzałki pokazują, które moduły pobierają dane z bazy."};
+const FEEDS=[];const DBS=[-.36,0,.36];
 const WY={id:"wyn",n:"Wyniki",p:"Wyniki modelu",c:["05","02"],sg:{"05":["Wynik modelu"],"02":[""]},col:"#a8823a",at:[0,-.8,0],w:.2,h:.13,d:"Tu trafiają wyniki każdego modułu – PD, TTC i PIT, LGD, EAD, koszyki z SICR i ECL – a dalej do odpisów, raportów i decyzji."};
 const RES=[];
 const INNER=[HUB,...MODS];
@@ -759,12 +767,13 @@ const rod=(A,B,cl,l,sa=0,sb=0)=>{const E2=.004,d=(u,v)=>Math.hypot(v[0]-u[0],v[1
   let h="";for(let i=0;i<n;i++)h+=seg(pts[i],pts[i+1],cl,l);return h};
 const seg=(A,B,cl,l)=>{const dx=B[0]-A[0],dy=B[1]-A[1],dz=B[2]-A[2],h=Math.hypot(dx,dz),L=Math.hypot(dx,dy,dz);
   return`<div class="rod ${cl}" data-l="${l}" style="width:calc(var(--s)*${L.toFixed(4)});transform:${T3(A)} rotateY(${(Math.atan2(-dz,dx)*180/Math.PI).toFixed(2)}deg) rotateZ(${(Math.atan2(dy,h)*180/Math.PI).toFixed(2)}deg)"><i></i><i style="transform:rotateX(90deg)"></i></div>`};
-function table(){const W=1,Ht=.12,c=`calc(var(--s)*`,F=(w,h,t,cl,body="")=>`<i class="wbf ${cl}" style="width:${c}${w});height:${c}${h});margin:${c}${-h/2}) 0 0 ${c}${-w/2});transform:${t}">${body}</i>`,lab=`<b>WYNIKI</b>`;
+function table(){const W=1,Ht=.12,c=`calc(var(--s)*`,F=(w,h,t,cl,body="")=>{const st=`width:${c}${w});height:${c}${h});margin:${c}${-h/2}) 0 0 ${c}${-w/2});transform:${t}`;return`<i class="wbf ${cl}" style="${st}"></i>`+(body?`<i class="wbl" style="${st}">${body}</i>`:"")},lab=`<b>WYNIKI</b>`;
   return`<div class="tb wbox" data-f="wyn" style="--c:${WY.col};transform:${T3(WY.at)}">${F(W,Ht,`translateZ(${c}${W/2}))`,"sd",lab)}${F(W,Ht,`rotateY(180deg) translateZ(${c}${W/2}))`,"sd",lab)}${F(W,Ht,`rotateY(90deg) translateZ(${c}${W/2}))`,"sd",lab)}${F(W,Ht,`rotateY(-90deg) translateZ(${c}${W/2}))`,"sd",lab)}${F(W,W,`rotateX(90deg) translateZ(${c}${Ht/2}))`,"cp")}${F(W,W,`rotateX(-90deg) translateZ(${c}${Ht/2}))`,"cp")}</div>`}
 function renderInner(){const X=EXITS[EX];WY.at=X.at;const tgt=X.port||X.at;
   const P=id=>id==="stat"?[0,0,0]:id==="db"?[DB.at[0],DB.at[1]-DB.h/2,DB.at[2]]:id==="wyn"?tgt:MODS.find(m=>m.id===id).at;
   const HS=id=>id==="stat"?.26*(CX?.6:1)/2:id==="db"||id==="wyn"?0:MODS.find(m=>m.id===id).k/2;
   let h=[...LINKS.map(l=>[...l,""]),...FEEDS.map(l=>[...l,"feed"]),...RES.map(l=>[...l,"feed res"])].map(([a,b,cl])=>{const m=[a,b].some(x=>!["stat","db","wyn"].includes(x));return rod(P(a),P(b),cl+(m?" m":""),a+" "+b,HS(a),HS(b))}).join("");
+  {const by=DB.at[1]-DB.h/2;const my=.66;DBS.forEach(x=>{h+=rod([x,by,0],[x,my,0],"feed","db");if(x)h+=rod([x,my,0],[0,my,0],"feed","db")});h+=rod([0,by,0],[0,.5,0],"feed","db");h+=rod([0,.5,0],[0,0,0],"feed","db",0,.078)+`<div class="port pb" style="transform:${T3([0,.5,0])} rotateX(90deg)"></div>`}
   if(X.port){const L=Math.abs(X.at[1]+.06-X.port[1]),rnd=(a,b)=>a+Math.random()*(b-a);let body="";
     if(SV===1)body=`<i class="sl"></i><i class="sp"></i><i class="sp d2"></i>`;
     else{const pool=SV===2?["0,034","12,5%","0,47","1 248","3,1%","0,92","45,6","0,008","7,2%","0,61"]:SV===3?["0","1","0","1","1","0","1","0","0","1","1","0"]:["%","PD","Σ","‰","€","LGD","σ","ECL","μ","EAD"];
@@ -775,7 +784,7 @@ function renderInner(){const X=EXITS[EX];WY.at=X.at;const tgt=X.port||X.at;
    txt=k.mod?`<b>${E(k.n)}</b>`:`<span class="cx"><b class="ecl">ECL</b></span><span class="sp"><span class="ki">${sv("sigma")}</span><b>Model<br>statystyczny</b></span>`,lab=(t,i)=>`<div class="kt i${i}" style="transform:${t} translateZ(calc(var(--k)/2 + 1px))">${txt}</div>`;
    return`<div class="ik${k.mod?" m":" hub"}" data-f="${k.id}" style="--c:${k.col};--k:calc(var(--s)*${k.k||.26});transform:${T3(at)} scale3d(var(--sc,1),var(--sc,1),var(--sc,1))">${["rotateY(0deg)","rotateY(90deg)","rotateY(180deg)","rotateY(-90deg)","rotateX(90deg)","rotateX(-90deg)"].map(f).join("")}${["rotateY(0deg)","rotateY(90deg)","rotateY(180deg)","rotateY(-90deg)"].map(lab).join("")}</div>`}).join("")
    +table()
-   +`<div class="db" data-f="db" style="--c:${DB.col};--r:calc(var(--s)*${DB.r});--h:calc(var(--s)*${DB.h});transform:${T3(DB.at)}">${[-.5,-.17,.17,.5].map((y,i)=>`<div class="ring${i?"":" lid"}" style="transform:translateY(calc(var(--h)*${y})) rotateX(90deg)"></div>`).join("")}${Array.from({length:16},(_,i)=>`<div class="vl" style="transform:rotateY(${i*22.5}deg) translateZ(var(--r))"></div>`).join("")}<div class="yb sil" data-t="">${[-.5,-.17,.17,.5].map((y,i)=>`<span class="el${i?" lo":""}" style="top:calc(var(--h)*${y+.5} - var(--e)/2)"></span>`).join("")}<b>Dane</b></div></div>`;
+   +DBS.map(x=>`<div class="db" data-f="db" style="--c:${DB.col};--r:calc(var(--s)*${DB.r});--h:calc(var(--s)*${DB.h});transform:${T3([x,DB.at[1],DB.at[2]])}">${[-.5,-.17,.17,.5].map((y,i)=>`<div class="ring${i?"":" lid"}" style="transform:translateY(calc(var(--h)*${y})) rotateX(90deg)"></div>`).join("")}${Array.from({length:16},(_,i)=>`<div class="vl" style="transform:rotateY(${i*22.5}deg) translateZ(var(--r))"></div>`).join("")}<div class="yb sil" data-t="">${[-.5,-.17,.17,.5].map((y,i)=>`<span class="el${i?" lo":""}" style="top:calc(var(--h)*${y+.5} - var(--e)/2)"></span>`).join("")}<b>Dane</b></div></div>`).join("");
   document.getElementById("inr").innerHTML=h;YB=[...cube.querySelectorAll(".yb")];
   const sel=document.querySelector(".fb.on,.ib.on");if(sel)pick(sel.dataset.f,false);if(typeof set==="function")set()}
 const ENVO={id:"env",n:"Środowisko produkcyjne",p:"Wdrożenie techniczne",c:["07","09"],sg:{"07":["Środowisko produkcyjne"],"09":[""]},col:"#c07a1f",d:"System, w którym model działa naprawdę: kod przepisany lub zintegrowany, parametry, zasilanie danymi. Tu model produkuje wyniki."};
