@@ -550,8 +550,8 @@
       <div class="kom rec" id="kom"><svg class="kom-s" viewBox="0 0 220 170" aria-hidden="true">
   <g class="seats"><circle cx="197.5" cy="128.5" r="6"/><circle cx="164.1" cy="145.5" r="6"/><circle cx="110.0" cy="152.0" r="6"/><circle cx="55.9" cy="145.5" r="6"/><circle cx="22.5" cy="128.5" r="6"/><circle cx="22.5" cy="107.5" r="6"/><circle cx="55.9" cy="90.5" r="6"/><circle cx="110.0" cy="84.0" r="6"/><circle cx="164.1" cy="90.5" r="6"/><circle cx="197.5" cy="107.5" r="6"/></g>
   <ellipse cx="110" cy="124" rx="74" ry="25" class="tbl2"/><ellipse cx="110" cy="118" rx="74" ry="25" class="tbl"/>
-  <g class="seal"><circle cx="110" cy="52" r="34" class="sr1"/><circle cx="110" cy="52" r="27" class="sr2"/><path class="ok" d="M97 52l9 9 17-18"/><path class="no" d="M99 41l22 22M121 41l-22 22"/></g>
-  <path d="M110 86V100" class="stem"/></svg>
+  <g class="seal" transform="translate(0 -10)"><circle cx="110" cy="52" r="34" class="sr1"/><circle cx="110" cy="52" r="27" class="sr2"/><path class="ok" d="M97 52l9 9 17-18"/><path class="no" d="M99 41l22 22M121 41l-22 22"/></g>
+  <path d="M110 76V100" class="stem"/></svg>
   <span class="cap"><i>04</i><b>Komitet Ryzyka</b></span>
   <div class="kom-t" role="group" aria-label="Decyzja komitetu"><button type="button" data-k="rec" class="on">Rekomendacja wdrożenia</button><button type="button" data-k="no">Brak rekomendacji</button></div></div>
       <span class="chip c1" id="ch1">Wdrożenie techniczne</span><span class="chip c2" id="ch2">Wdrożenie procesowe</span>
@@ -730,7 +730,7 @@ function links(){if(depv.offsetParent===null)return;const g=dgrid.getBoundingCli
     const PP=[...document.querySelectorAll("#proc .pch3 svg")].map(x=>x.getBoundingClientRect()),pR=Math.max(...PP.map(r=>r.right)),pT=Math.min(...PP.map(r=>r.top)),pL=Math.min(...PP.map(r=>r.left)),pt=document.querySelector(".dpw .tip"),pp=document.querySelector(".dpw").getBoundingClientRect();pt.style.width=W+"px";
     const vw=document.documentElement.clientWidth,lx=Math.min(pR+20,vw-W-14);pt.style.left=(lx-pp.left)+"px";pt.style.top=(pT-10-pp.top)+"px"}
   {const GAP=34,vis=sel=>{const rs=[...document.querySelectorAll(sel)].map(x=>x.getBoundingClientRect()).filter(r=>r.width||r.height);return rs.length?Math.max(...rs.map(r=>r.bottom)):null};
-    [[".dmw .cap","#drot button"],[".dew .cap","#env .ef, #env .cyl"],[".dpw .cap","#proc .pch3 svg, #proc .cl"]].forEach(([c,v])=>{const cap=document.querySelector(c),b=vis(v);if(!cap||b==null)return;cap.style.transform="";const t=cap.getBoundingClientRect().top;cap.style.transform=`translateY(${Math.round(b+GAP-t)}px)`});{const pc=document.querySelector(".dpw .cap").getBoundingClientRect(),d3=document.querySelector(".dk3");d3.style.transform="";const t3=d3.getBoundingClientRect().top;d3.style.transform=`translate(18px,${Math.round(pc.bottom+30-t3)}px)`}}
+    [[".dmw .cap","#drot button"],[".dew .cap","#env .ef, #env .cyl"],[".dpw .cap","#proc .pch3 svg, #proc .cl"]].forEach(([c,v])=>{const cap=document.querySelector(c),b=vis(v);if(!cap||b==null)return;cap.style.transform="";const t=cap.getBoundingClientRect().top;cap.style.transform=`translateY(${Math.round(b+GAP-t)}px)`});{const pc=document.querySelector(".dpw .cap").getBoundingClientRect(),d3=document.querySelector(".dk3");d3.style.transform="";const t3=d3.getBoundingClientRect().top;const pb=document.querySelector(".dpw .cap b").getBoundingClientRect(),l3=d3.getBoundingClientRect().left;d3.style.transform=`translate(${Math.round(pb.left-l3)}px,${Math.round(pc.bottom+30-t3)}px)`;const d2=document.querySelector(".dk2");d2.style.transform="";const sb=document.querySelector(".dew .cap b").getBoundingClientRect();d2.style.transform=`translateX(${Math.round(sb.left-d2.getBoundingClientRect().left)}px)`}}
   if(DV===2){const W=g.width,H=g.height,cy=H*.7;fl.innerHTML=`<path d="M${W*.03},${cy} L${W*.5},${cy-H*.2} L${W*.97},${cy} L${W*.5},${cy+H*.2}Z" class="fl1"/><path d="M${W*.14},${cy} L${W*.5},${cy-H*.15} L${W*.86},${cy} L${W*.5},${cy+H*.15}Z" class="fl2"/>`}else fl.innerHTML=""}
 /* przepływ: model → system → wyniki → procesy, powoli i od nowa */
 const FL={p1:2600,p2:1500,p3:2600,p4:2400,h:2200};let flT0=performance.now();
@@ -744,7 +744,7 @@ function flow(t){requestAnimationFrame(flow);if(TAB!=="dep"||depv.offsetParent==
   let pt=null;if(k1<1)pt=P1.getPointAtLength(L1*e1);else if(k2>=1&&k3<1)pt=P2.getPointAtLength(L2*e3);else if(k3>=1&&k4<1&&L3)pt=P3.getPointAtLength(L3*e4);
   if(pt&&!red){HD.style.opacity=1;HD.setAttribute("cx",pt.x);HD.setAttribute("cy",pt.y);HD.setAttribute("class","hd "+(k1<1?"h1":k3<1?"h2":"h3"))}else HD.style.opacity=0}
 requestAnimationFrame(flow);
-function setDV(v){DV=v;depv.dataset.dv=v;document.querySelectorAll("[data-dv]").forEach(b=>b.classList.toggle("on",+b.dataset.dv===v));try{localStorage.setItem("rt_mr_dv",v)}catch(_){}requestAnimationFrame(links)}
+function setDV(v){requestAnimationFrame(()=>requestAnimationFrame(links));DV=v;depv.dataset.dv=v;document.querySelectorAll("[data-dv]").forEach(b=>b.classList.toggle("on",+b.dataset.dv===v));try{localStorage.setItem("rt_mr_dv",v)}catch(_){}requestAnimationFrame(links)}
 document.getElementById("dpv").addEventListener("click",e=>{const b=e.target.closest("[data-dv]");if(b)setDV(+b.dataset.dv)});addEventListener("resize",()=>requestAnimationFrame(links));
 /* zakładki */
 const mw=document.querySelector(".mw"),tabs=document.getElementById("tabs");let TAB="model";try{TAB=localStorage.getItem("rt_mr_tab")||"model"}catch(_){}
