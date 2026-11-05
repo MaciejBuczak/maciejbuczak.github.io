@@ -214,7 +214,7 @@
 .el.lo{border-top-color:transparent}
 .cube.fr .el{opacity:1}
 .sil b{position:relative;margin-top:calc(var(--e)*.4)}
-.scene{--s:clamp(230px,28vw,410px)}
+.scene{--s:clamp(230px,28vw,410px)}.mw[data-tab="model"] .duo{margin-top:60px}
 @media(min-width:1101px){.scene{margin:calc(var(--s)*.55) calc(var(--s)*.42) calc(var(--s)*.36)}}
 @media(max-width:1100px){.scene{margin:calc(var(--s)*.55) auto calc(var(--s)*.36)}}
 .cube.simple .rod.out{opacity:1}
@@ -596,6 +596,21 @@
 .sl2b .fcd-i{width:22px;height:22px;margin:0;border-radius:7px}
 .sl2b:hover{color:var(--c)}
 .sl2b::before{content:"";position:absolute;right:100%;top:50%;width:12px;height:1px;background:var(--c);opacity:.6}
+
+/* strumień wyników */
+.v2 .fa{border:1.4px solid rgba(13,13,13,.36)!important}
+.port{width:calc(var(--s)*.1)!important;height:calc(var(--s)*.1)!important;left:calc(50% - var(--s)*.05)!important;top:calc(50% - var(--s)*.05)!important;border:1.4px solid #a8823a!important;background:radial-gradient(circle,rgba(168,130,58,.18),rgba(255,253,249,.5) 70%)!important}
+.strm{position:absolute;left:50%;top:50%;width:0;height:0;transform-style:preserve-3d}
+.sb{left:calc(var(--s)*-.1);top:calc(var(--L)*-1);width:calc(var(--s)*.2);height:var(--L);overflow:hidden;-webkit-mask:linear-gradient(transparent,#000 18%,#000 82%,transparent);mask:linear-gradient(transparent,#000 18%,#000 82%,transparent)}
+.sb .sl{position:absolute;left:50%;top:0;bottom:0;width:1.2px;margin-left:-.6px;background:rgba(168,130,58,.35)}
+.sb .sp{position:absolute;left:50%;width:2px;margin-left:-1px;height:28%;border-radius:2px;background:linear-gradient(transparent,#a8823a,transparent);animation:sup 2.4s cubic-bezier(.4,0,.6,1) infinite;box-shadow:0 0 6px rgba(168,130,58,.6)}
+.sb .sp.d2{animation-delay:-1.2s}
+@keyframes sup{from{top:100%}to{top:-30%}}
+.sb span{position:absolute;bottom:-12%;transform:translateX(-50%);font-family:var(--body);font-weight:600;font-size:calc(var(--s)*.026);color:#a8823a;white-space:nowrap;animation:rise linear infinite}
+.sv3 span{font-family:ui-monospace,Menlo,Consolas,monospace;font-weight:500;font-size:calc(var(--s)*.028);color:rgba(168,130,58,.9)}
+.sv4 span{font-family:var(--serif);font-style:italic;font-size:calc(var(--s)*.032)}
+@keyframes rise{0%{bottom:-12%;opacity:0}15%{opacity:1}85%{opacity:1}100%{bottom:100%;opacity:0}}
+@media(prefers-reduced-motion:reduce){.sb .sp,.sb span{animation:none}}
 </style>
 </head>
 <body>
@@ -716,7 +731,7 @@ MODS.forEach(m=>{m.p="Moduł modelu statystycznego";m.mod=1;m.c=[]});
 const DB={id:"db",n:"Baza danych",p:"W środku · zasilanie",c:["04"],col:"#4f7390",at:[.02,.36,-.02],r:.1,h:.12,d:"Dane, którymi model jest zasilany – do estymacji i produkcyjne. Strzałki pokazują, które moduły pobierają dane z bazy."};
 const FEEDS=[["db","stat"]];
 const WY={id:"wyn",n:"Wyniki",p:"Wyniki modelu",c:["05","02"],sg:{"05":["Wynik modelu"],"02":[""]},col:"#a8823a",at:[0,-.8,0],w:.2,h:.13,d:"Tu trafiają wyniki każdego modułu – PD, TTC i PIT, LGD, EAD, koszyki z SICR i ECL – a dalej do odpisów, raportów i decyzji."};
-const RES=[["stat","wyn"]];
+const RES=[];
 const INNER=[HUB,...MODS];
 const ALL=[...FACES,...INNER,DB,WY],AI={};ALL.forEach(f=>AI[f.id]=f);
 const cube=document.getElementById("cube"),scene=document.getElementById("scene");
@@ -725,8 +740,8 @@ const corners=[];for(const x of[-1,1])for(const y of[-1,1])for(const z of[-1,1])
 cube.innerHTML=FACES.map(f=>`<div class="fa" data-f="${f.id}" style="--c:${f.col};transform:${f.tf} translateZ(${H})"><div class="lb" data-f="${f.id}"><span class="ic">${sv(f.ic)}</span><span><small>${f.p}</small>${E(f.n)}</span></div></div>`).join("")
  +corners.map(([x,y,z])=>`<div class="nd" data-t="translate3d(calc(var(--s)*${x/2}),calc(var(--s)*${y/2}),calc(var(--s)*${z/2}))"><i></i></div>`).join("")+`<div class="inr" id="inr"></div>`;
 /* wyjście wyników – trzy propozycje */
-const EXITS={1:{n:"Przez dach",at:[0,-.8,0],port:[0,-.5,0],pt:"rotateX(90deg)"},2:{n:"Bokiem",at:[.82,-.12,0],port:[.5,-.12,0],pt:"rotateY(90deg)"},3:{n:"Strumień w górę",at:[0,-.3,0],out:[0,-.86,0]}};
-let EX=1;try{EX=+localStorage.getItem("rt_mr_ex")||1}catch(_){}
+const EXITS={1:{n:"Przez dach",at:[0,-.98,0],port:[0,-.5,0],pt:"rotateX(90deg)"},2:{n:"Bokiem",at:[.82,-.12,0],port:[.5,-.12,0],pt:"rotateY(90deg)"},3:{n:"Strumień w górę",at:[0,-.3,0],out:[0,-.86,0]}};
+let EX=1,SV=1;try{SV=+localStorage.getItem("rt_mr_sv")||1}catch(_){}
 const T3=a=>`translate3d(calc(var(--s)*${a[0]}),calc(var(--s)*${a[1]}),calc(var(--s)*${a[2]}))`;
 const rod=(A,B,cl,l,sa=0,sb=0)=>{const E2=.004,d=(u,v)=>Math.hypot(v[0]-u[0],v[1]-u[1],v[2]-u[2]);let pts=[A,[B[0],A[1],A[2]],[B[0],A[1],B[2]],B].filter((p,i,a)=>i===0||d(a[i-1],p)>E2);if(pts.length<2)return"";
   const mv=(p,q,t)=>{const L=d(p,q)||1;return p.map((v,i)=>v+(q[i]-v)*Math.min(t,L*.45)/L)};pts[0]=mv(pts[0],pts[1],sa);const n=pts.length-1;pts[n]=mv(pts[n],pts[n-1],sb);
@@ -738,7 +753,11 @@ function renderInner(){const X=EXITS[EX];WY.at=X.at;const tgt=X.port||X.at;
   const P=id=>id==="stat"?[0,0,0]:id==="db"?[DB.at[0],DB.at[1]-DB.h/2,DB.at[2]]:id==="wyn"?tgt:MODS.find(m=>m.id===id).at;
   const HS=id=>id==="stat"?.26*(CX?.6:1)/2:id==="db"||id==="wyn"?0:MODS.find(m=>m.id===id).k/2;
   let h=[...LINKS.map(l=>[...l,""]),...FEEDS.map(l=>[...l,"feed"]),...RES.map(l=>[...l,"feed res"])].map(([a,b,cl])=>{const m=[a,b].some(x=>!["stat","db","wyn"].includes(x));return rod(P(a),P(b),cl+(m?" m":""),a+" "+b,HS(a),HS(b))}).join("");
-  if(X.port)h+=rod(X.port,X.at,"feed res out","wyn out",.018,.075)+`<div class="port" style="transform:${T3(X.port)} ${X.pt}"></div>`;
+  if(X.port){const L=Math.abs(X.at[1]+.076-X.port[1]),rnd=(a,b)=>a+Math.random()*(b-a);let body="";
+    if(SV===1)body=`<i class="sl"></i><i class="sp"></i><i class="sp d2"></i>`;
+    else{const pool=SV===2?["0,034","12,5%","0,47","1 248","3,1%","0,92","45,6","0,008","7,2%","0,61"]:SV===3?["0","1","0","1","1","0","1","0","0","1","1","0"]:["%","PD","Σ","‰","€","LGD","σ","ECL","μ","EAD"];
+      body=Array.from({length:SV===3?12:6},(_,k)=>`<span style="left:${(SV===3?[38,62,50,30,70,44,56,34,66,48,40,60][k]:[30,62,44,70,36,56][k]).toFixed(0)}%;animation-delay:${(-k*(SV===3?.42:.9)).toFixed(2)}s;animation-duration:${(SV===3?5:5.4).toFixed(1)}s">${pool[k%pool.length]}</span>`).join("")}
+    h+=`<div class="port" style="transform:${T3(X.port)} ${X.pt}"></div><div class="strm" style="transform:${T3(X.port)}"><div class="yb sb sv${SV}" data-t="" style="--L:calc(var(--s)*${L.toFixed(3)})">${body}</div></div>`}
   if(X.out)h+=rod([X.at[0],X.at[1]-WY.h/2,X.at[2]],X.out,"feed res out","wyn out")+`<div class="port" style="transform:${T3([0,-.5,0])} rotateX(90deg)"></div><div class="arw" style="transform:${T3(X.out)}"><div class="yb ah" data-t="">${sv("up")}<small>do odpisów, raportów i decyzji</small></div></div>`;
   h+=INNER.map(k=>{const at=k.at||[0,0,0],f=t=>`<div class="kf" style="transform:${t} translateZ(calc(var(--k)/2))"></div>`,
    txt=k.mod?`<b>${E(k.n)}</b>`:`<span class="cx"><b class="ecl">ECL</b></span><span class="sp"><span class="ki">${sv("sigma")}</span><b>Model<br>statystyczny</b></span>`,lab=(t,i)=>`<div class="kt i${i}" style="transform:${t} translateZ(calc(var(--k)/2 + 1px))">${txt}</div>`;
@@ -753,12 +772,12 @@ AI.env=ENVO;AI.proc=PROC;
 const fb=f=>`<button type="button" class="fb" data-f="${f.id}" style="--c:${f.col}"><span class="ic">${sv(f.ic)}</span><span><small>${f.p}</small><b>${E(f.n)}</b></span></button>`;
 
 const inn=document.getElementById("inn");
-inn.innerHTML=`<div class="mx2"><span>Model w środku</span><button type="button" data-mx="1">Złożony – kilka modułów</button><button type="button" data-mx="0">Prosty – jeden moduł</button></div><div class="mx2 ex"><span>Wyjście wyników</span>${Object.entries(EXITS).map(([k,v])=>`<button type="button" data-ex="${k}">${k} · ${v.n}</button>`).join("")}</div><div class="mods"><button type="button" class="ib" data-f="db" style="--c:${DB.col}"><i>${sv("db")}</i>Baza danych</button><button type="button" class="ib" data-f="stat" style="--c:${HUB.col}"><i>${sv("sigma")}</i>ECL</button><button type="button" class="ib" data-f="wyn" style="--c:${WY.col}"><i>${sv("doc")}</i>Wyniki</button>${MODS.map(m=>`<button type="button" class="ib md" data-f="${m.id}" style="--c:${m.col}"><i><b>${m.n[0]}</b></i>${m.n}</button>`).join("")}</div>`;
+inn.innerHTML=`<div class="mx2"><span>Model w środku</span><button type="button" data-mx="1">Złożony – kilka modułów</button><button type="button" data-mx="0">Prosty – jeden moduł</button></div><div class="mx2 ex"><span>Strumień wyników</span>${["Linia","Liczby","Kod binarny","Symbole"].map((n,k)=>`<button type="button" data-sv="${k+1}">${k+1} · ${n}</button>`).join("")}</div><div class="mods"><button type="button" class="ib" data-f="db" style="--c:${DB.col}"><i>${sv("db")}</i>Baza danych</button><button type="button" class="ib" data-f="stat" style="--c:${HUB.col}"><i>${sv("sigma")}</i>ECL</button><button type="button" class="ib" data-f="wyn" style="--c:${WY.col}"><i>${sv("doc")}</i>Wyniki</button>${MODS.map(m=>`<button type="button" class="ib md" data-f="${m.id}" style="--c:${m.col}"><i><b>${m.n[0]}</b></i>${m.n}</button>`).join("")}</div>`;
 let CX=1;try{CX=localStorage.getItem("rt_mr_cx")==="0"?0:1}catch(_){}
 function setCX(v){CX=v;cube.classList.toggle("simple",!v);HUB.n=v?"ECL":"Model statystyczny";HUB.d=v?"Oczekiwana strata kredytowa – składa wyniki PD, LGD i EAD (z dyskontowaniem i scenariuszami), a SICR decyduje, czy liczymy ją w horyzoncie 12 miesięcy, czy w całym okresie życia.":"Jeden moduł: próba, segmentacja, zmienne, parametry, estymacja i wynik – bez rozbijania na części.";const hb=inn.querySelector('.ib[data-f="stat"]');if(hb)hb.lastChild.textContent=HUB.n;const on=document.querySelector(".ik.hub.on");if(on)panel(HUB);inn.querySelectorAll("[data-mx]").forEach(b=>b.classList.toggle("on",+b.dataset.mx===v));try{localStorage.setItem("rt_mr_cx",v)}catch(_){}
   const cur=document.querySelector(".ik.on");if(!v&&cur&&cur.classList.contains("m"))pick("stat",false)}
-inn.addEventListener("click",e=>{const b=e.target.closest("[data-mx]");if(b)setCX(+b.dataset.mx);const x=e.target.closest("[data-ex]");if(x)setEX(+x.dataset.ex)});
-function setEX(v){EX=v;try{localStorage.setItem("rt_mr_ex",v)}catch(_){}inn.querySelectorAll("[data-ex]").forEach(b=>b.classList.toggle("on",+b.dataset.ex===v));renderInner()}
+inn.addEventListener("click",e=>{const b=e.target.closest("[data-mx]");if(b)setCX(+b.dataset.mx);const x=e.target.closest("[data-sv]");if(x){SV=+x.dataset.sv;try{localStorage.setItem("rt_mr_sv",SV)}catch(_){}setEX(1)}});
+function setEX(v){EX=v;try{localStorage.setItem("rt_mr_ex",v)}catch(_){}inn.querySelectorAll("[data-sv]").forEach(b=>b.classList.toggle("on",+b.dataset.sv===SV));renderInner()}
 /* obrót – tylko na żądanie */
 let rx=-22,ry=-34;
 const NDS=[...cube.querySelectorAll(".nd")];let YB=[];
