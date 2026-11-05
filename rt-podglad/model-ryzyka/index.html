@@ -192,16 +192,32 @@
 .yb{position:absolute;pointer-events:none;display:grid;place-items:center}
 .sil{left:calc(var(--r)*-1);top:calc(var(--h)/-2);width:calc(var(--r)*2);height:var(--h);border-left:1.5px solid var(--c);border-right:1.5px solid var(--c);box-sizing:border-box}
 .sil b,.wl b{font-family:var(--display);font-weight:400;color:var(--c);font-size:calc(var(--s)*.03);letter-spacing:.04em}
-/* wyniki – wykres słupkowy */
-.wy{position:absolute;left:50%;top:50%;width:0;height:0;transform-style:preserve-3d;cursor:pointer}
-.pl{position:absolute;left:calc(var(--w)*-.5);top:calc(var(--w)*-.5);width:var(--w);height:var(--w);border:1.5px solid var(--c);border-radius:4px;background:color-mix(in srgb,var(--c) 8%,transparent);transform:rotateX(90deg)}
-.bar{position:absolute;left:0;top:0;width:0;height:0;transform-style:preserve-3d}
-.bar i{position:absolute;left:calc(var(--w)*-.1);top:calc(var(--bh)*-1);width:calc(var(--w)*.2);height:var(--bh);border:1.5px solid var(--c);box-sizing:border-box}
-.bar i.bt{top:calc(var(--w)*-.1);height:calc(var(--w)*.2);background:color-mix(in srgb,var(--c) 22%,transparent)}
-.wl{left:calc(var(--w)*-.6);top:calc(var(--w)*.06);width:calc(var(--w)*1.2);height:calc(var(--s)*.04)}
-.wy.on .pl,.wy.on .bar i{border-width:2.5px}
 .rod.res i{--fc:#a8823a;opacity:.6}.rod.res.on i{opacity:1}
 .v4 .sil b,.v4 .wl b{color:#fff}
+
+.inr{position:absolute;inset:0;transform-style:preserve-3d}
+/* tabela wyników */
+.tb{position:absolute;left:50%;top:50%;width:0;height:0;transform-style:preserve-3d;cursor:pointer}
+.tb i{position:absolute;left:0;top:0;border:1.5px solid var(--c);box-sizing:border-box;border-radius:2px}
+.tb i.g{background:linear-gradient(color-mix(in srgb,var(--c) 28%,transparent),color-mix(in srgb,var(--c) 28%,transparent)) top/100% 25% no-repeat,repeating-linear-gradient(180deg,transparent 0 calc(25% - 1px),color-mix(in srgb,var(--c) 70%,transparent) calc(25% - 1px) 25%),repeating-linear-gradient(90deg,transparent 0 calc(33.333% - 1px),color-mix(in srgb,var(--c) 55%,transparent) calc(33.333% - 1px) 33.333%)}
+.tb.on i{border-width:2.5px}
+.wl{left:calc(var(--s)*-.1);top:calc(var(--s)*.075);width:calc(var(--s)*.2);height:auto;display:flex!important;flex-direction:column;align-items:center}
+.wl small,.ah small{font-size:calc(var(--s)*.017);font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--c);white-space:nowrap}
+.port{position:absolute;left:calc(50% - var(--s)*.045);top:calc(50% - var(--s)*.045);width:calc(var(--s)*.09);height:calc(var(--s)*.09);border-radius:50%;border:2px solid #a8823a;background:radial-gradient(circle,rgba(168,130,58,.28),rgba(168,130,58,.06) 70%);box-shadow:0 0 0 calc(var(--s)*.012) rgba(168,130,58,.12)}
+.rod.out{height:calc(var(--s)*.009);margin-top:calc(var(--s)*-.0045)}.rod.out i{opacity:.95!important}
+.arw{position:absolute;left:50%;top:50%;width:0;height:0;transform-style:preserve-3d;--c:#a8823a}
+.ah{left:calc(var(--s)*-.25);top:calc(var(--s)*-.05);width:calc(var(--s)*.5);display:flex!important;flex-direction:column;align-items:center;gap:2px}
+.ah svg{width:calc(var(--s)*.06);height:calc(var(--s)*.06);fill:none;stroke:#a8823a;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+/* walec – łuki z przodu */
+.sil{--e:calc(var(--r)*.5)}
+.el{position:absolute;left:-1.5px;right:-1.5px;height:var(--e);border-radius:50%;border:1.5px solid var(--c);opacity:0;transition:opacity .3s}
+.el.lo{border-top-color:transparent}
+.cube.fr .el{opacity:1}
+.sil b{position:relative;margin-top:calc(var(--e)*.4)}
+.scene{--s:clamp(230px,28vw,410px)}
+@media(min-width:1101px){.scene{margin:calc(var(--s)*.55) calc(var(--s)*.42) calc(var(--s)*.36)}}
+@media(max-width:1100px){.scene{margin:calc(var(--s)*.55) auto calc(var(--s)*.36)}}
+.cube.simple .rod.out{opacity:1}
 </style>
 </head>
 <body>
@@ -266,7 +282,8 @@ const IC={id:'<rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy
  puzzle:'<path d="M5 8h3.2a1.8 1.8 0 1 1 3.6 0H15v3.2a1.8 1.8 0 1 1 0 3.6V18h-3.2a1.8 1.8 0 1 0-3.6 0H5v-3.2a1.8 1.8 0 1 0 0-3.6z"/>',
  doc:'<path d="M7 3.5h7l4 4v13H7z"/><path d="M14 3.5v4h4M9.5 12h6M9.5 15h6M9.5 18h3.5"/>',
  folder:'<path d="M3.5 7.5a2 2 0 0 1 2-2h4l2 2.2h7a2 2 0 0 1 2 2v8.3a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/><path d="M3.5 10.5h17"/>',
- code:'<path d="M8.5 7L3.5 12l5 5M15.5 7l5 5-5 5M13.5 4.5l-3 15"/>'};
+ code:'<path d="M8.5 7L3.5 12l5 5M15.5 7l5 5-5 5M13.5 4.5l-3 15"/>',
+ up:'<path d="M12 19V5M6 11l6-6 6 6"/>'};
 const COL={"01":"#bf8165","02":"#c9a24a","03":"#a6824c","04":"#4f7390","05":"#8a4f8f","06":"#6f7f58","07":"#c07a1f","08":"#8a7f60","09":"#5f8aa6","10":"#9a9176"};
 const sv=k=>`<svg viewBox="0 0 24 24" aria-hidden="true">${IC[k]}</svg>`;
 /* ściany bryły (sg – wybrane podgrupy komponentu) */
@@ -288,9 +305,9 @@ const MODS=[
  {id:"ead",n:"EAD",s:"ekspozycja · CCF",col:"#6f7f58",at:[.27,.17,-.18],k:.12,d:"Ekspozycja w chwili niewykonania zobowiązania, z uwzględnieniem wykorzystania limitów (CCF)."}];
 const LINKS=[["stat","pd"],["stat","lgd"],["stat","ead"],["stat","sicr"],["pd","ttc"],["pd","pit"],["pit","sicr"],["ttc","pit"]];
 MODS.forEach(m=>{m.p="Moduł modelu statystycznego";m.mod=1;m.c=[]});
-const DB={id:"db",n:"Baza danych",p:"W środku · zasilanie",c:["04"],col:"#4f7390",at:[.02,.3,-.02],r:.1,h:.13,d:"Dane, którymi model jest zasilany – do estymacji i produkcyjne. Strzałki pokazują, które moduły pobierają dane z bazy."};
+const DB={id:"db",n:"Baza danych",p:"W środku · zasilanie",c:["04"],col:"#4f7390",at:[.02,.36,-.02],r:.1,h:.12,d:"Dane, którymi model jest zasilany – do estymacji i produkcyjne. Strzałki pokazują, które moduły pobierają dane z bazy."};
 const FEEDS=[["db","stat"],["db","pd"],["db","lgd"],["db","ead"]];
-const WY={id:"wyn",n:"Wyniki",p:"W środku · wyniki",c:["05","02"],sg:{"05":["Wynik modelu"],"02":[""]},col:"#a8823a",at:[.08,-.25,-.02],w:.2,h:.14,d:"Tu trafiają wyniki każdego modułu – PD, TTC i PIT, LGD, EAD, koszyki z SICR i ECL – a dalej do odpisów, raportów i decyzji."};
+const WY={id:"wyn",n:"Wyniki",p:"Wyniki modelu",c:["05","02"],sg:{"05":["Wynik modelu"],"02":[""]},col:"#a8823a",at:[0,-.8,0],w:.2,h:.13,d:"Tu trafiają wyniki każdego modułu – PD, TTC i PIT, LGD, EAD, koszyki z SICR i ECL – a dalej do odpisów, raportów i decyzji."};
 const RES=[["stat","wyn"],["pd","wyn"],["ttc","wyn"],["pit","wyn"],["sicr","wyn"],["lgd","wyn"],["ead","wyn"]];
 const INNER=[HUB,...MODS];
 const ALL=[...FACES,...INNER,DB,WY],AI={};ALL.forEach(f=>AI[f.id]=f);
@@ -298,27 +315,41 @@ const cube=document.getElementById("cube"),scene=document.getElementById("scene"
 const H="calc(var(--s)/2)";
 const corners=[];for(const x of[-1,1])for(const y of[-1,1])for(const z of[-1,1])corners.push([x,y,z]);
 cube.innerHTML=FACES.map(f=>`<div class="fa" data-f="${f.id}" style="--c:${f.col};transform:${f.tf} translateZ(${H})"><div class="lb" data-f="${f.id}"><span class="ic">${sv(f.ic)}</span><span><small>${f.p}</small>${E(f.n)}</span></div></div>`).join("")
- +corners.map(([x,y,z])=>`<div class="nd" data-t="translate3d(calc(var(--s)*${x/2}),calc(var(--s)*${y/2}),calc(var(--s)*${z/2}))"><i></i></div>`).join("")
- +[...LINKS.map(l=>[...l,""]),...FEEDS.map(l=>[...l,"feed"]),...RES.map(l=>[...l,"feed res"])].map(([a,b,cl])=>{const P=id=>id==="stat"?[0,0,0]:id==="db"?[DB.at[0],DB.at[1]-DB.h/2,DB.at[2]]:id==="wyn"?[WY.at[0],WY.at[1]+WY.h*.15,WY.at[2]]:MODS.find(m=>m.id===id).at,A=P(a),B=P(b),dx=B[0]-A[0],dy=B[1]-A[1],dz=B[2]-A[2],h=Math.hypot(dx,dz),L=Math.hypot(dx,dy,dz),m=[a,b].some(x=>!["stat","db","wyn"].includes(x));
-   return`<div class="rod${cl?" "+cl:""}${m?" m":""}" data-l="${a} ${b}" style="width:calc(var(--s)*${L.toFixed(4)});transform:translate3d(calc(var(--s)*${A[0]}),calc(var(--s)*${A[1]}),calc(var(--s)*${A[2]})) rotateY(${(Math.atan2(-dz,dx)*180/Math.PI).toFixed(2)}deg) rotateZ(${(Math.atan2(dy,h)*180/Math.PI).toFixed(2)}deg)"><i></i><i style="transform:rotateX(90deg)"></i></div>`}).join("")
- +INNER.map(k=>{const at=k.at||[0,0,0],f=t=>`<div class="kf" style="transform:${t} translateZ(calc(var(--k)/2))"></div>`,
-   txt=k.mod?`<b>${E(k.n)}</b>`:`<span class="cx"><b class="ecl">ECL</b><small>model statystyczny</small></span><span class="sp"><span class="ki">${sv("sigma")}</span><b>Model<br>statystyczny</b></span>`,lab=(t,i)=>`<div class="kt i${i}" style="transform:${t} translateZ(calc(var(--k)/2 + 1px))">${txt}</div>`;
-   return`<div class="ik${k.mod?" m":" hub"}" data-f="${k.id}" style="--c:${k.col};--k:calc(var(--s)*${k.k||.26});transform:translate3d(calc(var(--s)*${at[0]}),calc(var(--s)*${at[1]}),calc(var(--s)*${at[2]})) scale3d(var(--sc,1),var(--sc,1),var(--sc,1))">${["rotateY(0deg)","rotateY(90deg)","rotateY(180deg)","rotateY(-90deg)","rotateX(90deg)","rotateX(-90deg)"].map(f).join("")}${["rotateY(0deg)","rotateY(90deg)","rotateY(180deg)","rotateY(-90deg)"].map(lab).join("")}</div>`}).join("")
- +`<div class="wy" data-f="wyn" style="--c:${WY.col};--w:calc(var(--s)*${WY.w});transform:translate3d(calc(var(--s)*${WY.at[0]}),calc(var(--s)*${WY.at[1]}),calc(var(--s)*${WY.at[2]}))"><div class="pl"></div>${[[-.32,.45],[0,.75],[.32,1]].map(([x,hh])=>{const bw=.2,hv=`calc(var(--w)*${(hh*.8).toFixed(3)})`,half=`calc(var(--w)*${bw/2})`;return`<div class="bar" style="--bh:${hv};transform:translateX(calc(var(--w)*${x}))">${["rotateY(0deg)","rotateY(90deg)","rotateY(180deg)","rotateY(-90deg)"].map(t=>`<i style="transform:${t} translateZ(${half})"></i>`).join("")}<i class="bt" style="transform:translateY(calc(var(--bh)*-1)) rotateX(90deg)"></i></div>`}).join("")}<div class="yb wl" data-t=""><b>Wyniki</b></div></div>`
- +`<div class="db" data-f="db" style="--c:${DB.col};--r:calc(var(--s)*${DB.r});--h:calc(var(--s)*${DB.h});transform:translate3d(calc(var(--s)*${DB.at[0]}),calc(var(--s)*${DB.at[1]}),calc(var(--s)*${DB.at[2]}))">${[-.5,-.17,.17,.5].map((y,i)=>`<div class="ring${i?"":" lid"}" style="transform:translateY(calc(var(--h)*${y})) rotateX(90deg)"></div>`).join("")}${Array.from({length:16},(_,i)=>`<div class="vl" style="transform:rotateY(${i*22.5}deg) translateZ(var(--r))"></div>`).join("")}<div class="yb sil" data-t=""><b>Dane</b></div></div>`;
+ +corners.map(([x,y,z])=>`<div class="nd" data-t="translate3d(calc(var(--s)*${x/2}),calc(var(--s)*${y/2}),calc(var(--s)*${z/2}))"><i></i></div>`).join("")+`<div class="inr" id="inr"></div>`;
+/* wyjście wyników – trzy propozycje */
+const EXITS={1:{n:"Przez dach",at:[0,-.8,0],port:[0,-.5,0],pt:"rotateX(90deg)"},2:{n:"Bokiem",at:[.82,-.12,0],port:[.5,-.12,0],pt:"rotateY(90deg)"},3:{n:"Strumień w górę",at:[0,-.3,0],out:[0,-.86,0]}};
+let EX=1;try{EX=+localStorage.getItem("rt_mr_ex")||1}catch(_){}
+const T3=a=>`translate3d(calc(var(--s)*${a[0]}),calc(var(--s)*${a[1]}),calc(var(--s)*${a[2]}))`;
+const rod=(A,B,cl,l)=>{const dx=B[0]-A[0],dy=B[1]-A[1],dz=B[2]-A[2],h=Math.hypot(dx,dz),L=Math.hypot(dx,dy,dz);
+  return`<div class="rod ${cl}" data-l="${l}" style="width:calc(var(--s)*${L.toFixed(4)});transform:${T3(A)} rotateY(${(Math.atan2(-dz,dx)*180/Math.PI).toFixed(2)}deg) rotateZ(${(Math.atan2(dy,h)*180/Math.PI).toFixed(2)}deg)"><i></i><i style="transform:rotateX(90deg)"></i></div>`};
+function table(){const W=WY.w,Ht=WY.h,D=.035,c=`calc(var(--s)*`;const face=(w,h,t,cl)=>`<i class="${cl}" style="width:${c}${w});height:${c}${h});margin:${c}${-h/2}) 0 0 ${c}${-w/2});transform:${t}"></i>`;
+  return`<div class="tb" data-f="wyn" style="--c:${WY.col};transform:${T3(WY.at)}">${face(W,Ht,`translateZ(${c}${D/2}))`,"g")}${face(W,Ht,`rotateY(180deg) translateZ(${c}${D/2}))`,"g")}${face(D,Ht,`rotateY(90deg) translateZ(${c}${W/2}))`,"")}${face(D,Ht,`rotateY(-90deg) translateZ(${c}${W/2}))`,"")}${face(W,D,`rotateX(90deg) translateZ(${c}${Ht/2}))`,"")}${face(W,D,`rotateX(-90deg) translateZ(${c}${Ht/2}))`,"")}<div class="yb wl" data-t=""><b>Wyniki</b>${EX!==3?"<small>opuszczają model</small>":""}</div></div>`}
+function renderInner(){const X=EXITS[EX];WY.at=X.at;const tgt=X.port||X.at;
+  const P=id=>id==="stat"?[0,0,0]:id==="db"?[DB.at[0],DB.at[1]-DB.h/2,DB.at[2]]:id==="wyn"?tgt:MODS.find(m=>m.id===id).at;
+  let h=[...LINKS.map(l=>[...l,""]),...FEEDS.map(l=>[...l,"feed"]),...RES.map(l=>[...l,"feed res"])].map(([a,b,cl])=>{const m=[a,b].some(x=>!["stat","db","wyn"].includes(x));return rod(P(a),P(b),cl+(m?" m":""),a+" "+b)}).join("");
+  if(X.port)h+=rod(X.port,X.at,"feed res out","wyn out")+`<div class="port" style="transform:${T3(X.port)} ${X.pt}"></div>`;
+  if(X.out)h+=rod([X.at[0],X.at[1]-WY.h/2,X.at[2]],X.out,"feed res out","wyn out")+`<div class="port" style="transform:${T3([0,-.5,0])} rotateX(90deg)"></div><div class="arw" style="transform:${T3(X.out)}"><div class="yb ah" data-t="">${sv("up")}<small>do odpisów, raportów i decyzji</small></div></div>`;
+  h+=INNER.map(k=>{const at=k.at||[0,0,0],f=t=>`<div class="kf" style="transform:${t} translateZ(calc(var(--k)/2))"></div>`,
+   txt=k.mod?`<b>${E(k.n)}</b>`:`<span class="cx"><b class="ecl">ECL</b></span><span class="sp"><span class="ki">${sv("sigma")}</span><b>Model<br>statystyczny</b></span>`,lab=(t,i)=>`<div class="kt i${i}" style="transform:${t} translateZ(calc(var(--k)/2 + 1px))">${txt}</div>`;
+   return`<div class="ik${k.mod?" m":" hub"}" data-f="${k.id}" style="--c:${k.col};--k:calc(var(--s)*${k.k||.26});transform:${T3(at)} scale3d(var(--sc,1),var(--sc,1),var(--sc,1))">${["rotateY(0deg)","rotateY(90deg)","rotateY(180deg)","rotateY(-90deg)","rotateX(90deg)","rotateX(-90deg)"].map(f).join("")}${["rotateY(0deg)","rotateY(90deg)","rotateY(180deg)","rotateY(-90deg)"].map(lab).join("")}</div>`}).join("")
+   +table()
+   +`<div class="db" data-f="db" style="--c:${DB.col};--r:calc(var(--s)*${DB.r});--h:calc(var(--s)*${DB.h});transform:${T3(DB.at)}">${[-.5,-.17,.17,.5].map((y,i)=>`<div class="ring${i?"":" lid"}" style="transform:translateY(calc(var(--h)*${y})) rotateX(90deg)"></div>`).join("")}${Array.from({length:16},(_,i)=>`<div class="vl" style="transform:rotateY(${i*22.5}deg) translateZ(var(--r))"></div>`).join("")}<div class="yb sil" data-t="">${[-.5,-.17,.17,.5].map((y,i)=>`<span class="el${i?" lo":""}" style="top:calc(var(--h)*${y+.5} - var(--e)/2)"></span>`).join("")}<b>Dane</b></div></div>`;
+  document.getElementById("inr").innerHTML=h;YB=[...cube.querySelectorAll(".yb")];
+  const sel=document.querySelector(".fb.on,.ib.on");if(sel)pick(sel.dataset.f,false);if(typeof set==="function")set()}
 const fb=f=>`<button type="button" class="fb" data-f="${f.id}" style="--c:${f.col}"><span class="ic">${sv(f.ic)}</span><span><small>${f.p}</small><b>${E(f.n)}</b></span></button>`;
 document.getElementById("sl").innerHTML=FACES.slice(0,3).map(fb).join("");document.getElementById("sr").innerHTML=FACES.slice(3).map(fb).join("");
 const inn=document.getElementById("inn");
-inn.innerHTML=`<div class="mx2"><span>Model w środku</span><button type="button" data-mx="1">Złożony – kilka modułów</button><button type="button" data-mx="0">Prosty – jeden moduł</button></div><div class="mods"><button type="button" class="ib" data-f="db" style="--c:${DB.col}"><i>${sv("db")}</i>Baza danych</button><button type="button" class="ib" data-f="stat" style="--c:${HUB.col}"><i>${sv("sigma")}</i>ECL</button><button type="button" class="ib" data-f="wyn" style="--c:${WY.col}"><i>${sv("doc")}</i>Wyniki</button>${MODS.map(m=>`<button type="button" class="ib md" data-f="${m.id}" style="--c:${m.col}"><i><b>${m.n[0]}</b></i>${m.n}</button>`).join("")}</div>`;
+inn.innerHTML=`<div class="mx2"><span>Model w środku</span><button type="button" data-mx="1">Złożony – kilka modułów</button><button type="button" data-mx="0">Prosty – jeden moduł</button></div><div class="mx2 ex"><span>Wyjście wyników</span>${Object.entries(EXITS).map(([k,v])=>`<button type="button" data-ex="${k}">${k} · ${v.n}</button>`).join("")}</div><div class="mods"><button type="button" class="ib" data-f="db" style="--c:${DB.col}"><i>${sv("db")}</i>Baza danych</button><button type="button" class="ib" data-f="stat" style="--c:${HUB.col}"><i>${sv("sigma")}</i>ECL</button><button type="button" class="ib" data-f="wyn" style="--c:${WY.col}"><i>${sv("doc")}</i>Wyniki</button>${MODS.map(m=>`<button type="button" class="ib md" data-f="${m.id}" style="--c:${m.col}"><i><b>${m.n[0]}</b></i>${m.n}</button>`).join("")}</div>`;
 let CX=1;try{CX=localStorage.getItem("rt_mr_cx")==="0"?0:1}catch(_){}
 function setCX(v){CX=v;cube.classList.toggle("simple",!v);HUB.n=v?"ECL":"Model statystyczny";HUB.d=v?"Oczekiwana strata kredytowa – składa wyniki PD, LGD i EAD (z dyskontowaniem i scenariuszami), a SICR decyduje, czy liczymy ją w horyzoncie 12 miesięcy, czy w całym okresie życia.":"Jeden moduł: próba, segmentacja, zmienne, parametry, estymacja i wynik – bez rozbijania na części.";const hb=inn.querySelector('.ib[data-f="stat"]');if(hb)hb.lastChild.textContent=HUB.n;const on=document.querySelector(".ik.hub.on");if(on)panel(HUB);inn.querySelectorAll("[data-mx]").forEach(b=>b.classList.toggle("on",+b.dataset.mx===v));try{localStorage.setItem("rt_mr_cx",v)}catch(_){}
   const cur=document.querySelector(".ik.on");if(!v&&cur&&cur.classList.contains("m"))pick("stat",false)}
-inn.addEventListener("click",e=>{const b=e.target.closest("[data-mx]");if(b)setCX(+b.dataset.mx)});
+inn.addEventListener("click",e=>{const b=e.target.closest("[data-mx]");if(b)setCX(+b.dataset.mx);const x=e.target.closest("[data-ex]");if(x)setEX(+x.dataset.ex)});
+function setEX(v){EX=v;try{localStorage.setItem("rt_mr_ex",v)}catch(_){}inn.querySelectorAll("[data-ex]").forEach(b=>b.classList.toggle("on",+b.dataset.ex===v));renderInner()}
 /* obrót – tylko na żądanie */
 let rx=-22,ry=-34;
-const NDS=[...cube.querySelectorAll(".nd")],YB=[...cube.querySelectorAll(".yb")];
+const NDS=[...cube.querySelectorAll(".nd")];let YB=[];
 function place(){}
-const set=()=>{cube.classList.remove("ease");YB.forEach(b=>b.style.transform=`rotateY(${-ry}deg)`);cube.dataset.lf=Math.round((((-ry)%360)+360)%360/90)%4;cube.style.transform=`rotateX(${rx}deg) rotateY(${ry}deg)`;NDS.forEach(n=>{n.style.transition="none";n.style.transform=`${n.dataset.t} rotateY(${-ry}deg) rotateX(${-rx}deg)`});place()};set();addEventListener("resize",place);
+const set=()=>{cube.classList.remove("ease");cube.classList.toggle("fr",Math.abs(rx)<16);YB.forEach(b=>b.style.transform=`rotateY(${-ry}deg)`);cube.dataset.lf=Math.round((((-ry)%360)+360)%360/90)%4;cube.style.transform=`rotateX(${rx}deg) rotateY(${ry}deg)`;NDS.forEach(n=>{n.style.transition="none";n.style.transform=`${n.dataset.t} rotateY(${-ry}deg) rotateX(${-rx}deg)`});place()};set();addEventListener("resize",place);
 const near=v=>ry+((((v-ry)%360)+540)%360-180);
 let tw=0;function anim(x,y){cancelAnimationFrame(tw);const x0=rx,y0=ry,t0=performance.now(),D=matchMedia("(prefers-reduced-motion: reduce)").matches?1:700;
   const st=t=>{const k=Math.min(1,(t-t0)/D),e=k<.5?4*k*k*k:1-Math.pow(-2*k+2,3)/2;rx=x0+(x-x0)*e;ry=y0+(y-y0)*e;set();if(k<1)tw=requestAnimationFrame(st)};tw=requestAnimationFrame(st)}
@@ -342,7 +373,7 @@ function panel(f){pan.style.setProperty("--c",f.col);
   if(f.mod){const nb=LINKS.filter(l=>l.includes(f.id)).map(l=>l[0]===f.id?l[1]:l[0]).map(id=>AI[id]);
     pan.innerHTML=`<div class="pan-h"><div><span class="kick">${f.p}</span><h2>${E(f.n)} <span class="pmod">${E(f.s)}</span></h2></div><p>${E(f.d)}</p></div><div class="cmp"><div class="cm" style="--k:${f.col}"><div class="sgb"><span>Połączony z</span><div class="it">${nb.map(x=>`<i class="lnk" data-go="${x.id}">${E(x.n)}</i>`).join("")}</div></div></div></div>`;return}
   pan.innerHTML=`<div class="pan-h"><div><span class="kick">${f.p}${f.v?" bryły":""} · ${f.c.map(k=>"#"+k).join(" · ")}</span><h2>${E(f.n)}</h2></div><p>${E(f.d)}</p></div><div class="cmp">${f.c.map(k=>{const r=MI[k],sgs=f.sg&&f.sg[k]?r[4].filter(x=>f.sg[k].includes(x[0])):r[4];return`<div class="cm" style="--k:${COL[k]}"><div class="cm-h"><span class="ic">${sv(r[2])}</span><span><em>#${r[0]}</em><b>${E(r[1])}</b><span>${f.sg&&f.sg[k]?"Wybrane: "+E(f.sg[k].join(", ")):E(r[3])}</span></span></div><div class="sg">${sgs.map(s=>`<div class="sgb">${s[0]?`<span>${E(s[0])}</span>`:""}<div class="it">${s[1].map(i=>`<i>${E(i[0])}${i[1]?`<small>${E(i[1])}</small>`:""}</i>`).join("")}</div></div>`).join("")}</div></div>`}).join("")}</div>`}
-setCX(CX);pick("stat",false);
+setEX(EX);setCX(CX);pick("stat",false);
 })();
 </script>
 <script src="../rt.js"></script>
