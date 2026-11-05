@@ -582,6 +582,20 @@
 .tb.on .wc{stroke-width:2}
 .port{width:calc(var(--s)*.036)!important;height:calc(var(--s)*.036)!important;left:calc(50% - var(--s)*.018)!important;top:calc(50% - var(--s)*.018)!important;border:1.2px solid rgba(168,130,58,.8)!important;background:rgba(255,253,249,.6)!important;box-shadow:none!important}
 .rod.out{height:calc(var(--s)*.004)!important;margin-top:calc(var(--s)*-.002)!important}.rod.out i{opacity:.55!important}
+.rozb{display:none!important}
+.duo{display:flex;align-items:center;justify-content:center;gap:clamp(10px,2vw,40px)}
+.duo .scene{--s:clamp(200px,24vw,360px)}
+.sc2w{position:relative}
+.duo .sc2{--s:clamp(160px,18vw,270px)!important;cursor:pointer;margin-right:calc(var(--s)*1.15)!important}
+.sc2 .sll b{font-size:13px}
+.sc2::after{display:none}
+.sc2 .slab .slf{transition:border-width .2s!important}
+@media(max-width:900px){.duo{flex-direction:column}}
+.sl2{position:absolute;inset:0;pointer-events:none}
+.sl2b{position:absolute;transform:translateY(-50%);pointer-events:auto;font:inherit;font-size:13px;font-weight:600;color:var(--ink);background:none;border:0;padding:2px 4px;display:flex;align-items:center;gap:8px;white-space:nowrap;cursor:pointer}
+.sl2b .fcd-i{width:22px;height:22px;margin:0;border-radius:7px}
+.sl2b:hover{color:var(--c)}
+.sl2b::before{content:"";position:absolute;right:100%;top:50%;width:12px;height:1px;background:var(--c);opacity:.6}
 </style>
 </head>
 <body>
@@ -605,7 +619,7 @@
   <div class="stage">
     <div class="side l" id="sl"></div>
     <div class="mcol">
-      <div class="scene v2" id="scene" aria-label="Model ryzyka – sześcian"><div class="cube" id="cube"></div></div>
+      <div class="duo"><div class="scene v2" id="scene" aria-label="Model ryzyka – sześcian"><div class="cube" id="cube"></div></div><div class="sc2w"><div class="scene v2 sc2" id="scene2" aria-label="Warstwy modelu"><div class="cube" id="cube2"></div></div></div></div>
       <div class="ctl" id="ctl">
         <button type="button" class="ar" data-r="0,-30" aria-label="Obróć w lewo" title="Obróć w lewo">⟲</button>
         <button type="button" class="ar" data-r="0,30" aria-label="Obróć w prawo" title="Obróć w prawo">⟳</button>
@@ -782,6 +796,7 @@ setEX(EX);setCX(CX);pick("stat",false);
     return[["rotateX(90deg)",W,W,T,cap(true)],["rotateX(-90deg)",W,W,T,cap(false)],["rotateY(0deg)",W,T,W,"slf sd"],["rotateY(180deg)",W,T,W,"slf sd"],["rotateY(90deg)",W,T,W,"slf sd"],["rotateY(-90deg)",W,T,W,"slf sd"]].map(([r,w,h,z,c])=>`<i class="${c}${k===5?" tk":""}${k===0?" bk":""}" style="--gp:${((5-k)/5*100).toFixed(1)}%;width:${w};height:${h};margin:calc(${h}/-2) 0 0 calc(${w}/-2);transform:${r} translateZ(calc(${z}/2))"></i>`).join("")};
   cube.insertAdjacentHTML("beforeend",`<div class="lay">${LO.map((id,k)=>{const f=FACES[FI[id]];return`<div class="slab" data-f="${id}" data-y="${(.5-(k+.5)/6).toFixed(4)}" style="--c:${f.col}">${box(1/6,k)}<div class="sll"><span class="fcd-i">${sv(f.ic)}</span><b>${E(f.n)}</b></div></div>`}).join("")}</div>`);
   const SL=[...cube.querySelectorAll(".slab")],LL=[...cube.querySelectorAll(".sll")];
+  const c2=document.getElementById("cube2");c2.appendChild(cube.querySelector(".lay"));c2.dataset.st="lay";c2.dataset.rz="lay";
   const NET={top:[0,-1],left:[-1,0],front:[0,0],right:[1,0],back:[2,0],bottom:[0,1]};
   function T(f,i,m){const base=`${f.tf} translateZ(calc(${S}/2))`;
     if(m==="ex")return`${f.tf} translateZ(calc(${S}*.82)) scale(.82)`;
@@ -791,21 +806,18 @@ setEX(EX);setCX(CX);pick("stat",false);
     return base}
   const CAM={ex:[-22,-34],net:[0,0],lay:[-16,-30],flw:[-50,-30],orb:[-12,-30],"":[-22,-34]};
   let M="",HV=null,busy=false,tm=[];const btn=document.getElementById("rzgo");
-  function slabs(spread){SL.forEach(sl=>{const y=+sl.dataset.y;sl.style.transform=`translate3d(calc(${S}*${sl===HV?.12:0}),calc(${S}*${(spread?y*1.38:y).toFixed(4)}),0)`})}
+  function slabs(spread){SL.forEach(sl=>{const y=+sl.dataset.y;sl.style.transform=`translate3d(calc(${S}*${sl===HV?.12:0}),calc(${S}*${(spread?y*1.32:y).toFixed(4)}),0)`})}
   const later=(f,ms)=>tm.push(setTimeout(f,ms));
-  function open(){busy=true;M="lay";btn.textContent="Złóż model";cube.dataset.st="fade";
-    later(()=>{cube.dataset.st="stack";slabs(false)},1350);
-    later(()=>{cube.dataset.st="cut"},1900);
-    later(()=>{cube.dataset.st="lay";cube.dataset.rz="lay";slabs(true);busy=false},2500)}
-  function close(){busy=true;M="";btn.textContent="Rozłóż model na warstwy";HV=null;slabs(false);cube.dataset.st="cut";
-    later(()=>{cube.dataset.st="stack";cube.dataset.rz=""},1300);
-    later(()=>{cube.dataset.st="fade"},1900);
-    later(()=>{cube.dataset.st="";busy=false},2500)}
-  btn.addEventListener("click",()=>{if(busy)return;M?close():open()});
-  cube.addEventListener("pointerover",e=>{if(cube.dataset.st!=="lay")return;const sl=e.target.closest(".slab");if(sl!==HV){HV=sl;slabs(true)}});
-  cube.addEventListener("pointerleave",()=>{if(HV){HV=null;if(cube.dataset.st==="lay")slabs(true)}});
-  cube.dataset.st="";slabs(false);
-  const oset=set;set=function(){oset();LL.forEach(l=>l.style.transform=`translateX(calc(${S}*.47)) rotateY(${-ry}deg) rotateX(${-rx}deg)`)};
+  c2.addEventListener("pointerover",e=>{const sl=e.target.closest(".slab");if(sl!==HV){HV=sl;slabs(true)}});
+  c2.addEventListener("pointerleave",()=>{HV=null;slabs(true)});
+  c2.addEventListener("click",e=>{const sl=e.target.closest(".slab");if(sl){pick(sl.dataset.f,false);SL.forEach(x=>x.classList.toggle("on",x===sl))}});
+  slabs(true);
+  const sc2=document.getElementById("scene2"),ov=document.createElement("div");ov.className="sl2";sc2.parentNode.appendChild(ov);
+  ov.innerHTML=SL.map(sl=>{const f=FACES[FI[sl.dataset.f]];return`<button type="button" class="sl2b" data-f="${f.id}" style="--c:${f.col}"><span class="fcd-i">${sv(f.ic)}</span>${E(f.n)}</button>`}).join("");LL.forEach(l=>l.remove());
+  const OB=[...ov.children];ov.addEventListener("click",e=>{const b=e.target.closest(".sl2b");if(b){pick(b.dataset.f,false);SL.forEach(x=>x.classList.toggle("on",x.dataset.f===b.dataset.f))}});
+  ov.addEventListener("pointerover",e=>{const b=e.target.closest(".sl2b");const sl=b?SL.find(x=>x.dataset.f===b.dataset.f):null;if(sl!==HV){HV=sl;slabs(true)}});
+  function lbl(){const W=sc2.parentNode.getBoundingClientRect();SL.forEach((sl,k)=>{const rs=[...sl.querySelectorAll(".slf")].map(x=>x.getBoundingClientRect()),R=Math.max(...rs.map(r=>r.right)),T=Math.min(...rs.map(r=>r.top)),B=Math.max(...rs.map(r=>r.bottom));const b=OB[k];b.style.left=(R-W.left+18)+"px";b.style.top=((T+B)/2-W.top)+"px"})}
+  const oset=set;set=function(){oset();c2.style.transform=cube.style.transform;lbl()};set();setTimeout(lbl,1300);addEventListener("resize",()=>setTimeout(lbl,50));
 })();
 
 /* środowisko produkcyjne: szklana skrzynia, tryby i mniejsza kopia modelu */
