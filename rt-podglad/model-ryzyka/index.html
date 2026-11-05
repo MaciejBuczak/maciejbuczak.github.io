@@ -574,6 +574,14 @@
 .rod.res i{background:#a8823a!important;opacity:.75!important}
 .rod i{background:rgba(13,13,13,.4)}
 .jn{position:absolute;left:50%;top:50%;width:0;height:0}
+.wcard{left:calc(var(--s)*-.12);top:calc(var(--s)*-.076);width:calc(var(--s)*.24);height:calc(var(--s)*.152)}
+.wcard svg{width:100%;height:100%;overflow:visible}
+.wc{fill:rgba(255,253,249,.82);stroke:#a8823a;stroke-width:1.3}.wh{stroke:#a8823a;stroke-width:1}
+.wcard text{font-family:var(--body);font-weight:600;font-size:8.5px;letter-spacing:.22em;fill:#8a6a2c}
+.wr{stroke:rgba(168,130,58,.45);stroke-width:1.2;stroke-linecap:round}
+.tb.on .wc{stroke-width:2}
+.port{width:calc(var(--s)*.036)!important;height:calc(var(--s)*.036)!important;left:calc(50% - var(--s)*.018)!important;top:calc(50% - var(--s)*.018)!important;border:1.2px solid rgba(168,130,58,.8)!important;background:rgba(255,253,249,.6)!important;box-shadow:none!important}
+.rod.out{height:calc(var(--s)*.004)!important;margin-top:calc(var(--s)*-.002)!important}.rod.out i{opacity:.55!important}
 </style>
 </head>
 <body>
@@ -706,15 +714,17 @@ cube.innerHTML=FACES.map(f=>`<div class="fa" data-f="${f.id}" style="--c:${f.col
 const EXITS={1:{n:"Przez dach",at:[0,-.8,0],port:[0,-.5,0],pt:"rotateX(90deg)"},2:{n:"Bokiem",at:[.82,-.12,0],port:[.5,-.12,0],pt:"rotateY(90deg)"},3:{n:"Strumień w górę",at:[0,-.3,0],out:[0,-.86,0]}};
 let EX=1;try{EX=+localStorage.getItem("rt_mr_ex")||1}catch(_){}
 const T3=a=>`translate3d(calc(var(--s)*${a[0]}),calc(var(--s)*${a[1]}),calc(var(--s)*${a[2]}))`;
-const rod=(A,B,cl,l)=>{const ax=["x","y","z"].map((_,i)=>Math.abs(B[i]-A[i])),P1=[B[0],A[1],A[2]],P2=[B[0],A[1],B[2]];if(ax.filter(v=>v>.004).length>1)return[[A,P1],[P1,P2],[P2,B]].filter(([u,v])=>Math.hypot(v[0]-u[0],v[1]-u[1],v[2]-u[2])>.002).map(([u,v])=>seg(u,v,cl,l)).join("")+`<i class="jn" style="transform:${T3(P1)}"></i><i class="jn" style="transform:${T3(P2)}"></i>`;return seg(A,B,cl,l)};
+const rod=(A,B,cl,l,sa=0,sb=0)=>{const E2=.004,d=(u,v)=>Math.hypot(v[0]-u[0],v[1]-u[1],v[2]-u[2]);let pts=[A,[B[0],A[1],A[2]],[B[0],A[1],B[2]],B].filter((p,i,a)=>i===0||d(a[i-1],p)>E2);if(pts.length<2)return"";
+  const mv=(p,q,t)=>{const L=d(p,q)||1;return p.map((v,i)=>v+(q[i]-v)*Math.min(t,L*.45)/L)};pts[0]=mv(pts[0],pts[1],sa);const n=pts.length-1;pts[n]=mv(pts[n],pts[n-1],sb);
+  let h="";for(let i=0;i<n;i++)h+=seg(pts[i],pts[i+1],cl,l);return h};
 const seg=(A,B,cl,l)=>{const dx=B[0]-A[0],dy=B[1]-A[1],dz=B[2]-A[2],h=Math.hypot(dx,dz),L=Math.hypot(dx,dy,dz);
   return`<div class="rod ${cl}" data-l="${l}" style="width:calc(var(--s)*${L.toFixed(4)});transform:${T3(A)} rotateY(${(Math.atan2(-dz,dx)*180/Math.PI).toFixed(2)}deg) rotateZ(${(Math.atan2(dy,h)*180/Math.PI).toFixed(2)}deg)"><i></i><i style="transform:rotateX(90deg)"></i></div>`};
-function table(){const W=WY.w,Ht=WY.h,D=.035,c=`calc(var(--s)*`;const face=(w,h,t,cl)=>`<i class="${cl}" style="width:${c}${w});height:${c}${h});margin:${c}${-h/2}) 0 0 ${c}${-w/2});transform:${t}"></i>`;
-  return`<div class="tb" data-f="wyn" style="--c:${WY.col};transform:${T3(WY.at)}">${face(W,Ht,`translateZ(${c}${D/2}))`,"g")}${face(W,Ht,`rotateY(180deg) translateZ(${c}${D/2}))`,"g")}${face(D,Ht,`rotateY(90deg) translateZ(${c}${W/2}))`,"")}${face(D,Ht,`rotateY(-90deg) translateZ(${c}${W/2}))`,"")}${face(W,D,`rotateX(90deg) translateZ(${c}${Ht/2}))`,"")}${face(W,D,`rotateX(-90deg) translateZ(${c}${Ht/2}))`,"")}<div class="yb wl" data-t=""><b>Wyniki</b>${EX!==3?"<small>opuszczają model</small>":""}</div></div>`}
+function table(){return`<div class="tb" data-f="wyn" style="--c:${WY.col};transform:${T3(WY.at)}"><div class="yb wcard" data-t=""><svg viewBox="0 0 120 76" aria-hidden="true"><rect class="wc" x="1" y="1" width="118" height="74" rx="9"/><path class="wh" d="M1 26H119"/><text x="60" y="17.5" text-anchor="middle">WYNIKI</text><path class="wr" d="M14 40H106M14 51H92M14 62H100"/></svg></div></div>`}
 function renderInner(){const X=EXITS[EX];WY.at=X.at;const tgt=X.port||X.at;
   const P=id=>id==="stat"?[0,0,0]:id==="db"?[DB.at[0],DB.at[1]-DB.h/2,DB.at[2]]:id==="wyn"?tgt:MODS.find(m=>m.id===id).at;
-  let h=[...LINKS.map(l=>[...l,""]),...FEEDS.map(l=>[...l,"feed"]),...RES.map(l=>[...l,"feed res"])].map(([a,b,cl])=>{const m=[a,b].some(x=>!["stat","db","wyn"].includes(x));return rod(P(a),P(b),cl+(m?" m":""),a+" "+b)}).join("");
-  if(X.port)h+=rod(X.port,X.at,"feed res out","wyn out")+`<div class="port" style="transform:${T3(X.port)} ${X.pt}"></div>`;
+  const HS=id=>id==="stat"?.26*(CX?.6:1)/2:id==="db"||id==="wyn"?0:MODS.find(m=>m.id===id).k/2;
+  let h=[...LINKS.map(l=>[...l,""]),...FEEDS.map(l=>[...l,"feed"]),...RES.map(l=>[...l,"feed res"])].map(([a,b,cl])=>{const m=[a,b].some(x=>!["stat","db","wyn"].includes(x));return rod(P(a),P(b),cl+(m?" m":""),a+" "+b,HS(a),HS(b))}).join("");
+  if(X.port)h+=rod(X.port,X.at,"feed res out","wyn out",.018,.075)+`<div class="port" style="transform:${T3(X.port)} ${X.pt}"></div>`;
   if(X.out)h+=rod([X.at[0],X.at[1]-WY.h/2,X.at[2]],X.out,"feed res out","wyn out")+`<div class="port" style="transform:${T3([0,-.5,0])} rotateX(90deg)"></div><div class="arw" style="transform:${T3(X.out)}"><div class="yb ah" data-t="">${sv("up")}<small>do odpisów, raportów i decyzji</small></div></div>`;
   h+=INNER.map(k=>{const at=k.at||[0,0,0],f=t=>`<div class="kf" style="transform:${t} translateZ(calc(var(--k)/2))"></div>`,
    txt=k.mod?`<b>${E(k.n)}</b>`:`<span class="cx"><b class="ecl">ECL</b></span><span class="sp"><span class="ki">${sv("sigma")}</span><b>Model<br>statystyczny</b></span>`,lab=(t,i)=>`<div class="kt i${i}" style="transform:${t} translateZ(calc(var(--k)/2 + 1px))">${txt}</div>`;
