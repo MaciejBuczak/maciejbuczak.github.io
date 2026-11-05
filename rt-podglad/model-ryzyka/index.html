@@ -545,6 +545,31 @@
 .slab.on .slf{border-width:2.5px!important}
 .sll{opacity:0;transition:opacity .5s}
 .cube[data-st="lay"] .sll{opacity:1;transition-delay:.7s}
+
+/* dzielenie kostki: warstwy wyglądają jak ta sama szklana bryła, potem się rozcinają */
+.lay{transition:none!important}
+.cube[data-st="stack"] .lay,.cube[data-st="cut"] .lay,.cube[data-st="lay"] .lay{opacity:1;pointer-events:auto}
+.cube .fa{transition:transform 1s cubic-bezier(.65,0,.25,1)!important}
+.cube[data-st="stack"] .fa,.cube[data-st="cut"] .fa,.cube[data-st="lay"] .fa{opacity:0!important}
+.slf{box-sizing:border-box;border-radius:0!important;border:1px solid rgba(13,13,13,.2)!important;transition:border-color 1s ease,background-color 1s ease,opacity .6s ease,box-shadow 1s ease!important}
+.slf.sd{background:linear-gradient(150deg,rgba(255,255,255,.34),rgba(255,253,249,.06) 55%,rgba(191,129,101,.05)) 0 var(--gp)/100% 600% no-repeat!important;border-top-color:transparent!important;border-bottom-color:transparent!important;box-shadow:inset calc(var(--s)*.012) 0 0 rgba(255,255,255,.3),inset calc(var(--s)*-.012) 0 0 rgba(255,255,255,.3)}
+.slf.sd.tk{border-top-color:rgba(13,13,13,.2)!important;border-top-left-radius:calc(var(--s)*.05)!important;border-top-right-radius:calc(var(--s)*.05)!important}
+.slf.sd.bk{border-bottom-color:rgba(13,13,13,.2)!important;border-bottom-left-radius:calc(var(--s)*.05)!important;border-bottom-right-radius:calc(var(--s)*.05)!important}
+.slf.cap.out{background:linear-gradient(150deg,rgba(255,255,255,.34),rgba(255,253,249,.06) 55%,rgba(191,129,101,.05))!important;border-radius:calc(var(--s)*.05)!important}
+.slf.cap.cut{opacity:0;background:none!important}
+.cube[data-st="cut"] .slf.cap.cut{opacity:1}
+.cube[data-st="cut"] .slf.sd{border-top-color:rgba(13,13,13,.2)!important;border-bottom-color:rgba(13,13,13,.2)!important}
+.cube[data-st="lay"] .slf{background-color:transparent!important;background-image:none!important;box-shadow:none!important;border-color:var(--c)!important;border-width:1.5px!important;opacity:1}
+.cube[data-st="lay"] .slf.cap.cut{opacity:1}
+.cube[data-st="lay"] .slab.hv .slf{border-width:2.5px!important}
+.slab{transition:transform 1.2s cubic-bezier(.45,0,.2,1)!important}
+.cube[data-st="lay"] .sll{opacity:1;transition:opacity .6s .9s}
+.cube[data-st="cut"] .inr{opacity:0!important;pointer-events:none}
+.cube[data-st="lay"] .slf{border-radius:0!important}
+.slf{transition:border-color 1s ease,background-color 1s ease,opacity .6s ease,box-shadow 1s ease,border-radius .8s ease!important}
+.lay{transition:opacity .5s ease!important}
+.cube .fa{transition:transform 1s cubic-bezier(.65,0,.25,1),opacity .5s ease!important}
+.slf.sd{opacity:1}
 </style>
 </head>
 <body>
@@ -738,8 +763,9 @@ setEX(EX);setCX(CX);pick("stat",false);
     const card=`<span class="fcd-i">${sv(f.ic)}</span><small>${f.p}</small><b>${E(f.n)}</b><ul>${subs.map(x=>`<li>${E(x)}</li>`).join("")}</ul>`;el.insertAdjacentHTML("beforeend",`<div class="fcd fin" data-f="${f.id}" style="--c:${f.col};transform:${f.id==="back"?"rotateY(180deg)":"rotateX(180deg)"}">${card}</div>`);
     el.insertAdjacentHTML("beforeend",`<div class="fcd" data-f="${f.id}" style="--c:${f.col}"><span class="fcd-i">${sv(f.ic)}</span><small>${f.p}</small><b>${E(f.n)}</b><ul>${subs.map(x=>`<li>${E(x)}</li>`).join("")}</ul></div>`)});
   const LO=["bottom","left","front","right","back","top"];
-  const box=(t)=>{const W=`calc(${S}*1)`,T=`calc(${S}*${t})`;return[["rotateX(90deg)",W,W,T],["rotateX(-90deg)",W,W,T],["rotateY(0deg)",W,T,W],["rotateY(180deg)",W,T,W],["rotateY(90deg)",W,T,W],["rotateY(-90deg)",W,T,W]].map(([r,w,h,z])=>`<i class="slf" style="width:${w};height:${h};margin:calc(${h}/-2) 0 0 calc(${w}/-2);transform:${r} translateZ(calc(${z}/2))"></i>`).join("")};
-  cube.insertAdjacentHTML("beforeend",`<div class="lay">${LO.map((id,k)=>{const f=FACES[FI[id]];return`<div class="slab" data-f="${id}" data-y="${(.5-(k+.5)/6).toFixed(4)}" style="--c:${f.col}">${box(1/6)}<div class="sll"><span class="fcd-i">${sv(f.ic)}</span><b>${E(f.n)}</b></div></div>`}).join("")}</div>`);
+  const box=(t,k)=>{const W=`calc(${S}*1)`,T=`calc(${S}*${t})`,cap=(up)=>{const outer=up?k===5:k===0;return`slf cap ${outer?"out":"cut"}`};
+    return[["rotateX(90deg)",W,W,T,cap(true)],["rotateX(-90deg)",W,W,T,cap(false)],["rotateY(0deg)",W,T,W,"slf sd"],["rotateY(180deg)",W,T,W,"slf sd"],["rotateY(90deg)",W,T,W,"slf sd"],["rotateY(-90deg)",W,T,W,"slf sd"]].map(([r,w,h,z,c])=>`<i class="${c}${k===5?" tk":""}${k===0?" bk":""}" style="--gp:${((5-k)/5*100).toFixed(1)}%;width:${w};height:${h};margin:calc(${h}/-2) 0 0 calc(${w}/-2);transform:${r} translateZ(calc(${z}/2))"></i>`).join("")};
+  cube.insertAdjacentHTML("beforeend",`<div class="lay">${LO.map((id,k)=>{const f=FACES[FI[id]];return`<div class="slab" data-f="${id}" data-y="${(.5-(k+.5)/6).toFixed(4)}" style="--c:${f.col}">${box(1/6,k)}<div class="sll"><span class="fcd-i">${sv(f.ic)}</span><b>${E(f.n)}</b></div></div>`}).join("")}</div>`);
   const SL=[...cube.querySelectorAll(".slab")],LL=[...cube.querySelectorAll(".sll")];
   const NET={top:[0,-1],left:[-1,0],front:[0,0],right:[1,0],back:[2,0],bottom:[0,1]};
   function T(f,i,m){const base=`${f.tf} translateZ(calc(${S}/2))`;
@@ -750,14 +776,16 @@ setEX(EX);setCX(CX);pick("stat",false);
     return base}
   const CAM={ex:[-22,-34],net:[0,0],lay:[-16,-30],flw:[-50,-30],orb:[-12,-30],"":[-22,-34]};
   let M="",HV=null,busy=false,tm=[];const btn=document.getElementById("rzgo");
-  function slabs(spread){SL.forEach(sl=>{const y=+sl.dataset.y;sl.style.transform=`translate3d(calc(${S}*${sl===HV?.12:0}),calc(${S}*${(spread?y*1.5:y).toFixed(4)}),0)`})}
+  function slabs(spread){SL.forEach(sl=>{const y=+sl.dataset.y;sl.style.transform=`translate3d(calc(${S}*${sl===HV?.12:0}),calc(${S}*${(spread?y*1.38:y).toFixed(4)}),0)`})}
   const later=(f,ms)=>tm.push(setTimeout(f,ms));
-  function open(){busy=true;M="lay";btn.textContent="Złóż model";cube.dataset.st="fade";go(-16,-30);
-    later(()=>{cube.dataset.st="stack";slabs(false)},1300);
-    later(()=>{cube.dataset.st="lay";cube.dataset.rz="lay";slabs(true);busy=false},1800)}
-  function close(){busy=true;M="";btn.textContent="Rozłóż model na warstwy";HV=null;slabs(false);
-    later(()=>{cube.dataset.st="fade";cube.dataset.rz=""},1000);
-    later(()=>{cube.dataset.st="";busy=false;go(-22,-34)},1500)}
+  function open(){busy=true;M="lay";btn.textContent="Złóż model";cube.dataset.st="fade";
+    later(()=>{cube.dataset.st="stack";slabs(false)},1350);
+    later(()=>{cube.dataset.st="cut"},1900);
+    later(()=>{cube.dataset.st="lay";cube.dataset.rz="lay";slabs(true);busy=false},2500)}
+  function close(){busy=true;M="";btn.textContent="Rozłóż model na warstwy";HV=null;slabs(false);cube.dataset.st="cut";
+    later(()=>{cube.dataset.st="stack";cube.dataset.rz=""},1300);
+    later(()=>{cube.dataset.st="fade"},1900);
+    later(()=>{cube.dataset.st="";busy=false},2500)}
   btn.addEventListener("click",()=>{if(busy)return;M?close():open()});
   cube.addEventListener("pointerover",e=>{if(cube.dataset.st!=="lay")return;const sl=e.target.closest(".slab");if(sl!==HV){HV=sl;slabs(true)}});
   cube.addEventListener("pointerleave",()=>{if(HV){HV=null;if(cube.dataset.st==="lay")slabs(true)}});
