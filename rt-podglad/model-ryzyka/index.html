@@ -62,6 +62,28 @@
 .v3 .lb .ic{width:calc(var(--s)*.055);height:calc(var(--s)*.055);border-radius:4px}
 .v3 .lb small{font-family:inherit;letter-spacing:.1em}
 
+/* 4 · plan błękitny (blueprint) */
+.v4 .fa{border:1.5px solid rgba(255,255,255,.9);background-color:rgba(20,72,150,.26);background-image:linear-gradient(rgba(255,255,255,.16) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.16) 1px,transparent 1px),linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);background-size:calc(var(--s)/5) calc(var(--s)/5),calc(var(--s)/5) calc(var(--s)/5),calc(var(--s)/25) calc(var(--s)/25),calc(var(--s)/25) calc(var(--s)/25);box-shadow:inset 0 0 calc(var(--s)*.06) rgba(10,30,60,.25)}
+.v4 .fa::before{content:"";position:absolute;inset:calc(var(--s)*.03);border:1px dashed rgba(255,255,255,.45)}
+.v4 .fa.on{background-color:color-mix(in srgb,var(--c) 55%,rgba(28,62,104,.5));border-width:3px}
+.v4 .lb{left:calc(var(--s)*.06);top:calc(var(--s)*.06);color:#fff;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:calc(var(--s)*.03);text-transform:uppercase;letter-spacing:.08em;flex-direction:column;align-items:flex-start;gap:6px}
+.v4 .lb .ic{width:calc(var(--s)*.06);height:calc(var(--s)*.06);border-radius:50%;background:transparent;border:1.5px solid #fff}
+.v4 .lb small{color:rgba(255,255,255,.7);font-family:inherit;letter-spacing:.12em}
+.v4 .nd{display:block}.v4 .nd i{background:#fff;box-shadow:0 0 0 2px rgba(28,62,104,.9);transform:scale(.55)}
+.v4::after{background:radial-gradient(closest-side,rgba(28,62,104,.3),transparent)}
+
+/* 5 · rysunek kreślarski */
+.v5 .fa{border:2px solid var(--ink);background:rgba(250,246,239,.18)}
+.v5 .fa[data-f="bottom"]{background:repeating-linear-gradient(45deg,rgba(13,13,13,.16) 0 1px,transparent 1px calc(var(--s)*.035))}
+.v5 .fa::before{content:"";position:absolute;left:0;right:0;bottom:calc(var(--s)*-.07);height:calc(var(--s)*.03);border-left:1.5px solid var(--ink);border-right:1.5px solid var(--ink);background:linear-gradient(var(--ink),var(--ink)) center/100% 1px no-repeat;opacity:.55}
+.v5 .fa::after{content:"";position:absolute;left:50%;top:50%;width:calc(var(--s)*.12);height:calc(var(--s)*.12);margin:calc(var(--s)*-.06);background:linear-gradient(var(--ink),var(--ink)) center/100% 1px no-repeat,linear-gradient(90deg,var(--ink),var(--ink)) center/1px 100% no-repeat;opacity:.25}
+.v5 .fa.on{border-color:var(--c);border-width:3px;background-color:color-mix(in srgb,var(--c) 10%,transparent)}
+.v5 .lb{right:calc(var(--s)*.04);bottom:calc(var(--s)*.04);display:grid;grid-template-columns:auto auto;gap:0;border:1.5px solid var(--ink);background:#fffdf9;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:calc(var(--s)*.026);font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+.v5 .lb .ic{width:calc(var(--s)*.075);height:auto;border-radius:0;border-right:1.5px solid var(--ink)}
+.v5 .lb>span:last-child{padding:4px 8px;line-height:1.25}
+.v5 .lb small{font-family:inherit;color:var(--muted);letter-spacing:.08em;border-bottom:1px solid var(--line);padding-bottom:2px;margin-bottom:2px}
+.v5 .nd{display:block}.v5 .nd i{background:none;border:1.5px solid var(--ink);box-shadow:none;transform:scale(.5)}
+
 /* kostki w środku */
 .ik{position:absolute;left:50%;top:50%;width:var(--k);height:var(--k);margin:calc(var(--k)/-2);transform-style:preserve-3d;cursor:pointer}
 .kf{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:14%;background:linear-gradient(150deg,color-mix(in srgb,var(--c) 70%,#fff),var(--c));box-shadow:inset 0 0 0 1px rgba(255,255,255,.25);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8%;text-align:center;color:#fff;padding:8%}
@@ -139,7 +161,7 @@
 </div></section>
 
 <div class="mw">
-  <div class="pv" id="pv"><span>Propozycja bryły</span><button type="button" data-v="1">1 · Stelaż</button><button type="button" data-v="2">2 · Szkło</button><button type="button" data-v="3">3 · Plan techniczny</button></div>
+  <div class="pv" id="pv"><span>Propozycja bryły</span><button type="button" data-v="1">1 · Stelaż</button><button type="button" data-v="2">2 · Szkło</button><button type="button" data-v="3">3 · Plan techniczny</button><button type="button" data-v="4">4 · Plan – błękitny</button><button type="button" data-v="5">5 · Plan – rysunek kreślarski</button></div>
   <div class="stage">
     <div class="side l" id="sl"></div>
     <div>
@@ -229,7 +251,7 @@ scene.addEventListener("pointercancel",()=>{drag=null;scene.classList.remove("dr
 document.querySelector(".stage").addEventListener("click",e=>{const b=e.target.closest(".fb,.ib");if(b)pick(b.dataset.f,b.classList.contains("fb"))});
 /* propozycje */
 const pv=document.getElementById("pv");let V=1;try{V=+localStorage.getItem("rt_mr_v")||1}catch(_){}
-function setV(v){V=v;scene.classList.remove("v1","v2","v3");scene.classList.add("v"+v);pv.querySelectorAll("[data-v]").forEach(b=>b.classList.toggle("on",+b.dataset.v===v));try{localStorage.setItem("rt_mr_v",v)}catch(_){}}
+function setV(v){V=v;scene.classList.remove("v1","v2","v3","v4","v5");scene.classList.add("v"+v);pv.querySelectorAll("[data-v]").forEach(b=>b.classList.toggle("on",+b.dataset.v===v));try{localStorage.setItem("rt_mr_v",v)}catch(_){}}
 pv.addEventListener("click",e=>{const b=e.target.closest("[data-v]");if(b)setV(+b.dataset.v)});setV(V);
 /* panel */
 const pan=document.getElementById("pan");
