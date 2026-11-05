@@ -469,11 +469,21 @@
 .es{left:calc(var(--e)*-.2)!important;width:calc(var(--e)*.4)!important;top:calc(var(--e)*-.07)!important;height:calc(var(--e)*.14)!important}
 .es::after{bottom:calc(var(--e)*-.075)!important;height:calc(var(--e)*.15)!important}
 .es b{margin-top:calc(var(--e)*.06)!important;font-size:calc(var(--e)*.06)!important}
-.efeed.v i{width:calc(var(--e)*.14)!important}
+.efeed.v i{width:calc(var(--e)*.165)!important}
 .pk-h{grid-column:1/4;grid-row:3;align-self:start;margin-top:26px;border-top:1px solid var(--line);padding-top:10px;width:100%}
 .pk-h span{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink2)}
 .dk1,.dk2{margin-top:72px!important}
 .depv .tip{right:auto!important;bottom:auto!important}
+
+.cyl{position:absolute;left:calc(var(--e)*-.21);top:calc(var(--e)*-.14);width:calc(var(--e)*.42);height:calc(var(--e)*.28);overflow:visible}
+.cyl .cb{fill:rgba(79,115,144,.06);stroke:#4f7390;stroke-width:1.5}
+.cyl .cm{fill:none;stroke:rgba(79,115,144,.35);stroke-width:1}
+.cyl .ct{fill:rgba(237,242,246,.95);stroke:#4f7390;stroke-width:1.5}
+.cyl text{font-family:var(--body);font-weight:600;font-size:10px;letter-spacing:.18em;fill:#4f7390}
+.tsd{border:1.2px solid #a8823a;border-radius:2px;background:rgba(168,130,58,.07)}
+.tfr{position:absolute;left:0;top:0;box-sizing:border-box;border:1.5px solid #a8823a;border-radius:3px;background:linear-gradient(#a8823a,#a8823a) 0 30%/100% 1px no-repeat,linear-gradient(#a8823a,#a8823a) 0 65%/100% 1px no-repeat,rgba(255,253,249,.9);display:flex;align-items:flex-start;padding:2px 5px}
+.tfr b{font-size:calc(var(--e)*.034);font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8a6a2c;line-height:1.2}
+.band-h{justify-content:flex-start!important;justify-self:start!important;width:100%}
 </style>
 </head>
 <body>
@@ -537,7 +547,7 @@
   <path d="M110 86V100" class="stem"/></svg>
   <span class="cap"><i>04</i><b>Komitet Ryzyka</b></span>
   <div class="kom-t" role="group" aria-label="Decyzja komitetu"><button type="button" data-k="rec" class="on">Rekomendacja wdrożenia</button><button type="button" data-k="no">Brak rekomendacji</button></div></div>
-      <span class="tcap" id="tcap">Wyniki</span><span class="chip c1" id="ch1">Wdrożenie techniczne</span><span class="chip c2" id="ch2">Wdrożenie procesowe</span>
+      <span class="chip c1" id="ch1">Wdrożenie techniczne</span><span class="chip c2" id="ch2">Wdrożenie procesowe</span>
     </div>
   </div>
   <div class="pan" id="pan"></div>
@@ -671,10 +681,10 @@ setEX(EX);setCX(CX);pick("stat",false);
    <div class="mon" style="transform:translate3d(calc(var(--e)*.499),calc(var(--e)*-.05),calc(var(--e)*-.06)) rotateY(90deg)"><svg viewBox="0 0 100 60" aria-hidden="true"><rect x="2" y="2" width="96" height="56" rx="6"/><path class="pulse" d="M8 36h18l5-14 7 26 6-20 4 8h44"/><path class="ax" d="M8 48h84"/></svg></div>
    <div class="clk" style="transform:translate3d(calc(var(--e)*.3),calc(var(--e)*-.2),calc(var(--e)*-.349))"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17"/><path class="hh" d="M20 20V10"/><path class="mh" d="M20 20h9"/><circle cx="20" cy="20" r="1.6"/></svg></div>
    <div class="mini" style="transform:translate3d(calc(var(--e)*.12),calc(var(--e)*.08),calc(var(--e)*.12))">${B(.3,.3,.3,"mf")}<div class="mi2">${B(.1,.1,.1,"mc")}</div><div class="mdb"><span></span><span></span></div></div>
-   <div class="edb" style="transform:translate3d(calc(var(--e)*.12),calc(var(--e)*.66),calc(var(--e)*.12))"><i class="er lid" style="transform:translateY(calc(var(--e)*-.07)) rotateX(90deg)"></i><i class="es" style="transform:rotateY(30deg)"><b>Dane</b></i></div>
+   <div class="edb" style="transform:translate3d(calc(var(--e)*.12),calc(var(--e)*.66),calc(var(--e)*.12)) rotateY(34deg) rotateX(22deg)"><svg class="cyl" viewBox="0 0 120 80" aria-hidden="true"><path class="cb" d="M6 18v42c0 8.3 24.2 15 54 15s54-6.7 54-15V18"/><path class="cm" d="M6 39c0 8.3 24.2 15 54 15s54-6.7 54-15"/><ellipse class="ct" cx="60" cy="18" rx="54" ry="14"/><text x="60" y="70" text-anchor="middle">DANE</text></svg></div>
    <div class="efeed v" style="transform:translate3d(calc(var(--e)*.12),calc(var(--e)*.45),calc(var(--e)*.12)) rotateZ(-90deg)"><i></i><i style="transform:rotateX(90deg)"></i></div>
    <div class="vrod" id="vrod" style="transform:translate3d(calc(var(--e)*.12),calc(var(--e)*-.07),calc(var(--e)*.12))"><i class="vt"></i><i class="vt" style="transform:rotateY(90deg)"></i><i class="vp"></i><i class="vp" style="transform:rotateY(90deg) scaleY(var(--vp,1))"></i></div>
-   <div class="etb" id="etb" style="transform:translate3d(calc(var(--e)*.12),calc(var(--e)*-.66),calc(var(--e)*.12))">${B(.26,.16,.035,"tg")}</div>`;
+   <div class="etb" id="etb" style="transform:translate3d(calc(var(--e)*.12),calc(var(--e)*-.66),calc(var(--e)*.12))">${B(.27,.15,.03,"tsd")}<i class="tfr" style="width:calc(var(--e)*.27);height:calc(var(--e)*.15);margin:calc(var(--e)*-.075) 0 0 calc(var(--e)*-.135);transform:translateZ(calc(var(--e)*.016))"><b>Wyniki</b></i></div>`;
   const pb=document.getElementById("procb"),PI={coin:'<ellipse cx="12" cy="7" rx="6.5" ry="2.6"/><path d="M5.5 7v4.5c0 1.4 2.9 2.6 6.5 2.6s6.5-1.2 6.5-2.6V7M5.5 11.5V16c0 1.4 2.9 2.6 6.5 2.6s6.5-1.2 6.5-2.6v-4.5"/>',dec:'<path d="M12 3.5l7.5 4.5v8L12 20.5 4.5 16V8z"/><path d="M8.5 12l2.4 2.4 4.6-4.8"/>',rep:'<path d="M4.5 19.5h15M7 16.5v-5M11 16.5v-9M15 16.5v-6.5M19 16.5V5"/>'};
   const steps=[["coin","Odpisy"],["dec","Decyzje"],["rep","Raporty"]];
   const chev=(cl)=>`<svg class="${cl}" viewBox="0 0 100 64" aria-hidden="true"><path d="M3 3h70l24 29-24 29H3l20-29z"/></svg>`;
@@ -694,23 +704,24 @@ function danim(x,y){cancelAnimationFrame(dtw);const x0=drx,y0=dry,t0=performance
 const depv=document.getElementById("depv"),dgrid=document.getElementById("dgrid");let DV=3;
 function anc(el,side){const g=dgrid.getBoundingClientRect(),r=el.getBoundingClientRect();const x={l:r.left,r:r.right,c:(r.left+r.right)/2}[side[0]]-g.left,y={t:r.top,b:r.bottom,m:(r.top+r.bottom)/2}[side[1]]-g.top;return[x,y]}
 function links(){if(depv.offsetParent===null)return;const g=dgrid.getBoundingClientRect(),sv=document.getElementById("dlinks"),fl=document.getElementById("dfloor");[sv,fl].forEach(x=>{x.setAttribute("viewBox",`0 0 ${g.width} ${g.height}`)});
-  const M=document.querySelector("#dmod .cube"),EN=document.querySelector("#env .eo"),TB=document.getElementById("etb"),PR=document.querySelector("#proc .pch3 .cf");if(!M||!EN||!TB||!PR)return;
+  const TBF=()=>{const r=document.querySelector("#etb .tfr").getBoundingClientRect();return[r.right-g.left,(r.top+r.bottom)/2-g.top]};const M=document.querySelector("#dmod .cube"),EN=document.querySelector("#env .eo"),TB=document.getElementById("etb"),PR=document.querySelector("#proc .pch3 .cf");if(!M||!EN||!TB||!PR)return;
   const mR=M.getBoundingClientRect(),gx=v=>v-g.left,gy=v=>v-g.top;
   let a1,b1,a2,b2,c1,c2;
-  if(DV===3){a1=[gx(mR.right)-10,gy(mR.bottom)-mR.height*.2];b1=anc(EN,"lm");a2=anc(TB,"rm");b2=anc(PR,"lm");
-    c1=`M${a1} C${a1[0]+60},${a1[1]+50} ${b1[0]-80},${b1[1]} ${b1[0]-14},${b1[1]}`;c2=`M${a2[0]+8},${a2[1]} C${a2[0]+90},${a2[1]} ${b2[0]-70},${b2[1]-40} ${b2[0]-12},${b2[1]-6}`}
-  else{a1=[gx(mR.right)-mR.width*.08,gy((mR.top+mR.bottom)/2)];b1=anc(EN,"lm");a2=anc(TB,"rm");b2=anc(PR,"lm");
+  if(DV===3){a1=[gx(mR.right)-10,gy(mR.bottom)-mR.height*.2];b1=anc(EN,"lm");a2=TBF();b2=anc(PR,"lm");
+    c1=`M${a1} C${a1[0]+60},${a1[1]+50} ${b1[0]-80},${b1[1]} ${b1[0]-14},${b1[1]}`;c2=`M${a2[0]+2},${a2[1]} C${a2[0]+90},${a2[1]} ${b2[0]-70},${b2[1]-40} ${b2[0]-12},${b2[1]-6}`}
+  else{a1=[gx(mR.right)-mR.width*.08,gy((mR.top+mR.bottom)/2)];b1=anc(EN,"lm");a2=TBF();b2=anc(PR,"lm");
     if(DV===1){c1=`M${a1[0]+6},${a1[1]} L${b1[0]-14},${b1[1]}`;c2=`M${a2[0]+8},${a2[1]} C${a2[0]+70},${a2[1]} ${b2[0]-60},${b2[1]} ${b2[0]-12},${b2[1]}`}
     else{c1=`M${a1[0]+6},${a1[1]+40} Q${(a1[0]+b1[0])/2},${a1[1]+70} ${b1[0]-14},${b1[1]+20}`;c2=`M${a2[0]+8},${a2[1]} Q${(a2[0]+b2[0])/2},${a2[1]-30} ${b2[0]-12},${b2[1]}`}}
   document.getElementById("lk1").setAttribute("d",c1);document.getElementById("lk2").setAttribute("d",c2);document.getElementById("lp1").setAttribute("d",c1);document.getElementById("lp2").setAttribute("d",c2);
-  {const rs=[...TB.querySelectorAll("i")].map(x=>x.getBoundingClientRect()),tr={left:Math.min(...rs.map(r=>r.left)),top:Math.min(...rs.map(r=>r.top)),bottom:Math.max(...rs.map(r=>r.bottom))},tc=document.getElementById("tcap");tc.style.left=(tr.left-g.left-8)+"px";tc.style.top=((tr.top+tr.bottom)/2-g.top)+"px"}
-  const mid=(id,ch,dy)=>{const pth=document.getElementById(id),L=pth.getTotalLength(),pt=pth.getPointAtLength(L/2),c=document.getElementById(ch);c.style.left=pt.x+"px";c.style.top=(pt.y+dy)+"px"};mid("lk1","ch1",-44);mid("lk2","ch2",-40);
+  const mid=(id,ch,dy,dx)=>{const pth=document.getElementById(id),L=pth.getTotalLength(),pt=pth.getPointAtLength(L/2),c=document.getElementById(ch);c.style.left=(pt.x+dx)+"px";c.style.top=(pt.y+dy)+"px"};mid("lk1","ch1",-44,-40);mid("lk2","ch2",-40,50);
   {const band=document.getElementById("band"),cells=[...band.querySelectorAll(".dk")],K=document.querySelector("#kom .tbl");if(cells.length&&K){const kr=K.getBoundingClientRect(),S=document.querySelector("#kom .seal").getBoundingClientRect(),ry=Math.max(...cells.slice(0,2).map(c=>c.getBoundingClientRect().bottom))-g.top+18;
     const xs=cells.map(c=>{const r=c.getBoundingClientRect();return[r.left-g.left+8,r.bottom-g.top+2]});const kx=kr.left-g.left-10,ky=(kr.top+kr.bottom)/2-g.top,sx=(S.left+S.right)/2-g.left;
     document.getElementById("tk").setAttribute("d",`M${xs[0][0]},${xs[0][1]} V${ry} M${xs[1][0]},${xs[1][1]} V${ry} M${sx},${xs[2][1]+4} V${S.top-g.top-6}`);
     const rd=`M${xs[0][0]},${ry} H${xs[1][0]+260} C${xs[1][0]+360},${ry} ${kx-80},${ky} ${kx},${ky}`;document.getElementById("rl").setAttribute("d",rd);document.getElementById("lp3").setAttribute("d",rd)}}
-  {const ER=[...document.querySelectorAll("#env .ef")].map(x=>x.getBoundingClientRect()),E={right:Math.max(...ER.map(r=>r.right)),top:Math.min(...ER.map(r=>r.top)),height:Math.max(...ER.map(r=>r.bottom))-Math.min(...ER.map(r=>r.top))},PR2=document.querySelector("#proc").getBoundingClientRect(),D3=document.querySelector(".dk3").getBoundingClientRect(),x0=E.right+18,w=Math.max(200,Math.min(300,Math.min(PR2.left,D3.left)-x0-18)),tt=E.top+E.height*.1;
-    [[document.querySelector(".dew .tip"),document.querySelector(".dew")],[document.querySelector(".dpw .tip"),document.querySelector(".dpw")]].forEach(([t,par])=>{if(!t)return;const pr=par.getBoundingClientRect();t.style.width=w+"px";t.style.left=(x0-pr.left)+"px";t.style.top=(tt-pr.top)+"px"})}
+  {const ER=[...document.querySelectorAll("#env .ef")].map(x=>x.getBoundingClientRect()),eR=Math.max(...ER.map(r=>r.right)),eT=Math.min(...ER.map(r=>r.top)),eB=Math.max(...ER.map(r=>r.bottom)),W=300;
+    const st=document.querySelector(".dew .tip"),sp=document.querySelector(".dew").getBoundingClientRect();st.style.width=W+"px";st.style.left=(eR+20-sp.left)+"px";st.style.top=(eT+(eB-eT)*.25-sp.top)+"px";
+    const PP=[...document.querySelectorAll("#proc .pch3 svg")].map(x=>x.getBoundingClientRect()),pR=Math.max(...PP.map(r=>r.right)),pT=Math.min(...PP.map(r=>r.top)),pL=Math.min(...PP.map(r=>r.left)),pt=document.querySelector(".dpw .tip"),pp=document.querySelector(".dpw").getBoundingClientRect();pt.style.width=W+"px";
+    const vw=document.documentElement.clientWidth,lx=Math.min(pR+20,vw-W-14);pt.style.left=(lx-pp.left)+"px";pt.style.top=(pT-10-pp.top)+"px"}
   if(DV===2){const W=g.width,H=g.height,cy=H*.7;fl.innerHTML=`<path d="M${W*.03},${cy} L${W*.5},${cy-H*.2} L${W*.97},${cy} L${W*.5},${cy+H*.2}Z" class="fl1"/><path d="M${W*.14},${cy} L${W*.5},${cy-H*.15} L${W*.86},${cy} L${W*.5},${cy+H*.15}Z" class="fl2"/>`}else fl.innerHTML=""}
 /* przepływ: model → system → wyniki → procesy, powoli i od nowa */
 const FL={p1:2600,p2:1500,p3:2600,p4:2400,h:2200};let flT0=performance.now();
