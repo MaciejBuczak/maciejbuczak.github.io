@@ -453,15 +453,27 @@
 .band{display:contents!important}
 .dk{align-items:flex-start!important;text-align:left!important;align-self:start}
 .shs{justify-content:flex-start!important;max-width:330px}
-.dk:nth-of-type(1){grid-column:1;grid-row:3;justify-self:start;padding-left:4%;margin-top:30px}
-.dk:nth-of-type(2){grid-column:2/4;grid-row:3;justify-self:center;margin-top:30px}
-.dk:nth-of-type(3){grid-column:4;grid-row:2;justify-self:end;margin-top:6px}
-.dk:nth-of-type(3) .shs{max-width:270px}
+.dk1{grid-column:1;grid-row:3;justify-self:start;padding-left:4%;margin-top:30px}
+.dk2{grid-column:2/4;grid-row:3;justify-self:center;margin-top:30px}
+.dk3{grid-column:4;grid-row:2;justify-self:end;margin-top:6px}
+.dk3 .shs{max-width:270px}
 .band-h{grid-row:4;grid-column:1/-1}
 .kom{grid-column:4!important;grid-row:3!important;align-self:start!important;justify-self:end;margin-top:4px!important;gap:8px!important}
 .er{left:calc(var(--e)*-.16)!important;top:calc(var(--e)*-.16)!important;width:calc(var(--e)*.32)!important;height:calc(var(--e)*.32)!important}
 .es{left:calc(var(--e)*-.16)!important;width:calc(var(--e)*.32)!important}
 .es{overflow:visible}.es::after{content:"";position:absolute;left:-1.5px;right:-1.5px;bottom:calc(var(--e)*-.045);height:calc(var(--e)*.09);border-radius:50%;border:1.5px solid #4f7390;border-top-color:transparent;box-sizing:border-box}
+
+.dmw{cursor:grab;user-select:none;-webkit-user-select:none;touch-action:none}.dmw *{user-select:none;-webkit-user-select:none}
+.depv[data-dv="3"] .dew{margin-left:110px}
+.er{left:calc(var(--e)*-.2)!important;top:calc(var(--e)*-.2)!important;width:calc(var(--e)*.4)!important;height:calc(var(--e)*.4)!important;background:rgba(79,115,144,.08)!important}
+.es{left:calc(var(--e)*-.2)!important;width:calc(var(--e)*.4)!important;top:calc(var(--e)*-.07)!important;height:calc(var(--e)*.14)!important}
+.es::after{bottom:calc(var(--e)*-.075)!important;height:calc(var(--e)*.15)!important}
+.es b{margin-top:calc(var(--e)*.06)!important;font-size:calc(var(--e)*.06)!important}
+.efeed.v i{width:calc(var(--e)*.14)!important}
+.pk-h{grid-column:1/4;grid-row:3;align-self:start;margin-top:26px;border-top:1px solid var(--line);padding-top:10px;width:100%}
+.pk-h span{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink2)}
+.dk1,.dk2{margin-top:72px!important}
+.depv .tip{right:auto!important;bottom:auto!important}
 </style>
 </head>
 <body>
@@ -517,7 +529,7 @@
           <div class="tip-i"><span class="ti g">2</span><span><b>Użytkownicy</b><small>kto korzysta z wyników i jest przeszkolony</small></span></div>
           <div class="tip-i"><span class="ti g">3</span><span><b>Sposób korzystania</b><small>jak wynik wpływa na decyzję i kto to kontroluje</small></span></div>
         </div></div>
-      <div class="band" id="band"><div class="dk"><span class="dk-h"><i>01</i>Model</span><div class="shs"><span class="sh jm"><i></i>Karta modelu</span><span class="sh jm"><i></i>Kod modelu</span><span class="sh jm"><i></i>Dokumentacja modelu</span><span class="sh jm"><i></i>Wyniki weryfikacji modelu</span><span class="sh jw"><i></i>Raport z prewalidacji</span></div></div><div class="dk"><span class="dk-h"><i>02</i>Wdrożenie techniczne</span><div class="shs"><span class="sh jm"><i></i>Testy wdrożeniowe</span><span class="sh jm"><i></i>Raport z wdrożenia technicznego</span><span class="sh jw"><i></i>Testy wdrożeniowe</span><span class="sh jw"><i></i>Raport z niezależnej oceny wdrożenia</span></div></div><div class="dk"><span class="dk-h"><i>03</i>Wdrożenie procesowe</span><div class="shs"><span class="sh jm"><i></i>Raport z wdrożenia procesowego</span><span class="sh jw"><i></i>Ocena wdrożenia procesowego</span></div></div><div class="band-h"><span class="bk">Pakiet dokumentów</span><span class="lg jm"><i></i>Jednostka modelarska</span><span class="lg jw"><i></i>Jednostka walidacji</span></div></div>
+      <div class="band" id="band"><div class="pk-h"><span>Pakiet dokumentów wdrożeniowych</span></div><div class="dk dk1"><span class="dk-h"><i>01</i>Model</span><div class="shs"><span class="sh jm"><i></i>Karta modelu</span><span class="sh jm"><i></i>Kod modelu</span><span class="sh jm"><i></i>Dokumentacja modelu</span><span class="sh jm"><i></i>Wyniki weryfikacji modelu</span><span class="sh jw"><i></i>Raport z prewalidacji</span></div></div><div class="dk dk2"><span class="dk-h"><i>02</i>Wdrożenie techniczne</span><div class="shs"><span class="sh jm"><i></i>Testy wdrożeniowe</span><span class="sh jm"><i></i>Raport z wdrożenia technicznego</span><span class="sh jw"><i></i>Testy wdrożeniowe</span><span class="sh jw"><i></i>Raport z niezależnej oceny wdrożenia</span></div></div><div class="dk dk3"><span class="dk-h"><i>03</i>Wdrożenie procesowe</span><div class="shs"><span class="sh jm"><i></i>Raport z wdrożenia procesowego</span><span class="sh jw"><i></i>Ocena wdrożenia procesowego</span></div></div><div class="band-h"><span class="bk">Właściciel dokumentu</span><span class="lg jm"><i></i>Jednostka modelarska</span><span class="lg jw"><i></i>Jednostka walidacji</span></div></div>
       <div class="kom rec" id="kom"><svg class="kom-s" viewBox="0 0 220 170" aria-hidden="true">
   <g class="seats"><circle cx="197.5" cy="128.5" r="6"/><circle cx="164.1" cy="145.5" r="6"/><circle cx="110.0" cy="152.0" r="6"/><circle cx="55.9" cy="145.5" r="6"/><circle cx="22.5" cy="128.5" r="6"/><circle cx="22.5" cy="107.5" r="6"/><circle cx="55.9" cy="90.5" r="6"/><circle cx="110.0" cy="84.0" r="6"/><circle cx="164.1" cy="90.5" r="6"/><circle cx="197.5" cy="107.5" r="6"/></g>
   <ellipse cx="110" cy="124" rx="74" ry="25" class="tbl2"/><ellipse cx="110" cy="118" rx="74" ry="25" class="tbl"/>
@@ -659,9 +671,8 @@ setEX(EX);setCX(CX);pick("stat",false);
    <div class="mon" style="transform:translate3d(calc(var(--e)*.499),calc(var(--e)*-.05),calc(var(--e)*-.06)) rotateY(90deg)"><svg viewBox="0 0 100 60" aria-hidden="true"><rect x="2" y="2" width="96" height="56" rx="6"/><path class="pulse" d="M8 36h18l5-14 7 26 6-20 4 8h44"/><path class="ax" d="M8 48h84"/></svg></div>
    <div class="clk" style="transform:translate3d(calc(var(--e)*.3),calc(var(--e)*-.2),calc(var(--e)*-.349))"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17"/><path class="hh" d="M20 20V10"/><path class="mh" d="M20 20h9"/><circle cx="20" cy="20" r="1.6"/></svg></div>
    <div class="mini" style="transform:translate3d(calc(var(--e)*.12),calc(var(--e)*.08),calc(var(--e)*.12))">${B(.3,.3,.3,"mf")}<div class="mi2">${B(.1,.1,.1,"mc")}</div><div class="mdb"><span></span><span></span></div></div>
-   <div class="edb" style="transform:translate3d(calc(var(--e)*.12),calc(var(--e)*.56),calc(var(--e)*.12))">${[-.5,-.17,.17,.5].map((y,i)=>`<i class="er${i?"":" lid"}" style="transform:translateY(calc(var(--e)*${(y*.2).toFixed(3)})) rotateX(90deg)"></i>`).join("")}<i class="es" style="transform:rotateY(34deg)"><b style="transform:rotateX(22deg)">Dane</b></i></div>
+   <div class="edb" style="transform:translate3d(calc(var(--e)*.12),calc(var(--e)*.66),calc(var(--e)*.12))"><i class="er lid" style="transform:translateY(calc(var(--e)*-.07)) rotateX(90deg)"></i><i class="es" style="transform:rotateY(30deg)"><b>Dane</b></i></div>
    <div class="efeed v" style="transform:translate3d(calc(var(--e)*.12),calc(var(--e)*.45),calc(var(--e)*.12)) rotateZ(-90deg)"><i></i><i style="transform:rotateX(90deg)"></i></div>
-   <div class="eport" style="transform:translate3d(calc(var(--e)*.12),calc(var(--e)*-.31),calc(var(--e)*.12)) rotateX(90deg)"></div>
    <div class="vrod" id="vrod" style="transform:translate3d(calc(var(--e)*.12),calc(var(--e)*-.07),calc(var(--e)*.12))"><i class="vt"></i><i class="vt" style="transform:rotateY(90deg)"></i><i class="vp"></i><i class="vp" style="transform:rotateY(90deg) scaleY(var(--vp,1))"></i></div>
    <div class="etb" id="etb" style="transform:translate3d(calc(var(--e)*.12),calc(var(--e)*-.66),calc(var(--e)*.12))">${B(.26,.16,.035,"tg")}</div>`;
   const pb=document.getElementById("procb"),PI={coin:'<ellipse cx="12" cy="7" rx="6.5" ry="2.6"/><path d="M5.5 7v4.5c0 1.4 2.9 2.6 6.5 2.6s6.5-1.2 6.5-2.6V7M5.5 11.5V16c0 1.4 2.9 2.6 6.5 2.6s6.5-1.2 6.5-2.6v-4.5"/>',dec:'<path d="M12 3.5l7.5 4.5v8L12 20.5 4.5 16V8z"/><path d="M8.5 12l2.4 2.4 4.6-4.8"/>',rep:'<path d="M4.5 19.5h15M7 16.5v-5M11 16.5v-9M15 16.5v-6.5M19 16.5V5"/>'};
@@ -675,9 +686,9 @@ function cloneModel(){const d=document.getElementById("dmod");const c=cube.clone
   c.querySelectorAll(".tb,.rod.res,.port,.arw,.lb,.nd").forEach(x=>x.remove());c.dataset.lf="0";c.classList.remove("fr");d.innerHTML="";d.appendChild(c);setDR()}
 let drx=-16,dry=-30,dtw=0;function setDR(){const c=document.querySelector("#dmod .cube");if(!c)return;c.style.transform=`rotateX(${drx}deg) rotateY(${dry}deg)`;c.dataset.lf=Math.round((((-dry)%360)+360)%360/90)%4;c.querySelectorAll(".yb").forEach(y=>y.style.transform=`rotateY(${-dry}deg)`);links()}
 function danim(x,y){cancelAnimationFrame(dtw);const x0=drx,y0=dry,t0=performance.now();const st=t=>{const k=Math.min(1,(t-t0)/650),e=k<.5?4*k*k*k:1-Math.pow(-2*k+2,3)/2;drx=x0+(x-x0)*e;dry=y0+(y-y0)*e;setDR();if(k<1)dtw=requestAnimationFrame(st)};dtw=requestAnimationFrame(st)}
-(()=>{const d=document.getElementById("dmod");let g=null;d.addEventListener("pointerdown",e=>{g={x:e.clientX,y:e.clientY,rx:drx,ry:dry,m:0};d.setPointerCapture(e.pointerId);cancelAnimationFrame(dtw);e.stopPropagation()});
-  d.addEventListener("pointermove",e=>{if(!g)return;const dx=e.clientX-g.x,dy=e.clientY-g.y;g.m=Math.max(g.m,Math.abs(dx)+Math.abs(dy));if(g.m<4)return;dry=g.ry+dx*.4;drx=Math.max(-90,Math.min(90,g.rx-dy*.4));setDR()});
-  d.addEventListener("pointerup",()=>{g=null});d.addEventListener("pointercancel",()=>{g=null});
+(()=>{const d=document.querySelector(".dmw");let g=null;d.addEventListener("pointerdown",e=>{if(e.target.closest(".drot"))return;e.preventDefault();g={x:e.clientX,y:e.clientY,rx:drx,ry:dry,m:0};d.setPointerCapture(e.pointerId);cancelAnimationFrame(dtw);e.stopPropagation()});
+  d.addEventListener("pointermove",e=>{if(!g)return;const dx=e.clientX-g.x,dy=e.clientY-g.y;g.m=Math.max(g.m,Math.abs(dx)+Math.abs(dy));if(g.m<4)return;dry=g.ry+dx*.4;drx=Math.max(-90,Math.min(90,g.rx-dy*.4));setDR()});d.addEventListener("click",e=>{if(g===null&&window.__dm>4)e.stopPropagation()},true);
+  d.addEventListener("pointerup",()=>{window.__dm=g?g.m:0;g=null});d.addEventListener("pointercancel",()=>{g=null});
   document.getElementById("drot").addEventListener("click",e=>{e.stopPropagation();const b=e.target.closest("[data-dr]");if(!b)return;const ny=dry+((((-30-dry)%360)+540)%360-180);danim(-16,ny)})})();
 /* układ ekranu wdrożenia – trzy propozycje, linie liczone z położenia obiektów */
 const depv=document.getElementById("depv"),dgrid=document.getElementById("dgrid");let DV=3;
@@ -698,6 +709,8 @@ function links(){if(depv.offsetParent===null)return;const g=dgrid.getBoundingCli
     const xs=cells.map(c=>{const r=c.getBoundingClientRect();return[r.left-g.left+8,r.bottom-g.top+2]});const kx=kr.left-g.left-10,ky=(kr.top+kr.bottom)/2-g.top,sx=(S.left+S.right)/2-g.left;
     document.getElementById("tk").setAttribute("d",`M${xs[0][0]},${xs[0][1]} V${ry} M${xs[1][0]},${xs[1][1]} V${ry} M${sx},${xs[2][1]+4} V${S.top-g.top-6}`);
     const rd=`M${xs[0][0]},${ry} H${xs[1][0]+260} C${xs[1][0]+360},${ry} ${kx-80},${ky} ${kx},${ky}`;document.getElementById("rl").setAttribute("d",rd);document.getElementById("lp3").setAttribute("d",rd)}}
+  {const ER=[...document.querySelectorAll("#env .ef")].map(x=>x.getBoundingClientRect()),E={right:Math.max(...ER.map(r=>r.right)),top:Math.min(...ER.map(r=>r.top)),height:Math.max(...ER.map(r=>r.bottom))-Math.min(...ER.map(r=>r.top))},PR2=document.querySelector("#proc").getBoundingClientRect(),D3=document.querySelector(".dk3").getBoundingClientRect(),x0=E.right+18,w=Math.max(200,Math.min(300,Math.min(PR2.left,D3.left)-x0-18)),tt=E.top+E.height*.1;
+    [[document.querySelector(".dew .tip"),document.querySelector(".dew")],[document.querySelector(".dpw .tip"),document.querySelector(".dpw")]].forEach(([t,par])=>{if(!t)return;const pr=par.getBoundingClientRect();t.style.width=w+"px";t.style.left=(x0-pr.left)+"px";t.style.top=(tt-pr.top)+"px"})}
   if(DV===2){const W=g.width,H=g.height,cy=H*.7;fl.innerHTML=`<path d="M${W*.03},${cy} L${W*.5},${cy-H*.2} L${W*.97},${cy} L${W*.5},${cy+H*.2}Z" class="fl1"/><path d="M${W*.14},${cy} L${W*.5},${cy-H*.15} L${W*.86},${cy} L${W*.5},${cy+H*.15}Z" class="fl2"/>`}else fl.innerHTML=""}
 /* przepływ: model → system → wyniki → procesy, powoli i od nowa */
 const FL={p1:2600,p2:1500,p3:2600,p4:2400,h:2200};let flT0=performance.now();
