@@ -76,6 +76,21 @@
 .it i small{display:block;font-weight:400;font-size:11px;color:var(--muted)}
 @media(max-width:1100px){.mh .wrap{grid-template-columns:1fr}.stage{grid-template-columns:1fr;gap:10px}.side,.side.l{flex-direction:row;flex-wrap:wrap;justify-content:center;align-items:stretch;text-align:left}.side.l .fb{flex-direction:row}.side.l{order:2}.side.r{order:3}.side,.side.l{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));width:100%}.fb{width:auto;max-width:none;padding:8px 10px;gap:9px}.fb .ic{width:32px;height:32px;border-radius:10px}.fb b{font-size:13px}.fb small{font-size:9.5px}.pan-h{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.cube.ease{transition:none}}
+
+.fa{transition:opacity .7s,transform .8s cubic-bezier(.65,0,.25,1)}
+.cube.open{--ex:calc(var(--s)*.4)}
+.cube.open .fa{opacity:.2;pointer-events:none}
+.core{position:absolute;left:50%;top:50%;width:calc(var(--s)*.46);height:calc(var(--s)*.46);margin:calc(var(--s)*-.23);transform-style:preserve-3d;cursor:pointer}
+.core-i{position:absolute;inset:0;transform-style:preserve-3d;animation:cspin 16s linear infinite}
+@keyframes cspin{to{transform:rotateY(360deg)}}
+.cf{position:absolute;inset:0;border-radius:14%;background:radial-gradient(120% 90% at 30% 20%,#2c2620,#100e0c);color:#efe2d1;font-family:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;font-size:calc(var(--s)*.03);line-height:1.55;padding:14% 11%;display:flex;flex-direction:column;justify-content:center;white-space:pre;overflow:hidden;outline:calc(var(--s)*.006) dashed var(--terra);outline-offset:calc(var(--s)*.008);box-shadow:inset 0 0 0 1px rgba(255,255,255,.1),0 0 calc(var(--s)*.12) rgba(191,129,101,.45)}
+.cf b{color:var(--terra);font-weight:700}.cf i{color:#e6c27a;font-style:normal}.cf em{color:#8f877c;font-style:normal}
+.cf.ct{align-items:center;text-align:center}.cf.ct span:first-child{font-family:var(--display);font-size:calc(var(--s)*.09);color:var(--terra);line-height:1}
+.cf.ct span:last-child{font-family:var(--body);font-size:calc(var(--s)*.024);letter-spacing:.18em;text-transform:uppercase}
+.ctl .dk,.fb.dk{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.fb.dk small{color:var(--terra)}.fb .ic.code{background:var(--terra-d);color:#fff;font-family:ui-monospace,Menlo,monospace;font-weight:700;font-size:13px}
+.fb.dk.on{box-shadow:0 0 0 2px var(--terra-d)}
+@media(prefers-reduced-motion:reduce){.core-i{animation:none}}
 </style>
 </head>
 <body>
@@ -98,7 +113,7 @@
     <div class="side l" id="sl"></div>
     <div>
       <div class="scene" id="scene" aria-label="Model ryzyka – sześcian"><div class="cube" id="cube"></div></div>
-      <div class="ctl"><button type="button" id="bspin">Obracaj</button><button type="button" id="biso">Widok bryły</button></div>
+      <div class="ctl"><button type="button" id="bspin">Obracaj</button><button type="button" id="biso">Widok bryły</button><button type="button" id="bcode" class="dk">&lt;/&gt; Pokaż kod</button></div>
       <div class="hint">Przeciągnij, aby obrócić · kliknij ścianę, aby ją otworzyć</div>
     </div>
     <div class="side r" id="sr"></div>
@@ -139,31 +154,44 @@ const FACES=[
  {id:"front",n:"Model statystyczny",p:"Przód",c:["05"],d:"Próba, segmentacja, zmienne, parametry, estymacja i wynik – serce modelu.",col:"#8a4f8f",tf:"rotateY(0deg)",v:[0,0]},
  {id:"right",n:"Weryfikacja",p:"Prawa ściana",c:["06"],d:"Statystyka, poprawność, koncepcja i logika biznesowa – czy model działa i czy rozumiemy dlaczego.",col:"#6f7f58",tf:"rotateY(90deg)",v:[0,-90]},
  {id:"back",n:"Wdrożenie i dokumentacja",p:"Tył",c:["07","08","09","10"],d:"Środowisko produkcyjne, elementy składowe oraz dokumentacja wdrożeniowa i administracyjna.",col:"#c07a1f",tf:"rotateY(180deg)",v:[0,180]},
- {id:"bottom",n:"Dane",p:"Podstawa",c:["04"],d:"Źródła danych i obsługa ich problemów – fundament, na którym stoi cały model.",col:"#4f7390",tf:"rotateX(-90deg)",v:[90,0]}];
+ {id:"bottom",n:"Dane",p:"Podstawa",c:["04"],d:"Źródła danych i obsługa ich problemów – fundament, na którym stoi cały model.",col:"#4f7390",tf:"rotateX(-90deg)",v:[90,0]},
+ {id:"core",n:"Kod modelu",p:"Wnętrze",c:["08"],sg:["Kod modelu"],d:"Rdzeń w środku bryły: kod, który naprawdę liczy. Ściany mówią, czym model jest – kod mówi, co robi. Ten sam kod musi dać się odtworzyć i zgadzać z dokumentacją.",col:"#a8694c",v:[-24,-36]}];
 const cube=document.getElementById("cube"),scene=document.getElementById("scene");
-cube.innerHTML=FACES.map(f=>{let subs=[...new Set(f.c.flatMap(k=>MI[k][4].map(s=>s[0]||MI[k][1])))];if(subs.length<4)subs=f.c.flatMap(k=>MI[k][4].flatMap(s=>s[1].map(i=>i[0])));
-  return`<div class="fa" data-f="${f.id}" style="--c:${f.col};transform:${f.tf} translateZ(calc(var(--s)/2))"><div class="fa-ic">${f.c.map(k=>`<span style="background:${COL[k]}">${sv(MI[k][2])}</span>`).join("")}</div><div class="fa-no">${f.c.map(k=>"#"+k).join(" · ")}</div><h2>${E(f.n)}</h2><ul>${subs.slice(0,7).map(s=>`<li>${E(s)}</li>`).join("")}${subs.length>7?`<li>+${subs.length-7}</li>`:""}</ul></div>`}).join("");
+cube.innerHTML=FACES.filter(f=>f.tf).map(f=>{let subs=[...new Set(f.c.flatMap(k=>MI[k][4].map(s=>s[0]||MI[k][1])))];if(subs.length<4)subs=f.c.flatMap(k=>MI[k][4].flatMap(s=>s[1].map(i=>i[0])));
+  return`<div class="fa" data-f="${f.id}" style="--c:${f.col};transform:${f.tf} translateZ(calc(var(--s)/2 + var(--ex,0px)))"><div class="fa-ic">${f.c.map(k=>`<span style="background:${COL[k]}">${sv(MI[k][2])}</span>`).join("")}</div><div class="fa-no">${f.c.map(k=>"#"+k).join(" · ")}</div><h2>${E(f.n)}</h2><ul>${subs.slice(0,7).map(s=>`<li>${E(s)}</li>`).join("")}${subs.length>7?`<li>+${subs.length-7}</li>`:""}</ul></div>`}).join("");
+const CODE=[
+ ["rdzeń","<b>model</b>.licz()","→ wynik"],
+ ["front",'<i>z</i>  = b0 + b·<i>x</i>','<i>pd</i> = 1/(1+e<sup>−z</sup>)','<b>return</b> pd'],
+ ["right",'<b>for</b> s <b>in</b> segmenty:','  dopasuj(s)','  zapisz(θ<sub>s</sub>)'],
+ ["back",'<b>assert</b> ks(p) &lt; kryt','<b>assert</b> wynik ≈ dok','<em># replikacja</em>'],
+ ["left",'dane = wczytaj(źródło)','dane = czyść(dane)','<em># braki, skrajne</em>'],
+ ["top",'&lt;/&gt;','kod modelu'],
+ ["bottom",'<em># środowisko</em>','dane · obliczenia']];
+const CT=["","rotateY(0deg)","rotateY(90deg)","rotateY(180deg)","rotateY(-90deg)","rotateX(90deg)","rotateX(-90deg)"];
+cube.insertAdjacentHTML("beforeend",`<div class="core" data-f="core" title="Kod modelu"><div class="core-i">${CODE.slice(1).map((c,i)=>`<div class="cf${c[0]==="top"?" ct":""}" style="transform:${CT[i+1]} translateZ(calc(var(--s)*.23))">${c.slice(1).map(l=>`<span>${l}</span>`).join("")}</div>`).join("")}</div></div>`);
 const fb=f=>`<button type="button" class="fb" data-f="${f.id}" style="--c:${f.col}"><span class="ic">${sv(MI[f.c[0]][2])}</span><span><small>${f.p}</small><b>${E(f.n)}</b></span></button>`;
-document.getElementById("sl").innerHTML=FACES.slice(0,3).map(fb).join("");document.getElementById("sr").innerHTML=FACES.slice(3).map(fb).join("");
+document.getElementById("sl").innerHTML=FACES.slice(0,3).map(fb).join("");document.getElementById("sr").innerHTML=FACES.slice(3,6).map(fb).join("");document.getElementById("sl").insertAdjacentHTML("beforeend",`<button type="button" class="fb dk" data-f="core" style="--c:#a8694c"><span class="ic code">&lt;/&gt;</span><span><small>Wnętrze bryły</small><b>Kod modelu</b></span></button>`);
 /* obrót */
 let rx=-24,ry=-36,spin=!matchMedia("(prefers-reduced-motion: reduce)").matches,cur=null,last=performance.now();
 const set=()=>{cube.style.transform=`rotateX(${rx}deg) rotateY(${ry}deg)`};set();
 function tick(t){const dt=t-last;last=t;if(spin&&!drag){ry-=dt*.012;set()}requestAnimationFrame(tick)}requestAnimationFrame(tick);
 const bspin=document.getElementById("bspin");const ui=()=>{bspin.textContent=spin?"Zatrzymaj":"Obracaj"};ui();
 function go(x,y){spin=false;ui();const near=v=>ry+((((v-ry)%360)+540)%360-180);cube.classList.add("ease");rx=x;ry=near(y);set();clearTimeout(go.t);go.t=setTimeout(()=>cube.classList.remove("ease"),950)}
-function pick(id,turn){cur=id;const f=FACES.find(q=>q.id===id);document.querySelectorAll("[data-f]").forEach(e=>e.classList.toggle("on",e.dataset.f===id));if(turn)go(f.v[0],f.v[1]);panel(f)}
+const bcode=document.getElementById("bcode");function openC(on){cube.classList.toggle("open",on);bcode.innerHTML=on?"Zamknij bryłę":"&lt;/&gt; Pokaż kod"}
+function pick(id,turn){cur=id;openC(id==="core");const f=FACES.find(q=>q.id===id);document.querySelectorAll("[data-f]").forEach(e=>e.classList.toggle("on",e.dataset.f===id));if(turn)go(f.v[0],f.v[1]);panel(f)}
 let drag=null,moved=0;
 scene.addEventListener("pointerdown",e=>{drag={x:e.clientX,y:e.clientY,rx,ry};moved=0;scene.setPointerCapture(e.pointerId);scene.classList.add("drag");cube.classList.remove("ease")});
 scene.addEventListener("pointermove",e=>{if(!drag)return;const dx=e.clientX-drag.x,dy=e.clientY-drag.y;moved=Math.max(moved,Math.abs(dx)+Math.abs(dy));if(moved<4)return;spin=false;ui();ry=drag.ry+dx*.45;rx=Math.max(-90,Math.min(90,drag.rx-dy*.45));set()});
-scene.addEventListener("pointerup",e=>{scene.classList.remove("drag");const d=drag;drag=null;if(d&&moved<4){const el=document.elementFromPoint(e.clientX,e.clientY),fa=el&&el.closest(".fa");if(fa)pick(fa.dataset.f,true)}});
+scene.addEventListener("pointerup",e=>{scene.classList.remove("drag");const d=drag;drag=null;if(d&&moved<4){const el=document.elementFromPoint(e.clientX,e.clientY),fa=el&&el.closest(".fa,.core");if(fa)pick(fa.dataset.f,fa.dataset.f!=="core")}});
 scene.addEventListener("pointercancel",()=>{drag=null;scene.classList.remove("drag")});
 document.querySelector(".stage").addEventListener("click",e=>{const b=e.target.closest(".fb");if(b)pick(b.dataset.f,true)});
 bspin.addEventListener("click",()=>{spin=!spin;ui()});
+bcode.addEventListener("click",()=>{if(cube.classList.contains("open")){openC(false);pick("front",false);go(-24,-36)}else pick("core",true)});
 document.getElementById("biso").addEventListener("click",()=>go(-24,-36));
 /* panel */
 const pan=document.getElementById("pan");
 function panel(f){pan.style.setProperty("--c",f.col);
-  pan.innerHTML=`<div class="pan-h"><div><span class="kick">${f.p} bryły · ${f.c.map(k=>"#"+k).join(" · ")}</span><h2>${E(f.n)}</h2></div><p>${E(f.d)}</p></div><div class="cmp">${f.c.map(k=>{const r=MI[k];return`<div class="cm" style="--k:${COL[k]}"><div class="cm-h"><span class="ic">${sv(r[2])}</span><span><em>#${r[0]}</em><b>${E(r[1])}</b><span>${E(r[3])}</span></span></div><div class="sg">${r[4].map(s=>`<div class="sgb">${s[0]?`<span>${E(s[0])}</span>`:""}<div class="it">${s[1].map(i=>`<i>${E(i[0])}${i[1]?`<small>${E(i[1])}</small>`:""}</i>`).join("")}</div></div>`).join("")}</div></div>`}).join("")}</div>`}
+  pan.innerHTML=`<div class="pan-h"><div><span class="kick">${f.p} bryły · ${f.c.map(k=>"#"+k).join(" · ")}${f.sg?" · "+E(f.sg.join(", ")):""}</span><h2>${E(f.n)}</h2></div><p>${E(f.d)}</p></div><div class="cmp">${f.c.map(k=>{const r=MI[k],sgs=f.sg?r[4].filter(x=>f.sg.includes(x[0])):r[4];return`<div class="cm" style="--k:${COL[k]}"><div class="cm-h"><span class="ic">${sv(r[2])}</span><span><em>#${r[0]}</em><b>${E(r[1])}</b><span>${E(r[3])}</span></span></div><div class="sg">${sgs.map(s=>`<div class="sgb">${s[0]?`<span>${E(s[0])}</span>`:""}<div class="it">${s[1].map(i=>`<i>${E(i[0])}${i[1]?`<small>${E(i[1])}</small>`:""}</i>`).join("")}</div></div>`).join("")}</div></div>`}).join("")}</div>`}
 pick("front",false);
 })();
 </script>
