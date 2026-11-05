@@ -335,8 +335,6 @@
 .depv .dn>b{font-size:14px;color:var(--ink2)}
 .depv .dmod{--s:clamp(180px,16vw,240px);margin:calc(var(--s)*.14) calc(var(--s)*.12) calc(var(--s)*.12)}
 .depv .env{height:calc(var(--e)*1.25)}
-.depv[data-dv="3"] .dgrid{column-gap:clamp(70px,8vw,150px);padding:10px 0 30px}
-.depv[data-dv="3"] .dew{margin-top:150px}
 
 /* podpisy obiektów */
 .depv .dn{gap:34px}
@@ -365,6 +363,45 @@
 .tip-i b{display:block;font-size:13.5px;font-weight:600;line-height:1.25}
 .tip-i small{display:block;font-size:12px;color:var(--muted);line-height:1.3}
 @media(max-width:1100px){.tip{left:50%;top:auto;bottom:calc(100% - 40px);transform:translate(-50%,8px)}.dew:hover .tip,.dew.tipon .tip{transform:translate(-50%,0)}}
+
+/* pakiet dokumentów i komitet */
+.depv[data-dv="3"] .dgrid{grid-template-columns:1fr 1fr 1fr .85fr;grid-template-rows:auto auto auto;column-gap:clamp(40px,5vw,90px);padding:0 0 30px}
+.depv[data-dv="3"] .dew{grid-row:1/3;margin-top:70px}
+.depv .dn{gap:24px}
+.depv .dmod{--s:clamp(170px,13.5vw,210px)}
+.depv .env{--e:clamp(160px,13vw,205px)}
+.band{grid-column:1/4;grid-row:3;display:grid;grid-template-columns:repeat(3,1fr);gap:10px 34px;margin-top:22px;padding:14px 0 0;border-top:1px solid var(--line);position:relative;z-index:1}
+.band-h{grid-column:1/-1;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.bk{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink2)}
+.lg{display:inline-flex;align-items:center;gap:7px;font-size:12px;color:var(--muted)}.lg i{width:9px;height:9px;border-radius:50%}
+.lg.jm i,.dk-g.jm .ab{background:var(--terra-d)}.lg.jw i,.dk-g.jw .ab{background:#3f6f6a}
+.dk{display:flex;flex-direction:column;gap:8px}
+.dk-h{grid-column:1/-1;display:flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;color:var(--ink)}
+.dk-h i{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--terra-d)}
+.dk-g{display:flex;flex-direction:column;gap:5px;align-items:stretch}
+.ab{align-self:flex-start;height:16px;padding:0 7px;border-radius:999px;color:#fff;font-size:8.5px;font-weight:700;letter-spacing:.08em;display:grid;place-items:center}
+.shs{display:flex;flex-wrap:wrap;gap:5px}
+.sh{display:inline-flex;align-items:center;gap:7px;padding:4px 9px 4px 7px;border-radius:9px;background:#fffdf9;border:1px solid var(--line);font-size:11.5px;font-weight:500;line-height:1.2;box-shadow:0 8px 16px -14px rgba(13,13,13,.5)}
+.sh i{flex:none;width:11px;height:14px;border-radius:1.5px;background:linear-gradient(-135deg,transparent 3.5px,var(--a) 3.5px)}
+.sh.jm{--a:color-mix(in srgb,var(--terra-d) 75%,transparent)}.sh.jw{--a:#3f6f6a;border-color:color-mix(in srgb,#3f6f6a 30%,transparent)}
+.rail{fill:none;stroke:#d6ccbe;stroke-width:1.4;stroke-dasharray:4 6}
+.ticks{fill:none;stroke:#d6ccbe;stroke-width:1.2}
+.lp.l3{stroke:var(--ink2)}.hd.h3{stroke:var(--ink2)}
+.kom{grid-column:4;grid-row:2/4;align-self:end;display:flex;flex-direction:column;align-items:center;gap:14px;position:relative;z-index:1;margin-bottom:6px}
+.kom-s{width:clamp(160px,13vw,210px);overflow:visible}
+.tbl{fill:rgba(255,253,249,.85);stroke:rgba(13,13,13,.35);stroke-width:1.2}.tbl2{fill:rgba(13,13,13,.05);stroke:rgba(13,13,13,.15);stroke-width:1}
+.seats circle{fill:#fffdf9;stroke:rgba(13,13,13,.35);stroke-width:1.1}
+.stem{stroke:rgba(13,13,13,.25);stroke-width:1.2}
+.sr1{fill:none;stroke:var(--kc);stroke-width:1.4;stroke-dasharray:2 3}.sr2{fill:color-mix(in srgb,var(--kc) 12%,#fffdf9);stroke:var(--kc);stroke-width:2}
+.seal path{fill:none;stroke:var(--kc);stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round}
+.kom.rec{--kc:#3f6f6a}.kom.no{--kc:#b0553a}.kom.rec .no,.kom.no .ok{display:none}
+.seal{transform-box:fill-box;transform-origin:center}
+.kom.stamp .seal{animation:stamp .7s cubic-bezier(.3,1.6,.5,1)}
+@keyframes stamp{0%{transform:scale(1)}40%{transform:scale(1.14)}100%{transform:scale(1)}}
+.kom-t{display:inline-flex;padding:3px;border-radius:999px;border:1px solid var(--line);background:#fffdf9}
+.kom-t button{font:inherit;font-size:11.5px;font-weight:600;padding:5px 11px;border-radius:999px;border:0;background:none;cursor:pointer;color:var(--muted)}
+.kom.rec .kom-t .on{background:#3f6f6a;color:#fff}.kom.no .kom-t .on{background:#b0553a;color:#fff}
+@media(max-width:1100px){.band{grid-template-columns:1fr;grid-column:1;grid-row:auto}.kom{grid-column:1!important;grid-row:auto!important;align-self:center}.rail,.ticks,.lp.l3{display:none}}
 </style>
 </head>
 <body>
@@ -406,7 +443,7 @@
     <div class="dpv" id="dpv" hidden><span>Układ ekranu</span><button type="button" data-dv="1">1 · Linia</button><button type="button" data-dv="2">2 · Scena</button><button type="button" data-dv="3">3 · Dolina</button></div>
     <div class="dgrid" id="dgrid">
       <svg class="dfloor" id="dfloor" aria-hidden="true"></svg>
-      <svg class="dlinks" id="dlinks" aria-hidden="true"><defs><marker id="ah1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1l8 4-8 4" fill="none" stroke="#c07a1f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker><marker id="ah2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1l8 4-8 4" fill="none" stroke="#a8823a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker></defs><path class="lk l1" id="lk1" marker-end="url(#ah1)"/><path class="lk l2" id="lk2" marker-end="url(#ah2)"/><path class="lp l1" id="lp1"/><path class="lp l2" id="lp2"/><circle class="hd" id="hd" r="4.5"/></svg>
+      <svg class="dlinks" id="dlinks" aria-hidden="true"><defs><marker id="ah1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1l8 4-8 4" fill="none" stroke="#c07a1f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker><marker id="ah2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1l8 4-8 4" fill="none" stroke="#a8823a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker></defs><path class="lk l1" id="lk1" marker-end="url(#ah1)"/><path class="lk l2" id="lk2" marker-end="url(#ah2)"/><path class="lp l1" id="lp1"/><path class="lp l2" id="lp2"/><path class="rail" id="rl"/><path class="ticks" id="tk"/><path class="lp l3" id="lp3"/><circle class="hd" id="hd" r="4.5"/></svg>
       <div class="dn dmw" data-f="stat"><div class="dmod" id="dmod"></div><span class="cap"><i>01</i><b>Model</b></span></div>
       <div class="dn dew" data-f="env"><div class="env" id="env"><div class="envb" id="envb"></div></div><span class="cap"><i>02</i><b>System produkcyjny</b></span>
         <div class="tip" role="tooltip"><span class="tip-k">Typy wdrożenia modelu</span>
@@ -415,6 +452,14 @@
           <div class="tip-i"><span class="ti"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M4 9.5h16M9.5 9.5V19M14.5 9.5V19"/></svg></span><span><b>Integracja wyników modelu</b><small>ze środowiskiem produkcyjnym</small></span></div>
         </div></div>
       <div class="dn dpw" data-f="proc"><div class="env prc" id="proc"><div class="envb" id="procb"></div></div><span class="cap"><i>03</i><b>Procesy biznesowe</b></span></div>
+      <div class="band" id="band"><div class="band-h"><span class="bk">Pakiet dokumentów</span><span class="lg jm"><i></i>Jednostka modelarska</span><span class="lg jw"><i></i>Jednostka walidacji</span></div><div class="dk"><span class="dk-h"><i>01</i>Model</span><div class="shs"><span class="sh jm"><i></i>Kod modelu</span><span class="sh jm"><i></i>Dokumentacja modelu</span><span class="sh jm"><i></i>Wyniki weryfikacji modelu</span><span class="sh jw"><i></i>Raport z prewalidacji</span></div></div><div class="dk"><span class="dk-h"><i>02</i>Wdrożenie techniczne</span><div class="shs"><span class="sh jm"><i></i>Testy wdrożeniowe</span><span class="sh jm"><i></i>Raport z wdrożenia technicznego</span><span class="sh jw"><i></i>Testy wdrożeniowe</span><span class="sh jw"><i></i>Raport z niezależnej oceny wdrożenia</span></div></div><div class="dk"><span class="dk-h"><i>03</i>Wdrożenie procesowe</span><div class="shs"><span class="sh jm"><i></i>Raport z wdrożenia procesowego</span><span class="sh jw"><i></i>Ocena wdrożenia procesowego</span></div></div></div>
+      <div class="kom rec" id="kom"><svg class="kom-s" viewBox="0 0 220 170" aria-hidden="true">
+  <g class="seats"><circle cx="197.5" cy="128.5" r="6"/><circle cx="164.1" cy="145.5" r="6"/><circle cx="110.0" cy="152.0" r="6"/><circle cx="55.9" cy="145.5" r="6"/><circle cx="22.5" cy="128.5" r="6"/><circle cx="22.5" cy="107.5" r="6"/><circle cx="55.9" cy="90.5" r="6"/><circle cx="110.0" cy="84.0" r="6"/><circle cx="164.1" cy="90.5" r="6"/><circle cx="197.5" cy="107.5" r="6"/></g>
+  <ellipse cx="110" cy="124" rx="74" ry="25" class="tbl2"/><ellipse cx="110" cy="118" rx="74" ry="25" class="tbl"/>
+  <g class="seal"><circle cx="110" cy="52" r="34" class="sr1"/><circle cx="110" cy="52" r="27" class="sr2"/><path class="ok" d="M97 52l9 9 17-18"/><path class="no" d="M99 41l22 22M121 41l-22 22"/></g>
+  <path d="M110 86V100" class="stem"/></svg>
+  <span class="cap"><i>04</i><b>Komitet Ryzyka</b></span>
+  <div class="kom-t" role="group" aria-label="Decyzja komitetu"><button type="button" data-k="rec" class="on">Rekomenduje</button><button type="button" data-k="no">Nie rekomenduje</button></div></div>
       <span class="tcap" id="tcap">Wyniki</span><span class="chip c1" id="ch1">Wdrożenie techniczne</span><span class="chip c2" id="ch2">Wdrożenie procesowe</span>
     </div>
   </div>
@@ -557,6 +602,7 @@ setEX(EX);setCX(CX);pick("stat",false);
   const steps=[["coin","Odpisy"],["dec","Decyzje"],["rep","Raporty"]];
   pb.innerHTML=`<div class="pbase" style="transform:translateY(calc(var(--e)*.17)) rotateX(90deg)"><svg viewBox="0 0 120 50" aria-hidden="true"><path d="M18 25 H102" class="ptrack"/><path d="M37 21l4 4-4 4M79 21l4 4-4 4" class="pchv"/></svg></div>`+steps.map((t,i)=>{const x=(i-1)*.42;return`<div class="pstep" style="transform:translate3d(calc(var(--e)*${x}),calc(var(--e)*-.02),0)"><i class="pd b"></i><i class="pd f"><svg viewBox="0 0 24 24" aria-hidden="true">${PI[t[0]]}</svg></i><i class="pstem"></i><span class="pl">${t[1]}</span></div>`}).join("")})();
 document.getElementById("depv").addEventListener("click",e=>{const t=e.target.closest(".dn");if(t){pick(t.dataset.f,false);if(t.classList.contains("dew")&&matchMedia("(hover: none)").matches)t.classList.toggle("tipon")}});document.querySelector(".dew").tabIndex=0;
+document.getElementById("kom").addEventListener("click",e=>{const b=e.target.closest("[data-k]");if(!b)return;e.stopPropagation();const k=document.getElementById("kom");k.classList.toggle("rec",b.dataset.k==="rec");k.classList.toggle("no",b.dataset.k==="no");k.querySelectorAll("[data-k]").forEach(x=>x.classList.toggle("on",x===b))});
 /* model w zakładce wdrożenia: nieruchoma kopia bez wyników */
 function cloneModel(){const d=document.getElementById("dmod");const c=cube.cloneNode(true);c.removeAttribute("id");c.querySelectorAll("[id]").forEach(x=>x.removeAttribute("id"));
   c.querySelectorAll(".tb,.rod.res,.port,.arw,.lb,.nd").forEach(x=>x.remove());c.style.transform="rotateX(-13deg) rotateY(-23deg)";c.dataset.lf="0";c.classList.remove("fr");c.querySelectorAll(".yb").forEach(y=>y.style.transform="rotateY(23deg)");d.innerHTML="";d.appendChild(c)}
@@ -575,17 +621,22 @@ function links(){if(depv.offsetParent===null)return;const g=dgrid.getBoundingCli
   document.getElementById("lk1").setAttribute("d",c1);document.getElementById("lk2").setAttribute("d",c2);document.getElementById("lp1").setAttribute("d",c1);document.getElementById("lp2").setAttribute("d",c2);
   {const rs=[...TB.querySelectorAll("i")].map(x=>x.getBoundingClientRect()),tr={left:Math.min(...rs.map(r=>r.left)),top:Math.min(...rs.map(r=>r.top)),bottom:Math.max(...rs.map(r=>r.bottom))},tc=document.getElementById("tcap");tc.style.left=(tr.left-g.left-8)+"px";tc.style.top=((tr.top+tr.bottom)/2-g.top)+"px"}
   const mid=(id,ch,dy)=>{const pth=document.getElementById(id),L=pth.getTotalLength(),pt=pth.getPointAtLength(L/2),c=document.getElementById(ch);c.style.left=pt.x+"px";c.style.top=(pt.y+dy)+"px"};mid("lk1","ch1",-44);mid("lk2","ch2",-40);
+  {const band=document.getElementById("band"),cells=[...band.querySelectorAll(".dk")],K=document.querySelector("#kom .tbl");if(cells.length&&K){const kr=K.getBoundingClientRect(),br=band.getBoundingClientRect(),ry=br.bottom-g.top+16;
+    const xs=cells.map(c=>{const r=c.getBoundingClientRect();return[(r.left+r.right)/2-g.left,r.bottom-g.top+2]});const kx=kr.left-g.left-10,ky=(kr.top+kr.bottom)/2-g.top;
+    document.getElementById("tk").setAttribute("d",xs.map(([x,y])=>`M${x},${y} V${ry}`).join(" "));
+    const rd=`M${xs[0][0]},${ry} H${xs[2][0]+40} C${xs[2][0]+120},${ry} ${kx-70},${ky} ${kx},${ky}`;document.getElementById("rl").setAttribute("d",rd);document.getElementById("lp3").setAttribute("d",rd)}}
   if(DV===2){const W=g.width,H=g.height,cy=H*.7;fl.innerHTML=`<path d="M${W*.03},${cy} L${W*.5},${cy-H*.2} L${W*.97},${cy} L${W*.5},${cy+H*.2}Z" class="fl1"/><path d="M${W*.14},${cy} L${W*.5},${cy-H*.15} L${W*.86},${cy} L${W*.5},${cy+H*.15}Z" class="fl2"/>`}else fl.innerHTML=""}
 /* przepływ: model → system → wyniki → procesy, powoli i od nowa */
-const FL={p1:2600,p2:1500,p3:2600,h:1400};let flT0=performance.now();
+const FL={p1:2600,p2:1500,p3:2600,p4:2400,h:2200};let flT0=performance.now();
 function flow(t){requestAnimationFrame(flow);if(TAB!=="dep"||depv.offsetParent===null)return;const red=matchMedia("(prefers-reduced-motion: reduce)").matches;
   const P1=document.getElementById("lp1"),P2=document.getElementById("lp2"),V=document.getElementById("vrod"),HD=document.getElementById("hd");if(!P1.getAttribute("d"))return;
-  const T=FL.p1+FL.p2+FL.p3+FL.h,u=red?T-1:(t-flT0)%T,ease=x=>x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2;
+  const T=FL.p1+FL.p2+FL.p3+FL.p4+FL.h,u=red?T-1:(t-flT0)%T,ease=x=>x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2;
   const k1=Math.min(1,u/FL.p1),k2=Math.max(0,Math.min(1,(u-FL.p1)/FL.p2)),k3=Math.max(0,Math.min(1,(u-FL.p1-FL.p2)/FL.p3));
+  const k4=Math.max(0,Math.min(1,(u-FL.p1-FL.p2-FL.p3)/FL.p4)),P3=document.getElementById("lp3"),L3=P3.getAttribute("d")?P3.getTotalLength():0,e4=ease(k4);P3.style.strokeDasharray=L3;P3.style.strokeDashoffset=L3*(1-e4);document.getElementById("kom").classList.toggle("stamp",k4>=1&&!red);
   const L1=P1.getTotalLength(),L2=P2.getTotalLength(),e1=ease(k1),e3=ease(k3);
   P1.style.strokeDasharray=L1;P1.style.strokeDashoffset=L1*(1-e1);P2.style.strokeDasharray=L2;P2.style.strokeDashoffset=L2*(1-e3);V.style.setProperty("--vp",ease(k2).toFixed(3));
-  let pt=null;if(k1<1)pt=P1.getPointAtLength(L1*e1);else if(k2>=1&&k3<1)pt=P2.getPointAtLength(L2*e3);
-  if(pt&&!red){HD.style.opacity=1;HD.setAttribute("cx",pt.x);HD.setAttribute("cy",pt.y);HD.setAttribute("class","hd "+(k1<1?"h1":"h2"))}else HD.style.opacity=0}
+  let pt=null;if(k1<1)pt=P1.getPointAtLength(L1*e1);else if(k2>=1&&k3<1)pt=P2.getPointAtLength(L2*e3);else if(k3>=1&&k4<1&&L3)pt=P3.getPointAtLength(L3*e4);
+  if(pt&&!red){HD.style.opacity=1;HD.setAttribute("cx",pt.x);HD.setAttribute("cy",pt.y);HD.setAttribute("class","hd "+(k1<1?"h1":k3<1?"h2":"h3"))}else HD.style.opacity=0}
 requestAnimationFrame(flow);
 function setDV(v){DV=v;depv.dataset.dv=v;document.querySelectorAll("[data-dv]").forEach(b=>b.classList.toggle("on",+b.dataset.dv===v));try{localStorage.setItem("rt_mr_dv",v)}catch(_){}requestAnimationFrame(links)}
 document.getElementById("dpv").addEventListener("click",e=>{const b=e.target.closest("[data-dv]");if(b)setDV(+b.dataset.dv)});addEventListener("resize",()=>requestAnimationFrame(links));
